@@ -360,7 +360,6 @@
 
   <ItemGroup>
     <Resource Include="icon.png" />
-    <Resource Include="pic\hunBig\null.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -374,12 +373,7 @@
     <Resource Include="gui\no_hun_ban.png" />
     <Resource Include="gui\score_bg_h.png" />
     <Resource Include="gui\score_bg_s.png" />
-    <Resource Include="pic\hunban\null.png" />
-    <Resource Include="pic\hunhalf\null.png" />
-    <Resource Include="pic\hun\null.png" />
-    <Resource Include="pic\mapBan\null.png" />
     <Resource Include="pic\mapBan\无Ban.png" />
-    <Resource Include="pic\map\null.png" />
     <Resource Include="pic\surban\bh病患.png" />
     <Resource Include="pic\surban\csj慈善家.png" />
     <Resource Include="pic\surban\df大副.png" />
@@ -400,7 +394,6 @@
     <Resource Include="pic\surban\mn盲女.png" />
     <Resource Include="pic\surban\mss魔术师.png" />
     <Resource Include="pic\surban\mxj冒险家.png" />
-    <Resource Include="pic\surban\null.png" />
     <Resource Include="pic\surban\nz牛仔.png" />
     <Resource Include="pic\surban\qf前锋.png" />
     <Resource Include="pic\surban\qt囚徒.png" />
@@ -583,7 +576,6 @@
     <Resource Include="pic\surBig\mn盲女.png" />
     <Resource Include="pic\surBig\mss魔术师.png" />
     <Resource Include="pic\surBig\mxj冒险家.png" />
-    <Resource Include="pic\surBig\null.png" />
     <Resource Include="pic\surBig\nz牛仔.png" />
     <Resource Include="pic\surBig\qf前锋.png" />
     <Resource Include="pic\surBig\qt囚徒.png" />
@@ -626,7 +618,6 @@
     <Resource Include="pic\surhalf\mn盲女.png" />
     <Resource Include="pic\surhalf\mss魔术师.png" />
     <Resource Include="pic\surhalf\mxj冒险家.png" />
-    <Resource Include="pic\surhalf\null.png" />
     <Resource Include="pic\surhalf\nz牛仔.png" />
     <Resource Include="pic\surhalf\qf前锋.png" />
     <Resource Include="pic\surhalf\qt囚徒.png" />
@@ -669,7 +660,6 @@
     <Resource Include="pic\sur\mn盲女.png" />
     <Resource Include="pic\sur\mss魔术师.png" />
     <Resource Include="pic\sur\mxj冒险家.png" />
-    <Resource Include="pic\sur\null.png" />
     <Resource Include="pic\sur\nz牛仔.png" />
     <Resource Include="pic\sur\qf前锋.png" />
     <Resource Include="pic\sur\qt囚徒.png" />

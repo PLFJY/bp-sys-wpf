@@ -55,9 +55,9 @@
                     <RowDefinition Height="62*"/>
                     <RowDefinition Height="69*"/>
                 </Grid.RowDefinitions>
-                <Image Grid.Row="0" x:Name="Hun_ban_1" Source="/pic/hunban/null.png" Height="50" Width="50" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
-                <Image Grid.Row="1" x:Name="Hun_ban_2" Source="/pic/hunban/null.png" Width="50" HorizontalAlignment="Right"/>
-                <Image Grid.Row="2" x:Name="Hun_ban_3" Source="/pic/hunban/null.png" Height="50" Width="50" HorizontalAlignment="Right" VerticalAlignment="Top" />
+                <Image Grid.Row="0" x:Name="Hun_ban_1" Height="50" Width="50" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+                <Image Grid.Row="1" x:Name="Hun_ban_2" Width="50" HorizontalAlignment="Right"/>
+                <Image Grid.Row="2" x:Name="Hun_ban_3" Height="50" Width="50" HorizontalAlignment="Right" VerticalAlignment="Top" />
             </Grid>
             <Grid Grid.Column="0" Margin="0,0,1,0" Panel.ZIndex="1">
                 <Grid.RowDefinitions>
@@ -71,27 +71,27 @@
             </Grid>
             <!--监管Ban-->
             <Grid Grid.Column="1">
-                <Image x:Name="Sur_pick_1" Source="/pic/surhalf/null.png" Height="171" Panel.ZIndex="-1"/>
-                <Label x:Name="Sur_1_team" Content="YS" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,35" FontSize="22"/>
-                <Label x:Name="Sur_1_player" Content="Lion" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22"/>
+                <Image x:Name="Sur_pick_1" Height="171" Panel.ZIndex="-1"/>
+                <Label x:Name="Sur_1_team" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,35" FontSize="22"/>
+                <Label x:Name="Sur_1_player" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22"/>
             </Grid>
             <!--求生Pick1-->
             <Grid Grid.Column="2">
-                <Image x:Name="Sur_pick_2" Source="/pic/surhalf/null.png" Height="171" Panel.ZIndex="-1"/>
-                <Label x:Name="Sur_2_team" Content="YS" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,35" FontSize="22"/>
-                <Label x:Name="Sur_2_player" Content="Tea" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22"/>
+                <Image x:Name="Sur_pick_2" Height="171" Panel.ZIndex="-1"/>
+                <Label x:Name="Sur_2_team" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,35" FontSize="22"/>
+                <Label x:Name="Sur_2_player" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22"/>
             </Grid>
             <!--求生Pick2-->
             <Grid Grid.Column="3">
-                <Image x:Name="Sur_pick_3" Source="/pic/surhalf/null.png" Height="171" Panel.ZIndex="-1"/>
-                <Label x:Name="Sur_3_team" Content="YS" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,35" FontSize="22"/>
-                <Label x:Name="Sur_3_player" Content="XingChen" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22"/>
+                <Image x:Name="Sur_pick_3" Height="171" Panel.ZIndex="-1"/>
+                <Label x:Name="Sur_3_team" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,35" FontSize="22"/>
+                <Label x:Name="Sur_3_player" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22"/>
             </Grid>
             <!--求生Pick3-->
             <Grid Grid.Column="4">
-                <Image x:Name="Sur_pick_4" Source="/pic/surhalf/null.png" Height="171" Panel.ZIndex="-1"/>
-                <Label x:Name="Sur_4_team" Content="YS" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,35" FontSize="22"/>
-                <Label x:Name="Sur_4_player" Content="higher" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22"/>
+                <Image x:Name="Sur_pick_4" Height="171" Panel.ZIndex="-1"/>
+                <Label x:Name="Sur_4_team" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,35" FontSize="22"/>
+                <Label x:Name="Sur_4_player" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22"/>
             </Grid>
             <!--求生Pick4-->
             <Grid Grid.Column="5">
@@ -99,29 +99,29 @@
                     <RowDefinition Height="141*"/>
                     <RowDefinition Height="59*"/>
                 </Grid.RowDefinitions>
-                <Image x:Name="Map" Grid.Row="0" Source="/pic/map/null.png" Width="300" Height="115" VerticalAlignment="Bottom" Margin="0,0,0,5"/>
+                <Image x:Name="Map" Grid.Row="0" Width="300" Height="115" VerticalAlignment="Bottom" Margin="0,0,0,5"/>
                 <!--地图-->
                 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,3,0,0">
-                    <Image x:Name="Hole_ban_1" Source="/pic/surban/null.png" Height="37" Width="37"/>
-                    <Image x:Name="Hole_ban_2" Source="/pic/surban/null.png" Height="37" Width="37" Margin="7,0,0,0"/>
-                    <Image x:Name="Hole_ban_3" Source="/pic/surban/null.png" Height="37" Width="37" Margin="5,0,0,0"/>
-                    <Image x:Name="Hole_ban_4" Source="/pic/surban/null.png" Height="37" Width="37" Margin="7,0,0,0"/>
-                    <Image x:Name="Hole_ban_5" Source="/pic/surban/null.png" Height="37" Width="37" Margin="5,0,0,0"/>
-                    <Image x:Name="Hole_ban_6" Source="/pic/surban/null.png" Height="37" Width="37" Margin="6,0,0,0"/>
+                    <Image x:Name="Hole_ban_1" Height="37" Width="37"/>
+                    <Image x:Name="Hole_ban_2" Height="37" Width="37" Margin="7,0,0,0"/>
+                    <Image x:Name="Hole_ban_3" Height="37" Width="37" Margin="5,0,0,0"/>
+                    <Image x:Name="Hole_ban_4" Height="37" Width="37" Margin="7,0,0,0"/>
+                    <Image x:Name="Hole_ban_5" Height="37" Width="37" Margin="5,0,0,0"/>
+                    <Image x:Name="Hole_ban_6" Height="37" Width="37" Margin="6,0,0,0"/>
                 </StackPanel>
                 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,3,0,0" Panel.ZIndex="0">
-                    <Image x:Name="Hole_no_ban_1" Source="/gui/no_hole_ban.png" Height="37" Width="37" Visibility="Hidden"/>
-                    <Image x:Name="Hole_no_ban_2" Source="/gui/no_hole_ban.png" Height="37" Width="37" Margin="7,0,0,0" Visibility="Hidden"/>
-                    <Image x:Name="Hole_no_ban_3" Source="/gui/no_hole_ban.png" Height="37" Width="37" Margin="5,0,0,0" Visibility="Hidden"/>
-                    <Image x:Name="Hole_no_ban_4" Source="/gui/no_hole_ban.png" Height="37" Width="37" Margin="7,0,0,0" Visibility="Hidden"/>
-                    <Image x:Name="Hole_no_ban_5" Source="/gui/no_hole_ban.png" Height="37" Width="37" Margin="5,0,0,0" Visibility="Hidden"/>
-                    <Image x:Name="Hole_no_ban_6" Source="/gui/no_hole_ban.png" Height="37" Width="37" Margin="6,0,0,0" Visibility="Hidden"/>
+                    <Image x:Name="Hole_no_ban_1" Height="37" Width="37" Visibility="Hidden"/>
+                    <Image x:Name="Hole_no_ban_2" Height="37" Width="37" Margin="7,0,0,0" Visibility="Hidden"/>
+                    <Image x:Name="Hole_no_ban_3" Height="37" Width="37" Margin="5,0,0,0" Visibility="Hidden"/>
+                    <Image x:Name="Hole_no_ban_4" Height="37" Width="37" Margin="7,0,0,0" Visibility="Hidden"/>
+                    <Image x:Name="Hole_no_ban_5" Height="37" Width="37" Margin="5,0,0,0" Visibility="Hidden"/>
+                    <Image x:Name="Hole_no_ban_6" Height="37" Width="37" Margin="6,0,0,0" Visibility="Hidden"/>
                 </StackPanel>
                 <!--全局ban-->
             </Grid>
             <!--监管Pick-->
             <Grid Grid.Column="6">
-                <Image x:Name="Hun_pick" Source="/pic/hunhalf/null.png" Height="171" Panel.ZIndex="-1"/>
+                <Image x:Name="Hun_pick" Height="171" Panel.ZIndex="-1"/>
                 <Label x:Name="Hun_player" Content="WBG__Alex" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10" FontSize="30" />
             </Grid>
             <!--求生Ban-->
@@ -132,10 +132,10 @@
                     <RowDefinition Height="44*"/>
                     <RowDefinition Height="56*"/>
                 </Grid.RowDefinitions>
-                <Image Grid.Row="0" x:Name="Sur_ban_1" Source="/pic/surban/null.png" Height="36" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="8,0,0,3"/>
-                <Image Grid.Row="1" x:Name="Sur_ban_2" Source="/pic/surban/null.png" Width="36" HorizontalAlignment="Left" Margin="8,0,0,1"/>
-                <Image Grid.Row="2" x:Name="Sur_ban_3" Source="/pic/surban/null.png" Width="36" HorizontalAlignment="Left" Margin="8,0,0,1"/>
-                <Image Grid.Row="3" x:Name="Sur_ban_4" Source="/pic/surban/null.png" Height="36" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,2,0,0"/>
+                <Image Grid.Row="0" x:Name="Sur_ban_1" Height="36" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="8,0,0,3"/>
+                <Image Grid.Row="1" x:Name="Sur_ban_2" Width="36" HorizontalAlignment="Left" Margin="8,0,0,1"/>
+                <Image Grid.Row="2" x:Name="Sur_ban_3" Width="36" HorizontalAlignment="Left" Margin="8,0,0,1"/>
+                <Image Grid.Row="3" x:Name="Sur_ban_4" Height="36" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,2,0,0"/>
             </Grid>
         </Grid>
         <!--Ban Pick-->

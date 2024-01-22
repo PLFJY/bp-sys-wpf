@@ -315,11 +315,17 @@ namespace bp_sys_wpf
                     Front.front.Sur_3_team.Content = Main_team_name.Text;
                     Front.front.Sur_4_team.Content = Main_team_name.Text;
                     Interlude.interlude.Sur_team_name.Content = Main_team_name.Text;
+                    Interlude.interlude.Sur_1_player_name.Content = Main_team_name.Text + "__" + Now_sur_player_1;
+                    Interlude.interlude.Sur_2_player_name.Content = Main_team_name.Text + "__" + Now_sur_player_2;
+                    Interlude.interlude.Sur_3_player_name.Content = Main_team_name.Text + "__" + Now_sur_player_3;
+                    Interlude.interlude.Sur_4_player_name.Content = Main_team_name.Text + "__" + Now_sur_player_4;
                 }
                 else
                 {
                     Front.front.Hun_team_name.Content = Main_team_name.Text;
+                    Front.front.Hun_player.Content = Main_team_name.Text + "__" + Now_hun_player.Text;
                     Interlude.interlude.Hun_team_name.Content = Main_team_name.Text;
+                    Interlude.interlude.Hun_player_name.Content = Main_team_name.Text + "__" + Now_hun_player.Text;
                 }
             }
         }
@@ -336,11 +342,17 @@ namespace bp_sys_wpf
                     Front.front.Sur_3_team.Content = Away_team_name.Text;
                     Front.front.Sur_4_team.Content = Away_team_name.Text;
                     Interlude.interlude.Sur_team_name.Content = Away_team_name.Text;
+                    Interlude.interlude.Sur_1_player_name.Content = Away_team_name.Text + "__" + Now_sur_player_1;
+                    Interlude.interlude.Sur_2_player_name.Content = Away_team_name.Text + "__" + Now_sur_player_2;
+                    Interlude.interlude.Sur_3_player_name.Content = Away_team_name.Text + "__" + Now_sur_player_3;
+                    Interlude.interlude.Sur_4_player_name.Content = Away_team_name.Text + "__" + Now_sur_player_4;
                 }
                 else
                 {
+                    Front.front.Hun_player.Content = Away_team_name.Text + "__" + Now_hun_player.Text;
                     Front.front.Hun_team_name.Content = Away_team_name.Text;
                     Interlude.interlude.Hun_team_name.Content = Away_team_name.Text;
+                    Interlude.interlude.Hun_player_name.Content = Away_team_name.Text + "__" + Now_hun_player.Text;
                 }
             }
         }
@@ -442,7 +454,7 @@ namespace bp_sys_wpf
             Map_bp.map_bp.ban.Source = new BitmapImage(new Uri(GetFilePath("mapban", Map_ban.SelectedItem.ToString())));
         }
 
-        private void Reset_for_a_game_Click(object sender, RoutedEventArgs e)
+        private void Reset_Click(object sender, RoutedEventArgs e)
         {
             //combobox rest
             Hun_ban_1.SelectedItem = null;
@@ -600,7 +612,6 @@ namespace bp_sys_wpf
             (Front.front.Logo_sur.Source, Front.front.Logo_hun.Source) = (Front.front.Logo_hun.Source, Front.front.Logo_sur.Source);
             (Interlude.interlude.Sur_team_name.Content, Interlude.interlude.Hun_team_name.Content) = (Interlude.interlude.Hun_team_name.Content, Interlude.interlude.Sur_team_name.Content);
             (Interlude.interlude.Sur_logo.Source, Interlude.interlude.Hun_logo.Source) = (Interlude.interlude.Hun_logo.Source, Interlude.interlude.Sur_logo.Source);
-
             if ((string)this.main_state.Content == "求生者")
             {
                 main_state.Content = "监管者";
@@ -611,51 +622,51 @@ namespace bp_sys_wpf
                 Front.front.Sur_2_team.Content = Away_team_name.Text;
                 Front.front.Sur_3_team.Content = Away_team_name.Text;
                 Front.front.Sur_4_team.Content = Away_team_name.Text;
-                bool flag = true;
+                int flag1=1, flag2=1, flag3=1, flag4=1, flag5=1;
                 for (int i = 0, j = 1; i < 6; i++)
                 {
                     if (away_team_player_state[i] == true)
                     {
-                        flag = false;
                         switch (j)
                         {
                             case 1:
                                 Now_sur_player_1.Text = away_team_player_list[i];
                                 j++;
+                                flag1 = 0;
                                 break;
                             case 2:
                                 Now_sur_player_2.Text = away_team_player_list[i];
                                 j++;
+                                flag2 = 0;
                                 break;
                             case 3:
                                 Now_sur_player_3.Text = away_team_player_list[i];
                                 j++;
+                                flag3 = 0;
                                 break;
                             case 4:
                                 Now_sur_player_4.Text = away_team_player_list[i];
                                 j++;
+                                flag4 = 0;
                                 break;
                         }
                     }
                 }
-                if(flag == true) {
-                    Now_sur_player_1.Text = null;
-                    Now_sur_player_2.Text = null;
-                    Now_sur_player_3.Text = null;
-                    Now_sur_player_4.Text = null;
-                }
-                flag = true;
+                if (flag1 == 1) Now_sur_player_1.Text = null;
+                if (flag2 == 1) Now_sur_player_2.Text = null;
+                if (flag3 == 1) Now_sur_player_3.Text = null;
+                if (flag4 == 1) Now_sur_player_4.Text = null;
                 if (main_team_player_state[6] == true)
                 {
                     Now_hun_player.Text = main_team_player_list[6];
-                    flag = false;
+                    flag5 = 0;
                 }
                 if (main_team_player_state[7] == true)
                 {
                     Now_hun_player.Text = main_team_player_list[7];
-                    flag = false;
+                    flag5 = 0;
                 }
-                if (flag == true) Now_hun_player.Text = null;
+                if (flag5 == 1) Now_hun_player.Text = null;
             }
             else
             {

@@ -114,7 +114,7 @@
             </GroupBox>
             <StackPanel Grid.Row="0" Orientation="Vertical" Margin="10,0,0,0" VerticalAlignment="Bottom">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button x:Name="Reset" Content="重置" Height="30" Width="70" Margin="0,0,0,0" Click="Reset_for_a_game_Click"/>
+                    <Button x:Name="Reset" Content="重置" Height="30" Width="70" Margin="0,0,0,0" Click="Reset_Click"/>
                 </StackPanel>
                 <GroupBox Header="计时器" Margin="0,10,0,0" Height="110">
                     <Grid>

@@ -11,24 +11,24 @@
             <ImageBrush ImageSource="/gui/background.png"/>
         </Grid.Background>
         <Image x:Name="Bottom" Source="/gui/bottom.png" Panel.ZIndex="3" Height="810" Width="1440"/>
-        <Image x:Name="Sur_1" Grid.Row="0" Source="/pic/surBig/null.png" Height="650" Width="300" Stretch="UniformToFill" Panel.ZIndex="2" Margin="10,153,1130,24"/>
-        <Image x:Name="Sur_2" Grid.Row="0" Source="/pic/surBig/null.png" Height="650" Width="300" Stretch="UniformToFill" Panel.ZIndex="1" Margin="270,130,870,47"/>
-        <Image x:Name="Sur_3" Grid.Row="0" Source="/pic/surBig/null.png" Height="650" Width="300" Stretch="UniformToFill" Panel.ZIndex="1" Margin="1130,114,10,63"/>
-        <Image x:Name="Sur_4" Grid.Row="0" Source="/pic/surBig/null.png" Height="650" Width="300" Stretch="UniformToFill" Panel.ZIndex="2" Margin="887,130,253,47"/>
-        <Image x:Name="Hun" Grid.Row="0" Source="/pic/hunBig/null.png" Height="700" Width="460" Panel.ZIndex="0" Margin="490,10,490,117" Stretch="UniformToFill"/>
+        <Image x:Name="Sur_1" Grid.Row="0" Height="650" Width="300" Stretch="UniformToFill" Panel.ZIndex="2" Margin="10,153,1130,24"/>
+        <Image x:Name="Sur_2" Grid.Row="0" Height="650" Width="300" Stretch="UniformToFill" Panel.ZIndex="1" Margin="270,130,870,47"/>
+        <Image x:Name="Sur_3" Grid.Row="0" Height="650" Width="300" Stretch="UniformToFill" Panel.ZIndex="1" Margin="1130,114,10,63"/>
+        <Image x:Name="Sur_4" Grid.Row="0" Height="650" Width="300" Stretch="UniformToFill" Panel.ZIndex="2" Margin="887,130,253,47"/>
+        <Image x:Name="Hun" Grid.Row="0" Height="700" Width="460" Panel.ZIndex="0" Margin="490,10,490,117" Stretch="UniformToFill"/>
         <Grid Panel.ZIndex="4">
-            <Image x:Name="Sur_logo" Source="/YS.png" Height="140" Width="140" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="70,0,0,11" />
-            <Label x:Name="Sur_team_name" Content="YS" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="48" Margin="369,0,0,53" FontWeight="Bold" HorizontalContentAlignment="Center"/>
-            <Image x:Name="Hun_logo" Source="/WBG.png" Height="140" Width="140" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,70,11" />
-            <Label x:Name="Hun_team_name" Content="WBG" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="48" Margin="0,0,366,53" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+            <Image x:Name="Sur_logo" Height="140" Width="140" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="70,0,0,11" />
+            <Label x:Name="Sur_team_name" Content="" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="48" Margin="369,0,0,53" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+            <Image x:Name="Hun_logo" Height="140" Width="140" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,70,11" />
+            <Label x:Name="Hun_team_name" Content="" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="48" Margin="0,0,366,53" FontWeight="Bold" HorizontalContentAlignment="Center"/>
         </Grid>
         <Grid Panel.ZIndex="4">
             <Image Source="/gui/name.png" Margin="0,-10,0,10"/>
-            <Label x:Name="Sur_1_player_name" Content="YS__lion" FontSize="20" Panel.ZIndex="5" Width="160" Height="40" Margin="109,472,1171,298"  HorizontalContentAlignment="Center" FontWeight="Bold"/>
-            <Label x:Name="Sur_2_player_name" Content="YS__Tea" FontSize="20" Panel.ZIndex="5" Width="160" Height="40" Margin="373,519,907,251"  HorizontalContentAlignment="Center" FontWeight="Bold"/>
-            <Label x:Name="Sur_3_player_name" Content="YS__h1gher" FontSize="20" Panel.ZIndex="5" Width="160" Height="40" Margin="944,519,336,251"  HorizontalContentAlignment="Center" FontWeight="Bold"/>
-            <Label x:Name="Sur_4_player_name" Content="YS__XingChen" FontSize="20" Panel.ZIndex="5" Width="160" Height="40" Margin="1170,472,110,298"  HorizontalContentAlignment="Center" FontWeight="Bold"/>
-            <Label x:Name="Hun_player_name" Content="WBG__Alex" FontSize="20" Panel.ZIndex="5" Width="160" Height="40" Margin="662,409,618,361"  HorizontalContentAlignment="Center" FontWeight="Bold"/>
+            <Label x:Name="Sur_1_player_name" Content="" FontSize="20" Panel.ZIndex="5" Width="160" Height="40" Margin="109,472,1171,298"  HorizontalContentAlignment="Center" FontWeight="Bold"/>
+            <Label x:Name="Sur_2_player_name" Content="" FontSize="20" Panel.ZIndex="5" Width="160" Height="40" Margin="373,519,907,251"  HorizontalContentAlignment="Center" FontWeight="Bold"/>
+            <Label x:Name="Sur_3_player_name" Content="" FontSize="20" Panel.ZIndex="5" Width="160" Height="40" Margin="944,519,336,251"  HorizontalContentAlignment="Center" FontWeight="Bold"/>
+            <Label x:Name="Sur_4_player_name" Content="" FontSize="20" Panel.ZIndex="5" Width="160" Height="40" Margin="1170,472,110,298"  HorizontalContentAlignment="Center" FontWeight="Bold"/>
+            <Label x:Name="Hun_player_name" Content="" FontSize="20" Panel.ZIndex="5" Width="160" Height="40" Margin="662,409,618,361"  HorizontalContentAlignment="Center" FontWeight="Bold"/>
         </Grid>
     </Grid>
 </Window>

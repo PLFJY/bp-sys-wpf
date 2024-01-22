@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34322.80
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bp-sys-wpf", "bp-sys-wpf\bp-sys-wpf.csproj", "{DEBD0EB6-C88B-4AF6-93CE-37B8809B3DD8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A2A97BBD-A9E0-49D7-98DC-69D64CE2540D}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DEBD0EB6-C88B-4AF6-93CE-37B8809B3DD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEBD0EB6-C88B-4AF6-93CE-37B8809B3DD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEBD0EB6-C88B-4AF6-93CE-37B8809B3DD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEBD0EB6-C88B-4AF6-93CE-37B8809B3DD8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5E200504-94D5-43C3-B3D5-F040A95E94ED}
+	EndGlobalSection
+EndGlobal

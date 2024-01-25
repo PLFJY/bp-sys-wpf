@@ -5,3 +5,9 @@ dotnet_diagnostic.CS8629.severity = silent
 
 # CS8618: 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
 dotnet_diagnostic.CS8618.severity = silent
+
+# CS8604: 引用类型参数可能为 null。
+dotnet_diagnostic.CS8604.severity = none
+
+# CS8622: 参数类型中引用类型的为 Null 性与目标委托不匹配(可能是由于为 Null 性特性)。
+dotnet_diagnostic.CS8622.severity = none

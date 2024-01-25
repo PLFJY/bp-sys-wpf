@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bp_sys_wpf"
         mc:Ignorable="d"
-        Title="后台" Height="612" Width="1142" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Icon="/icon.png">
+        Title="后台" Height="612" Width="1142" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="190"/>
@@ -127,16 +127,16 @@
                             <Label Content="时间输入(单位:s)"/>
                         </StackPanel>
                         <StackPanel Grid.Row="1" Orientation="Horizontal">
-                            <TextBox Width="100" Height="20"/>
+                            <TextBox x:Name="Countdown_set" Width="100" Height="20" Text="60"/>
                         </StackPanel>
                         <StackPanel Grid.Row="2" Orientation="Horizontal">
-                            <Button Content="启动" Height="20" Width="50"/>
-                            <Button Content="停止" Height="20" Width="50" Margin="10,0,0,0"/>
+                            <Button Content="启动" Height="20" Width="50" Click="Button_Click"/>
+                            <Button Content="停止" Height="20" Width="50" Margin="10,0,0,0" Click="Button_Click_1"/>
                         </StackPanel>
                     </Grid>
                 </GroupBox>
             </StackPanel>
-            <Button Height="30" Width="80" Margin="10,0,0,0" Content="打开比分面板" x:Name="Open_score"/>
+            <Button Height="30" Width="80" Margin="10,0,0,0" Content="打开比分面板" x:Name="Open_score" Click="Open_score_Click"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,18,0,19">
             <GroupBox Header="地图" Height="120" Width="100">

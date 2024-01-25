@@ -1,0 +1,38 @@
+﻿<Window x:Name="Score1" x:Class="bp_sys_wpf.Score"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:bp_sys_wpf"
+        mc:Ignorable="d"
+        Title="比分面板" Height="250" Width="780" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="97"/>
+            <ColumnDefinition Width="88"/>
+            <ColumnDefinition Width="93"/>
+            <ColumnDefinition Width="89"/>
+            <ColumnDefinition Width="348"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" VerticalAlignment="Center">
+            <Button Width="70" Height="40" Content="四跑" x:Name="Escape4"/>
+            <Button Width="70" Height="40" Content="三跑" x:Name="Escape3" Margin="0,25,0,0"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Margin="0,60,0,0" VerticalAlignment="Center">
+            <Button Width="70" Height="40" Content="平局" x:Name="all"/>
+            <Button Width="70" Height="40" Content="大比分结算" x:Name="Settlement" Margin="0,40,0,0"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2" VerticalAlignment="Center" >
+            <Button Width="70" Height="40" Content="四抓" x:Name="Out4"/>
+            <Button Width="70" Height="40" Content="三抓" x:Name="Out3" Margin="0,25,0,0"/>
+        </StackPanel>
+        <StackPanel Grid.Column="3" VerticalAlignment="Center" Margin="0,0,0,40">
+            <Button Width="70" Height="40" Content="总清零" x:Name="Clear"/>
+            <Button Width="70" Height="40" Content="手动面板" x:Name="OpenManual" Margin="0,25,0,0" Click="OpenManual_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Column="4" VerticalAlignment="Center">
+            <Label Height="40" Content="W:0 D:0 L:0 小比分:0 总小比分:0" x:Name="MainTeamScore"/>
+            <Label Height="40" Content="W:0 D:0 L:0 小比分:0 总小比分:0" x:Name="AwayTeamScore"/>
+        </StackPanel>
+    </Grid>
+</Window>

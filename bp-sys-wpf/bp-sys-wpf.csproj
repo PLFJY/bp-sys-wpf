@@ -7,6 +7,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -352,14 +353,18 @@
     <None Remove="pic\sur\zjyy杂技演员.png" />
     <None Remove="pic\sur\zqj作曲家.png" />
     <None Remove="pic\sur\zss咒术师.png" />
-    <None Remove="WBG.png" />
     <None Remove="YS.png" />
     <None Remove="华康POP1体W5.ttf" />
     <None Remove="汉仪第五人格体.ttf" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="icon.png" />
+    <Content Include="icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="华康POP1体W5.ttf" />
+    <Resource Include="汉仪第五人格体.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -682,10 +687,7 @@
     <Resource Include="pic\sur\zjyy杂技演员.png" />
     <Resource Include="pic\sur\zqj作曲家.png" />
     <Resource Include="pic\sur\zss咒术师.png" />
-    <Resource Include="WBG.png" />
     <Resource Include="YS.png" />
-    <Resource Include="华康POP1体W5.ttf" />
-    <Resource Include="汉仪第五人格体.ttf" />
   </ItemGroup>
 
 </Project>

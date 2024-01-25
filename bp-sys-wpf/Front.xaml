@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bp_sys_wpf"
         mc:Ignorable="d"
-        Title="前台" Height="810" Width="1440" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="Lime" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+        Title="前台" Height="810" Width="1440" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="Lime" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <Grid >
         <Grid.Background>
             <ImageBrush ImageSource="/gui/bp.png"/>
@@ -27,15 +27,15 @@
                 <ColumnDefinition Width="203*"/>
                 <ColumnDefinition Width="169*"/>
             </Grid.ColumnDefinitions>
-            <Image x:Name="Logo_sur" Grid.Column="0" Height="90" Width="90" Margin="20,0,0,0" Source="/YS.png"/>
+            <Image x:Name="Logo_sur" Grid.Column="0" Height="90" Width="90" Margin="20,0,0,0"/>
             <Label x:Name="Sur_score_fir" Grid.Column="1" Content="W0 D0 L0" VerticalAlignment="Center" FontSize="20" HorizontalAlignment="Right" Foreground="#FFD3BC88"/>
-            <Label x:Name="Sur_team_name" Grid.Column="2" Content="YS"  VerticalAlignment="Center" FontSize="40" HorizontalAlignment="Center" Foreground="#FFD3BC88" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+            <Label x:Name="Sur_team_name" Grid.Column="2"  VerticalAlignment="Center" FontSize="40" HorizontalAlignment="Center" Foreground="#FFD3BC88" FontWeight="Bold" HorizontalContentAlignment="Center"/>
             <Label x:Name="Sur_score_sec" Grid.Column="3" Content="0" VerticalAlignment="Center" FontSize="80" HorizontalAlignment="Center" Foreground="#FFF9EFD6" FontFamily="DFPOP1W5-B5" HorizontalContentAlignment="Center"/>
             <Label x:Name="timmer" Grid.Column="4" Content="VS" VerticalAlignment="Center" FontSize="70" HorizontalAlignment="Center" Foreground="#FFDAB74F" FontFamily="HYDiWRGJ" HorizontalContentAlignment="Center"/>
             <Label x:Name="Hun_score_sec" Grid.Column="5" Content="0" VerticalAlignment="Center" FontSize="80" HorizontalAlignment="Center" Foreground="#FFF9EFD6" FontFamily="DFPOP1W5-B5" HorizontalContentAlignment="Center"/>
-            <Label x:Name="Hun_team_name" Grid.Column="6" Content="WBG"  VerticalAlignment="Center" FontSize="40" HorizontalAlignment="Center" Foreground="#FFD3BC88" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+            <Label x:Name="Hun_team_name" Grid.Column="6"  VerticalAlignment="Center" FontSize="40" HorizontalAlignment="Center" Foreground="#FFD3BC88" FontWeight="Bold" HorizontalContentAlignment="Center"/>
             <Label x:Name="Hur_score_fir" Grid.Column="7" Content="W0 D0 L0" VerticalAlignment="Center" FontSize="20" HorizontalAlignment="Left" Foreground="#FFD3BC88"/>
-            <Image x:Name="Logo_hun" Grid.Column="8" Height="90" Width="90" Margin="0,0,10,0" Source="/WBG.png"/>
+            <Image x:Name="Logo_hun" Grid.Column="8" Height="90" Width="90" Margin="0,0,10,0"/>
         </Grid>
         <!--比分条-->
         <Grid Grid.Row="2">
@@ -109,20 +109,20 @@
                     <Image x:Name="Hole_ban_5" Height="37" Width="37" Margin="5,0,0,0"/>
                     <Image x:Name="Hole_ban_6" Height="37" Width="37" Margin="6,0,0,0"/>
                 </StackPanel>
-                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,3,0,0" Panel.ZIndex="0">
-                    <Image x:Name="Hole_no_ban_1" Height="37" Width="37" Visibility="Hidden"/>
-                    <Image x:Name="Hole_no_ban_2" Height="37" Width="37" Margin="7,0,0,0" Visibility="Hidden"/>
-                    <Image x:Name="Hole_no_ban_3" Height="37" Width="37" Margin="5,0,0,0" Visibility="Hidden"/>
-                    <Image x:Name="Hole_no_ban_4" Height="37" Width="37" Margin="7,0,0,0" Visibility="Hidden"/>
-                    <Image x:Name="Hole_no_ban_5" Height="37" Width="37" Margin="5,0,0,0" Visibility="Hidden"/>
-                    <Image x:Name="Hole_no_ban_6" Height="37" Width="37" Margin="6,0,0,0" Visibility="Hidden"/>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,3,0,0" Panel.ZIndex="1">
+                    <Image x:Name="Hole_no_ban_1" Height="37" Width="37" Visibility="Hidden" Source="/gui/no_hole_ban.png"/>
+                    <Image x:Name="Hole_no_ban_2" Height="37" Width="37" Margin="7,0,0,0" Visibility="Hidden" Source="/gui/no_hole_ban.png"/>
+                    <Image x:Name="Hole_no_ban_3" Height="37" Width="37" Margin="5,0,0,0" Visibility="Hidden" Source="/gui/no_hole_ban.png"/>
+                    <Image x:Name="Hole_no_ban_4" Height="37" Width="37" Margin="7,0,0,0" Visibility="Hidden" Source="/gui/no_hole_ban.png"/>
+                    <Image x:Name="Hole_no_ban_5" Height="37" Width="37" Margin="5,0,0,0" Visibility="Hidden" Source="/gui/no_hole_ban.png"/>
+                    <Image x:Name="Hole_no_ban_6" Height="37" Width="37" Margin="6,0,0,0" Visibility="Hidden" Source="/gui/no_hole_ban.png"/>
                 </StackPanel>
                 <!--全局ban-->
             </Grid>
             <!--监管Pick-->
             <Grid Grid.Column="6">
                 <Image x:Name="Hun_pick" Height="171" Panel.ZIndex="-1"/>
-                <Label x:Name="Hun_player" Content="WBG__Alex" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10" FontSize="30" />
+                <Label x:Name="Hun_player" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10" FontSize="30" />
             </Grid>
             <!--求生Ban-->
             <Grid Grid.Column="7">

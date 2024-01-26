@@ -15,19 +15,19 @@
             <ColumnDefinition Width="348"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" VerticalAlignment="Center">
-            <Button Width="70" Height="40" Content="四跑" x:Name="Escape4"/>
-            <Button Width="70" Height="40" Content="三跑" x:Name="Escape3" Margin="0,25,0,0"/>
+            <Button Width="70" Height="40" Content="四跑" x:Name="Escape4" Click="Escape4_Click"/>
+            <Button Width="70" Height="40" Content="三跑" x:Name="Escape3" Margin="0,25,0,0" Click="Escape3_Click"/>
         </StackPanel>
         <StackPanel Grid.Column="1" Margin="0,60,0,0" VerticalAlignment="Center">
-            <Button Width="70" Height="40" Content="平局" x:Name="all"/>
-            <Button Width="70" Height="40" Content="大比分结算" x:Name="Settlement" Margin="0,40,0,0"/>
+            <Button Width="70" Height="40" Content="平局" x:Name="All" Click="All_Click"/>
+            <Button Width="70" Height="40" Content="大比分结算" x:Name="Settlement" Margin="0,40,0,0" Click="Settlement_Click"/>
         </StackPanel>
         <StackPanel Grid.Column="2" VerticalAlignment="Center" >
-            <Button Width="70" Height="40" Content="四抓" x:Name="Out4"/>
+            <Button Width="70" Height="40" Content="四抓" x:Name="Out4" Click="Out4_Click"/>
             <Button Width="70" Height="40" Content="三抓" x:Name="Out3" Margin="0,25,0,0"/>
         </StackPanel>
         <StackPanel Grid.Column="3" VerticalAlignment="Center" Margin="0,0,0,40">
-            <Button Width="70" Height="40" Content="总清零" x:Name="Clear"/>
+            <Button Width="70" Height="40" Content="总清零" x:Name="Clear" Click="Clear_Click"/>
             <Button Width="70" Height="40" Content="手动面板" x:Name="OpenManual" Margin="0,25,0,0" Click="OpenManual_Click"/>
         </StackPanel>
         <StackPanel Grid.Column="4" VerticalAlignment="Center">

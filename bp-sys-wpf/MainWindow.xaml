@@ -367,6 +367,7 @@
                             <ComboBoxItem Content="zjyy杂技演员"/>
                             <ComboBoxItem Content="zqj作曲家"/>
                             <ComboBoxItem Content="zss咒术师"/>
+                            <ComboBoxItem Content="mos木偶师"/>
                         </ComboBox>
                         <ComboBox x:Name="Sur_pick_2" Width="100" Height="20" IsEditable="True" Margin="10,0,0,0" MaxDropDownHeight="100" KeyDown="Sur_pick_2_KeyDown">
                             <ComboBoxItem Content="bh病患"/>
@@ -411,6 +412,7 @@
                             <ComboBoxItem Content="zjyy杂技演员"/>
                             <ComboBoxItem Content="zqj作曲家"/>
                             <ComboBoxItem Content="zss咒术师"/>
+                            <ComboBoxItem Content="mos木偶师"/>
                         </ComboBox>
                         <ComboBox x:Name="Sur_pick_3" Width="100" Height="20" IsEditable="True" Margin="10,0,0,0" MaxDropDownHeight="100" KeyDown="Sur_pick_3_KeyDown">
                             <ComboBoxItem Content="bh病患"/>
@@ -455,6 +457,7 @@
                             <ComboBoxItem Content="zjyy杂技演员"/>
                             <ComboBoxItem Content="zqj作曲家"/>
                             <ComboBoxItem Content="zss咒术师"/>
+                            <ComboBoxItem Content="mos木偶师"/>
                         </ComboBox>
                         <ComboBox x:Name="Sur_pick_4" Width="100" Height="20" IsEditable="True" Margin="10,0,0,0" MaxDropDownHeight="100" KeyDown="Sur_pick_4_KeyDown">
                             <ComboBoxItem Content="bh病患"/>
@@ -499,6 +502,7 @@
                             <ComboBoxItem Content="zjyy杂技演员"/>
                             <ComboBoxItem Content="zqj作曲家"/>
                             <ComboBoxItem Content="zss咒术师"/>
+                            <ComboBoxItem Content="mos木偶师"/>
                         </ComboBox>
                     </StackPanel>
                     <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Bottom" Height="60">
@@ -580,6 +584,7 @@
                             <ComboBoxItem Content="zjyy杂技演员"/>
                             <ComboBoxItem Content="zqj作曲家"/>
                             <ComboBoxItem Content="zss咒术师"/>
+                            <ComboBoxItem Content="mos木偶师"/>
                         </ComboBox>
                         <ComboBox Height="20" Width="100" IsEditable="True" Margin="10,0,0,0" x:Name="Sur_ban_2" MaxDropDownHeight="100" KeyDown="Sur_ban_2_KeyDown">
                             <ComboBoxItem Content="bh病患"/>
@@ -624,6 +629,7 @@
                             <ComboBoxItem Content="zjyy杂技演员"/>
                             <ComboBoxItem Content="zqj作曲家"/>
                             <ComboBoxItem Content="zss咒术师"/>
+                            <ComboBoxItem Content="mos木偶师"/>
                         </ComboBox>
                         <ComboBox Height="20" Width="100" IsEditable="True" Margin="10,0,0,0" x:Name="Sur_ban_3" MaxDropDownHeight="100" KeyDown="Sur_ban_3_KeyDown">
                             <ComboBoxItem Content="bh病患"/>
@@ -668,6 +674,7 @@
                             <ComboBoxItem Content="zjyy杂技演员"/>
                             <ComboBoxItem Content="zqj作曲家"/>
                             <ComboBoxItem Content="zss咒术师"/>
+                            <ComboBoxItem Content="mos木偶师"/>
                         </ComboBox>
                         <ComboBox Height="20" Width="100" IsEditable="True" Margin="10,0,0,0" x:Name="Sur_ban_4" MaxDropDownHeight="100" KeyDown="Sur_ban_4_KeyDown">
                             <ComboBoxItem Content="bh病患"/>
@@ -712,6 +719,7 @@
                             <ComboBoxItem Content="zjyy杂技演员"/>
                             <ComboBoxItem Content="zqj作曲家"/>
                             <ComboBoxItem Content="zss咒术师"/>
+                            <ComboBoxItem Content="mos木偶师"/>
                         </ComboBox>
 
                     </StackPanel>
@@ -732,6 +740,7 @@
                     <StackPanel Grid.Row="0" Orientation="Horizontal" Height="20" Margin="0,10,0,0">
                         <ComboBox x:Name="Sur_hole_ban_1" Width="100" Height="20" IsEditable="True" IsEnabled="True" MaxDropDownHeight="100" KeyDown="Sur_hole_ban_1_KeyDown">
                             <ComboBoxItem Content="bh病患"/>
+                            <ComboBoxItem Content="mos木偶师"/>
                             <ComboBoxItem Content="csj慈善家"/>
                             <ComboBoxItem Content="df大副"/>
                             <ComboBoxItem Content="fxj飞行家"/>
@@ -776,6 +785,7 @@
                         </ComboBox>
                         <ComboBox x:Name="Sur_hole_ban_2" Width="100" Height="20" IsEditable="True" Margin="10,0,0,0" IsEnabled="True" MaxDropDownHeight="100" KeyDown="Sur_hole_ban_2_KeyDown">
                             <ComboBoxItem Content="bh病患"/>
+                            <ComboBoxItem Content="mos木偶师"/>
                             <ComboBoxItem Content="csj慈善家"/>
                             <ComboBoxItem Content="df大副"/>
                             <ComboBoxItem Content="fxj飞行家"/>
@@ -820,6 +830,7 @@
                         </ComboBox>
                         <ComboBox x:Name="Sur_hole_ban_3" Width="100" Height="20" IsEditable="True" Margin="10,0,0,0" IsEnabled="True" MaxDropDownHeight="100" KeyDown="Sur_hole_ban_3_KeyDown">
                             <ComboBoxItem Content="bh病患"/>
+                            <ComboBoxItem Content="mos木偶师"/>
                             <ComboBoxItem Content="csj慈善家"/>
                             <ComboBoxItem Content="df大副"/>
                             <ComboBoxItem Content="fxj飞行家"/>
@@ -864,6 +875,7 @@
                         </ComboBox>
                         <ComboBox x:Name="Sur_hole_ban_4" Width="100" Height="20" IsEditable="True" Margin="10,0,0,0" IsEnabled="True" MaxDropDownHeight="100" KeyDown="Sur_hole_ban_4_KeyDown">
                             <ComboBoxItem Content="bh病患"/>
+                            <ComboBoxItem Content="mos木偶师"/>
                             <ComboBoxItem Content="csj慈善家"/>
                             <ComboBoxItem Content="df大副"/>
                             <ComboBoxItem Content="fxj飞行家"/>
@@ -908,6 +920,7 @@
                         </ComboBox>
                         <ComboBox x:Name="Sur_hole_ban_5" Width="100" Height="20" IsEditable="True" Margin="10,0,0,0" IsEnabled="True" MaxDropDownHeight="100" KeyDown="Sur_hole_ban_5_KeyDown">
                             <ComboBoxItem Content="bh病患"/>
+                            <ComboBoxItem Content="mos木偶师"/>
                             <ComboBoxItem Content="csj慈善家"/>
                             <ComboBoxItem Content="df大副"/>
                             <ComboBoxItem Content="fxj飞行家"/>
@@ -952,6 +965,7 @@
                         </ComboBox>
                         <ComboBox x:Name="Sur_hole_ban_6" Width="100" Height="20" IsEditable="True" Margin="10,0,0,0" IsEnabled="True" MaxDropDownHeight="100" KeyDown="Sur_hole_ban_6_KeyDown">
                             <ComboBoxItem Content="bh病患"/>
+                            <ComboBoxItem Content="mos木偶师"/>
                             <ComboBoxItem Content="csj慈善家"/>
                             <ComboBoxItem Content="df大副"/>
                             <ComboBoxItem Content="fxj飞行家"/>

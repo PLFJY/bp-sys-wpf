@@ -25,6 +25,7 @@ namespace bp_sys_wpf
         public string[] main_team_player_list = new string[8], away_team_player_list = new string[8];
         public bool[] main_team_player_state = new bool[8], away_team_player_state = new bool[8];
         public int count_main_sur = 0, count_away_sur = 0, count_main_hun = 0, count_away_hun = 0;
+        public int MainWin = 0, MainLose = 0, MainAll = 0, MainS=0, MainHoleS = 0, AwayWin = 0, AwayLose = 0, AwayAll = 0, AwayS = 0, AwayHoleS = 0;
         private DispatcherTimer dispatcherTimer;
         private int countdownTime;
         private string GetFilePath(string type, string selectedValue)
@@ -327,6 +328,7 @@ namespace bp_sys_wpf
                     Interlude.interlude.Sur_2_player_name.Content = Main_team_name.Text + "__" + Now_sur_player_2;
                     Interlude.interlude.Sur_3_player_name.Content = Main_team_name.Text + "__" + Now_sur_player_3;
                     Interlude.interlude.Sur_4_player_name.Content = Main_team_name.Text + "__" + Now_sur_player_4;
+                    ScoreSur.scoreSur.TeamName.Content = Main_team_name.Text;
                 }
                 else
                 {
@@ -334,6 +336,7 @@ namespace bp_sys_wpf
                     Front.front.Hun_player.Content = Main_team_name.Text + "__" + Now_hun_player.Text;
                     Interlude.interlude.Hun_team_name.Content = Main_team_name.Text;
                     Interlude.interlude.Hun_player_name.Content = Main_team_name.Text + "__" + Now_hun_player.Text;
+                    ScoreHun.scoreHun.TeamName.Content = Main_team_name.Text;
                 }
             }
         }
@@ -354,6 +357,7 @@ namespace bp_sys_wpf
                     Interlude.interlude.Sur_2_player_name.Content = Away_team_name.Text + "__" + Now_sur_player_2;
                     Interlude.interlude.Sur_3_player_name.Content = Away_team_name.Text + "__" + Now_sur_player_3;
                     Interlude.interlude.Sur_4_player_name.Content = Away_team_name.Text + "__" + Now_sur_player_4;
+                    ScoreSur.scoreSur.TeamName.Content = Away_team_name.Text;
                 }
                 else
                 {
@@ -361,6 +365,7 @@ namespace bp_sys_wpf
                     Front.front.Hun_team_name.Content = Away_team_name.Text;
                     Interlude.interlude.Hun_team_name.Content = Away_team_name.Text;
                     Interlude.interlude.Hun_player_name.Content = Away_team_name.Text + "__" + Now_hun_player.Text;
+                    ScoreHun.scoreHun.TeamName.Content = Away_team_name.Text;
                 }
             }
         }
@@ -436,7 +441,7 @@ namespace bp_sys_wpf
         private void DispatcherTimer_Tick(object sender, EventArgs e)
         {
             countdownTime--;
-            if (countdownTime <= 0)
+            if (countdownTime < 0)
             {
                 dispatcherTimer.Stop();
             }
@@ -625,11 +630,13 @@ namespace bp_sys_wpf
                 {
                     Front.front.Logo_sur.Source = new BitmapImage(new Uri(logo));
                     Interlude.interlude.Sur_logo.Source = new BitmapImage(new Uri(logo));
+                    ScoreSur.scoreSur.Logo.Source = new BitmapImage(new Uri(logo));
                 }
                 else
                 {
                     Front.front.Logo_hun.Source = new BitmapImage(new Uri(logo));
                     Interlude.interlude.Hun_logo.Source = new BitmapImage(new Uri(logo));
+                    ScoreHun.scoreHun.Logo.Source = new BitmapImage(new Uri(logo));
                 }
             }
         }
@@ -678,6 +685,7 @@ namespace bp_sys_wpf
             (Front.front.Logo_sur.Source, Front.front.Logo_hun.Source) = (Front.front.Logo_hun.Source, Front.front.Logo_sur.Source);
             (Interlude.interlude.Sur_team_name.Content, Interlude.interlude.Hun_team_name.Content) = (Interlude.interlude.Hun_team_name.Content, Interlude.interlude.Sur_team_name.Content);
             (Interlude.interlude.Sur_logo.Source, Interlude.interlude.Hun_logo.Source) = (Interlude.interlude.Hun_logo.Source, Interlude.interlude.Sur_logo.Source);
+            (ScoreSur.scoreSur.Logo.Source, ScoreHun.scoreHun.Logo.Source) = (ScoreHun.scoreHun.Logo.Source, ScoreSur.scoreSur.Logo.Source);
             if ((string)this.main_state.Content == "求生者")
             {
                 main_state.Content = "监管者";

@@ -1,15 +1,10 @@
 ﻿using Microsoft.Win32;
 using System.Diagnostics;
-using System;
-using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
-using System.Timers;
-using System.Linq;
 
 namespace bp_sys_wpf
 {
@@ -25,7 +20,7 @@ namespace bp_sys_wpf
         public string[] main_team_player_list = new string[8], away_team_player_list = new string[8];
         public bool[] main_team_player_state = new bool[8], away_team_player_state = new bool[8];
         public int count_main_sur = 0, count_away_sur = 0, count_main_hun = 0, count_away_hun = 0;
-        public int MainWin = 0, MainLose = 0, MainAll = 0, MainS=0, MainHoleS = 0, AwayWin = 0, AwayLose = 0, AwayAll = 0, AwayS = 0, AwayHoleS = 0;
+        public int MainWin = 0, MainLose = 0, MainAll = 0, MainS = 0, MainHoleS = 0, AwayWin = 0, AwayLose = 0, AwayAll = 0, AwayS = 0, AwayHoleS = 0;
         private DispatcherTimer dispatcherTimer;
         private int countdownTime;
         private string GetFilePath(string type, string selectedValue)
@@ -405,6 +400,130 @@ namespace bp_sys_wpf
             (Now_sur_player_3.Text, Now_sur_player_1.Text) = (Now_sur_player_1.Text, Now_sur_player_3.Text);
         }
 
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (IsWindowOpen("Front1"))
+            {
+                Front.front.Close();
+            }
+            if (IsWindowOpen("Interlude1"))
+            {
+                Interlude.interlude.Close();
+            }
+            if (IsWindowOpen("ScoreSur1"))
+            {
+                ScoreSur.scoreSur.Close();
+            }
+            if (IsWindowOpen("ScoreHun1"))
+            {
+                ScoreHun.scoreHun.Close();
+            }
+            if (IsWindowOpen("Score1"))
+            {
+                Score.score.Close();
+            }
+            if (IsWindowOpen("MapBp"))
+            {
+                Map_bp.map_bp.Close();
+            }
+        }
+
+        private void Change_sur1_with_sur2_Click(object sender, RoutedEventArgs e)
+        {
+            (Sur_pick_1.Text, Sur_pick_2.Text) = (Sur_pick_2.Text, Sur_pick_1.Text);
+            (Front.front.Sur_pick_1.Source, Front.front.Sur_pick_2.Source) = (Front.front.Sur_pick_2.Source, Front.front.Sur_pick_1.Source);
+            (Interlude.interlude.Sur_1.Source, Interlude.interlude.Sur_2.Source) = (Interlude.interlude.Sur_2.Source, Interlude.interlude.Sur_1.Source);
+            (Sur_pick_1_preview.Source, Sur_pick_2_preview.Source) = (Sur_pick_2_preview.Source, Sur_pick_1_preview.Source);
+        }
+
+        private void Change_sur1_with_sur3_Click(object sender, RoutedEventArgs e)
+        {
+            (Sur_pick_1.Text, Sur_pick_3.Text) = (Sur_pick_3.Text, Sur_pick_1.Text);
+            (Front.front.Sur_pick_1.Source, Front.front.Sur_pick_3.Source) = (Front.front.Sur_pick_3.Source, Front.front.Sur_pick_1.Source);
+            (Interlude.interlude.Sur_1.Source, Interlude.interlude.Sur_3.Source) = (Interlude.interlude.Sur_3.Source, Interlude.interlude.Sur_1.Source);
+            (Sur_pick_1_preview.Source, Sur_pick_3_preview.Source) = (Sur_pick_3_preview.Source, Sur_pick_1_preview.Source);
+        }
+
+        private void Change_sur1_with_sur4_Click(object sender, RoutedEventArgs e)
+        {
+            (Sur_pick_1.Text, Sur_pick_4.Text) = (Sur_pick_4.Text, Sur_pick_1.Text);
+            (Front.front.Sur_pick_1.Source, Front.front.Sur_pick_4.Source) = (Front.front.Sur_pick_4.Source, Front.front.Sur_pick_1.Source);
+            (Interlude.interlude.Sur_1.Source, Interlude.interlude.Sur_4.Source) = (Interlude.interlude.Sur_4.Source, Interlude.interlude.Sur_1.Source);
+            (Sur_pick_1_preview.Source, Sur_pick_4_preview.Source) = (Sur_pick_4_preview.Source, Sur_pick_1_preview.Source);
+        }
+
+        private void Change_sur2_with_sur1_Click(object sender, RoutedEventArgs e)
+        {
+            (Sur_pick_1.Text, Sur_pick_2.Text) = (Sur_pick_2.Text, Sur_pick_1.Text);
+            (Front.front.Sur_pick_1.Source, Front.front.Sur_pick_2.Source) = (Front.front.Sur_pick_2.Source, Front.front.Sur_pick_1.Source);
+            (Interlude.interlude.Sur_1.Source, Interlude.interlude.Sur_2.Source) = (Interlude.interlude.Sur_2.Source, Interlude.interlude.Sur_1.Source);
+            (Sur_pick_1_preview.Source, Sur_pick_2_preview.Source) = (Sur_pick_2_preview.Source, Sur_pick_1_preview.Source);
+        }
+
+        private void Change_sur2_with_sur3_Click(object sender, RoutedEventArgs e)
+        {
+            (Sur_pick_3.Text, Sur_pick_2.Text) = (Sur_pick_2.Text, Sur_pick_3.Text);
+            (Front.front.Sur_pick_3.Source, Front.front.Sur_pick_2.Source) = (Front.front.Sur_pick_2.Source, Front.front.Sur_pick_3.Source);
+            (Interlude.interlude.Sur_3.Source, Interlude.interlude.Sur_2.Source) = (Interlude.interlude.Sur_2.Source, Interlude.interlude.Sur_3.Source);
+            (Sur_pick_3_preview.Source, Sur_pick_2_preview.Source) = (Sur_pick_2_preview.Source, Sur_pick_3_preview.Source);
+        }
+
+        private void Change_sur2_with_sur4_Click(object sender, RoutedEventArgs e)
+        {
+            (Sur_pick_4.Text, Sur_pick_2.Text) = (Sur_pick_2.Text, Sur_pick_4.Text);
+            (Front.front.Sur_pick_4.Source, Front.front.Sur_pick_2.Source) = (Front.front.Sur_pick_2.Source, Front.front.Sur_pick_4.Source);
+            (Interlude.interlude.Sur_4.Source, Interlude.interlude.Sur_2.Source) = (Interlude.interlude.Sur_2.Source, Interlude.interlude.Sur_4.Source);
+            (Sur_pick_4_preview.Source, Sur_pick_2_preview.Source) = (Sur_pick_2_preview.Source, Sur_pick_4_preview.Source);
+        }
+
+        private void Change_sur3_with_sur1_Click(object sender, RoutedEventArgs e)
+        {
+            (Sur_pick_1.Text, Sur_pick_3.Text) = (Sur_pick_3.Text, Sur_pick_1.Text);
+            (Front.front.Sur_pick_1.Source, Front.front.Sur_pick_3.Source) = (Front.front.Sur_pick_3.Source, Front.front.Sur_pick_1.Source);
+            (Interlude.interlude.Sur_1.Source, Interlude.interlude.Sur_3.Source) = (Interlude.interlude.Sur_3.Source, Interlude.interlude.Sur_1.Source);
+            (Sur_pick_1_preview.Source, Sur_pick_3_preview.Source) = (Sur_pick_3_preview.Source, Sur_pick_1_preview.Source);
+        }
+
+        private void Change_sur3_with_sur2_Click(object sender, RoutedEventArgs e)
+        {
+            (Sur_pick_2.Text, Sur_pick_3.Text) = (Sur_pick_3.Text, Sur_pick_2.Text);
+            (Front.front.Sur_pick_2.Source, Front.front.Sur_pick_3.Source) = (Front.front.Sur_pick_3.Source, Front.front.Sur_pick_2.Source);
+            (Interlude.interlude.Sur_2.Source, Interlude.interlude.Sur_3.Source) = (Interlude.interlude.Sur_3.Source, Interlude.interlude.Sur_2.Source);
+            (Sur_pick_2_preview.Source, Sur_pick_3_preview.Source) = (Sur_pick_3_preview.Source, Sur_pick_2_preview.Source);
+        }
+
+        private void Change_sur3_with_sur4_Click(object sender, RoutedEventArgs e)
+        {
+            (Sur_pick_4.Text, Sur_pick_3.Text) = (Sur_pick_3.Text, Sur_pick_4.Text);
+            (Front.front.Sur_pick_4.Source, Front.front.Sur_pick_3.Source) = (Front.front.Sur_pick_3.Source, Front.front.Sur_pick_4.Source);
+            (Interlude.interlude.Sur_4.Source, Interlude.interlude.Sur_3.Source) = (Interlude.interlude.Sur_3.Source, Interlude.interlude.Sur_4.Source);
+            (Sur_pick_4_preview.Source, Sur_pick_3_preview.Source) = (Sur_pick_3_preview.Source, Sur_pick_4_preview.Source);
+        }
+
+        private void Change_sur4_with_sur1_Click(object sender, RoutedEventArgs e)
+        {
+            (Sur_pick_4.Text, Sur_pick_1.Text) = (Sur_pick_1.Text, Sur_pick_4.Text);
+            (Front.front.Sur_pick_4.Source, Front.front.Sur_pick_1.Source) = (Front.front.Sur_pick_1.Source, Front.front.Sur_pick_4.Source);
+            (Interlude.interlude.Sur_4.Source, Interlude.interlude.Sur_1.Source) = (Interlude.interlude.Sur_1.Source, Interlude.interlude.Sur_4.Source);
+            (Sur_pick_1_preview.Source, Sur_pick_4_preview.Source) = (Sur_pick_4_preview.Source, Sur_pick_1_preview.Source);
+        }
+
+        private void Change_sur4_with_sur2_Click(object sender, RoutedEventArgs e)
+        {
+            (Sur_pick_4.Text, Sur_pick_2.Text) = (Sur_pick_2.Text, Sur_pick_4.Text);
+            (Front.front.Sur_pick_4.Source, Front.front.Sur_pick_2.Source) = (Front.front.Sur_pick_2.Source, Front.front.Sur_pick_4.Source);
+            (Interlude.interlude.Sur_4.Source, Interlude.interlude.Sur_2.Source) = (Interlude.interlude.Sur_2.Source, Interlude.interlude.Sur_4.Source);
+            (Sur_pick_2_preview.Source, Sur_pick_4_preview.Source) = (Sur_pick_4_preview.Source, Sur_pick_2_preview.Source);
+        }
+
+        private void Change_sur4_with_sur3_Click(object sender, RoutedEventArgs e)
+        {
+            (Sur_pick_4.Text, Sur_pick_3.Text) = (Sur_pick_3.Text, Sur_pick_4.Text);
+            (Front.front.Sur_pick_4.Source, Front.front.Sur_pick_3.Source) = (Front.front.Sur_pick_3.Source, Front.front.Sur_pick_4.Source);
+            (Interlude.interlude.Sur_4.Source, Interlude.interlude.Sur_3.Source) = (Interlude.interlude.Sur_3.Source, Interlude.interlude.Sur_4.Source);
+            (Sur_pick_3_preview.Source, Sur_pick_4_preview.Source) = (Sur_pick_4_preview.Source, Sur_pick_3_preview.Source);
+        }
+
         private void Swap_sur_player3_with_player2_Click(object sender, RoutedEventArgs e)
         {
             (Now_sur_player_3.Text, Now_sur_player_2.Text) = (Now_sur_player_2.Text, Now_sur_player_3.Text);
@@ -463,20 +582,24 @@ namespace bp_sys_wpf
 
         private void Open_score_Click(object sender, RoutedEventArgs e)
         {
-            if (!IsWindowOpen("Score1"))
-            {
-                Score score = new Score();
-                score.Show();
-            }
             if (!IsWindowOpen("ScoreSur1"))
             {
                 ScoreSur scoreSur = new ScoreSur();
                 scoreSur.Show();
             }
+            else
+            {
+                Score.score.Activate();
+            }
             if (!IsWindowOpen("ScoreHun1"))
             {
                 ScoreHun scoreHun = new ScoreHun();
                 scoreHun.Show();
+            }
+            if (!IsWindowOpen("Score1"))
+            {
+                Score score = new Score();
+                score.Show();
             }
         }
 
@@ -590,20 +713,21 @@ namespace bp_sys_wpf
         {
             InitializeComponent();
             mainWindow = this;
-            for (int i = 0; i < 8; i++)
-            {
-                main_team_player_state[i] = false;
-                away_team_player_state[i] = false;
-            }
             Front front = new Front();
             front.Show();
             Interlude interlude = new Interlude();
             interlude.Show();
             Map_bp map_Bp = new Map_bp();
             map_Bp.Show();
+            for (int i = 0; i < 8; i++)
+            {
+                main_team_player_state[i] = false;
+                away_team_player_state[i] = false;
+            }
             dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             dispatcherTimer.Interval = TimeSpan.FromSeconds(1);
             dispatcherTimer.Tick += new EventHandler(DispatcherTimer_Tick);
+            this.Activate();
         }
         public string OpenImageFileDialog()//打开通用对话框选取图片
         {
@@ -798,6 +922,9 @@ namespace bp_sys_wpf
                 }
                 if (flag5 == 1) Now_hun_player.Text = null;
             }
+            Score.score.FrontScoreRefresh();
+            Score.score.ScoreCtrWindowRefresh();
+            Score.score.ScoreWindowRefresh();
         }
     }
 }

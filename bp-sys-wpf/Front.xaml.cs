@@ -12,6 +12,7 @@ namespace bp_sys_wpf
         {
             InitializeComponent();
             front = this;
+            MainWindow.mainWindow.Activate();
         }
 
         private void Window_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)

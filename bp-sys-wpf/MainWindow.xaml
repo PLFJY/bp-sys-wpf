@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bp_sys_wpf"
         mc:Ignorable="d"
-        Title="后台" Height="612" Width="1142" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+        Title="后台" Height="612" Width="1142" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="190"/>
@@ -517,21 +517,21 @@
             <Button x:Name="Ban_count_amount" Content="Ban位数量设定" Height="30" Width="90" Margin="10,0,10,0" VerticalAlignment="Bottom" Click="Ban_count_amount_Click"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal" Height="20" Margin="590,0,0,0" VerticalAlignment="Top">
-            <Button x:Name="Change_sur1_with_sur2" Height="20" Width="20" Content="2"/>
-            <Button x:Name="Change_sur1_with_sur3" Height="20" Width="20" Content="3" Margin="10,0,0,0"/>
-            <Button x:Name="Change_sur1_with_sur4" Height="20" Width="20" Content="4" Margin="10,0,0,0"/>
+            <Button x:Name="Change_sur1_with_sur2" Height="20" Width="20" Content="2" Click="Change_sur1_with_sur2_Click"/>
+            <Button x:Name="Change_sur1_with_sur3" Height="20" Width="20" Content="3" Margin="10,0,0,0" Click="Change_sur1_with_sur3_Click"/>
+            <Button x:Name="Change_sur1_with_sur4" Height="20" Width="20" Content="4" Margin="10,0,0,0" Click="Change_sur1_with_sur4_Click"/>
 
-            <Button x:Name="Change_sur2_with_sur1" Height="20" Width="20" Content="1" Margin="30,0,0,0"/>
-            <Button x:Name="Change_sur2_with_sur3" Height="20" Width="20" Content="3" Margin="10,0,0,0"/>
-            <Button x:Name="Change_sur2_with_sur4" Height="20" Width="20" Content="4" Margin="10,0,0,0"/>
+            <Button x:Name="Change_sur2_with_sur1" Height="20" Width="20" Content="1" Margin="30,0,0,0" Click="Change_sur2_with_sur1_Click"/>
+            <Button x:Name="Change_sur2_with_sur3" Height="20" Width="20" Content="3" Margin="10,0,0,0" Click="Change_sur2_with_sur3_Click"/>
+            <Button x:Name="Change_sur2_with_sur4" Height="20" Width="20" Content="4" Margin="10,0,0,0" Click="Change_sur2_with_sur4_Click"/>
 
-            <Button x:Name="Change_sur3_with_sur1" Height="20" Width="20" Content="1" Margin="30,0,0,0"/>
-            <Button x:Name="Change_sur3_with_sur2" Height="20" Width="20" Content="2" Margin="10,0,0,0"/>
-            <Button x:Name="Change_sur3_with_sur4" Height="20" Width="20" Content="4" Margin="10,0,0,0"/>
+            <Button x:Name="Change_sur3_with_sur1" Height="20" Width="20" Content="1" Margin="30,0,0,0" Click="Change_sur3_with_sur1_Click"/>
+            <Button x:Name="Change_sur3_with_sur2" Height="20" Width="20" Content="2" Margin="10,0,0,0" Click="Change_sur3_with_sur2_Click"/>
+            <Button x:Name="Change_sur3_with_sur4" Height="20" Width="20" Content="4" Margin="10,0,0,0" Click="Change_sur3_with_sur4_Click"/>
 
-            <Button x:Name="Change_sur4_with_sur1" Height="20" Width="20" Content="1" Margin="30,0,0,0"/>
-            <Button x:Name="Change_sur4_with_sur2" Height="20" Width="20" Content="2" Margin="10,0,0,0"/>
-            <Button x:Name="Change_sur4_with_sur3" Height="20" Width="20" Content="3" Margin="10,0,0,0"/>
+            <Button x:Name="Change_sur4_with_sur1" Height="20" Width="20" Content="1" Margin="30,0,0,0" Click="Change_sur4_with_sur1_Click"/>
+            <Button x:Name="Change_sur4_with_sur2" Height="20" Width="20" Content="2" Margin="10,0,0,0" Click="Change_sur4_with_sur2_Click"/>
+            <Button x:Name="Change_sur4_with_sur3" Height="20" Width="20" Content="3" Margin="10,0,0,0" Click="Change_sur4_with_sur3_Click"/>
         </StackPanel>
         <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,15,0,15">
             <GroupBox Header="Ban求生者" Margin="0,0,0,0">

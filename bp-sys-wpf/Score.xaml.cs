@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace bp_sys_wpf
 {
@@ -25,29 +13,69 @@ namespace bp_sys_wpf
             InitializeComponent();
             score = this;
         }
-
-        private void OpenManual_Click(object sender, RoutedEventArgs e)
+        public void FrontScoreRefresh()
         {
-            Manual manual = new Manual();
-            manual.ShowDialog();
+            if (MainWindow.mainWindow.main_states == "sur")
+            {
+                Front.front.Sur_scoreS.Content = MainWindow.mainWindow.MainS;
+                Front.front.Sur_score.Content = "W" + MainWindow.mainWindow.MainWin.ToString() + " D" + MainWindow.mainWindow.MainAll.ToString() + " L" + MainWindow.mainWindow.MainLose.ToString();
+                Front.front.Hun_score.Content = "W" + MainWindow.mainWindow.AwayWin.ToString() + " D" + MainWindow.mainWindow.AwayAll.ToString() + " L" + MainWindow.mainWindow.AwayLose.ToString();
+                Front.front.Hun_scoreS.Content = MainWindow.mainWindow.AwayS;
+            }
+            else
+            {
+                Front.front.Hun_scoreS.Content = MainWindow.mainWindow.MainS;
+                Front.front.Hun_score.Content = "W" + MainWindow.mainWindow.MainWin.ToString() + " D" + MainWindow.mainWindow.MainAll.ToString() + " L" + MainWindow.mainWindow.MainLose.ToString();
+                Front.front.Sur_scoreS.Content = MainWindow.mainWindow.AwayS;
+                Front.front.Sur_score.Content = "W" + MainWindow.mainWindow.AwayWin.ToString() + " D" + MainWindow.mainWindow.AwayAll.ToString() + " L" + MainWindow.mainWindow.AwayLose.ToString();
+            }
         }
-
+        public void ScoreWindowRefresh()
+        {
+            if (MainWindow.mainWindow.main_states == "sur")
+            {
+                ScoreSur.scoreSur.Win.Content = MainWindow.mainWindow.MainWin;
+                ScoreSur.scoreSur.All.Content = MainWindow.mainWindow.MainAll;
+                ScoreSur.scoreSur.Lose.Content = MainWindow.mainWindow.MainLose;
+                ScoreSur.scoreSur.S.Content = MainWindow.mainWindow.MainS;
+                ScoreHun.scoreHun.Win.Content = MainWindow.mainWindow.AwayWin;
+                ScoreHun.scoreHun.All.Content = MainWindow.mainWindow.AwayAll;
+                ScoreHun.scoreHun.Lose.Content = MainWindow.mainWindow.AwayLose;
+                ScoreHun.scoreHun.S.Content = MainWindow.mainWindow.AwayS;
+            }
+            else
+            {
+                ScoreHun.scoreHun.Win.Content = MainWindow.mainWindow.MainWin;
+                ScoreHun.scoreHun.All.Content = MainWindow.mainWindow.MainAll;
+                ScoreHun.scoreHun.Lose.Content = MainWindow.mainWindow.MainLose;
+                ScoreHun.scoreHun.S.Content = MainWindow.mainWindow.MainS;
+                ScoreSur.scoreSur.Win.Content = MainWindow.mainWindow.AwayWin;
+                ScoreSur.scoreSur.All.Content = MainWindow.mainWindow.AwayAll;
+                ScoreSur.scoreSur.Lose.Content = MainWindow.mainWindow.AwayLose;
+                ScoreSur.scoreSur.S.Content = MainWindow.mainWindow.AwayS;
+            }
+        }
+        public void ScoreCtrWindowRefresh()
+        {
+            MainTeamScore.Content = MainWindow.mainWindow.Main_team_name.Text + "W:" + MainWindow.mainWindow.MainWin.ToString() + " D:" + MainWindow.mainWindow.MainAll.ToString() + " L: " + MainWindow.mainWindow.MainLose.ToString() + "小比分" + MainWindow.mainWindow.MainS.ToString() + "总小比分" + MainWindow.mainWindow.MainHoleS.ToString();
+            AwayTeamScore.Content = MainWindow.mainWindow.Away_team_name.Text + "W:" + MainWindow.mainWindow.AwayWin.ToString() + " D:" + MainWindow.mainWindow.AwayAll.ToString() + " L: " + MainWindow.mainWindow.AwayLose.ToString() + "小比分" + MainWindow.mainWindow.AwayS.ToString() + "总小比分" + MainWindow.mainWindow.AwayHoleS.ToString();
+        }
         private void Escape4_Click(object sender, RoutedEventArgs e)
         {
             if(MainWindow.mainWindow.main_states == "sur")
             {
                 MainWindow.mainWindow.MainS += 5;
                 MainWindow.mainWindow.MainHoleS += 5;
-                ScoreSur.scoreSur.S.Content = MainWindow.mainWindow.MainS;
-                Front.front.Sur_scoreS.Content = MainWindow.mainWindow.MainS;
             }
             else
             {
                 MainWindow.mainWindow.AwayS += 5;
                 MainWindow.mainWindow.AwayHoleS += 5;
-                ScoreSur.scoreSur.S.Content = MainWindow.mainWindow.MainS;
-                Front.front.Sur_scoreS.Content = MainWindow.mainWindow.MainS;
+                
             }
+            FrontScoreRefresh();
+            ScoreCtrWindowRefresh();
+            ScoreWindowRefresh();
         }
 
         private void Escape3_Click(object sender, RoutedEventArgs e)
@@ -56,36 +84,31 @@ namespace bp_sys_wpf
             {
                 MainWindow.mainWindow.MainS += 3;
                 MainWindow.mainWindow.MainHoleS += 3;
-                ScoreSur.scoreSur.S.Content = MainWindow.mainWindow.MainS;
-                Front.front.Sur_scoreS.Content = MainWindow.mainWindow.MainS;
                 MainWindow.mainWindow.AwayS += 2;
                 MainWindow.mainWindow.AwayHoleS += 2;
-                ScoreHun.scoreHun.S.Content = MainWindow.mainWindow.MainS;
-                Front.front.Hun_scoreS.Content = MainWindow.mainWindow.MainS;
             }
             else
             {
                 MainWindow.mainWindow.MainS += 2;
                 MainWindow.mainWindow.MainHoleS += 2;
-                ScoreSur.scoreSur.S.Content = MainWindow.mainWindow.MainS;
-                Front.front.Sur_scoreS.Content = MainWindow.mainWindow.MainS;
                 MainWindow.mainWindow.AwayS += 3;
                 MainWindow.mainWindow.AwayHoleS += 3;
-                ScoreHun.scoreHun.S.Content = MainWindow.mainWindow.MainS;
-                Front.front.Hun_scoreS.Content = MainWindow.mainWindow.MainS;
+                
             }
+            FrontScoreRefresh();
+            ScoreCtrWindowRefresh();
+            ScoreWindowRefresh();
         }
 
         private void All_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.mainWindow.MainS += 2;
             MainWindow.mainWindow.MainHoleS += 2;
-            ScoreSur.scoreSur.S.Content = MainWindow.mainWindow.MainS;
-            Front.front.Sur_scoreS.Content = MainWindow.mainWindow.MainS;
             MainWindow.mainWindow.AwayS += 2;
             MainWindow.mainWindow.AwayHoleS += 2;
-            ScoreHun.scoreHun.S.Content = MainWindow.mainWindow.MainS;
-            Front.front.Hun_scoreS.Content = MainWindow.mainWindow.MainS;
+            FrontScoreRefresh();
+            ScoreCtrWindowRefresh();
+            ScoreWindowRefresh();
 
         }
 
@@ -95,16 +118,17 @@ namespace bp_sys_wpf
             {
                 MainWindow.mainWindow.MainS += 5;
                 MainWindow.mainWindow.MainHoleS += 5;
-                ScoreHun.scoreHun.S.Content = MainWindow.mainWindow.MainS;
-                Front.front.Hun_scoreS.Content = MainWindow.mainWindow.MainS;
+                
             }
             else
             {
                 MainWindow.mainWindow.AwayS += 5;
                 MainWindow.mainWindow.AwayHoleS += 5;
-                ScoreHun.scoreHun.S.Content = MainWindow.mainWindow.MainS;
-                Front.front.Hun_scoreS.Content = MainWindow.mainWindow.MainS;
+                
             }
+            FrontScoreRefresh();
+            ScoreCtrWindowRefresh();
+            ScoreWindowRefresh();
         }
 
         private void Settlement_Click(object sender, RoutedEventArgs e)
@@ -113,16 +137,6 @@ namespace bp_sys_wpf
             {
                 MainWindow.mainWindow.MainAll++;
                 MainWindow.mainWindow.AwayAll++;
-                ScoreSur.scoreSur.All.Content = MainWindow.mainWindow.MainAll;
-                ScoreHun.scoreHun.All.Content = MainWindow.mainWindow.AwayAll;
-                if (MainWindow.mainWindow.main_states == "sur")
-                {
-                    Front.front.Sur_score.Content = "W" + MainWindow.mainWindow.MainWin.ToString() + " D" + MainWindow.mainWindow.MainAll.ToString() + " L" + MainWindow.mainWindow.MainLose.ToString();
-                }
-                else
-                {
-                    Front.front.Hun_score.Content = "W" + MainWindow.mainWindow.MainWin.ToString() + " D" + MainWindow.mainWindow.MainAll.ToString() + " L" + MainWindow.mainWindow.MainLose.ToString();
-                }
             }
             else
             {
@@ -130,43 +144,18 @@ namespace bp_sys_wpf
                 {
                     MainWindow.mainWindow.MainWin++;
                     MainWindow.mainWindow.AwayLose++;
-                    if (MainWindow.mainWindow.main_states == "sur")
-                    {
-                        ScoreSur.scoreSur.Win.Content = MainWindow.mainWindow.MainWin;
-                        ScoreHun.scoreHun.Lose.Content = MainWindow.mainWindow.AwayLose;
-                        Front.front.Sur_score.Content = "W" + MainWindow.mainWindow.MainWin.ToString() + " D" + MainWindow.mainWindow.MainAll.ToString() + " L" + MainWindow.mainWindow.MainLose.ToString();
-                    }
-                    else
-                    {
-                        ScoreSur.scoreSur.Lose.Content = MainWindow.mainWindow.AwayLose;
-                        ScoreHun.scoreHun.Win.Content = MainWindow.mainWindow.MainWin;
-                        Front.front.Hun_score.Content = "W" + MainWindow.mainWindow.MainWin.ToString() + " D" + MainWindow.mainWindow.MainAll.ToString() + " L" + MainWindow.mainWindow.MainLose.ToString();
-                    }
                 }
                 else
                 {
                     MainWindow.mainWindow.AwayWin++;
                     MainWindow.mainWindow.MainLose++;
-                    if (MainWindow.mainWindow.away_states == "sur")
-                    {
-                        ScoreSur.scoreSur.Win.Content = MainWindow.mainWindow.AwayWin;
-                        ScoreHun.scoreHun.Lose.Content = MainWindow.mainWindow.MainWin;
-                        Front.front.Sur_score.Content = "W" + MainWindow.mainWindow.AwayWin.ToString() + " D" + MainWindow.mainWindow.AwayAll.ToString() + " L" + MainWindow.mainWindow.AwayLose.ToString();
-                    }
-                    else
-                    {
-                        ScoreSur.scoreSur.Win.Content = MainWindow.mainWindow.AwayWin;
-                        ScoreHun.scoreHun.Lose.Content = MainWindow.mainWindow.MainLose;
-                        Front.front.Hun_score.Content = "W" + MainWindow.mainWindow.AwayWin.ToString() + " D" + MainWindow.mainWindow.AwayAll.ToString() + " L" + MainWindow.mainWindow.AwayLose.ToString();
-                    }
                 }
             }
             MainWindow.mainWindow.MainS = 0;
             MainWindow.mainWindow.AwayS = 0;
-            ScoreSur.scoreSur.S.Content = "0";
-            ScoreHun.scoreHun.S.Content = "0";
-            Front.front.Hun_scoreS.Content = "0";
-            Front.front.Sur_scoreS.Content = "0";
+            FrontScoreRefresh();
+            ScoreCtrWindowRefresh();
+            ScoreWindowRefresh();
         }
 
         private void Clear_Click(object sender, RoutedEventArgs e)
@@ -180,19 +169,31 @@ namespace bp_sys_wpf
             MainWindow.mainWindow.AwayAll = 0;
             MainWindow.mainWindow.AwayLose = 0;
             MainWindow.mainWindow.AwayS = 0;
-            //前台界面归零
-            ScoreSur.scoreSur.Win.Content = "0";
-            ScoreSur.scoreSur.Lose.Content = "0";
-            ScoreSur.scoreSur.All.Content = "0";
-            ScoreSur.scoreSur.S.Content = "0";
-            Front.front.Sur_score.Content = "W0 D0 L0";
-            Front.front.Sur_scoreS.Content = "0";
-            ScoreHun.scoreHun.Win.Content = "0";
-            ScoreHun.scoreHun.Lose.Content = "0";
-            ScoreHun.scoreHun.All.Content = "0";
-            ScoreHun.scoreHun.S.Content = "0";
-            Front.front.Hun_score.Content = "W0 D0 L0";
-            Front.front.Hun_scoreS.Content = "0";
+            FrontScoreRefresh();
+            ScoreCtrWindowRefresh();
+            ScoreWindowRefresh();
+        }
+
+        private void Out3_Click(object sender, RoutedEventArgs e)
+        {
+            if (MainWindow.mainWindow.main_states == "sur")
+            {
+                MainWindow.mainWindow.MainS += 2;
+                MainWindow.mainWindow.MainHoleS += 2;
+                MainWindow.mainWindow.AwayS += 3;
+                MainWindow.mainWindow.AwayHoleS += 3;
+            }
+            else
+            {
+                MainWindow.mainWindow.MainS += 3;
+                MainWindow.mainWindow.MainHoleS += 3;
+                MainWindow.mainWindow.AwayS += 2;
+                MainWindow.mainWindow.AwayHoleS += 2;
+
+            }
+            FrontScoreRefresh();
+            ScoreCtrWindowRefresh();
+            ScoreWindowRefresh();
         }
     }
 }

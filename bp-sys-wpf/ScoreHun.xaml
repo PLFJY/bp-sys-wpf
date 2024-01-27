@@ -25,16 +25,16 @@
             <Label Grid.Row="0" Foreground="White" FontSize="54" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" x:Name="TeamName"/>
             <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
                 <StackPanel>
+                    <Label Content="0" Foreground="White" FontFamily="DFPOP1W5-B5" FontSize="48" Margin="10,0,0,0" x:Name="Lose"/>
+                    <Label Content="负" Foreground="White" FontFamily="汉仪第五人格体简" FontSize="45"/>
+                </StackPanel>
+                <StackPanel Margin="30,0,0,0">
                     <Label Content="0" Foreground="White" FontFamily="DFPOP1W5-B5" FontSize="48" Margin="10,0,0,0" x:Name="All"/>
                     <Label Content="平" Foreground="White" FontFamily="汉仪第五人格体简" FontSize="45"/>
                 </StackPanel>
                 <StackPanel Margin="30,0,0,0">
                     <Label Content="0" Foreground="White" FontFamily="DFPOP1W5-B5" FontSize="48" Margin="10,0,0,0" x:Name="Win"/>
                     <Label Content="胜" Foreground="White" FontFamily="汉仪第五人格体简" FontSize="45"/>
-                </StackPanel>
-                <StackPanel Margin="30,0,0,0">
-                    <Label Content="0" Foreground="White" FontFamily="DFPOP1W5-B5" FontSize="48" Margin="10,0,0,0" x:Name="Lose"/>
-                    <Label Content="负" Foreground="White" FontFamily="汉仪第五人格体简" FontSize="45"/>
                 </StackPanel>
             </StackPanel>
         </Grid>

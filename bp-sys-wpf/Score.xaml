@@ -24,11 +24,10 @@
         </StackPanel>
         <StackPanel Grid.Column="2" VerticalAlignment="Center" >
             <Button Width="70" Height="40" Content="四抓" x:Name="Out4" Click="Out4_Click"/>
-            <Button Width="70" Height="40" Content="三抓" x:Name="Out3" Margin="0,25,0,0"/>
+            <Button Width="70" Height="40" Content="三抓" x:Name="Out3" Margin="0,25,0,0" Click="Out3_Click"/>
         </StackPanel>
         <StackPanel Grid.Column="3" VerticalAlignment="Center" Margin="0,0,0,40">
             <Button Width="70" Height="40" Content="总清零" x:Name="Clear" Click="Clear_Click"/>
-            <Button Width="70" Height="40" Content="手动面板" x:Name="OpenManual" Margin="0,25,0,0" Click="OpenManual_Click"/>
         </StackPanel>
         <StackPanel Grid.Column="4" VerticalAlignment="Center">
             <Label Height="40" Content="W:0 D:0 L:0 小比分:0 总小比分:0" x:Name="MainTeamScore"/>

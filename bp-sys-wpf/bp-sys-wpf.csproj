@@ -357,7 +357,6 @@
     <None Remove="pic\sur\zjyy杂技演员.png" />
     <None Remove="pic\sur\zqj作曲家.png" />
     <None Remove="pic\sur\zss咒术师.png" />
-    <None Remove="YS.png" />
     <None Remove="华康POP1体W5.ttf" />
     <None Remove="汉仪第五人格体.ttf" />
   </ItemGroup>
@@ -1315,7 +1314,6 @@
     <Resource Include="pic\sur\zss咒术师.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="YS.png" />
   </ItemGroup>
 
 </Project>

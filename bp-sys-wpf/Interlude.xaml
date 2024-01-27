@@ -17,9 +17,9 @@
         <Image x:Name="Sur_4" Grid.Row="0" Height="650" Width="300" Stretch="UniformToFill" Panel.ZIndex="1" Margin="1130,114,10,63"/>
         <Image x:Name="Hun" Grid.Row="0" Height="700" Width="460" Panel.ZIndex="0" Margin="490,10,490,117" Stretch="UniformToFill"/>
         <Grid Panel.ZIndex="4">
-            <Image x:Name="Sur_logo" Height="140" Width="140" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="70,0,0,11" />
+            <Image x:Name="Sur_logo" Height="118" Width="118" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="81,0,0,16" />
             <Label x:Name="Sur_team_name" Content="" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="48" Margin="369,0,0,53" FontWeight="Bold" HorizontalContentAlignment="Center"/>
-            <Image x:Name="Hun_logo" Height="140" Width="140" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,70,11" />
+            <Image x:Name="Hun_logo" Height="120" Width="120" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,80,16" />
             <Label x:Name="Hun_team_name" Content="" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="48" Margin="0,0,366,53" FontWeight="Bold" HorizontalContentAlignment="Center"/>
         </Grid>
         <Grid Panel.ZIndex="4">

@@ -12,6 +12,22 @@ namespace bp_sys_wpf
         {
             InitializeComponent();
             score = this;
+            ScoreWindowRefresh();
+            ScoreCtrWindowRefresh();
+            if (MainWindow.mainWindow.main_states == "sur")
+            {
+                ScoreSur.scoreSur.TeamName.Content = MainWindow.mainWindow.Main_team_name.Text;
+                ScoreHun.scoreHun.TeamName.Content = MainWindow.mainWindow.Away_team_name.Text;
+                ScoreSur.scoreSur.Logo.Source = MainWindow.mainWindow.main_team_logo.Source;
+                ScoreHun.scoreHun.Logo.Source = MainWindow.mainWindow.away_team_logo.Source;
+            }
+            else
+            {
+                ScoreSur.scoreSur.TeamName.Content = MainWindow.mainWindow.Away_team_name.Text;
+                ScoreHun.scoreHun.TeamName.Content = MainWindow.mainWindow.Main_team_name.Text;
+                ScoreSur.scoreSur.Logo.Source = MainWindow.mainWindow.away_team_logo.Source;
+                ScoreHun.scoreHun.Logo.Source = MainWindow.mainWindow.main_team_logo.Source;
+            }
         }
         public void FrontScoreRefresh()
         {

@@ -319,11 +319,11 @@ namespace bp_sys_wpf
                     Front.front.Sur_3_team.Content = Main_team_name.Text;
                     Front.front.Sur_4_team.Content = Main_team_name.Text;
                     Interlude.interlude.Sur_team_name.Content = Main_team_name.Text;
-                    Interlude.interlude.Sur_1_player_name.Content = Main_team_name.Text + "__" + Now_sur_player_1;
-                    Interlude.interlude.Sur_2_player_name.Content = Main_team_name.Text + "__" + Now_sur_player_2;
-                    Interlude.interlude.Sur_3_player_name.Content = Main_team_name.Text + "__" + Now_sur_player_3;
-                    Interlude.interlude.Sur_4_player_name.Content = Main_team_name.Text + "__" + Now_sur_player_4;
-                    ScoreSur.scoreSur.TeamName.Content = Main_team_name.Text;
+                    Interlude.interlude.Sur_1_player_name.Content = Main_team_name.Text + "__" + Now_sur_player_1.Text;
+                    Interlude.interlude.Sur_2_player_name.Content = Main_team_name.Text + "__" + Now_sur_player_2.Text;
+                    Interlude.interlude.Sur_3_player_name.Content = Main_team_name.Text + "__" + Now_sur_player_3.Text;
+                    Interlude.interlude.Sur_4_player_name.Content = Main_team_name.Text + "__" + Now_sur_player_4.Text;
+                    if(IsWindowOpen("ScoreSur1")) ScoreSur.scoreSur.TeamName.Content = Main_team_name.Text;
                 }
                 else
                 {
@@ -331,7 +331,7 @@ namespace bp_sys_wpf
                     Front.front.Hun_player.Content = Main_team_name.Text + "__" + Now_hun_player.Text;
                     Interlude.interlude.Hun_team_name.Content = Main_team_name.Text;
                     Interlude.interlude.Hun_player_name.Content = Main_team_name.Text + "__" + Now_hun_player.Text;
-                    ScoreHun.scoreHun.TeamName.Content = Main_team_name.Text;
+                    if (IsWindowOpen("ScoreHun1")) ScoreHun.scoreHun.TeamName.Content = Main_team_name.Text;
                 }
             }
         }
@@ -348,11 +348,11 @@ namespace bp_sys_wpf
                     Front.front.Sur_3_team.Content = Away_team_name.Text;
                     Front.front.Sur_4_team.Content = Away_team_name.Text;
                     Interlude.interlude.Sur_team_name.Content = Away_team_name.Text;
-                    Interlude.interlude.Sur_1_player_name.Content = Away_team_name.Text + "__" + Now_sur_player_1;
-                    Interlude.interlude.Sur_2_player_name.Content = Away_team_name.Text + "__" + Now_sur_player_2;
-                    Interlude.interlude.Sur_3_player_name.Content = Away_team_name.Text + "__" + Now_sur_player_3;
-                    Interlude.interlude.Sur_4_player_name.Content = Away_team_name.Text + "__" + Now_sur_player_4;
-                    ScoreSur.scoreSur.TeamName.Content = Away_team_name.Text;
+                    Interlude.interlude.Sur_1_player_name.Content = Away_team_name.Text + "__" + Now_sur_player_1.Text;
+                    Interlude.interlude.Sur_2_player_name.Content = Away_team_name.Text + "__" + Now_sur_player_2.Text;
+                    Interlude.interlude.Sur_3_player_name.Content = Away_team_name.Text + "__" + Now_sur_player_3.Text;
+                    Interlude.interlude.Sur_4_player_name.Content = Away_team_name.Text + "__" + Now_sur_player_4.Text;
+                    if (IsWindowOpen("ScoreSur1")) ScoreSur.scoreSur.TeamName.Content = Away_team_name.Text;
                 }
                 else
                 {
@@ -360,7 +360,7 @@ namespace bp_sys_wpf
                     Front.front.Hun_team_name.Content = Away_team_name.Text;
                     Interlude.interlude.Hun_team_name.Content = Away_team_name.Text;
                     Interlude.interlude.Hun_player_name.Content = Away_team_name.Text + "__" + Now_hun_player.Text;
-                    ScoreHun.scoreHun.TeamName.Content = Away_team_name.Text;
+                    if (IsWindowOpen("ScoreHun1")) ScoreHun.scoreHun.TeamName.Content = Away_team_name.Text;
                 }
             }
         }
@@ -754,13 +754,13 @@ namespace bp_sys_wpf
                 {
                     Front.front.Logo_sur.Source = new BitmapImage(new Uri(logo));
                     Interlude.interlude.Sur_logo.Source = new BitmapImage(new Uri(logo));
-                    ScoreSur.scoreSur.Logo.Source = new BitmapImage(new Uri(logo));
+                    if (IsWindowOpen("ScoreSur1")) ScoreSur.scoreSur.Logo.Source = new BitmapImage(new Uri(logo));
                 }
                 else
                 {
                     Front.front.Logo_hun.Source = new BitmapImage(new Uri(logo));
                     Interlude.interlude.Hun_logo.Source = new BitmapImage(new Uri(logo));
-                    ScoreHun.scoreHun.Logo.Source = new BitmapImage(new Uri(logo));
+                    if (IsWindowOpen("ScoreHun1")) ScoreHun.scoreHun.Logo.Source = new BitmapImage(new Uri(logo));
                 }
             }
         }
@@ -775,11 +775,13 @@ namespace bp_sys_wpf
                 {
                     Front.front.Logo_hun.Source = new BitmapImage(new Uri(logo));
                     Interlude.interlude.Hun_logo.Source = new BitmapImage(new Uri(logo));
+                    if (IsWindowOpen("ScoreHun1")) ScoreHun.scoreHun.Logo.Source = new BitmapImage(new Uri(logo));
                 }
                 else
                 {
                     Front.front.Logo_sur.Source = new BitmapImage(new Uri(logo));
                     Interlude.interlude.Sur_logo.Source = new BitmapImage(new Uri(logo));
+                    if (IsWindowOpen("ScoreSur1")) ScoreSur.scoreSur.Logo.Source = new BitmapImage(new Uri(logo));
                 }
             }
         }
@@ -809,7 +811,7 @@ namespace bp_sys_wpf
             (Front.front.Logo_sur.Source, Front.front.Logo_hun.Source) = (Front.front.Logo_hun.Source, Front.front.Logo_sur.Source);
             (Interlude.interlude.Sur_team_name.Content, Interlude.interlude.Hun_team_name.Content) = (Interlude.interlude.Hun_team_name.Content, Interlude.interlude.Sur_team_name.Content);
             (Interlude.interlude.Sur_logo.Source, Interlude.interlude.Hun_logo.Source) = (Interlude.interlude.Hun_logo.Source, Interlude.interlude.Sur_logo.Source);
-            (ScoreSur.scoreSur.Logo.Source, ScoreHun.scoreHun.Logo.Source) = (ScoreHun.scoreHun.Logo.Source, ScoreSur.scoreSur.Logo.Source);
+            if(IsWindowOpen("Score1")) (ScoreSur.scoreSur.Logo.Source, ScoreHun.scoreHun.Logo.Source) = (ScoreHun.scoreHun.Logo.Source, ScoreSur.scoreSur.Logo.Source);
             if ((string)this.main_state.Content == "求生者")
             {
                 main_state.Content = "监管者";
@@ -922,9 +924,9 @@ namespace bp_sys_wpf
                 }
                 if (flag5 == 1) Now_hun_player.Text = null;
             }
-            Score.score.FrontScoreRefresh();
-            Score.score.ScoreCtrWindowRefresh();
-            Score.score.ScoreWindowRefresh();
+            if (IsWindowOpen("Score1")) Score.score.FrontScoreRefresh();
+            if (IsWindowOpen("Score1")) Score.score.ScoreCtrWindowRefresh();
+            if (IsWindowOpen("Score1")) Score.score.ScoreWindowRefresh();
         }
     }
 }

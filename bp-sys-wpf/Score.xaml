@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bp_sys_wpf"
         mc:Ignorable="d"
-        Title="比分面板" Height="250" Width="780" WindowStartupLocation="CenterScreen">
+        Title="比分面板" Height="250" Width="780" WindowStartupLocation="CenterScreen" Closing="Score1_Closing">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="97"/>

@@ -136,7 +136,7 @@
                     </Grid>
                 </GroupBox>
             </StackPanel>
-            <Button Height="30" Width="80" Margin="10,0,0,0" Content="打开比分面板" x:Name="Open_score" Click="Open_score_Click"/>
+            <Button Height="30" Width="80" Margin="10,0,0,0" Content="打开比分模块" x:Name="Open_score" Click="Open_score_Click"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,18,0,19">
             <GroupBox Header="地图" Height="120" Width="100">

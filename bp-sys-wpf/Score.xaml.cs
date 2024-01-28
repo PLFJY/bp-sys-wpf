@@ -20,6 +20,14 @@ namespace bp_sys_wpf
                 ScoreHun.scoreHun.TeamName.Content = MainWindow.mainWindow.Away_team_name.Text;
                 ScoreSur.scoreSur.Logo.Source = MainWindow.mainWindow.main_team_logo.Source;
                 ScoreHun.scoreHun.Logo.Source = MainWindow.mainWindow.away_team_logo.Source;
+                ScoreSur.scoreSur.Win.Content = MainWindow.mainWindow.MainWin.ToString();
+                ScoreSur.scoreSur.All.Content = MainWindow.mainWindow.MainAll.ToString();
+                ScoreSur.scoreSur.Lose.Content = MainWindow.mainWindow.MainLose.ToString();
+                ScoreSur.scoreSur.S.Content = MainWindow.mainWindow.MainS.ToString();
+                ScoreHun.scoreHun.Win.Content = MainWindow.mainWindow.AwayWin.ToString();
+                ScoreHun.scoreHun.All.Content = MainWindow.mainWindow.AwayAll.ToString();
+                ScoreHun.scoreHun.Lose.Content = MainWindow.mainWindow.AwayLose.ToString();
+                ScoreHun.scoreHun.S.Content = MainWindow.mainWindow.AwayS.ToString();
             }
             else
             {
@@ -27,6 +35,14 @@ namespace bp_sys_wpf
                 ScoreHun.scoreHun.TeamName.Content = MainWindow.mainWindow.Main_team_name.Text;
                 ScoreSur.scoreSur.Logo.Source = MainWindow.mainWindow.away_team_logo.Source;
                 ScoreHun.scoreHun.Logo.Source = MainWindow.mainWindow.main_team_logo.Source;
+                ScoreHun.scoreHun.Win.Content = MainWindow.mainWindow.MainWin.ToString();
+                ScoreHun.scoreHun.All.Content = MainWindow.mainWindow.MainAll.ToString();
+                ScoreHun.scoreHun.Lose.Content = MainWindow.mainWindow.MainLose.ToString();
+                ScoreHun.scoreHun.S.Content = MainWindow.mainWindow.MainS.ToString();
+                ScoreSur.scoreSur.Win.Content = MainWindow.mainWindow.AwayWin.ToString();
+                ScoreSur.scoreSur.All.Content = MainWindow.mainWindow.AwayAll.ToString();
+                ScoreSur.scoreSur.Lose.Content = MainWindow.mainWindow.AwayLose.ToString();
+                ScoreSur.scoreSur.S.Content = MainWindow.mainWindow.AwayS.ToString();
             }
         }
         public void FrontScoreRefresh()
@@ -210,6 +226,23 @@ namespace bp_sys_wpf
             FrontScoreRefresh();
             ScoreCtrWindowRefresh();
             ScoreWindowRefresh();
+        }
+
+        private void Score1_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (!MainWindow.mainWindow.IsWindowOpen("ScoreHun1"))
+            {
+                ScoreHun.scoreHun.Close();
+            }
+            
+            if (!MainWindow.mainWindow.IsWindowOpen("Score1"))
+            {
+                Score.score.Close();
+            }
+            Front.front.Sur_score.Visibility = Visibility.Hidden;
+            Front.front.Sur_scoreS.Visibility = Visibility.Hidden;
+            Front.front.Hun_score.Visibility = Visibility.Hidden;
+            Front.front.Hun_scoreS.Visibility = Visibility.Hidden;
         }
     }
 }

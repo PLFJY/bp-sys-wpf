@@ -575,7 +575,7 @@ namespace bp_sys_wpf
             dispatcherTimer.Stop();
             Front.front.timmer.Content = "VS";
         }
-        bool IsWindowOpen(string windowName)
+        public bool IsWindowOpen(string windowName)
         {
             return Application.Current.Windows.OfType<Window>().Any(window => window.Name == windowName);
         }
@@ -586,6 +586,10 @@ namespace bp_sys_wpf
             {
                 ScoreSur scoreSur = new ScoreSur();
                 scoreSur.Show();
+                Front.front.Sur_score.Visibility = Visibility.Visible;
+                Front.front.Sur_scoreS.Visibility = Visibility.Visible;
+                Front.front.Hun_score.Visibility = Visibility.Visible;
+                Front.front.Hun_scoreS.Visibility = Visibility.Visible;
             }
             else
             {
@@ -732,7 +736,7 @@ namespace bp_sys_wpf
         public string OpenImageFileDialog()//打开通用对话框选取图片
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Images|*.png;*.jpg"; // 设置过滤器只显示 PNG 和 JPG 文件  
+            openFileDialog.Filter = "图片文件|*.png;*.jpg"; // 设置过滤器只显示 PNG 和 JPG 文件  
             openFileDialog.Multiselect = false; // 设置只能选择一个文件  
 
             if (openFileDialog.ShowDialog() == true)

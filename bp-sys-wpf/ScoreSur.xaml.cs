@@ -1,5 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
+using System.Windows.Media;
 
 namespace bp_sys_wpf
 {
@@ -13,6 +15,7 @@ namespace bp_sys_wpf
         {
             InitializeComponent();
             scoreSur = this;
+            this.Background = new ImageBrush(new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/score_bg_s.png"))));
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)

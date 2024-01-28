@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bp_sys_wpf"
         mc:Ignorable="d"
-        Title="地图禁选" Height="363" Width="528" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="Lime" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        Title="地图禁选" Height="363" Width="528" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown" Background="Lime"
         >
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/gui/map_bp.png"/>
+            <ImageBrush/>
         </Grid.Background>
-        <Image x:Name="pick" Margin="30,157,270,92" Source="/pic/map/null.png" Stretch="Fill" />
-        <Image x:Name="ban" Margin="275,157,31,92" Source="/pic/mapban/null.png" />
+        <Image x:Name="pick" Margin="30,157,270,92" Stretch="Fill" />
+        <Image x:Name="ban" Margin="275,157,31,92" />
     </Grid>
 </Window>

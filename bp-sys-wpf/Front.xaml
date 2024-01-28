@@ -8,7 +8,7 @@
         Title="前台" Height="810" Width="1440" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="Lime" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <Grid >
         <Grid.Background>
-            <ImageBrush ImageSource="/gui/bp.png"/>
+            <ImageBrush/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="109*"/>
@@ -65,9 +65,9 @@
                     <RowDefinition Height="62*"/>
                     <RowDefinition Height="69*"/>
                 </Grid.RowDefinitions>
-                <Image Grid.Row="0" x:Name="Hun_no_ban_1" Source="/gui/no_hun_ban.png" Height="50" Width="50" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Hidden" />
-                <Image Grid.Row="1" x:Name="Hun_no_ban_2" Source="/gui/no_hun_ban.png" Width="50" HorizontalAlignment="Right" Visibility="Hidden"/>
-                <Image Grid.Row="2" x:Name="Hun_no_ban_3" Source="/gui/no_hun_ban.png" Height="50" Width="50" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Hidden" />
+                <Image Grid.Row="0" x:Name="Hun_no_ban_1" Height="50" Width="50" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Hidden" />
+                <Image Grid.Row="1" x:Name="Hun_no_ban_2" Width="50" HorizontalAlignment="Right" Visibility="Hidden"/>
+                <Image Grid.Row="2" x:Name="Hun_no_ban_3" Height="50" Width="50" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Hidden" />
             </Grid>
             <!--监管Ban-->
             <Grid Grid.Column="1">
@@ -110,12 +110,12 @@
                     <Image x:Name="Hole_ban_6" Height="37" Width="37" Margin="6,0,0,0"/>
                 </StackPanel>
                 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,3,0,0" Panel.ZIndex="1">
-                    <Image x:Name="Hole_no_ban_1" Height="37" Width="37" Visibility="Hidden" Source="/gui/no_hole_ban.png"/>
-                    <Image x:Name="Hole_no_ban_2" Height="37" Width="37" Margin="7,0,0,0" Visibility="Hidden" Source="/gui/no_hole_ban.png"/>
-                    <Image x:Name="Hole_no_ban_3" Height="37" Width="37" Margin="5,0,0,0" Visibility="Hidden" Source="/gui/no_hole_ban.png"/>
-                    <Image x:Name="Hole_no_ban_4" Height="37" Width="37" Margin="7,0,0,0" Visibility="Hidden" Source="/gui/no_hole_ban.png"/>
-                    <Image x:Name="Hole_no_ban_5" Height="37" Width="37" Margin="5,0,0,0" Visibility="Hidden" Source="/gui/no_hole_ban.png"/>
-                    <Image x:Name="Hole_no_ban_6" Height="37" Width="37" Margin="6,0,0,0" Visibility="Hidden" Source="/gui/no_hole_ban.png"/>
+                    <Image x:Name="Hole_no_ban_1" Height="37" Width="37" Visibility="Hidden"/>
+                    <Image x:Name="Hole_no_ban_2" Height="37" Width="37" Margin="7,0,0,0" Visibility="Hidden"/>
+                    <Image x:Name="Hole_no_ban_3" Height="37" Width="37" Margin="5,0,0,0" Visibility="Hidden"/>
+                    <Image x:Name="Hole_no_ban_4" Height="37" Width="37" Margin="7,0,0,0" Visibility="Hidden"/>
+                    <Image x:Name="Hole_no_ban_5" Height="37" Width="37" Margin="5,0,0,0" Visibility="Hidden"/>
+                    <Image x:Name="Hole_no_ban_6" Height="37" Width="37" Margin="6,0,0,0" Visibility="Hidden"/>
                 </StackPanel>
                 <!--全局ban-->
             </Grid>

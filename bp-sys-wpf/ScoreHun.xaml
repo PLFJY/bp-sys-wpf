@@ -14,7 +14,7 @@
             <ColumnDefinition Width="239*"/>
         </Grid.ColumnDefinitions>
         <Grid.Background>
-            <ImageBrush ImageSource="/gui/score_bg_h.png"/>
+            <ImageBrush/>
         </Grid.Background>
         <Image Grid.Column="3" Stretch="UniformToFill" Height="170" Width="170" HorizontalAlignment="Left" Margin="66,17,0,9" x:Name="Logo"/>
         <Grid Grid.Column="1">

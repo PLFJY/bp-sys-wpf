@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace bp_sys_wpf
 {
@@ -13,6 +15,16 @@ namespace bp_sys_wpf
             InitializeComponent();
             front = this;
             MainWindow.mainWindow.Activate();
+            this.Background = new ImageBrush(new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/bp.png"))));
+            Hun_no_ban_1.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/no_hun_ban.png")));
+            Hun_no_ban_2.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/no_hun_ban.png")));
+            Hun_no_ban_3.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/no_hun_ban.png")));
+            Hole_no_ban_1.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/no_hole_ban.png")));
+            Hole_no_ban_2.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/no_hole_ban.png")));
+            Hole_no_ban_3.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/no_hole_ban.png")));
+            Hole_no_ban_4.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/no_hole_ban.png")));
+            Hole_no_ban_5.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/no_hole_ban.png")));
+            Hole_no_ban_6.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/no_hole_ban.png")));
         }
 
         private void Window_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)

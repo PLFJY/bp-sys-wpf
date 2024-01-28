@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
+using System.IO;
 
 namespace bp_sys_wpf
 {
@@ -29,7 +30,17 @@ namespace bp_sys_wpf
             int spaceIndex = selectedValue.IndexOf(' ');
             selectedValue = selectedValue.Substring(spaceIndex + 1);
             string file_path = temp + selectedValue + ".png";
-            return file_path;
+            return GetAbsoluteFilePath("pic/" + type + "/" + selectedValue + ".png"); ;
+        }
+        public string GetAbsoluteFilePath(string filePath)
+
+        {
+            // 获取应用程序的运行目录  
+            string appDir = Environment.CurrentDirectory; // 在WPF中可以使用Environment.CurrentDirectory获取当前目录  
+            // 拼接路径获取绝对路径  
+            string absoluteFilePath = Path.Combine(appDir, filePath);
+            return absoluteFilePath;
+
         }
         private void Hun_ban_1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -402,29 +413,12 @@ namespace bp_sys_wpf
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (IsWindowOpen("Front1"))
+            // 弹窗提示是否确定要退出
+            MessageBoxResult result = MessageBox.Show("您确定要退出吗？", null, MessageBoxButton.OKCancel, MessageBoxImage.None, MessageBoxResult.Cancel);
+            System.Console.WriteLine(result);
+            if (result == MessageBoxResult.Cancel)
             {
-                Front.front.Close();
-            }
-            if (IsWindowOpen("Interlude1"))
-            {
-                Interlude.interlude.Close();
-            }
-            if (IsWindowOpen("ScoreSur1"))
-            {
-                ScoreSur.scoreSur.Close();
-            }
-            if (IsWindowOpen("ScoreHun1"))
-            {
-                ScoreHun.scoreHun.Close();
-            }
-            if (IsWindowOpen("Score1"))
-            {
-                Score.score.Close();
-            }
-            if (IsWindowOpen("MapBp"))
-            {
-                Map_bp.map_bp.Close();
+                e.Cancel = true; // 中断点击事件
             }
         }
 
@@ -522,6 +516,34 @@ namespace bp_sys_wpf
             (Front.front.Sur_pick_4.Source, Front.front.Sur_pick_3.Source) = (Front.front.Sur_pick_3.Source, Front.front.Sur_pick_4.Source);
             (Interlude.interlude.Sur_4.Source, Interlude.interlude.Sur_3.Source) = (Interlude.interlude.Sur_3.Source, Interlude.interlude.Sur_4.Source);
             (Sur_pick_3_preview.Source, Sur_pick_4_preview.Source) = (Sur_pick_4_preview.Source, Sur_pick_3_preview.Source);
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            if (IsWindowOpen("Front1"))
+            {
+                Front.front.Close();
+            }
+            if (IsWindowOpen("Interlude1"))
+            {
+                Interlude.interlude.Close();
+            }
+            if (IsWindowOpen("ScoreSur1"))
+            {
+                ScoreSur.scoreSur.Close();
+            }
+            if (IsWindowOpen("ScoreHun1"))
+            {
+                ScoreHun.scoreHun.Close();
+            }
+            if (IsWindowOpen("Score1"))
+            {
+                Score.score.Close();
+            }
+            if (IsWindowOpen("MapBp"))
+            {
+                Map_bp.map_bp.Close();
+            }
         }
 
         private void Swap_sur_player3_with_player2_Click(object sender, RoutedEventArgs e)

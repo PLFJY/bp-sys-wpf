@@ -54,7 +54,6 @@
     <None Remove="pic\sur\null.png" />
     <None Remove="score_bg_h.png" />
     <None Remove="score_bg_s.png" />
-    <None Remove="score_hole.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -78,13 +77,8 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="name.png" />
-    <Resource Include="score_bg_h.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="score_bg_s.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="score_hole.png" />
+    <Resource Include="score_bg_h.png" />
+    <Resource Include="score_bg_s.png" />
   </ItemGroup>
 
   <ItemGroup>

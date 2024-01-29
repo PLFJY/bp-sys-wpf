@@ -322,7 +322,6 @@ namespace bp_sys_wpf
         {
             if (e.Key == Key.Enter)
             {
-                if (MainWindow.mainWindow.IsWindowOpen("ScoreHoleBS1")) ScoreHole.scoreHole.MainTeamName.Content = Main_team_name.Text;
                 if (main_states == "sur")
                 {
                     Front.front.Sur_team_name.Content = Main_team_name.Text;
@@ -336,6 +335,7 @@ namespace bp_sys_wpf
                     Interlude.interlude.Sur_3_player_name.Content = Main_team_name.Text + "__" + Now_sur_player_3.Text;
                     Interlude.interlude.Sur_4_player_name.Content = Main_team_name.Text + "__" + Now_sur_player_4.Text;
                     if(IsWindowOpen("ScoreSur1")) ScoreSur.scoreSur.TeamName.Content = Main_team_name.Text;
+                    if (IsWindowOpen("Score1")) Score.score.ScoreCtrWindowRefresh();
                 }
                 else
                 {
@@ -344,6 +344,7 @@ namespace bp_sys_wpf
                     Interlude.interlude.Hun_team_name.Content = Main_team_name.Text;
                     Interlude.interlude.Hun_player_name.Content = Main_team_name.Text + "__" + Now_hun_player.Text;
                     if (IsWindowOpen("ScoreHun1")) ScoreHun.scoreHun.TeamName.Content = Main_team_name.Text;
+                    if (IsWindowOpen("Score1")) Score.score.ScoreCtrWindowRefresh();
                 }
             }
         }
@@ -352,7 +353,6 @@ namespace bp_sys_wpf
         {
             if (e.Key == Key.Enter)
             {
-                if (MainWindow.mainWindow.IsWindowOpen("ScoreHoleBS1")) ScoreHole.scoreHole.AwayTeamName.Content = Away_team_name.Text;
                 if (away_states == "sur")
                 {
                     Front.front.Sur_team_name.Content = Away_team_name.Text;
@@ -366,6 +366,7 @@ namespace bp_sys_wpf
                     Interlude.interlude.Sur_3_player_name.Content = Away_team_name.Text + "__" + Now_sur_player_3.Text;
                     Interlude.interlude.Sur_4_player_name.Content = Away_team_name.Text + "__" + Now_sur_player_4.Text;
                     if (IsWindowOpen("ScoreSur1")) ScoreSur.scoreSur.TeamName.Content = Away_team_name.Text;
+                    if (IsWindowOpen("Score1")) Score.score.ScoreCtrWindowRefresh();
                 }
                 else
                 {
@@ -374,6 +375,7 @@ namespace bp_sys_wpf
                     Interlude.interlude.Hun_team_name.Content = Away_team_name.Text;
                     Interlude.interlude.Hun_player_name.Content = Away_team_name.Text + "__" + Now_hun_player.Text;
                     if (IsWindowOpen("ScoreHun1")) ScoreHun.scoreHun.TeamName.Content = Away_team_name.Text;
+                    if (IsWindowOpen("Score1")) Score.score.ScoreCtrWindowRefresh();
                 }
             }
         }
@@ -545,14 +547,6 @@ namespace bp_sys_wpf
             if (IsWindowOpen("MapBp"))
             {
                 Map_bp.map_bp.Close();
-            }
-            if (IsWindowOpen("ScoreHole1"))
-            {
-                ScoreHole.scoreHole.Close();
-            }
-            if (IsWindowOpen("ScoreHoleBS1"))
-            {
-                ScoreHoleBS.scoreHoleBS.Close();
             }
         }
 
@@ -786,7 +780,6 @@ namespace bp_sys_wpf
             if (logo != "0")
             {
                 main_team_logo.Source = new BitmapImage(new Uri(logo));
-                if (MainWindow.mainWindow.IsWindowOpen("ScoreHole1")) ScoreHole.scoreHole.MainLogo.Source = new BitmapImage(new Uri(logo));
                 if (main_states == "sur")
                 {
                     Front.front.Logo_sur.Source = new BitmapImage(new Uri(logo));
@@ -808,7 +801,6 @@ namespace bp_sys_wpf
             if (logo != "0")
             {
                 away_team_logo.Source = new BitmapImage(new Uri(logo));
-                if (MainWindow.mainWindow.IsWindowOpen("ScoreHole1")) ScoreHole.scoreHole.AwayLogo.Source = new BitmapImage(new Uri(logo));
                 if (main_states == "sur")
                 {
                     Front.front.Logo_hun.Source = new BitmapImage(new Uri(logo));

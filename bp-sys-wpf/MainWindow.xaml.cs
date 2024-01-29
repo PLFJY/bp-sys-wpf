@@ -322,6 +322,7 @@ namespace bp_sys_wpf
         {
             if (e.Key == Key.Enter)
             {
+                if (MainWindow.mainWindow.IsWindowOpen("ScoreHoleBS1")) ScoreHole.scoreHole.MainTeamName.Content = Main_team_name.Text;
                 if (main_states == "sur")
                 {
                     Front.front.Sur_team_name.Content = Main_team_name.Text;
@@ -351,6 +352,7 @@ namespace bp_sys_wpf
         {
             if (e.Key == Key.Enter)
             {
+                if (MainWindow.mainWindow.IsWindowOpen("ScoreHoleBS1")) ScoreHole.scoreHole.AwayTeamName.Content = Away_team_name.Text;
                 if (away_states == "sur")
                 {
                     Front.front.Sur_team_name.Content = Away_team_name.Text;
@@ -543,6 +545,14 @@ namespace bp_sys_wpf
             if (IsWindowOpen("MapBp"))
             {
                 Map_bp.map_bp.Close();
+            }
+            if (IsWindowOpen("ScoreHole1"))
+            {
+                ScoreHole.scoreHole.Close();
+            }
+            if (IsWindowOpen("ScoreHoleBS1"))
+            {
+                ScoreHoleBS.scoreHoleBS.Close();
             }
         }
 
@@ -776,6 +786,7 @@ namespace bp_sys_wpf
             if (logo != "0")
             {
                 main_team_logo.Source = new BitmapImage(new Uri(logo));
+                if (MainWindow.mainWindow.IsWindowOpen("ScoreHole1")) ScoreHole.scoreHole.MainLogo.Source = new BitmapImage(new Uri(logo));
                 if (main_states == "sur")
                 {
                     Front.front.Logo_sur.Source = new BitmapImage(new Uri(logo));
@@ -797,6 +808,7 @@ namespace bp_sys_wpf
             if (logo != "0")
             {
                 away_team_logo.Source = new BitmapImage(new Uri(logo));
+                if (MainWindow.mainWindow.IsWindowOpen("ScoreHole1")) ScoreHole.scoreHole.AwayLogo.Source = new BitmapImage(new Uri(logo));
                 if (main_states == "sur")
                 {
                     Front.front.Logo_hun.Source = new BitmapImage(new Uri(logo));

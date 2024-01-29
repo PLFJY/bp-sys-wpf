@@ -89,8 +89,8 @@ namespace bp_sys_wpf
         }
         public void ScoreCtrWindowRefresh()
         {
-            MainTeamScore.Content = MainWindow.mainWindow.Main_team_name.Text + "W:" + MainWindow.mainWindow.MainWin.ToString() + " D:" + MainWindow.mainWindow.MainAll.ToString() + " L: " + MainWindow.mainWindow.MainLose.ToString() + "小比分" + MainWindow.mainWindow.MainS.ToString() + "总小比分" + MainWindow.mainWindow.MainHoleS.ToString();
-            AwayTeamScore.Content = MainWindow.mainWindow.Away_team_name.Text + "W:" + MainWindow.mainWindow.AwayWin.ToString() + " D:" + MainWindow.mainWindow.AwayAll.ToString() + " L: " + MainWindow.mainWindow.AwayLose.ToString() + "小比分" + MainWindow.mainWindow.AwayS.ToString() + "总小比分" + MainWindow.mainWindow.AwayHoleS.ToString();
+            MainTeamScore.Content = MainWindow.mainWindow.Main_team_name.Text + " W:" + MainWindow.mainWindow.MainWin.ToString() + " D:" + MainWindow.mainWindow.MainAll.ToString() + " L: " + MainWindow.mainWindow.MainLose.ToString() + "小比分" + MainWindow.mainWindow.MainS.ToString() + "总小比分" + MainWindow.mainWindow.MainHoleS.ToString();
+            AwayTeamScore.Content = MainWindow.mainWindow.Away_team_name.Text + " W:" + MainWindow.mainWindow.AwayWin.ToString() + " D:" + MainWindow.mainWindow.AwayAll.ToString() + " L: " + MainWindow.mainWindow.AwayLose.ToString() + "小比分" + MainWindow.mainWindow.AwayS.ToString() + "总小比分" + MainWindow.mainWindow.AwayHoleS.ToString();
         }
         private void Escape4_Click(object sender, RoutedEventArgs e)
         {
@@ -243,6 +243,25 @@ namespace bp_sys_wpf
             Front.front.Sur_scoreS.Visibility = Visibility.Hidden;
             Front.front.Hun_score.Visibility = Visibility.Hidden;
             Front.front.Hun_scoreS.Visibility = Visibility.Hidden;
+        }
+
+        private void OpenHole_Click(object sender, RoutedEventArgs e)
+        {
+            if (!MainWindow.mainWindow.IsWindowOpen("ScoreHoleBS1"))
+            {
+                ScoreHoleBS scoreHoleBS = new ScoreHoleBS();
+                scoreHoleBS.Show();
+                
+            }
+            else
+            {
+                ScoreHoleBS.scoreHoleBS.Activate();
+            }
+            if (!MainWindow.mainWindow.IsWindowOpen("ScoreHole1"))
+            {
+                ScoreHole scoreHole = new ScoreHole();
+                scoreHole.Show();
+            }
         }
     }
 }

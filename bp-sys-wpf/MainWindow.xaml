@@ -1020,6 +1020,6 @@
                 </Grid>
             </GroupBox>
         </StackPanel>
-        <Button Grid.Row="4" Height="20" Width="40" Content="关于" x:Name="About" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center"/>
+        <Button Grid.Row="4" Height="20" Width="40" Content="关于" x:Name="About" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" IsEnabled="False"/>
     </Grid>
 </Window>

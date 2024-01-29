@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bp_sys_wpf"
         mc:Ignorable="d"
-        Title="比分面板" Height="250" Width="780" WindowStartupLocation="CenterScreen" Closing="Score1_Closing">
+        Title="比分面板" Height="250" Width="780" WindowStartupLocation="CenterScreen" Closing="Score1_Closing" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="97"/>
@@ -28,6 +28,7 @@
         </StackPanel>
         <StackPanel Grid.Column="3" VerticalAlignment="Center" Margin="0,0,0,40">
             <Button Width="70" Height="40" Content="总清零" x:Name="Clear" Click="Clear_Click"/>
+            <Button Width="80" Height="40" Content="比分总览模块" x:Name="OpenHole" Margin="0,20,0,0" Click="OpenHole_Click"/>
         </StackPanel>
         <StackPanel Grid.Column="4" VerticalAlignment="Center">
             <Label Height="40" Content="W:0 D:0 L:0 小比分:0 总小比分:0" x:Name="MainTeamScore"/>

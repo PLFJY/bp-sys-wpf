@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bp_sys_wpf"
         mc:Ignorable="d"
-        Title="前台" Height="810" Width="1440" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="Lime" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+        Title="前台" Height="810" Width="1440" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <Grid >
         <Grid.Background>
-            <ImageBrush/>
+            <ImageBrush ImageSource="/bp.png"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="109*"/>

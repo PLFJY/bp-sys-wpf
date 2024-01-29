@@ -15,7 +15,7 @@ namespace bp_sys_wpf
         {
             InitializeComponent();
             scoreSur = this;
-            this.Background = new ImageBrush(new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/score_bg_s.png"))));
+            try { this.Background = new ImageBrush(new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/score_bg_s.png")))); } catch { }
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)

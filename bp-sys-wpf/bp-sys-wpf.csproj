@@ -26,7 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="300px-YS电子竞技俱乐部_LOGO.png" />
     <None Remove="akg爱哭鬼.png" />
+    <None Remove="bottom.png" />
     <None Remove="bp.png" />
     <None Remove="gui\background.jpg" />
     <None Remove="gui\huns.png" />
@@ -36,6 +38,9 @@
     <None Remove="gui\过场画面.png" />
     <None Remove="icon.ico" />
     <None Remove="icon.png" />
+    <None Remove="interlude_bg.png" />
+    <None Remove="map_bp.png" />
+    <None Remove="name.png" />
     <None Remove="pic\hunban\null.png" />
     <None Remove="pic\hunBig\null.png" />
     <None Remove="pic\hunhalf\null.png" />
@@ -47,6 +52,9 @@
     <None Remove="pic\surBig\null.png" />
     <None Remove="pic\surhalf\null.png" />
     <None Remove="pic\sur\null.png" />
+    <None Remove="score_bg_h.png" />
+    <None Remove="score_bg_s.png" />
+    <None Remove="score_hole.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -55,6 +63,28 @@
 
   <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="300px-YS电子竞技俱乐部_LOGO.png" />
+    <Resource Include="bottom.png" />
+    <Resource Include="bp.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="interlude_bg.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="map_bp.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="name.png" />
+    <Resource Include="score_bg_h.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="score_bg_s.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="score_hole.png" />
   </ItemGroup>
 
   <ItemGroup>

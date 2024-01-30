@@ -8,7 +8,7 @@
         Title="前台" Height="810" Width="1440" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <Grid >
         <Grid.Background>
-            <ImageBrush ImageSource="/bp.png"/>
+            <ImageBrush/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="109*"/>

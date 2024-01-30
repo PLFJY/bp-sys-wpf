@@ -116,13 +116,13 @@ namespace bp_sys_wpf
             {
                 MainWindow.mainWindow.MainS += 3;
                 MainWindow.mainWindow.MainHoleS += 3;
-                MainWindow.mainWindow.AwayS += 2;
-                MainWindow.mainWindow.AwayHoleS += 2;
+                MainWindow.mainWindow.AwayS += 1;
+                MainWindow.mainWindow.AwayHoleS += 1;
             }
             else
             {
-                MainWindow.mainWindow.MainS += 2;
-                MainWindow.mainWindow.MainHoleS += 2;
+                MainWindow.mainWindow.MainS += 1;
+                MainWindow.mainWindow.MainHoleS += 1;
                 MainWindow.mainWindow.AwayS += 3;
                 MainWindow.mainWindow.AwayHoleS += 3;
                 
@@ -146,7 +146,7 @@ namespace bp_sys_wpf
 
         private void Out4_Click(object sender, RoutedEventArgs e)
         {
-            if (MainWindow.mainWindow.main_states == "Hun")
+            if (MainWindow.mainWindow.main_states == "hun")
             {
                 MainWindow.mainWindow.MainS += 5;
                 MainWindow.mainWindow.MainHoleS += 5;
@@ -201,6 +201,8 @@ namespace bp_sys_wpf
             MainWindow.mainWindow.AwayAll = 0;
             MainWindow.mainWindow.AwayLose = 0;
             MainWindow.mainWindow.AwayS = 0;
+            MainWindow.mainWindow.MainHoleS = 0;
+            MainWindow.mainWindow.AwayHoleS = 0;
             FrontScoreRefresh();
             ScoreCtrWindowRefresh();
             ScoreWindowRefresh();
@@ -210,8 +212,8 @@ namespace bp_sys_wpf
         {
             if (MainWindow.mainWindow.main_states == "sur")
             {
-                MainWindow.mainWindow.MainS += 2;
-                MainWindow.mainWindow.MainHoleS += 2;
+                MainWindow.mainWindow.MainS += 1;
+                MainWindow.mainWindow.MainHoleS += 1;
                 MainWindow.mainWindow.AwayS += 3;
                 MainWindow.mainWindow.AwayHoleS += 3;
             }
@@ -219,8 +221,8 @@ namespace bp_sys_wpf
             {
                 MainWindow.mainWindow.MainS += 3;
                 MainWindow.mainWindow.MainHoleS += 3;
-                MainWindow.mainWindow.AwayS += 2;
-                MainWindow.mainWindow.AwayHoleS += 2;
+                MainWindow.mainWindow.AwayS += 1;
+                MainWindow.mainWindow.AwayHoleS += 1;
 
             }
             FrontScoreRefresh();
@@ -243,6 +245,12 @@ namespace bp_sys_wpf
             Front.front.Sur_scoreS.Visibility = Visibility.Hidden;
             Front.front.Hun_score.Visibility = Visibility.Hidden;
             Front.front.Hun_scoreS.Visibility = Visibility.Hidden;
+        }
+
+        private void sd_Click(object sender, RoutedEventArgs e)
+        {
+            Manual manual = new Manual();
+            manual.ShowDialog();
         }
     }
 }

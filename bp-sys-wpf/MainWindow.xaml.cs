@@ -6,6 +6,7 @@ using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using System.IO;
+using System;
 
 namespace bp_sys_wpf
 {
@@ -53,6 +54,11 @@ namespace bp_sys_wpf
                     this.Hun_ban_review_1.Source = new BitmapImage(new Uri(GetFilePath("hunban", Hun_ban_1.SelectedItem.ToString())));
                     Front.front.Hun_ban_1.Source = new BitmapImage(new Uri(GetFilePath("hunban", Hun_ban_1.SelectedItem.ToString())));
                 }
+                else
+                {
+                    this.Hun_ban_review_1.Source = null;
+                    Front.front.Hun_ban_1.Source = null;
+                }
             }
         }
         private void Hun_ban_2_KeyDown(object sender, KeyEventArgs e)
@@ -64,6 +70,11 @@ namespace bp_sys_wpf
                 {
                     this.Hun_ban_review_2.Source = new BitmapImage(new Uri(GetFilePath("hunban", Hun_ban_2.SelectedItem.ToString())));
                     Front.front.Hun_ban_2.Source = new BitmapImage(new Uri(GetFilePath("hunban", Hun_ban_2.SelectedItem.ToString())));
+                }
+                else
+                {
+                    this.Hun_ban_review_2.Source = null;
+                    Front.front.Hun_ban_2.Source = null;
                 }
             }
         }
@@ -77,6 +88,11 @@ namespace bp_sys_wpf
                 {
                     this.Hun_ban_review_3.Source = new BitmapImage(new Uri(GetFilePath("hunban", Hun_ban_3.SelectedItem.ToString())));
                     Front.front.Hun_ban_3.Source = new BitmapImage(new Uri(GetFilePath("hunban", Hun_ban_3.SelectedItem.ToString())));
+                }
+                else
+                {
+                    this.Hun_ban_review_3.Source = null;
+                    Front.front.Hun_ban_3.Source = null;
                 }
             }
         }
@@ -92,6 +108,12 @@ namespace bp_sys_wpf
                     Front.front.Hun_pick.Source = new BitmapImage(new Uri(GetFilePath("hunhalf", Hun_pick.SelectedItem.ToString())));
                     Interlude.interlude.Hun.Source = new BitmapImage(new Uri(GetFilePath("hunBig", Hun_pick.SelectedItem.ToString())));
                 }
+                else
+                {
+                    this.Hun_pick_review.Source = null;
+                    Front.front.Hun_pick.Source = null;
+                    Interlude.interlude.Hun.Source = null;
+                }
             }
         }
         private void Sur_pick_1_KeyDown(object sender, KeyEventArgs e)
@@ -105,6 +127,12 @@ namespace bp_sys_wpf
                     Front.front.Sur_pick_1.Source = new BitmapImage(new Uri(GetFilePath("surhalf", Sur_pick_1.SelectedItem.ToString())));
                     Interlude.interlude.Sur_1.Source = new BitmapImage(new Uri(GetFilePath("surBig", Sur_pick_1.SelectedItem.ToString())));
                 }
+                else
+                {
+                    this.Sur_pick_1_preview.Source = null;
+                    Front.front.Sur_pick_1.Source = null;
+                    Interlude.interlude.Sur_1.Source = null;
+                }
             }
         }
         private void Sur_pick_2_KeyDown(object sender, KeyEventArgs e)
@@ -117,6 +145,12 @@ namespace bp_sys_wpf
                     this.Sur_pick_2_preview.Source = new BitmapImage(new Uri(GetFilePath("sur", Sur_pick_2.SelectedItem.ToString())));
                     Front.front.Sur_pick_2.Source = new BitmapImage(new Uri(GetFilePath("surhalf", Sur_pick_2.SelectedItem.ToString())));
                     Interlude.interlude.Sur_2.Source = new BitmapImage(new Uri(GetFilePath("surBig", Sur_pick_2.SelectedItem.ToString())));
+                }
+                else
+                {
+                    this.Sur_pick_2_preview.Source = null;
+                    Front.front.Sur_pick_2.Source = null;
+                    Interlude.interlude.Sur_2.Source = null;
                 }
             }
         }
@@ -132,6 +166,12 @@ namespace bp_sys_wpf
                     Front.front.Sur_pick_3.Source = new BitmapImage(new Uri(GetFilePath("surhalf", Sur_pick_3.SelectedItem.ToString())));
                     Interlude.interlude.Sur_3.Source = new BitmapImage(new Uri(GetFilePath("surBig", Sur_pick_3.SelectedItem.ToString())));
                 }
+                else
+                {
+                    this.Sur_pick_3_preview.Source = null;
+                    Front.front.Sur_pick_3.Source = null;
+                    Interlude.interlude.Sur_3.Source = null;
+                }
             }
         }
 
@@ -146,6 +186,12 @@ namespace bp_sys_wpf
                     Front.front.Sur_pick_4.Source = new BitmapImage(new Uri(GetFilePath("surhalf", Sur_pick_4.SelectedItem.ToString())));
                     Interlude.interlude.Sur_4.Source = new BitmapImage(new Uri(GetFilePath("surBig", Sur_pick_4.SelectedItem.ToString())));
                 }
+                else
+                {
+                    this.Sur_pick_4_preview.Source = null;
+                    Front.front.Sur_pick_4.Source = null;
+                    Interlude.interlude.Sur_4.Source = null;
+                }
             }
         }
 
@@ -158,6 +204,11 @@ namespace bp_sys_wpf
                 {
                     this.Sur_ban_review_1.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_ban_1.SelectedItem.ToString())));
                     Front.front.Sur_ban_1.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_ban_1.SelectedItem.ToString())));
+                }
+                else
+                {
+                    this.Sur_ban_review_1.Source = null;
+                    Front.front.Sur_ban_1.Source = null;
                 }
             }
         }
@@ -172,6 +223,11 @@ namespace bp_sys_wpf
                     this.Sur_ban_review_2.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_ban_2.SelectedItem.ToString())));
                     Front.front.Sur_ban_2.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_ban_2.SelectedItem.ToString())));
                 }
+                else
+                {
+                    this.Sur_ban_review_2.Source = null;
+                    Front.front.Sur_ban_2.Source = null;
+                }
             }
         }
 
@@ -184,6 +240,11 @@ namespace bp_sys_wpf
                 {
                     this.Sur_ban_review_3.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_ban_3.SelectedItem.ToString())));
                     Front.front.Sur_ban_3.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_ban_3.SelectedItem.ToString())));
+                }
+                else
+                {
+                    this.Sur_ban_review_3.Source = null;
+                    Front.front.Sur_ban_3.Source = null;
                 }
             }
         }
@@ -198,6 +259,11 @@ namespace bp_sys_wpf
                     this.Sur_ban_review_4.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_ban_4.SelectedItem.ToString())));
                     Front.front.Sur_ban_4.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_ban_4.SelectedItem.ToString())));
                 }
+                else
+                {
+                    this.Sur_ban_review_4.Source = null;
+                    Front.front.Sur_ban_4.Source = null;
+                }
             }
         }
 
@@ -210,6 +276,11 @@ namespace bp_sys_wpf
                 {
                     this.Sur_hole_ban_1_preview.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_1.SelectedItem.ToString())));
                     Front.front.Hole_ban_1.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_1.SelectedItem.ToString())));
+                }
+                else
+                {
+                    this.Sur_hole_ban_1_preview.Source = null;
+                    Front.front.Hole_ban_1.Source = null;
                 }
             }
         }
@@ -224,6 +295,11 @@ namespace bp_sys_wpf
                     this.Sur_hole_ban_2_preview.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_2.SelectedItem.ToString())));
                     Front.front.Hole_ban_2.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_2.SelectedItem.ToString())));
                 }
+                else
+                {
+                    this.Sur_hole_ban_2_preview.Source = null;
+                    Front.front.Hole_ban_2.Source = null;
+                }
             }
         }
 
@@ -237,6 +313,11 @@ namespace bp_sys_wpf
                     this.Sur_hole_ban_3_preview.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_3.SelectedItem.ToString())));
                     Front.front.Hole_ban_3.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_3.SelectedItem.ToString())));
                 }
+                else
+                {
+                    this.Sur_hole_ban_3_preview.Source = null;
+                    Front.front.Hole_ban_3.Source = null;
+                }
             }
         }
 
@@ -249,6 +330,11 @@ namespace bp_sys_wpf
                 {
                     this.Sur_hole_ban_4_preview.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_4.SelectedItem.ToString())));
                     Front.front.Hole_ban_4.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_4.SelectedItem.ToString())));
+                }
+                else
+                {
+                    this.Sur_hole_ban_4_preview.Source = null;
+                    Front.front.Hole_ban_4.Source = null;
                 }
             }
         }
@@ -550,6 +636,12 @@ namespace bp_sys_wpf
             }
         }
 
+        private void About_Click(object sender, RoutedEventArgs e)
+        {
+            AboutThis aboutThis = new AboutThis();
+            aboutThis.ShowDialog();
+        }
+
         private void Swap_sur_player3_with_player2_Click(object sender, RoutedEventArgs e)
         {
             (Now_sur_player_3.Text, Now_sur_player_2.Text) = (Now_sur_player_2.Text, Now_sur_player_3.Text);
@@ -608,14 +700,14 @@ namespace bp_sys_wpf
 
         private void Open_score_Click(object sender, RoutedEventArgs e)
         {
+            Front.front.Sur_score.Visibility = Visibility.Visible;
+            Front.front.Sur_scoreS.Visibility = Visibility.Visible;
+            Front.front.Hun_score.Visibility = Visibility.Visible;
+            Front.front.Hun_scoreS.Visibility = Visibility.Visible;
             if (!IsWindowOpen("ScoreSur1"))
             {
                 ScoreSur scoreSur = new ScoreSur();
                 scoreSur.Show();
-                Front.front.Sur_score.Visibility = Visibility.Visible;
-                Front.front.Sur_scoreS.Visibility = Visibility.Visible;
-                Front.front.Hun_score.Visibility = Visibility.Visible;
-                Front.front.Hun_scoreS.Visibility = Visibility.Visible;
             }
             else
             {
@@ -842,7 +934,8 @@ namespace bp_sys_wpf
             (Interlude.interlude.Sur_team_name.Content, Interlude.interlude.Hun_team_name.Content) = (Interlude.interlude.Hun_team_name.Content, Interlude.interlude.Sur_team_name.Content);
             (Interlude.interlude.Sur_logo.Source, Interlude.interlude.Hun_logo.Source) = (Interlude.interlude.Hun_logo.Source, Interlude.interlude.Sur_logo.Source);
             if(IsWindowOpen("Score1")) (ScoreSur.scoreSur.Logo.Source, ScoreHun.scoreHun.Logo.Source) = (ScoreHun.scoreHun.Logo.Source, ScoreSur.scoreSur.Logo.Source);
-            if ((string)this.main_state.Content == "求生者")
+            if (IsWindowOpen("ScoreHun1") && IsWindowOpen("ScoreSur1")) (ScoreSur.scoreSur.TeamName.Content, ScoreHun.scoreHun.TeamName.Content) = (ScoreHun.scoreHun.TeamName.Content, ScoreSur.scoreSur.TeamName.Content);
+                if ((string)this.main_state.Content == "求生者")
             {
                 main_state.Content = "监管者";
                 main_states = "hun";

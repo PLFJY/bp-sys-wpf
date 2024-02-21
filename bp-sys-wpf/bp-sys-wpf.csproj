@@ -65,7 +65,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="300px-YS电子竞技俱乐部_LOGO.png" />
     <Resource Include="bottom.png" />
     <Resource Include="bp.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

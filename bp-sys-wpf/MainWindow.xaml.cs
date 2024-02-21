@@ -420,7 +420,7 @@ namespace bp_sys_wpf
                     Interlude.interlude.Sur_2_player_name.Content = Main_team_name.Text + "__" + Now_sur_player_2.Text;
                     Interlude.interlude.Sur_3_player_name.Content = Main_team_name.Text + "__" + Now_sur_player_3.Text;
                     Interlude.interlude.Sur_4_player_name.Content = Main_team_name.Text + "__" + Now_sur_player_4.Text;
-                    if(IsWindowOpen("ScoreSur1")) ScoreSur.scoreSur.TeamName.Content = Main_team_name.Text;
+                    if (IsWindowOpen("ScoreSur1")) ScoreSur.scoreSur.TeamName.Content = Main_team_name.Text;
                     if (IsWindowOpen("Score1")) Score.score.ScoreCtrWindowRefresh();
                 }
                 else
@@ -740,6 +740,11 @@ namespace bp_sys_wpf
                     this.Sur_hole_ban_5_preview.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_5.SelectedItem.ToString())));
                     Front.front.Hole_ban_5.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_5.SelectedItem.ToString())));
                 }
+                else
+                {
+                    this.Sur_hole_ban_5_preview.Source = null;
+                    Front.front.Hole_ban_5.Source = null;
+                }
             }
         }
 
@@ -752,6 +757,11 @@ namespace bp_sys_wpf
                 {
                     this.Sur_hole_ban_6_preview.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_6.SelectedItem.ToString())));
                     Front.front.Hole_ban_6.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_6.SelectedItem.ToString())));
+                }
+                else
+                {
+                    this.Sur_hole_ban_6_preview.Source = null;
+                    Front.front.Hole_ban_6.Source = null;
                 }
             }
         }
@@ -927,15 +937,78 @@ namespace bp_sys_wpf
 
         }
 
+        public void HoleBanRefresh()
+        {
+            if (this.Sur_hole_ban_1.SelectedItem != null)
+            {
+                this.Sur_hole_ban_1_preview.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_1.SelectedItem.ToString())));
+                Front.front.Hole_ban_1.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_1.SelectedItem.ToString())));
+            }
+            else
+            {
+                this.Sur_hole_ban_1_preview.Source = null;
+                Front.front.Hole_ban_1.Source = null;
+            }
+            if (this.Sur_hole_ban_2.SelectedItem != null)
+            {
+                this.Sur_hole_ban_2_preview.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_2.SelectedItem.ToString())));
+                Front.front.Hole_ban_2.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_2.SelectedItem.ToString())));
+            }
+            else
+            {
+                this.Sur_hole_ban_2_preview.Source = null;
+                Front.front.Hole_ban_2.Source = null;
+            }
+            if (this.Sur_hole_ban_3.SelectedItem != null)
+            {
+                this.Sur_hole_ban_3_preview.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_3.SelectedItem.ToString())));
+                Front.front.Hole_ban_3.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_3.SelectedItem.ToString())));
+            }
+            else
+            {
+                this.Sur_hole_ban_3_preview.Source = null;
+                Front.front.Hole_ban_3.Source = null;
+            }
+            if (this.Sur_hole_ban_4.SelectedItem != null)
+            {
+                this.Sur_hole_ban_4_preview.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_4.SelectedItem.ToString())));
+                Front.front.Hole_ban_4.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_4.SelectedItem.ToString())));
+            }
+            else
+            {
+                this.Sur_hole_ban_4_preview.Source = null;
+                Front.front.Hole_ban_4.Source = null;
+            }
+            if (this.Sur_hole_ban_5.SelectedItem != null)
+            {
+                this.Sur_hole_ban_5_preview.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_5.SelectedItem.ToString())));
+                Front.front.Hole_ban_5.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_5.SelectedItem.ToString())));
+            }
+            else
+            {
+                this.Sur_hole_ban_5_preview.Source = null;
+                Front.front.Hole_ban_5.Source = null;
+            }
+            if (this.Sur_hole_ban_6.SelectedItem != null)
+            {
+                this.Sur_hole_ban_6_preview.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_6.SelectedItem.ToString())));
+                Front.front.Hole_ban_6.Source = new BitmapImage(new Uri(GetFilePath("surban", Sur_hole_ban_6.SelectedItem.ToString())));
+            }
+            else
+            {
+                this.Sur_hole_ban_6_preview.Source = null;
+                Front.front.Hole_ban_6.Source = null;
+            }
+        }
         private void Swap_Click(object sender, RoutedEventArgs e)
         {
             (Front.front.Sur_team_name.Content, Front.front.Hun_team_name.Content) = (Front.front.Hun_team_name.Content, Front.front.Sur_team_name.Content);
             (Front.front.Logo_sur.Source, Front.front.Logo_hun.Source) = (Front.front.Logo_hun.Source, Front.front.Logo_sur.Source);
             (Interlude.interlude.Sur_team_name.Content, Interlude.interlude.Hun_team_name.Content) = (Interlude.interlude.Hun_team_name.Content, Interlude.interlude.Sur_team_name.Content);
             (Interlude.interlude.Sur_logo.Source, Interlude.interlude.Hun_logo.Source) = (Interlude.interlude.Hun_logo.Source, Interlude.interlude.Sur_logo.Source);
-            if(IsWindowOpen("Score1")) (ScoreSur.scoreSur.Logo.Source, ScoreHun.scoreHun.Logo.Source) = (ScoreHun.scoreHun.Logo.Source, ScoreSur.scoreSur.Logo.Source);
+            if (IsWindowOpen("Score1")) (ScoreSur.scoreSur.Logo.Source, ScoreHun.scoreHun.Logo.Source) = (ScoreHun.scoreHun.Logo.Source, ScoreSur.scoreSur.Logo.Source);
             if (IsWindowOpen("ScoreHun1") && IsWindowOpen("ScoreSur1")) (ScoreSur.scoreSur.TeamName.Content, ScoreHun.scoreHun.TeamName.Content) = (ScoreHun.scoreHun.TeamName.Content, ScoreSur.scoreSur.TeamName.Content);
-                if ((string)this.main_state.Content == "求生者")
+            if ((string)this.main_state.Content == "求生者")
             {
                 main_state.Content = "监管者";
                 main_states = "hun";
@@ -1046,6 +1119,26 @@ namespace bp_sys_wpf
                     flag5 = 0;
                 }
                 if (flag5 == 1) Now_hun_player.Text = null;
+            }
+            if (main_states == "sur")
+            {
+                Sur_hole_ban_1.SelectedIndex = Main_hole1.SelectedIndex;
+                Sur_hole_ban_2.SelectedIndex = Main_hole2.SelectedIndex;
+                Sur_hole_ban_3.SelectedIndex = Main_hole3.SelectedIndex;
+                Sur_hole_ban_4.SelectedIndex = Main_hole4.SelectedIndex;
+                Sur_hole_ban_5.SelectedIndex = Main_hole5.SelectedIndex;
+                Sur_hole_ban_6.SelectedIndex = Main_hole6.SelectedIndex;
+                HoleBanRefresh();
+            }
+            else
+            {
+                Sur_hole_ban_1.SelectedIndex = Away_hole1.SelectedIndex;
+                Sur_hole_ban_2.SelectedIndex = Away_hole2.SelectedIndex;
+                Sur_hole_ban_3.SelectedIndex = Away_hole3.SelectedIndex;
+                Sur_hole_ban_4.SelectedIndex = Away_hole4.SelectedIndex;
+                Sur_hole_ban_5.SelectedIndex = Away_hole5.SelectedIndex;
+                Sur_hole_ban_6.SelectedIndex = Away_hole6.SelectedIndex;
+                HoleBanRefresh();
             }
             if (IsWindowOpen("Score1")) Score.score.FrontScoreRefresh();
             if (IsWindowOpen("Score1")) Score.score.ScoreCtrWindowRefresh();

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Diagnostics.Eventing.Reader;
+using System.Windows;
 
 namespace bp_sys_wpf
 {
@@ -251,6 +252,24 @@ namespace bp_sys_wpf
         {
             Manual manual = new Manual();
             manual.ShowDialog();
+        }
+
+        private void HoleB_Click(object sender, RoutedEventArgs e)
+        {
+            if (!MainWindow.mainWindow.IsWindowOpen("ScoreHoleBg1"))
+            {
+                ScoreHoleBg scoreHoleBg = new ScoreHoleBg();
+                scoreHoleBg.Show();
+            }
+            else
+            {
+                ScoreHoleBg.scoreHoleBg.Activate();
+            }
+            if (!MainWindow.mainWindow.IsWindowOpen("ScoreHole1"))
+            {
+                ScoreHole scoreHole = new ScoreHole();
+                scoreHole.Show();
+            }
         }
     }
 }

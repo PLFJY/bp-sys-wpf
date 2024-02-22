@@ -1,0 +1,26 @@
+﻿<Window x:Name="ScoreHoleBg1" x:Class="bp_sys_wpf.ScoreHoleBg"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:bp_sys_wpf"
+        mc:Ignorable="d"
+        Title="分数统计后台" Height="450" Width="800" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="选择回合" HorizontalAlignment="Left" Height="25" Margin="10,22,0,0" VerticalAlignment="Top" Width="71"/>
+        <ComboBox HorizontalAlignment="Left" Height="23" Margin="86,23,0,0" VerticalAlignment="Top" Width="108" x:Name="Bo" SelectedIndex="0">
+            <ComboBoxItem Content="Bo1上半"/>
+            <ComboBoxItem Content="Bo1下半"/>
+            <ComboBoxItem Content="Bo2上半"/>
+            <ComboBoxItem Content="Bo2下半"/>
+            <ComboBoxItem Content="Bo3上半"/>
+            <ComboBoxItem Content="Bo3下半"/>
+            <ComboBoxItem Content="Bo4上半"/>
+            <ComboBoxItem Content="Bo4下半"/>
+            <ComboBoxItem Content="Bo5上半"/>
+            <ComboBoxItem Content="Bo5下半"/>
+        </ComboBox>
+        <Button Content="下一局" HorizontalAlignment="Left" Height="23" Margin="213,23,0,0" VerticalAlignment="Top" Width="57" x:Name="Next" Click="Next_Click"/>
+
+    </Grid>
+</Window>

@@ -65,6 +65,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Flurl" Version="4.0.0" />
+    <PackageReference Include="Flurl.Http" Version="4.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="bottom.png" />
     <Resource Include="bp.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

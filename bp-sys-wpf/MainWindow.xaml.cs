@@ -1,12 +1,13 @@
-﻿using Microsoft.Win32;
+﻿using Flurl.Http;
+using Microsoft.Win32;
 using System.Diagnostics;
+using System.IO;
+using System.Net.Http;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
-using System.IO;
-using System;
 
 namespace bp_sys_wpf
 {
@@ -14,6 +15,30 @@ namespace bp_sys_wpf
     /// Interaction logic for MainWindow.xaml
     /// </summary>
 
+
+    public class sh
+    {
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int id { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool is_over { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DateTime opentime { get; set; }
+
+        /// <summary>
+        /// 第一届ASG高校赛
+        /// </summary>
+        public string name { get; set; }
+    }
     public partial class MainWindow : Window
     {
         public static MainWindow mainWindow;
@@ -27,10 +52,8 @@ namespace bp_sys_wpf
         private int countdownTime;
         private string GetFilePath(string type, string selectedValue)
         {
-            string temp = "pack://application:,,,/pic/" + type + "/";
             int spaceIndex = selectedValue.IndexOf(' ');
             selectedValue = selectedValue.Substring(spaceIndex + 1);
-            string file_path = temp + selectedValue + ".png";
             return GetAbsoluteFilePath("pic/" + type + "/" + selectedValue + ".png"); ;
         }
         public string GetAbsoluteFilePath(string filePath)
@@ -610,30 +633,7 @@ namespace bp_sys_wpf
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            if (IsWindowOpen("Front1"))
-            {
-                Front.front.Close();
-            }
-            if (IsWindowOpen("Interlude1"))
-            {
-                Interlude.interlude.Close();
-            }
-            if (IsWindowOpen("ScoreSur1"))
-            {
-                ScoreSur.scoreSur.Close();
-            }
-            if (IsWindowOpen("ScoreHun1"))
-            {
-                ScoreHun.scoreHun.Close();
-            }
-            if (IsWindowOpen("Score1"))
-            {
-                Score.score.Close();
-            }
-            if (IsWindowOpen("MapBp"))
-            {
-                Map_bp.map_bp.Close();
-            }
+            Environment.Exit(0);
         }
 
         private void About_Click(object sender, RoutedEventArgs e)
@@ -647,9 +647,85 @@ namespace bp_sys_wpf
             (Now_sur_player_3.Text, Now_sur_player_2.Text) = (Now_sur_player_2.Text, Now_sur_player_3.Text);
         }
 
+        private async void LOGOGet_Click(object sender, RoutedEventArgs e)
+        {
+            //这里获取队伍LOGO,获取好的LOGO分别放在Image控件main_team_logo和away_team_logo上
+            //队伍名称获取：Main_team_name.Text与Away_team_name.Text
+            //LOGO在这里
+            string main_team_name = Main_team_name.Text;
+            string away_team_name = Away_team_name.Text;
+            string main_team_logo1 = $"https://api.idvasg.cn/loge/{SeasonBox.Text}/{main_team_name}.png";
+            string away_team_logo1 = $"https://api.idvasg.cn/loge/{SeasonBox.Text}/{away_team_name}.png";
+            main_team_logo.Source = await LoadNetworkImage(main_team_logo1);
+            away_team_logo.Source = await LoadNetworkImage(away_team_logo1);
+            if (main_states == "sur")
+            {
+                Front.front.Logo_sur.Source = main_team_logo.Source;
+                Interlude.interlude.Sur_logo.Source = main_team_logo.Source;
+                if (IsWindowOpen("ScoreSur1")) ScoreSur.scoreSur.Logo.Source = main_team_logo.Source;
+                Front.front.Logo_hun.Source = away_team_logo.Source;
+                Interlude.interlude.Hun_logo.Source = away_team_logo.Source;
+                if (IsWindowOpen("ScoreHun1")) ScoreHun.scoreHun.Logo.Source = away_team_logo.Source;
+            }
+            else
+            {
+                Front.front.Logo_hun.Source = main_team_logo.Source;
+                Interlude.interlude.Hun_logo.Source = main_team_logo.Source;
+                if (IsWindowOpen("ScoreHun1")) ScoreHun.scoreHun.Logo.Source = main_team_logo.Source;
+                Front.front.Logo_sur.Source = away_team_logo.Source;
+                Interlude.interlude.Sur_logo.Source = away_team_logo.Source;
+                if (IsWindowOpen("ScoreSur1")) ScoreSur.scoreSur.Logo.Source = away_team_logo.Source;
+            }
+        }
+        private async Task<BitmapImage> LoadNetworkImage(string imageUrl)
+        {
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var imageData = await httpClient.GetByteArrayAsync(imageUrl);
+
+                    // 将字节数组转换为BitmapImage以供显示
+                    BitmapImage bitmapImage = new BitmapImage();
+                    using (var stream = new MemoryStream(imageData))
+                    {
+                        bitmapImage.BeginInit();
+                        bitmapImage.CacheOption = BitmapCacheOption.OnLoad; // 加载时缓存图像
+                        bitmapImage.StreamSource = stream;
+                        bitmapImage.EndInit();
+                    }
+
+                    return bitmapImage;
+                }
+            }
+            catch (Exception ex)
+            {
+                // 处理错误：可能由于网络问题、URL无效或其他异常
+                return null;
+            }
+        }
+
+
         private void Swap_sur_player3_with_player4_Click(object sender, RoutedEventArgs e)
         {
             (Now_sur_player_3.Text, Now_sur_player_4.Text) = (Now_sur_player_4.Text, Now_sur_player_3.Text);
+        }
+
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            // 弹窗提示是否确定要退出
+            MessageBoxResult result = MessageBox.Show("您确定要退出登录吗？", null, MessageBoxButton.OKCancel, MessageBoxImage.None, MessageBoxResult.Cancel);
+            System.Console.WriteLine(result);
+            if (result == MessageBoxResult.OK)
+            {
+                if (File.Exists(GetAbsoluteFilePath("Token.txt"))) // 确保文件存在  
+                {
+                    File.Delete(GetAbsoluteFilePath("Token.txt"));
+                }
+                NowUser.Content = "当前用户：";
+                Login login = new Login();
+                login.ShowDialog();
+            }
         }
 
         private void Swap_sur_player4_with_player1_Click(object sender, RoutedEventArgs e)
@@ -841,7 +917,18 @@ namespace bp_sys_wpf
             this.Sur_hole_ban_6_preview.Source = null;
             Front.front.Hole_ban_6.Source = null;
         }
-        public MainWindow()
+        public async void SeasonGet()
+        {
+            this.Activate();
+            var req = $"https://api.idvasg.cn/api/v1/Events?get_poem=false";
+            var json = await req.GetJsonAsync<List<sh>>();
+            json.ForEach(x =>
+            {
+                SeasonBox.Items.Add(x.name);
+            });
+
+        }
+        public MainWindow()//初始函数
         {
             InitializeComponent();
             mainWindow = this;
@@ -859,7 +946,14 @@ namespace bp_sys_wpf
             dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             dispatcherTimer.Interval = TimeSpan.FromSeconds(1);
             dispatcherTimer.Tick += new EventHandler(DispatcherTimer_Tick);
-            this.Activate();
+            try
+            {
+                SeasonGet();
+            }
+            catch
+            {
+                MessageBox.Show("无法连接至ASG官网，进入离线模式", "Falid");
+            }
         }
         public string OpenImageFileDialog()//打开通用对话框选取图片
         {
@@ -920,13 +1014,13 @@ namespace bp_sys_wpf
 
         private void Edit_main_player_list_Click(object sender, RoutedEventArgs e)
         {
-            Player_list_editor player_List_Editor = new Player_list_editor("main");
+            Player_list_editor player_List_Editor = new Player_list_editor("main", Main_team_name.Text);
             player_List_Editor.ShowDialog();
         }
 
         private void Edit_away_player_list_Click(object sender, RoutedEventArgs e)
         {
-            Player_list_editor player_List_Editor = new Player_list_editor("away");
+            Player_list_editor player_List_Editor = new Player_list_editor("away", Away_team_name.Text);
             player_List_Editor.ShowDialog();
         }
 

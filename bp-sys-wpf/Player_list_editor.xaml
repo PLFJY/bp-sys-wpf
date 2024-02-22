@@ -61,5 +61,6 @@
             </StackPanel>
         </StackPanel>
         <Button Grid.Row="4" Content="保存并返回" Height="24" Width="70" HorizontalAlignment="Right" Margin="0,0,20,0" Click="Button_Click" />
+        <Button Content="API获取" HorizontalAlignment="Center" Height="24" Grid.Row="4" VerticalAlignment="Center" Width="66" x:Name="ApiGet" Click="ApiGet_Click"/>
     </Grid>
 </Window>

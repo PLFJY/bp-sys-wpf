@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Flurl.Http;
+using System.Windows;
 namespace bp_sys_wpf
 {
     /// <summary>
@@ -6,11 +7,12 @@ namespace bp_sys_wpf
     /// </summary>
     public partial class Player_list_editor : Window
     {
-        public string team;
-        public Player_list_editor(string teamm)
+        public string team, teamName;
+        public Player_list_editor(string teamm, string teamNamee)
         {
             InitializeComponent();
             team = teamm;
+            teamName = teamNamee;
             if (team == "main")
             {
                 Sur_player_1.Text = MainWindow.mainWindow.main_team_player_list[0];
@@ -664,6 +666,220 @@ namespace bp_sys_wpf
                 if (MainWindow.mainWindow.away_states == "hun") Player_down_main_window(this.Hun_player_2.Text, "hun");
                 MainWindow.mainWindow.count_away_hun -= 1;
             }
+        }
+
+        private async void ApiGet_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> qsz = new List<string>();
+            List<string> qsz1 = new List<string>();
+            List<string> jgz = new List<string>();
+            List<string> jgz1 = new List<string>();
+            try
+            {
+                var req = $"https://api.idvasg.cn/api/v1/form/{MainWindow.mainWindow.Main_team_name.Text}";
+                var json = await req.GetJsonAsync<List<Form>>();
+                json[0].role.Select(x => new { x.role_name, x.role_lin }).ToList().ForEach(x =>
+                {
+                    if (x.role_lin == "求生者")
+                    {
+                        qsz.Add(x.role_name);
+                    }
+                    else if (x.role_lin == "监管者")
+                    {
+                        jgz.Add(x.role_name);
+                    }
+                });
+            }
+            catch { }
+            try
+            {
+                var req1 = $"https://api.idvasg.cn/api/v1/form/{MainWindow.mainWindow.Away_team_name.Text}";
+                var json1 = await req1.GetJsonAsync<List<Form>>();
+                json1[0].role.Select(x => new { x.role_name, x.role_lin }).ToList().ForEach(x =>
+                {
+                    if (x.role_lin == "求生者")
+                    {
+                        qsz1.Add(x.role_name);
+                    }
+                    else if (x.role_lin == "监管者")
+                    {
+                        jgz1.Add(x.role_name);
+                    }
+                });
+            }
+            catch { }
+
+            if (team == "main")
+            {
+                try { Sur_player_1.Text = qsz[0]; } catch { Sur_player_1.Text = null; };
+                try { Sur_player_2.Text = qsz[1]; } catch { Sur_player_2.Text = null; };
+                try { Sur_player_3.Text = qsz[2]; } catch { Sur_player_3.Text = null; };
+                try { Sur_player_4.Text = qsz[3]; } catch { Sur_player_4.Text = null; };
+                try { Sur_player_5.Text = qsz[4]; } catch { Sur_player_5.Text = null; };
+                try { Sur_player_6.Text = qsz[5]; } catch { Sur_player_6.Text = null; };
+                try { Hun_player_1.Text = jgz[0]; } catch { Hun_player_1.Text = null; };
+                try { Hun_player_2.Text = jgz[1]; } catch { Hun_player_2.Text = null; };
+            }
+            else
+            {
+                try { Sur_player_1.Text = qsz1[0]; } catch { Sur_player_1.Text = null; };
+                try { Sur_player_2.Text = qsz1[1]; } catch { Sur_player_2.Text = null; };
+                try { Sur_player_3.Text = qsz1[2]; } catch { Sur_player_3.Text = null; };
+                try { Sur_player_4.Text = qsz1[3]; } catch { Sur_player_4.Text = null; };
+                try { Sur_player_5.Text = qsz1[4]; } catch { Sur_player_5.Text = null; };
+                try { Sur_player_6.Text = qsz1[5]; } catch { Sur_player_6.Text = null; };
+                try { Hun_player_1.Text = jgz1[0]; } catch { Hun_player_1.Text = null; };
+                try { Hun_player_2.Text = jgz1[1]; } catch { Hun_player_2.Text = null; };
+            }
+        }
+        public class Events
+        {
+            /// <summary>
+            /// 
+            /// </summary>
+            public int id { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public string name { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public string is_over { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public string opentime { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public List<string> forms { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public string events_rule_uri { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public string promChart { get; set; }
+
+        }
+
+
+        public class Form
+        {
+            /// <summary>
+            /// 
+            /// </summary>
+            public int id { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public int piaoshu { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public string time { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public string team_name { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public string team_password { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public string team_tel { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public string logo_uri { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public Events events { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public List<RoleItem> role { get; set; }
+
+        }
+
+
+
+        public class RoleItem
+        {
+            /// <summary>
+            /// 
+            /// </summary>
+            public int id { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public Form form { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public string role_id { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public string role_name { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public string game_Name { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public string role_lin { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public string id_Card { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public string common_Roles { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public string phone_Number { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public string id_Card_Name { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public int historical_Ranks { get; set; }
+
         }
     }
 }

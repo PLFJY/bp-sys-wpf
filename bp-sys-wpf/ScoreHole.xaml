@@ -5,8 +5,88 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bp_sys_wpf"
         mc:Ignorable="d"
-        Title="ScoreHole" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+        Title="ScoreHole" Height="234" Width="1416" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" WindowStyle="None" MouseLeftButtonDown="ScoreHole1_MouseLeftButtonDown">
+    <Window.Background>
+        <ImageBrush ImageSource="/score_hole.png"/>
+    </Window.Background>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="232*"/>
+            <ColumnDefinition Width="92*"/>
+            <ColumnDefinition Width="134*"/>
+            <ColumnDefinition Width="92*"/>
+            <ColumnDefinition Width="134*"/>
+            <ColumnDefinition Width="92*"/>
+            <ColumnDefinition Width="128*"/>
+            <ColumnDefinition Width="85*"/>
+            <ColumnDefinition Width="131*"/>
+            <ColumnDefinition Width="94*"/>
+            <ColumnDefinition Width="131*"/>
+            <ColumnDefinition Width="36*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="58*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="23*"/>
+        </Grid.RowDefinitions>
+        <!--主场信息-->
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="53" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Top" Width="52" x:Name="MainLogo"/>
+        <Label Grid.Column="1" Content="" HorizontalAlignment="Left" Height="41" Margin="69,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="133" FontFamily="DFPOP1W5-B5" FontSize="25" VerticalContentAlignment="Center" x:Name="MainName" Foreground="White"/>
+        <!--客场信息-->
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="54" Margin="10,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="52" x:Name="AwayLogo"/>
+        <Label Grid.Column="1" Content="" HorizontalAlignment="Left" Height="42" Margin="69,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="133" FontFamily="DFPOP1W5-B5" FontSize="25" VerticalContentAlignment="Center" x:Name="AwayName" Foreground="White"/>
+                                                                                                                                                <!--bo1上半-->
+        <Image Grid.Column="2" HorizontalAlignment="Left" Height="42" Margin="0,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="42" x:Name="Bo1FIconMain"/>
+        <Label Grid.Column="2" Content="-" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="Bo1FScoreMain"/>
+        <Image Grid.Column="2" HorizontalAlignment="Left" Height="42" Grid.Row="3" VerticalAlignment="Top" Width="42" Margin="0,10,0,0" x:Name="Bo1FIconAway"/>
+        <Label Grid.Column="2" Content="-" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="Bo1FScoreAway"/>
+                                                                                                                                                <!--bo1下半-->
+        <Image Grid.Column="3" HorizontalAlignment="Left" Height="42" Margin="0,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="42" x:Name="Bo1SIconMain"/>
+        <Label Grid.Column="3" Content="-" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="Bo1SScoreMain"/>
+        <Image Grid.Column="3" HorizontalAlignment="Left" Height="42" Grid.Row="3" VerticalAlignment="Top" Width="42" Margin="0,10,0,0" x:Name="Bo1SIconAway"/>
+        <Label Grid.Column="3" Content="-" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="Bo1SScoreAway"/>
+                                                                                                                                                <!--bo2上半-->
+        <Image Grid.Column="4" HorizontalAlignment="Left" Height="42" Margin="0,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="42" x:Name="Bo2FIconMain"/>
+        <Label Grid.Column="4" Content="-" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="Bo2FScoreMain"/>
+        <Image Grid.Column="4" HorizontalAlignment="Left" Height="42" Grid.Row="3" VerticalAlignment="Center" Width="42" x:Name="Bo2FIconAway"/>
+        <Label Grid.Column="4" Content="-" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="Bo2FScoreAway"/>
+                                                                                                                                                <!--bo2下半-->
+        <Image Grid.Column="5" HorizontalAlignment="Left" Height="42" Margin="0,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="42" x:Name="Bo2SIconMain"/>
+        <Label Grid.Column="5" Content="-" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="Bo2SScoreMain"/>
+        <Image Grid.Column="5" HorizontalAlignment="Left" Height="42" Grid.Row="3" VerticalAlignment="Top" Width="42" Margin="0,10,0,0" x:Name="Bo2SIconAway"/>
+        <Label Grid.Column="5" Content="-" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="Bo2SScoreAway"/>
+                                                                                                                                                <!--bo3上半-->
+        <Image Grid.Column="6" HorizontalAlignment="Left" Height="42" Margin="0,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="42" x:Name="Bo3FIconMain"/>
+        <Label Grid.Column="6" Content="-" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="Bo3FScoreMain"/>
+        <Image Grid.Column="6" HorizontalAlignment="Left" Height="42" Grid.Row="3" VerticalAlignment="Top" Width="42" Margin="0,10,0,0" x:Name="Bo3FIconAway"/>
+        <Label Grid.Column="6" Content="-" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="Bo3FScoreAway"/>
+                                                                                                                                                <!--bo3下半-->
+        <Image Grid.Column="7" HorizontalAlignment="Left" Height="42" Margin="0,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="42" x:Name="Bo3SIconMain"/>
+        <Label Grid.Column="7" Content="-" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="Bo3SScoreMain"/>
+        <Image Grid.Column="7" HorizontalAlignment="Left" Height="42" Grid.Row="3" VerticalAlignment="Top" Width="42" Margin="0,10,0,0" x:Name="Bo3SIconAway"/>
+        <Label Grid.Column="7" Content="-" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="Bo3SScoreAway"/>
+                                                                                                                                                <!--bo4上半-->
+        <Image Grid.Column="8" HorizontalAlignment="Left" Height="42" Margin="0,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="42" x:Name="Bo4FIconMain"/>
+        <Label Grid.Column="8" Content="-" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="Bo4FScoreMain"/>
+        <Image Grid.Column="8" HorizontalAlignment="Left" Height="42" Grid.Row="3" VerticalAlignment="Top" Width="42" Margin="0,10,0,0" x:Name="Bo4FIconAway"/>
+        <Label Grid.Column="8" Content="-" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="Bo4FScoreAway"/>
+                                                                                                                                                <!--bo4下半-->
+        <Image Grid.Column="9" HorizontalAlignment="Left" Height="42" Margin="0,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="42" x:Name="Bo4SIconMain"/>
+        <Label Grid.Column="9" Content="-" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="Bo4SScoreMain"/>
+        <Image Grid.Column="9" HorizontalAlignment="Left" Height="42" Grid.Row="3" VerticalAlignment="Top" Width="42" Margin="0,10,0,0" x:Name="Bo4SIconAway"/>
+        <Label Grid.Column="9" Content="-" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="Bo4SScoreAway"/>
+                                                                                                                                                <!--bo5上半-->
+        <Image Grid.Column="10" HorizontalAlignment="Left" Height="42" Margin="0,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="42" x:Name="Bo5FIconMain"/>
+        <Label Grid.Column="10" Content="-" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="Bo5FScoreMain"/>
+        <Image Grid.Column="10" HorizontalAlignment="Left" Height="42" Grid.Row="3" VerticalAlignment="Top" Width="42" Margin="0,10,0,0" x:Name="Bo5FIconAway"/>
+        <Label Grid.Column="10" Content="-" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="Bo5FScoreAway"/>
+                                                                                                                                                <!--bo5下半-->
+        <Image Grid.Column="11" HorizontalAlignment="Left" Height="42" Margin="0,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="42" x:Name="Bo5SIconMain"/>
+        <Label Grid.Column="11" Content="-" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="Bo5SScoreMain"/>
+        <Image Grid.Column="11" HorizontalAlignment="Left" Height="42" Grid.Row="3" VerticalAlignment="Top" Width="42" Margin="0,10,0,0" x:Name="Bo5SIconAway"/>
+        <Label Grid.Column="11" Content="-" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="Bo5SScoreAway"/>
     </Grid>
 </Window>

@@ -36,6 +36,7 @@
     <None Remove="gui\mapbp.png" />
     <None Remove="gui\surs.png" />
     <None Remove="gui\过场画面.png" />
+    <None Remove="hun.png" />
     <None Remove="icon.ico" />
     <None Remove="icon.png" />
     <None Remove="interlude_bg.png" />
@@ -54,6 +55,10 @@
     <None Remove="pic\sur\null.png" />
     <None Remove="score_bg_h.png" />
     <None Remove="score_bg_s.png" />
+    <None Remove="score_hole.png" />
+    <None Remove="sur.png" />
+    <None Remove="华康POP1体W5.ttf" />
+    <None Remove="汉仪第五人格体.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -69,6 +74,7 @@
     <Resource Include="bp.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="hun.png" />
     <Resource Include="interlude_bg.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -78,6 +84,14 @@
     <Resource Include="name.png" />
     <Resource Include="score_bg_h.png" />
     <Resource Include="score_bg_s.png" />
+    <Resource Include="score_hole.png" />
+    <Resource Include="sur.png" />
+    <Resource Include="华康POP1体W5.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="汉仪第五人格体.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -1010,12 +1024,6 @@
     </None>
     <None Update="pic\sur\zss咒术师.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="华康POP1体W5.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="汉仪第五人格体.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

@@ -29,6 +29,7 @@
         <StackPanel Grid.Column="3" VerticalAlignment="Center" Margin="0,0,0,40">
             <Button Width="70" Height="40" Content="总清零" x:Name="Clear" Click="Clear_Click"/>
             <Button Width="70" Height="40" Content="手动控制" x:Name="sd" Margin="0,10,0,0" Click="sd_Click"/>
+            <Button Width="70" Height="40" Content="分数统计" x:Name="HoleB" Margin="0,10,0,0" Click="HoleB_Click"/>
         </StackPanel>
         <StackPanel Grid.Column="4" VerticalAlignment="Center">
             <Label Height="40" Content="W:0 D:0 L:0 小比分:0 总小比分:0" x:Name="MainTeamScore"/>

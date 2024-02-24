@@ -146,7 +146,7 @@
                     <ComboBox Width="150" x:Name="SeasonBox"/>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Center" Margin="20,0,0,0">
-                    <Label Content="BP前台与过长画面分辨率" Height="28"/>
+                    <Label Content="BP前台与过场画面分辨率" Height="28"/>
                     <ComboBox Width="150" x:Name="Res" SelectedIndex="0" SelectionChanged="Res_SelectionChanged">
                         <ComboBoxItem Content="1440x810(默认)"/>
                         <ComboBoxItem Content="960x540(1/2的1080P)"/>

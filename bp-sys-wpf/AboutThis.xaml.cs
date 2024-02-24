@@ -12,6 +12,8 @@ using System.Windows.Threading;
 using MahApps.Metro.Controls.Dialogs;
 using System.Security.Policy;
 using System.Text;
+using System.Net;
+using System.Reflection.Emit;
 
 namespace bp_sys_wpf
 {
@@ -25,7 +27,7 @@ namespace bp_sys_wpf
             InitializeComponent();
             NowV.Content = "当前版本：" + Config.version;
         }
-
+        
         private async void Update_Click(object sender, RoutedEventArgs e)//自动更新在这里
         {
             var req = await $"https://api.idvasg.cn/api/config/api/v1/admin/config/byTitle".WithHeader("Content-Type", "application/json").WithOAuthBearerToken(File.ReadAllText("Token.txt")).PostStringAsync("\"bpsys_v\"");
@@ -34,17 +36,88 @@ namespace bp_sys_wpf
             {
                 MessageBox.Show("检测到新版本，最新版本为" + version + "\n点击确定或关闭该提示执行更新！", "更新提示");
                 var req1 = await $"https://api.idvasg.cn/api/config/api/v1/admin/config/byTitle".WithHeader("Content-Type", "application/json").WithOAuthBearerToken(File.ReadAllText("Token.txt")).PostStringAsync("\"bpsys_URL\"");
-                var path = await $"{await req1.GetStringAsync()}"
-     .DownloadFileAsync(Environment.CurrentDirectory, "new_bpsys.7z");
+                //var path = await $"{await req1.GetStringAsync()}".DownloadFileAsync(Environment.CurrentDirectory, "new_bpsys.7z");
+                label2.Visibility = Visibility.Visible;
+                pbDown.Visibility = Visibility.Visible;
+                if (HttpFileExist($"{await req1.GetStringAsync()}"))
+                {
+                    DownloadHttpFile($"{await req1.GetStringAsync()}", "new_bpsys.7z");
+                }
                 NewBat();
                 CreateBat();
-                Run_cmd();
             }
             else
             {
                 MessageBox.Show("当前版本为最新版本", "更新提示");
             }
         }
+        public void DownloadHttpFile(String http_url, String save_url)
+        {
+            WebResponse response = null;
+            //获取远程文件
+            WebRequest request = WebRequest.Create(http_url);
+            response = request.GetResponse();
+            if (response == null) return;
+            //读远程文件的大小
+            pbDown.Maximum = response.ContentLength;
+            //下载远程文件
+            ThreadPool.QueueUserWorkItem((obj) =>
+            {
+                Stream netStream = response.GetResponseStream();
+                Stream fileStream = new FileStream(save_url, FileMode.Create);
+                byte[] read = new byte[1024];
+                long progressBarValue = 0;
+                int realReadLen = netStream.Read(read, 0, read.Length);
+                while (realReadLen > 0)
+                {
+                    fileStream.Write(read, 0, realReadLen);
+                    progressBarValue += realReadLen;
+                    pbDown.Dispatcher.BeginInvoke(new ProgressBarSetter(SetProgressBar), progressBarValue);
+                    realReadLen = netStream.Read(read, 0, read.Length);
+                }
+                netStream.Close();
+                fileStream.Close();
+                Run_cmd();
+            }, null);
+        }
+        /// <summary>
+        ///  判断远程文件是否存在
+        /// </summary>
+        /// <param name="fileUrl">文件URL</param>
+        /// <returns>存在-true，不存在-false</returns>
+        private bool HttpFileExist(string http_file_url)
+        {
+            WebResponse response = null;
+            bool result = false;//下载结果
+            try
+            {
+                response = WebRequest.Create(http_file_url).GetResponse();
+                result = response == null ? false : true;
+            }
+            catch (Exception ex)
+            {
+                result = false;
+            }
+            finally
+            {
+                if (response != null)
+                {
+                    response.Close();
+                }
+            }
+            return result;
+        }
+        public delegate void ProgressBarSetter(double value);
+        public void SetProgressBar(double value)
+        {
+            //显示进度条
+            pbDown.Value = value;
+            double persent = (value / pbDown.Maximum) * 100;
+            int persentToInt = (int)persent;
+            //显示百分比
+            label1.Content =  persentToInt + "%";
+        }
+
         public void NewBat()
         {
             // 定义批处理文件的路径和内容  

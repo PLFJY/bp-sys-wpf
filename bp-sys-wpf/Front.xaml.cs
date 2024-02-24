@@ -14,7 +14,6 @@ namespace bp_sys_wpf
         {
             InitializeComponent();
             front = this;
-            MainWindow.mainWindow.Activate();
             try
             {
                 this.Background = new ImageBrush(new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/bp.png"))));
@@ -29,6 +28,7 @@ namespace bp_sys_wpf
                 Hole_no_ban_6.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/no_hole_ban.png")));
             }
             catch { }
+            MainWindow.mainWindow.Activate();
         }
 
         private void Window_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)

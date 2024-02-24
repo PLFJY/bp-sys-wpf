@@ -15,8 +15,8 @@ namespace bp_sys_wpf
         {
             InitializeComponent();
             map_bp = this;
-            MainWindow.mainWindow.Activate();
             try { this.Background = new ImageBrush(new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/map_bp.png")))); } catch { }
+            MainWindow.mainWindow.Activate();
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

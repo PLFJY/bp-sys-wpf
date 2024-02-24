@@ -28,6 +28,8 @@
   <ItemGroup>
     <None Remove="300px-YS电子竞技俱乐部_LOGO.png" />
     <None Remove="akg爱哭鬼.png" />
+    <None Remove="bottom.png" />
+    <None Remove="bp.png" />
     <None Remove="gui\background.jpg" />
     <None Remove="gui\huns.png" />
     <None Remove="gui\map bp.png" />
@@ -36,6 +38,8 @@
     <None Remove="gui\过场画面.png" />
     <None Remove="icon.ico" />
     <None Remove="icon.png" />
+    <None Remove="interlude_bg.png" />
+    <None Remove="name.png" />
     <None Remove="pic\hunban\null.png" />
     <None Remove="pic\hunBig\null.png" />
     <None Remove="pic\hunhalf\null.png" />
@@ -66,17 +70,26 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="bottom.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="bp.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="interlude_bg.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="name.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="7z.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="7z.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="bottom.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="bp.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
     <None Update="gui\background.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
@@ -108,13 +121,7 @@
     <None Update="hun.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
-    <None Update="interlude_bg.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
     <None Update="map_bp.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="name.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
     <None Update="pic\hunban\akg爱哭鬼.png">

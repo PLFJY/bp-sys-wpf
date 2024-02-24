@@ -15,7 +15,6 @@ namespace bp_sys_wpf
         {
             InitializeComponent();
             interlude = this;
-            MainWindow.mainWindow.Activate();
             try
             {
                 this.Background = new ImageBrush(new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/interlude_bg.png"))));
@@ -23,6 +22,7 @@ namespace bp_sys_wpf
                 NameImage.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/name.png")));
             }
             catch { }
+            MainWindow.mainWindow.Activate();
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

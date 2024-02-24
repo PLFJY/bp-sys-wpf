@@ -3,6 +3,7 @@ using Microsoft.Win32;
 using System.Diagnostics;
 using System.IO;
 using System.Net.Http;
+using System.Reflection.Emit;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -766,6 +767,62 @@ namespace bp_sys_wpf
             }
         }
 
+        private void Res_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+			if (IsWindowOpen("Front1"))
+			{
+				switch (Res.SelectedIndex)
+				{
+					case 0:
+						Front.front.Width = 1440;
+						Front.front.Height = 810;
+						break;
+					case 1:
+                        Front.front.Width = 960;
+                        Front.front.Height = 540;
+                        break;
+					case 2:
+                        Front.front.Width = 1280;
+                        Front.front.Height = 720;
+                        break;
+					case 3:
+                        Front.front.Width = 1920;
+                        Front.front.Height = 1080;
+                        break;
+					case 4:
+                        Front.front.Width = 2560;
+                        Front.front.Height = 1440;
+                        break;
+                }
+			}
+            if (IsWindowOpen("Interlude1"))
+            {
+                switch (Res.SelectedIndex)
+                {
+                    case 0:
+                        Interlude.interlude.Width = 1440;
+                        Interlude.interlude.Height = 810;
+                        break;
+                    case 1:
+                        Interlude.interlude.Width = 960;
+                        Interlude.interlude.Height = 540;
+                        break;
+                    case 2:
+                        Interlude.interlude.Width = 1280;
+                        Interlude.interlude.Height = 720;
+                        break;
+                    case 3:
+                        Interlude.interlude.Width = 1920;
+                        Interlude.interlude.Height = 1080;
+                        break;
+                    case 4:
+                        Interlude.interlude.Width = 2560;
+                        Interlude.interlude.Height = 1440;
+                        break;
+                }
+            }
+        }
+
         private void Swap_sur_player4_with_player1_Click(object sender, RoutedEventArgs e)
         {
             (Now_sur_player_4.Text, Now_sur_player_1.Text) = (Now_sur_player_1.Text, Now_sur_player_4.Text);
@@ -975,12 +1032,14 @@ namespace bp_sys_wpf
         {
             this.Activate();
             var req = $"https://api.idvasg.cn/api/v1/Events?get_poem=false";
-            var json = await req.GetJsonAsync<List<sh>>();
-            json.ForEach(x =>
-            {
-                SeasonBox.Items.Add(x.name);
-            });
-
+			try
+			{
+				var json = await req.GetJsonAsync<List<sh>>();
+				json.ForEach(x =>
+				{
+					SeasonBox.Items.Add(x.name);
+				});
+			} catch { }
         }
         public MainWindow()//初始函数
         {
@@ -1000,15 +1059,24 @@ namespace bp_sys_wpf
             dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             dispatcherTimer.Interval = TimeSpan.FromSeconds(1);
             dispatcherTimer.Tick += new EventHandler(DispatcherTimer_Tick);
-            try
-            {
-                SeasonGet();
-            }
-            catch
-            {
-                MessageBox.Show("无法连接至ASG官网，进入离线模式", "Falid");
-            }
+            SeasonGet();
+			VerCheck();
+			
         }
+		private async void VerCheck()
+		{
+			try
+			{
+				var req = await $"https://api.idvasg.cn/api/config/api/v1/admin/config/byTitle".WithHeader("Content-Type", "application/json").WithOAuthBearerToken(File.ReadAllText("Token.txt")).PostStringAsync("\"bpsys_v\"");
+				var version = await req.GetStringAsync();
+				if (version != Config.version)
+				{
+					MessageBox.Show("检测到新版本，最新版本为" + version + "\n请到“关于”页面进行更新！", "更新提示");
+                    this.Activate();
+                }
+			}
+			catch { }
+		}
         public string OpenImageFileDialog()//打开通用对话框选取图片
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();

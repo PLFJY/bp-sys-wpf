@@ -12,6 +12,6 @@ namespace bp_sys_wpf
     public static class Config
     {
         public static string BackEnd_Url { get; set; }="https://api.idvasg.cn/";
-        public static string version { get; set; } = "2.2.1";
+        public static string version { get; set; } = "2.2.2";
     }
 }

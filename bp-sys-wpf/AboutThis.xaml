@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="关于" Height="170" Width="313" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        <Label Content="本版本为ASG赛事组专版&#xA;由 导播-零风_PLFJY 与 后端开发-罗澜 制作&#xA;如遇任何问题请QQ联系3424127335&#xA;内部使用，请勿外传，违者必究&#xA;软件框架：.Net 8.0" HorizontalAlignment="Center" Height="135" VerticalAlignment="Center" Width="293"/>
-
+        <Label Content="本版本为ASG赛事组专版&#xA;由 导播-零风_PLFJY 与 后端开发-罗澜 制作&#xA;如遇任何问题请QQ联系3424127335&#xA;内部使用，请勿外传，违者必究&#xA;软件框架：.Net 8.0" HorizontalAlignment="Center" Height="86" VerticalAlignment="Top" Width="293" Margin="0,10,0,0"/>
+        <Button Content="检查并更新" HorizontalAlignment="Left" Height="24" Margin="202,101,0,0" VerticalAlignment="Top" Width="76" x:Name="Update" Click="Update_Click"/>
     </Grid>
 </Window>

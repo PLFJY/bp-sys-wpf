@@ -712,6 +712,8 @@ namespace bp_sys_wpf
                 Interlude.interlude.Sur_logo.Source = away_team_logo.Source;
                 if (IsWindowOpen("ScoreSur1")) ScoreSur.scoreSur.Logo.Source = away_team_logo.Source;
             }
+            if (IsWindowOpen("ScoreHole1")) ScoreHole.scoreHole.MainLogo.Source = main_team_logo.Source;
+            if (IsWindowOpen("ScoreHole1")) ScoreHole.scoreHole.AwayLogo.Source = away_team_logo.Source;
         }
         private async Task<BitmapImage> LoadNetworkImage(string imageUrl)
         {

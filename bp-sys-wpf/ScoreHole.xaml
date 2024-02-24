@@ -6,9 +6,6 @@
         xmlns:local="clr-namespace:bp_sys_wpf"
         mc:Ignorable="d"
         Title="ScoreHole" Height="234" Width="1416" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" WindowStyle="None" MouseLeftButtonDown="ScoreHole1_MouseLeftButtonDown">
-    <Window.Background>
-        <ImageBrush ImageSource="/score_hole.png"/>
-    </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="35*"/>

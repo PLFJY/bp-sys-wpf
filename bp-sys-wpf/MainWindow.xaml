@@ -1579,8 +1579,8 @@
                 </Grid>
             </GroupBox>
         </StackPanel>
-        <Button Grid.Row="4" Height="20" Width="40" Content="关于" x:Name="About" HorizontalAlignment="Left" Margin="1750,0,0,3" VerticalAlignment="Bottom" Click="About_Click"/>
+        <Button Grid.Row="4" Height="25" Width="40" Content="关于" x:Name="About" HorizontalAlignment="Left" Margin="1734,0,0,0" VerticalAlignment="Center" Click="About_Click"/>
         <Label Content="当前用户：" HorizontalAlignment="Left" Height="25" Margin="1486,0,0,0" VerticalAlignment="Center" Width="168" x:Name="NowUser" Grid.Row="4"/>
-        <Button Content="退出登录" HorizontalAlignment="Left" Height="25" Margin="1666,0,0,0" VerticalAlignment="Center" Width="70" x:Name="Logout" Click="Logout_Click" Grid.Row="4"/>
+        <Button Content="退出登录" HorizontalAlignment="Left" Height="25" Margin="1659,0,0,0" VerticalAlignment="Center" Width="70" x:Name="Logout" Click="Logout_Click" Grid.Row="4" RenderTransformOrigin="0.371,0.51"/>
     </Grid>
 </Window>

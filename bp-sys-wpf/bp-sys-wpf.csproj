@@ -57,8 +57,6 @@
     <None Remove="score_bg_s.png" />
     <None Remove="score_hole.png" />
     <None Remove="sur.png" />
-    <None Remove="华康POP1体W5.ttf" />
-    <None Remove="汉仪第五人格体.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -86,12 +84,6 @@
     <Resource Include="score_bg_s.png" />
     <Resource Include="score_hole.png" />
     <Resource Include="sur.png" />
-    <Resource Include="华康POP1体W5.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="汉仪第五人格体.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
   </ItemGroup>
 
   <ItemGroup>

@@ -28,20 +28,14 @@
   <ItemGroup>
     <None Remove="300px-YS电子竞技俱乐部_LOGO.png" />
     <None Remove="akg爱哭鬼.png" />
-    <None Remove="bottom.png" />
-    <None Remove="bp.png" />
     <None Remove="gui\background.jpg" />
     <None Remove="gui\huns.png" />
     <None Remove="gui\map bp.png" />
     <None Remove="gui\mapbp.png" />
     <None Remove="gui\surs.png" />
     <None Remove="gui\过场画面.png" />
-    <None Remove="hun.png" />
     <None Remove="icon.ico" />
     <None Remove="icon.png" />
-    <None Remove="interlude_bg.png" />
-    <None Remove="map_bp.png" />
-    <None Remove="name.png" />
     <None Remove="pic\hunban\null.png" />
     <None Remove="pic\hunBig\null.png" />
     <None Remove="pic\hunhalf\null.png" />
@@ -53,10 +47,6 @@
     <None Remove="pic\surBig\null.png" />
     <None Remove="pic\surhalf\null.png" />
     <None Remove="pic\sur\null.png" />
-    <None Remove="score_bg_h.png" />
-    <None Remove="score_bg_s.png" />
-    <None Remove="score_hole.png" />
-    <None Remove="sur.png" />
     <None Remove="华康POP1体W5.ttf" />
     <None Remove="汉仪第五人格体.ttf" />
   </ItemGroup>
@@ -76,31 +66,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="bottom.png" />
-    <Resource Include="bp.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="hun.png" />
-    <Resource Include="interlude_bg.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="map_bp.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="name.png" />
-    <Resource Include="score_bg_h.png" />
-    <Resource Include="score_bg_s.png" />
-    <Resource Include="score_hole.png" />
-    <Resource Include="sur.png" />
-    <Resource Include="华康POP1体W5.ttf">
+    <None Update="7z.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="汉仪第五人格体.ttf">
+    </None>
+    <None Update="7z.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
+    </None>
+    <None Update="bottom.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="bp.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
     <None Update="gui\background.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
@@ -126,6 +103,18 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
     <None Update="gui\score_bg_s.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="hun.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="interlude_bg.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="map_bp.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="name.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
     <None Update="pic\hunban\akg爱哭鬼.png">
@@ -1030,6 +1019,21 @@
     </None>
     <None Update="pic\sur\zss咒术师.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="score_bg_h.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="score_bg_s.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="score_hole.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="sur.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="update.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

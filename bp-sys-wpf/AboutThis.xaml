@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="关于" Height="170" Width="313" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        <Label Content="本软件由ASG赛事组导播零风_PLFJY制作&#xA;哔哩哔哩 @零风_PLFJY&#xA;如遇任何问题请QQ联系3424127335&#xA;请勿商用，违者必究&#xD;&#xA;软件框架：.Net 8.0" HorizontalAlignment="Center" Height="135" VerticalAlignment="Center" Width="293"/>
+        <Label Content="本软件由ASG赛事组 导播-零风_PLFJY 制作&#xA;哔哩哔哩 @零风_PLFJY&#xA;如遇任何问题请QQ联系3424127335&#xA;请勿商用，违者必究&#xD;&#xA;软件框架：.Net 8.0" HorizontalAlignment="Center" Height="135" VerticalAlignment="Center" Width="293"/>
 
     </Grid>
 </Window>

@@ -46,7 +46,62 @@ namespace bp_sys_wpf
 		{
 			return new BitmapImage(new Uri(GetFilePath(type, selectedValue)));
 		}
-		private void Hun_ban_1_KeyDown(object sender, KeyEventArgs e)
+        private void Res_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (IsWindowOpen("Front1"))
+            {
+                switch (Res.SelectedIndex)
+                {
+                    case 0:
+                        Front.front.Width = 1440;
+                        Front.front.Height = 810;
+                        break;
+                    case 1:
+                        Front.front.Width = 960;
+                        Front.front.Height = 540;
+                        break;
+                    case 2:
+                        Front.front.Width = 1280;
+                        Front.front.Height = 720;
+                        break;
+                    case 3:
+                        Front.front.Width = 1920;
+                        Front.front.Height = 1080;
+                        break;
+                    case 4:
+                        Front.front.Width = 2560;
+                        Front.front.Height = 1440;
+                        break;
+                }
+            }
+            if (IsWindowOpen("Interlude1"))
+            {
+                switch (Res.SelectedIndex)
+                {
+                    case 0:
+                        Interlude.interlude.Width = 1440;
+                        Interlude.interlude.Height = 810;
+                        break;
+                    case 1:
+                        Interlude.interlude.Width = 960;
+                        Interlude.interlude.Height = 540;
+                        break;
+                    case 2:
+                        Interlude.interlude.Width = 1280;
+                        Interlude.interlude.Height = 720;
+                        break;
+                    case 3:
+                        Interlude.interlude.Width = 1920;
+                        Interlude.interlude.Height = 1080;
+                        break;
+                    case 4:
+                        Interlude.interlude.Width = 2560;
+                        Interlude.interlude.Height = 1440;
+                        break;
+                }
+            }
+        }
+        private void Hun_ban_1_KeyDown(object sender, KeyEventArgs e)
 		{
 			Hun_ban_1.IsDropDownOpen = true;
 			if (e.Key == Key.Tab)

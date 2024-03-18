@@ -22,6 +22,7 @@ namespace bp_sys_wpf
         public AboutThis()
         {
             InitializeComponent();
+            NowVersion.Content = "当前版本：" + Config.version;
         }
     }
 }

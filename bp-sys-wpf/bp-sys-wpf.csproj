@@ -93,6 +93,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="7z.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="7z.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="gui\background.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>

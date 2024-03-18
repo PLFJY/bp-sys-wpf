@@ -9,10 +9,10 @@
     <Viewbox>
         <Grid Margin="0,0,0,10">
             <Label Content="本软件由ASG赛事组 导播-零风_PLFJY 制作&#xA;哔哩哔哩 @零风_PLFJY&#xA;如遇任何问题请QQ联系3424127335&#xA;请勿商用，违者必究&#xD;&#xA;软件框架：.Net 8.0" HorizontalAlignment="Center" Height="88" VerticalAlignment="Top" Width="293" Margin="0,10,0,0"/>
-            <Button Content="检查并更新" HorizontalAlignment="Left" Margin="221,103,0,0" VerticalAlignment="Top" Width="68" Height="24"/>
-            <ProgressBar HorizontalAlignment="Left" Height="21" Margin="4,127,0,0" VerticalAlignment="Top" Width="161" Name="Progress" Visibility="Hidden"/>
-            <Label HorizontalAlignment="Left" Height="30" Margin="170,122,0,0" VerticalAlignment="Top" Width="41" Name="persent" Visibility="Hidden"/>
-            <Label Content="Label" HorizontalAlignment="Left" Height="24" Margin="0,103,0,0" VerticalAlignment="Top" Width="106" Name="NowVersion"/>
+            <Button Content="检查并更新" HorizontalAlignment="Left" Margin="221,103,0,0" VerticalAlignment="Top" Width="68" Height="24" Name="Update" Click="Update_Click"/>
+            <ProgressBar HorizontalAlignment="Left" Height="21" Margin="4,127,0,0" VerticalAlignment="Top" Width="161" Name="pbDown" Visibility="Hidden"/>
+            <Label HorizontalAlignment="Left" Height="30" Margin="170,122,0,0" VerticalAlignment="Top" Width="41" Name="label1" Visibility="Hidden"/>
+            <Label HorizontalAlignment="Left" Height="24" Margin="0,103,0,0" VerticalAlignment="Top" Width="106" Name="NowVersion"/>
         </Grid>
     </Viewbox>
 </Window>

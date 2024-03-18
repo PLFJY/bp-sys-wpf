@@ -68,6 +68,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Flurl" Version="4.0.0" />
+    <PackageReference Include="Flurl.Http" Version="4.0.2" />
+    <PackageReference Include="MahApps.Metro" Version="2.4.10" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="bottom.png" />
     <Resource Include="bp.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

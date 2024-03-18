@@ -156,7 +156,7 @@ cd /d ""%~dp0""
     
 :: 删除除了指定文件之外的所有文件    
 for %%f in (*) do (    
-    if /i not ""%%f""==""7z.exe"" if /i not ""%%f""==""7z.dll"" if /i not ""%%f""==""new_bpsys.7z"" if /i not ""%%f""==""Token.txt"" if /i not ""%%f""==""update.bat"" if /i not ""%%f""==""EndAndUpdate.bat"" (    
+    if /i not ""%%f""==""7z.exe"" if /i not ""%%f""==""7z.dll"" if /i not ""%%f""==""new_bpsys.7z"" if /i not ""%%f""==""update.bat"" if /i not ""%%f""==""EndAndUpdate.bat"" (    
         echo Deleting file: %%f    
         del ""%%f""    
     )    

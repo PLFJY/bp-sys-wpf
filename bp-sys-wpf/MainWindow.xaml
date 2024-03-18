@@ -219,6 +219,7 @@
                                 <ComboBoxItem Content="yrj愚人金"/>
                                 <ComboBoxItem Content="ys隐士"/>
                                 <ComboBoxItem Content="zz蜘蛛"/>
+                                <ComboBoxItem Content="skzy时空之影"/>
                             </ComboBox>
                             <ComboBox Height="20" Width="100" IsEditable="True" Margin="10,0,0,0" x:Name="Hun_ban_2" IsEnabled="True" MaxDropDownHeight="100" KeyDown="Hun_ban_2_KeyDown">
                                 <ComboBoxItem Content="akg爱哭鬼"/>
@@ -249,6 +250,7 @@
                                 <ComboBoxItem Content="yrj愚人金"/>
                                 <ComboBoxItem Content="ys隐士"/>
                                 <ComboBoxItem Content="zz蜘蛛"/>
+                                <ComboBoxItem Content="skzy时空之影"/>
                             </ComboBox>
                             <ComboBox Height="20" Width="100" IsEditable="True" Margin="10,0,0,0" x:Name="Hun_ban_3" IsEnabled="True" MaxDropDownHeight="100" KeyDown="Hun_ban_3_KeyDown">
                                 <ComboBoxItem Content="akg爱哭鬼"/>
@@ -279,6 +281,7 @@
                                 <ComboBoxItem Content="yrj愚人金"/>
                                 <ComboBoxItem Content="ys隐士"/>
                                 <ComboBoxItem Content="zz蜘蛛"/>
+                                <ComboBoxItem Content="skzy时空之影"/>
                             </ComboBox>
 
                         </StackPanel>
@@ -324,6 +327,7 @@
                             <ComboBoxItem Content="yrj愚人金"/>
                             <ComboBoxItem Content="ys隐士"/>
                             <ComboBoxItem Content="zz蜘蛛"/>
+                            <ComboBoxItem Content="skzy时空之影"/>
                         </ComboBox>
                         <Image x:Name="Hun_pick_review" Grid.Row="1" Height="60" Width="60" VerticalAlignment="Bottom"/>
                     </Grid>

@@ -7,6 +7,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using System.IO;
 using System;
+using IniParser.Model;
+using IniParser;
+using System.Windows.Media;
+using System.Text.RegularExpressions;
 
 namespace bp_sys_wpf
 {
@@ -930,12 +934,6 @@ namespace bp_sys_wpf
 		{
 			InitializeComponent();
 			mainWindow = this;
-			Front front = new Front();
-			front.Show();
-			Interlude interlude = new Interlude();
-			interlude.Show();
-			Map_bp map_Bp = new Map_bp();
-			map_Bp.Show();
 			for (int i = 0; i < 8; i++)
 			{
 				main_team_player_state[i] = false;
@@ -944,9 +942,97 @@ namespace bp_sys_wpf
 			dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
 			dispatcherTimer.Interval = TimeSpan.FromSeconds(1);
 			dispatcherTimer.Tick += new EventHandler(DispatcherTimer_Tick);
-			this.Activate();
-		}
-		public string OpenImageFileDialog()//打开通用对话框选取图片
+            /*var parser = new FileIniDataParser();
+            IniData data = parser.ReadFile($"{AppDomain.CurrentDomain.BaseDirectory}Config.ini");
+            Config.Border = Convert.ToBoolean(data["Border"]["Border"]);
+            Config.Front.Color.team_name = ConvertHexStringToBrush(data["Front_Color"]["team_name"].ToString());
+
+			 Config.Front.Color.scoreS = ConvertHexStringToBrush(data["Front_Color"]["scoreS"]);
+            Config.Front.Color.score = ConvertHexStringToBrush(data["Front_Color"]["score"]);
+            Config.Front.Color.timmer = ConvertHexStringToBrush(data["Front_Color"]["timmer"]);
+            Config.Front.Color.Sur_team = ConvertHexStringToBrush(data["Front_Color"]["Sur_team"]);
+            Config.Front.Color.Sur_player = ConvertHexStringToBrush(data["Front_Color"]["Sur_player"]);
+            Config.Front.Color.Hun_player = ConvertHexStringToBrush(data["Front_Color"]["Hun_player"]);
+
+            Config.Front.Fonts.team_name = StringToFontFamily(data["Front_Fonts"]["team_name"]);
+            Config.Front.Fonts.scoreS = StringToFontFamily(data["Front_Fonts"]["scoreS"]);
+            Config.Front.Fonts.score = StringToFontFamily(data["Front_Fonts"]["score"]);
+            Config.Front.Fonts.timmer = StringToFontFamily(data["Front_Fonts"]["timmer"]);
+            Config.Front.Fonts.Sur_team = StringToFontFamily(data["Front_Fonts"]["Sur_team"]);
+            Config.Front.Fonts.Sur_player = StringToFontFamily(data["Front_Fonts"]["Sur_player"]);
+            Config.Front.Fonts.Hun_player = StringToFontFamily(data["Front_Fonts"]["Hun_player"]);
+
+            Config.Interlude.Color.team_name = ConvertHexStringToBrush(data["Interlude_color"]["team_name"]);
+            Config.Interlude.Color.player_name = ConvertHexStringToBrush(data["Interlude_color"]["player_name"]);
+
+            Config.Interlude.Fonts.team_name = StringToFontFamily(data["Interlude_Fonts"]["team_name"]);
+            Config.Interlude.Fonts.player_name = StringToFontFamily(data["Interlude_Fonts"]["player_name"]);
+
+            Config.Score.Color.TeamName = ConvertHexStringToBrush(data["Score_Color"]["TeamName"]);
+            Config.Score.Color.Score = ConvertHexStringToBrush(data["Score_Color"]["Score"]);
+            Config.Score.Color.Word = ConvertHexStringToBrush(data["Score_Color"]["Word"]);
+            Config.Score.Color.S = ConvertHexStringToBrush(data["Score_Color"]["S"]);
+
+            Config.Score.Fonts.TeamName = StringToFontFamily(data["Score_Fonts"]["TeamName"]);
+            Config.Score.Fonts.Score = StringToFontFamily(data["Score_Fonts"]["Score"]);
+            Config.Score.Fonts.Word = StringToFontFamily(data["Score_Fonts"]["Word"]);
+            Config.Score.Fonts.S = StringToFontFamily(data["Score_Fonts"]["S"]);
+
+            Config.ScoreHole.Color.Name = ConvertHexStringToBrush(data["ScoreHole_Color"]["Name"]);
+            Config.ScoreHole.Color.Score = ConvertHexStringToBrush(data["ScoreHole_Color"]["Score"]);
+
+            Config.ScoreHole.Fonts.Name = StringToFontFamily(data["ScoreHole_Fonts"]["Name"]);
+            Config.ScoreHole.Fonts.Score = StringToFontFamily(data["ScoreHole_Fonts"]["Score"]);*/
+			Front front = new Front();
+			front.Show();
+			Interlude interlude = new Interlude();
+			interlude.Show();
+            Map_bp map_Bp = new Map_bp();
+            map_Bp.Show();
+        }
+
+        public static FontFamily StringToFontFamily(string fontName)
+        {
+            // 直接根据字体名称创建FontFamily对象
+            return new FontFamily(fontName);
+        }
+        public static SolidColorBrush ConvertHexStringToBrush(string hexColor)
+        {
+            // 确保hexColor不是null或空字符串  
+            if (string.IsNullOrEmpty(hexColor))
+            {
+                throw new ArgumentNullException(nameof(hexColor), "颜色代码不能为空。");
+            }
+
+            // 移除#号（如果有的话）  
+            if (hexColor.StartsWith("#"))
+            {
+                hexColor = hexColor.Substring(1);
+            }
+
+            // 检查十六进制字符串长度  
+            if (hexColor.Length == 6 || hexColor.Length == 8)
+            {
+                try
+                {
+                    // 对于ARGB格式，格式为#AARRGGBB，对于RGB格式，格式为#RRGGBB  
+                    byte a = hexColor.Length == 8 ? Convert.ToByte(hexColor.Substring(0, 2), 16) : (byte)255; // Alpha，默认为255（不透明）  
+                    byte r = Convert.ToByte(hexColor.Substring(hexColor.Length == 8 ? 2 : 0, 2), 16); // Red  
+                    byte g = Convert.ToByte(hexColor.Substring(hexColor.Length == 8 ? 4 : 2, 2), 16); // Green  
+                    byte b = Convert.ToByte(hexColor.Substring(hexColor.Length == 8 ? 6 : 4, 2), 16); // Blue  
+                    return new SolidColorBrush(Color.FromArgb(a, r, g, b));
+                }
+                catch (FormatException)
+                {
+                    throw new ArgumentException("无效的颜色代码格式。它应该是#RRGGBB或#AARRGGBB。", nameof(hexColor));
+                }
+            }
+            else
+            {
+                throw new ArgumentException("无效的颜色代码格式。它应该是#RRGGBB或#AARRGGBB。", nameof(hexColor));
+            }
+        }
+        public string OpenImageFileDialog()//打开通用对话框选取图片
 		{
 			OpenFileDialog openFileDialog = new OpenFileDialog();
 			openFileDialog.Filter = "图片文件|*.png;*.jpg"; // 设置过滤器只显示 PNG 和 JPG 文件  

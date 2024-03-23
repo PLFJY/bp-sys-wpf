@@ -1,19 +1,8 @@
 ﻿using Flurl.Http;
-using Flurl;
-using Microsoft.Win32;
 using System.Diagnostics;
 using System.IO;
-using System.Net.Http;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
-using System.Windows.Media.Imaging;
-using System.Windows.Threading;
-using MahApps.Metro.Controls.Dialogs;
-using System.Security.Policy;
-using System.Text;
 using System.Net;
-using System.Reflection.Emit;
+using System.Windows;
 
 namespace bp_sys_wpf
 {
@@ -61,12 +50,12 @@ namespace bp_sys_wpf
                 MessageBox.Show("检测到新版本，最新版本为" + latestVersion + "\n点击确定或关闭该提示执行更新！", "更新提示");
                 label1.Visibility = Visibility.Visible;
                 pbDown.Visibility = Visibility.Visible;
+                NewBat();
+                CreateBat();
                 if (HttpFileExist($"https://gitee.com/plfjy/bp-sys-wpf-update/releases/download/V1.6/bp-sys-wpf.7z"))
                 {
                     DownloadHttpFile($"https://gitee.com/plfjy/bp-sys-wpf-update/releases/download/V1.6/bp-sys-wpf.7z", "new_bpsys.7z");
                 }
-                NewBat();
-                CreateBat();
             }
             else
             {

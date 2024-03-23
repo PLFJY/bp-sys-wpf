@@ -19,23 +19,23 @@
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="170"/>
-                    <ColumnDefinition Width="183"/>
-                    <ColumnDefinition Width="159"/>
-                    <ColumnDefinition Width="135"/>
-                    <ColumnDefinition Width="163"/>
-                    <ColumnDefinition Width="109"/>
-                    <ColumnDefinition Width="149"/>
-                    <ColumnDefinition Width="203"/>
-                    <ColumnDefinition Width="169"/>
+                    <ColumnDefinition Width="166"/>
+                    <ColumnDefinition Width="190"/>
+                    <ColumnDefinition Width="117"/>
+                    <ColumnDefinition Width="154"/>
+                    <ColumnDefinition Width="117"/>
+                    <ColumnDefinition Width="190"/>
+                    <ColumnDefinition Width="166"/>
+                    <ColumnDefinition Width="170"/>
                 </Grid.ColumnDefinitions>
                 <Image x:Name="Logo_sur" Grid.Column="0" Margin="52,10,32,11"/>
-                <Label x:Name="Sur_score" Grid.Column="1" Content="W0 D0 L0" VerticalAlignment="Center" FontSize="20" HorizontalAlignment="Right" Foreground="#FFD3BC88" Visibility="Hidden"/>
-                <Label x:Name="Sur_team_name" Grid.Column="2"  VerticalAlignment="Center" FontSize="40" HorizontalAlignment="Center" Foreground="#FFD3BC88" FontWeight="Bold" HorizontalContentAlignment="Center"/>
-                <Label x:Name="Sur_scoreS" Grid.Column="3" Content="0" VerticalAlignment="Center" FontSize="80" HorizontalAlignment="Center" Foreground="#FFF9EFD6" FontFamily="DFPOP1W5-B5" HorizontalContentAlignment="Center" Visibility="Hidden"/>
-                <Label x:Name="timmer" Grid.Column="4" Content="VS" VerticalAlignment="Center" FontSize="70" HorizontalAlignment="Center" Foreground="#FFDAB74F" FontFamily="汉仪第五人格体简" HorizontalContentAlignment="Center"/>
-                <Label x:Name="Hun_scoreS" Grid.Column="5" Content="0" VerticalAlignment="Center" FontSize="80" HorizontalAlignment="Center" Foreground="#FFF9EFD6" FontFamily="DFPOP1W5-B5" HorizontalContentAlignment="Center" Visibility="Hidden"/>
-                <Label x:Name="Hun_team_name" Grid.Column="6"  VerticalAlignment="Center" FontSize="40" HorizontalAlignment="Center" Foreground="#FFD3BC88" FontWeight="Bold" HorizontalContentAlignment="Center"/>
-                <Label x:Name="Hun_score" Grid.Column="7" Content="W0 D0 L0" VerticalAlignment="Center" FontSize="20" HorizontalAlignment="Left" Foreground="#FFD3BC88" Visibility="Hidden"/>
+                <Label x:Name="Sur_score" Grid.Column="1" Content="W0 D0 L0" VerticalAlignment="Center" FontSize="20" HorizontalAlignment="Left" Foreground="#FFD3BC88" Visibility="Hidden" Grid.ColumnSpan="2" Height="35" Margin="75,0,0,0" Width="103"/>
+                <Label x:Name="Sur_team_name" Grid.Column="2" VerticalAlignment="Center" FontSize="40" HorizontalAlignment="Center" Foreground="#FFD3BC88" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+                <Label x:Name="Sur_scoreS" Grid.Column="3" Content="0" VerticalAlignment="Center" FontSize="80" HorizontalAlignment="Center" Foreground="#FFF9EFD6" FontFamily="DFPOP1W5-B5" HorizontalContentAlignment="Center" Visibility="Hidden" Height="90" Width="50"/>
+                <Label x:Name="timmer" Grid.Column="4" Content="VS" VerticalAlignment="Center" FontSize="70" HorizontalAlignment="Center" Foreground="#FFDAB74F" FontFamily="汉仪第五人格体简" HorizontalContentAlignment="Center" Height="95" Width="88"/>
+                <Label x:Name="Hun_scoreS" Grid.Column="5" Content="0" VerticalAlignment="Center" FontSize="80" HorizontalAlignment="Center" Foreground="#FFF9EFD6" FontFamily="DFPOP1W5-B5" HorizontalContentAlignment="Center" Visibility="Hidden" Height="90" Width="50"/>
+                <Label x:Name="Hun_team_name" Grid.Column="6" VerticalAlignment="Center" FontSize="40" HorizontalAlignment="Center" Foreground="#FFD3BC88" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+                <Label x:Name="Hun_score" Grid.Column="7" Content="W0 D0 L0" VerticalAlignment="Center" FontSize="20" HorizontalAlignment="Left" Foreground="#FFD3BC88" Visibility="Hidden" Height="35" Width="103"/>
                 <Image x:Name="Logo_hun" Grid.Column="8" Margin="38,10,47,12"/>
             </Grid>
             <!--比分条-->

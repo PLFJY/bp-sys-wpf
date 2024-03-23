@@ -2,8 +2,8 @@
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Text.Json;
 using System.Windows;
-
 namespace bp_sys_wpf
 {
     /// <summary>
@@ -11,50 +11,61 @@ namespace bp_sys_wpf
     /// </summary>
     public partial class AboutThis : Window
     {
-        class ReleaseInfo
-        {
-            public string tag_name { get; set; }
-        }
         public AboutThis()
         {
             InitializeComponent();
             NowVersion.Content = "当前版本：" + Config.version;
         }
-
-        public async Task<string> FetchLatestVersion()
+        public class GiteeReleaseInfo
         {
+            public string tag_name { get; set; }
+            public Assets[] assets { get; set; }
+            public class Assets
+            {
+                public string browser_download_url { get; set; }
+            }
+        }
+        public async Task<(string latestVersion, string DownloadURL)> FetchLatestReleaseInfoAsync()
+        {
+            var baseUrl = "https://gitee.com/api/v5";
+            var repository = "plfjy/bp-sys-wpf-update";
+            var releasesUrl = $"{baseUrl}/repos/{repository}/releases/latest";
             try
             {
-                // 使用Flurl.Http发送GET请求并获取JSON响应
-                var responseJson = await "https://gitee.com/api/v5/repos/plfjy/bp-sys-wpf-update/releases/latest"
-                    .GetAsync()
-                    .ReceiveJson<ReleaseInfo>();
-                // 提取tag_name并存储到latestVersion变量
-                string latestVersion = responseJson.tag_name;
-                return latestVersion;
+                // 发起GET请求并获取JSON响应内容
+                var responseJson = await releasesUrl.GetStringAsync();
+                // 使用System.Text.Json进行反序列化
+                var releaseInfo = System.Text.Json.JsonSerializer.Deserialize<GiteeReleaseInfo>(responseJson);
+                // 提取tag_name和第一个browser_download_url
+                string latestVersion = releaseInfo.tag_name;
+                string downloadUrl = releaseInfo.assets?.Length > 0 ? releaseInfo.assets[0].browser_download_url : null;
+                return (latestVersion, downloadUrl);
             }
-
             catch (FlurlHttpException ex)
             {
-                // 处理请求失败的情况，例如抛出异常或返回空值
-                MessageBox.Show("无法访问Gitee API", "错误提示");
-                return null;
+                Console.WriteLine($"请求失败: {ex.Message}");
+                return default;
             }
-
+            catch (JsonException jex)
+            {
+                Console.WriteLine($"JSON解析失败: {jex.Message}");
+                return default;
+            }
         }
+
         private async void Update_Click(object sender, RoutedEventArgs e)
         {
-            string latestVersion = await FetchLatestVersion();
-            if (latestVersion != Config.version)
+            var (version, url) = await FetchLatestReleaseInfoAsync();
+            if (version != Config.version)
             {
-                MessageBox.Show("检测到新版本，最新版本为" + latestVersion + "\n点击确定或关闭该提示执行更新！", "更新提示");
+                MessageBox.Show("检测到新版本，最新版本为" + version + "\n点击确定或关闭该提示执行更新！", "更新提示");
                 label1.Visibility = Visibility.Visible;
                 pbDown.Visibility = Visibility.Visible;
                 NewBat();
                 CreateBat();
-                if (HttpFileExist($"https://gitee.com/plfjy/bp-sys-wpf-update/releases/download/V1.6/bp-sys-wpf.7z"))
+                if (HttpFileExist(url))
                 {
-                    DownloadHttpFile($"https://gitee.com/plfjy/bp-sys-wpf-update/releases/download/V1.6/bp-sys-wpf.7z", "new_bpsys.7z");
+                    DownloadHttpFile(url, "new_bpsys.7z");
                 }
             }
             else

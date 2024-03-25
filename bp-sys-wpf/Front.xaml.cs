@@ -33,10 +33,22 @@ namespace bp_sys_wpf
                 Hole_no_ban_6.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/no_hole_ban.png")));
             }
             catch { }
-            //Sur_team_name.Foreground = Config.Front.Color.team_name;
-            //Hun_team_name.Foreground = Config.Front.Color.team_name;
-            //Sur_team_name.FontFamily = Config.Front.Fonts.team_name;
-            //Hun_team_name.FontFamily = Config.Front.Fonts.team_name;
+            Sur_team_name.Foreground = Config.Front.Color.team_name;
+            Hun_team_name.Foreground = Config.Front.Color.team_name;
+            timmer.Foreground = Config.Front.Color.timmer;
+            Sur_1_player.Foreground = Config.Front.Color.Sur_player;
+            Sur_2_player.Foreground = Config.Front.Color.Sur_player;
+            Sur_3_player.Foreground = Config.Front.Color.Sur_player;
+            Sur_4_player.Foreground = Config.Front.Color.Sur_player;
+            Sur_1_team.Foreground = Config.Front.Color.Sur_team;
+            Sur_2_team.Foreground = Config.Front.Color.Sur_team;
+            Sur_3_team.Foreground = Config.Front.Color.Sur_team;
+            Sur_4_team.Foreground = Config.Front.Color.Sur_team;
+            Hun_player.Foreground = Config.Front.Color.Hun_player;
+            Sur_score.Foreground = Config.Front.Color.score;
+            Hun_score.Foreground = Config.Front.Color.score;
+            Sur_scoreS.Foreground = Config.Front.Color.scoreS;
+            Hun_scoreS.Foreground = Config.Front.Color.scoreS;
         }
         private void Window_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {

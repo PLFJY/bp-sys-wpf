@@ -23,6 +23,13 @@ namespace bp_sys_wpf
                 NameImage.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/name.png")));
             }
             catch { }
+            Hun_team_name.Foreground = Config.Interlude.Color.team_name;
+            Sur_team_name.Foreground = Config.Interlude.Color.team_name;
+            Hun_player_name.Foreground = Config.Interlude.Color.player_name;
+            Sur_1_player_name.Foreground = Config.Interlude.Color.player_name;
+            Sur_2_player_name.Foreground = Config.Interlude.Color.player_name;
+            Sur_3_player_name.Foreground = Config.Interlude.Color.player_name;
+            Sur_4_player_name.Foreground = Config.Interlude.Color.player_name;
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

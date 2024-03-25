@@ -16,6 +16,14 @@ namespace bp_sys_wpf
             InitializeComponent();
             scoreHun = this;
             try { this.Background = new ImageBrush(new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/score_bg_h.png")))); } catch { }
+            TeamName.Foreground = Config.Score.Color.TeamName;
+            S.Foreground = Config.Score.Color.S;
+            Win.Foreground = Config.Score.Color.Score;
+            Lose.Foreground = Config.Score.Color.Score;
+            All.Foreground = Config.Score.Color.Score;
+            WinWord.Foreground = Config.Score.Color.Word;
+            LoseWord.Foreground = Config.Score.Color.Word;
+            AllWord.Foreground = Config.Score.Color.Word;
         }
         private void ScoreHun1_MouseDown(object sender, MouseButtonEventArgs e)
         {

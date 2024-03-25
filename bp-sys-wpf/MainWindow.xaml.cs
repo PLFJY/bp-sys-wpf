@@ -11,6 +11,10 @@ using IniParser.Model;
 using IniParser;
 using System.Windows.Media;
 using System.Text.RegularExpressions;
+using Flurl.Http;
+using static bp_sys_wpf.AboutThis;
+using System.Text.Json;
+using System.Reflection.Emit;
 
 namespace bp_sys_wpf
 {
@@ -29,7 +33,82 @@ namespace bp_sys_wpf
 		public int MainWin = 0, MainLose = 0, MainAll = 0, MainS = 0, MainHoleS = 0, AwayWin = 0, AwayLose = 0, AwayAll = 0, AwayS = 0, AwayHoleS = 0;
 		private DispatcherTimer dispatcherTimer;
 		private int countdownTime;
-		private string GetFilePath(string type, string selectedValue)
+        public MainWindow()
+        {
+            InitializeComponent();
+            mainWindow = this;
+            for (int i = 0; i < 8; i++)
+            {
+                main_team_player_state[i] = false;
+                away_team_player_state[i] = false;
+            }
+            dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+            dispatcherTimer.Interval = TimeSpan.FromSeconds(1);
+            dispatcherTimer.Tick += new EventHandler(DispatcherTimer_Tick);
+            var parser = new FileIniDataParser();
+            IniData data = parser.ReadFile($"{AppDomain.CurrentDomain.BaseDirectory}Config.ini");
+            Config.Front.Color.team_name = ConvertHexStringToBrush(data["Front_Color"]["team_name"].ToString());
+            Config.Front.Color.scoreS = ConvertHexStringToBrush(data["Front_Color"]["scoreS"].ToString());
+            Config.Front.Color.score = ConvertHexStringToBrush(data["Front_Color"]["score"].ToString());
+            Config.Front.Color.timmer = ConvertHexStringToBrush(data["Front_Color"]["timmer"].ToString());
+            Config.Front.Color.Sur_team = ConvertHexStringToBrush(data["Front_Color"]["Sur_team"].ToString());
+            Config.Front.Color.Sur_player = ConvertHexStringToBrush(data["Front_Color"]["Sur_player"].ToString());
+            Config.Front.Color.Hun_player = ConvertHexStringToBrush(data["Front_Color"]["Hun_player"].ToString());
+
+            Config.Interlude.Color.team_name = ConvertHexStringToBrush(data["Interlude_Color"]["team_name"].ToString());
+            Config.Interlude.Color.player_name = ConvertHexStringToBrush(data["Interlude_Color"]["player_name"].ToString());
+
+            Config.Score.Color.TeamName = ConvertHexStringToBrush(data["Score_Color"]["TeamName"].ToString());
+            Config.Score.Color.Score = ConvertHexStringToBrush(data["Score_Color"]["Score"].ToString());
+            Config.Score.Color.Word = ConvertHexStringToBrush(data["Score_Color"]["Word"].ToString());
+            Config.Score.Color.S = ConvertHexStringToBrush(data["Score_Color"]["S"].ToString());
+
+            Config.ScoreHole.Color.Name = ConvertHexStringToBrush(data["ScoreHole_Color"]["Name"].ToString());
+            Config.ScoreHole.Color.Score = ConvertHexStringToBrush(data["ScoreHole_Color"]["Score"].ToString());
+            Front front = new Front();
+            front.Show();
+            Interlude interlude = new Interlude();
+            interlude.Show();
+            Map_bp map_Bp = new Map_bp();
+            map_Bp.Show();
+			UpdateCheck();
+        }
+		public async void UpdateCheck()
+		{
+            var (version, url) = await FetchLatestReleaseInfoAsync();
+            if (version != Config.version)
+            {
+                MessageBox.Show("检测到新版本，最新版本为" + version + "\n请去关于界面获取更新！", "更新提示");
+            }
+        }
+        public async Task<(string latestVersion, string DownloadURL)> FetchLatestReleaseInfoAsync()
+        {
+            var baseUrl = "https://gitee.com/api/v5";
+            var repository = "plfjy/bp-sys-wpf-update";
+            var releasesUrl = $"{baseUrl}/repos/{repository}/releases/latest";
+            try
+            {
+                // 发起GET请求并获取JSON响应内容
+                var responseJson = await releasesUrl.GetStringAsync();
+                // 使用System.Text.Json进行反序列化
+                var releaseInfo = System.Text.Json.JsonSerializer.Deserialize<GiteeReleaseInfo>(responseJson);
+                // 提取tag_name和第一个browser_download_url
+                string latestVersion = releaseInfo.tag_name;
+                string downloadUrl = releaseInfo.assets?.Length > 0 ? releaseInfo.assets[0].browser_download_url : null;
+                return (latestVersion, downloadUrl);
+            }
+            catch (FlurlHttpException ex)
+            {
+                Console.WriteLine($"请求失败: {ex.Message}");
+                return default;
+            }
+            catch (JsonException jex)
+            {
+                Console.WriteLine($"JSON解析失败: {jex.Message}");
+                return default;
+            }
+        }
+        private string GetFilePath(string type, string selectedValue)
 		{
 			string temp = "pack://application:,,,/pic/" + type + "/";
 			int spaceIndex = selectedValue.IndexOf(' ');
@@ -930,107 +1009,32 @@ namespace bp_sys_wpf
 			this.Sur_hole_ban_6_preview.Source = null;
 			Front.front.Hole_ban_6.Source = null;
 		}
-		public MainWindow()
-		{
-			InitializeComponent();
-			mainWindow = this;
-			for (int i = 0; i < 8; i++)
-			{
-				main_team_player_state[i] = false;
-				away_team_player_state[i] = false;
-			}
-			dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
-			dispatcherTimer.Interval = TimeSpan.FromSeconds(1);
-			dispatcherTimer.Tick += new EventHandler(DispatcherTimer_Tick);
-            /*var parser = new FileIniDataParser();
-            IniData data = parser.ReadFile($"{AppDomain.CurrentDomain.BaseDirectory}Config.ini");
-            Config.Border = Convert.ToBoolean(data["Border"]["Border"]);
-            Config.Front.Color.team_name = ConvertHexStringToBrush(data["Front_Color"]["team_name"].ToString());
 
-			 Config.Front.Color.scoreS = ConvertHexStringToBrush(data["Front_Color"]["scoreS"]);
-            Config.Front.Color.score = ConvertHexStringToBrush(data["Front_Color"]["score"]);
-            Config.Front.Color.timmer = ConvertHexStringToBrush(data["Front_Color"]["timmer"]);
-            Config.Front.Color.Sur_team = ConvertHexStringToBrush(data["Front_Color"]["Sur_team"]);
-            Config.Front.Color.Sur_player = ConvertHexStringToBrush(data["Front_Color"]["Sur_player"]);
-            Config.Front.Color.Hun_player = ConvertHexStringToBrush(data["Front_Color"]["Hun_player"]);
-
-            Config.Front.Fonts.team_name = StringToFontFamily(data["Front_Fonts"]["team_name"]);
-            Config.Front.Fonts.scoreS = StringToFontFamily(data["Front_Fonts"]["scoreS"]);
-            Config.Front.Fonts.score = StringToFontFamily(data["Front_Fonts"]["score"]);
-            Config.Front.Fonts.timmer = StringToFontFamily(data["Front_Fonts"]["timmer"]);
-            Config.Front.Fonts.Sur_team = StringToFontFamily(data["Front_Fonts"]["Sur_team"]);
-            Config.Front.Fonts.Sur_player = StringToFontFamily(data["Front_Fonts"]["Sur_player"]);
-            Config.Front.Fonts.Hun_player = StringToFontFamily(data["Front_Fonts"]["Hun_player"]);
-
-            Config.Interlude.Color.team_name = ConvertHexStringToBrush(data["Interlude_color"]["team_name"]);
-            Config.Interlude.Color.player_name = ConvertHexStringToBrush(data["Interlude_color"]["player_name"]);
-
-            Config.Interlude.Fonts.team_name = StringToFontFamily(data["Interlude_Fonts"]["team_name"]);
-            Config.Interlude.Fonts.player_name = StringToFontFamily(data["Interlude_Fonts"]["player_name"]);
-
-            Config.Score.Color.TeamName = ConvertHexStringToBrush(data["Score_Color"]["TeamName"]);
-            Config.Score.Color.Score = ConvertHexStringToBrush(data["Score_Color"]["Score"]);
-            Config.Score.Color.Word = ConvertHexStringToBrush(data["Score_Color"]["Word"]);
-            Config.Score.Color.S = ConvertHexStringToBrush(data["Score_Color"]["S"]);
-
-            Config.Score.Fonts.TeamName = StringToFontFamily(data["Score_Fonts"]["TeamName"]);
-            Config.Score.Fonts.Score = StringToFontFamily(data["Score_Fonts"]["Score"]);
-            Config.Score.Fonts.Word = StringToFontFamily(data["Score_Fonts"]["Word"]);
-            Config.Score.Fonts.S = StringToFontFamily(data["Score_Fonts"]["S"]);
-
-            Config.ScoreHole.Color.Name = ConvertHexStringToBrush(data["ScoreHole_Color"]["Name"]);
-            Config.ScoreHole.Color.Score = ConvertHexStringToBrush(data["ScoreHole_Color"]["Score"]);
-
-            Config.ScoreHole.Fonts.Name = StringToFontFamily(data["ScoreHole_Fonts"]["Name"]);
-            Config.ScoreHole.Fonts.Score = StringToFontFamily(data["ScoreHole_Fonts"]["Score"]);*/
-			Front front = new Front();
-			front.Show();
-			Interlude interlude = new Interlude();
-			interlude.Show();
-            Map_bp map_Bp = new Map_bp();
-            map_Bp.Show();
-        }
-
-        public static FontFamily StringToFontFamily(string fontName)
-        {
-            // 直接根据字体名称创建FontFamily对象
-            return new FontFamily(fontName);
-        }
         public static SolidColorBrush ConvertHexStringToBrush(string hexColor)
         {
-            // 确保hexColor不是null或空字符串  
-            if (string.IsNullOrEmpty(hexColor))
-            {
-                throw new ArgumentNullException(nameof(hexColor), "颜色代码不能为空。");
-            }
-
-            // 移除#号（如果有的话）  
+            // 移除#号，如果存在的话  
             if (hexColor.StartsWith("#"))
             {
                 hexColor = hexColor.Substring(1);
             }
-
-            // 检查十六进制字符串长度  
-            if (hexColor.Length == 6 || hexColor.Length == 8)
+            // 检查长度是否为6或8  
+            if (hexColor.Length != 6 && hexColor.Length != 8)
             {
-                try
-                {
-                    // 对于ARGB格式，格式为#AARRGGBB，对于RGB格式，格式为#RRGGBB  
-                    byte a = hexColor.Length == 8 ? Convert.ToByte(hexColor.Substring(0, 2), 16) : (byte)255; // Alpha，默认为255（不透明）  
-                    byte r = Convert.ToByte(hexColor.Substring(hexColor.Length == 8 ? 2 : 0, 2), 16); // Red  
-                    byte g = Convert.ToByte(hexColor.Substring(hexColor.Length == 8 ? 4 : 2, 2), 16); // Green  
-                    byte b = Convert.ToByte(hexColor.Substring(hexColor.Length == 8 ? 6 : 4, 2), 16); // Blue  
-                    return new SolidColorBrush(Color.FromArgb(a, r, g, b));
-                }
-                catch (FormatException)
-                {
-                    throw new ArgumentException("无效的颜色代码格式。它应该是#RRGGBB或#AARRGGBB。", nameof(hexColor));
-                }
+                MessageBox.Show("Config.ini设置的颜色代号格式不合法. 应该为 #RRGGBB 或 #AARRGGBB.","配置文件加载错误");
+                Environment.Exit(0);
             }
-            else
-            {
-                throw new ArgumentException("无效的颜色代码格式。它应该是#RRGGBB或#AARRGGBB。", nameof(hexColor));
-            }
+            // 根据长度确定是否有透明度部分  
+            bool hasAlpha = hexColor.Length == 8;
+            // 将十六进制字符串转换为字节数组  
+            byte a = hasAlpha ? Convert.ToByte(hexColor.Substring(0, 2), 16) : (byte)255; // 透明度  
+            byte r = Convert.ToByte(hexColor.Substring(hasAlpha ? 2 : 0, 2), 16); // 红色  
+            byte g = Convert.ToByte(hexColor.Substring(hasAlpha ? 4 : 2, 2), 16); // 绿色  
+            byte b = Convert.ToByte(hexColor.Substring(hasAlpha ? 6 : 4, 2), 16); // 蓝色  
+            // 创建Color对象  
+            Color color = Color.FromArgb(a, r, g, b);
+            // 创建SolidColorBrush对象  
+            SolidColorBrush solidColorBrush = new SolidColorBrush(color);
+            return solidColorBrush;
         }
         public string OpenImageFileDialog()//打开通用对话框选取图片
 		{

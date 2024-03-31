@@ -6,6 +6,8 @@ using System.ComponentModel;
 using System.Diagnostics;
 using IniParser.Model;
 using IniParser;
+using System.Windows.Media.Animation;
+using System.Windows.Threading;
 
 namespace bp_sys_wpf
 {
@@ -21,16 +23,21 @@ namespace bp_sys_wpf
             front = this;
             try
             {
-                this.Background = new ImageBrush(new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/bp.png"))));
-                Hun_no_ban_1.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/no_hun_ban.png")));
-                Hun_no_ban_2.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/no_hun_ban.png")));
-                Hun_no_ban_3.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/no_hun_ban.png")));
-                Hole_no_ban_1.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/no_hole_ban.png")));
-                Hole_no_ban_2.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/no_hole_ban.png")));
-                Hole_no_ban_3.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/no_hole_ban.png")));
-                Hole_no_ban_4.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/no_hole_ban.png")));
-                Hole_no_ban_5.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/no_hole_ban.png")));
-                Hole_no_ban_6.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/no_hole_ban.png")));
+                this.Background = new ImageBrush(new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/bp.png"))));
+                Hun_no_ban_1.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/no_hun_ban.png")));
+                Hun_no_ban_2.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/no_hun_ban.png")));
+                Hun_no_ban_3.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/no_hun_ban.png")));
+                Hole_no_ban_1.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/no_hole_ban.png")));
+                Hole_no_ban_2.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/no_hole_ban.png")));
+                Hole_no_ban_3.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/no_hole_ban.png")));
+                Hole_no_ban_4.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/no_hole_ban.png")));
+                Hole_no_ban_5.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/no_hole_ban.png")));
+                Hole_no_ban_6.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/no_hole_ban.png")));
+                SurPicking1.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/SurPicking.png")));
+                SurPicking2.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/SurPicking.png")));
+                SurPicking3.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/SurPicking.png")));
+                SurPicking4.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/SurPicking.png")));
+                HunPicking.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/HunPicking.png")));
             }
             catch { }
             Sur_team_name.Foreground = Config.Front.Color.team_name;

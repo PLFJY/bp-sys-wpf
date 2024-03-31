@@ -15,7 +15,7 @@ namespace bp_sys_wpf
         {
             InitializeComponent();
             scoreHun = this;
-            try { this.Background = new ImageBrush(new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/score_bg_h.png")))); } catch { }
+            try { this.Background = new ImageBrush(new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/score_bg_h.png")))); } catch { }
             TeamName.Foreground = Config.Score.Color.TeamName;
             S.Foreground = Config.Score.Color.S;
             Win.Foreground = Config.Score.Color.Score;

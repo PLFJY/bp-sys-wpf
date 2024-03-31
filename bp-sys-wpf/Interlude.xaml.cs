@@ -18,9 +18,9 @@ namespace bp_sys_wpf
             MainWindow.mainWindow.Activate();
             try
             {
-                this.Background = new ImageBrush(new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/interlude_bg.png"))));
-                Bottom.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/bottom.png")));
-                NameImage.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/name.png")));
+                this.Background = new ImageBrush(new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/interlude_bg.png"))));
+                Bottom.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/bottom.png")));
+                NameImage.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/name.png")));
             }
             catch { }
             Hun_team_name.Foreground = Config.Interlude.Color.team_name;

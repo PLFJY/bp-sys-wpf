@@ -73,24 +73,28 @@
                 <!--监管Ban-->
                 <Grid Grid.Column="1">
                     <Image x:Name="Sur_pick_1" Height="166" Panel.ZIndex="-1" Margin="0,0,0,7"/>
+                    <Image x:Name="SurPicking1" Height="166" Panel.ZIndex="2" Margin="0,0,0,7" Visibility="Hidden"/>
                     <Label x:Name="Sur_1_team" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,35" FontSize="22"/>
                     <Label x:Name="Sur_1_player" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22"/>
                 </Grid>
                 <!--求生Pick1-->
                 <Grid Grid.Column="2">
                     <Image x:Name="Sur_pick_2" Height="166" Panel.ZIndex="-1" Margin="0,0,0,7"/>
+                    <Image x:Name="SurPicking2" Height="166" Panel.ZIndex="2" Margin="0,0,0,7" Visibility="Hidden"/>
                     <Label x:Name="Sur_2_team" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,35" FontSize="22"/>
                     <Label x:Name="Sur_2_player" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22"/>
                 </Grid>
                 <!--求生Pick2-->
                 <Grid Grid.Column="3">
                     <Image x:Name="Sur_pick_3" Height="166" Panel.ZIndex="-1" Margin="0,0,0,7"/>
+                    <Image x:Name="SurPicking3" Height="166" Panel.ZIndex="2" Margin="0,0,0,7" Visibility="Hidden"/>
                     <Label x:Name="Sur_3_team" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,35" FontSize="22"/>
                     <Label x:Name="Sur_3_player" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22"/>
                 </Grid>
                 <!--求生Pick3-->
                 <Grid Grid.Column="4">
                     <Image x:Name="Sur_pick_4" Height="166" Panel.ZIndex="-1" Margin="0,0,0,7"/>
+                    <Image x:Name="SurPicking4" Height="166" Panel.ZIndex="2" Margin="0,0,0,7" Visibility="Hidden"/>
                     <Label x:Name="Sur_4_team" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,35" FontSize="22"/>
                     <Label x:Name="Sur_4_player" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22"/>
                 </Grid>
@@ -123,6 +127,7 @@
                 <!--监管Pick-->
                 <Grid Grid.Column="6">
                     <Image x:Name="Hun_pick" Height="166" Panel.ZIndex="-1" Margin="0,0,0,8"/>
+                    <Image x:Name="HunPicking" Width="468" Panel.ZIndex="2" Margin="0,0,0,8" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden" />
                     <Label x:Name="Hun_player" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10" FontSize="30" />
                 </Grid>
                 <!--求生Ban-->

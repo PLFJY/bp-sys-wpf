@@ -24,7 +24,7 @@ namespace bp_sys_wpf
         {
             InitializeComponent();
             scoreHole = this;
-            try { this.Background = new ImageBrush(new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("gui/score_hole.png")))); } catch { }
+            try { this.Background = new ImageBrush(new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/score_hole.png")))); } catch { }
             MainLogo.Source = MainWindow.mainWindow.main_team_logo.Source;
             MainName.Content = MainWindow.mainWindow.Main_team_name.Text;
             AwayLogo.Source = MainWindow.mainWindow.away_team_logo.Source;

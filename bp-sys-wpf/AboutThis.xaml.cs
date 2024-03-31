@@ -156,21 +156,21 @@ cd /d ""%~dp0""
     
 :: 删除除了指定文件之外的所有文件    
 for %%f in (*) do (    
-    if /i not ""%%f""==""7z.exe"" if /i not ""%%f""==""7z.dll"" if /i not ""%%f""==""new_bpsys.7z"" if /i not ""%%f""==""Token.txt"" if /i not ""%%f""==""update.bat"" if /i not ""%%f""==""EndAndUpdate.bat"" (    
-        echo Deleting file: %%f    
+    if /i not ""%%f""==""7z"" if /i not ""%%f""==""new_bpsys.7z"" if /i not ""%%f""==""Resource"" if /i not ""%%f""==""update.bat"" if /i not ""%%f""==""EndAndUpdate.bat"" (    
+        echo Deleting file: %%f
         del ""%%f""    
     )    
 )    
     
 :: 检查7z.exe是否存在，如果不存在则退出脚本    
-if not exist ""7z.exe"" (    
+if not exist ""7z/7z.exe"" (    
     echo 7z.exe not found. Exiting script.    
     exit /b    
 )    
     
 :: 使用7z.exe解压new_bpsys.7z文件，使用-y参数自动确认所有操作    
 echo Extracting new_bpsys.7z...    
-""7z.exe"" x ""new_bpsys.7z"" -o""%~dp0"" -y    
+""7z/7z.exe"" x ""new_bpsys.7z"" -o""%~dp0"" -y    
     
 del ""new_bpsys.7z""
 mshta vbscript:msgbox(""更新完成"",64,""更新提示"")(window.close)

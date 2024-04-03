@@ -48,71 +48,71 @@ namespace bp_sys_wpf
                 case 0:
                     if ((bool)IsMainSur.IsChecked)
                     {
-                        ScoreHole.scoreHole.Bo1FIconMain.Source = ImageGet(GetAbsoluteFilePath("gui/sur.png"));
-                        ScoreHole.scoreHole.Bo1FIconAway.Source = ImageGet(GetAbsoluteFilePath("gui/hun.png"));
+                        ScoreHole.scoreHole.Bo1FIconMain.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/sur.png"));
+                        ScoreHole.scoreHole.Bo1FIconAway.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/hun.png"));
                     }
                     break;
                 case 1:
                     if ((bool)IsMainSur.IsChecked)
                     {
-                        ScoreHole.scoreHole.Bo1SIconMain.Source = ImageGet(GetAbsoluteFilePath("gui/sur.png"));
-                        ScoreHole.scoreHole.Bo1SIconAway.Source = ImageGet(GetAbsoluteFilePath("gui/hun.png"));
+                        ScoreHole.scoreHole.Bo1SIconMain.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/sur.png"));
+                        ScoreHole.scoreHole.Bo1SIconAway.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/hun.png"));
                     }
                     break;
                 case 2:
                     if ((bool)IsMainSur.IsChecked)
                     {
-                        ScoreHole.scoreHole.Bo2FIconMain.Source = ImageGet(GetAbsoluteFilePath("gui/sur.png"));
-                        ScoreHole.scoreHole.Bo2FIconAway.Source = ImageGet(GetAbsoluteFilePath("gui/hun.png"));
+                        ScoreHole.scoreHole.Bo2FIconMain.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/sur.png"));
+                        ScoreHole.scoreHole.Bo2FIconAway.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/hun.png"));
                     }
                     break;
                 case 3:
                     if ((bool)IsMainSur.IsChecked)
                     {
-                        ScoreHole.scoreHole.Bo2SIconMain.Source = ImageGet(GetAbsoluteFilePath("gui/sur.png"));
-                        ScoreHole.scoreHole.Bo2SIconAway.Source = ImageGet(GetAbsoluteFilePath("gui/hun.png"));
+                        ScoreHole.scoreHole.Bo2SIconMain.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/sur.png"));
+                        ScoreHole.scoreHole.Bo2SIconAway.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/hun.png"));
                     }
                     break;
                 case 4:
                     if ((bool)IsMainSur.IsChecked)
                     {
-                        ScoreHole.scoreHole.Bo3FIconMain.Source = ImageGet(GetAbsoluteFilePath("gui/sur.png"));
-                        ScoreHole.scoreHole.Bo3FIconAway.Source = ImageGet(GetAbsoluteFilePath("gui/hun.png"));
+                        ScoreHole.scoreHole.Bo3FIconMain.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/sur.png"));
+                        ScoreHole.scoreHole.Bo3FIconAway.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/hun.png"));
                     }
                     break;
                 case 5:
                     if ((bool)IsMainSur.IsChecked)
                     {
-                        ScoreHole.scoreHole.Bo3SIconMain.Source = ImageGet(GetAbsoluteFilePath("gui/sur.png"));
-                        ScoreHole.scoreHole.Bo3SIconAway.Source = ImageGet(GetAbsoluteFilePath("gui/hun.png"));
+                        ScoreHole.scoreHole.Bo3SIconMain.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/sur.png"));
+                        ScoreHole.scoreHole.Bo3SIconAway.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/hun.png"));
                     }
                     break;
                 case 6:
                     if ((bool)IsMainSur.IsChecked)
                     {
-                        ScoreHole.scoreHole.Bo4FIconMain.Source = ImageGet(GetAbsoluteFilePath("gui/sur.png"));
-                        ScoreHole.scoreHole.Bo4FIconAway.Source = ImageGet(GetAbsoluteFilePath("gui/hun.png"));
+                        ScoreHole.scoreHole.Bo4FIconMain.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/sur.png"));
+                        ScoreHole.scoreHole.Bo4FIconAway.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/hun.png"));
                     }
                     break;
                 case 7:
                     if ((bool)IsMainSur.IsChecked)
                     {
-                        ScoreHole.scoreHole.Bo4SIconMain.Source = ImageGet(GetAbsoluteFilePath("gui/sur.png"));
-                        ScoreHole.scoreHole.Bo4SIconAway.Source = ImageGet(GetAbsoluteFilePath("gui/hun.png"));
+                        ScoreHole.scoreHole.Bo4SIconMain.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/sur.png"));
+                        ScoreHole.scoreHole.Bo4SIconAway.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/hun.png"));
                     }
                     break;
                 case 8:
                     if ((bool)IsMainSur.IsChecked)
                     {
-                        ScoreHole.scoreHole.Bo5FIconMain.Source = ImageGet(GetAbsoluteFilePath("gui/sur.png"));
-                        ScoreHole.scoreHole.Bo5FIconAway.Source = ImageGet(GetAbsoluteFilePath("gui/hun.png"));
+                        ScoreHole.scoreHole.Bo5FIconMain.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/sur.png"));
+                        ScoreHole.scoreHole.Bo5FIconAway.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/hun.png"));
                     }
                     break;
                 case 9:
                     if ((bool)IsMainSur.IsChecked)
                     {
-                        ScoreHole.scoreHole.Bo5SIconMain.Source = ImageGet(GetAbsoluteFilePath("gui/sur.png"));
-                        ScoreHole.scoreHole.Bo5SIconAway.Source = ImageGet(GetAbsoluteFilePath("gui/hun.png"));
+                        ScoreHole.scoreHole.Bo5SIconMain.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/sur.png"));
+                        ScoreHole.scoreHole.Bo5SIconAway.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/hun.png"));
                     }
                     break;
             }
@@ -141,71 +141,71 @@ namespace bp_sys_wpf
                 case 0:
                     if ((bool)IsMainHun.IsChecked)
                     {
-                        ScoreHole.scoreHole.Bo1FIconMain.Source = ImageGet(GetAbsoluteFilePath("gui/hun.png"));
-                        ScoreHole.scoreHole.Bo1FIconAway.Source = ImageGet(GetAbsoluteFilePath("gui/sur.png"));
+                        ScoreHole.scoreHole.Bo1FIconMain.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/hun.png"));
+                        ScoreHole.scoreHole.Bo1FIconAway.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/sur.png"));
                     }
                     break;
                 case 1:
                     if ((bool)IsMainHun.IsChecked)
                     {
-                        ScoreHole.scoreHole.Bo1SIconMain.Source = ImageGet(GetAbsoluteFilePath("gui/hun.png"));
-                        ScoreHole.scoreHole.Bo1SIconAway.Source = ImageGet(GetAbsoluteFilePath("gui/sur.png"));
+                        ScoreHole.scoreHole.Bo1SIconMain.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/hun.png"));
+                        ScoreHole.scoreHole.Bo1SIconAway.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/sur.png"));
                     }
                     break;
                 case 2:
                     if ((bool)IsMainHun.IsChecked)
                     {
-                        ScoreHole.scoreHole.Bo2FIconMain.Source = ImageGet(GetAbsoluteFilePath("gui/hun.png"));
-                        ScoreHole.scoreHole.Bo2FIconAway.Source = ImageGet(GetAbsoluteFilePath("gui/sur.png"));
+                        ScoreHole.scoreHole.Bo2FIconMain.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/hun.png"));
+                        ScoreHole.scoreHole.Bo2FIconAway.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/sur.png"));
                     }
                     break;
                 case 3:
                     if ((bool)IsMainHun.IsChecked)
                     {
-                        ScoreHole.scoreHole.Bo2SIconMain.Source = ImageGet(GetAbsoluteFilePath("gui/hun.png"));
-                        ScoreHole.scoreHole.Bo2SIconAway.Source = ImageGet(GetAbsoluteFilePath("gui/sur.png"));
+                        ScoreHole.scoreHole.Bo2SIconMain.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/hun.png"));
+                        ScoreHole.scoreHole.Bo2SIconAway.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/sur.png"));
                     }
                     break;
                 case 4:
                     if ((bool)IsMainHun.IsChecked)
                     {
-                        ScoreHole.scoreHole.Bo3FIconMain.Source = ImageGet(GetAbsoluteFilePath("gui/hun.png"));
-                        ScoreHole.scoreHole.Bo3FIconAway.Source = ImageGet(GetAbsoluteFilePath("gui/sur.png"));
+                        ScoreHole.scoreHole.Bo3FIconMain.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/hun.png"));
+                        ScoreHole.scoreHole.Bo3FIconAway.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/sur.png"));
                     }
                     break;
                 case 5:
                     if ((bool)IsMainHun.IsChecked)
                     {
-                        ScoreHole.scoreHole.Bo3SIconMain.Source = ImageGet(GetAbsoluteFilePath("gui/hun.png"));
-                        ScoreHole.scoreHole.Bo3SIconAway.Source = ImageGet(GetAbsoluteFilePath("gui/sur.png"));
+                        ScoreHole.scoreHole.Bo3SIconMain.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/hun.png"));
+                        ScoreHole.scoreHole.Bo3SIconAway.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/sur.png"));
                     }
                     break;
                 case 6:
                     if ((bool)IsMainHun.IsChecked)
                     {
-                        ScoreHole.scoreHole.Bo4FIconMain.Source = ImageGet(GetAbsoluteFilePath("gui/hun.png"));
-                        ScoreHole.scoreHole.Bo4FIconAway.Source = ImageGet(GetAbsoluteFilePath("gui/sur.png"));
+                        ScoreHole.scoreHole.Bo4FIconMain.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/hun.png"));
+                        ScoreHole.scoreHole.Bo4FIconAway.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/sur.png"));
                     }
                     break;
                 case 7:
                     if ((bool)IsMainHun.IsChecked)
                     {
-                        ScoreHole.scoreHole.Bo4SIconMain.Source = ImageGet(GetAbsoluteFilePath("gui/hun.png"));
-                        ScoreHole.scoreHole.Bo4SIconAway.Source = ImageGet(GetAbsoluteFilePath("gui/sur.png"));
+                        ScoreHole.scoreHole.Bo4SIconMain.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/hun.png"));
+                        ScoreHole.scoreHole.Bo4SIconAway.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/sur.png"));
                     }
                     break;
                 case 8:
                     if ((bool)IsMainHun.IsChecked)
                     {
-                        ScoreHole.scoreHole.Bo5FIconMain.Source = ImageGet(GetAbsoluteFilePath("gui/hun.png"));
-                        ScoreHole.scoreHole.Bo5FIconAway.Source = ImageGet(GetAbsoluteFilePath("gui/sur.png"));
+                        ScoreHole.scoreHole.Bo5FIconMain.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/hun.png"));
+                        ScoreHole.scoreHole.Bo5FIconAway.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/sur.png"));
                     }
                     break;
                 case 9:
                     if ((bool)IsMainHun.IsChecked)
                     {
-                        ScoreHole.scoreHole.Bo5SIconMain.Source = ImageGet(GetAbsoluteFilePath("gui/sur.png"));
-                        ScoreHole.scoreHole.Bo5SIconAway.Source = ImageGet(GetAbsoluteFilePath("gui/sur.png"));
+                        ScoreHole.scoreHole.Bo5SIconMain.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/sur.png"));
+                        ScoreHole.scoreHole.Bo5SIconAway.Source = ImageGet(GetAbsoluteFilePath("Resource/gui/sur.png"));
                     }
                     break;
             }

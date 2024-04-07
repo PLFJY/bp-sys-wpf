@@ -33,6 +33,7 @@ namespace bp_sys_wpf
         public DoubleAnimation fadeOut = new DoubleAnimation(1, 0, new Duration(TimeSpan.FromSeconds(0.3)));
         private DispatcherTimer dispatcherTimer;
         private int countdownTime;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -65,6 +66,7 @@ namespace bp_sys_wpf
 
             Config.ScoreHole.Color.Name = ConvertHexStringToBrush(data["ScoreHole_Color"]["Name"].ToString());
             Config.ScoreHole.Color.Score = ConvertHexStringToBrush(data["ScoreHole_Color"]["Score"].ToString());
+            LoadCharacters();
             Front front = new Front();
             front.Show();
             Interlude interlude = new Interlude();
@@ -72,6 +74,86 @@ namespace bp_sys_wpf
             Map_bp map_Bp = new Map_bp();
             map_Bp.Show();
             UpdateCheck();
+        }
+        private void LoadCharacters()
+        {
+            string filePath = GetAbsoluteFilePath("CharactersList.txt"); // 角色数据文件的路径  
+            if (!File.Exists(filePath))
+            {
+                MessageBox.Show("未找到角色列表文件CharactersList.txt","错误");
+                Environment.Exit(0);
+            }
+
+            // 读取文件的所有行  
+            string[] lines = File.ReadAllLines(filePath);
+
+            // 创建一个字典用于存储角色列表  
+            Dictionary<string, List<string>> characterLists = new Dictionary<string, List<string>>();
+
+            // 遍历文件的每一行  
+            foreach (string line in lines)
+            {
+                // 使用冒号分割键和值  
+                string[] parts = line.Trim().Split(':');
+                if (parts.Length == 2)
+                {
+                    // 获取键，并去除两边的空白字符  
+                    string key = parts[0].Trim();
+
+                    // 获取值，并去除两边的空白字符，以及开头和结尾的大括号  
+                    string valueStr = parts[1].Trim();
+                    valueStr = valueStr.TrimStart('{').TrimEnd('}');
+
+                    // 使用逗号分割字符串得到角色列表  
+                    string[] characters = valueStr.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+
+                    // 将字符串数组转换为List，并对列表中的项目进行排序  
+                    List<string> sortedCharacters = characters.ToList().OrderBy(c => c).ToList();
+
+                    // 将排序后的角色列表添加到字典中  
+                    characterLists[key] = sortedCharacters;
+                }
+            }
+
+            // 检查字典中是否包含"sur"键，并设置ComboBox的ItemsSource  
+            if (characterLists.ContainsKey("sur"))
+            {
+                Sur_pick_1.ItemsSource = characterLists["sur"];
+                Sur_pick_2.ItemsSource = characterLists["sur"];
+                Sur_pick_3.ItemsSource = characterLists["sur"];
+                Sur_pick_4.ItemsSource = characterLists["sur"];
+                Sur_ban_1.ItemsSource = characterLists["sur"];
+                Sur_ban_2.ItemsSource = characterLists["sur"];
+                Sur_ban_3.ItemsSource = characterLists["sur"];
+                Sur_ban_4.ItemsSource = characterLists["sur"];
+                Sur_hole_ban_1.ItemsSource = characterLists["sur"];
+                Sur_hole_ban_2.ItemsSource = characterLists["sur"];
+                Sur_hole_ban_3.ItemsSource = characterLists["sur"];
+                Sur_hole_ban_4.ItemsSource = characterLists["sur"];
+                Sur_hole_ban_5.ItemsSource = characterLists["sur"];
+                Sur_hole_ban_6.ItemsSource = characterLists["sur"];
+                Main_hole1.ItemsSource = characterLists["sur"];
+                Main_hole2.ItemsSource = characterLists["sur"];
+                Main_hole3.ItemsSource = characterLists["sur"];
+                Main_hole4.ItemsSource = characterLists["sur"];
+                Main_hole5.ItemsSource = characterLists["sur"];
+                Main_hole6.ItemsSource = characterLists["sur"];
+                Away_hole1.ItemsSource = characterLists["sur"];
+                Away_hole2.ItemsSource = characterLists["sur"];
+                Away_hole3.ItemsSource = characterLists["sur"];
+                Away_hole4.ItemsSource = characterLists["sur"];
+                Away_hole5.ItemsSource = characterLists["sur"];
+                Away_hole6.ItemsSource = characterLists["sur"];
+            }
+
+            // 检查字典中是否包含"hun"键，并设置ComboBox的ItemsSource  
+            if (characterLists.ContainsKey("hun"))
+            {
+                Hun_ban_1.ItemsSource = characterLists["hun"];
+                Hun_ban_2.ItemsSource = characterLists["hun"];
+                Hun_ban_3.ItemsSource = characterLists["hun"];
+                Hun_pick.ItemsSource = characterLists["hun"];
+            }
         }
         public async void UpdateCheck()
         {
@@ -815,7 +897,7 @@ namespace bp_sys_wpf
             (Front.front.Sur_pick_4.Source, Front.front.Sur_pick_1.Source) = (Front.front.Sur_pick_1.Source, Front.front.Sur_pick_4.Source);
             (Interlude.interlude.Sur_4.Source, Interlude.interlude.Sur_1.Source) = (Interlude.interlude.Sur_1.Source, Interlude.interlude.Sur_4.Source);
             (Sur_pick_1_preview.Source, Sur_pick_4_preview.Source) = (Sur_pick_4_preview.Source, Sur_pick_1_preview.Source);
-                Front.front.Sur_pick_1.BeginAnimation(UIElement.OpacityProperty, fadeIn);
+            Front.front.Sur_pick_1.BeginAnimation(UIElement.OpacityProperty, fadeIn);
             Front.front.Sur_pick_4.BeginAnimation(UIElement.OpacityProperty, fadeIn);
         }
 

@@ -1,0 +1,34 @@
+{
+  "teamName": "YS",//队伍名称
+  "LogoUri": "https://patchwiki.biligame.com/images/dwrg/a/af/bu2xa9ev7ooigggk9bjoszz1gbp1d7p.png",//可以是链接或者本地路径
+  "players": [//队员列表
+    {
+      "playerName": "XingChen",//队员名称
+      "type": "sur"//队员阵营，求生者是sur，监管者是hun
+    },
+    {
+      "playerName": "Tea",
+      "type": "sur"
+    },
+    {
+      "playerName": "lion",
+      "type": "sur"
+    },
+    {
+      "playerName": "h1gher",
+      "type": "sur"
+    },
+    {
+      "playerName": "BA1X",
+      "type": "sur"
+    },
+    {
+      "playerName": "D",
+      "type": "hun"
+    },
+    {
+      "playerName": "YuNan",
+      "type": "hun"
+    }
+  ]
+}

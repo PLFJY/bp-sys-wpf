@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bp_sys_wpf"
         mc:Ignorable="d"
-        Title="后台" Height="616" Width="1808" WindowStartupLocation="CenterScreen" Closing="Window_Closing" Closed="Window_Closed">
+        Title="后台" Height="616" Width="1808" WindowStartupLocation="CenterScreen" Closing="Window_Closing" Closed="Window_Closed" Background="White">
     <Viewbox>
         <Grid Width="1808">
             <Grid.RowDefinitions>
@@ -148,6 +148,14 @@
                         <ComboBoxItem Content="2560x1440(2K)"/>
                     </ComboBox>
                 </StackPanel>
+                <GroupBox Header="从文件导入队伍信息" Margin="10,0,0,0" Height="100" Width="250">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="Open_file_main" Content="导入主场队伍信息" Height="30" Margin="10,0,0,0" Click="Open_file_main_Click"/>
+                            <Button x:Name="Open_file_away" Content="导入客场队伍信息" Height="30" Margin="10,0,0,0" Click="Open_file_away_Click"/>
+                        </StackPanel>
+                    </Grid>
+                </GroupBox>
             </StackPanel>
             <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,18,0,19">
                 <GroupBox Header="地图" Height="120" Width="100">

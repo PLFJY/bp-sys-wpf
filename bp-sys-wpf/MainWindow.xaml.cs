@@ -2,6 +2,7 @@
 using IniParser;
 using IniParser.Model;
 using Microsoft.Win32;
+using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using System.IO;
 using System.Text.Json;
@@ -19,13 +20,12 @@ namespace bp_sys_wpf
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-
     public partial class MainWindow : Window
     {
         public static MainWindow mainWindow;
         public string main_states = "sur", away_states = "hun";
         public bool hun_ban_state_1 = true, hun_ban_state_2 = true, hun_ban_state_3 = true, all_ban_state_1 = true, all_ban_state_2 = true, all_ban_state_3 = true, all_ban_state_4 = true, all_ban_state_5 = true, all_ban_state_6 = true;
-        public string[] main_team_player_list = new string[8], away_team_player_list = new string[8];
+        public string[] main_team_player_list = new string[8], away_team_player_list = new string[8];//选手id列表，1~6是sur,7~8是hun
         public bool[] main_team_player_state = new bool[8], away_team_player_state = new bool[8];
         public int count_main_sur = 0, count_away_sur = 0, count_main_hun = 0, count_away_hun = 0;
         public int MainWin = 0, MainLose = 0, MainAll = 0, MainS = 0, MainHoleS = 0, AwayWin = 0, AwayLose = 0, AwayAll = 0, AwayS = 0, AwayHoleS = 0;
@@ -987,7 +987,132 @@ namespace bp_sys_wpf
             Front.front.HunPicking.Visibility = Visibility.Visible;
             Front.front.HunPicking.BeginAnimation(UIElement.OpacityProperty, fadeOut);
         }
+        
+        private void Open_file_main_Click(object sender, RoutedEventArgs e)
+        {
+            //调用通用对话框导入json文件
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Json files (*.json)|*.json";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string json_path = openFileDialog.FileName;
+                //读取json文件
+                string json_str = File.ReadAllText(json_path);
+                //解析json文件
+                JObject json_obj = JObject.Parse(json_str);
+                //获取队名
+                string team_name = (string)json_obj["teamName"];
+                Main_team_name.Text = team_name;
+                //获取队标
+                try
+                {
+                    string logo_uri = (string)json_obj["LogoUri"];
+                    main_team_logo.Source = new BitmapImage(new Uri(logo_uri));
+                    if (main_states == "sur")
+                    {
+                        Front.front.Logo_sur.Source = new BitmapImage(new Uri(logo_uri));
+                        Interlude.interlude.Sur_logo.Source = new BitmapImage(new Uri(logo_uri));
+                        if (IsWindowOpen("ScoreSur1")) ScoreSur.scoreSur.Logo.Source = new BitmapImage(new Uri(logo_uri));
+                    }
+                    else
+                    {
+                        Front.front.Logo_hun.Source = new BitmapImage(new Uri(logo_uri));
+                        Interlude.interlude.Hun_logo.Source = new BitmapImage(new Uri(logo_uri));
+                        if (IsWindowOpen("ScoreHun1")) ScoreHun.scoreHun.Logo.Source = new BitmapImage(new Uri(logo_uri));
+                    }
+                    if (IsWindowOpen("ScoreHole1")) ScoreHole.scoreHole.MainLogo.Source = new BitmapImage(new Uri(logo_uri));
+                }
+                catch { 
+                    MessageBox.Show("图片路径错误，请检查！");
+                }
+                // 初始化两个列表来存储不同type的选手名称  
+                List<string> surPlayers = new List<string>();
+                List<string> hunPlayers = new List<string>();
+                // 遍历players数组  
+                foreach (JObject player in json_obj["players"])
+                {
+                    string playerName = player["playerName"].ToString();
+                    string type = player["type"].ToString();
 
+                    // 根据type的值将选手名称添加到相应的列表中  
+                    if (type == "sur")
+                    {
+                        surPlayers.Add(playerName);
+                    }
+                    else if (type == "hun")
+                    {
+                        hunPlayers.Add(playerName);
+                    }
+                    // 可以添加其他类型的处理逻辑，如果需要的话
+                    for(int i = 0; i < surPlayers.Count; i++)
+                    {
+                        main_team_player_list[i]= surPlayers[i];
+                    }
+                    for(int i = 6; i < hunPlayers.Count + 6; i++)
+                    {
+                        main_team_player_list[i] = hunPlayers[i-6];
+                    }
+                }
+            }
+        }
+
+        private void Open_file_away_Click(object sender, RoutedEventArgs e)//与上一个函数类似，只是最后的surPlayers和hunPlayers导入的是away_team_player_list数组
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Json files (*.json)|*.json";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string json_path = openFileDialog.FileName;
+                string json_str = File.ReadAllText(json_path);
+                JObject json_obj = JObject.Parse(json_str);
+                string team_name = (string)json_obj["teamName"];
+                Away_team_name.Text = team_name;
+                try
+                {
+                    string logo_uri = (string)json_obj["LogoUri"];
+                    away_team_logo.Source = new BitmapImage(new Uri(logo_uri));
+                    if (main_states == "sur")
+                    {
+                        Front.front.Logo_hun.Source = new BitmapImage(new Uri(logo_uri));
+                        Interlude.interlude.Hun_logo.Source = new BitmapImage(new Uri(logo_uri));
+                        if (IsWindowOpen("ScoreHun1")) ScoreHun.scoreHun.Logo.Source = new BitmapImage(new Uri(logo_uri));
+                    }
+                    else
+                    {
+                        Front.front.Logo_sur.Source = new BitmapImage(new Uri(logo_uri));
+                        Interlude.interlude.Sur_logo.Source = new BitmapImage(new Uri(logo_uri));
+                        if (IsWindowOpen("ScoreSur1")) ScoreSur.scoreSur.Logo.Source = new BitmapImage(new Uri(logo_uri));
+                    }
+                    if (IsWindowOpen("ScoreHole1")) ScoreHole.scoreHole.AwayLogo.Source = new BitmapImage(new Uri(logo_uri));
+                }
+                catch { 
+                    MessageBox.Show("图片路径错误，请检查！");
+                }
+                List<string> surPlayers = new List<string>();
+                List<string> hunPlayers = new List<string>();
+                foreach (JObject player in json_obj["players"])
+                {
+                    string playerName = player["playerName"].ToString();
+                    string type = player["type"].ToString();
+                    if (type == "sur")
+                    {
+                        surPlayers.Add(playerName);
+                    }
+                    else if (type == "hun")
+                    {
+                        hunPlayers.Add(playerName);
+                    }
+                    for (int i = 0; i < surPlayers.Count; i++)
+                    {
+                        away_team_player_list[i] = surPlayers[i];
+                    }
+                    for (int i = 6; i < hunPlayers.Count + 6; i++)
+                    {
+                        away_team_player_list[i] = hunPlayers[i - 6];
+                    }
+                }
+            }
+        }
         private void Swap_sur_player3_with_player4_Click(object sender, RoutedEventArgs e)
         {
             (Now_sur_player_3.Text, Now_sur_player_4.Text) = (Now_sur_player_4.Text, Now_sur_player_3.Text);

@@ -940,54 +940,6 @@ namespace bp_sys_wpf
         {
             (Now_sur_player_3.Text, Now_sur_player_2.Text) = (Now_sur_player_2.Text, Now_sur_player_3.Text);
         }
-
-        private void Sur1And2FlashOn_Click(object sender, RoutedEventArgs e)
-        {
-            Front.front.SurPicking1.Visibility = Visibility.Visible;
-            Front.front.SurPicking2.Visibility = Visibility.Visible;
-            Front.front.SurPicking1.BeginAnimation(UIElement.OpacityProperty, fadeIn);
-            Front.front.SurPicking2.BeginAnimation(UIElement.OpacityProperty, fadeIn);
-        }
-
-        private void Sur1And2FlashOff_Click(object sender, RoutedEventArgs e)
-        {
-            Front.front.SurPicking1.BeginAnimation(UIElement.OpacityProperty, fadeOut);
-            Front.front.SurPicking2.BeginAnimation(UIElement.OpacityProperty, fadeOut);
-        }
-
-        private void Sur3FlashOn_Click(object sender, RoutedEventArgs e)
-        {
-            Front.front.SurPicking3.Visibility = Visibility.Visible;
-            Front.front.SurPicking3.BeginAnimation(UIElement.OpacityProperty, fadeIn);
-        }
-
-        private void Sur3FlashOff_Click(object sender, RoutedEventArgs e)
-        {
-            Front.front.SurPicking3.BeginAnimation(UIElement.OpacityProperty, fadeOut);
-        }
-
-        private void Sur4FlashOn_Click(object sender, RoutedEventArgs e)
-        {
-            Front.front.SurPicking4.Visibility = Visibility.Visible;
-            Front.front.SurPicking4.BeginAnimation(UIElement.OpacityProperty, fadeIn);
-        }
-
-        private void Sur4FlashOff_Click(object sender, RoutedEventArgs e)
-        {
-            Front.front.SurPicking4.BeginAnimation(UIElement.OpacityProperty, fadeOut);
-        }
-        private void HunFlashOn_Click(object sender, RoutedEventArgs e)
-        {
-            Front.front.HunPicking.Visibility = Visibility.Visible;
-            Front.front.HunPicking.BeginAnimation(UIElement.OpacityProperty, fadeIn);
-        }
-
-        private void HunFlashOff_Click(object sender, RoutedEventArgs e)
-        {
-            Front.front.HunPicking.Visibility = Visibility.Visible;
-            Front.front.HunPicking.BeginAnimation(UIElement.OpacityProperty, fadeOut);
-        }
-        
         private void Open_file_main_Click(object sender, RoutedEventArgs e)
         {
             //调用通用对话框导入json文件
@@ -1113,6 +1065,61 @@ namespace bp_sys_wpf
                 }
             }
         }
+
+        private void Sur1And2Border_Click(object sender, RoutedEventArgs e)
+        {
+            if (Sur1And2Border.IsChecked == true)
+            {
+                Front.front.SurPicking1.Visibility = Visibility.Visible;
+                Front.front.SurPicking2.Visibility = Visibility.Visible;
+                Front.front.SurPicking1.BeginAnimation(UIElement.OpacityProperty, fadeIn);
+                Front.front.SurPicking2.BeginAnimation(UIElement.OpacityProperty, fadeIn);
+            }
+            else
+            {
+                Front.front.SurPicking1.BeginAnimation(UIElement.OpacityProperty, fadeOut);
+                Front.front.SurPicking2.BeginAnimation(UIElement.OpacityProperty, fadeOut);
+            }
+        }
+        private void Sur3Border_Click(object sender, RoutedEventArgs e)
+        {
+            if (Sur3Border.IsChecked == true)
+            {
+                Front.front.SurPicking3.Visibility = Visibility.Visible;
+                Front.front.SurPicking3.BeginAnimation(UIElement.OpacityProperty, fadeIn);
+            }
+            else
+            {
+                Front.front.SurPicking3.BeginAnimation(UIElement.OpacityProperty, fadeOut);
+            }
+        }
+
+        private void Sur4Border_Click(object sender, RoutedEventArgs e)
+        {
+            if(Sur4Border.IsChecked == true)
+            {
+                Front.front.SurPicking4.Visibility = Visibility.Visible;
+                Front.front.SurPicking4.BeginAnimation(UIElement.OpacityProperty, fadeIn);
+            }
+            else
+            {
+                Front.front.SurPicking4.BeginAnimation(UIElement.OpacityProperty, fadeOut);
+            }
+        }
+
+        private void HunBorder_Click(object sender, RoutedEventArgs e)
+        {
+            if(HunBorder.IsChecked == true)
+            {
+                Front.front.HunPicking.Visibility = Visibility.Visible;
+                Front.front.HunPicking.BeginAnimation(UIElement.OpacityProperty, fadeIn);
+            }
+            else
+            {
+                Front.front.HunPicking.BeginAnimation(UIElement.OpacityProperty, fadeOut);
+            }
+        }
+
         private void Swap_sur_player3_with_player4_Click(object sender, RoutedEventArgs e)
         {
             (Now_sur_player_3.Text, Now_sur_player_4.Text) = (Now_sur_player_4.Text, Now_sur_player_3.Text);

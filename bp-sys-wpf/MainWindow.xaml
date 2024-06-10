@@ -241,24 +241,12 @@
                     </Grid>
                 </GroupBox>
                 <Button x:Name="Ban_count_amount" Content="Ban位数量设定" Height="30" Width="90" Margin="10,0,10,0" VerticalAlignment="Bottom" Click="Ban_count_amount_Click"/>
-                <GroupBox Header="Pick待选边缘">
+                <GroupBox Header="Pick待选边缘" Height="70" VerticalAlignment="Bottom">
                     <StackPanel Orientation="Horizontal">
-                        <StackPanel VerticalAlignment="Center">
-                            <Button Content="求生pick1&amp;2 On" Width="120" Height="30" Name="Sur1And2FlashOn" Click="Sur1And2FlashOn_Click"/>
-                            <Button Content="求生pick1&amp;2 Off" Width="120" Height="30" Margin="0,10,0,0" Name="Sur1And2FlashOff" Click="Sur1And2FlashOff_Click"/>
-                        </StackPanel>
-                        <StackPanel VerticalAlignment="Center" Margin="10,0,0,0">
-                            <Button Content="求生pick3 On" Width="120" Height="30" Name="Sur3FlashOn" Click="Sur3FlashOn_Click"/>
-                            <Button Content="求生pick3 Off" Width="120" Height="30" Margin="0,10,0,0" Name="Sur3FlashOff" Click="Sur3FlashOff_Click"/>
-                        </StackPanel>
-                        <StackPanel VerticalAlignment="Center" Margin="10,0,0,0">
-                            <Button Content="求生pick4 On" Width="120" Height="30" Name="Sur4FlashOn" Click="Sur4FlashOn_Click"/>
-                            <Button Content="求生pick4 Off" Width="120" Height="30" Margin="0,10,0,0"  Name="Sur4FlashOff" Click="Sur4FlashOff_Click"/>
-                        </StackPanel>
-                        <StackPanel VerticalAlignment="Center" Margin="10,0,0,0">
-                            <Button Content="监管pick On" Width="120" Height="30"  Name="HunFlashOn" Click="HunFlashOn_Click"/>
-                            <Button Content="监管pick Off" Width="120" Height="30" Margin="0,10,0,0"  Name="HunFlashOff" Click="HunFlashOff_Click"/>
-                        </StackPanel>
+                        <ToggleButton Content="求生pick1&amp;2" Width="120" Height="30" Name="Sur1And2Border" IsChecked="False" Click="Sur1And2Border_Click"/>
+                        <ToggleButton Content="求生pick3" Width="120" Height="30" Name="Sur3Border" IsChecked="False" Click="Sur3Border_Click" Margin="10,0,0,0"/>
+                        <ToggleButton Content="求生pick4" Width="120" Height="30" Name="Sur4Border" IsChecked="False" Click="Sur4Border_Click" Margin="10,0,0,0"/>
+                        <ToggleButton Content="监管pick" Width="120" Height="30"  Name="HunBorder" Click="HunBorder_Click" Margin="10,0,0,0"/>
                     </StackPanel>
                 </GroupBox>
             </StackPanel>

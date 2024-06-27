@@ -6,9 +6,6 @@
         xmlns:local="clr-namespace:bp_sys_wpf"
         mc:Ignorable="d"
         Title="前台" Height="810" Width="1440" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown">
-    <Window.Background>
-        <ImageBrush ImageSource="/bp.png"/>
-    </Window.Background>
     <Viewbox>
         <!--比分条-->
         <Grid Height="810" Width="1440">

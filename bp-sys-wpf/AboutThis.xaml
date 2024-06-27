@@ -12,7 +12,7 @@
             <Button Content="检查并更新" HorizontalAlignment="Left" Margin="221,103,0,0" VerticalAlignment="Top" Width="68" Height="24" Name="Update" Click="Update_Click"/>
             <ProgressBar HorizontalAlignment="Left" Height="21" Margin="4,127,0,0" VerticalAlignment="Top" Width="161" Name="pbDown" Visibility="Hidden"/>
             <Label HorizontalAlignment="Left" Height="30" Margin="170,122,0,0" VerticalAlignment="Top" Width="41" Name="label1" Visibility="Hidden"/>
-            <Label HorizontalAlignment="Left" Height="24" Margin="0,103,0,0" VerticalAlignment="Top" Width="106" Name="NowVersion"/>
+            <Label HorizontalAlignment="Left" Height="24" Margin="0,103,0,0" VerticalAlignment="Top" Width="211" Name="NowVersion"/>
         </Grid>
     </Viewbox>
 </Window>

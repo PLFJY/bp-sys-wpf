@@ -166,7 +166,7 @@ namespace bp_sys_wpf
         public async Task<(string latestVersion, string DownloadURL)> FetchLatestReleaseInfoAsync()
         {
             var baseUrl = "https://gitee.com/api/v5";
-            var repository = "plfjy/bp-sys-wpf-update";
+            var repository = "plfjy/bp-sys-wpf-update-ASG";
             var releasesUrl = $"{baseUrl}/repos/{repository}/releases/latest";
             try
             {

@@ -123,13 +123,13 @@
                         <Image x:Name="Hole_ban_5" Height="36" Width="36" Margin="11.4,0,0,0"/>
                         <Image x:Name="Hole_ban_6" Height="36" Width="36" Margin="11,0,0,0"/>
                     </StackPanel>
-                    <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="44,0,0,4.5" Height="36" Width="252" Panel.ZIndex="1">
-                        <Image x:Name="Hole_no_ban_1" Height="37" Width="37" Visibility="Hidden"/>
-                        <Image x:Name="Hole_no_ban_2" Height="37" Width="37" Margin="6,0,0,0" Visibility="Hidden"/>
-                        <Image x:Name="Hole_no_ban_3" Height="37" Width="37" Margin="6,0,0,0" Visibility="Hidden"/>
-                        <Image x:Name="Hole_no_ban_4" Height="37" Width="37" Margin="6,0,0,0" Visibility="Hidden"/>
-                        <Image x:Name="Hole_no_ban_5" Height="37" Width="37" Margin="6,0,0,0" Visibility="Hidden"/>
-                        <Image x:Name="Hole_no_ban_6" Height="37" Width="37" Margin="5,0,0,0" Visibility="Hidden"/>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="44,0,0,4.5" Height="36" Width="272" Panel.ZIndex="1">
+                        <Image x:Name="Hole_no_ban_1" Height="36" Width="36" Visibility="Hidden"/>
+                        <Image x:Name="Hole_no_ban_2" Height="36" Width="36" Margin="11,0,0,0" Visibility="Hidden"/>
+                        <Image x:Name="Hole_no_ban_3" Height="36" Width="36" Margin="11,0,0,0" Visibility="Hidden"/>
+                        <Image x:Name="Hole_no_ban_4" Height="36" Width="36" Margin="11.5,0,0,0" Visibility="Hidden"/>
+                        <Image x:Name="Hole_no_ban_5" Height="36" Width="36" Margin="11.4,0,0,0" Visibility="Hidden"/>
+                        <Image x:Name="Hole_no_ban_6" Height="36" Width="36" Margin="11,0,0,0" Visibility="Hidden"/>
                     </StackPanel>
                     <!--地图-->
                     <Image x:Name="Map" Grid.Row="1" Stretch="UniformToFill" Margin="-1,-1,0,0"/>

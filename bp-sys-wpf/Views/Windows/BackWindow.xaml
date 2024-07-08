@@ -1,0 +1,61 @@
+﻿<Window x:Class="bp_sys_wpf.Views.Windows.BackWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:bp_sys_wpf.Views.Windows"
+        mc:Ignorable="d"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        Title="BackWindow"
+        Height="600"
+        Width="850"
+        WindowStartupLocation="CenterScreen"
+        Background="#202020">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ui:ThemesDictionary Theme="Dark"/>
+                <ui:ControlsDictionary />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Border CornerRadius="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <ui:NavigationView PaneDisplayMode="LeftFluent">
+                    <ui:NavigationView.MenuItems>
+                        <ui:NavigationViewItem Content="Home"
+                                               Icon="{ui:SymbolIcon Home24}"
+                                               NavigationCacheMode = "Enabled"
+                                               />
+                        <ui:NavigationViewItem Content="队伍信息"
+                                               Icon="{ui:SymbolIcon PeopleTeam24}"
+                                               NavigationCacheMode="Enabled"/>
+                        <ui:NavigationViewItem Content="求生Ban"
+                                               Icon="{ui:SymbolIcon PersonProhibited24}"
+                                               NavigationCacheMode="Enabled"/>
+                        <ui:NavigationViewItem Content="监管Ban"
+                                               Icon="{ui:SymbolIcon PresenterOff24}"
+                                               NavigationCacheMode="Enabled"/>
+                        <ui:NavigationViewItem Content="Pick"
+                                               Icon="{ui:SymbolIcon PersonAdd24}"
+                                               NavigationCacheMode="Enabled"/>
+                        <ui:NavigationViewItem Content="天赋"
+                                               Icon="{ui:SymbolIcon PersonWalking24}"
+                                               NavigationCacheMode="Enabled"/>
+                        <ui:NavigationViewItem Content="比分模块"
+                                               Icon="{ui:SymbolIcon NumberRow24}"
+                                               NavigationCacheMode="Enabled"/>
+                        <ui:NavigationViewItem Content="关于"
+                                               Icon="{ui:SymbolIcon Info24}"
+                                               NavigationCacheMode="Enabled"/>
+                    </ui:NavigationView.MenuItems>
+                </ui:NavigationView>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

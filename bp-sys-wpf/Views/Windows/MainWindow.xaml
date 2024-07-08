@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:bp_sys_wpf"
         mc:Ignorable="d"
         Title="后台" Height="616" Width="1808" WindowStartupLocation="CenterScreen" Closing="Window_Closing" Closed="Window_Closed" Background="White">
-    <Viewbox>
+    <Viewbox> 
         <Grid Width="1808">
             <Grid.RowDefinitions>
                 <RowDefinition Height="190"/>

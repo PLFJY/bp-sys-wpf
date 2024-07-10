@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using bp_sys_wpf.Views.Pages;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace bp_sys_wpf.Views.Windows
 {
@@ -22,6 +11,14 @@ namespace bp_sys_wpf.Views.Windows
         public BackWindow()
         {
             InitializeComponent();
+        }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+        }
+        private void RootNavigation_Loaded(object sender, RoutedEventArgs e)
+        {
+            RootNavigation.Navigate(typeof(HomePage));
         }
     }
 }

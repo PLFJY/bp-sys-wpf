@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.Eventing.Reader;
-using System.Windows;
+﻿using System.Windows;
 
 namespace bp_sys_wpf
 {
@@ -95,7 +94,7 @@ namespace bp_sys_wpf
         }
         private void Escape4_Click(object sender, RoutedEventArgs e)
         {
-            if(MainWindow.mainWindow.main_states == "sur")
+            if (MainWindow.mainWindow.main_states == "sur")
             {
                 MainWindow.mainWindow.MainS += 5;
                 MainWindow.mainWindow.MainHoleS += 5;
@@ -104,7 +103,7 @@ namespace bp_sys_wpf
             {
                 MainWindow.mainWindow.AwayS += 5;
                 MainWindow.mainWindow.AwayHoleS += 5;
-                
+
             }
             FrontScoreRefresh();
             ScoreCtrWindowRefresh();
@@ -126,7 +125,7 @@ namespace bp_sys_wpf
                 MainWindow.mainWindow.MainHoleS += 1;
                 MainWindow.mainWindow.AwayS += 3;
                 MainWindow.mainWindow.AwayHoleS += 3;
-                
+
             }
             FrontScoreRefresh();
             ScoreCtrWindowRefresh();
@@ -151,13 +150,13 @@ namespace bp_sys_wpf
             {
                 MainWindow.mainWindow.MainS += 5;
                 MainWindow.mainWindow.MainHoleS += 5;
-                
+
             }
             else
             {
                 MainWindow.mainWindow.AwayS += 5;
                 MainWindow.mainWindow.AwayHoleS += 5;
-                
+
             }
             FrontScoreRefresh();
             ScoreCtrWindowRefresh();
@@ -237,7 +236,7 @@ namespace bp_sys_wpf
             {
                 ScoreHun.scoreHun.Close();
             }
-            
+
             if (!MainWindow.mainWindow.IsWindowOpen("Score1"))
             {
                 Score.score.Close();

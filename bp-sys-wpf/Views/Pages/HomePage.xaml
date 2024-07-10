@@ -4,11 +4,52 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:bp_sys_wpf.Views.Pages"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="690"
+      d:DesignWidth="760"
       Title="HomePage">
-
-    <Grid>
-        
-    </Grid>
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ui:ThemesDictionary Theme="Dark"/>
+                <ui:ControlsDictionary />
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="ui:TextBlock">
+                <Setter Property="Foreground"
+                        Value="White"/>
+            </Style>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Border CornerRadius="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0"
+                    CornerRadius="8"
+                    ClipToBounds="True">
+                <Border.Background>
+                    <ImageBrush ImageSource="/Views/HomeHeader.png"
+                                RenderOptions.BitmapScalingMode="HighQuality"
+                                Stretch="UniformToFill"/>
+                </Border.Background>
+                <StackPanel HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom"
+                            Margin="50,0,0,30"
+                            >
+                    <ui:TextBlock Text="bp-sys-wpf"
+                                  FontSize="30"/>
+                    <ui:TextBlock Text="第五人格BP展示软件"
+                                  FontSize="20"
+                                  Opacity="0.8"/>
+                    <ui:TextBlock Text="功能齐全，使用便捷"
+                                  FontSize="20"
+                                  Opacity="0.8"/>
+                </StackPanel>
+            </Border>
+            
+        </Grid>
+    </Border>
 </Page>

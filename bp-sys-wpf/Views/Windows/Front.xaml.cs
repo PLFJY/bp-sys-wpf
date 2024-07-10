@@ -1,13 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Controls;
-using System.ComponentModel;
-using System.Diagnostics;
-using IniParser.Model;
-using IniParser;
-using System.Windows.Media.Animation;
-using System.Windows.Threading;
 
 namespace bp_sys_wpf
 {

@@ -3,11 +3,11 @@
 namespace bp_sys_wpf.Views.Pages
 {
     /// <summary>
-    /// HomePage.xaml 的交互逻辑
+    /// HunBanPage.xaml 的交互逻辑
     /// </summary>
-    public partial class HomePage : Page
+    public partial class HunBanPage : Page
     {
-        public HomePage()
+        public HunBanPage()
         {
             InitializeComponent();
         }

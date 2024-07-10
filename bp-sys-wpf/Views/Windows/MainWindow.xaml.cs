@@ -80,7 +80,7 @@ namespace bp_sys_wpf
             string filePath = GetAbsoluteFilePath("CharactersList.txt"); // 角色数据文件的路径  
             if (!File.Exists(filePath))
             {
-                MessageBox.Show("未找到角色列表文件CharactersList.txt","错误");
+                MessageBox.Show("未找到角色列表文件CharactersList.txt", "错误");
                 Environment.Exit(0);
             }
 
@@ -974,7 +974,8 @@ namespace bp_sys_wpf
                     }
                     if (IsWindowOpen("ScoreHole1")) ScoreHole.scoreHole.MainLogo.Source = new BitmapImage(new Uri(logo_uri));
                 }
-                catch { 
+                catch
+                {
                     MessageBox.Show("图片路径错误，请检查！");
                 }
                 // 初始化两个列表来存储不同type的选手名称  
@@ -996,13 +997,13 @@ namespace bp_sys_wpf
                         hunPlayers.Add(playerName);
                     }
                     // 可以添加其他类型的处理逻辑，如果需要的话
-                    for(int i = 0; i < surPlayers.Count; i++)
+                    for (int i = 0; i < surPlayers.Count; i++)
                     {
-                        main_team_player_list[i]= surPlayers[i];
+                        main_team_player_list[i] = surPlayers[i];
                     }
-                    for(int i = 6; i < hunPlayers.Count + 6; i++)
+                    for (int i = 6; i < hunPlayers.Count + 6; i++)
                     {
-                        main_team_player_list[i] = hunPlayers[i-6];
+                        main_team_player_list[i] = hunPlayers[i - 6];
                     }
                 }
             }
@@ -1037,7 +1038,8 @@ namespace bp_sys_wpf
                     }
                     if (IsWindowOpen("ScoreHole1")) ScoreHole.scoreHole.AwayLogo.Source = new BitmapImage(new Uri(logo_uri));
                 }
-                catch { 
+                catch
+                {
                     MessageBox.Show("图片路径错误，请检查！");
                 }
                 List<string> surPlayers = new List<string>();
@@ -1096,7 +1098,7 @@ namespace bp_sys_wpf
 
         private void Sur4Border_Click(object sender, RoutedEventArgs e)
         {
-            if(Sur4Border.IsChecked == true)
+            if (Sur4Border.IsChecked == true)
             {
                 Front.front.SurPicking4.Visibility = Visibility.Visible;
                 Front.front.SurPicking4.BeginAnimation(UIElement.OpacityProperty, fadeIn);
@@ -1109,7 +1111,7 @@ namespace bp_sys_wpf
 
         private void HunBorder_Click(object sender, RoutedEventArgs e)
         {
-            if(HunBorder.IsChecked == true)
+            if (HunBorder.IsChecked == true)
             {
                 Front.front.HunPicking.Visibility = Visibility.Visible;
                 Front.front.HunPicking.BeginAnimation(UIElement.OpacityProperty, fadeIn);

@@ -4,13 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bp_sys_wpf.Views.Windows"
+        xmlns:pages="clr-namespace:bp_sys_wpf.Views.Pages"
         mc:Ignorable="d"
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
-        Title="BackWindow"
-        Height="600"
+        Title="后台控制"
+        Height="650"
         Width="850"
         WindowStartupLocation="CenterScreen"
-        Background="#202020">
+        Background="#202020"
+        ResizeMode="CanMinimize"
+        Loaded="Window_Loaded">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -25,34 +28,71 @@
                 <RowDefinition Height="60"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="1">
-                <ui:NavigationView PaneDisplayMode="LeftFluent">
+            <Grid Grid.Row="0">
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+                    <ui:TextBlock x:Name="TeamMain"
+                               Text="TeamA"
+                               FontSize="30"
+                               Foreground="White"/>
+                    <ui:Button x:Name="Swap"
+                            Content="换边"
+                            Height="30"
+                            Width="90"
+                            Icon="{ui:SymbolIcon ArrowSwap24}"
+                            Margin="30,0,30,0"/>
+                    <ui:TextBlock x:Name="TeamAway"
+                               Text="TeamB"
+                               FontSize="30"
+                               Foreground="White"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1"
+                  AutomationProperties.IsColumnHeader="True">
+                <ui:NavigationView x:Name="RootNavigation"
+                                   OpenPaneLength="60"
+                                   PaneDisplayMode="LeftFluent"
+                                   FrameworkElement.Loaded="RootNavigation_Loaded"
+                                   ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                   ScrollViewer.HorizontalScrollBarVisibility="Auto">
                     <ui:NavigationView.MenuItems>
                         <ui:NavigationViewItem Content="Home"
                                                Icon="{ui:SymbolIcon Home24}"
                                                NavigationCacheMode = "Enabled"
-                                               />
+                                               TargetPageType = "{x:Type pages:HomePage}"/>
                         <ui:NavigationViewItem Content="队伍信息"
                                                Icon="{ui:SymbolIcon PeopleTeam24}"
-                                               NavigationCacheMode="Enabled"/>
+                                               NavigationCacheMode="Enabled"
+                                               TargetPageType = "{x:Type pages:TeamInfoPage}"/>
+                        <ui:NavigationViewItem Content="地图BP"
+                                               Icon="{ui:SymbolIcon Map24}"
+                                               NavigationCacheMode="Enabled"
+                                               TargetPageType = "{x:Type pages:MapBpPage}"/>
                         <ui:NavigationViewItem Content="求生Ban"
                                                Icon="{ui:SymbolIcon PersonProhibited24}"
-                                               NavigationCacheMode="Enabled"/>
+                                               NavigationCacheMode="Enabled"
+                                               TargetPageType = "{x:Type pages:SurBanPage}"/>
                         <ui:NavigationViewItem Content="监管Ban"
                                                Icon="{ui:SymbolIcon PresenterOff24}"
-                                               NavigationCacheMode="Enabled"/>
+                                               NavigationCacheMode="Enabled"
+                                               TargetPageType = "{x:Type pages:HunBanPage}"/>
                         <ui:NavigationViewItem Content="Pick"
                                                Icon="{ui:SymbolIcon PersonAdd24}"
-                                               NavigationCacheMode="Enabled"/>
+                                               NavigationCacheMode="Enabled"
+                                               TargetPageType = "{x:Type pages:PickPage}"/>
                         <ui:NavigationViewItem Content="天赋"
                                                Icon="{ui:SymbolIcon PersonWalking24}"
-                                               NavigationCacheMode="Enabled"/>
+                                               NavigationCacheMode="Enabled"
+                                               TargetPageType = "{x:Type pages:TalentPage}"/>
                         <ui:NavigationViewItem Content="比分模块"
                                                Icon="{ui:SymbolIcon NumberRow24}"
-                                               NavigationCacheMode="Enabled"/>
+                                               NavigationCacheMode="Enabled"
+                                               TargetPageType = "{x:Type pages:ScoreControlPage}"/>
                         <ui:NavigationViewItem Content="关于"
                                                Icon="{ui:SymbolIcon Info24}"
-                                               NavigationCacheMode="Enabled"/>
+                                               NavigationCacheMode="Enabled"
+                                               TargetPageType = "{x:Type pages:InfoPage}"/>
                     </ui:NavigationView.MenuItems>
                 </ui:NavigationView>
             </Grid>

@@ -30,8 +30,9 @@
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
                 <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center">
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Margin="10,0,0,0">
                     <ui:TextBlock x:Name="TeamMain"
                                Text="TeamA"
                                FontSize="30"
@@ -47,6 +48,29 @@
                                FontSize="30"
                                Foreground="White"/>
                 </StackPanel>
+                <GroupBox Header="计时器（可自定义）"
+                          Foreground="White"
+                          HorizontalAlignment="Right"
+                          Margin="0,0,10,0">
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Right">
+                        <ComboBox x:Name="Timmer"
+                                    Width="75"
+                                    Margin="5,0,0,0"
+                                    IsEditable="True">
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <ui:Button x:Name="TimmerStart"
+                                   Width="60"
+                                   Content="Start"
+                                   Margin="10,0,0,0"/>
+                        <ui:Button x:Name="TimmerClose"
+                                   Width="60"
+                                   Content="Close"
+                                   Margin="10,0,10,0"/>
+                    </StackPanel>
+                </GroupBox>
             </Grid>
             <Grid Grid.Row="1"
                   AutomationProperties.IsColumnHeader="True">

@@ -192,10 +192,8 @@ namespace bp_sys_wpf
         }
         private string GetFilePath(string type, string selectedValue)
         {
-            string temp = "pack://application:,,,/pic/" + type + "/";
             int spaceIndex = selectedValue.IndexOf(' ');
             selectedValue = selectedValue.Substring(spaceIndex + 1);
-            string file_path = temp + selectedValue + ".png";
             return GetAbsoluteFilePath("pic/" + type + "/" + selectedValue + ".png"); ;
         }
         public string GetAbsoluteFilePath(string filePath)

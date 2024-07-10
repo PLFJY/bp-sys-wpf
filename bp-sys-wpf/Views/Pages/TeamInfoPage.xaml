@@ -372,9 +372,9 @@
             <Grid Grid.Row="1">
                 <GroupBox x:Name="PlayerNow"
                           Header="当前上场选手"
-                          HorizontalAlignment="Left"
-                          Width="377.5">
-                    <StackPanel Orientation="Horizontal">
+                          HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0,0,10,0">
                         <StackPanel HorizontalAlignment="Left"
                                 Margin="10,0,0,0">
                             <ui:TextBlock Text="求生者"

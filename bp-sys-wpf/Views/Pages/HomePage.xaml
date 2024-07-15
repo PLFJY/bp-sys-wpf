@@ -24,7 +24,7 @@
     <Border CornerRadius="20">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="200"/>
+                <RowDefinition Height="250"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Border Grid.Row="0"

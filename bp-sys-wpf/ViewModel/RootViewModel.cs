@@ -8,6 +8,7 @@ namespace bp_sys_wpf.ViewModel
 {
     public class RootViewModel
     {
-
+        public TeamInfoViewModel TeamInfoViewModel { get; set; } = new TeamInfoViewModel();
+        public TimmerViewModel TimmerViewModel { get; set; } = new TimmerViewModel();
     }
 }

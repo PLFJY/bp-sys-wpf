@@ -49,12 +49,12 @@ namespace bp_sys_wpf.ViewModel
                         {
                             _TeamInfoModel.MainTeamPlayer.Add(new Player
                             {
-                                Name = $"Main{i}",
+                                Name = "",
                                 State = "求生者"
                             });
                             _TeamInfoModel.AwayTeamPlayer.Add(new Player
                             {
-                                Name = $"Away{i}",
+                                Name = "",
                                 State = "求生者"
                             });
                         }
@@ -62,12 +62,12 @@ namespace bp_sys_wpf.ViewModel
                         {
                             _TeamInfoModel.MainTeamPlayer.Add(new Player
                             {
-                                Name = $"Main{i}",
+                                Name = "",
                                 State = "监管者"
                             });
                             _TeamInfoModel.AwayTeamPlayer.Add(new Player
                             {
-                                Name = $"Away{i}",
+                                Name = "",
                                 State = "监管者"
                             });
                         }
@@ -182,9 +182,9 @@ namespace bp_sys_wpf.ViewModel
                     //同步到当前上场列表
                     for (int i = 0; i < 5; i++)
                     {
-                        if (TeamInfoModel.MainTeamInfo.State == "求生者" && NowView.NowModel.NowPlayer[i].Name == "")
+                        if (TeamInfoModel.MainTeamInfo.State == "求生者" && NowView.NowModel.NowPlayer[i] == "")
                         {
-                            NowView.NowModel.NowPlayer[i].Name = TeamInfoModel.MainTeamPlayer[number].Name;
+                            NowView.NowModel.NowPlayer[i] = TeamInfoModel.MainTeamPlayer[number].Name;
                             break;
                         }
                     }
@@ -203,9 +203,9 @@ namespace bp_sys_wpf.ViewModel
                     for (int i = 0; i < 5; i++)
                     {
                         //同步到当前上场列表
-                        if (TeamInfoModel.AwayTeamInfo.State == "求生者" && NowView.NowModel.NowPlayer[i].Name == "")
+                        if (TeamInfoModel.AwayTeamInfo.State == "求生者" && NowView.NowModel.NowPlayer[i] == "")
                         {
-                            NowView.NowModel.NowPlayer[i].Name = TeamInfoModel.AwayTeamPlayer[number].Name;
+                            NowView.NowModel.NowPlayer[i] = TeamInfoModel.AwayTeamPlayer[number].Name;
                             break;
                         }
                     }
@@ -243,8 +243,8 @@ namespace bp_sys_wpf.ViewModel
                     ButtonState.MainButtonState[number].Icon = new Wpf.Ui.Controls.SymbolIcon { Symbol = Wpf.Ui.Controls.SymbolRegular.ArrowDownload24 };
                     ButtonState.MainButtonState[number].Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7FFF0000"));
                     //同步到当前上场列表
-                    if (TeamInfoModel.MainTeamInfo.State == "监管者" && NowView.NowModel.NowPlayer[4].Name == "")
-                        NowView.NowModel.NowPlayer[4].Name = TeamInfoModel.MainTeamPlayer[number].Name;
+                    if (TeamInfoModel.MainTeamInfo.State == "监管者" && NowView.NowModel.NowPlayer[4] == "")
+                        NowView.NowModel.NowPlayer[4] = TeamInfoModel.MainTeamPlayer[number].Name;
                     //满员禁用上场按钮
                     for (int j = 6; j < 9; j++)
                     {
@@ -262,7 +262,7 @@ namespace bp_sys_wpf.ViewModel
                     ButtonState.AwayButtonState[number].Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7FFF0000"));
                     //同步到当前上场列表
                     if (TeamInfoModel.AwayTeamInfo.State == "监管者")
-                        NowView.NowModel.NowPlayer[4].Name = TeamInfoModel.AwayTeamPlayer[number].Name;
+                        NowView.NowModel.NowPlayer[4] = TeamInfoModel.AwayTeamPlayer[number].Name;
                     //满员禁用上场按钮
                     for (int j = 6; j < 9; j++)
                     {
@@ -294,13 +294,16 @@ namespace bp_sys_wpf.ViewModel
                     for (int i = 0; i < 5; i++)
                     {
                         //同步到当前上场列表
-                        if (TeamInfoModel.MainTeamInfo.State == "求生者" && NowView.NowModel.NowPlayer[i].Name == TeamInfoModel.MainTeamPlayer[number].Name)
+                        if (TeamInfoModel.MainTeamInfo.State == "求生者" && NowView.NowModel.NowPlayer[i] == TeamInfoModel.MainTeamPlayer[number].Name)
                         {
-                            NowView.NowModel.NowPlayer[i].Name = "";
+                            NowView.NowModel.NowPlayer[i] = "";
                             break;
                         }
                     }
-
+                    for (int j = 0; j < 6; j++)//主队解除上场限制
+                    {
+                        ButtonState.MainButtonState[j].IsEnabled = true;
+                    }
                 }
                 if (team == "Away")
                 {
@@ -315,21 +318,17 @@ namespace bp_sys_wpf.ViewModel
                     for (int i = 0; i < 5; i++)
                     {
                         //同步到当前上场列表
-                        if (TeamInfoModel.AwayTeamInfo.State == "求生者")
+                        if (TeamInfoModel.AwayTeamInfo.State == "求生者" && NowView.NowModel.NowPlayer[i] == TeamInfoModel.AwayTeamPlayer[number].Name)
                         {
-                            NowView.NowModel.NowPlayer[i].Name = "";
+                            NowView.NowModel.NowPlayer[i] = "";
                             break;
                         }
                     }
+                    for (int j = 0; j < 6; j++)//客队解除上场限制
+                    {
+                        ButtonState.AwayButtonState[j].IsEnabled = true;
+                    }
 
-                }
-                for (int j = 0; j < 6; j++)//主队解除上场限制
-                {
-                    ButtonState.MainButtonState[j].IsEnabled = true;
-                }
-                for (int j = 0; j < 6; j++)//客队解除上场限制
-                {
-                    ButtonState.AwayButtonState[j].IsEnabled = true;
                 }
             }
             else//传入的上场选手为监管
@@ -343,8 +342,8 @@ namespace bp_sys_wpf.ViewModel
                     ButtonState.MainButtonState[number].Icon = new Wpf.Ui.Controls.SymbolIcon { Symbol = Wpf.Ui.Controls.SymbolRegular.ArrowExportUp24 };
                     ButtonState.MainButtonState[number].Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F00FF00"));
                     //同步到当前上场列表
-                    if (NowView.NowModel.NowPlayer[4].Name == TeamInfoModel.MainTeamPlayer[number].Name && TeamInfoModel.MainTeamInfo.State == "监管者")
-                        NowView.NowModel.NowPlayer[4].Name = TeamInfoModel.MainTeamPlayer[number].Name;
+                    if (NowView.NowModel.NowPlayer[4] == TeamInfoModel.MainTeamPlayer[number].Name && TeamInfoModel.MainTeamInfo.State == "监管者")
+                        NowView.NowModel.NowPlayer[4] = "";
                     //启用上场按钮
                     for (int j = 6; j < 9; j++)
                     {
@@ -360,8 +359,8 @@ namespace bp_sys_wpf.ViewModel
                     ButtonState.AwayButtonState[number].Icon = new Wpf.Ui.Controls.SymbolIcon { Symbol = Wpf.Ui.Controls.SymbolRegular.ArrowExportUp24 };
                     ButtonState.AwayButtonState[number].Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F00FF00"));
                     //同步到当前上场列表
-                    if (NowView.NowModel.NowPlayer[4].Name == TeamInfoModel.AwayTeamPlayer[number].Name && TeamInfoModel.AwayTeamInfo.State == "监管者")
-                        NowView.NowModel.NowPlayer[4].Name = "";
+                    if (NowView.NowModel.NowPlayer[4] == TeamInfoModel.AwayTeamPlayer[number].Name && TeamInfoModel.AwayTeamInfo.State == "监管者")
+                        NowView.NowModel.NowPlayer[4] = "";
                     //启用上场按钮
                     for (int j = 6; j < 9; j++)
                     {
@@ -380,7 +379,7 @@ namespace bp_sys_wpf.ViewModel
             //外层0~3代表当前上场选手 内层循环0~5 判断队伍是主队还是客队 选手名称判断内容：是否为上场选手、阵营，然后赋值给NowPlayer
             for (int i = 0; i < 5; i++)
             {
-                NowView.NowModel.NowPlayer[i].Name = "";
+                NowView.NowModel.NowPlayer[i] = "";
             }
             for (int i = 0, j = 0; i < 6 && j < 4; i++)
             {
@@ -388,7 +387,7 @@ namespace bp_sys_wpf.ViewModel
                 {
                     if (TeamInfoModel.MainTeamPlayer[i].State == "求生者" && TeamInfoModel.MainTeamPlayer[i].IsPlayerTakeTheField == true)
                     {
-                        NowView.NowModel.NowPlayer[j].Name = TeamInfoModel.MainTeamPlayer[i].Name;
+                        NowView.NowModel.NowPlayer[j] = TeamInfoModel.MainTeamPlayer[i].Name;
                         j++;
                     }
                 }
@@ -396,7 +395,7 @@ namespace bp_sys_wpf.ViewModel
                 {
                     if (TeamInfoModel.AwayTeamPlayer[i].State == "求生者" && TeamInfoModel.AwayTeamPlayer[i].IsPlayerTakeTheField == true)
                     {
-                        NowView.NowModel.NowPlayer[j].Name = TeamInfoModel.AwayTeamPlayer[i].Name;
+                        NowView.NowModel.NowPlayer[j] = TeamInfoModel.AwayTeamPlayer[i].Name;
                         j++;
                     }
                 }
@@ -408,7 +407,7 @@ namespace bp_sys_wpf.ViewModel
                 {
                     if (TeamInfoModel.MainTeamPlayer[i].State == "监管者" && TeamInfoModel.MainTeamPlayer[i].IsPlayerTakeTheField == true)
                     {
-                        NowView.NowModel.NowPlayer[4].Name = TeamInfoModel.MainTeamPlayer[i].Name;
+                        NowView.NowModel.NowPlayer[4] = TeamInfoModel.MainTeamPlayer[i].Name;
                         break;
                     }
                 }
@@ -416,7 +415,7 @@ namespace bp_sys_wpf.ViewModel
                 {
                     if (TeamInfoModel.AwayTeamPlayer[i].State == "监管者" && TeamInfoModel.AwayTeamPlayer[i].IsPlayerTakeTheField == true)
                     {
-                        NowView.NowModel.NowPlayer[4].Name = TeamInfoModel.AwayTeamPlayer[i].Name;
+                        NowView.NowModel.NowPlayer[4] = TeamInfoModel.AwayTeamPlayer[i].Name;
                         break;
                     }
                 }

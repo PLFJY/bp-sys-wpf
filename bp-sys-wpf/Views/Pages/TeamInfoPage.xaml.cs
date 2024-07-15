@@ -11,14 +11,13 @@ namespace bp_sys_wpf.Views.Pages
     /// </summary>
     public partial class TeamInfoPage : Page
     {
-        public TeamInfoViewModel viewModel = new TeamInfoViewModel();
+        public TeamInfoViewModel viewModel = BackWindow.backWindow.rootViewModel.TeamInfoViewModel;
         public static TeamInfoPage teamInfoPage;
         public TeamInfoPage()
         {
             InitializeComponent();
             teamInfoPage = this;
             DataContext = viewModel;
-            BackWindow.backWindow.DataContext = viewModel;
         }
         private void StateChangeMainSur1_Click(object sender, RoutedEventArgs e)
         {

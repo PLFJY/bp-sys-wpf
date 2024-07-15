@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,36 +19,56 @@ namespace bp_sys_wpf.ViewModel
                 handler(this, new PropertyChangedEventArgs(propertyName));
         }
 
-       
+        private int _CountDownTimeSet = 30;
 
-
-        private int _CountDownTimeSet;
-
-        public int CountDownTimeSet
+        public int CountdownTimeSet
         {
             get { return _CountDownTimeSet; }
             set { _CountDownTimeSet = Convert.ToInt32(value); }
         }
 
-        private string _CountDownTime;
+        private string _CountdownTime = "VS";
 
         public string CountdownTime
         {
-            get {
-                if (_CountDownTime == null)
+            get
+            {
+                if (_CountdownTime == null || _CountdownTime=="VS")
                 {
                     dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
                     dispatcherTimer.Interval = TimeSpan.FromSeconds(1);
                     dispatcherTimer.Tick += new EventHandler(DispatcherTimer_Tick);
                 }
-                return _CountDownTime; 
+                return _CountdownTime;
             }
             set
             {
-                _CountDownTime = value;
-                RaisePropertyChanged("Countdown");
+                _CountdownTime = value;
+                RaisePropertyChanged("CountdownTime");
             }
         }
+        private bool _IsCountDownStart;
+
+        public bool IsCountDownStart
+        {
+            get { return _IsCountDownStart; }
+            set
+            {
+                _IsCountDownStart = value;
+                if (value == true)
+                {
+                    countdownTime = CountdownTimeSet;
+                    CountdownTime = countdownTime.ToString();
+                    dispatcherTimer.Start();
+                }
+                else
+                {
+                    dispatcherTimer.Stop();
+                    CountdownTime = "VS";
+                }
+            }
+        }
+
 
         private int countdownTime;
         public DispatcherTimer dispatcherTimer = new DispatcherTimer();
@@ -57,10 +78,11 @@ namespace bp_sys_wpf.ViewModel
             if (countdownTime < 0)
             {
                 dispatcherTimer.Stop();
+                CountdownTime = "VS";
             }
             else
             {
-                _CountDownTime = countdownTime.ToString();
+                CountdownTime = countdownTime.ToString();
             }
         }
     }

@@ -21,9 +21,9 @@ namespace bp_sys_wpf.ViewModel
                     _NowModel = new NowModel();//初始化
                     for (int i = 0; i < 4; i++)
                     {
-                        _NowModel.NowPlayer.Add(new NowPlayerInfo { Name = "" });
+                        _NowModel.NowPlayer.Add("");
                     }
-                    _NowModel.NowPlayer.Add(new NowPlayerInfo() { Name = "" });
+                    _NowModel.NowPlayer.Add("");
                 }
                 return _NowModel;
             }

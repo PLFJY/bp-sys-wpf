@@ -456,7 +456,7 @@
                                         Height="35"
                                         Width="150"
                                         IsReadOnly="True"
-                                        Text="{Binding NowView.NowModel.NowPlayer[0].Name}"
+                                        Text="{Binding NowView.NowModel.NowPlayer[0]}"
                                         PlaceholderText="选手名称"/>
                             <ui:Button x:Name="Swap_sur_player1_with_player2"
                                        Width="35"
@@ -480,7 +480,7 @@
                                         Height="35"
                                         Width="150"
                                         IsReadOnly="True"
-                                        Text="{Binding NowView.NowModel.NowPlayer[1].Name}"
+                                        Text="{Binding NowView.NowModel.NowPlayer[1]}"
                                         PlaceholderText="选手名称"/>
                             <ui:Button x:Name="Swap_sur_player2_with_player1"
                                        Width="35"
@@ -504,7 +504,7 @@
                                         Height="35"
                                         Width="150"
                                         IsReadOnly="True"
-                                        Text="{Binding NowView.NowModel.NowPlayer[2].Name}"
+                                        Text="{Binding NowView.NowModel.NowPlayer[2]}"
                                         PlaceholderText="选手名称"/>
                             <ui:Button x:Name="Swap_sur_player3_with_player1"
                                        Width="35"
@@ -528,7 +528,7 @@
                                         Height="35"
                                         Width="150"
                                         IsReadOnly="True"
-                                        Text="{Binding NowView.NowModel.NowPlayer[3].Name}"
+                                        Text="{Binding NowView.NowModel.NowPlayer[3]}"
                                         PlaceholderText="选手名称"/>
                             <ui:Button x:Name="Swap_sur_player4_with_player1"
                                        Width="35"
@@ -553,7 +553,7 @@
                                         Height="35"
                                         Width="150"
                                         IsReadOnly="True"
-                                        Text="{Binding NowView.NowModel.NowPlayer[4].Name}"
+                                        Text="{Binding NowView.NowModel.NowPlayer[4]}"
                                         PlaceholderText="选手名称"
                                         Margin="0,10,0,10"/>
                         </StackPanel>

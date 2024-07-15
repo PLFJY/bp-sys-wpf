@@ -5,6 +5,7 @@ using IniParser.Model;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Threading;
+using System.Diagnostics;
 
 namespace bp_sys_wpf.Views.Windows
 {
@@ -15,10 +16,12 @@ namespace bp_sys_wpf.Views.Windows
     {
         public static BackWindow backWindow = new BackWindow();
         public TimmerViewModel timmer = new TimmerViewModel();
+        public RootViewModel rootViewModel = new RootViewModel();
         public BackWindow()
         {
             InitializeComponent();
             backWindow = this;
+            DataContext = rootViewModel;
         }
         private void AppInitialize()
         {
@@ -84,17 +87,22 @@ namespace bp_sys_wpf.Views.Windows
         {
             Environment.Exit(0);
         }
-
+        
         private void TimmerStart_Click(object sender, RoutedEventArgs e)
         {
             if (int.TryParse(Timmer.Text, out int number))
             {
-                timmer.dispatcherTimer.Start();
+                rootViewModel.TimmerViewModel.IsCountDownStart = true;
             }
             else
             {
-                timmer.CountDownTimeSet = 0;
+                MessageBox.Show("时间格式错误，请输入数字");
             }
+        }
+
+        private void TimmerClose_Click(object sender, RoutedEventArgs e)
+        {
+            rootViewModel.TimmerViewModel.IsCountDownStart = false;
         }
     }
 }

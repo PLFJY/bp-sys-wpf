@@ -27,9 +27,60 @@
                 <Setter Property="Foreground"
                         Value="White"/>
             </Style>
+            <Style TargetType="Image">
+                <Setter Property="Margin"
+                        Value="0,10,0,0"/>
+                <Setter Property="Height"
+                        Value="70"/>
+                <Setter Property="Width"
+                        Value="70"/>
+            </Style>
         </ResourceDictionary>
     </Page.Resources>
     <Grid>
-        
+        <GroupBox Header="Ban监管者"
+                  Margin="10,0,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top">
+            <Grid>
+                <StackPanel Margin="10,10,10,10"
+                            Orientation="Horizontal"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Left">
+                    <StackPanel>
+                        <ComboBox x:Name="Hun_ban_1"
+                                  Height="35"
+                                  Width="150"
+                                  IsEditable="True"
+                                  IsEnabled="True"
+                                  ItemsSource="{Binding hun}"
+                                  MaxDropDownHeight="100"/>
+                        <Image x:Name="Hun_ban_review_1"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <ComboBox x:Name="Hun_ban_2"
+                                  Height="35"
+                                  Width="150"
+                                  IsEditable="True"
+                                  Margin="10,0,0,0"
+                                  IsEnabled="True"
+                                  ItemsSource="{Binding hun}"
+                                  MaxDropDownHeight="100"/>
+                        <Image x:Name="Hun_ban_review_2"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <ComboBox x:Name="Hun_ban_3"
+                                  Height="35"
+                                  Width="150"
+                                  IsEditable="True"
+                                  Margin="10,0,0,0"
+                                  IsEnabled="True"
+                                  ItemsSource="{Binding hun}"
+                                  MaxDropDownHeight="100"/>
+                        <Image x:Name="Hun_ban_review_3"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
     </Grid>
 </Page>

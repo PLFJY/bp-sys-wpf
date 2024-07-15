@@ -27,6 +27,14 @@
                 <Setter Property="Foreground"
                         Value="White"/>
             </Style>
+            <Style TargetType="Image">
+                <Setter Property="Margin"
+                        Value="0,10,0,0"/>
+                <Setter Property="Height"
+                        Value="70"/>
+                <Setter Property="Width"
+                        Value="70"/>
+            </Style>
         </ResourceDictionary>
     </Page.Resources>
     <Grid>
@@ -42,11 +50,9 @@
                                       Height="35"
                                       Width="150"
                                       IsEditable="True"
+                                      ItemsSource="{Binding sur}"
                                       MaxDropDownHeight="100"/>
-                            <Image x:Name="Sur_ban_review_1"
-                                   Height="70"
-                                   Width="70"
-                                   Margin="0,10,0,0"/>
+                            <Image x:Name="Sur_ban_review_1"/>
                         </StackPanel>
                         <StackPanel>
                             <ComboBox x:Name="Sur_ban_2"
@@ -54,11 +60,9 @@
                                       Width="150"
                                       IsEditable="True"
                                       Margin="10,0,0,0"
+                                      ItemsSource="{Binding sur}"
                                       MaxDropDownHeight="100"/>
-                            <Image x:Name="Sur_ban_review_2"
-                                   Height="70"
-                                   Width="70"
-                                   Margin="0,10,0,0"/>
+                            <Image x:Name="Sur_ban_review_2"/>
                         </StackPanel>
                         <StackPanel>
                             <ComboBox x:Name="Sur_ban_3"
@@ -66,11 +70,9 @@
                                       Width="150"
                                       IsEditable="True"
                                       Margin="10,0,0,0"
+                                      ItemsSource="{Binding sur}"
                                       MaxDropDownHeight="100"/>
-                            <Image x:Name="Sur_ban_review_3"
-                                   Height="70"
-                                   Width="70"
-                                   Margin="0,10,0,0"/>
+                            <Image x:Name="Sur_ban_review_3"/>
                         </StackPanel>
                         <StackPanel>
                             <ComboBox x:Name="Sur_ban_4"
@@ -78,11 +80,9 @@
                                       Width="150"
                                       IsEditable="True"
                                       Margin="10,0,0,0"
+                                      ItemsSource="{Binding sur}"
                                       MaxDropDownHeight="100"/>
-                            <Image x:Name="Sur_ban_review_4"
-                                   Height="70"
-                                   Width="70"
-                                   Margin="0,10,0,0"/>
+                            <Image x:Name="Sur_ban_review_4"/>
                         </StackPanel>
                     </StackPanel>
                 </Grid>
@@ -99,11 +99,9 @@
                                       Height="35"
                                       Width="150"
                                       IsEditable="True"
+                                          ItemsSource="{Binding sur}"
                                       MaxDropDownHeight="100"/>
-                                <Image x:Name="Sur_hole_ban_1_review"
-                                       Height="70"
-                                       Width="70"
-                                       Margin="0,10,0,0"/>
+                                <Image x:Name="Sur_hole_ban_1_review"/>
                             </StackPanel>
                             <StackPanel>
                                 <ComboBox x:Name="Sur_hole_ban_2"
@@ -111,11 +109,9 @@
                                       Width="150"
                                       IsEditable="True"
                                       Margin="10,0,0,0"
+                                          ItemsSource="{Binding sur}"
                                       MaxDropDownHeight="100"/>
-                                <Image x:Name="Sur_hole_ban_2_review"
-                                       Height="70"
-                                       Width="70"
-                                       Margin="0,10,0,0"/>
+                                <Image x:Name="Sur_hole_ban_2_review"/>
                             </StackPanel>
                             <StackPanel>
                                 <ComboBox x:Name="Sur_hole_ban_3"
@@ -123,11 +119,9 @@
                                           Width="150"
                                           IsEditable="True"
                                           Margin="10,0,0,0"
+                                          ItemsSource="{Binding sur}"
                                           MaxDropDownHeight="100"/>
-                                <Image x:Name="Sur_hole_ban_3_review"
-                                       Height="70"
-                                       Width="70"
-                                       Margin="0,10,0,0"/>
+                                <Image x:Name="Sur_hole_ban_3_review"/>
                             </StackPanel>
                         </StackPanel>
                         <StackPanel Grid.Row="0"
@@ -138,11 +132,9 @@
                                           Height="35"
                                           Width="150"
                                           IsEditable="True"
+                                          ItemsSource="{Binding sur}"
                                           MaxDropDownHeight="100"/>
-                                <Image x:Name="Sur_hole_ban_4_review"
-                                       Height="70"
-                                       Width="70"
-                                       Margin="0,10,0,0"/>
+                                <Image x:Name="Sur_hole_ban_4_review"/>
                             </StackPanel>
                             <StackPanel>
                                 <ComboBox x:Name="Sur_hole_ban_5"
@@ -150,11 +142,9 @@
                                       Width="150"
                                       IsEditable="True"
                                       Margin="10,0,0,0"
+                                          ItemsSource="{Binding sur}"
                                       MaxDropDownHeight="100"/>
-                                <Image x:Name="Sur_hole_ban_5_review"
-                                       Height="70"
-                                       Width="70"
-                                       Margin="0,10,0,0"/>
+                                <Image x:Name="Sur_hole_ban_5_review"/>
                             </StackPanel>
                             <StackPanel>
                                 <ComboBox x:Name="Sur_hole_ban_6"
@@ -162,11 +152,9 @@
                                           Width="150"
                                           IsEditable="True"
                                           Margin="10,0,0,0"
+                                          ItemsSource="{Binding sur}"
                                           MaxDropDownHeight="100"/>
-                                <Image x:Name="Sur_hole_ban_6_review"
-                                       Height="70"
-                                       Width="70"
-                                       Margin="0,10,0,0"/>
+                                <Image x:Name="Sur_hole_ban_6_review"/>
                             </StackPanel>
                         </StackPanel>
                     </StackPanel>

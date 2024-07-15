@@ -13,7 +13,7 @@
         WindowStartupLocation="CenterScreen"
         Background="#202020"
         ResizeMode="CanMinimize"
-        Loaded="Window_Loaded">
+        Closed="Window_Closed">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -29,28 +29,46 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
                 <StackPanel Orientation="Horizontal"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Center"
+                            Grid.Column="0"
                             Margin="10,0,0,0">
-                    <ui:TextBlock x:Name="TeamMain"
-                               Text="TeamA"
+                    <ui:TextBlock x:Name="TeamSur"
+                               Text="{Binding TeamInfoModel.NowSurTeam}"
                                FontSize="30"
+                               Width="100"
+                               HorizontalAlignment="Right"
                                Foreground="White"/>
                     <ui:Button x:Name="Swap"
                             Content="换边"
                             Height="30"
                             Width="90"
                             Icon="{ui:SymbolIcon ArrowSwap24}"
-                            Margin="30,0,30,0"/>
-                    <ui:TextBlock x:Name="TeamAway"
-                               Text="TeamB"
+                            Margin="30,0,30,0" Click="Swap_Click"/>
+                    <ui:TextBlock x:Name="TeamHun"
+                               Text="{Binding TeamInfoModel.NowHunTeam}"
                                FontSize="30"
+                               Width="100"
+                               HorizontalAlignment="Left"
                                Foreground="White"/>
                 </StackPanel>
+                <ui:Button x:Name="Reset"
+                        Content="重置"
+                        Height="30"
+                        Width="80"
+                        Icon="{ui:SymbolIcon ArrowReset24}"
+                        Grid.Column="1"
+                        HorizontalAlignment="Center"/>
                 <GroupBox Header="计时器（可自定义）"
                           Foreground="White"
                           HorizontalAlignment="Right"
+                          Grid.Column="2"
                           Margin="0,0,10,0">
                     <StackPanel Orientation="Horizontal"
                                 HorizontalAlignment="Right">
@@ -62,12 +80,14 @@
                             <ComboBoxItem Content="60"/>
                         </ComboBox>
                         <ui:Button x:Name="TimmerStart"
-                                   Width="60"
+                                   Width="80"
                                    Content="Start"
+                                   Icon="{ui:SymbolIcon Play24}"
                                    Margin="10,0,0,0"/>
                         <ui:Button x:Name="TimmerClose"
-                                   Width="60"
+                                   Width="85"
                                    Content="Close"
+                                   Icon="{ui:SymbolIcon RecordStop24}"
                                    Margin="10,0,10,0"/>
                     </StackPanel>
                 </GroupBox>

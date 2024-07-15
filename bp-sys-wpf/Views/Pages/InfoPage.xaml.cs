@@ -10,6 +10,8 @@ namespace bp_sys_wpf.Views.Pages
         public InfoPage()
         {
             InitializeComponent();
+            this.DataContext = this;
         }
+        public static string version { get; set; } = Config.version;
     }
 }

@@ -40,6 +40,7 @@
 		</None>
 	</ItemGroup>
 	<ItemGroup>
+	  <None Remove="Header.PNG" />
 	  <None Remove="Views\HomeHeader.png" />
 	  <None Remove="Views\Pages\HomeHeader.png" />
 	</ItemGroup>
@@ -51,6 +52,7 @@
 		<PackageReference Include="WPF-UI" Version="3.0.4" />
 	</ItemGroup>
 	<ItemGroup>
+	  <Resource Include="Header.PNG" />
 	  <Resource Include="Views\HomeHeader.png" />
 	  <Resource Include="Views\Pages\HomeHeader.png" />
 	</ItemGroup>

@@ -19,51 +19,51 @@
                 <Setter Property="Foreground"
                         Value="White"/>
             </Style>
+            <Style TargetType="GroupBox">
+                <Setter Property="Foreground"
+                        Value="White"/>
+            </Style>
         </ResourceDictionary>
     </Page.Resources>
     <Grid>
-        <Grid Margin="30,30,0,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <ui:TextBlock Grid.Row="0"
-                          Text="Pick"
-                          FontSize="25"/>
-            <ComboBox x:Name="Map_pick"
-                      Grid.Row="1"
-                      HorizontalAlignment="Left"
-                      Width="200"
-                      Height="50">
-                <ComboBoxItem Content="军工厂"/>
-                <ComboBoxItem Content="红教堂"/>
-                <ComboBoxItem Content="圣心医院"/>
-                <ComboBoxItem Content="湖景村"/>
-                <ComboBoxItem Content="月亮河公园"/>
-                <ComboBoxItem Content="永眠镇"/>
-                <ComboBoxItem Content="唐人街"/>
-                <ComboBoxItem Content="里奥的回忆"/>
-            </ComboBox>
-            <ui:TextBlock Grid.Row="2"
-                          Text="Ban"
-                          FontSize="25"/>
-            <ComboBox x:Name="Map_ban"
-                      Grid.Row="3"
-                      HorizontalAlignment="Left"
-                      Width="200"
-                      Height="50">
-                <ComboBoxItem Content="无Ban"/>
-                <ComboBoxItem Content="军工厂"/>
-                <ComboBoxItem Content="红教堂"/>
-                <ComboBoxItem Content="圣心医院"/>
-                <ComboBoxItem Content="湖景村"/>
-                <ComboBoxItem Content="月亮河公园"/>
-                <ComboBoxItem Content="永眠镇"/>
-                <ComboBoxItem Content="唐人街"/>
-                <ComboBoxItem Content="里奥的回忆"/>
-            </ComboBox>
-        </Grid>
+        <GroupBox Header="地图BP"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top">
+            <StackPanel Margin="10,10,0,0">
+                <ui:TextBlock Text="Pick"
+                              FontSize="25"/>
+                <ComboBox x:Name="Map_pick"
+                          HorizontalAlignment="Left"
+                          Width="200"
+                          Height="50">
+                    <ComboBoxItem Content="军工厂"/>
+                    <ComboBoxItem Content="红教堂"/>
+                    <ComboBoxItem Content="圣心医院"/>
+                    <ComboBoxItem Content="湖景村"/>
+                    <ComboBoxItem Content="月亮河公园"/>
+                    <ComboBoxItem Content="永眠镇"/>
+                    <ComboBoxItem Content="唐人街"/>
+                    <ComboBoxItem Content="里奥的回忆"/>
+                </ComboBox>
+                <ui:TextBlock Grid.Row="2"
+                              Text="Ban"
+                              FontSize="25"/>
+                <ComboBox x:Name="Map_ban"
+                          Grid.Row="3"
+                          HorizontalAlignment="Left"
+                          Width="200"
+                          Height="50">
+                    <ComboBoxItem Content="无Ban"/>
+                    <ComboBoxItem Content="军工厂"/>
+                    <ComboBoxItem Content="红教堂"/>
+                    <ComboBoxItem Content="圣心医院"/>
+                    <ComboBoxItem Content="湖景村"/>
+                    <ComboBoxItem Content="月亮河公园"/>
+                    <ComboBoxItem Content="永眠镇"/>
+                    <ComboBoxItem Content="唐人街"/>
+                    <ComboBoxItem Content="里奥的回忆"/>
+                </ComboBox>
+            </StackPanel>
+        </GroupBox>
     </Grid>
 </Page>

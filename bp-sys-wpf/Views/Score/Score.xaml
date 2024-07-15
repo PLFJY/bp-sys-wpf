@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="比分面板" Height="250" Width="780" WindowStartupLocation="CenterScreen" Closing="Score1_Closing">
     <Viewbox>
-        <Grid  Width="780">
+        <Grid Width="780">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="97"/>
                 <ColumnDefinition Width="88"/>

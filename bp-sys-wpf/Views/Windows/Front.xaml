@@ -75,14 +75,14 @@
                     <Image x:Name="Sur_pick_1" Height="166" Panel.ZIndex="-1" Margin="0,0,0,7"/>
                     <Image x:Name="SurPicking1" Height="166" Panel.ZIndex="2" Margin="0,0,0,7" Visibility="Hidden"/>
                     <Label x:Name="Sur_1_team" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,35" FontSize="22"/>
-                    <Label x:Name="Sur_1_player" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22"/>
+                    <Label x:Name="Sur_1_player" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22" Content="{Binding NowSurPlayer[0].Name}"/>
                 </Grid>
                 <!--求生Pick1-->
                 <Grid Grid.Column="2">
                     <Image x:Name="Sur_pick_2" Height="166" Panel.ZIndex="-1" Margin="0,0,0,7"/>
                     <Image x:Name="SurPicking2" Height="166" Panel.ZIndex="2" Margin="0,0,0,7" Visibility="Hidden"/>
                     <Label x:Name="Sur_2_team" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,35" FontSize="22"/>
-                    <Label x:Name="Sur_2_player" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22"/>
+                    <Label x:Name="Sur_2_player" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22" Content="{Binding NowSurPlayer[1].Name}"/>
                 </Grid>
                 <!--求生Pick2-->
                 <Grid Grid.Column="3">

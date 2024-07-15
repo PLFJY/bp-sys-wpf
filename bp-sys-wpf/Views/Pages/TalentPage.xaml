@@ -4,11 +4,105 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:bp_sys_wpf.Views.Pages"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="920"
+      d:DesignWidth="760"
       Title="TalentPage">
-
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ui:ThemesDictionary Theme="Dark"/>
+                <ui:ControlsDictionary />
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="TextBlock">
+                <Setter Property="Foreground"
+                        Value="White"/>
+                <Setter Property="HorizontalAlignment"
+                        Value="Center"/>
+                <Setter Property="VerticalAlignment"
+                        Value="Center"/>
+            </Style>
+            <Style TargetType="GroupBox">
+                <Setter Property="Foreground"
+                        Value="White"/>
+            </Style>
+            <Style TargetType="Image">
+                <Setter Property="Margin"
+                        Value="0,10,0,0"/>
+                <Setter Property="Height"
+                        Value="70"/>
+                <Setter Property="Width"
+                        Value="70"/>
+            </Style>
+        </ResourceDictionary>
+    </Page.Resources>
     <Grid>
-        
+        <StackPanel>
+            <GroupBox Header="求生者1"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Margin="10,10,0,0">
+                <StackPanel Orientation="Horizontal"
+                            Margin="10,10,10,10">
+                    <CheckBox x:Name="BorrowedTime1"
+                              Content="回光返照"/>
+                    <CheckBox x:Name="KneeJerkReflex1"
+                              Content="膝跳反射"/>
+                    <CheckBox x:Name="TideTurner1"
+                              Content="化险为夷"/>
+                    <CheckBox x:Name="FlywheelEffect1"
+                              Content="飞轮效应"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="求生者2"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Margin="10,10,0,0">
+                <StackPanel Orientation="Horizontal"
+                            Margin="10,10,10,10">
+                    <CheckBox x:Name="BorrowedTime2"
+                              Content="回光返照"/>
+                    <CheckBox x:Name="KneeJerkReflex2"
+                              Content="膝跳反射"/>
+                    <CheckBox x:Name="TideTurner2"
+                              Content="化险为夷"/>
+                    <CheckBox x:Name="FlywheelEffect2"
+                              Content="飞轮效应"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="求生者3"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Margin="10,10,0,0">
+                <StackPanel Orientation="Horizontal"
+                            Margin="10,10,10,10">
+                    <CheckBox x:Name="BorrowedTime3"
+                              Content="回光返照"/>
+                    <CheckBox x:Name="KneeJerkReflex3"
+                              Content="膝跳反射"/>
+                    <CheckBox x:Name="TideTurner3"
+                              Content="化险为夷"/>
+                    <CheckBox x:Name="FlywheelEffect3"
+                              Content="飞轮效应"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="求生者4"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Margin="10,10,0,0">
+                <StackPanel Orientation="Horizontal"
+                            Margin="10,10,10,10">
+                    <CheckBox x:Name="BorrowedTime4"
+                              Content="回光返照"/>
+                    <CheckBox x:Name="KneeJerkReflex4"
+                              Content="膝跳反射"/>
+                    <CheckBox x:Name="TideTurner4"
+                              Content="化险为夷"/>
+                    <CheckBox x:Name="FlywheelEffect4"
+                              Content="飞轮效应"/>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
     </Grid>
 </Page>

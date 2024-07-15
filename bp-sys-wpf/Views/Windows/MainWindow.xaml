@@ -237,7 +237,6 @@
                             <Image x:Name="Sur_pick_3_preview" Height="60" Width="60" Margin="50,0,0,0"/>
                             <Image x:Name="Sur_pick_4_preview" Height="60" Width="60" Margin="50,0,0,0"/>
                         </StackPanel>
-
                     </Grid>
                 </GroupBox>
                 <Button x:Name="Ban_count_amount" Content="Ban位数量设定" Height="30" Width="90" Margin="10,0,10,0" VerticalAlignment="Bottom" Click="Ban_count_amount_Click"/>

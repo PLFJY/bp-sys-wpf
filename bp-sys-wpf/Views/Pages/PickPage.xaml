@@ -4,11 +4,231 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:bp_sys_wpf.Views.Pages"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="920"
+      d:DesignWidth="760"
       Title="PickPage">
-
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ui:ThemesDictionary Theme="Dark"/>
+                <ui:ControlsDictionary />
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="TextBlock">
+                <Setter Property="Foreground"
+                        Value="White"/>
+                <Setter Property="HorizontalAlignment"
+                        Value="Center"/>
+                <Setter Property="VerticalAlignment"
+                        Value="Center"/>
+            </Style>
+            <Style TargetType="GroupBox">
+                <Setter Property="Foreground"
+                        Value="White"/>
+            </Style>
+            <Style TargetType="Image">
+                <Setter Property="Margin"
+                        Value="0,10,0,0"/>
+                <Setter Property="Height"
+                        Value="70"/>
+                <Setter Property="Width"
+                        Value="70"/>
+            </Style>
+        </ResourceDictionary>
+    </Page.Resources>
     <Grid>
-        
+        <StackPanel>
+            <GroupBox Header="Pick求生者"
+                      Margin="10,0,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top">
+                <StackPanel Margin="10,10,10,10"
+                            Orientation="Horizontal"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Left">
+                    <StackPanel>
+                        <ComboBox x:Name="Sur_pick_1"
+                                  Width="150"
+                                  Height="35"
+                                  IsEditable="True"
+                                  ItemsSource="{Binding sur}"
+                                  MaxDropDownHeight="100"/>
+                        <Image x:Name="Sur_pick_1_preview"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <ComboBox x:Name="Sur_pick_2"
+                                  Width="150"
+                                  Height="35"
+                                  IsEditable="True"
+                                  Margin="10,0,0,0"
+                                  ItemsSource="{Binding sur}"
+                                  MaxDropDownHeight="100"/>
+                        <Image x:Name="Sur_pick_2_preview"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <ComboBox x:Name="Sur_pick_3"
+                                  Width="150"
+                                  Height="35"
+                                  IsEditable="True"
+                                  Margin="10,0,0,0"
+                                  ItemsSource="{Binding sur}"
+                                  MaxDropDownHeight="100"/>
+                        <Image x:Name="Sur_pick_3_preview"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <ComboBox x:Name="Sur_pick_4"
+                                  Width="150"
+                                  Height="35"
+                                  IsEditable="True"
+                                  Margin="10,0,0,0"
+                                  ItemsSource="{Binding sur}"
+                                  MaxDropDownHeight="100"/>
+                        <Image x:Name="Sur_pick_4_preview"/>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Pick监管者"
+                      Margin="10,0,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top">
+                <StackPanel Margin="10,10,10,10"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Left">
+                    <ComboBox x:Name="Hun_pick"
+                              Height="35"
+                              Width="150"
+                              IsEditable="True"
+                              Margin="0,10,0,0"
+                              ItemsSource="{Binding hun}"
+                              MaxDropDownHeight="100"/>
+                    <Image x:Name="Hun_pick_review"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="全局禁选记录"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Margin="10,10,0,0">
+                <StackPanel>
+                    <GroupBox Header="主场"
+                              HorizontalAlignment="Left"
+                              VerticalAlignment="Top"
+                              Margin="10,10,10,10">
+                        <StackPanel Margin="10,10,10,10">
+                            <StackPanel Orientation="Horizontal">
+                                <ComboBox x:Name="Main_hole1"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          IsEnabled="True"
+                                          ItemsSource="{Binding sur}"
+                                          MaxDropDownHeight="100"/>
+                                <ComboBox x:Name="Main_hole2"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          Margin="10,0,0,0"
+                                          IsEnabled="True"
+                                          ItemsSource="{Binding sur}"
+                                          MaxDropDownHeight="100"/>
+                                <ComboBox x:Name="Main_hole3"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          Margin="10,0,0,0"
+                                          IsEnabled="True"
+                                          ItemsSource="{Binding sur}"
+                                          MaxDropDownHeight="100"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="0,10,0,0">
+                                <ComboBox x:Name="Main_hole4"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          IsEnabled="True"
+                                          ItemsSource="{Binding sur}"
+                                          MaxDropDownHeight="100"/>
+                                <ComboBox x:Name="Main_hole5"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          Margin="10,0,0,0"
+                                          IsEnabled="True"
+                                          ItemsSource="{Binding sur}"
+                                          MaxDropDownHeight="100"/>
+                                <ComboBox x:Name="Main_hole6"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          Margin="10,0,0,0"
+                                          IsEnabled="True"
+                                          ItemsSource="{Binding sur}"
+                                          MaxDropDownHeight="100"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                    </GroupBox>
+                    <GroupBox Header="客场"
+                              HorizontalAlignment="Left"
+                              VerticalAlignment="Top"
+                              Margin="10,10,10,10">
+                        <StackPanel Margin="10,10,10,10">
+                            <StackPanel Orientation="Horizontal">
+                                <ComboBox x:Name="Away_hole1"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          IsEnabled="True"
+                                          ItemsSource="{Binding sur}"
+                                          MaxDropDownHeight="100"/>
+                                <ComboBox x:Name="Away_hole2"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          Margin="10,0,0,0"
+                                          IsEnabled="True"
+                                          ItemsSource="{Binding sur}"
+                                          MaxDropDownHeight="100"/>
+                                <ComboBox x:Name="Away_hole3"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          Margin="10,0,0,0"
+                                          IsEnabled="True"
+                                          ItemsSource="{Binding sur}"
+                                          MaxDropDownHeight="100"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="0,10,0,0">
+                                <ComboBox x:Name="Away_hole4"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          IsEnabled="True"
+                                          ItemsSource="{Binding sur}"
+                                          MaxDropDownHeight="100"/>
+                                <ComboBox x:Name="Away_hole5"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          Margin="10,0,0,0"
+                                          IsEnabled="True"
+                                          ItemsSource="{Binding sur}"
+                                          MaxDropDownHeight="100"/>
+                                <ComboBox x:Name="Away_hole6"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          Margin="10,0,0,0"
+                                          IsEnabled="True"
+                                          ItemsSource="{Binding sur}"
+                                          MaxDropDownHeight="100"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
     </Grid>
 </Page>

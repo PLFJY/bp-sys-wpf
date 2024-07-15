@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using bp_sys_wpf.ViewModel;
+using System.Windows.Controls;
 
 namespace bp_sys_wpf.Views.Pages
 {
@@ -7,9 +8,11 @@ namespace bp_sys_wpf.Views.Pages
     /// </summary>
     public partial class SurBanPage : Page
     {
+        ComboBoxItemViewModel comboBoxItemViewModel = new ComboBoxItemViewModel();
         public SurBanPage()
         {
             InitializeComponent();
+            DataContext = comboBoxItemViewModel;
         }
     }
 }

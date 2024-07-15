@@ -40,7 +40,7 @@
                             Grid.Column="0"
                             Margin="10,0,0,0">
                     <ui:TextBlock x:Name="TeamSur"
-                               Text="{Binding TeamInfoModel.NowSurTeam}"
+                               Text="{Binding NowView.NowModel.NowSurTeam.Name}"
                                FontSize="30"
                                Width="100"
                                HorizontalAlignment="Right"
@@ -52,7 +52,7 @@
                             Icon="{ui:SymbolIcon ArrowSwap24}"
                             Margin="30,0,30,0" Click="Swap_Click"/>
                     <ui:TextBlock x:Name="TeamHun"
-                               Text="{Binding TeamInfoModel.NowHunTeam}"
+                               Text="{Binding NowView.NowModel.NowHunTeam.Name}"
                                FontSize="30"
                                Width="100"
                                HorizontalAlignment="Left"
@@ -75,15 +75,17 @@
                         <ComboBox x:Name="Timmer"
                                     Width="75"
                                     Margin="5,0,0,0"
+                                  Text="{Binding CountDownTimeSet}"
                                     IsEditable="True">
                             <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="45"/>
                             <ComboBoxItem Content="60"/>
                         </ComboBox>
                         <ui:Button x:Name="TimmerStart"
                                    Width="80"
                                    Content="Start"
                                    Icon="{ui:SymbolIcon Play24}"
-                                   Margin="10,0,0,0"/>
+                                   Margin="10,0,0,0" Click="TimmerStart_Click"/>
                         <ui:Button x:Name="TimmerClose"
                                    Width="85"
                                    Content="Close"

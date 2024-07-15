@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace bp_sys_wpf.Model
 {
@@ -37,23 +38,6 @@ namespace bp_sys_wpf.Model
             set { _AwayTeamInfo = value; }
         }
 
-
-        private NowTeam _NowSurTeam;
-
-        public NowTeam NowSurTeam
-        {
-            get { return _NowSurTeam; }
-            set { _NowSurTeam = value; }
-        }
-
-        private NowTeam _NowHunTeam;
-
-        public NowTeam NowHunTeam
-        {
-            get { return _NowHunTeam; }
-            set { _NowHunTeam = value; }
-        }
-
     }
     public class TeamInfoPageButtonModel
     {
@@ -73,32 +57,12 @@ namespace bp_sys_wpf.Model
             set { _AwayButtonState = value; }
         }
     }
-
-    public class NowTeam
-    {
-        private string _Name;
-
-        public string Name
-        {
-            get { return _Name; }
-            set { _Name = value; }
-        }
-
-        private ImageBrush _Logo;
-
-        public ImageBrush LOGO
-        {
-            get { return _Logo; }
-            set { _Logo = value; }
-        }
-
-    }
     public class Team
     {
-        private string _name;
+        private string? _name;
         private string _state;
 
-        public string Name
+        public string? Name
         {
             get { return _name; }
             set { _name = value; }
@@ -109,6 +73,16 @@ namespace bp_sys_wpf.Model
             get { return _state; }
             set { _state = value; }
         }
+
+        private BitmapImage _Logo;
+
+        public BitmapImage LOGO
+        {
+            get { return _Logo; }
+            set { _Logo = value; }
+        }
+
+
     }
 
     public class Player

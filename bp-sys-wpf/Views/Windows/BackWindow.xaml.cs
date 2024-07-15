@@ -1,6 +1,10 @@
 ﻿using bp_sys_wpf.ViewModel;
 using bp_sys_wpf.Views.Pages;
+using IniParser;
+using IniParser.Model;
 using System.Windows;
+using System.Windows.Media;
+using System.Windows.Threading;
 
 namespace bp_sys_wpf.Views.Windows
 {
@@ -10,10 +14,61 @@ namespace bp_sys_wpf.Views.Windows
     public partial class BackWindow : Window
     {
         public static BackWindow backWindow = new BackWindow();
+        public TimmerViewModel timmer = new TimmerViewModel();
         public BackWindow()
         {
             InitializeComponent();
             backWindow = this;
+        }
+        private void AppInitialize()
+        {
+            var parser = new FileIniDataParser();
+            IniData data = parser.ReadFile($"{AppDomain.CurrentDomain.BaseDirectory}\\Resource\\Config.ini");
+            Config.Front.Color.team_name = ConvertHexStringToBrush(data["Front_Color"]["team_name"].ToString());
+            Config.Front.Color.scoreS = ConvertHexStringToBrush(data["Front_Color"]["scoreS"].ToString());
+            Config.Front.Color.score = ConvertHexStringToBrush(data["Front_Color"]["score"].ToString());
+            Config.Front.Color.timmer = ConvertHexStringToBrush(data["Front_Color"]["timmer"].ToString());
+            Config.Front.Color.Sur_team = ConvertHexStringToBrush(data["Front_Color"]["Sur_team"].ToString());
+            Config.Front.Color.Sur_player = ConvertHexStringToBrush(data["Front_Color"]["Sur_player"].ToString());
+            Config.Front.Color.Hun_player = ConvertHexStringToBrush(data["Front_Color"]["Hun_player"].ToString());
+
+            Config.Interlude.Color.team_name = ConvertHexStringToBrush(data["Interlude_Color"]["team_name"].ToString());
+            Config.Interlude.Color.player_name = ConvertHexStringToBrush(data["Interlude_Color"]["player_name"].ToString());
+
+            Config.Score.Color.TeamName = ConvertHexStringToBrush(data["Score_Color"]["TeamName"].ToString());
+            Config.Score.Color.Score = ConvertHexStringToBrush(data["Score_Color"]["Score"].ToString());
+            Config.Score.Color.Word = ConvertHexStringToBrush(data["Score_Color"]["Word"].ToString());
+            Config.Score.Color.S = ConvertHexStringToBrush(data["Score_Color"]["S"].ToString());
+
+            Config.ScoreHole.Color.Name = ConvertHexStringToBrush(data["ScoreHole_Color"]["Name"].ToString());
+            Config.ScoreHole.Color.Score = ConvertHexStringToBrush(data["ScoreHole_Color"]["Score"].ToString());
+        }
+        
+        public static SolidColorBrush ConvertHexStringToBrush(string hexColor)
+        {
+            // 移除#号，如果存在的话  
+            if (hexColor.StartsWith("#"))
+            {
+                hexColor = hexColor.Substring(1);
+            }
+            // 检查长度是否为6或8  
+            if (hexColor.Length != 6 && hexColor.Length != 8)
+            {
+                MessageBox.Show("Config.ini设置的颜色代号格式不合法. 应该为 #RRGGBB 或 #AARRGGBB.", "配置文件加载错误");
+                Environment.Exit(0);
+            }
+            // 根据长度确定是否有透明度部分  
+            bool hasAlpha = hexColor.Length == 8;
+            // 将十六进制字符串转换为字节数组  
+            byte a = hasAlpha ? Convert.ToByte(hexColor.Substring(0, 2), 16) : (byte)255; // 透明度  
+            byte r = Convert.ToByte(hexColor.Substring(hasAlpha ? 2 : 0, 2), 16); // 红色  
+            byte g = Convert.ToByte(hexColor.Substring(hasAlpha ? 4 : 2, 2), 16); // 绿色  
+            byte b = Convert.ToByte(hexColor.Substring(hasAlpha ? 6 : 4, 2), 16); // 蓝色  
+            // 创建Color对象  
+            Color color = Color.FromArgb(a, r, g, b);
+            // 创建SolidColorBrush对象  
+            SolidColorBrush solidColorBrush = new SolidColorBrush(color);
+            return solidColorBrush;
         }
         private void RootNavigation_Loaded(object sender, RoutedEventArgs e)
         {
@@ -28,6 +83,18 @@ namespace bp_sys_wpf.Views.Windows
         private void Window_Closed(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void TimmerStart_Click(object sender, RoutedEventArgs e)
+        {
+            if (int.TryParse(Timmer.Text, out int number))
+            {
+                timmer.dispatcherTimer.Start();
+            }
+            else
+            {
+                timmer.CountDownTimeSet = 0;
+            }
         }
     }
 }

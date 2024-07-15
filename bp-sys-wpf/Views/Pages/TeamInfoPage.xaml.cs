@@ -239,6 +239,7 @@ namespace bp_sys_wpf.Views.Pages
         private void TeamNameCheck_Click(object sender, RoutedEventArgs e)
         {
             viewModel.TeamInfoModel = viewModel.TeamInfoModel;
+            viewModel.NowView = viewModel.NowView;
         }
 
         private void Swap_sur_player1_with_player2_Click(object sender, RoutedEventArgs e)
@@ -299,6 +300,26 @@ namespace bp_sys_wpf.Views.Pages
         private void Swap_sur_player4_with_player3_Click(object sender, RoutedEventArgs e)
         {
             viewModel.SwapPlayers(3, 2);
+        }
+
+        private void Change_main_team_logo_Click(object sender, RoutedEventArgs e)
+        {
+            viewModel.SetTeamLOGO("main");
+        }
+
+        private void Change_away_team_logo_Click(object sender, RoutedEventArgs e)
+        {
+            viewModel.SetTeamLOGO("away");
+        }
+
+        private void ImportMainInfo_Click(object sender, RoutedEventArgs e)
+        {
+            viewModel.ImportTeamInfoFromJson("main");
+        }
+
+        private void ImportAwayInfo_Click(object sender, RoutedEventArgs e)
+        {
+            viewModel.ImportTeamInfoFromJson("away");
         }
     }
 }

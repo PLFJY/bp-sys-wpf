@@ -66,11 +66,12 @@
                                     Margin="10,0,0,0">
                             <Button x:Name="Change_main_team_logo"
                                     Content="设置队伍LOGO"
-                                    Height="30"/>
+                                    Height="30" Click="Change_main_team_logo_Click"/>
                             <Image x:Name="main_team_logo"
                                    Height="80"
                                    Width="80"
                                    Margin="40,0,0,0"
+                                   Source="{Binding TeamInfoModel.MainTeamInfo.LOGO}"
                                    Stretch="Fill"/>
                             <TextBlock Text="当前上场："
                                        Margin="10,0,0,0"/>
@@ -85,7 +86,7 @@
                                 <ui:Button x:Name="ImportMainInfo"
                                            Margin="20,0,0,0"
                                            Icon="{ui:SymbolIcon ArrowImport24}"
-                                           Content="从json文件导入"/>
+                                           Content="从json文件导入" Click="ImportMainInfo_Click"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal"
                                         Margin="0,10,0,0">
@@ -266,11 +267,12 @@
                                     Margin="10,0,0,0">
                             <Button x:Name="Change_away_team_logo"
                                     Content="设置队伍LOGO"
-                                    Height="30"/>
+                                    Height="30" Click="Change_away_team_logo_Click"/>
                             <Image x:Name="away_team_logo"
                                    Height="80"
                                    Width="80"
                                    Margin="40,0,0,0"
+                                   Source="{Binding TeamInfoModel.AwayTeamInfo.LOGO}"
                                    Stretch="Fill"/>
                             <TextBlock Text="当前上场："
                                        Margin="10,0,0,0"/>
@@ -285,7 +287,7 @@
                                 <ui:Button x:Name="ImportAwayInfo"
                                            Margin="20,0,0,0"
                                            Icon="{ui:SymbolIcon ArrowImport24}"
-                                           Content="从json文件导入"/>
+                                           Content="从json文件导入" Click="ImportAwayInfo_Click"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal"
                                         Margin="0,10,0,0">
@@ -454,7 +456,7 @@
                                         Height="35"
                                         Width="150"
                                         IsReadOnly="True"
-                                        Text="{Binding TeamInfoModel.NowPlayer[0].Name}"
+                                        Text="{Binding NowView.NowModel.NowPlayer[0].Name}"
                                         PlaceholderText="选手名称"/>
                             <ui:Button x:Name="Swap_sur_player1_with_player2"
                                        Width="35"
@@ -478,7 +480,7 @@
                                         Height="35"
                                         Width="150"
                                         IsReadOnly="True"
-                                        Text="{Binding TeamInfoModel.NowPlayer[1].Name}"
+                                        Text="{Binding NowView.NowModel.NowPlayer[1].Name}"
                                         PlaceholderText="选手名称"/>
                             <ui:Button x:Name="Swap_sur_player2_with_player1"
                                        Width="35"
@@ -502,7 +504,7 @@
                                         Height="35"
                                         Width="150"
                                         IsReadOnly="True"
-                                        Text="{Binding TeamInfoModel.NowPlayer[2].Name}"
+                                        Text="{Binding NowView.NowModel.NowPlayer[2].Name}"
                                         PlaceholderText="选手名称"/>
                             <ui:Button x:Name="Swap_sur_player3_with_player1"
                                        Width="35"
@@ -526,7 +528,7 @@
                                         Height="35"
                                         Width="150"
                                         IsReadOnly="True"
-                                        Text="{Binding TeamInfoModel.NowPlayer[3].Name}"
+                                        Text="{Binding NowView.NowModel.NowPlayer[3].Name}"
                                         PlaceholderText="选手名称"/>
                             <ui:Button x:Name="Swap_sur_player4_with_player1"
                                        Width="35"
@@ -551,7 +553,7 @@
                                         Height="35"
                                         Width="150"
                                         IsReadOnly="True"
-                                        Text="{Binding TeamInfoModel.NowPlayer[4].Name}"
+                                        Text="{Binding NowView.NowModel.NowPlayer[4].Name}"
                                         PlaceholderText="选手名称"
                                         Margin="0,10,0,10"/>
                         </StackPanel>

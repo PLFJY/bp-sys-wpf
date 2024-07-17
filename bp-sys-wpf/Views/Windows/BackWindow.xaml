@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         Title="后台控制"
-        Height="650"
+        Height="705"
         Width="850"
         WindowStartupLocation="CenterScreen"
         Background="#202020"
@@ -105,6 +105,13 @@
                     </GroupBox>
                 </Grid>
             </Border>
+            <ui:InfoBar x:Name="ErrBar"
+                        Title="错误"
+                        Grid.Row="1"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Right"
+                        Severity="Error"
+                        Panel.ZIndex="1"/>
             <Grid Grid.Row="1"
                   AutomationProperties.IsColumnHeader="True">
                 <ui:NavigationView x:Name="RootNavigation"
@@ -116,7 +123,6 @@
                     <ui:NavigationView.MenuItems>
                         <ui:NavigationViewItem Content="Home"
                                                Icon="{ui:SymbolIcon Home24}"
-                                               NavigationCacheMode = "Enabled"
                                                TargetPageType = "{x:Type pages:HomePage}"/>
                         <ui:NavigationViewItem Content="队伍信息"
                                                Icon="{ui:SymbolIcon PeopleTeam24}"
@@ -142,13 +148,16 @@
                                                Icon="{ui:SymbolIcon PersonWalking24}"
                                                NavigationCacheMode="Enabled"
                                                TargetPageType = "{x:Type pages:TalentPage}"/>
-                        <ui:NavigationViewItem Content="比分模块"
+                        <ui:NavigationViewItem Content="比分"
                                                Icon="{ui:SymbolIcon NumberRow24}"
                                                NavigationCacheMode="Enabled"
                                                TargetPageType = "{x:Type pages:ScoreControlPage}"/>
+                        <ui:NavigationViewItem Content="启动前台"
+                                               x:Name="StartFronts"
+                                               Icon="{ui:SymbolIcon ShareScreenStart24}"
+                                               Click="StartFronts_Click"/>
                         <ui:NavigationViewItem Content="关于"
                                                Icon="{ui:SymbolIcon Info24}"
-                                               NavigationCacheMode="Enabled"
                                                TargetPageType = "{x:Type pages:InfoPage}"/>
                     </ui:NavigationView.MenuItems>
                 </ui:NavigationView>

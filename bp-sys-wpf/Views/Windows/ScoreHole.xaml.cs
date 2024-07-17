@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using bp_sys_wpf.ViewModel;
+using bp_sys_wpf.Views.Windows;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -14,12 +16,9 @@ namespace bp_sys_wpf
         public ScoreHole()
         {
             InitializeComponent();
+            GetFilePath getFilePath = new GetFilePath();
             scoreHole = this;
-            try { this.Background = new ImageBrush(new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/score_hole.png")))); } catch { }
-            MainLogo.Source = MainWindow.mainWindow.main_team_logo.Source;
-            MainName.Content = MainWindow.mainWindow.Main_team_name.Text;
-            AwayLogo.Source = MainWindow.mainWindow.away_team_logo.Source;
-            AwayName.Content = MainWindow.mainWindow.Away_team_name.Text;
+            try { this.Background = new ImageBrush(new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/score_hole.png")))); } catch { }
             MainName.Foreground = Config.ScoreHole.Color.Name;
             AwayName.Foreground = Config.ScoreHole.Color.Name;
             Bo1FScoreMain.Foreground = Config.ScoreHole.Color.Score;

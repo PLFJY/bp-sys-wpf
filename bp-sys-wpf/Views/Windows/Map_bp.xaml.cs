@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using bp_sys_wpf.ViewModel;
+using bp_sys_wpf.Views.Windows;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -14,9 +16,9 @@ namespace bp_sys_wpf
         public Map_bp()
         {
             InitializeComponent();
+            GetFilePath getFilePath = new GetFilePath();
             map_bp = this;
-            MainWindow.mainWindow.Activate();
-            try { this.Background = new ImageBrush(new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/map_bp.png")))); } catch { }
+            try { this.Background = new ImageBrush(new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/map_bp.png")))); } catch { }
         }
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

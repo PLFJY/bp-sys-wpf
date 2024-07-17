@@ -17,7 +17,7 @@
             <Label Content="监管者Ban位设置" Grid.Row="0"/>
             <StackPanel Grid.Row="1" Orientation="Horizontal">
                 <Label Content="1"/>
-                <CheckBox x:Name="Hun_ban_state_1" Margin="0,5,0,0" IsChecked="True" Click="Hun_ban_state_1_Click" />
+                <CheckBox x:Name="Hun_ban_state_1" Margin="0,5,0,0" IsChecked="True" Click="Hun_ban_state_1_Click"/>
                 <Label Content="2"/>
                 <CheckBox x:Name="Hun_ban_state_2" Margin="0,5,0,0" IsChecked="True" Click="Hun_ban_state_2_Click"/>
                 <Label Content="3"/>

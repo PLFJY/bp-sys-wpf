@@ -37,7 +37,7 @@
             </Style>
         </ResourceDictionary>
     </Page.Resources>
-    <Grid>
+    <StackPanel>
         <GroupBox Header="Ban监管者"
                   Margin="10,0,0,0"
                   HorizontalAlignment="Left"
@@ -53,7 +53,7 @@
                                   Width="150"
                                   IsEditable="True"
                                   IsEnabled="True"
-                                  ItemsSource="{Binding hun}"
+                                  ItemsSource="{Binding ComboBoxItemViewModel.hun}"
                                   MaxDropDownHeight="100"/>
                         <Image x:Name="Hun_ban_review_1"/>
                     </StackPanel>
@@ -64,7 +64,7 @@
                                   IsEditable="True"
                                   Margin="10,0,0,0"
                                   IsEnabled="True"
-                                  ItemsSource="{Binding hun}"
+                                  ItemsSource="{Binding ComboBoxItemViewModel.hun}"
                                   MaxDropDownHeight="100"/>
                         <Image x:Name="Hun_ban_review_2"/>
                     </StackPanel>
@@ -75,12 +75,30 @@
                                   IsEditable="True"
                                   Margin="10,0,0,0"
                                   IsEnabled="True"
-                                  ItemsSource="{Binding hun}"
+                                  ItemsSource="{Binding ComboBoxItemViewModel.hun}"
                                   MaxDropDownHeight="100"/>
                         <Image x:Name="Hun_ban_review_3"/>
                     </StackPanel>
                 </StackPanel>
             </Grid>
         </GroupBox>
-    </Grid>
+        <GroupBox Header="Ban位数量设定"
+                  Margin="10,10,0,0"
+                  HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal"
+                        Margin="10,10,10,10">
+                <ui:ToggleSwitch x:Name="HunBanStateChange1"
+                                 Content="1号位"
+                                 IsChecked="{Binding BpReceiveModel.HunBanLock[0]}"/>
+                <ui:ToggleSwitch x:Name="HunBanStateChange2"
+                                 Content="2号位"
+                                 IsChecked="{Binding BpReceiveModel.HunBanLock[1]}"
+                                 Margin="20,0,0,0"/>
+                <ui:ToggleSwitch x:Name="HunBanStateChange3"
+                                 Content="3号位"
+                                 IsChecked="{Binding BpReceiveModel.HunBanLock[2]}"
+                                 Margin="20,0,0,0"/>
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
 </Page>

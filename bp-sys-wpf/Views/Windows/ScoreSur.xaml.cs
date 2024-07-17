@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using bp_sys_wpf.ViewModel;
+using bp_sys_wpf.Views.Windows;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -14,8 +16,9 @@ namespace bp_sys_wpf
         public ScoreSur()
         {
             InitializeComponent();
+            GetFilePath getFilePath = new GetFilePath();
             scoreSur = this;
-            try { this.Background = new ImageBrush(new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/score_bg_s.png")))); } catch { }
+            try { this.Background = new ImageBrush(new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/score_bg_s.png")))); } catch { }
             TeamName.Foreground = Config.Score.Color.TeamName;
             S.Foreground = Config.Score.Color.S;
             Win.Foreground = Config.Score.Color.Score;

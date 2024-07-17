@@ -16,8 +16,14 @@ namespace bp_sys_wpf.Model
         public List<string?> NowPlayer
         {
             get { return _NowPlayer; }
-            set { _NowPlayer = value; }
+            set
+            {
+                _NowPlayer = value;
+                NowHunPlayerId = $"{NowHunTeam.Name}__{NowPlayer[4]}";
+            }
         }
+        public string NowHunPlayerId { get; set; }
+
         private NowTeam _NowSurTeam = new NowTeam();
 
         public NowTeam NowSurTeam
@@ -31,8 +37,13 @@ namespace bp_sys_wpf.Model
         public NowTeam NowHunTeam
         {
             get { return _NowHunTeam; }
-            set { _NowHunTeam = value; }
+            set
+            {
+                _NowHunTeam = value;
+                NowHunPlayerId = $"{NowHunTeam.Name}__{NowPlayer[4]}";
+            }
         }
+
     }
     public class NowTeam
     {

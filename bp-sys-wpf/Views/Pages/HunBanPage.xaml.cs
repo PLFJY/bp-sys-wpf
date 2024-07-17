@@ -1,4 +1,5 @@
 ﻿using bp_sys_wpf.ViewModel;
+using bp_sys_wpf.Views.Windows;
 using System.Windows.Controls;
 
 namespace bp_sys_wpf.Views.Pages
@@ -8,11 +9,10 @@ namespace bp_sys_wpf.Views.Pages
     /// </summary>
     public partial class HunBanPage : Page
     {
-        ComboBoxItemViewModel comboBoxItemViewModel = new ComboBoxItemViewModel();
         public HunBanPage()
         {
             InitializeComponent();
-            DataContext = comboBoxItemViewModel;
+            DataContext = BackWindow.backWindow.rootViewModel;
         }
     }
 }

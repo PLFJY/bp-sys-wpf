@@ -30,6 +30,14 @@ namespace bp_sys_wpf.ViewModel
             set
             {
                 _nowView = value;
+                if (TeamInfoModel.MainTeamInfo.State == "监管者")
+                {
+                    NowView.NowModel.NowHunPlayerId = $"{TeamInfoModel.MainTeamInfo.Name}__{NowView.NowModel.NowPlayer[4]}";
+                }
+                if(TeamInfoModel.AwayTeamInfo.State == "监管者")
+                {
+                    NowView.NowModel.NowHunPlayerId = $"{TeamInfoModel.AwayTeamInfo.Name}__{NowView.NowModel.NowPlayer[4]}";
+                }
                 RaisePropertyChanged("NowView");
             }
         }

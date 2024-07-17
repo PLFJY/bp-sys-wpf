@@ -17,5 +17,16 @@ namespace bp_sys_wpf.ViewModel
             string absoluteFilePath = Path.Combine(appDir, path);
             return absoluteFilePath;
         }
+
+        public string GetComboBoxItemContent(string selectedValue)
+        {
+            int spaceIndex = selectedValue.IndexOf(' ');
+            selectedValue = selectedValue.Substring(spaceIndex + 1);
+            return selectedValue;
+        }
+        public string GetImagePath(string type, string selectedValue)
+        {
+            return GetAbsoluteFilePath("pic/" + type + "/" + GetComboBoxItemContent(selectedValue) + ".png");
+        }
     }
 }

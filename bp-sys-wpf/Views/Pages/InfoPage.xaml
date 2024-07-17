@@ -64,14 +64,6 @@
                         Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"
                         Margin="0,20,0,0"
                         Text="作者：零风PLFJY QQ：3424127335 哔哩哔哩:https://space.bilibili.com/453909624"/>
-                    <TextBlock
-                        Grid.Row="0"
-                        Grid.RowSpan="2"
-                        Grid.Column="1"
-                        Margin="0,0,16,0"
-                        VerticalAlignment="Center"
-                        Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"
-                        Text="{Binding ViewModel.AppVersion, Mode=OneWay}" />
                 </Grid>
             </ui:CardExpander.Header>
             <StackPanel>

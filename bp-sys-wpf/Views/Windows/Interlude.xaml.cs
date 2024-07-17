@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using bp_sys_wpf.ViewModel;
+using bp_sys_wpf.Views.Windows;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -14,13 +16,13 @@ namespace bp_sys_wpf
         public Interlude()
         {
             InitializeComponent();
+            GetFilePath getFilePath = new GetFilePath();
             interlude = this;
-            MainWindow.mainWindow.Activate();
             try
             {
-                this.Background = new ImageBrush(new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/interlude_bg.png"))));
-                Bottom.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/bottom.png")));
-                NameImage.Source = new BitmapImage(new Uri(MainWindow.mainWindow.GetAbsoluteFilePath("Resource/gui/name.png")));
+                this.Background = new ImageBrush(new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/interlude_bg.png"))));
+                Bottom.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/bottom.png")));
+                NameImage.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/name.png")));
             }
             catch { }
             Hun_team_name.Foreground = Config.Interlude.Color.team_name;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using bp_sys_wpf.Views.Windows;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,8 +11,6 @@ namespace bp_sys_wpf.ViewModel
 {
     public class ComboBoxItemViewModel
     {
-        GetFilePath GetFilePath = new GetFilePath();
-
         private List<string> _hun;
 
         public List<string> hun
@@ -47,7 +46,8 @@ namespace bp_sys_wpf.ViewModel
 
         public List<string> LoadCharacters(string type)
         {
-            string filePath = GetFilePath.GetAbsoluteFilePath("CharactersList.txt"); // 角色数据文件的路径  
+            GetFilePath getFilePath = new GetFilePath();
+            string filePath = getFilePath.GetAbsoluteFilePath("CharactersList.txt"); // 角色数据文件的路径  
             if (!File.Exists(filePath))
             {
                 MessageBox.Show("未找到角色列表文件CharactersList.txt", "错误");

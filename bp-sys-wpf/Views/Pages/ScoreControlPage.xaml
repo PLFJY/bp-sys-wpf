@@ -137,7 +137,18 @@
                     <ComboBox x:Name="Bo"
                               Width="150"
                               Height="35"
-                              Margin="20,0,0,0"/>
+                              Margin="20,0,0,0">
+                        <ComboBoxItem Content="BO1上半"/>
+                        <ComboBoxItem Content="BO1下半"/>
+                        <ComboBoxItem Content="BO2上半"/>
+                        <ComboBoxItem Content="BO2下半"/>
+                        <ComboBoxItem Content="BO3上半"/>
+                        <ComboBoxItem Content="BO3下半"/>
+                        <ComboBoxItem Content="BO4上半"/>
+                        <ComboBoxItem Content="BO4下半"/>
+                        <ComboBoxItem Content="BO5上半"/>
+                        <ComboBoxItem Content="BO5下半"/>
+                    </ComboBox>
                     <ui:Button x:Name="NextGame"
                                Content="下一局"
                                Icon="{ui:SymbolIcon Next24}"

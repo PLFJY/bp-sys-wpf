@@ -194,7 +194,7 @@ namespace bp_sys_wpf
         {
             int spaceIndex = selectedValue.IndexOf(' ');
             selectedValue = selectedValue.Substring(spaceIndex + 1);
-            return GetAbsoluteFilePath("pic/" + type + "/" + selectedValue + ".png"); ;
+            return GetAbsoluteFilePath("pic/" + type + "/" + selectedValue + ".png");
         }
         public string GetAbsoluteFilePath(string filePath)
 

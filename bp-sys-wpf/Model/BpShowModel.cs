@@ -1,9 +1,12 @@
-﻿using System;
+﻿using bp_sys_wpf.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media.Imaging;
 
 namespace bp_sys_wpf.Model
@@ -52,30 +55,102 @@ namespace bp_sys_wpf.Model
 
         public List<BitmapImage> HunBan
         {
-            get {
-                if(_HunBan == null)
+            get
+            {
+                if (_HunBan == null)
                 {
                     _HunBan = new List<BitmapImage>();
-                    for(int i = 0; i < 3; i++)
+                    for (int i = 0; i < 3; i++)
                     {
                         _HunBan.Add(null);
                     }
                 }
-                return _HunBan; }
+                return _HunBan;
+            }
             set { _HunBan = value; }
         }
 
-        private List<SurPickInfo> _SupPick;
+        private List<SurPickInfo> _SurPick;
 
         public List<SurPickInfo> SurPick
         {
-            get { return _SupPick; }
-            set { _SupPick = value; }
+            get
+            {
+                if (_SurPick == null)
+                {
+                    _SurPick = new List<SurPickInfo>();
+                    for (int i = 0; i < 4; i++)
+                    {
+                        _SurPick.Add(new SurPickInfo());
+                    }
+                }
+                return _SurPick;
+            }
+            set { _SurPick = value; }
+        }
+
+        public HunPickInfo HunPick { get; set; }
+
+        private List<Visibility> _PickingBorder;
+        
+        public List<Visibility> PickingBorder
+        {
+            get
+            {
+                if (_PickingBorder == null)
+                {
+                    _PickingBorder = new List<Visibility>();
+                    for (int i = 0; i < 4; i++)
+                    {
+                        _PickingBorder.Add(Visibility.Hidden);
+                    }
+                }
+                return _PickingBorder;
+            }
+            set { _PickingBorder = value; }
+        }
+
+        private List<Visibility> _HunBanLock;
+
+        public List<Visibility> HunBanLock
+        {
+            get { 
+                if(_HunBanLock == null)
+                {
+                    _HunBanLock = new List<Visibility>();
+                    for(int i = 0; i < 3; i++)
+                    {
+                        _HunBanLock.Add(Visibility.Hidden);
+                    }
+                }
+                return _HunBanLock; }
+            set { _HunBanLock = value; }
+        }
+
+        private List<Visibility> _SurHoleBanLock;
+
+        public List<Visibility> SurHoleBanLock
+        {
+            get
+            {
+                if (_SurHoleBanLock == null)
+                {
+                    _SurHoleBanLock = new List<Visibility>();
+                    for (int i = 0; i < 6; i++)
+                    {
+                        _SurHoleBanLock.Add(Visibility.Hidden);
+                    }
+                }
+                return _SurHoleBanLock;
+            }
+            set { _HunBanLock = value; }
         }
 
         public class SurPickInfo
         {
-            public BitmapImage ChartcherImage { get; set; }
+            public BitmapImage ChartcherHalfImage { get; set; }
+            public BitmapImage ChartcherBigImage { get; set; }
+            public BitmapImage ChartcherHeadImage { get; set; }
             public string ChartcherName { get; set; }
             public Talents Talent { get; set; }
 
@@ -86,6 +161,14 @@ namespace bp_sys_wpf.Model
             bool KneeJerkReflex { get; set; }
             bool TideTurner { get; set; }
             bool FlywheelEffect { get; set; }
+        }
+
+        public class HunPickInfo
+        {
+            public BitmapImage ChartcherHalfImage { get; set; }
+            public BitmapImage ChartcherBigImage { get; set; }
+            public BitmapImage ChartcherHeadImage { get; set; }
+            public string ChartcherName { get; set; }
         }
     }
 

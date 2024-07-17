@@ -50,7 +50,7 @@
                                       Height="35"
                                       Width="150"
                                       IsEditable="True"
-                                      ItemsSource="{Binding sur}"
+                                      ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                       MaxDropDownHeight="100"/>
                             <Image x:Name="Sur_ban_review_1"/>
                         </StackPanel>
@@ -60,7 +60,7 @@
                                       Width="150"
                                       IsEditable="True"
                                       Margin="10,0,0,0"
-                                      ItemsSource="{Binding sur}"
+                                      ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                       MaxDropDownHeight="100"/>
                             <Image x:Name="Sur_ban_review_2"/>
                         </StackPanel>
@@ -70,7 +70,7 @@
                                       Width="150"
                                       IsEditable="True"
                                       Margin="10,0,0,0"
-                                      ItemsSource="{Binding sur}"
+                                      ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                       MaxDropDownHeight="100"/>
                             <Image x:Name="Sur_ban_review_3"/>
                         </StackPanel>
@@ -80,7 +80,7 @@
                                       Width="150"
                                       IsEditable="True"
                                       Margin="10,0,0,0"
-                                      ItemsSource="{Binding sur}"
+                                      ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                       MaxDropDownHeight="100"/>
                             <Image x:Name="Sur_ban_review_4"/>
                         </StackPanel>
@@ -99,7 +99,7 @@
                                       Height="35"
                                       Width="150"
                                       IsEditable="True"
-                                          ItemsSource="{Binding sur}"
+                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                       MaxDropDownHeight="100"/>
                                 <Image x:Name="Sur_hole_ban_1_review"/>
                             </StackPanel>
@@ -109,7 +109,7 @@
                                       Width="150"
                                       IsEditable="True"
                                       Margin="10,0,0,0"
-                                          ItemsSource="{Binding sur}"
+                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                       MaxDropDownHeight="100"/>
                                 <Image x:Name="Sur_hole_ban_2_review"/>
                             </StackPanel>
@@ -119,7 +119,7 @@
                                           Width="150"
                                           IsEditable="True"
                                           Margin="10,0,0,0"
-                                          ItemsSource="{Binding sur}"
+                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                           MaxDropDownHeight="100"/>
                                 <Image x:Name="Sur_hole_ban_3_review"/>
                             </StackPanel>
@@ -132,7 +132,7 @@
                                           Height="35"
                                           Width="150"
                                           IsEditable="True"
-                                          ItemsSource="{Binding sur}"
+                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                           MaxDropDownHeight="100"/>
                                 <Image x:Name="Sur_hole_ban_4_review"/>
                             </StackPanel>
@@ -142,7 +142,7 @@
                                       Width="150"
                                       IsEditable="True"
                                       Margin="10,0,0,0"
-                                          ItemsSource="{Binding sur}"
+                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                       MaxDropDownHeight="100"/>
                                 <Image x:Name="Sur_hole_ban_5_review"/>
                             </StackPanel>
@@ -152,13 +152,43 @@
                                           Width="150"
                                           IsEditable="True"
                                           Margin="10,0,0,0"
-                                          ItemsSource="{Binding sur}"
+                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                           MaxDropDownHeight="100"/>
                                 <Image x:Name="Sur_hole_ban_6_review"/>
                             </StackPanel>
                         </StackPanel>
                     </StackPanel>
                 </Grid>
+            </GroupBox>
+            <GroupBox Header="全局禁用Ban位数量设定"
+                  Margin="10,10,0,0"
+                  HorizontalAlignment="Left">
+                <StackPanel Orientation="Horizontal"
+                        Margin="10,10,10,10">
+                    <ui:ToggleSwitch x:Name="SurHoleStateChange1"
+                                 Content="1号位"
+                                 IsChecked="{Binding BpReceiveModel.SurHoleBanLock[0]}"/>
+                    <ui:ToggleSwitch x:Name="SurHoleBanStateChange2"
+                                 Content="2号位"
+                                 IsChecked="{Binding BpReceiveModel.SurHoleBanLock[1]}"
+                                 Margin="20,0,0,0"/>
+                    <ui:ToggleSwitch x:Name="SurHoleStateChange3"
+                                 Content="3号位"
+                                 IsChecked="{Binding BpReceiveModel.SurHoleBanLock[2]}"
+                                 Margin="20,0,0,0"/>
+                    <ui:ToggleSwitch x:Name="SurHoleStateChange4"
+                                 Content="4号位"
+                                 IsChecked="{Binding BpReceiveModel.SurHoleBanLock[3]}"
+                                 Margin="20,0,0,0"/>
+                    <ui:ToggleSwitch x:Name="SurHoleStateChange5"
+                                 Content="5号位"
+                                 IsChecked="{Binding BpReceiveModel.SurHoleBanLock[4]}"
+                                 Margin="20,0,0,0"/>
+                    <ui:ToggleSwitch x:Name="SurHoleStateChange6"
+                                 Content="6号位"
+                                 IsChecked="{Binding BpReceiveModel.SurHoleBanLock[5]}"
+                                 Margin="20,0,0,0"/>
+                </StackPanel>
             </GroupBox>
         </StackPanel>
     </Grid>

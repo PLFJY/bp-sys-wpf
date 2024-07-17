@@ -14,14 +14,16 @@ namespace bp_sys_wpf.Views.Windows
     /// </summary>
     public partial class BackWindow : Window
     {
-        public static BackWindow backWindow = new BackWindow();
-        public TimmerViewModel timmer = new TimmerViewModel();
+        public static BackWindow backWindow;
         public RootViewModel rootViewModel = new RootViewModel();
+        public GetFilePath GetFilePath = new GetFilePath();
+        private bool IsFrontsChreated;
         public BackWindow()
         {
             InitializeComponent();
             backWindow = this;
             DataContext = rootViewModel;
+            AppInitialize();
         }
         private void AppInitialize()
         {
@@ -45,6 +47,8 @@ namespace bp_sys_wpf.Views.Windows
 
             Config.ScoreHole.Color.Name = ConvertHexStringToBrush(data["ScoreHole_Color"]["Name"].ToString());
             Config.ScoreHole.Color.Score = ConvertHexStringToBrush(data["ScoreHole_Color"]["Score"].ToString());
+            rootViewModel.BpShowViewModel.ReceiveModel = rootViewModel.BpReceiveModel;
+            rootViewModel.BpReceiveModel.BpShowViewModel = rootViewModel.BpShowViewModel;
         }
         
         public static SolidColorBrush ConvertHexStringToBrush(string hexColor)
@@ -103,6 +107,27 @@ namespace bp_sys_wpf.Views.Windows
         private void TimmerClose_Click(object sender, RoutedEventArgs e)
         {
             rootViewModel.TimmerViewModel.IsCountDownStart = false;
+        }
+
+        private void StartFronts_Click(object sender, RoutedEventArgs e)
+        {
+            if (!IsFrontsChreated)
+            {
+                (new Front()).Show();
+                (new Interlude()).Show();
+                (new Map_bp()).Show();
+                (new ScoreHun()).Show();
+                (new ScoreSur()).Show();
+                (new ScoreHole()).Show();
+                IsFrontsChreated = true;
+                Thread.Sleep(500);
+                backWindow.Activate();
+            }
+            else
+            {
+                ErrBar.IsOpen = true;
+                ErrBar.Message = "请勿重复启动";
+            }
         }
     }
 }

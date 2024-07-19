@@ -3,6 +3,7 @@ using bp_sys_wpf.Views.Windows;
 using System.Runtime.Serialization.DataContracts;
 using System.Windows;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 
 namespace bp_sys_wpf
@@ -13,11 +14,12 @@ namespace bp_sys_wpf
     public partial class Front : Window
     {
         public static Front front;
+        RootViewModel rootViewModel = BackWindow.backWindow.rootViewModel;
         public Front()
         {
             InitializeComponent();
             front = this;
-            DataContext = BackWindow.backWindow.rootViewModel;
+            DataContext = rootViewModel;
             try
             {
                 GetFilePath getFilePath = new GetFilePath();

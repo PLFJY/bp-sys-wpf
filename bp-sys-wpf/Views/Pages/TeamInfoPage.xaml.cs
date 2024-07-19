@@ -238,7 +238,7 @@ namespace bp_sys_wpf.Views.Pages
         private void TeamNameCheck_Click(object sender, RoutedEventArgs e)
         {
             viewModel.TeamInfoModel = viewModel.TeamInfoModel;
-            viewModel.NowView = viewModel.NowView;
+            viewModel.NowModel = viewModel.NowModel;
         }
 
         private void Swap_sur_player1_with_player2_Click(object sender, RoutedEventArgs e)

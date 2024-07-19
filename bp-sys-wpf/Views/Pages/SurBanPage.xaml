@@ -50,9 +50,10 @@
                                       Height="35"
                                       Width="150"
                                       IsEditable="True"
+                                      SelectedValue="{Binding BpReceiveModel.SurBan[0]}"
                                       ItemsSource="{Binding ComboBoxItemViewModel.sur}"
-                                      MaxDropDownHeight="100"/>
-                            <Image x:Name="Sur_ban_review_1"/>
+                                      MaxDropDownHeight="200" KeyDown="Sur_ban_1_KeyDown"/>
+                            <Image x:Name="Sur_ban_review_1" Source="{Binding BpShowViewModel.BpShow.SurBan[0]}"/>
                         </StackPanel>
                         <StackPanel>
                             <ComboBox x:Name="Sur_ban_2"
@@ -60,9 +61,10 @@
                                       Width="150"
                                       IsEditable="True"
                                       Margin="10,0,0,0"
+                                      SelectedItem="{Binding BpReceiveModel.SurBan[1]}"
                                       ItemsSource="{Binding ComboBoxItemViewModel.sur}"
-                                      MaxDropDownHeight="100"/>
-                            <Image x:Name="Sur_ban_review_2"/>
+                                      MaxDropDownHeight="200" KeyDown="Sur_ban_2_KeyDown"/>
+                            <Image x:Name="Sur_ban_review_2" Source="{Binding BpShowViewModel.BpShow.SurBan[1]}"/>
                         </StackPanel>
                         <StackPanel>
                             <ComboBox x:Name="Sur_ban_3"
@@ -70,9 +72,10 @@
                                       Width="150"
                                       IsEditable="True"
                                       Margin="10,0,0,0"
+                                      SelectedItem="{Binding BpReceiveModel.SurBan[2]}"
                                       ItemsSource="{Binding ComboBoxItemViewModel.sur}"
-                                      MaxDropDownHeight="100"/>
-                            <Image x:Name="Sur_ban_review_3"/>
+                                      MaxDropDownHeight="200" KeyDown="Sur_ban_3_KeyDown"/>
+                            <Image x:Name="Sur_ban_review_3" Source="{Binding BpShowViewModel.BpShow.SurBan[2]}"/>
                         </StackPanel>
                         <StackPanel>
                             <ComboBox x:Name="Sur_ban_4"
@@ -80,9 +83,10 @@
                                       Width="150"
                                       IsEditable="True"
                                       Margin="10,0,0,0"
+                                      SelectedItem="{Binding BpReceiveModel.SurBan[3]}"
                                       ItemsSource="{Binding ComboBoxItemViewModel.sur}"
-                                      MaxDropDownHeight="100"/>
-                            <Image x:Name="Sur_ban_review_4"/>
+                                      MaxDropDownHeight="200" KeyDown="Sur_ban_4_KeyDown"/>
+                            <Image x:Name="Sur_ban_review_4" Source="{Binding BpShowViewModel.BpShow.SurBan[3]}"/>
                         </StackPanel>
                     </StackPanel>
                 </Grid>
@@ -99,9 +103,10 @@
                                       Height="35"
                                       Width="150"
                                       IsEditable="True"
+                                          SelectedItem="{Binding BpReceiveModel.SurHoleBan[0]}"
                                           ItemsSource="{Binding ComboBoxItemViewModel.sur}"
-                                      MaxDropDownHeight="100"/>
-                                <Image x:Name="Sur_hole_ban_1_review"/>
+                                      MaxDropDownHeight="200" KeyDown="Sur_hole_ban_1_KeyDown"/>
+                                <Image x:Name="Sur_hole_ban_1_review" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[0]}"/>
                             </StackPanel>
                             <StackPanel>
                                 <ComboBox x:Name="Sur_hole_ban_2"
@@ -109,9 +114,10 @@
                                       Width="150"
                                       IsEditable="True"
                                       Margin="10,0,0,0"
+                                          SelectedItem="{Binding BpReceiveModel.SurHoleBan[1]}"
                                           ItemsSource="{Binding ComboBoxItemViewModel.sur}"
-                                      MaxDropDownHeight="100"/>
-                                <Image x:Name="Sur_hole_ban_2_review"/>
+                                      MaxDropDownHeight="200" KeyDown="Sur_hole_ban_2_KeyDown"/>
+                                <Image x:Name="Sur_hole_ban_2_review" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[1]}"/>
                             </StackPanel>
                             <StackPanel>
                                 <ComboBox x:Name="Sur_hole_ban_3"
@@ -119,9 +125,10 @@
                                           Width="150"
                                           IsEditable="True"
                                           Margin="10,0,0,0"
+                                          SelectedItem="{Binding BpReceiveModel.SurHoleBan[2]}"
                                           ItemsSource="{Binding ComboBoxItemViewModel.sur}"
-                                          MaxDropDownHeight="100"/>
-                                <Image x:Name="Sur_hole_ban_3_review"/>
+                                          MaxDropDownHeight="200" KeyDown="Sur_hole_ban_3_KeyDown"/>
+                                <Image x:Name="Sur_hole_ban_3_review" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[2]}"/>
                             </StackPanel>
                         </StackPanel>
                         <StackPanel Grid.Row="0"
@@ -132,9 +139,10 @@
                                           Height="35"
                                           Width="150"
                                           IsEditable="True"
+                                          SelectedItem="{Binding BpReceiveModel.SurHoleBan[3]}"
                                           ItemsSource="{Binding ComboBoxItemViewModel.sur}"
-                                          MaxDropDownHeight="100"/>
-                                <Image x:Name="Sur_hole_ban_4_review"/>
+                                          MaxDropDownHeight="200" KeyDown="Sur_hole_ban_4_KeyDown"/>
+                                <Image x:Name="Sur_hole_ban_4_review" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[3]}"/>
                             </StackPanel>
                             <StackPanel>
                                 <ComboBox x:Name="Sur_hole_ban_5"
@@ -142,9 +150,10 @@
                                       Width="150"
                                       IsEditable="True"
                                       Margin="10,0,0,0"
+                                          SelectedItem="{Binding BpReceiveModel.SurHoleBan[4]}"
                                           ItemsSource="{Binding ComboBoxItemViewModel.sur}"
-                                      MaxDropDownHeight="100"/>
-                                <Image x:Name="Sur_hole_ban_5_review"/>
+                                      MaxDropDownHeight="200" KeyDown="Sur_hole_ban_5_KeyDown"/>
+                                <Image x:Name="Sur_hole_ban_5_review" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[4]}"/>
                             </StackPanel>
                             <StackPanel>
                                 <ComboBox x:Name="Sur_hole_ban_6"
@@ -152,9 +161,10 @@
                                           Width="150"
                                           IsEditable="True"
                                           Margin="10,0,0,0"
+                                          SelectedItem="{Binding BpReceiveModel.SurHoleBan[5]}"
                                           ItemsSource="{Binding ComboBoxItemViewModel.sur}"
-                                          MaxDropDownHeight="100"/>
-                                <Image x:Name="Sur_hole_ban_6_review"/>
+                                          MaxDropDownHeight="200" KeyDown="Sur_hole_ban_6_KeyDown"/>
+                                <Image x:Name="Sur_hole_ban_6_review" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[5]}"/>
                             </StackPanel>
                         </StackPanel>
                     </StackPanel>

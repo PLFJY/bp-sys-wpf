@@ -16,6 +16,7 @@ namespace bp_sys_wpf
         public Map_bp()
         {
             InitializeComponent();
+            DataContext = BackWindow.backWindow.rootViewModel;
             GetFilePath getFilePath = new GetFilePath();
             map_bp = this;
             try { this.Background = new ImageBrush(new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/map_bp.png")))); } catch { }

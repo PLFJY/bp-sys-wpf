@@ -43,6 +43,13 @@
 	  <None Remove="Header.PNG" />
 	  <None Remove="Views\HomeHeader.png" />
 	  <None Remove="Views\Pages\HomeHeader.png" />
+	  <None Remove="Views\Windows\BorrowedTime.png" />
+	  <None Remove="Views\Windows\bp.png" />
+	  <None Remove="Views\Windows\FlywheelEffect.png" />
+	  <None Remove="Views\Windows\interlude_bg.png" />
+	  <None Remove="Views\Windows\KneeJerkReflex.png" />
+	  <None Remove="Views\Windows\name.png" />
+	  <None Remove="Views\Windows\TideTurner.png" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Flurl" Version="4.0.0" />
@@ -55,6 +62,13 @@
 	  <Resource Include="Header.PNG" />
 	  <Resource Include="Views\HomeHeader.png" />
 	  <Resource Include="Views\Pages\HomeHeader.png" />
+	  <Resource Include="Views\Windows\BorrowedTime.png" />
+	  <Resource Include="Views\Windows\bp.png" />
+	  <Resource Include="Views\Windows\FlywheelEffect.png" />
+	  <Resource Include="Views\Windows\interlude_bg.png" />
+	  <Resource Include="Views\Windows\KneeJerkReflex.png" />
+	  <Resource Include="Views\Windows\name.png" />
+	  <Resource Include="Views\Windows\TideTurner.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Update="CharactersList.txt">

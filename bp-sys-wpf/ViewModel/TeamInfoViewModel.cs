@@ -22,23 +22,31 @@ namespace bp_sys_wpf.ViewModel
             if (handler != null)
                 handler(this, new PropertyChangedEventArgs(propertyName));
         }
-        private NowViewModel _nowView = new NowViewModel();
+        private NowModel _NowModel = new NowModel();
 
-        public NowViewModel NowView
+        public NowModel NowModel
         {
-            get { return _nowView; }
+            get { return _NowModel; }
             set
             {
-                _nowView = value;
+                _NowModel = value;
                 if (TeamInfoModel.MainTeamInfo.State == "监管者")
                 {
-                    NowView.NowModel.NowHunPlayerId = $"{TeamInfoModel.MainTeamInfo.Name}__{NowView.NowModel.NowPlayer[4]}";
+                    for(int i = 0; i < 4; i++)
+                    {
+                        NowModel.NowSurPlayerId[i] = $"{TeamInfoModel.AwayTeamInfo.Name}__{NowModel.NowPlayer[i]}";
+                    }
+                    NowModel.NowHunPlayerId = $"{TeamInfoModel.MainTeamInfo.Name}__{NowModel.NowPlayer[4]}";
                 }
                 if(TeamInfoModel.AwayTeamInfo.State == "监管者")
                 {
-                    NowView.NowModel.NowHunPlayerId = $"{TeamInfoModel.AwayTeamInfo.Name}__{NowView.NowModel.NowPlayer[4]}";
+                    for (int i = 0; i < 4; i++)
+                    {
+                        NowModel.NowSurPlayerId[i] = $"{TeamInfoModel.MainTeamInfo.Name}__{NowModel.NowPlayer[i]}";
+                    }
+                    NowModel.NowHunPlayerId = $"{TeamInfoModel.AwayTeamInfo.Name}__{NowModel.NowPlayer[4]}";
                 }
-                RaisePropertyChanged("NowView");
+                RaisePropertyChanged("NowModel");
             }
         }
 
@@ -85,17 +93,17 @@ namespace bp_sys_wpf.ViewModel
                 }
                 if (_TeamInfoModel.MainTeamInfo.State == "求生者")
                 {
-                    NowView.NowModel.NowSurTeam.Name = _TeamInfoModel.MainTeamInfo.Name;
-                    NowView.NowModel.NowHunTeam.Name = _TeamInfoModel.AwayTeamInfo.Name;
-                    NowView.NowModel.NowSurTeam.LOGO = _TeamInfoModel.MainTeamInfo.LOGO;
-                    NowView.NowModel.NowHunTeam.LOGO = _TeamInfoModel.AwayTeamInfo.LOGO;
+                    NowModel.NowSurTeam.Name = _TeamInfoModel.MainTeamInfo.Name;
+                    NowModel.NowHunTeam.Name = _TeamInfoModel.AwayTeamInfo.Name;
+                    NowModel.NowSurTeam.LOGO = _TeamInfoModel.MainTeamInfo.LOGO;
+                    NowModel.NowHunTeam.LOGO = _TeamInfoModel.AwayTeamInfo.LOGO;
                 }
                 else
                 {
-                    NowView.NowModel.NowHunTeam.Name = _TeamInfoModel.MainTeamInfo.Name;
-                    NowView.NowModel.NowSurTeam.Name = _TeamInfoModel.AwayTeamInfo.Name;
-                    NowView.NowModel.NowSurTeam.LOGO = _TeamInfoModel.AwayTeamInfo.LOGO;
-                    NowView.NowModel.NowHunTeam.LOGO = _TeamInfoModel.MainTeamInfo.LOGO;
+                    NowModel.NowHunTeam.Name = _TeamInfoModel.MainTeamInfo.Name;
+                    NowModel.NowSurTeam.Name = _TeamInfoModel.AwayTeamInfo.Name;
+                    NowModel.NowSurTeam.LOGO = _TeamInfoModel.AwayTeamInfo.LOGO;
+                    NowModel.NowHunTeam.LOGO = _TeamInfoModel.MainTeamInfo.LOGO;
                 }
                 return _TeamInfoModel;
             }
@@ -104,17 +112,17 @@ namespace bp_sys_wpf.ViewModel
                 _TeamInfoModel = value;
                 if (_TeamInfoModel.MainTeamInfo.State == "求生者")
                 {
-                    NowView.NowModel.NowSurTeam.Name = _TeamInfoModel.MainTeamInfo.Name;
-                    NowView.NowModel.NowHunTeam.Name = _TeamInfoModel.AwayTeamInfo.Name;
-                    NowView.NowModel.NowSurTeam.LOGO = _TeamInfoModel.MainTeamInfo.LOGO;
-                    NowView.NowModel.NowHunTeam.LOGO = _TeamInfoModel.AwayTeamInfo.LOGO;
+                    NowModel.NowSurTeam.Name = _TeamInfoModel.MainTeamInfo.Name;
+                    NowModel.NowHunTeam.Name = _TeamInfoModel.AwayTeamInfo.Name;
+                    NowModel.NowSurTeam.LOGO = _TeamInfoModel.MainTeamInfo.LOGO;
+                    NowModel.NowHunTeam.LOGO = _TeamInfoModel.AwayTeamInfo.LOGO;
                 }
                 else
                 {
-                    NowView.NowModel.NowHunTeam.Name = _TeamInfoModel.MainTeamInfo.Name;
-                    NowView.NowModel.NowSurTeam.Name = _TeamInfoModel.AwayTeamInfo.Name;
-                    NowView.NowModel.NowSurTeam.LOGO = _TeamInfoModel.AwayTeamInfo.LOGO;
-                    NowView.NowModel.NowHunTeam.LOGO = _TeamInfoModel.MainTeamInfo.LOGO;
+                    NowModel.NowHunTeam.Name = _TeamInfoModel.MainTeamInfo.Name;
+                    NowModel.NowSurTeam.Name = _TeamInfoModel.AwayTeamInfo.Name;
+                    NowModel.NowSurTeam.LOGO = _TeamInfoModel.AwayTeamInfo.LOGO;
+                    NowModel.NowHunTeam.LOGO = _TeamInfoModel.MainTeamInfo.LOGO;
                 }
                 RaisePropertyChanged("TeamInfoModel");
             }
@@ -190,9 +198,9 @@ namespace bp_sys_wpf.ViewModel
                     //同步到当前上场列表
                     for (int i = 0; i < 5; i++)
                     {
-                        if (TeamInfoModel.MainTeamInfo.State == "求生者" && NowView.NowModel.NowPlayer[i] == "")
+                        if (TeamInfoModel.MainTeamInfo.State == "求生者" && NowModel.NowPlayer[i] == "")
                         {
-                            NowView.NowModel.NowPlayer[i] = TeamInfoModel.MainTeamPlayer[number].Name;
+                            NowModel.NowPlayer[i] = TeamInfoModel.MainTeamPlayer[number].Name;
                             break;
                         }
                     }
@@ -211,9 +219,9 @@ namespace bp_sys_wpf.ViewModel
                     for (int i = 0; i < 5; i++)
                     {
                         //同步到当前上场列表
-                        if (TeamInfoModel.AwayTeamInfo.State == "求生者" && NowView.NowModel.NowPlayer[i] == "")
+                        if (TeamInfoModel.AwayTeamInfo.State == "求生者" && NowModel.NowPlayer[i] == "")
                         {
-                            NowView.NowModel.NowPlayer[i] = TeamInfoModel.AwayTeamPlayer[number].Name;
+                            NowModel.NowPlayer[i] = TeamInfoModel.AwayTeamPlayer[number].Name;
                             break;
                         }
                     }
@@ -251,8 +259,8 @@ namespace bp_sys_wpf.ViewModel
                     ButtonState.MainButtonState[number].Icon = new Wpf.Ui.Controls.SymbolIcon { Symbol = Wpf.Ui.Controls.SymbolRegular.ArrowDownload24 };
                     ButtonState.MainButtonState[number].Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7FFF0000"));
                     //同步到当前上场列表
-                    if (TeamInfoModel.MainTeamInfo.State == "监管者" && NowView.NowModel.NowPlayer[4] == "")
-                        NowView.NowModel.NowPlayer[4] = TeamInfoModel.MainTeamPlayer[number].Name;
+                    if (TeamInfoModel.MainTeamInfo.State == "监管者" && NowModel.NowPlayer[4] == "")
+                        NowModel.NowPlayer[4] = TeamInfoModel.MainTeamPlayer[number].Name;
                     //满员禁用上场按钮
                     for (int j = 6; j < 9; j++)
                     {
@@ -270,7 +278,7 @@ namespace bp_sys_wpf.ViewModel
                     ButtonState.AwayButtonState[number].Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7FFF0000"));
                     //同步到当前上场列表
                     if (TeamInfoModel.AwayTeamInfo.State == "监管者")
-                        NowView.NowModel.NowPlayer[4] = TeamInfoModel.AwayTeamPlayer[number].Name;
+                        NowModel.NowPlayer[4] = TeamInfoModel.AwayTeamPlayer[number].Name;
                     //满员禁用上场按钮
                     for (int j = 6; j < 9; j++)
                     {
@@ -281,7 +289,7 @@ namespace bp_sys_wpf.ViewModel
             }
             TeamInfoModel = TeamInfoModel;
             ButtonState = ButtonState;
-            NowView = NowView;
+            NowModel = NowModel;
         }
         public void PlayerOff(int number, string team, string type)//选手下场
         {
@@ -302,9 +310,9 @@ namespace bp_sys_wpf.ViewModel
                     for (int i = 0; i < 5; i++)
                     {
                         //同步到当前上场列表
-                        if (TeamInfoModel.MainTeamInfo.State == "求生者" && NowView.NowModel.NowPlayer[i] == TeamInfoModel.MainTeamPlayer[number].Name)
+                        if (TeamInfoModel.MainTeamInfo.State == "求生者" && NowModel.NowPlayer[i] == TeamInfoModel.MainTeamPlayer[number].Name)
                         {
-                            NowView.NowModel.NowPlayer[i] = "";
+                            NowModel.NowPlayer[i] = "";
                             break;
                         }
                     }
@@ -326,9 +334,9 @@ namespace bp_sys_wpf.ViewModel
                     for (int i = 0; i < 5; i++)
                     {
                         //同步到当前上场列表
-                        if (TeamInfoModel.AwayTeamInfo.State == "求生者" && NowView.NowModel.NowPlayer[i] == TeamInfoModel.AwayTeamPlayer[number].Name)
+                        if (TeamInfoModel.AwayTeamInfo.State == "求生者" && NowModel.NowPlayer[i] == TeamInfoModel.AwayTeamPlayer[number].Name)
                         {
-                            NowView.NowModel.NowPlayer[i] = "";
+                            NowModel.NowPlayer[i] = "";
                             break;
                         }
                     }
@@ -350,8 +358,8 @@ namespace bp_sys_wpf.ViewModel
                     ButtonState.MainButtonState[number].Icon = new Wpf.Ui.Controls.SymbolIcon { Symbol = Wpf.Ui.Controls.SymbolRegular.ArrowExportUp24 };
                     ButtonState.MainButtonState[number].Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F00FF00"));
                     //同步到当前上场列表
-                    if (NowView.NowModel.NowPlayer[4] == TeamInfoModel.MainTeamPlayer[number].Name && TeamInfoModel.MainTeamInfo.State == "监管者")
-                        NowView.NowModel.NowPlayer[4] = "";
+                    if (NowModel.NowPlayer[4] == TeamInfoModel.MainTeamPlayer[number].Name && TeamInfoModel.MainTeamInfo.State == "监管者")
+                        NowModel.NowPlayer[4] = "";
                     //启用上场按钮
                     for (int j = 6; j < 9; j++)
                     {
@@ -367,8 +375,8 @@ namespace bp_sys_wpf.ViewModel
                     ButtonState.AwayButtonState[number].Icon = new Wpf.Ui.Controls.SymbolIcon { Symbol = Wpf.Ui.Controls.SymbolRegular.ArrowExportUp24 };
                     ButtonState.AwayButtonState[number].Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7F00FF00"));
                     //同步到当前上场列表
-                    if (NowView.NowModel.NowPlayer[4] == TeamInfoModel.AwayTeamPlayer[number].Name && TeamInfoModel.AwayTeamInfo.State == "监管者")
-                        NowView.NowModel.NowPlayer[4] = "";
+                    if (NowModel.NowPlayer[4] == TeamInfoModel.AwayTeamPlayer[number].Name && TeamInfoModel.AwayTeamInfo.State == "监管者")
+                        NowModel.NowPlayer[4] = "";
                     //启用上场按钮
                     for (int j = 6; j < 9; j++)
                     {
@@ -378,7 +386,7 @@ namespace bp_sys_wpf.ViewModel
             }
             TeamInfoModel = TeamInfoModel;
             ButtonState = ButtonState;
-            NowView = NowView;
+            NowModel = NowModel;
         }
 
         public void Swap()//换边
@@ -387,7 +395,7 @@ namespace bp_sys_wpf.ViewModel
             //外层0~3代表当前上场选手 内层循环0~5 判断队伍是主队还是客队 选手名称判断内容：是否为上场选手、阵营，然后赋值给NowPlayer
             for (int i = 0; i < 5; i++)
             {
-                NowView.NowModel.NowPlayer[i] = "";
+                NowModel.NowPlayer[i] = "";
             }
             for (int i = 0, j = 0; i < 6 && j < 4; i++)
             {
@@ -395,7 +403,7 @@ namespace bp_sys_wpf.ViewModel
                 {
                     if (TeamInfoModel.MainTeamPlayer[i].State == "求生者" && TeamInfoModel.MainTeamPlayer[i].IsPlayerTakeTheField == true)
                     {
-                        NowView.NowModel.NowPlayer[j] = TeamInfoModel.MainTeamPlayer[i].Name;
+                        NowModel.NowPlayer[j] = TeamInfoModel.MainTeamPlayer[i].Name;
                         j++;
                     }
                 }
@@ -403,7 +411,7 @@ namespace bp_sys_wpf.ViewModel
                 {
                     if (TeamInfoModel.AwayTeamPlayer[i].State == "求生者" && TeamInfoModel.AwayTeamPlayer[i].IsPlayerTakeTheField == true)
                     {
-                        NowView.NowModel.NowPlayer[j] = TeamInfoModel.AwayTeamPlayer[i].Name;
+                        NowModel.NowPlayer[j] = TeamInfoModel.AwayTeamPlayer[i].Name;
                         j++;
                     }
                 }
@@ -415,7 +423,7 @@ namespace bp_sys_wpf.ViewModel
                 {
                     if (TeamInfoModel.MainTeamPlayer[i].State == "监管者" && TeamInfoModel.MainTeamPlayer[i].IsPlayerTakeTheField == true)
                     {
-                        NowView.NowModel.NowPlayer[4] = TeamInfoModel.MainTeamPlayer[i].Name;
+                        NowModel.NowPlayer[4] = TeamInfoModel.MainTeamPlayer[i].Name;
                         break;
                     }
                 }
@@ -423,19 +431,19 @@ namespace bp_sys_wpf.ViewModel
                 {
                     if (TeamInfoModel.AwayTeamPlayer[i].State == "监管者" && TeamInfoModel.AwayTeamPlayer[i].IsPlayerTakeTheField == true)
                     {
-                        NowView.NowModel.NowPlayer[4] = TeamInfoModel.AwayTeamPlayer[i].Name;
+                        NowModel.NowPlayer[4] = TeamInfoModel.AwayTeamPlayer[i].Name;
                         break;
                     }
                 }
             }
             TeamInfoModel = TeamInfoModel;
-            NowView = NowView;
+            NowModel = NowModel;
         }
         public void SwapPlayers(int num1, int num2)
         {
-            (NowView.NowModel.NowPlayer[num1], NowView.NowModel.NowPlayer[num2]) = (NowView.NowModel.NowPlayer[num2], NowView.NowModel.NowPlayer[num1]);
+            (NowModel.NowPlayer[num1], NowModel.NowPlayer[num2]) = (NowModel.NowPlayer[num2], NowModel.NowPlayer[num1]);
             TeamInfoModel = TeamInfoModel;
-            NowView = NowView;
+            NowModel = NowModel;
         }
 
         public void ImportTeamInfoFromJson(string team)
@@ -499,7 +507,7 @@ namespace bp_sys_wpf.ViewModel
                 }
             }
             TeamInfoModel = TeamInfoModel;
-            NowView = NowView;
+            NowModel = NowModel;
         }
     }
 }

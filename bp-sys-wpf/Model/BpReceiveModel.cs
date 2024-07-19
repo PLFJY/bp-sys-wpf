@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static bp_sys_wpf.Model.BpShowModel;
 using System.Windows.Media.Imaging;
 using System.Diagnostics;
 using bp_sys_wpf.ViewModel;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace bp_sys_wpf.Model
 {
     public class BpReceiveModel
     {
         private List<string> _SurBan;
+
         public List<string> SurBan
         {
             get
@@ -39,10 +40,10 @@ namespace bp_sys_wpf.Model
             {
                 if (_SurHoleBan == null)
                 {
-                    _SurBan = new List<string>();
+                    _SurHoleBan = new List<string>();
                     for (int i = 0; i < 6; i++)
                     {
-                        _SurBan.Add(null);
+                        _SurHoleBan.Add(null);
                     }
                 }
                 return _SurHoleBan;
@@ -69,25 +70,64 @@ namespace bp_sys_wpf.Model
             set { _HunBan = value; }
         }
 
-        private List<string> _SurPick;
+        private List<SurPickInfo> _SurPick;
 
-        public List<string> SurPick
+        public List<SurPickInfo> SurPick
         {
             get
             {
                 if (_SurPick == null)
                 {
-                    _SurPick = new List<string>();
+                    _SurPick = new List<SurPickInfo>();
                     for (int i = 0; i < 4; i++)
                     {
-                        _SurPick.Add(null);
+                        _SurPick.Add(new SurPickInfo());
+                    }
+
+                }
+                for (int i = 0; i < 4; i++)
+                {
+                    if (_SurPick[i].Talent.BorrowedTime == true)
+                    {
+                        BpShowViewModel.BpShow.SurPick[i].Talent.BorrowedTime = Visibility.Visible;
+                    }
+                    else
+                    {
+                        BpShowViewModel.BpShow.SurPick[i].Talent.BorrowedTime = Visibility.Collapsed;
+                    }
+
+                    if (_SurPick[i].Talent.KneeJerkReflex == true)
+                    {
+                        BpShowViewModel.BpShow.SurPick[i].Talent.KneeJerkReflex = Visibility.Visible;
+                    }
+                    else
+                    {
+                        BpShowViewModel.BpShow.SurPick[i].Talent.KneeJerkReflex = Visibility.Collapsed;
+                    }
+
+                    if (_SurPick[i].Talent.TideTurner == true)
+                    {
+                        BpShowViewModel.BpShow.SurPick[i].Talent.TideTurner = Visibility.Visible;
+                    }
+                    else
+                    {
+                        BpShowViewModel.BpShow.SurPick[i].Talent.TideTurner = Visibility.Collapsed;
+                    }
+
+                    if (_SurPick[i].Talent.FlywheelEffect == true)
+                    {
+                        BpShowViewModel.BpShow.SurPick[i].Talent.FlywheelEffect = Visibility.Visible;
+                    }
+                    else
+                    {
+                        BpShowViewModel.BpShow.SurPick[i].Talent.FlywheelEffect = Visibility.Collapsed;
                     }
                 }
+                BpShowViewModel.BpShow = BpShowViewModel.BpShow;
                 return _SurPick;
             }
             set { _SurPick = value; }
         }
-
 
         private List<bool> _HunBanLock;
 
@@ -107,14 +147,14 @@ namespace bp_sys_wpf.Model
                 {
                     if (_HunBanLock[i] == false)
                     {
-                        BpShowViewModel.bpShow.HunBanLock[i] = Visibility.Visible;
+                        BpShowViewModel.BpShow.HunBanLock[i] = Visibility.Visible;
                     }
                     else
                     {
-                        BpShowViewModel.bpShow.HunBanLock[i] = Visibility.Hidden;
+                        BpShowViewModel.BpShow.HunBanLock[i] = Visibility.Hidden;
                     }
                 }
-                BpShowViewModel.bpShow = BpShowViewModel.bpShow;
+                BpShowViewModel.BpShow = BpShowViewModel.BpShow;
                 return _HunBanLock;
             }
             set { _HunBanLock = value; }
@@ -139,38 +179,97 @@ namespace bp_sys_wpf.Model
                 {
                     if (_SurHoleBanLock[i] == false)
                     {
-                        BpShowViewModel.bpShow.SurHoleBanLock[i] = Visibility.Visible;
+                        BpShowViewModel.BpShow.SurHoleBanLock[i] = Visibility.Visible;
                     }
                     else
                     {
-                        BpShowViewModel.bpShow.SurHoleBanLock[i] = Visibility.Hidden;
+                        BpShowViewModel.BpShow.SurHoleBanLock[i] = Visibility.Hidden;
                     }
                 }
-                BpShowViewModel.bpShow = BpShowViewModel.bpShow;
+                BpShowViewModel.BpShow = BpShowViewModel.BpShow;
                 return _SurHoleBanLock;
             }
             set { _SurHoleBanLock = value; }
         }
 
-        private List<bool> _SurPicking;
+        public string HunPick { get; set; }
 
-        public List<bool> SurPicking
+        private List<string> _SurHoleBanMainRecord;
+
+        public List<string> SurHoleBanMainRecord
         {
             get
             {
-                if (_SurPicking == null)
+                if (_SurHoleBanMainRecord == null)
                 {
-                    _SurPicking = new List<bool>();
-                    for (int i = 0; i < 3; i++)
+                    _SurHoleBanMainRecord = new List<string>();
+                    for (int i = 0; i < 6; i++)
                     {
-                        _SurPicking.Add(false);
+                        _SurHoleBanMainRecord.Add(null);
                     }
                 }
-                return _SurPicking;
+                return _SurHoleBanMainRecord;
             }
-            set { _SurPicking = value; }
+            set { _SurHoleBanMainRecord = value; }
         }
 
-        public string HunPick { get; set; }
+        private List<string> _SurHoleBanAwayRecord;
+
+        public List<string> SurHoleBanAwayRecord
+        {
+            get
+            {
+                if (_SurHoleBanAwayRecord == null)
+                {
+                    _SurHoleBanAwayRecord = new List<string>();
+                    for (int i = 0; i < 6; i++)
+                    {
+                        _SurHoleBanAwayRecord.Add(null);
+                    }
+                }
+                return _SurHoleBanAwayRecord;
+            }
+            set { _SurHoleBanAwayRecord = value; }
+        }
+
+        private string _MapPick;
+
+        public string MapPick
+        {
+            get
+            {
+                GetFilePath getFilePath = new GetFilePath();
+                BpShowViewModel.BpShow.MapPick = getFilePath.GetImage("map", _MapPick);
+                BpShowViewModel.BpShow = BpShowViewModel.BpShow;
+                return _MapPick;
+            }
+            set { _MapPick = value; }
+        }
+
+        private string _MapBan;
+
+        public string MapBan
+        {
+            get
+            {
+                GetFilePath getFilePath = new GetFilePath();
+                BpShowViewModel.BpShow.MapBan = getFilePath.GetImage("mapBan", _MapBan);
+                BpShowViewModel.BpShow = BpShowViewModel.BpShow;
+                return _MapBan;
+            }
+            set { _MapBan = value; }
+        }
+        public class SurPickInfo
+        {
+            public string CharacterName { get; set; }
+            public Talents Talent { get; set; } = new Talents();
+        }
+        public class Talents
+        {
+            public bool BorrowedTime { get; set; }
+            public bool KneeJerkReflex { get; set; }
+            public bool TideTurner { get; set; }
+            public bool FlywheelEffect { get; set; }
+        }
     }
 }

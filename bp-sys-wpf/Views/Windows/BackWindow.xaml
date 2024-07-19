@@ -42,7 +42,7 @@
                             Grid.Column="0"
                             Margin="10,0,0,0">
                         <ui:TextBlock x:Name="TeamSur"
-                               Text="{Binding TeamInfoViewModel.NowView.NowModel.NowSurTeam.Name}"
+                               Text="{Binding TeamInfoViewModel.NowModel.NowSurTeam.Name}"
                                FontSize="30"
                                Width="100"
                                HorizontalAlignment="Right"
@@ -54,7 +54,7 @@
                             Icon="{ui:SymbolIcon ArrowSwap24}"
                             Margin="30,0,30,0" Click="Swap_Click"/>
                         <ui:TextBlock x:Name="TeamHun"
-                               Text="{Binding TeamInfoViewModel.NowView.NowModel.NowHunTeam.Name}"
+                               Text="{Binding TeamInfoViewModel.NowModel.NowHunTeam.Name}"
                                FontSize="30"
                                Width="100"
                                HorizontalAlignment="Left"

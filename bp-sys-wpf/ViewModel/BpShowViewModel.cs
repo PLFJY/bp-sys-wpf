@@ -1,8 +1,10 @@
 ﻿using bp_sys_wpf.Model;
 using bp_sys_wpf.Views.Windows;
+using System.Windows;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,52 +24,73 @@ namespace bp_sys_wpf.ViewModel
 
         private BpShowModel _bpshow = new BpShowModel();
 
-        public BpShowModel bpShow
+        public BpShowModel BpShow
         {
-            get { return _bpshow; }
+            get
+            {
+                return _bpshow;
+            }
             set
             {
                 _bpshow = value;
-                RaisePropertyChanged("bpShow");
+                RaisePropertyChanged("BpShow");
+            }
+        }
+        private BpReceiveModel _ReceiveModel;
+
+        public BpReceiveModel ReceiveModel
+        {
+            get
+            {
+                return _ReceiveModel;
+            }
+            set
+            {
+                _ReceiveModel = value;
+                RaisePropertyChanged("ReceiveModel");
             }
         }
 
-        public BpReceiveModel ReceiveModel { get; set; }
-
+        public void SwapCharacrer(int num1, int num2)
+        {
+            (BpShow.SurPick[num1], BpShow.SurPick[num2]) = (BpShow.SurPick[num2], BpShow.SurPick[num1]);
+            (ReceiveModel.SurPick[num1], ReceiveModel.SurPick[num2]) = (ReceiveModel.SurPick[num2], ReceiveModel.SurPick[num1]);
+            BpShow = BpShow;
+            BackWindow.backWindow.rootViewModel.BpReceiveModel = BackWindow.backWindow.rootViewModel.BpReceiveModel;
+        }
         public void ShowBp(string ComboBoxType, int num)
         {
             GetFilePath getFilePath = new GetFilePath();
             switch (ComboBoxType)
             {
                 case "SurBan":
-                    bpShow.SurBan[num] = new BitmapImage(new Uri(getFilePath.GetImagePath("surban", ReceiveModel.SurBan[num])));
-                    bpShow = bpShow;
+                    BpShow.SurBan[num] = getFilePath.GetImage("surban", ReceiveModel.SurBan[num]);
+                    BpShow = BpShow;
                     break;
-
                 case "SurHoleBan":
-                    bpShow.SurHoleBan[num] = new BitmapImage(new Uri(getFilePath.GetImagePath("surban", ReceiveModel.SurHoleBan[num])));
-                    bpShow = bpShow;
+                    BpShow.SurHoleBan[num] = getFilePath.GetImage("surban", ReceiveModel.SurHoleBan[num]);
+                    BpShow = BpShow;
                     break;
 
                 case "HunBan":
-                    bpShow.HunBan[num] = new BitmapImage(new Uri(getFilePath.GetImagePath("hunban", ReceiveModel.HunBan[num])));
-                    bpShow = bpShow;
+                    BpShow.HunBan[num] = getFilePath.GetImage("hunban", ReceiveModel.HunBan[num]);
+                    BpShow = BpShow;
                     break;
 
                 case "SurPick":
-                    bpShow.SurPick[num].ChartcherHalfImage= new BitmapImage(new Uri(getFilePath.GetImagePath("surhalf", ReceiveModel.SurPick[num])));
-                    bpShow.SurPick[num].ChartcherBigImage = new BitmapImage(new Uri(getFilePath.GetImagePath("surBig", ReceiveModel.SurPick[num])));
-                    bpShow.SurPick[num].ChartcherHeadImage = new BitmapImage(new Uri(getFilePath.GetImagePath("sur", ReceiveModel.SurPick[num])));
-                    bpShow.SurPick[num].ChartcherName = getFilePath.GetComboBoxItemContent(ReceiveModel.SurPick[num]);
-                    bpShow = bpShow;
+                    BpShow.SurPick[num].ChartcherHalfImage = getFilePath.GetImage("surhalf", ReceiveModel.SurPick[num].CharacterName);
+                    BpShow.SurPick[num].ChartcherBigImage = getFilePath.GetImage("surBig", ReceiveModel.SurPick[num].CharacterName);
+                    BpShow.SurPick[num].ChartcherHeadImage = getFilePath.GetImage("sur", ReceiveModel.SurPick[num].CharacterName);
+                    BpShow.SurPick[num].ChartcherName = ReceiveModel.SurPick[num].CharacterName;
+                    BpShow = BpShow;
                     break;
 
                 case "HunPick":
-                    bpShow.HunPick.ChartcherName = getFilePath.GetComboBoxItemContent(ReceiveModel.HunPick);
-                    bpShow.HunPick.ChartcherHalfImage = new BitmapImage(new Uri(getFilePath.GetImagePath("hunhalf", ReceiveModel.HunPick)));
-                    bpShow.HunPick.ChartcherBigImage = new BitmapImage(new Uri(getFilePath.GetImagePath("hunBig", ReceiveModel.HunPick)));
-                    bpShow.HunPick.ChartcherHeadImage = new BitmapImage(new Uri(getFilePath.GetImagePath("hun", ReceiveModel.HunPick)));
-                    bpShow = bpShow;
+                    BpShow.HunPick.ChartcherName = ReceiveModel.HunPick;
+                    BpShow.HunPick.ChartcherHalfImage = getFilePath.GetImage("hunhalf", ReceiveModel.HunPick);
+                    BpShow.HunPick.ChartcherBigImage = getFilePath.GetImage("hunBig", ReceiveModel.HunPick);
+                    BpShow.HunPick.ChartcherHeadImage = getFilePath.GetImage("hun", ReceiveModel.HunPick);
+                    BpShow = BpShow;
                     break;
             }
 

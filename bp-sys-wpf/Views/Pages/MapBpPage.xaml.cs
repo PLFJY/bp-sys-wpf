@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using bp_sys_wpf.Views.Windows;
+using System.Windows.Controls;
 
 namespace bp_sys_wpf.Views.Pages
 {
@@ -10,6 +11,7 @@ namespace bp_sys_wpf.Views.Pages
         public MapBpPage()
         {
             InitializeComponent();
+            DataContext = BackWindow.backWindow.rootViewModel;
         }
     }
 }

@@ -10,7 +10,7 @@
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
-        <Image x:Name="pick" Margin="30,157,270,92" Stretch="Fill" />
-        <Image x:Name="ban" Margin="275,157,31,92" />
+        <Image x:Name="pick" Margin="30,157,270,92" Stretch="Fill" Source="{Binding BpShowViewModel.BpShow.MapPick}"/>
+        <Image x:Name="ban" Margin="275,157,31,92" Stretch="Fill" Source="{Binding BpShowViewModel.BpShow.MapBan}"/>
     </Grid>
 </Window>

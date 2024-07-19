@@ -28,15 +28,15 @@
                     <ColumnDefinition Width="166"/>
                     <ColumnDefinition Width="170"/>
                 </Grid.ColumnDefinitions>
-                <Image x:Name="Logo_sur" Grid.Column="0" Margin="52,10,32,11" Source="{Binding TeamInfoViewModel.NowView.NowModel.NowSurTeam.LOGO}"/>
+                <Image x:Name="Logo_sur" Grid.Column="0" Margin="52,10,32,11" Source="{Binding TeamInfoViewModel.NowModel.NowSurTeam.LOGO}"/>
                 <Label x:Name="Sur_score" Grid.Column="1" Content="W0 D0 L0" VerticalAlignment="Center" FontSize="20" HorizontalAlignment="Left" Foreground="#FFD3BC88" Visibility="Hidden" Grid.ColumnSpan="2" Height="35" Margin="75,0,0,0" FontWeight="Bold"/>
-                <Label x:Name="Sur_team_name" Grid.Column="2" VerticalAlignment="Center" FontSize="40" HorizontalAlignment="Center" Foreground="#FFD3BC88" FontWeight="Bold" HorizontalContentAlignment="Center" Content="{Binding TeamInfoViewModel.NowView.NowModel.NowSurTeam.Name}"/>
+                <Label x:Name="Sur_team_name" Grid.Column="2" VerticalAlignment="Center" FontSize="40" HorizontalAlignment="Center" Foreground="#FFD3BC88" FontWeight="Bold" HorizontalContentAlignment="Center" Content="{Binding TeamInfoViewModel.NowModel.NowSurTeam.Name}"/>
                 <Label x:Name="Sur_scoreS" Grid.Column="3" Content="0" VerticalAlignment="Center" FontSize="80" HorizontalAlignment="Center" Foreground="#FFF9EFD6" FontFamily="DFPOP1W5-B5" HorizontalContentAlignment="Center" Visibility="Hidden" Height="90" Width="50" FontWeight="Bold"/>
                 <Label x:Name="timmer" Grid.Column="4" Content="{Binding TimmerViewModel.CountdownTime}" VerticalAlignment="Center" FontSize="70" HorizontalAlignment="Center" Foreground="#FFDAB74F" FontFamily="汉仪第五人格体简" HorizontalContentAlignment="Center" Height="95" Width="88" FontWeight="Bold"/>
                 <Label x:Name="Hun_scoreS" Grid.Column="5" Content="0" VerticalAlignment="Center" FontSize="80" HorizontalAlignment="Center" Foreground="#FFF9EFD6" FontFamily="DFPOP1W5-B5" HorizontalContentAlignment="Center" Visibility="Hidden" Height="90" Width="50" FontWeight="Bold"/>
-                <Label x:Name="Hun_team_name" Grid.Column="6" VerticalAlignment="Center" FontSize="40" HorizontalAlignment="Center" Foreground="#FFD3BC88" FontWeight="Bold" HorizontalContentAlignment="Center" Content="{Binding TeamInfoViewModel.NowView.NowModel.NowHunTeam.Name}"/>
+                <Label x:Name="Hun_team_name" Grid.Column="6" VerticalAlignment="Center" FontSize="40" HorizontalAlignment="Center" Foreground="#FFD3BC88" FontWeight="Bold" HorizontalContentAlignment="Center" Content="{Binding TeamInfoViewModel.NowModel.NowHunTeam.Name}"/>
                 <Label x:Name="Hun_score" Grid.Column="7" Content="W0 D0 L0" VerticalAlignment="Center" FontSize="20" HorizontalAlignment="Left" Foreground="#FFD3BC88" Visibility="Hidden" Height="35" FontWeight="Bold"/>
-                <Image x:Name="Logo_hun" Grid.Column="8" Margin="38,10,47,12" Source="{Binding TeamInfoViewModel.NowView.NowModel.NowHunTeam.LOGO}"/>
+                <Image x:Name="Logo_hun" Grid.Column="8" Margin="38,10,47,12" Source="{Binding TeamInfoViewModel.NowModel.NowHunTeam.LOGO}"/>
             </Grid>
             <!--比分条-->
             <Grid Grid.Row="2">
@@ -56,9 +56,9 @@
                         <RowDefinition Height="59"/>
                         <RowDefinition Height="50"/>
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="0" x:Name="Hun_ban_1" Height="50" Width="50" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,4" />
-                    <Image Grid.Row="1" x:Name="Hun_ban_2" Width="50" Height="50" HorizontalAlignment="Left" Margin="14,3,0,6"/>
-                    <Image Grid.Row="2" x:Name="Hun_ban_3" Height="50" Width="50" HorizontalAlignment="Right" VerticalAlignment="Top" />
+                    <Image Grid.Row="0" x:Name="Hun_ban_1" Height="50" Width="50" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,4" Source="{Binding BpShowViewModel.BpShow.HunBan[0]}"/>
+                    <Image Grid.Row="1" x:Name="Hun_ban_2" Width="50" Height="50" HorizontalAlignment="Left" Margin="14,3,0,6" Source="{Binding BpShowViewModel.BpShow.HunBan[1]}"/>
+                    <Image Grid.Row="2" x:Name="Hun_ban_3" Height="50" Width="50" HorizontalAlignment="Right" VerticalAlignment="Top" Source="{Binding BpShowViewModel.BpShow.HunBan[2]}"/>
                 </Grid>
                 <Grid Grid.Column="0" Margin="0,0,1,0" Panel.ZIndex="1">
                     <Grid.RowDefinitions>
@@ -66,37 +66,37 @@
                         <RowDefinition Height="56"/>
                         <RowDefinition Height="86"/>
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="0" x:Name="Hun_no_ban_1" Height="50" Width="50" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="{Binding BpShowViewModel.bpShow.HunBanLock[0]}" Margin="0,0,0,4"/>
-                    <Image Grid.Row="1" x:Name="Hun_no_ban_2" Width="50" Height="50" HorizontalAlignment="Left" Visibility="{Binding BpShowViewModel.bpShow.HunBanLock[1]}" Margin="14,3,0,6"/>
-                    <Image Grid.Row="2" x:Name="Hun_no_ban_3" Height="50" Width="50" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="{Binding BpShowViewModel.bpShow.HunBanLock[2]}" />
+                    <Image Grid.Row="0" x:Name="Hun_no_ban_1" Height="50" Width="50" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="{Binding BpShowViewModel.BpShow.HunBanLock[0]}" Margin="0,0,0,4"/>
+                    <Image Grid.Row="1" x:Name="Hun_no_ban_2" Width="50" Height="50" HorizontalAlignment="Left" Visibility="{Binding BpShowViewModel.BpShow.HunBanLock[1]}" Margin="14,3,0,6"/>
+                    <Image Grid.Row="2" x:Name="Hun_no_ban_3" Height="50" Width="50" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="{Binding BpShowViewModel.BpShow.HunBanLock[2]}" />
                 </Grid>
                 <!--监管Ban-->
                 <Grid Grid.Column="1">
-                    <Image x:Name="Sur_pick_1" Height="166" Panel.ZIndex="-1" Margin="0,0,0,7" Source="{Binding BpShowViewModel.bpShow.SurPick[0].ChartcherHalfImage}"/>
-                    <Image x:Name="SurPicking1" Height="166" Panel.ZIndex="2" Margin="0,0,0,7" Visibility="{Binding BpShowViewModel.bpShow.PickingBorder[0]}"/>
-                    <Label x:Name="Sur_1_team" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,35" FontSize="22" Content="{Binding TeamInfoViewModel.NowView.NowModel.NowSurTeam.Name}"/>
-                    <Label x:Name="Sur_1_player" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22" Content="{Binding TeamInfoViewModel.NowView.NowModel.NowPlayer[0]}"/>
+                    <Image x:Name="Sur_pick_1" Height="166" Panel.ZIndex="-1" Margin="0,0,0,7" Source="{Binding BpShowViewModel.BpShow.SurPick[0].ChartcherHalfImage}"/>
+                    <Image x:Name="SurPicking1" Height="166" Panel.ZIndex="2" Margin="0,0,0,7" Visibility="Hidden"/>
+                    <Label x:Name="Sur_1_team" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,35" FontSize="22" Content="{Binding TeamInfoViewModel.NowModel.NowSurTeam.Name}"/>
+                    <Label x:Name="Sur_1_player" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22" Content="{Binding TeamInfoViewModel.NowModel.NowPlayer[0]}"/>
                 </Grid>
                 <!--求生Pick1-->
                 <Grid Grid.Column="2">
-                    <Image x:Name="Sur_pick_2" Height="166" Panel.ZIndex="-1" Margin="0,0,0,7" Source="{Binding BpShowViewModel.bpShow.SurPick[1].ChartcherHalfImage}"/>
-                    <Image x:Name="SurPicking2" Height="166" Panel.ZIndex="2" Margin="0,0,0,7" Visibility="{Binding BpShowViewModel.bpShow.PickingBorder[1]}"/>
-                    <Label x:Name="Sur_2_team" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,35" FontSize="22" Content="{Binding TeamInfoViewModel.NowView.NowModel.NowSurTeam.Name}"/>
-                    <Label x:Name="Sur_2_player" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22" Content="{Binding TeamInfoViewModel.NowView.NowModel.NowPlayer[1]}"/>
+                    <Image x:Name="Sur_pick_2" Height="166" Panel.ZIndex="-1" Margin="0,0,0,7" Source="{Binding BpShowViewModel.BpShow.SurPick[1].ChartcherHalfImage}"/>
+                    <Image x:Name="SurPicking2" Height="166" Panel.ZIndex="2" Margin="0,0,0,7" Visibility="Hidden"/>
+                    <Label x:Name="Sur_2_team" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,35" FontSize="22" Content="{Binding TeamInfoViewModel.NowModel.NowSurTeam.Name}"/>
+                    <Label x:Name="Sur_2_player" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22" Content="{Binding TeamInfoViewModel.NowModel.NowPlayer[1]}"/>
                 </Grid>
                 <!--求生Pick2-->
                 <Grid Grid.Column="3">
-                    <Image x:Name="Sur_pick_3" Height="166" Panel.ZIndex="-1" Margin="0,0,0,7" Source="{Binding BpShowViewModel.bpShow.SurPick[2].ChartcherHalfImage}"/>
-                    <Image x:Name="SurPicking3" Height="166" Panel.ZIndex="2" Margin="0,0,0,7" Visibility="{Binding BpShowViewModel.bpShow.PickingBorder[2]}"/>
-                    <Label x:Name="Sur_3_team" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,35" FontSize="22" Content="{Binding TeamInfoViewModel.NowView.NowModel.NowSurTeam.Name}"/>
-                    <Label x:Name="Sur_3_player" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22" Content="{Binding TeamInfoViewModel.NowView.NowModel.NowPlayer[2]}"/>
+                    <Image x:Name="Sur_pick_3" Height="166" Panel.ZIndex="-1" Margin="0,0,0,7" Source="{Binding BpShowViewModel.BpShow.SurPick[2].ChartcherHalfImage}"/>
+                    <Image x:Name="SurPicking3" Height="166" Panel.ZIndex="2" Margin="0,0,0,7" Visibility="Hidden"/>
+                    <Label x:Name="Sur_3_team" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,35" FontSize="22" Content="{Binding TeamInfoViewModel.NowModel.NowSurTeam.Name}"/>
+                    <Label x:Name="Sur_3_player" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22" Content="{Binding TeamInfoViewModel.NowModel.NowPlayer[2]}"/>
                 </Grid>
                 <!--求生Pick3-->
                 <Grid Grid.Column="4">
-                    <Image x:Name="Sur_pick_4" Height="166" Panel.ZIndex="-1" Margin="0,0,0,7" Source="{Binding BpShowViewModel.bpShow.SurPick[3].ChartcherHalfImage}"/>
-                    <Image x:Name="SurPicking4" Height="166" Panel.ZIndex="2" Margin="0,0,0,7" Visibility="{Binding BpShowViewModel.bpShow.PickingBorder[3]}"/>
-                    <Label x:Name="Sur_4_team" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,35" FontSize="22" Content="{Binding TeamInfoViewModel.NowView.NowModel.NowSurTeam.Name}"/>
-                    <Label x:Name="Sur_4_player" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22" Content="{Binding TeamInfoViewModel.NowView.NowModel.NowPlayer[3]}"/>
+                    <Image x:Name="Sur_pick_4" Height="166" Panel.ZIndex="-1" Margin="0,0,0,7" Source="{Binding BpShowViewModel.BpShow.SurPick[3].ChartcherHalfImage}"/>
+                    <Image x:Name="SurPicking4" Height="166" Panel.ZIndex="2" Margin="0,0,0,7" Visibility="Hidden"/>
+                    <Label x:Name="Sur_4_team" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,35" FontSize="22" Content="{Binding TeamInfoViewModel.NowModel.NowSurTeam.Name}"/>
+                    <Label x:Name="Sur_4_player" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,10" FontSize="22" Content="{Binding TeamInfoViewModel.NowModel.NowPlayer[3]}"/>
                 </Grid>
                 <!--求生Pick4-->
                 <Grid Grid.Column="5">
@@ -104,31 +104,31 @@
                         <RowDefinition Height="125"/>
                         <RowDefinition Height="75"/>
                     </Grid.RowDefinitions>
-                    <Image x:Name="Map" Grid.Row="0" Height="115" Width="283" VerticalAlignment="Top" Margin="0,5,0,0"/>
+                    <Image x:Name="Map" Grid.Row="0" Height="115" Width="283" VerticalAlignment="Top" Margin="0,5,0,0" Source="{Binding BpShowViewModel.BpShow.MapPick}"/>
                     <!--地图-->
                     <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="77,3,0,0" Height="37" Width="252">
-                        <Image x:Name="Hole_ban_1" Height="37" Width="37" Source="{Binding BpShowViewModel.bpShow.SurHoleBan[0]}"/>
-                        <Image x:Name="Hole_ban_2" Height="37" Width="37" Margin="6,0,0,0" Source="{Binding BpShowViewModel.bpShow.SurHoleBan[1]}"/>
-                        <Image x:Name="Hole_ban_3" Height="37" Width="37" Margin="6,0,0,0" Source="{Binding BpShowViewModel.bpShow.SurHoleBan[2]}"/>
-                        <Image x:Name="Hole_ban_4" Height="37" Width="37" Margin="6,0,0,0" Source="{Binding BpShowViewModel.bpShow.SurHoleBan[3]}"/>
-                        <Image x:Name="Hole_ban_5" Height="37" Width="37" Margin="6,0,0,0" Source="{Binding BpShowViewModel.bpShow.SurHoleBan[4]}"/>
-                        <Image x:Name="Hole_ban_6" Height="37" Width="37" Margin="5,0,0,0" Source="{Binding BpShowViewModel.bpShow.SurHoleBan[5]}"/>
+                        <Image x:Name="Hole_ban_1" Height="37" Width="37" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[0]}"/>
+                        <Image x:Name="Hole_ban_2" Height="37" Width="37" Margin="6,0,0,0" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[1]}"/>
+                        <Image x:Name="Hole_ban_3" Height="37" Width="37" Margin="6,0,0,0" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[2]}"/>
+                        <Image x:Name="Hole_ban_4" Height="37" Width="37" Margin="6,0,0,0" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[3]}"/>
+                        <Image x:Name="Hole_ban_5" Height="37" Width="37" Margin="6,0,0,0" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[4]}"/>
+                        <Image x:Name="Hole_ban_6" Height="37" Width="37" Margin="5,0,0,0" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[5]}"/>
                     </StackPanel>
                     <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="77,3,0,0" Panel.ZIndex="1" Height="37" Width="252">
-                        <Image x:Name="Hole_no_ban_1" Height="37" Width="37" Visibility="{Binding BpShowViewModel.bpShow.SurHoleBanLock[0]}"/>
-                        <Image x:Name="Hole_no_ban_2" Height="37" Width="37" Margin="6,0,0,0" Visibility="{Binding BpShowViewModel.bpShow.SurHoleBanLock[1]}"/>
-                        <Image x:Name="Hole_no_ban_3" Height="37" Width="37" Margin="6,0,0,0" Visibility="{Binding BpShowViewModel.bpShow.SurHoleBanLock[2]}"/>
-                        <Image x:Name="Hole_no_ban_4" Height="37" Width="37" Margin="6,0,0,0" Visibility="{Binding BpShowViewModel.bpShow.SurHoleBanLock[3]}"/>
-                        <Image x:Name="Hole_no_ban_5" Height="37" Width="37" Margin="6,0,0,0" Visibility="{Binding BpShowViewModel.bpShow.SurHoleBanLock[4]}"/>
-                        <Image x:Name="Hole_no_ban_6" Height="37" Width="37" Margin="5,0,0,0" Visibility="{Binding BpShowViewModel.bpShow.SurHoleBanLock[5]}"/>
+                        <Image x:Name="Hole_no_ban_1" Height="37" Width="37" Visibility="{Binding BpShowViewModel.BpShow.SurHoleBanLock[0]}"/>
+                        <Image x:Name="Hole_no_ban_2" Height="37" Width="37" Margin="6,0,0,0" Visibility="{Binding BpShowViewModel.BpShow.SurHoleBanLock[1]}"/>
+                        <Image x:Name="Hole_no_ban_3" Height="37" Width="37" Margin="6,0,0,0" Visibility="{Binding BpShowViewModel.BpShow.SurHoleBanLock[2]}"/>
+                        <Image x:Name="Hole_no_ban_4" Height="37" Width="37" Margin="6,0,0,0" Visibility="{Binding BpShowViewModel.BpShow.SurHoleBanLock[3]}"/>
+                        <Image x:Name="Hole_no_ban_5" Height="37" Width="37" Margin="6,0,0,0" Visibility="{Binding BpShowViewModel.BpShow.SurHoleBanLock[4]}"/>
+                        <Image x:Name="Hole_no_ban_6" Height="37" Width="37" Margin="5,0,0,0" Visibility="{Binding BpShowViewModel.BpShow.SurHoleBanLock[5]}"/>
                     </StackPanel>
                     <!--全局ban-->
                 </Grid>
                 <!--监管Pick-->
                 <Grid Grid.Column="6">
-                    <Image x:Name="Hun_pick" Height="166" Panel.ZIndex="-1" Margin="0,0,0,8"/>
-                    <Image x:Name="HunPicking" Width="468" Panel.ZIndex="2" Margin="0,0,0,8" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden" />
-                    <Label x:Name="Hun_player" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10" FontSize="30" Content="{Binding TeamInfoViewModel.NowView.NowModel.NowHunPlayerId}"/>
+                    <Image x:Name="Hun_pick" Height="166" Panel.ZIndex="-1" Margin="0,0,0,8" Source="{Binding BpShowViewModel.BpShow.HunPick.ChartcherHalfImage}"/>
+                    <Image x:Name="HunPicking" Width="468" Panel.ZIndex="2" Margin="0,0,0,8" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden"/>
+                    <Label x:Name="Hun_player" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,10" FontSize="30" Content="{Binding TeamInfoViewModel.NowModel.NowHunPlayerId}"/>
                 </Grid>
                 <!--求生Ban-->
                 <Grid Grid.Column="7">
@@ -138,10 +138,10 @@
                         <RowDefinition Height="42"/>
                         <RowDefinition Height="52"/>
                     </Grid.RowDefinitions>
-                    <Image x:Name="Sur_ban_1" Height="36" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="8,0,0,3 " Width="36" Grid.Row="0"/>
-                    <Image Grid.Row="1" x:Name="Sur_ban_2" Width="36" HorizontalAlignment="Left" Margin="8,4,0,4"/>
-                    <Image Grid.Row="2" x:Name="Sur_ban_3" Width="36" HorizontalAlignment="Left" Margin="8,2,0,4"/>
-                    <Image Grid.Row="3" x:Name="Sur_ban_4" Height="36" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,2,0,0" Width="36"/>
+                    <Image x:Name="Sur_ban_1" Height="36" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="8,0,0,3 " Width="36" Grid.Row="0" Source="{Binding BpShowViewModel.BpShow.SurBan[0]}"/>
+                    <Image Grid.Row="1" x:Name="Sur_ban_2" Width="36" HorizontalAlignment="Left" Margin="8,4,0,4" Source="{Binding BpShowViewModel.BpShow.SurBan[1]}" Height="36"/>
+                    <Image Grid.Row="2" x:Name="Sur_ban_3" Width="36" HorizontalAlignment="Left" Margin="8,2,0,4" Source="{Binding BpShowViewModel.BpShow.SurBan[2]}" Height="36"/>
+                    <Image Grid.Row="3" x:Name="Sur_ban_4" Height="36" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,2,0,0" Width="36" Source="{Binding BpShowViewModel.BpShow.SurBan[3]}"/>
                 </Grid>
             </Grid>
             <!--Ban Pick-->

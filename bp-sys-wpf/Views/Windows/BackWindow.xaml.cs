@@ -23,6 +23,8 @@ namespace bp_sys_wpf.Views.Windows
             InitializeComponent();
             backWindow = this;
             DataContext = rootViewModel;
+            rootViewModel.BpShowViewModel.ReceiveModel = rootViewModel.BpReceiveModel;
+            rootViewModel.BpReceiveModel.BpShowViewModel = rootViewModel.BpShowViewModel;
             AppInitialize();
         }
         private void AppInitialize()
@@ -47,8 +49,6 @@ namespace bp_sys_wpf.Views.Windows
 
             Config.ScoreHole.Color.Name = ConvertHexStringToBrush(data["ScoreHole_Color"]["Name"].ToString());
             Config.ScoreHole.Color.Score = ConvertHexStringToBrush(data["ScoreHole_Color"]["Score"].ToString());
-            rootViewModel.BpShowViewModel.ReceiveModel = rootViewModel.BpReceiveModel;
-            rootViewModel.BpReceiveModel.BpShowViewModel = rootViewModel.BpShowViewModel;
         }
         
         public static SolidColorBrush ConvertHexStringToBrush(string hexColor)
@@ -113,12 +113,12 @@ namespace bp_sys_wpf.Views.Windows
         {
             if (!IsFrontsChreated)
             {
-                (new Front()).Show();
-                (new Interlude()).Show();
-                (new Map_bp()).Show();
                 (new ScoreHun()).Show();
                 (new ScoreSur()).Show();
                 (new ScoreHole()).Show();
+                (new Map_bp()).Show();
+                (new Interlude()).Show();
+                (new Front()).Show();
                 IsFrontsChreated = true;
                 Thread.Sleep(500);
                 backWindow.Activate();

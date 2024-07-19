@@ -53,9 +53,10 @@
                                   Width="150"
                                   IsEditable="True"
                                   IsEnabled="True"
+                                  SelectedItem="{Binding BpReceiveModel.HunBan[0]}"
                                   ItemsSource="{Binding ComboBoxItemViewModel.hun}"
-                                  MaxDropDownHeight="100"/>
-                        <Image x:Name="Hun_ban_review_1"/>
+                                  MaxDropDownHeight="200" KeyDown="Hun_ban_1_KeyDown"/>
+                        <Image x:Name="Hun_ban_review_1" Source="{Binding BpShowViewModel.BpShow.HunBan[0]}"/>
                     </StackPanel>
                     <StackPanel>
                         <ComboBox x:Name="Hun_ban_2"
@@ -64,9 +65,11 @@
                                   IsEditable="True"
                                   Margin="10,0,0,0"
                                   IsEnabled="True"
+                                  SelectedItem="{Binding BpReceiveModel.HunBan[1]}"
                                   ItemsSource="{Binding ComboBoxItemViewModel.hun}"
-                                  MaxDropDownHeight="100"/>
-                        <Image x:Name="Hun_ban_review_2"/>
+                                  MaxDropDownHeight="200" KeyDown="Hun_ban_2_KeyDown"/>
+                        <Image x:Name="Hun_ban_review_2"
+                                Source="{Binding BpShowViewModel.BpShow.HunBan[1]}"/>
                     </StackPanel>
                     <StackPanel>
                         <ComboBox x:Name="Hun_ban_3"
@@ -75,9 +78,11 @@
                                   IsEditable="True"
                                   Margin="10,0,0,0"
                                   IsEnabled="True"
+                                  SelectedItem="{Binding BpReceiveModel.HunBan[2]}"
                                   ItemsSource="{Binding ComboBoxItemViewModel.hun}"
-                                  MaxDropDownHeight="100"/>
-                        <Image x:Name="Hun_ban_review_3"/>
+                                  MaxDropDownHeight="200" KeyDown="Hun_ban_3_KeyDown"/>
+                        <Image x:Name="Hun_ban_review_3"
+                                Source="{Binding BpShowViewModel.BpShow.HunBan[2]}"/>
                     </StackPanel>
                 </StackPanel>
             </Grid>

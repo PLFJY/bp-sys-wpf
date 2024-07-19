@@ -1,4 +1,6 @@
-﻿using System.Windows.Controls;
+﻿using bp_sys_wpf.ViewModel;
+using bp_sys_wpf.Views.Windows;
+using System.Windows.Controls;
 
 namespace bp_sys_wpf.Views.Pages
 {
@@ -10,6 +12,7 @@ namespace bp_sys_wpf.Views.Pages
         public TalentPage()
         {
             InitializeComponent();
+            DataContext = BackWindow.backWindow.rootViewModel;
         }
     }
 }

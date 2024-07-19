@@ -11,25 +11,61 @@ namespace bp_sys_wpf.Model
 {
     public class NowModel
     {
-        private List<string?> _NowPlayer = new List<string?>();
+        private List<string> _NowPlayer;
 
-        public List<string?> NowPlayer
+        public List<string> NowPlayer
         {
-            get { return _NowPlayer; }
+            get
+            {
+                if (_NowPlayer == null)
+                {
+                    _NowPlayer = new List<string>();
+                    for (int i = 0; i < 4; i++)
+                    {
+                        _NowPlayer.Add("");
+                    }
+                    _NowPlayer.Add("");
+                }
+                return _NowPlayer;
+            }
             set
             {
                 _NowPlayer = value;
-                NowHunPlayerId = $"{NowHunTeam.Name}__{NowPlayer[4]}";
             }
         }
         public string NowHunPlayerId { get; set; }
+
+        private List<string> _NowSurPlayerId;
+
+        public List<string> NowSurPlayerId
+        {
+            get
+            {
+                if (_NowSurPlayerId == null)
+                {
+                    _NowSurPlayerId = new List<string>();
+                    for (int i = 0; i < 4; i++)
+                    {
+                        _NowSurPlayerId.Add(null);
+                    }
+                }
+                return _NowSurPlayerId;
+            }
+            set
+            {
+                _NowSurPlayerId = value;
+            }
+        }
 
         private NowTeam _NowSurTeam = new NowTeam();
 
         public NowTeam NowSurTeam
         {
             get { return _NowSurTeam; }
-            set { _NowSurTeam = value; }
+            set
+            {
+                _NowSurTeam = value;
+            }
         }
 
         private NowTeam _NowHunTeam = new NowTeam();
@@ -40,7 +76,6 @@ namespace bp_sys_wpf.Model
             set
             {
                 _NowHunTeam = value;
-                NowHunPlayerId = $"{NowHunTeam.Name}__{NowPlayer[4]}";
             }
         }
 

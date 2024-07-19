@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace bp_sys_wpf.ViewModel
 {
@@ -22,11 +24,25 @@ namespace bp_sys_wpf.ViewModel
         {
             int spaceIndex = selectedValue.IndexOf(' ');
             selectedValue = selectedValue.Substring(spaceIndex + 1);
-            return selectedValue;
+            if(selectedValue == "")
+            {
+                return null;
+            }
+            else
+            {
+                return selectedValue;
+            }
         }
-        public string GetImagePath(string type, string selectedValue)
+        public BitmapImage GetImage(string type, string selectedValue)
         {
-            return GetAbsoluteFilePath("pic/" + type + "/" + GetComboBoxItemContent(selectedValue) + ".png");
+            if(selectedValue != "" && selectedValue != null)
+            {
+                return new BitmapImage(new Uri(GetAbsoluteFilePath("pic/" + type + "/" + selectedValue + ".png")));
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

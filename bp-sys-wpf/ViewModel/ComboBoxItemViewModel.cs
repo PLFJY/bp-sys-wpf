@@ -43,6 +43,53 @@ namespace bp_sys_wpf.ViewModel
             set { _sur = value; }
         }
 
+        private List<string> _MapPick;
+
+        public List<string> MapPick
+        {
+            get
+            {
+                if (_MapPick == null)
+                {
+                    _MapPick = new List<string>();
+                    _MapPick.Add("红教堂");
+                    _MapPick.Add("湖景村");
+                    _MapPick.Add("军工厂");
+                    _MapPick.Add("里奥的回忆");
+                    _MapPick.Add("圣心医院");
+                    _MapPick.Add("唐人街");
+                    _MapPick.Add("永眠镇");
+                    _MapPick.Add("月亮河公园");
+                }
+                return _MapPick;
+            }
+            set { _MapPick = value; }
+        }
+
+        private List<string> _MapBan;
+
+        public List<string> MapBan
+        {
+            get
+            {
+                if (_MapBan == null)
+                {
+                    _MapBan = new List<string>();
+                    _MapBan.Add("无Ban");
+                    _MapBan.Add("红教堂");
+                    _MapBan.Add("湖景村");
+                    _MapBan.Add("军工厂");
+                    _MapBan.Add("里奥的回忆");
+                    _MapBan.Add("圣心医院");
+                    _MapBan.Add("唐人街");
+                    _MapBan.Add("永眠镇");
+                    _MapBan.Add("月亮河公园");
+                }
+                return _MapBan;
+            }
+            set { _MapBan = value; }
+        }
+
 
         public List<string> LoadCharacters(string type)
         {

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
@@ -14,7 +15,6 @@ namespace bp_sys_wpf.Model
     public class BpShowModel
     {
         private List<BitmapImage> _SurBan;
-        //这里的List存的是BitmapImage类型，能直接绑定给Image的Source
         public List<BitmapImage> SurBan
         {
             get
@@ -40,10 +40,10 @@ namespace bp_sys_wpf.Model
             {
                 if (_SurHoleBan == null)
                 {
-                    _SurBan = new List<BitmapImage>();
+                    _SurHoleBan = new List<BitmapImage>();
                     for (int i = 0; i < 6; i++)
                     {
-                        _SurBan.Add(null);
+                        _SurHoleBan.Add(null);
                     }
                 }
                 return _SurHoleBan;
@@ -89,26 +89,7 @@ namespace bp_sys_wpf.Model
             set { _SurPick = value; }
         }
 
-        public HunPickInfo HunPick { get; set; }
-
-        private List<Visibility> _PickingBorder;
-        
-        public List<Visibility> PickingBorder
-        {
-            get
-            {
-                if (_PickingBorder == null)
-                {
-                    _PickingBorder = new List<Visibility>();
-                    for (int i = 0; i < 4; i++)
-                    {
-                        _PickingBorder.Add(Visibility.Hidden);
-                    }
-                }
-                return _PickingBorder;
-            }
-            set { _PickingBorder = value; }
-        }
+        public HunPickInfo HunPick { get; set; } = new HunPickInfo();
 
         private List<Visibility> _HunBanLock;
 
@@ -146,21 +127,25 @@ namespace bp_sys_wpf.Model
             set { _HunBanLock = value; }
         }
 
+        public BitmapImage MapPick { get; set; }
+
+        public BitmapImage MapBan { get; set; }
+
         public class SurPickInfo
         {
             public BitmapImage ChartcherHalfImage { get; set; }
             public BitmapImage ChartcherBigImage { get; set; }
             public BitmapImage ChartcherHeadImage { get; set; }
             public string ChartcherName { get; set; }
-            public Talents Talent { get; set; }
+            public Talents Talent { get; set; } = new Talents();
 
         }
         public class Talents
         {
-            bool BorrowedTime { get; set; }
-            bool KneeJerkReflex { get; set; }
-            bool TideTurner { get; set; }
-            bool FlywheelEffect { get; set; }
+            public Visibility BorrowedTime { get; set; } = Visibility.Collapsed;
+            public Visibility KneeJerkReflex { get; set; } = Visibility.Collapsed;
+            public Visibility TideTurner { get; set; } = Visibility.Collapsed;
+            public Visibility FlywheelEffect { get; set; } = Visibility.Collapsed;
         }
 
         public class HunPickInfo

@@ -41,41 +41,53 @@ namespace bp_sys_wpf.Views.Pages
 
         private void Sur3Border_Click(object sender, RoutedEventArgs e)
         {
-            if (Sur3Border.IsChecked == true)
+            try
             {
-                Front.front.SurPicking3.Visibility = Visibility.Visible;
-                Front.front.SurPicking3.BeginAnimation(UIElement.OpacityProperty, AnimationSetting.fadeIn);
+                if (Sur3Border.IsChecked == true)
+                {
+                    Front.front.SurPicking3.Visibility = Visibility.Visible;
+                    Front.front.SurPicking3.BeginAnimation(UIElement.OpacityProperty, AnimationSetting.fadeIn);
+                }
+                else
+                {
+                    Front.front.SurPicking3.BeginAnimation(UIElement.OpacityProperty, AnimationSetting.fadeOut);
+                }
             }
-            else
-            {
-                Front.front.SurPicking3.BeginAnimation(UIElement.OpacityProperty, AnimationSetting.fadeOut);
-            }
+            catch { }
         }
 
         private void Sur4Border_Click(object sender, RoutedEventArgs e)
         {
-            if (Sur4Border.IsChecked == true)
+            try
             {
-                Front.front.SurPicking4.Visibility = Visibility.Visible;
-                Front.front.SurPicking4.BeginAnimation(UIElement.OpacityProperty, AnimationSetting.fadeIn);
+                if (Sur4Border.IsChecked == true)
+                {
+                    Front.front.SurPicking4.Visibility = Visibility.Visible;
+                    Front.front.SurPicking4.BeginAnimation(UIElement.OpacityProperty, AnimationSetting.fadeIn);
+                }
+                else
+                {
+                    Front.front.SurPicking4.BeginAnimation(UIElement.OpacityProperty, AnimationSetting.fadeOut);
+                }
             }
-            else
-            {
-                Front.front.SurPicking4.BeginAnimation(UIElement.OpacityProperty, AnimationSetting.fadeOut);
-            }
+            catch { }
         }
 
         private void HunBorder_Click(object sender, RoutedEventArgs e)
         {
-            if (HunBorder.IsChecked == true)
+            try
             {
-                Front.front.HunPicking.Visibility = Visibility.Visible;
-                Front.front.HunPicking.BeginAnimation(UIElement.OpacityProperty, AnimationSetting.fadeIn);
+                if (HunBorder.IsChecked == true)
+                {
+                    Front.front.HunPicking.Visibility = Visibility.Visible;
+                    Front.front.HunPicking.BeginAnimation(UIElement.OpacityProperty, AnimationSetting.fadeIn);
+                }
+                else
+                {
+                    Front.front.HunPicking.BeginAnimation(UIElement.OpacityProperty, AnimationSetting.fadeOut);
+                }
             }
-            else
-            {
-                Front.front.HunPicking.BeginAnimation(UIElement.OpacityProperty, AnimationSetting.fadeOut);
-            }
+            catch { }
         }
 
         private void Sur_pick_1_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)

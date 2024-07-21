@@ -1,7 +1,6 @@
 ﻿using bp_sys_wpf.Model;
 using bp_sys_wpf.ViewModel;
 using bp_sys_wpf.Views.Windows;
-using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -128,6 +127,11 @@ namespace bp_sys_wpf.Views.Pages
             {
                 rootViewModel.BpShowViewModel.ShowBp("SurHoleBan", 5);
             }
+        }
+
+        private void SurHoleStateChange_Click(object sender, RoutedEventArgs e)
+        {
+            rootViewModel.BpReceiveModel = rootViewModel.BpReceiveModel;
         }
     }
 }

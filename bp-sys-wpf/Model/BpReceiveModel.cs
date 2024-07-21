@@ -1,93 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media.Imaging;
-using System.Diagnostics;
-using bp_sys_wpf.ViewModel;
+﻿using bp_sys_wpf.ViewModel;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace bp_sys_wpf.Model
 {
     public class BpReceiveModel
     {
-        private List<string> _SurBan;
+        public BpShowViewModel BpShowViewModel { get; set; }//引入BpShowViewModel，内容由BackWindow传入
+
+        private List<string> _SurBan = new List<string>(4) { null, null, null, null };//求生Ban
 
         public List<string> SurBan
         {
-            get
-            {
-                if (_SurBan == null)
-                {
-                    _SurBan = new List<string>();
-                    for (int i = 0; i < 4; i++)
-                    {
-                        _SurBan.Add(null);
-                    }
-                }
-                return _SurBan;
-            }
+            get { return _SurBan; }
             set { _SurBan = value; }
         }
 
-        private List<string> _SurHoleBan;
+        private List<string> _SurHoleBan = new List<string>(6) { null, null, null, null, null, null };//全局Ban
 
         public List<string> SurHoleBan
         {
-            get
-            {
-                if (_SurHoleBan == null)
-                {
-                    _SurHoleBan = new List<string>();
-                    for (int i = 0; i < 6; i++)
-                    {
-                        _SurHoleBan.Add(null);
-                    }
-                }
-                return _SurHoleBan;
-            }
+            get { return _SurHoleBan; }
             set { _SurHoleBan = value; }
         }
 
-        private List<string> _HunBan;
+        private List<string> _HunBan = new List<string>(3) { null, null, null };//监管Ban
 
         public List<string> HunBan
         {
-            get
-            {
-                if (_HunBan == null)
-                {
-                    _HunBan = new List<string>();
-                    for (int i = 0; i < 3; i++)
-                    {
-                        _HunBan.Add(null);
-                    }
-                }
-                return _HunBan;
-            }
+            get { return _HunBan; }
             set { _HunBan = value; }
         }
 
-        private List<SurPickInfo> _SurPick;
+        private List<SurPickInfo> _SurPick = new List<SurPickInfo>(4) { new SurPickInfo(), new SurPickInfo(), new SurPickInfo(), new SurPickInfo() };//求生Pick
 
         public List<SurPickInfo> SurPick
         {
             get
             {
-                if (_SurPick == null)
+                for (int i = 0; i < 4; i++)//天赋转换到前台
                 {
-                    _SurPick = new List<SurPickInfo>();
-                    for (int i = 0; i < 4; i++)
-                    {
-                        _SurPick.Add(new SurPickInfo());
-                    }
-
-                }
-                for (int i = 0; i < 4; i++)
-                {
-                    if (_SurPick[i].Talent.BorrowedTime == true)
+                    if (_SurPick[i].Talent.BorrowedTime == true)//大心脏
                     {
                         BpShowViewModel.BpShow.SurPick[i].Talent.BorrowedTime = Visibility.Visible;
                     }
@@ -96,7 +48,7 @@ namespace bp_sys_wpf.Model
                         BpShowViewModel.BpShow.SurPick[i].Talent.BorrowedTime = Visibility.Collapsed;
                     }
 
-                    if (_SurPick[i].Talent.KneeJerkReflex == true)
+                    if (_SurPick[i].Talent.KneeJerkReflex == true)//双弹
                     {
                         BpShowViewModel.BpShow.SurPick[i].Talent.KneeJerkReflex = Visibility.Visible;
                     }
@@ -105,7 +57,7 @@ namespace bp_sys_wpf.Model
                         BpShowViewModel.BpShow.SurPick[i].Talent.KneeJerkReflex = Visibility.Collapsed;
                     }
 
-                    if (_SurPick[i].Talent.TideTurner == true)
+                    if (_SurPick[i].Talent.TideTurner == true)//搏命
                     {
                         BpShowViewModel.BpShow.SurPick[i].Talent.TideTurner = Visibility.Visible;
                     }
@@ -114,7 +66,7 @@ namespace bp_sys_wpf.Model
                         BpShowViewModel.BpShow.SurPick[i].Talent.TideTurner = Visibility.Collapsed;
                     }
 
-                    if (_SurPick[i].Talent.FlywheelEffect == true)
+                    if (_SurPick[i].Talent.FlywheelEffect == true)//飞轮
                     {
                         BpShowViewModel.BpShow.SurPick[i].Talent.FlywheelEffect = Visibility.Visible;
                     }
@@ -129,7 +81,7 @@ namespace bp_sys_wpf.Model
             set { _SurPick = value; }
         }
 
-        private List<bool> _HunBanLock;
+        private List<bool> _HunBanLock;//监管ban位数量设定
 
         public List<bool> HunBanLock
         {
@@ -159,9 +111,8 @@ namespace bp_sys_wpf.Model
             }
             set { _HunBanLock = value; }
         }
-        public BpShowViewModel BpShowViewModel { get; set; }
 
-        private List<bool> _SurHoleBanLock;
+        private List<bool> _SurHoleBanLock;//全局ban位数量设定
 
         public List<bool> SurHoleBanLock
         {
@@ -192,11 +143,11 @@ namespace bp_sys_wpf.Model
             set { _SurHoleBanLock = value; }
         }
 
-        public string HunPick { get; set; }
+        public string HunPick { get; set; }//监管Pick
 
         private List<string> _SurHoleBanMainRecord;
 
-        public List<string> SurHoleBanMainRecord
+        public List<string> SurHoleBanMainRecord//主队全局Ban记录
         {
             get
             {
@@ -213,7 +164,7 @@ namespace bp_sys_wpf.Model
             set { _SurHoleBanMainRecord = value; }
         }
 
-        private List<string> _SurHoleBanAwayRecord;
+        private List<string> _SurHoleBanAwayRecord;//客队全局Ban记录
 
         public List<string> SurHoleBanAwayRecord
         {
@@ -232,7 +183,7 @@ namespace bp_sys_wpf.Model
             set { _SurHoleBanAwayRecord = value; }
         }
 
-        private string _MapPick;
+        private string _MapPick;//地图Pick
 
         public string MapPick
         {
@@ -246,7 +197,7 @@ namespace bp_sys_wpf.Model
             set { _MapPick = value; }
         }
 
-        private string _MapBan;
+        private string _MapBan;//地图Ban
 
         public string MapBan
         {
@@ -259,17 +210,17 @@ namespace bp_sys_wpf.Model
             }
             set { _MapBan = value; }
         }
-        public class SurPickInfo
-        {
-            public string CharacterName { get; set; }
-            public Talents Talent { get; set; } = new Talents();
-        }
-        public class Talents
-        {
-            public bool BorrowedTime { get; set; }
-            public bool KneeJerkReflex { get; set; }
-            public bool TideTurner { get; set; }
-            public bool FlywheelEffect { get; set; }
-        }
+    }
+    public class SurPickInfo//求生Pick集合
+    {
+        public string CharacterName { get; set; }
+        public Talents Talent { get; set; } = new Talents();
+    }
+    public class Talents//天赋
+    {
+        public bool BorrowedTime { get; set; }
+        public bool KneeJerkReflex { get; set; }
+        public bool TideTurner { get; set; }
+        public bool FlywheelEffect { get; set; }
     }
 }

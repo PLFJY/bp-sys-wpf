@@ -40,7 +40,8 @@
     <StackPanel>
         <GroupBox Header="BP界面及游戏内比分"
                   HorizontalAlignment="Left"
-                  VerticalAlignment="Top">
+                  VerticalAlignment="Top"
+                  Width="585">
             <Grid Margin="10,10,10,10"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Top">
@@ -57,12 +58,12 @@
                     <Button x:Name="Escape4"
                             Width="70"
                             Height="40"
-                            Content="四跑"/>
+                            Content="四跑" Click="Escape4_Click"/>
                     <Button x:Name="Escape3"
                             Width="70"
                             Height="40"
                             Content="三跑"
-                            Margin="0,25,0,0"/>
+                            Margin="0,25,0,0" Click="Escape3_Click"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1"
                             Margin="20,60,20,0"
@@ -72,24 +73,24 @@
                             Width="70"
                             Height="40"
                             HorizontalAlignment="Center"
-                            Content="平局"/>
+                            Content="平局" Click="Tie_Click"/>
                     <Button x:Name="Settlement"
                             Width="95"
                             Height="40" 
                             Content="大比分结算"
-                            Margin="0,40,0,0"/>
+                            Margin="0,40,0,0" Click="Settlement_Click"/>
                 </StackPanel>
                 <StackPanel Grid.Column="2"
                             VerticalAlignment="Center" >
                     <Button x:Name="Out4"
                             Width="70"
                             Height="40"
-                            Content="四抓"/>
+                            Content="四抓" Click="Out4_Click"/>
                     <Button x:Name="Out3"
                             Width="70"
                             Height="40"
                             Content="三抓"
-                            Margin="0,25,0,0"/>
+                            Margin="0,25,0,0" Click="Out3_Click"/>
                 </StackPanel>
                 <StackPanel Grid.Column="3"
                             VerticalAlignment="Center"
@@ -97,27 +98,22 @@
                     <Button x:Name="Clear"
                             Width="80"
                             Height="40"
-                            Content="总清零"/>
+                            Content="总清零" Click="Clear_Click"/>
                     <Button x:Name="Manual"
                             Width="80"
                             Height="40"
                             Content="手动控制"
-                            Margin="0,20,0,0"/>
-                    <Button x:Name="HoleB"
-                            Width="80"
-                            Height="40"
-                            Content="分数统计"
-                            Margin="0,20,0,0"/>
+                            Margin="0,20,0,0" Click="Manual_Click"/>
                 </StackPanel>
                 <StackPanel Grid.Column="4"
                             VerticalAlignment="Center"
                             Margin="20,0,0,0">
                     <Label x:Name="MainTeamScore"
                            Height="40"
-                           Content="W:0 D:0 L:0 小比分:0 总小比分:0"/>
+                           Content="{Binding TeamInfoViewModel.TeamInfoModel.MainTeamInfo.Score.BackView}"/>
                     <Label x:Name="AwayTeamScore"
                            Height="40"
-                           Content="W:0 D:0 L:0 小比分:0 总小比分:0"/>
+                           Content="{Binding TeamInfoViewModel.TeamInfoModel.AwayTeamInfo.Score.BackView}"/>
                 </StackPanel>
             </Grid>
         </GroupBox>
@@ -137,7 +133,8 @@
                     <ComboBox x:Name="Bo"
                               Width="150"
                               Height="35"
-                              Margin="20,0,0,0">
+                              Margin="20,0,0,0"
+                              SelectionChanged="Bo_SelectionChanged">
                         <ComboBoxItem Content="BO1上半"/>
                         <ComboBoxItem Content="BO1下半"/>
                         <ComboBoxItem Content="BO2上半"/>
@@ -152,12 +149,12 @@
                     <ui:Button x:Name="NextGame"
                                Content="下一局"
                                Icon="{ui:SymbolIcon Next24}"
-                               Margin="20,0,0,0"/>
+                               Margin="20,0,0,0" Click="NextGame_Click"/>
                 </StackPanel>
                 <CheckBox x:Name="IsGameFinished"
                           Content="对局是否已完成"
                           Grid.Row="1"
-                          Margin="0,10,0,0"/>
+                          Margin="0,10,0,0" Click="IsGameFinished_Click"/>
                 <StackPanel Orientation="Horizontal"
                             Grid.Row="2"
                             Margin="0,10,0,0">
@@ -170,10 +167,10 @@
                                     Margin="10,10,10,10">
                             <RadioButton x:Name="IsMainSur"
                                          Content="求生者"
-                                         HorizontalAlignment="Left"/>
+                                         HorizontalAlignment="Left" Checked="IsMainSur_Checked"/>
                             <RadioButton x:Name="IsMainHun"
                                          Content="监管者"
-                                         HorizontalAlignment="Left" />
+                                         HorizontalAlignment="Left" Checked="IsMainHun_Checked" />
                         </StackPanel>
                     </GroupBox>
                     <GroupBox x:Name="AwayTeamState"
@@ -186,10 +183,10 @@
                                     Margin="10,10,10,10">
                             <RadioButton x:Name="IsAwaySur"
                                          Content="求生者"
-                                         HorizontalAlignment="Left"/>
+                                         HorizontalAlignment="Left" Checked="IsAwaySur_Checked"/>
                             <RadioButton x:Name="IsAwayHun"
                                          Content="监管者"
-                                         HorizontalAlignment="Left"/>
+                                         HorizontalAlignment="Left" Checked="IsAwayHun_Checked"/>
                         </StackPanel>
                     </GroupBox>
                 </StackPanel>
@@ -203,19 +200,24 @@
                                     Margin="10,10,10,10">
                             <StackPanel>
                                 <RadioButton x:Name="Statistics_Escape4"
-                                             Content="四跑"/>
+                                             Content="四跑"
+                                             GroupName="GameResult" Checked="Statistics_Escape4_Checked"/>
                                 <RadioButton x:Name="Statistics_Escape3"
                                              Content="三跑"
-                                             Margin="0,30,0,0"/>
+                                             Margin="0,30,0,0"
+                                             GroupName="GameResult" Checked="Statistics_Escape3_Checked"/>
                             </StackPanel>
                             <RadioButton x:Name="Statistics_Tie"
-                                     Content="平局"/>
+                                         Content="平局"
+                                         GroupName="GameResult" Checked="Statistics_Tie_Checked"/>
                             <StackPanel>
                                 <RadioButton x:Name="Statistics_Out4"
-                                             Content="四抓"/>
+                                             Content="四抓"
+                                             GroupName="GameResult" Checked="Statistics_Out4_Checked"/>
                                 <RadioButton x:Name="Statistics_Out3"
                                              Content="三抓"
-                                             Margin="0,30,0,0"/>
+                                             GroupName="GameResult"
+                                             Margin="0,30,0,0" Checked="Statistics_Out3_Checked"/>
                             </StackPanel>
                         </StackPanel>
                     </Grid>

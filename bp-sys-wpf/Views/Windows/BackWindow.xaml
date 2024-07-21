@@ -13,7 +13,7 @@
         WindowStartupLocation="CenterScreen"
         Background="#202020"
         ResizeMode="CanMinimize"
-        Closed="Window_Closed">
+        Closed="Window_Closed" Closing="Window_Closing">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -66,7 +66,7 @@
                         Width="80"
                         Icon="{ui:SymbolIcon ArrowReset24}"
                         Grid.Column="1"
-                        HorizontalAlignment="Center"/>
+                        HorizontalAlignment="Center" Click="Reset_Click"/>
                     <GroupBox Header="计时器（可自定义）"
                           Foreground="White"
                           HorizontalAlignment="Right"
@@ -148,7 +148,7 @@
                                                Icon="{ui:SymbolIcon PersonWalking24}"
                                                NavigationCacheMode="Enabled"
                                                TargetPageType = "{x:Type pages:TalentPage}"/>
-                        <ui:NavigationViewItem Content="比分"
+                        <ui:NavigationViewItem Content="比分控制"
                                                Icon="{ui:SymbolIcon NumberRow24}"
                                                NavigationCacheMode="Enabled"
                                                TargetPageType = "{x:Type pages:ScoreControlPage}"/>

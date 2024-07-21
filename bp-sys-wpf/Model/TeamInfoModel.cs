@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using System.Windows.Media;
+﻿using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace bp_sys_wpf.Model
@@ -57,12 +56,12 @@ namespace bp_sys_wpf.Model
             set { _AwayButtonState = value; }
         }
     }
-    public class Team
+    public class Team//队伍信息
     {
-        private string? _name;
+        private string _name;
         private string _state;
 
-        public string? Name
+        public string Name
         {
             get { return _name; }
             set { _name = value; }
@@ -82,10 +81,10 @@ namespace bp_sys_wpf.Model
             set { _Logo = value; }
         }
 
+        public Score Score { get; set; } = new Score();
 
     }
-
-    public class Player
+    public class Player//选手信息
     {
         private string _name;
         private string _state;
@@ -108,7 +107,7 @@ namespace bp_sys_wpf.Model
         }
     }
 
-    public class TeamInfoPageButton
+    public class TeamInfoPageButton//选手名称边上的按钮的状态
     {
         private string _content = "上场";
 
@@ -118,9 +117,9 @@ namespace bp_sys_wpf.Model
             set { _content = value; }
         }
 
-        private Wpf.Ui.Controls.SymbolIcon _icon= new Wpf.Ui.Controls.SymbolIcon
+        private Wpf.Ui.Controls.SymbolIcon _icon = new Wpf.Ui.Controls.SymbolIcon
         {
-            Symbol= Wpf.Ui.Controls.SymbolRegular.ArrowExportUp24
+            Symbol = Wpf.Ui.Controls.SymbolRegular.ArrowExportUp24
         };
 
         public Wpf.Ui.Controls.SymbolIcon Icon

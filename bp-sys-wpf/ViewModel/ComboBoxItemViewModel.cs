@@ -1,10 +1,4 @@
-﻿using bp_sys_wpf.Views.Windows;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 using System.Windows;
 
 namespace bp_sys_wpf.ViewModel

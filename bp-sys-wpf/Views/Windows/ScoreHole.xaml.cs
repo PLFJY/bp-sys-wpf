@@ -17,34 +17,35 @@ namespace bp_sys_wpf
         {
             InitializeComponent();
             GetFilePath getFilePath = new GetFilePath();
+            DataContext = BackWindow.backWindow.rootViewModel;
             scoreHole = this;
             try { this.Background = new ImageBrush(new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/score_hole.png")))); } catch { }
             MainName.Foreground = Config.ScoreHole.Color.Name;
             AwayName.Foreground = Config.ScoreHole.Color.Name;
-            Bo1FScoreMain.Foreground = Config.ScoreHole.Color.Score;
-            Bo1SScoreMain.Foreground = Config.ScoreHole.Color.Score;
-            Bo1FScoreAway.Foreground = Config.ScoreHole.Color.Score;
-            Bo1SScoreAway.Foreground = Config.ScoreHole.Color.Score;
+            ScoreMain0.Foreground = Config.ScoreHole.Color.Score;
+            ScoreMain1.Foreground = Config.ScoreHole.Color.Score;
+            ScoreAway0.Foreground = Config.ScoreHole.Color.Score;
+            ScoreAway1.Foreground = Config.ScoreHole.Color.Score;
 
-            Bo2FScoreMain.Foreground = Config.ScoreHole.Color.Score;
-            Bo2SScoreMain.Foreground = Config.ScoreHole.Color.Score;
-            Bo2FScoreAway.Foreground = Config.ScoreHole.Color.Score;
-            Bo2SScoreAway.Foreground = Config.ScoreHole.Color.Score;
+            ScoreMain2.Foreground = Config.ScoreHole.Color.Score;
+            ScoreMain3.Foreground = Config.ScoreHole.Color.Score;
+            ScoreAway2.Foreground = Config.ScoreHole.Color.Score;
+            ScoreAway3.Foreground = Config.ScoreHole.Color.Score;
 
-            Bo3FScoreMain.Foreground = Config.ScoreHole.Color.Score;
-            Bo3SScoreMain.Foreground = Config.ScoreHole.Color.Score;
-            Bo3FScoreAway.Foreground = Config.ScoreHole.Color.Score;
-            Bo3SScoreAway.Foreground = Config.ScoreHole.Color.Score;
+            ScoreMain4.Foreground = Config.ScoreHole.Color.Score;
+            ScoreMain5.Foreground = Config.ScoreHole.Color.Score;
+            ScoreAway4.Foreground = Config.ScoreHole.Color.Score;
+            ScoreAway5.Foreground = Config.ScoreHole.Color.Score;
 
-            Bo4FScoreMain.Foreground = Config.ScoreHole.Color.Score;
-            Bo4SScoreMain.Foreground = Config.ScoreHole.Color.Score;
-            Bo4FScoreAway.Foreground = Config.ScoreHole.Color.Score;
-            Bo4SScoreAway.Foreground = Config.ScoreHole.Color.Score;
+            ScoreMain6.Foreground = Config.ScoreHole.Color.Score;
+            ScoreMain7.Foreground = Config.ScoreHole.Color.Score;
+            ScoreAway6.Foreground = Config.ScoreHole.Color.Score;
+            ScoreAway7.Foreground = Config.ScoreHole.Color.Score;
 
-            Bo5FScoreMain.Foreground = Config.ScoreHole.Color.Score;
-            Bo5SScoreMain.Foreground = Config.ScoreHole.Color.Score;
-            Bo5FScoreAway.Foreground = Config.ScoreHole.Color.Score;
-            Bo5SScoreAway.Foreground = Config.ScoreHole.Color.Score;
+            ScoreMain8.Foreground = Config.ScoreHole.Color.Score;
+            ScoreMain9.Foreground = Config.ScoreHole.Color.Score;
+            ScoreAway8.Foreground = Config.ScoreHole.Color.Score;
+            ScoreAway9.Foreground = Config.ScoreHole.Color.Score;
         }
 
         private void ScoreHole1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

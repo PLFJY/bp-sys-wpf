@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
+﻿using System.Windows.Media.Imaging;
 
 namespace bp_sys_wpf.Model
 {
@@ -82,9 +75,9 @@ namespace bp_sys_wpf.Model
     }
     public class NowTeam
     {
-        private string? _Name;
+        private string _Name;
 
-        public string? Name
+        public string Name
         {
             get { return _Name; }
             set { _Name = value; }
@@ -97,6 +90,15 @@ namespace bp_sys_wpf.Model
             get { return _Logo; }
             set { _Logo = value; }
         }
-
+        public Score Score { get; set; }
+    }
+    public class Score
+    {
+        public int W { get; set; } = 0;
+        public int D { get; set; } = 0;
+        public int L { get; set; } = 0;
+        public int S { get; set; } = 0;
+        public string BackView { get; set; } = "W:0 D:0 L:0 小比分:0";
+        public string FrontView { get; set; } = "W0 D0 L0";
     }
 }

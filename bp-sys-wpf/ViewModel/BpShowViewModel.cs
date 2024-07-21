@@ -1,14 +1,6 @@
 ﻿using bp_sys_wpf.Model;
 using bp_sys_wpf.Views.Windows;
-using System.Windows;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media.Imaging;
 
 namespace bp_sys_wpf.ViewModel
 {

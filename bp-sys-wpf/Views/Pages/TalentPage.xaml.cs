@@ -1,5 +1,4 @@
-﻿using bp_sys_wpf.ViewModel;
-using bp_sys_wpf.Views.Windows;
+﻿using bp_sys_wpf.Views.Windows;
 using System.Windows.Controls;
 
 namespace bp_sys_wpf.Views.Pages

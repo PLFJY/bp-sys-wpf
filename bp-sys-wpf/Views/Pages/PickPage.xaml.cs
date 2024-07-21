@@ -23,7 +23,8 @@ namespace bp_sys_wpf.Views.Pages
         {
             try
             {
-                if (Sur1And2Border.IsChecked == true){
+                if (Sur1And2Border.IsChecked == true)
+                {
                     Front.front.SurPicking1.Visibility = Visibility.Visible;
                     Front.front.SurPicking2.Visibility = Visibility.Visible;
                     Front.front.SurPicking1.BeginAnimation(UIElement.OpacityProperty, AnimationSetting.fadeIn);

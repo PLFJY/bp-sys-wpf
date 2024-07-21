@@ -7,7 +7,7 @@
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         mc:Ignorable="d"
         Background="#202020"
-        Title="手动控制" Height="310" Width="650" WindowStartupLocation="CenterScreen">
+        Title="手动控制" Height="310" Width="650" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -16,28 +16,28 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+    <StackPanel Orientation="Horizontal" Margin="15,10,0,0">
         <StackPanel Grid.Column="0" VerticalAlignment="Center">
             <Button Height="40" Width="110" Content="主场胜+1" x:Name="MainWinAdd" Click="MainWinAdd_Click"/>
-            <Button Height="40" Width="110" Margin="0,30,0,0" Content="主场平+1" x:Name="MainAllAdd" Click="MainAllAdd_Click"/>
+            <Button Height="40" Width="110" Margin="0,30,0,0" Content="主场平+1" x:Name="MainTieAdd" Click="MainTieAdd_Click"/>
             <Button Height="40" Width="110" Margin="0,30,0,0" Content="主场负+1" x:Name="MainLoseAdd" Click="MainLoseAdd_Click"/>
             <Button Height="40" Width="110" Margin="0,30,0,0" Content="主场小比分+1" x:Name="MainSAdd" Click="MainSAdd_Click"/>
         </StackPanel>
         <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="15,0,0,0">
             <Button Height="40" Width="110" Content="主场胜-1" x:Name="MainWinMinus" Click="MainWinMinus_Click"/>
-            <Button Height="40" Width="110" Margin="0,30,0,0" Content="主场平-1" x:Name="MainAllMinus" Click="MainAllMinus_Click"/>
+            <Button Height="40" Width="110" Margin="0,30,0,0" Content="主场平-1" x:Name="MainTieMinus" Click="MainTieMinus_Click"/>
             <Button Height="40" Width="110" Margin="0,30,0,0" Content="主场负-1" x:Name="MainLoseMinus" Click="MainLoseMinus_Click"/>
             <Button Height="40" Width="110" Margin="0,30,0,0" Content="主场小比分-1" x:Name="MainSMinus" Click="MainSMinus_Click"/>
         </StackPanel>
         <StackPanel Grid.Column="3" VerticalAlignment="Center" Margin="15,0,0,0">
             <Button Height="40" Width="110" Content="客场胜+1" x:Name="AwayWinAdd" Click="AwayWinAdd_Click"/>
             <Button Height="40" Width="110" Margin="0,30,0,0" Content="客场平+1" x:Name="AwayLoseAdd" Click="AwayLoseAdd_Click"/>
-            <Button Height="40" Width="110" Margin="0,30,0,0" Content="客场负+1" x:Name="AwayAllAdd" Click="AwayAllAdd_Click"/>
+            <Button Height="40" Width="110" Margin="0,30,0,0" Content="客场负+1" x:Name="AwayTieAdd" Click="AwayTieAdd_Click"/>
             <Button Height="40" Width="110" Margin="0,30,0,0" Content="客场小比分+1" x:Name="AwaySAdd" Click="AwaySAdd_Click"/>
         </StackPanel>
         <StackPanel Grid.Column="4" VerticalAlignment="Center" Margin="15,0,0,0">
             <Button Height="40" Width="110" Content="客场胜-1" x:Name="AwayWinMinus" Click="AwayWinMinus_Click"/>
-            <Button Height="40" Width="110" Margin="0,30,0,0" Content="客场平-1" x:Name="AwayAllMinus" Click="AwayAllMinus_Click"/>
+            <Button Height="40" Width="110" Margin="0,30,0,0" Content="客场平-1" x:Name="AwayTieMinus" Click="AwayTieMinus_Click"/>
             <Button Height="40" Width="110" Margin="0,30,0,0" Content="客场负-1" x:Name="AwayLoseMinus" Click="AwayLoseMinus_Click"/>
             <Button Height="40" Width="110" Margin="0,30,0,0" Content="客场小比分-1" x:Name="AwaySMinus" Click="AwaySMinus_Click"/>
         </StackPanel>

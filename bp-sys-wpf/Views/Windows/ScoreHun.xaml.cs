@@ -16,6 +16,7 @@ namespace bp_sys_wpf
         public ScoreHun()
         {
             InitializeComponent();
+            DataContext = BackWindow.backWindow.rootViewModel;
             GetFilePath getFilePath = new GetFilePath();
             scoreHun = this;
             try { this.Background = new ImageBrush(new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/score_bg_h.png")))); } catch { }

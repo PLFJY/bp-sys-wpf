@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
+﻿using System.IO;
 using System.Windows.Media.Imaging;
 
 namespace bp_sys_wpf.ViewModel
@@ -24,7 +18,7 @@ namespace bp_sys_wpf.ViewModel
         {
             int spaceIndex = selectedValue.IndexOf(' ');
             selectedValue = selectedValue.Substring(spaceIndex + 1);
-            if(selectedValue == "")
+            if (selectedValue == "")
             {
                 return null;
             }
@@ -35,7 +29,7 @@ namespace bp_sys_wpf.ViewModel
         }
         public BitmapImage GetImage(string type, string selectedValue)
         {
-            if(selectedValue != "" && selectedValue != null)
+            if (selectedValue != "" && selectedValue != null)
             {
                 return new BitmapImage(new Uri(GetAbsoluteFilePath("pic/" + type + "/" + selectedValue + ".png")));
             }

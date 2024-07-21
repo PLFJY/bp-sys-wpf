@@ -60,5 +60,10 @@ namespace bp_sys_wpf.Views.Pages
                 catch { }
             }
         }
+
+        private void HunBanStateChange_Click(object sender, RoutedEventArgs e)
+        {
+            rootViewModel.BpReceiveModel = rootViewModel.BpReceiveModel;
+        }
     }
 }

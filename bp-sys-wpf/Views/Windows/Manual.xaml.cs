@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using bp_sys_wpf.ViewModel;
+using bp_sys_wpf.Views.Windows;
+using System.Windows;
 
 namespace bp_sys_wpf
 {
@@ -7,116 +9,116 @@ namespace bp_sys_wpf
     /// </summary>
     public partial class Manual : Window
     {
+        RootViewModel rootViewModel = BackWindow.backWindow.rootViewModel;
         public Manual()
         {
             InitializeComponent();
         }
         private void Refresh()
         {
-            Score.score.FrontScoreRefresh();
-            Score.score.ScoreCtrWindowRefresh();
-            Score.score.ScoreWindowRefresh();
+            rootViewModel.TeamInfoViewModel.ScoreViewRefresh();
+            rootViewModel.TeamInfoViewModel.RefreshNow();
         }
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            rootViewModel.TeamInfoViewModel.TeamInfoModel.MainTeamInfo.Score.S = 0;
+            rootViewModel.TeamInfoViewModel.TeamInfoModel.AwayTeamInfo.Score.S = 0;
+            Refresh();
+        }
+
         private void MainWinAdd_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.mainWindow.MainWin++;
+            rootViewModel.TeamInfoViewModel.TeamInfoModel.MainTeamInfo.Score.W++;
             Refresh();
         }
 
-        private void MainWinMinus_Click(object sender, RoutedEventArgs e)
+        private void MainTieAdd_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.mainWindow.MainWin--;
-            Refresh();
-        }
-
-        private void MainAllAdd_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow.mainWindow.MainAll++;
-            Refresh();
-        }
-
-        private void MainLoseMinus_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow.mainWindow.MainLose--;
+            rootViewModel.TeamInfoViewModel.TeamInfoModel.MainTeamInfo.Score.D++;
             Refresh();
         }
 
         private void MainLoseAdd_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.mainWindow.MainLose++;
-            Refresh();
-        }
-
-        private void MainAllMinus_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow.mainWindow.MainAll--;
+            rootViewModel.TeamInfoViewModel.TeamInfoModel.MainTeamInfo.Score.L++;
             Refresh();
         }
 
         private void MainSAdd_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.mainWindow.MainS++;
+            rootViewModel.TeamInfoViewModel.TeamInfoModel.MainTeamInfo.Score.S++;
+            Refresh();
+        }
+
+        private void MainWinMinus_Click(object sender, RoutedEventArgs e)
+        {
+            rootViewModel.TeamInfoViewModel.TeamInfoModel.MainTeamInfo.Score.W--;
+            Refresh();
+        }
+
+        private void MainTieMinus_Click(object sender, RoutedEventArgs e)
+        {
+            rootViewModel.TeamInfoViewModel.TeamInfoModel.MainTeamInfo.Score.D--;
+            Refresh();
+        }
+
+        private void MainLoseMinus_Click(object sender, RoutedEventArgs e)
+        {
+            rootViewModel.TeamInfoViewModel.TeamInfoModel.MainTeamInfo.Score.L--;
             Refresh();
         }
 
         private void MainSMinus_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.mainWindow.MainS--;
+            rootViewModel.TeamInfoViewModel.TeamInfoModel.MainTeamInfo.Score.S--;
             Refresh();
         }
 
         private void AwayWinAdd_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.mainWindow.AwayWin++;
-            Refresh();
-        }
-
-        private void AwayWinMinus_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow.mainWindow.AwayWin--;
-            Refresh();
-        }
-
-        private void AwayAllAdd_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow.mainWindow.AwayLose++;
-            Refresh();
-        }
-
-        private void AwayLoseMinus_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow.mainWindow.AwayLose--;
+            rootViewModel.TeamInfoViewModel.TeamInfoModel.AwayTeamInfo.Score.W++;
             Refresh();
         }
 
         private void AwayLoseAdd_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.mainWindow.AwayAll++;
+            rootViewModel.TeamInfoViewModel.TeamInfoModel.AwayTeamInfo.Score.D++;
             Refresh();
         }
 
-        private void AwayAllMinus_Click(object sender, RoutedEventArgs e)
+        private void AwayTieAdd_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.mainWindow.AwayAll--;
+            rootViewModel.TeamInfoViewModel.TeamInfoModel.AwayTeamInfo.Score.L++;
             Refresh();
         }
 
         private void AwaySAdd_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.mainWindow.AwayS++;
+            rootViewModel.TeamInfoViewModel.TeamInfoModel.AwayTeamInfo.Score.S++;
+            Refresh();
+        }
+
+        private void AwayWinMinus_Click(object sender, RoutedEventArgs e)
+        {
+            rootViewModel.TeamInfoViewModel.TeamInfoModel.AwayTeamInfo.Score.W--;
+            Refresh();
+        }
+
+        private void AwayTieMinus_Click(object sender, RoutedEventArgs e)
+        {
+            rootViewModel.TeamInfoViewModel.TeamInfoModel.AwayTeamInfo.Score.D--;
+            Refresh();
+        }
+
+        private void AwayLoseMinus_Click(object sender, RoutedEventArgs e)
+        {
+            rootViewModel.TeamInfoViewModel.TeamInfoModel.AwayTeamInfo.Score.L--;
             Refresh();
         }
 
         private void AwaySMinus_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.mainWindow.AwayS--;
-            Refresh();
-        }
-
-        private void Clear_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow.mainWindow.MainS = 0;
-            MainWindow.mainWindow.AwayS = 0;
+            rootViewModel.TeamInfoViewModel.TeamInfoModel.AwayTeamInfo.Score.S--;
             Refresh();
         }
     }

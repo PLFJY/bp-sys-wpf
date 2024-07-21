@@ -1,5 +1,4 @@
-﻿using bp_sys_wpf.Model;
-using bp_sys_wpf.ViewModel;
+﻿using bp_sys_wpf.ViewModel;
 using bp_sys_wpf.Views.Windows;
 using System.Windows;
 using System.Windows.Controls;

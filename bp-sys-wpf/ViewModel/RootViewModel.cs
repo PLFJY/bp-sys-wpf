@@ -1,10 +1,5 @@
 ﻿using bp_sys_wpf.Model;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace bp_sys_wpf.ViewModel
 {
@@ -18,20 +13,75 @@ namespace bp_sys_wpf.ViewModel
                 handler(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public TeamInfoViewModel TeamInfoViewModel { get; set; } = new TeamInfoViewModel();
-        public TimmerViewModel TimmerViewModel { get; set; } = new TimmerViewModel();
-        public BpShowViewModel BpShowViewModel { get; set; } = new BpShowViewModel();
-        public ComboBoxItemViewModel ComboBoxItemViewModel { get; set; } = new ComboBoxItemViewModel();
-        
+        private TeamInfoViewModel _TeamInfoViewModel = new TeamInfoViewModel();
+
+        public TeamInfoViewModel TeamInfoViewModel
+        {
+            get { return _TeamInfoViewModel; }
+            set
+            {
+                _TeamInfoViewModel = value;
+                RaisePropertyChanged("TeamInfoViewModel");
+            }
+        }
+
+        private TimmerViewModel _TimmerViewModel = new TimmerViewModel();
+
+        public TimmerViewModel TimmerViewModel
+        {
+            get { return _TimmerViewModel; }
+            set
+            {
+                _TimmerViewModel = value;
+                RaisePropertyChanged("TimmerViewModel");
+            }
+        }
+
+        private BpShowViewModel _BpShowViewModel = new BpShowViewModel();
+
+        public BpShowViewModel BpShowViewModel
+        {
+            get { return _BpShowViewModel; }
+            set { _BpShowViewModel = value; }
+        }
+
+        private ComboBoxItemViewModel myVar = new ComboBoxItemViewModel();
+
+        public ComboBoxItemViewModel ComboBoxItemViewModel
+        {
+            get { return myVar; }
+            set
+            {
+                myVar = value;
+                RaisePropertyChanged("ComboBoxItemViewModel");
+            }
+        }
+
+
         private BpReceiveModel _BpReceiveModel = new BpReceiveModel();
 
         public BpReceiveModel BpReceiveModel
         {
             get { return _BpReceiveModel; }
-            set { _BpReceiveModel = value;
+            set
+            {
+                _BpReceiveModel = value;
                 RaisePropertyChanged("BpReceiveModel");
             }
         }
+
+        private ScoreHoleModel _ScoreHoleViewModel = new ScoreHoleModel();
+
+        public ScoreHoleModel ScoreHoleViewModel
+        {
+            get { return _ScoreHoleViewModel; }
+            set
+            {
+                _ScoreHoleViewModel = value;
+                RaisePropertyChanged("ScoreHoleViewModel");
+            }
+        }
+
 
     }
 }

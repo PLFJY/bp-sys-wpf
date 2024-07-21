@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 using System.Windows.Threading;
 
 namespace bp_sys_wpf.ViewModel
@@ -33,7 +27,7 @@ namespace bp_sys_wpf.ViewModel
         {
             get
             {
-                if (_CountdownTime == null || _CountdownTime=="VS")
+                if (_CountdownTime == null || _CountdownTime == "VS")
                 {
                     dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
                     dispatcherTimer.Interval = TimeSpan.FromSeconds(1);

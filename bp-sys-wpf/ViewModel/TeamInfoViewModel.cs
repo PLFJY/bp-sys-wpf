@@ -1,14 +1,12 @@
 ﻿using bp_sys_wpf.Model;
-using bp_sys_wpf.Views.Pages;
+using bp_sys_wpf.Views.Windows;
 using Microsoft.Win32;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Xml.Serialization;
-using Wpf.Ui.Controls;
-using System.IO;
 
 namespace bp_sys_wpf.ViewModel
 {
@@ -32,13 +30,13 @@ namespace bp_sys_wpf.ViewModel
                 _NowModel = value;
                 if (TeamInfoModel.MainTeamInfo.State == "监管者")
                 {
-                    for(int i = 0; i < 4; i++)
+                    for (int i = 0; i < 4; i++)
                     {
                         NowModel.NowSurPlayerId[i] = $"{TeamInfoModel.AwayTeamInfo.Name}__{NowModel.NowPlayer[i]}";
                     }
                     NowModel.NowHunPlayerId = $"{TeamInfoModel.MainTeamInfo.Name}__{NowModel.NowPlayer[4]}";
                 }
-                if(TeamInfoModel.AwayTeamInfo.State == "监管者")
+                if (TeamInfoModel.AwayTeamInfo.State == "监管者")
                 {
                     for (int i = 0; i < 4; i++)
                     {
@@ -65,12 +63,10 @@ namespace bp_sys_wpf.ViewModel
                         {
                             _TeamInfoModel.MainTeamPlayer.Add(new Player
                             {
-                                Name = "",
                                 State = "求生者"
                             });
                             _TeamInfoModel.AwayTeamPlayer.Add(new Player
                             {
-                                Name = "",
                                 State = "求生者"
                             });
                         }
@@ -78,12 +74,10 @@ namespace bp_sys_wpf.ViewModel
                         {
                             _TeamInfoModel.MainTeamPlayer.Add(new Player
                             {
-                                Name = "",
                                 State = "监管者"
                             });
                             _TeamInfoModel.AwayTeamPlayer.Add(new Player
                             {
-                                Name = "",
                                 State = "监管者"
                             });
                         }
@@ -97,6 +91,8 @@ namespace bp_sys_wpf.ViewModel
                     NowModel.NowHunTeam.Name = _TeamInfoModel.AwayTeamInfo.Name;
                     NowModel.NowSurTeam.LOGO = _TeamInfoModel.MainTeamInfo.LOGO;
                     NowModel.NowHunTeam.LOGO = _TeamInfoModel.AwayTeamInfo.LOGO;
+                    NowModel.NowSurTeam.Score = _TeamInfoModel.MainTeamInfo.Score;
+                    NowModel.NowHunTeam.Score = _TeamInfoModel.AwayTeamInfo.Score;
                 }
                 else
                 {
@@ -104,6 +100,8 @@ namespace bp_sys_wpf.ViewModel
                     NowModel.NowSurTeam.Name = _TeamInfoModel.AwayTeamInfo.Name;
                     NowModel.NowSurTeam.LOGO = _TeamInfoModel.AwayTeamInfo.LOGO;
                     NowModel.NowHunTeam.LOGO = _TeamInfoModel.MainTeamInfo.LOGO;
+                    NowModel.NowHunTeam.Score = _TeamInfoModel.MainTeamInfo.Score;
+                    NowModel.NowSurTeam.Score = _TeamInfoModel.AwayTeamInfo.Score;
                 }
                 return _TeamInfoModel;
             }
@@ -116,6 +114,8 @@ namespace bp_sys_wpf.ViewModel
                     NowModel.NowHunTeam.Name = _TeamInfoModel.AwayTeamInfo.Name;
                     NowModel.NowSurTeam.LOGO = _TeamInfoModel.MainTeamInfo.LOGO;
                     NowModel.NowHunTeam.LOGO = _TeamInfoModel.AwayTeamInfo.LOGO;
+                    NowModel.NowSurTeam.Score = _TeamInfoModel.MainTeamInfo.Score;
+                    NowModel.NowHunTeam.Score = _TeamInfoModel.AwayTeamInfo.Score;
                 }
                 else
                 {
@@ -123,6 +123,8 @@ namespace bp_sys_wpf.ViewModel
                     NowModel.NowSurTeam.Name = _TeamInfoModel.AwayTeamInfo.Name;
                     NowModel.NowSurTeam.LOGO = _TeamInfoModel.AwayTeamInfo.LOGO;
                     NowModel.NowHunTeam.LOGO = _TeamInfoModel.MainTeamInfo.LOGO;
+                    NowModel.NowHunTeam.Score = _TeamInfoModel.MainTeamInfo.Score;
+                    NowModel.NowSurTeam.Score = _TeamInfoModel.AwayTeamInfo.Score;
                 }
                 RaisePropertyChanged("TeamInfoModel");
             }
@@ -436,17 +438,33 @@ namespace bp_sys_wpf.ViewModel
                     }
                 }
             }
+            RootViewModel rootViewModel = BackWindow.backWindow.rootViewModel;
+            //全局Ban自动填充
+            for (int i = 0; i < 6; i++)
+            {
+                if (TeamInfoModel.MainTeamInfo.State == "求生者")
+                {
+                    rootViewModel.BpReceiveModel.SurHoleBan[i] = rootViewModel.BpReceiveModel.SurHoleBanMainRecord[i];
+                }
+                else
+                {
+                    rootViewModel.BpReceiveModel.SurHoleBan[i] = rootViewModel.BpReceiveModel.SurHoleBanAwayRecord[i];
+                }
+                rootViewModel.BpShowViewModel.ShowBp("SurHoleBan", i);
+            }
             TeamInfoModel = TeamInfoModel;
             NowModel = NowModel;
+            rootViewModel.BpReceiveModel = rootViewModel.BpReceiveModel;
+            rootViewModel.BpShowViewModel = rootViewModel.BpShowViewModel;
         }
-        public void SwapPlayers(int num1, int num2)
+        public void SwapPlayers(int num1, int num2)//求生pick界面的位置互换
         {
             (NowModel.NowPlayer[num1], NowModel.NowPlayer[num2]) = (NowModel.NowPlayer[num2], NowModel.NowPlayer[num1]);
             TeamInfoModel = TeamInfoModel;
             NowModel = NowModel;
         }
 
-        public void ImportTeamInfoFromJson(string team)
+        public void ImportTeamInfoFromJson(string team)//从json导入队伍信息
         {
             //调用通用对话框导入json文件
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -508,6 +526,148 @@ namespace bp_sys_wpf.ViewModel
             }
             TeamInfoModel = TeamInfoModel;
             NowModel = NowModel;
+        }
+        public void ScoreSSet(string type, int Resault)//小比分（自动化）设置
+        {
+            if (Resault == 2)
+            {
+                TeamInfoModel.MainTeamInfo.Score.S += 2;
+                TeamInfoModel.AwayTeamInfo.Score.S += 2;
+            }
+            else
+            {
+                if (type == "sur")
+                {
+                    if (TeamInfoModel.MainTeamInfo.State == "求生者")//主队是人队
+                    {
+                        if (Resault == 4)//四跑
+                        {
+                            TeamInfoModel.MainTeamInfo.Score.S += 5;
+                        }
+                        if (Resault == 3)//三跑
+                        {
+                            TeamInfoModel.MainTeamInfo.Score.S += 3;
+                            TeamInfoModel.AwayTeamInfo.Score.S += 1;
+                        }
+                    }
+                    if (TeamInfoModel.AwayTeamInfo.State == "求生者")//客队是人队
+                    {
+                        if (Resault == 4)//四跑
+                        {
+                            TeamInfoModel.AwayTeamInfo.Score.S += 5;
+                        }
+                        if (Resault == 3)//三跑
+                        {
+                            TeamInfoModel.MainTeamInfo.Score.S += 1;
+                            TeamInfoModel.AwayTeamInfo.Score.S += 3;
+                        }
+                    }
+                }
+                else
+                {
+                    if (TeamInfoModel.MainTeamInfo.State == "监管者")//主队是屠夫
+                    {
+                        if (Resault == 4)//四抓
+                        {
+                            TeamInfoModel.MainTeamInfo.Score.S += 5;
+                        }
+                        if (Resault == 3)//三抓
+                        {
+                            TeamInfoModel.MainTeamInfo.Score.S += 3;
+                            TeamInfoModel.AwayTeamInfo.Score.S += 1;
+                        }
+                    }
+                    if (TeamInfoModel.AwayTeamInfo.State == "监管者")//客队是屠夫
+                    {
+                        if (Resault == 4)//四抓
+                        {
+                            TeamInfoModel.AwayTeamInfo.Score.S += 5;
+                        }
+                        if (Resault == 3)//三抓
+                        {
+                            TeamInfoModel.MainTeamInfo.Score.S += 1;
+                            TeamInfoModel.AwayTeamInfo.Score.S += 3;
+                        }
+                    }
+                }
+            }
+            ScoreViewRefresh();
+            BackWindow.backWindow.rootViewModel.TeamInfoViewModel = BackWindow.backWindow.rootViewModel.TeamInfoViewModel;
+        }
+        public void BigScoreSettlement()
+        {
+            if (TeamInfoModel.MainTeamInfo.Score.S > TeamInfoModel.AwayTeamInfo.Score.S)//主队当前回合胜利
+            {
+                TeamInfoModel.MainTeamInfo.Score.W++;
+                TeamInfoModel.AwayTeamInfo.Score.L++;
+            }
+            if (TeamInfoModel.MainTeamInfo.Score.S < TeamInfoModel.AwayTeamInfo.Score.S)//客队当前回合胜利
+            {
+                TeamInfoModel.MainTeamInfo.Score.L++;
+                TeamInfoModel.AwayTeamInfo.Score.W++;
+            }
+            if (TeamInfoModel.MainTeamInfo.Score.S == TeamInfoModel.AwayTeamInfo.Score.S)//平局
+            {
+                TeamInfoModel.MainTeamInfo.Score.D++;
+                TeamInfoModel.AwayTeamInfo.Score.D++;
+            }
+            TeamInfoModel.MainTeamInfo.Score.S = 0;
+            TeamInfoModel.AwayTeamInfo.Score.S = 0;
+            ScoreViewRefresh();
+            //RefreshNow();
+            BackWindow.backWindow.rootViewModel.TeamInfoViewModel = BackWindow.backWindow.rootViewModel.TeamInfoViewModel;
+        }
+        public void ScoreViewRefresh()//比分显示的内容拼合
+        {
+            TeamInfoModel.MainTeamInfo.Score.FrontView = $"W{TeamInfoModel.MainTeamInfo.Score.W} D{TeamInfoModel.MainTeamInfo.Score.D} L{TeamInfoModel.MainTeamInfo.Score.L}";
+            TeamInfoModel.AwayTeamInfo.Score.FrontView = $"W{TeamInfoModel.AwayTeamInfo.Score.W} D{TeamInfoModel.AwayTeamInfo.Score.D} L{TeamInfoModel.AwayTeamInfo.Score.L}";
+            TeamInfoModel.MainTeamInfo.Score.BackView = $"W:{TeamInfoModel.MainTeamInfo.Score.W} D:{TeamInfoModel.MainTeamInfo.Score.D} L:{TeamInfoModel.MainTeamInfo.Score.L} 小比分:{TeamInfoModel.MainTeamInfo.Score.S}";
+            TeamInfoModel.AwayTeamInfo.Score.BackView = $"W:{TeamInfoModel.AwayTeamInfo.Score.W} D:{TeamInfoModel.AwayTeamInfo.Score.D} L:{TeamInfoModel.AwayTeamInfo.Score.L} 小比分:{TeamInfoModel.AwayTeamInfo.Score.S}";
+            BackWindow.backWindow.rootViewModel.TeamInfoViewModel = BackWindow.backWindow.rootViewModel.TeamInfoViewModel;
+        }
+
+        public void RefreshNow()
+        {
+            if (_TeamInfoModel.MainTeamInfo.State == "求生者")
+            {
+                NowModel.NowSurTeam.Name = TeamInfoModel.MainTeamInfo.Name;
+                NowModel.NowHunTeam.Name = TeamInfoModel.AwayTeamInfo.Name;
+                NowModel.NowSurTeam.LOGO = TeamInfoModel.MainTeamInfo.LOGO;
+                NowModel.NowHunTeam.LOGO = TeamInfoModel.AwayTeamInfo.LOGO;
+                NowModel.NowSurTeam.Score = TeamInfoModel.MainTeamInfo.Score;
+                NowModel.NowHunTeam.Score = TeamInfoModel.AwayTeamInfo.Score;
+                NowModel.NowSurTeam.Score.S = TeamInfoModel.MainTeamInfo.Score.S;
+                NowModel.NowHunTeam.Score.S = TeamInfoModel.AwayTeamInfo.Score.S;
+            }
+            else
+            {
+                NowModel.NowHunTeam.Name = TeamInfoModel.MainTeamInfo.Name;
+                NowModel.NowSurTeam.Name = TeamInfoModel.AwayTeamInfo.Name;
+                NowModel.NowSurTeam.LOGO = TeamInfoModel.AwayTeamInfo.LOGO;
+                NowModel.NowHunTeam.LOGO = TeamInfoModel.MainTeamInfo.LOGO;
+                NowModel.NowHunTeam.Score = TeamInfoModel.MainTeamInfo.Score;
+                NowModel.NowSurTeam.Score = TeamInfoModel.AwayTeamInfo.Score;
+                NowModel.NowHunTeam.Score.S = TeamInfoModel.MainTeamInfo.Score.S;
+                NowModel.NowSurTeam.Score.S = TeamInfoModel.AwayTeamInfo.Score.S;
+            }
+            TeamInfoModel = TeamInfoModel;
+            NowModel = NowModel;
+        }
+
+        public void ClearScoreAll()
+        {
+            TeamInfoModel.MainTeamInfo.Score.W = 0;
+            TeamInfoModel.MainTeamInfo.Score.D = 0;
+            TeamInfoModel.MainTeamInfo.Score.L = 0;
+            TeamInfoModel.MainTeamInfo.Score.S = 0;
+
+            TeamInfoModel.AwayTeamInfo.Score.W = 0;
+            TeamInfoModel.AwayTeamInfo.Score.D = 0;
+            TeamInfoModel.AwayTeamInfo.Score.L = 0;
+            TeamInfoModel.AwayTeamInfo.Score.S = 0;
+            ScoreViewRefresh();
+            //RefreshNow();
+            BackWindow.backWindow.rootViewModel.TeamInfoViewModel = BackWindow.backWindow.rootViewModel.TeamInfoViewModel;
         }
     }
 }

@@ -16,6 +16,7 @@ namespace bp_sys_wpf
         public ScoreSur()
         {
             InitializeComponent();
+            DataContext = BackWindow.backWindow.rootViewModel;
             GetFilePath getFilePath = new GetFilePath();
             scoreSur = this;
             try { this.Background = new ImageBrush(new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/score_bg_s.png")))); } catch { }

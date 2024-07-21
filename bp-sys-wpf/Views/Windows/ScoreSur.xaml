@@ -16,28 +16,28 @@
         <Grid.Background>
             <ImageBrush/>
         </Grid.Background>
-        <Image Grid.Column="0" Stretch="UniformToFill" Width="176" HorizontalAlignment="Left" Margin="6,13,0,8" x:Name="Logo"/>
+        <Image Grid.Column="0" Stretch="UniformToFill" Width="176" HorizontalAlignment="Left" Margin="6,13,0,8" x:Name="Logo" Source="{Binding TeamInfoViewModel.NowModel.NowSurTeam.LOGO}"/>
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="78"/>
                 <RowDefinition Height="115"/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Foreground="White" FontSize="54" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" x:Name="TeamName"/>
+            <Label Grid.Row="0" Foreground="White" FontSize="54" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" x:Name="TeamName" Content="{Binding TeamInfoViewModel.NowModel.NowSurTeam.Name}"/>
             <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
                 <StackPanel>
-                    <Label Content="0" Foreground="White" FontFamily="DFPOP1W5-B5" FontSize="48" Margin="10,0,0,0" x:Name="Win"/>
+                    <Label Content="{Binding TeamInfoViewModel.NowModel.NowSurTeam.Score.W}" Foreground="White" FontFamily="DFPOP1W5-B5" FontSize="48" Margin="10,0,0,0" x:Name="Win"/>
                     <Label Content="胜" Foreground="White" FontFamily="汉仪第五人格体简" FontSize="45" Name="WinWord"/>
                 </StackPanel>
                 <StackPanel Margin="30,0,0,0">
-                    <Label Content="0" Foreground="White" FontFamily="DFPOP1W5-B5" FontSize="48" Margin="10,0,0,0" x:Name="All"/>
+                    <Label Content="{Binding TeamInfoViewModel.NowModel.NowSurTeam.Score.D}" Foreground="White" FontFamily="DFPOP1W5-B5" FontSize="48" Margin="10,0,0,0" x:Name="All"/>
                     <Label Content="平" Foreground="White" FontFamily="汉仪第五人格体简" FontSize="45" Name="AllWord"/>
                 </StackPanel>
                 <StackPanel Margin="30,0,0,0">
-                    <Label Content="0" Foreground="White" FontFamily="DFPOP1W5-B5" FontSize="48" Margin="10,0,0,0" x:Name="Lose"/>
+                    <Label Content="{Binding TeamInfoViewModel.NowModel.NowSurTeam.Score.L}" Foreground="White" FontFamily="DFPOP1W5-B5" FontSize="48" Margin="10,0,0,0" x:Name="Lose"/>
                     <Label Content="负" Foreground="White" FontFamily="汉仪第五人格体简" FontSize="45" Name="LoseWord"/>
                 </StackPanel>
             </StackPanel>
         </Grid>
-        <Label Grid.Column="3" Content="0" Foreground="Red" FontFamily="DFPOP1W5-B5" FontSize="150" HorizontalAlignment="Center" VerticalAlignment="Center" Height="160" Width="85" x:Name="S"/>
+        <Label Grid.Column="3" Content="{Binding TeamInfoViewModel.NowModel.NowSurTeam.Score.S}" Foreground="Red" FontFamily="DFPOP1W5-B5" FontSize="150" HorizontalAlignment="Center" VerticalAlignment="Center" Height="160" Width="85" x:Name="S"/>
     </Grid>
 </Window>

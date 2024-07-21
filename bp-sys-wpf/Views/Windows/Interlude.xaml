@@ -9,7 +9,7 @@
     <Viewbox>
         <Grid Height="810" Width="1440">
             <Grid.Background>
-                <ImageBrush ImageSource="/Views/Windows/interlude_bg.png"/>
+                <ImageBrush/>
             </Grid.Background>
             <Image x:Name="Bottom" Panel.ZIndex="3" Height="810" Width="1440"/>
             <Image x:Name="Sur_1" Grid.Row="0" Height="650" Width="300" Stretch="UniformToFill" Panel.ZIndex="2" Margin="10,153,1130,24" Source="{Binding BpShowViewModel.BpShow.SurPick[0].ChartcherBigImage}"/>
@@ -24,7 +24,7 @@
                 <Label x:Name="Hun_team_name" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="48" Margin="0,0,366,53" FontWeight="Bold" HorizontalContentAlignment="Center" Content="{Binding TeamInfoViewModel.NowModel.NowHunTeam.Name}"/>
             </Grid>
             <Grid Panel.ZIndex="4">
-                <Image x:Name="NameImage" Margin="0,-10,0,10" Height="810" Width="1440" Source="/Views/Windows/name.png"/>
+                <Image x:Name="NameImage" Margin="0,-10,0,10" Height="810" Width="1440"/>
                 <Label x:Name="Sur_1_player_name" FontSize="20" Panel.ZIndex="5" Width="160" Height="40" Margin="109,472,1171,298"  HorizontalContentAlignment="Center" FontWeight="Bold" Content="{Binding TeamInfoViewModel.NowModel.NowSurPlayerId[0]}"/>
                 <Label x:Name="Sur_2_player_name" FontSize="20" Panel.ZIndex="5" Width="160" Height="40" Margin="373,519,907,251"  HorizontalContentAlignment="Center" FontWeight="Bold" Content="{Binding TeamInfoViewModel.NowModel.NowSurPlayerId[1]}"/>
                 <Label x:Name="Sur_3_player_name" FontSize="20" Panel.ZIndex="5" Width="160" Height="40" Margin="944,519,336,251"  HorizontalContentAlignment="Center" FontWeight="Bold" Content="{Binding TeamInfoViewModel.NowModel.NowSurPlayerId[2]}"/>
@@ -32,29 +32,29 @@
                 <Label x:Name="Hun_player_name" FontSize="20" Panel.ZIndex="5" Width="160" Height="40" Margin="662,409,618,361"  HorizontalContentAlignment="Center" FontWeight="Bold" Content="{Binding TeamInfoViewModel.NowModel.NowHunPlayerId}"/>
             </Grid>
             <Grid Panel.ZIndex="5">
-                <StackPanel Orientation="Horizontal" Margin="-1060,280,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image x:Name="BorrowedTime1" Height="40" Width="40" Visibility="{Binding BpShowViewModel.BpShow.SurPick[0].Talent.BorrowedTime}"/>
-                    <Image x:Name="KneeJerkReflex1" Height="40" Width="40" Visibility="{Binding BpShowViewModel.BpShow.SurPick[0].Talent.KneeJerkReflex}"/>
-                    <Image x:Name="TideTurner1" Height="40" Width="40" Visibility="{Binding BpShowViewModel.BpShow.SurPick[0].Talent.TideTurner}"/>
-                    <Image x:Name="FlywheelEffect1" Height="40" Width="40" Visibility="{Binding BpShowViewModel.BpShow.SurPick[0].Talent.FlywheelEffect}"/>
+                <StackPanel Orientation="Horizontal" Margin="-1060,265,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image x:Name="BorrowedTime1" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[0].Talent.BorrowedTime}"/>
+                    <Image x:Name="KneeJerkReflex1" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[0].Talent.KneeJerkReflex}"/>
+                    <Image x:Name="TideTurner1" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[0].Talent.TideTurner}"/>
+                    <Image x:Name="FlywheelEffect1" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[0].Talent.FlywheelEffect}"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="-530,360,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image x:Name="BorrowedTime2" Height="40" Width="40" Visibility="{Binding BpShowViewModel.BpShow.SurPick[1].Talent.BorrowedTime}"/>
-                    <Image x:Name="KneeJerkReflex2" Height="40" Width="40" Visibility="{Binding BpShowViewModel.BpShow.SurPick[1].Talent.KneeJerkReflex}"/>
-                    <Image x:Name="TideTurner2" Height="40" Width="40" Visibility="{Binding BpShowViewModel.BpShow.SurPick[1].Talent.TideTurner}"/>
-                    <Image x:Name="FlywheelEffect2" Height="40" Width="40" Visibility="{Binding BpShowViewModel.BpShow.SurPick[1].Talent.FlywheelEffect}"/>
+                <StackPanel Orientation="Horizontal" Margin="-530,345,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image x:Name="BorrowedTime2" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[1].Talent.BorrowedTime}"/>
+                    <Image x:Name="KneeJerkReflex2" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[1].Talent.KneeJerkReflex}"/>
+                    <Image x:Name="TideTurner2" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[1].Talent.TideTurner}"/>
+                    <Image x:Name="FlywheelEffect2" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[1].Talent.FlywheelEffect}"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="610,360,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image x:Name="BorrowedTime3" Height="40" Width="40" Visibility="{Binding BpShowViewModel.BpShow.SurPick[2].Talent.BorrowedTime}"/>
-                    <Image x:Name="KneeJerkReflex3" Height="40" Width="40" Visibility="{Binding BpShowViewModel.BpShow.SurPick[2].Talent.KneeJerkReflex}"/>
-                    <Image x:Name="TideTurner3" Height="40" Width="40" Visibility="{Binding BpShowViewModel.BpShow.SurPick[2].Talent.TideTurner}"/>
-                    <Image x:Name="FlywheelEffect3" Height="40" Width="40" Visibility="{Binding BpShowViewModel.BpShow.SurPick[2].Talent.FlywheelEffect}"/>
+                <StackPanel Orientation="Horizontal" Margin="610,350,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image x:Name="BorrowedTime3" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[2].Talent.BorrowedTime}"/>
+                    <Image x:Name="KneeJerkReflex3" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[2].Talent.KneeJerkReflex}"/>
+                    <Image x:Name="TideTurner3" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[2].Talent.TideTurner}"/>
+                    <Image x:Name="FlywheelEffect3" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[2].Talent.FlywheelEffect}"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="1065,280,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image x:Name="BorrowedTime4" Height="40" Width="40" Visibility="{Binding BpShowViewModel.BpShow.SurPick[3].Talent.BorrowedTime}"/>
-                    <Image x:Name="KneeJerkReflex4" Height="40" Width="40" Visibility="{Binding BpShowViewModel.BpShow.SurPick[3].Talent.KneeJerkReflex}"/>
-                    <Image x:Name="TideTurner4" Height="40" Width="40" Visibility="{Binding BpShowViewModel.BpShow.SurPick[3].Talent.TideTurner}"/>
-                    <Image x:Name="FlywheelEffect4" Height="40" Width="40" Visibility="{Binding BpShowViewModel.BpShow.SurPick[3].Talent.FlywheelEffect}"/>
+                <StackPanel Orientation="Horizontal" Margin="1065,260,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image x:Name="BorrowedTime4" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[3].Talent.BorrowedTime}"/>
+                    <Image x:Name="KneeJerkReflex4" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[3].Talent.KneeJerkReflex}"/>
+                    <Image x:Name="TideTurner4" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[3].Talent.TideTurner}"/>
+                    <Image x:Name="FlywheelEffect4" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[3].Talent.FlywheelEffect}"/>
                 </StackPanel>
             </Grid>
         </Grid>

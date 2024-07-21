@@ -80,9 +80,13 @@
                         Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"
                         Text="https://github.com/plfjy/bp-sys-wpf/" />
                 </Grid>
-                <Button x:Name="CheckUpdate"
-                        Content="检查更新"
-                        Margin="30,10,0,10"/>
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,10">
+                    <Button x:Name="CheckUpdate"
+                            Content="检查更新"
+                            Margin="30,0,0,0" Click="CheckUpdate_Click"/>
+                    <ui:TextBlock x:Name="label1" Margin="40,0,0,0" VerticalAlignment="Center" Width="110" Visibility="Hidden"/>
+                    <ProgressBar x:Name="pbDown" Margin="10,0,0,0" VerticalAlignment="Center" Height="21" Width="160" Visibility="Hidden"/>
+                </StackPanel>
                 <TextBlock Margin="25,10,0,10" Text="{Binding version}" HorizontalAlignment="Left"/>
             </StackPanel>
         </ui:CardExpander>

@@ -1,9 +1,7 @@
 ﻿using bp_sys_wpf.ViewModel;
 using bp_sys_wpf.Views.Windows;
-using System.Runtime.Serialization.DataContracts;
 using System.Windows;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 
 namespace bp_sys_wpf

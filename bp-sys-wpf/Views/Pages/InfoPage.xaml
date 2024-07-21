@@ -88,6 +88,7 @@
                     <ProgressBar x:Name="pbDown" Margin="10,0,0,0" VerticalAlignment="Center" Height="21" Width="160" Visibility="Hidden"/>
                 </StackPanel>
                 <TextBlock Margin="25,10,0,10" Text="{Binding version}" HorizontalAlignment="Left"/>
+                <TextBlock x:Name="NewVersionContant" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25,10,0,10" Text="最新版本更新内容："/>
             </StackPanel>
         </ui:CardExpander>
     </Grid>

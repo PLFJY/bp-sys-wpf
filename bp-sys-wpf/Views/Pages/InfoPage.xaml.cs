@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Reflection;
 using System.Reflection.Emit;
 using System.Text.Json;
 using System.Windows;
@@ -18,18 +19,44 @@ namespace bp_sys_wpf.Views.Pages
         {
             InitializeComponent();
             this.DataContext = this;
+            JustGetFetchLatestReleaseInfoAsync();
         }
-        public static string version { get; set; } = Config.version;
+        public static string version { get; set; } = $"当前版本：{Config.version}";
 
         public class GiteeReleaseInfo
         {
             public string tag_name { get; set; }
+            public string body { get; set; }
             public Assets[] assets { get; set; }
             public class Assets
             {
                 public string browser_download_url { get; set; }
             }
         }
+        public async void JustGetFetchLatestReleaseInfoAsync()
+        {
+            var baseUrl = "https://gitee.com/api/v5";
+            var repository = "plfjy/bp-sys-wpf-update";
+            var releasesUrl = $"{baseUrl}/repos/{repository}/releases/latest";
+            try
+            {
+                // 发起GET请求并获取JSON响应内容
+                var responseJson = await releasesUrl.GetStringAsync();
+                // 使用System.Text.Json进行反序列化
+                var releaseInfo = System.Text.Json.JsonSerializer.Deserialize<GiteeReleaseInfo>(responseJson);
+                string newVersionInfo = releaseInfo.body;
+                NewVersionContant.Text = $"最新版本更新内容：\n{newVersionInfo}";
+            }
+            catch (FlurlHttpException ex)
+            {
+                Console.WriteLine($"请求失败: {ex.Message}");
+            }
+            catch (JsonException jex)
+            {
+                Console.WriteLine($"JSON解析失败: {jex.Message}");
+            }
+        }
+
         public async Task<(string latestVersion, string DownloadURL)> FetchLatestReleaseInfoAsync()
         {
             var baseUrl = "https://gitee.com/api/v5";

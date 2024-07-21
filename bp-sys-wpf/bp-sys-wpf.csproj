@@ -41,14 +41,9 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <None Remove="bb26号守卫.png" />
-	  <None Remove="bh病患.png" />
 	  <None Remove="bp.png" />
-	  <None Remove="gjyy歌剧演员.png" />
 	  <None Remove="HunPicking.png" />
 	  <None Remove="no_hun_ban.png" />
-	  <None Remove="sszh宿伞之魂.png" />
-	  <None Remove="xye幸运儿.png" />
-	  <None Remove="月亮河公园.png" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Flurl" Version="4.0.0" />
@@ -57,14 +52,9 @@
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Resource Include="bh病患.png" />
 	  <Resource Include="bp.png" />
-	  <Resource Include="gjyy歌剧演员.png" />
 	  <Resource Include="HunPicking.png" />
 	  <Resource Include="no_hun_ban.png" />
-	  <Resource Include="sszh宿伞之魂.png" />
-	  <Resource Include="xye幸运儿.png" />
-	  <Resource Include="月亮河公园.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Update="CharactersList.txt">

@@ -132,11 +132,11 @@
                                                Icon="{ui:SymbolIcon Map24}"
                                                NavigationCacheMode="Enabled"
                                                TargetPageType = "{x:Type pages:MapBpPage}"/>
-                        <ui:NavigationViewItem Content="求生Ban"
+                        <ui:NavigationViewItem Content="Ban求生"
                                                Icon="{ui:SymbolIcon PersonProhibited24}"
                                                NavigationCacheMode="Enabled"
                                                TargetPageType = "{x:Type pages:SurBanPage}"/>
-                        <ui:NavigationViewItem Content="监管Ban"
+                        <ui:NavigationViewItem Content="Ban监管"
                                                Icon="{ui:SymbolIcon PresenterOff24}"
                                                NavigationCacheMode="Enabled"
                                                TargetPageType = "{x:Type pages:HunBanPage}"/>

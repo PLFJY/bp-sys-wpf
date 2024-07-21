@@ -36,7 +36,7 @@ namespace bp_sys_wpf.Views.Pages
         public async void JustGetFetchLatestReleaseInfoAsync()
         {
             var baseUrl = "https://gitee.com/api/v5";
-            var repository = "plfjy/bp-sys-wpf-update";
+            var repository = "plfjy/bp-sys-wpf-update-asg";
             var releasesUrl = $"{baseUrl}/repos/{repository}/releases/latest";
             try
             {

@@ -1,0 +1,294 @@
+﻿<Page x:Class="bp_sys_wpf.Views.Pages.PickPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:bp_sys_wpf.Views.Pages"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      mc:Ignorable="d" 
+      d:DesignHeight="920"
+      d:DesignWidth="760"
+      Title="PickPage">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ui:ThemesDictionary Theme="Dark"/>
+                <ui:ControlsDictionary />
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="TextBlock">
+                <Setter Property="Foreground"
+                        Value="White"/>
+                <Setter Property="HorizontalAlignment"
+                        Value="Center"/>
+                <Setter Property="VerticalAlignment"
+                        Value="Center"/>
+            </Style>
+            <Style TargetType="GroupBox">
+                <Setter Property="Foreground"
+                        Value="White"/>
+            </Style>
+            <Style TargetType="Image">
+                <Setter Property="Margin"
+                        Value="0,10,0,0"/>
+                <Setter Property="Height"
+                        Value="70"/>
+                <Setter Property="Width"
+                        Value="70"/>
+            </Style>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid>
+        <StackPanel>
+            <GroupBox Header="Pick求生者"
+                      Margin="10,0,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top">
+                <StackPanel Margin="10,10,10,10"
+                            Orientation="Horizontal"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Left">
+                    <StackPanel>
+                        <ComboBox x:Name="Sur_pick_1"
+                                  Width="150"
+                                  Height="35"
+                                  IsEditable="True"
+                                  SelectedItem="{Binding BpReceiveModel.SurPick[0].CharacterName}"
+                                  ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                  MaxDropDownHeight="200" KeyDown="Sur_pick_1_KeyDown"/>
+                        <Image x:Name="Sur_pick_1_preview" Source="{Binding BpShowViewModel.BpShow.SurPick[0].ChartcherHeadImage}"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                            <ui:Button x:Name="Change_sur1_with_sur2" Content="2" Click="Change_sur1_with_sur2_Click"/>
+                            <ui:Button x:Name="Change_sur1_with_sur3" Content="3" Margin="20,0,0,0" Click="Change_sur1_with_sur3_Click"/>
+                            <ui:Button x:Name="Change_sur1_with_sur4" Content="4" Margin="20,0,0,0" Click="Change_sur1_with_sur4_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel>
+                        <ComboBox x:Name="Sur_pick_2"
+                                  Width="150"
+                                  Height="35"
+                                  IsEditable="True"
+                                  Margin="10,0,0,0"
+                                  SelectedItem="{Binding BpReceiveModel.SurPick[1].CharacterName}"
+                                  ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                  MaxDropDownHeight="200" KeyDown="Sur_pick_2_KeyDown"/>
+                        <Image x:Name="Sur_pick_2_preview" Source="{Binding BpShowViewModel.BpShow.SurPick[1].ChartcherHeadImage}"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                            <ui:Button x:Name="Change_sur2_with_sur1" Content="1" Click="Change_sur2_with_sur1_Click"/>
+                            <ui:Button x:Name="Change_sur2_with_sur3" Content="3" Margin="20,0,0,0" Click="Change_sur2_with_sur3_Click"/>
+                            <ui:Button x:Name="Change_sur2_with_sur4" Content="4" Margin="20,0,0,0" Click="Change_sur2_with_sur4_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel>
+                        <ComboBox x:Name="Sur_pick_3"
+                                  Width="150"
+                                  Height="35"
+                                  IsEditable="True"
+                                  Margin="10,0,0,0"
+                                  SelectedItem="{Binding BpReceiveModel.SurPick[2].CharacterName}"
+                                  ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                  MaxDropDownHeight="200" KeyDown="Sur_pick_3_KeyDown"/>
+                        <Image x:Name="Sur_pick_3_preview" Source="{Binding BpShowViewModel.BpShow.SurPick[2].ChartcherHeadImage}"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                            <ui:Button x:Name="Change_sur3_with_sur1" Content="1" Click="Change_sur3_with_sur1_Click"/>
+                            <ui:Button x:Name="Change_sur3_with_sur2" Content="2" Margin="20,0,0,0" Click="Change_sur3_with_sur2_Click"/>
+                            <ui:Button x:Name="Change_sur3_with_sur4" Content="4" Margin="20,0,0,0" Click="Change_sur3_with_sur4_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel>
+                        <ComboBox x:Name="Sur_pick_4"
+                                  Width="150"
+                                  Height="35"
+                                  IsEditable="True"
+                                  Margin="10,0,0,0"
+                                  SelectedItem="{Binding BpReceiveModel.SurPick[3].CharacterName}"
+                                  ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                  MaxDropDownHeight="200" KeyDown="Sur_pick_4_KeyDown"/>
+                        <Image x:Name="Sur_pick_4_preview" Source="{Binding BpShowViewModel.BpShow.SurPick[3].ChartcherHeadImage}"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                            <ui:Button x:Name="Change_sur4_with_sur1" Content="1" Click="Change_sur4_with_sur1_Click"/>
+                            <ui:Button x:Name="Change_sur4_with_sur2" Content="2" Margin="20,0,0,0" Click="Change_sur4_with_sur2_Click"/>
+                            <ui:Button x:Name="Change_sur4_with_sur3" Content="3" Margin="20,0,0,0" Click="Change_sur4_with_sur3_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+            <StackPanel Orientation="Horizontal">
+                <GroupBox Header="Pick监管者"
+                      Margin="10,0,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top">
+                    <StackPanel Margin="10,10,10,10"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Left">
+                        <ComboBox x:Name="Hun_pick"
+                              Height="35"
+                              Width="150"
+                              IsEditable="True"
+                              Margin="0,10,0,0"
+                                  SelectedItem="{Binding BpReceiveModel.HunPick}"
+                              ItemsSource="{Binding ComboBoxItemViewModel.hun}"
+                              MaxDropDownHeight="200" KeyDown="Hun_pick_KeyDown"/>
+                        <Image x:Name="Hun_pick_review" Source="{Binding BpShowViewModel.BpShow.HunPick.ChartcherHeadImage}"/>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Header="待选框开关"
+                          Margin="10,0,0,0">
+                    <StackPanel Margin="10,10,10,10"
+                                VerticalAlignment="Center">
+                        <ui:ToggleSwitch x:Name="Sur1And2Border"
+                                         Content="求生pick1&amp;2"
+                                         IsChecked="False" Click="Sur1And2Border_Click"/>
+                        <ui:ToggleSwitch x:Name="Sur3Border"
+                                         Margin="0,10,0,0"
+                                         Content="求生pick3"
+                                         IsChecked="False" Click="Sur3Border_Click"/>
+                        <ui:ToggleSwitch x:Name="Sur4Border"
+                                         Margin="0,10,0,0"
+                                         Content="求生pick4"
+                                         IsChecked="False" Click="Sur4Border_Click"/>
+                        <ui:ToggleSwitch x:Name="HunBorder"
+                                         Margin="0,10,0,0"
+                                         Content="监管pick"
+                                         IsChecked="False" Click="HunBorder_Click"/>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+            <GroupBox Header="全局禁选记录"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Margin="10,10,0,0">
+                <StackPanel>
+                    <GroupBox Header="主场"
+                              HorizontalAlignment="Left"
+                              VerticalAlignment="Top"
+                              Margin="10,10,10,10">
+                        <StackPanel Margin="10,10,10,10">
+                            <StackPanel Orientation="Horizontal">
+                                <ComboBox x:Name="Main_hole1"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          IsEnabled="True"
+                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanMainRecord[0]}"
+                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                          MaxDropDownHeight="200"/>
+                                <ComboBox x:Name="Main_hole2"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          Margin="10,0,0,0"
+                                          IsEnabled="True"
+                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanMainRecord[1]}"
+                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                          MaxDropDownHeight="200"/>
+                                <ComboBox x:Name="Main_hole3"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          Margin="10,0,0,0"
+                                          IsEnabled="True"
+                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanMainRecord[2]}"
+                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                          MaxDropDownHeight="200"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="0,10,0,0">
+                                <ComboBox x:Name="Main_hole4"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          IsEnabled="True"
+                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanMainRecord[3]}"
+                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                          MaxDropDownHeight="200"/>
+                                <ComboBox x:Name="Main_hole5"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          Margin="10,0,0,0"
+                                          IsEnabled="True"
+                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanMainRecord[4]}"
+                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                          MaxDropDownHeight="200"/>
+                                <ComboBox x:Name="Main_hole6"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          Margin="10,0,0,0"
+                                          IsEnabled="True"
+                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanMainRecord[5]}"
+                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                          MaxDropDownHeight="200"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                    </GroupBox>
+                    <GroupBox Header="客场"
+                              HorizontalAlignment="Left"
+                              VerticalAlignment="Top"
+                              Margin="10,10,10,10">
+                        <StackPanel Margin="10,10,10,10">
+                            <StackPanel Orientation="Horizontal">
+                                <ComboBox x:Name="Away_hole1"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          IsEnabled="True"
+                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanAwayRecord[0]}"
+                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                          MaxDropDownHeight="200"/>
+                                <ComboBox x:Name="Away_hole2"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          Margin="10,0,0,0"
+                                          IsEnabled="True"
+                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanAwayRecord[1]}"
+                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                          MaxDropDownHeight="200"/>
+                                <ComboBox x:Name="Away_hole3"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          Margin="10,0,0,0"
+                                          IsEnabled="True"
+                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanAwayRecord[2]}"
+                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                          MaxDropDownHeight="200"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="0,10,0,0">
+                                <ComboBox x:Name="Away_hole4"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          IsEnabled="True"
+                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanAwayRecord[3]}"
+                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                          MaxDropDownHeight="200"/>
+                                <ComboBox x:Name="Away_hole5"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          Margin="10,0,0,0"
+                                          IsEnabled="True"
+                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanAwayRecord[4]}"
+                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                          MaxDropDownHeight="200"/>
+                                <ComboBox x:Name="Away_hole6"
+                                          Width="150"
+                                          Height="35"
+                                          IsEditable="True"
+                                          Margin="10,0,0,0"
+                                          IsEnabled="True"
+                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanAwayRecord[5]}"
+                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                          MaxDropDownHeight="200"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Page>

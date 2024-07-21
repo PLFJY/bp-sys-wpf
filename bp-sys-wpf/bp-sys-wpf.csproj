@@ -40,21 +40,21 @@
 		</None>
 	</ItemGroup>
 	<ItemGroup>
-	  <None Remove="bb26号守卫.png" />
-	  <None Remove="bp.png" />
-	  <None Remove="HunPicking.png" />
-	  <None Remove="no_hun_ban.png" />
+	  <None Remove="Header.PNG" />
+	  <None Remove="Views\HomeHeader.png" />
+	  <None Remove="Views\Pages\HomeHeader.png" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Flurl" Version="4.0.0" />
 		<PackageReference Include="Flurl.Http" Version="4.0.2" />
 		<PackageReference Include="ini-parser" Version="2.5.2" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="WPF-UI" Version="3.0.4" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Resource Include="bp.png" />
-	  <Resource Include="HunPicking.png" />
-	  <Resource Include="no_hun_ban.png" />
+	  <Resource Include="Header.PNG" />
+	  <Resource Include="Views\HomeHeader.png" />
+	  <Resource Include="Views\Pages\HomeHeader.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Update="CharactersList.txt">

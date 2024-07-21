@@ -1,0 +1,92 @@
+﻿<Window x:Name="ScoreHole1" x:Class="bp_sys_wpf.ScoreHole"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:bp_sys_wpf"
+        mc:Ignorable="d"
+        Title="ScoreHole" Height="234" Width="1416" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" WindowStyle="None" MouseLeftButtonDown="ScoreHole1_MouseLeftButtonDown">
+    <Window.Background>
+        <ImageBrush/>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="232*"/>
+            <ColumnDefinition Width="92*"/>
+            <ColumnDefinition Width="134*"/>
+            <ColumnDefinition Width="92*"/>
+            <ColumnDefinition Width="134*"/>
+            <ColumnDefinition Width="92*"/>
+            <ColumnDefinition Width="128*"/>
+            <ColumnDefinition Width="85*"/>
+            <ColumnDefinition Width="131*"/>
+            <ColumnDefinition Width="94*"/>
+            <ColumnDefinition Width="131*"/>
+            <ColumnDefinition Width="36*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="58*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="23*"/>
+        </Grid.RowDefinitions>
+        <!--主场信息-->
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="53" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Top" Width="52" x:Name="MainLogo" Source="{Binding TeamInfoViewModel.TeamInfoModel.MainTeamInfo.LOGO}"/>
+        <Label Grid.Column="1" Content="{Binding TeamInfoViewModel.TeamInfoModel.MainTeamInfo.Name}" HorizontalAlignment="Left" Height="41" Margin="69,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="133" FontFamily="DFPOP1W5-B5" FontSize="25" VerticalContentAlignment="Center" x:Name="MainName" Foreground="White"/>
+        <!--客场信息-->
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="54" Margin="10,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="52" x:Name="AwayLogo" Source="{Binding TeamInfoViewModel.TeamInfoModel.AwayTeamInfo.LOGO}"/>
+        <Label Grid.Column="1" Content="{Binding TeamInfoViewModel.TeamInfoModel.AwayTeamInfo.Name}" HorizontalAlignment="Left" Height="42" Margin="69,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="133" FontFamily="DFPOP1W5-B5" FontSize="25" VerticalContentAlignment="Center" x:Name="AwayName" Foreground="White"/>
+                                                                                                                                                <!--bo1上半-->
+        <Image Grid.Column="2" HorizontalAlignment="Left" Height="42" Margin="0,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="42" x:Name="IconMain0" Source="{Binding ScoreHoleViewModel.ScoreHoleShow[0].MainIcon}"/>
+        <Label Grid.Column="2" Content="{Binding ScoreHoleViewModel.ScoreHoleShow[0].MainScore}" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="ScoreMain0"/>
+        <Image Grid.Column="2" HorizontalAlignment="Left" Height="42" Grid.Row="3" VerticalAlignment="Top" Width="42" Margin="0,10,0,0" x:Name="IconAway0" Source="{Binding ScoreHoleViewModel.ScoreHoleShow[0].AwayIcon}"/>
+        <Label Grid.Column="2" Content="{Binding ScoreHoleViewModel.ScoreHoleShow[0].AwayScore}" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="ScoreAway0"/>
+                                                                                                                                                <!--bo1下半-->
+        <Image Grid.Column="3" HorizontalAlignment="Left" Height="42" Margin="0,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="42" x:Name="IconMain1" Source="{Binding ScoreHoleViewModel.ScoreHoleShow[1].MainIcon}"/>
+        <Label Grid.Column="3" Content="{Binding ScoreHoleViewModel.ScoreHoleShow[1].MainScore}" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="ScoreMain1"/>
+        <Image Grid.Column="3" HorizontalAlignment="Left" Height="42" Grid.Row="3" VerticalAlignment="Top" Width="42" Margin="0,10,0,0" x:Name="IconAway1" Source="{Binding ScoreHoleViewModel.ScoreHoleShow[1].AwayIcon}"/>
+        <Label Grid.Column="3" Content="{Binding ScoreHoleViewModel.ScoreHoleShow[1].AwayScore}" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="ScoreAway1"/>
+                                                                                                                                                <!--bo2上半-->
+        <Image Grid.Column="4" HorizontalAlignment="Left" Height="42" Margin="0,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="42" x:Name="IconMain2" Source="{Binding ScoreHoleViewModel.ScoreHoleShow[2].MainIcon}"/>
+        <Label Grid.Column="4" Content="{Binding ScoreHoleViewModel.ScoreHoleShow[2].MainScore}" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="ScoreMain2"/>
+        <Image Grid.Column="4" HorizontalAlignment="Left" Height="42" Grid.Row="3" VerticalAlignment="Center" Width="42" x:Name="IconAway2" Source="{Binding ScoreHoleViewModel.ScoreHoleShow[2].AwayIcon}"/>
+        <Label Grid.Column="4" Content="{Binding ScoreHoleViewModel.ScoreHoleShow[2].AwayScore}" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="ScoreAway2"/>
+                                                                                                                                                <!--bo2下半-->
+        <Image Grid.Column="5" HorizontalAlignment="Left" Height="42" Margin="0,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="42" x:Name="IconMain3" Source="{Binding ScoreHoleViewModel.ScoreHoleShow[3].MainIcon}"/>
+        <Label Grid.Column="5" Content="{Binding ScoreHoleViewModel.ScoreHoleShow[3].MainScore}" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="ScoreMain3"/>
+        <Image Grid.Column="5" HorizontalAlignment="Left" Height="42" Grid.Row="3" VerticalAlignment="Top" Width="42" Margin="0,10,0,0" x:Name="IconAway3" Source="{Binding ScoreHoleViewModel.ScoreHoleShow[3].AwayIcon}"/>
+        <Label Grid.Column="5" Content="{Binding ScoreHoleViewModel.ScoreHoleShow[3].AwayScore}" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="ScoreAway3"/>
+                                                                                                                                                <!--bo3上半-->
+        <Image Grid.Column="6" HorizontalAlignment="Left" Height="42" Margin="0,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="42" x:Name="IconMain4" Source="{Binding ScoreHoleViewModel.ScoreHoleShow[4].MainIcon}"/>
+        <Label Grid.Column="6" Content="{Binding ScoreHoleViewModel.ScoreHoleShow[4].MainScore}" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="ScoreMain4"/>
+        <Image Grid.Column="6" HorizontalAlignment="Left" Height="42" Grid.Row="3" VerticalAlignment="Top" Width="42" Margin="0,10,0,0" x:Name="IconAway4" Source="{Binding ScoreHoleViewModel.ScoreHoleShow[4].AwayIcon}"/>
+        <Label Grid.Column="6" Content="{Binding ScoreHoleViewModel.ScoreHoleShow[4].AwayScore}" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="ScoreAway4"/>
+                                                                                                                                                <!--bo3下半-->
+        <Image Grid.Column="7" HorizontalAlignment="Left" Height="42" Margin="0,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="42" x:Name="IconMain5" Source="{Binding ScoreHoleViewModel.ScoreHoleShow[5].MainIcon}"/>
+        <Label Grid.Column="7" Content="{Binding ScoreHoleViewModel.ScoreHoleShow[5].MainScore}" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="ScoreMain5"/>
+        <Image Grid.Column="7" HorizontalAlignment="Left" Height="42" Grid.Row="3" VerticalAlignment="Top" Width="42" Margin="0,10,0,0" x:Name="IconAway5" Source="{Binding ScoreHoleViewModel.ScoreHoleShow[5].AwayIcon}"/>
+        <Label Grid.Column="7" Content="{Binding ScoreHoleViewModel.ScoreHoleShow[5].AwayScore}" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="ScoreAway5"/>
+                                                                                                                                                <!--bo4上半-->
+        <Image Grid.Column="8" HorizontalAlignment="Left" Height="42" Margin="0,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="42" x:Name="IconMain6" Source="{Binding ScoreHoleViewModel.ScoreHoleShow[6].MainIcon}"/>
+        <Label Grid.Column="8" Content="{Binding ScoreHoleViewModel.ScoreHoleShow[6].MainScore}" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="ScoreMain6"/>
+        <Image Grid.Column="8" HorizontalAlignment="Left" Height="42" Grid.Row="3" VerticalAlignment="Top" Width="42" Margin="0,10,0,0" x:Name="IconAway6" Source="{Binding ScoreHoleViewModel.ScoreHoleShow[6].AwayIcon}"/>
+        <Label Grid.Column="8" Content="{Binding ScoreHoleViewModel.ScoreHoleShow[6].AwayScore}" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="ScoreAway6"/>
+                                                                                                                                                <!--bo4下半-->
+        <Image Grid.Column="9" HorizontalAlignment="Left" Height="42" Margin="0,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="42" x:Name="IconMain7" Source="{Binding ScoreHoleViewModel.ScoreHoleShow[7].MainIcon}"/>
+        <Label Grid.Column="9" Content="{Binding ScoreHoleViewModel.ScoreHoleShow[7].MainScore}" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="ScoreMain7"/>
+        <Image Grid.Column="9" HorizontalAlignment="Left" Height="42" Grid.Row="3" VerticalAlignment="Top" Width="42" Margin="0,10,0,0" x:Name="IconAway7" Source="{Binding ScoreHoleViewModel.ScoreHoleShow[7].AwayIcon}"/>
+        <Label Grid.Column="9" Content="{Binding ScoreHoleViewModel.ScoreHoleShow[7].AwayScore}" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="ScoreAway7"/>
+                                                                                                                                                <!--bo5上半-->
+        <Image Grid.Column="10" HorizontalAlignment="Left" Height="42" Margin="0,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="42" x:Name="IconMain8" Source="{Binding ScoreHoleViewModel.ScoreHoleShow[8].MainIcon}"/>
+        <Label Grid.Column="10" Content="{Binding ScoreHoleViewModel.ScoreHoleShow[8].MainScore}" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="ScoreMain8"/>
+        <Image Grid.Column="10" HorizontalAlignment="Left" Height="42" Grid.Row="3" VerticalAlignment="Top" Width="42" Margin="0,10,0,0" x:Name="IconAway8" Source="{Binding ScoreHoleViewModel.ScoreHoleShow[8].AwayIcon}"/>
+        <Label Grid.Column="10" Content="{Binding ScoreHoleViewModel.ScoreHoleShow[8].AwayScore}" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="ScoreAway8"/>
+                                                                                                                                                <!--bo5下半-->
+        <Image Grid.Column="11" HorizontalAlignment="Left" Height="42" Margin="0,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="42" x:Name="IconMain9" Source="{Binding ScoreHoleViewModel.ScoreHoleShow[9].MainIcon}"/>
+        <Label Grid.Column="11" Content="{Binding ScoreHoleViewModel.ScoreHoleShow[9].MainScore}" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="ScoreMain9"/>
+        <Image Grid.Column="11" HorizontalAlignment="Left" Height="42" Grid.Row="3" VerticalAlignment="Top" Width="42" Margin="0,10,0,0" x:Name="IconAway9" Source="{Binding ScoreHoleViewModel.ScoreHoleShow[9].AwayIcon}"/>
+        <Label Grid.Column="11" Content="{Binding ScoreHoleViewModel.ScoreHoleShow[9].AwayScore}" HorizontalAlignment="Left" Height="58" Margin="44,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="33" Foreground="White" VerticalContentAlignment="Center" FontSize="30" FontWeight="Bold" x:Name="ScoreAway9"/>
+    </Grid>
+</Window>

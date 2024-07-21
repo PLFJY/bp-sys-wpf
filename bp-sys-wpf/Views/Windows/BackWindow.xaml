@@ -1,0 +1,167 @@
+﻿<Window x:Class="bp_sys_wpf.Views.Windows.BackWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:bp_sys_wpf.Views.Windows"
+        xmlns:pages="clr-namespace:bp_sys_wpf.Views.Pages"
+        mc:Ignorable="d"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        Title="后台控制"
+        Height="705"
+        Width="850"
+        WindowStartupLocation="CenterScreen"
+        Background="#202020"
+        ResizeMode="CanMinimize"
+        Closed="Window_Closed" Closing="Window_Closing">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ui:ThemesDictionary Theme="Dark"/>
+                <ui:ControlsDictionary />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Border CornerRadius="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border BorderThickness="1"
+                    BorderBrush="White">
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Grid.Column="0"
+                            Margin="10,0,0,0">
+                        <ui:TextBlock x:Name="TeamSur"
+                               Text="{Binding TeamInfoViewModel.NowModel.NowSurTeam.Name}"
+                               FontSize="30"
+                               Width="100"
+                               HorizontalAlignment="Right"
+                               Foreground="White"/>
+                        <ui:Button x:Name="Swap"
+                            Content="换边"
+                            Height="30"
+                            Width="90"
+                            Icon="{ui:SymbolIcon ArrowSwap24}"
+                            Margin="30,0,30,0" Click="Swap_Click"/>
+                        <ui:TextBlock x:Name="TeamHun"
+                               Text="{Binding TeamInfoViewModel.NowModel.NowHunTeam.Name}"
+                               FontSize="30"
+                               Width="100"
+                               HorizontalAlignment="Left"
+                               Foreground="White"/>
+                    </StackPanel>
+                    <ui:Button x:Name="Reset"
+                        Content="重置"
+                        Height="30"
+                        Width="80"
+                        Icon="{ui:SymbolIcon ArrowReset24}"
+                        Grid.Column="1"
+                        HorizontalAlignment="Center" Click="Reset_Click"/>
+                    <GroupBox Header="计时器（可自定义）"
+                          Foreground="White"
+                          HorizontalAlignment="Right"
+                          Grid.Column="2"
+                          Margin="0,0,10,0">
+                        <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Right">
+                            <ComboBox x:Name="Timmer"
+                                    Width="75"
+                                    Margin="5,0,0,0"
+                                  Text="{Binding TimmerViewModel.CountdownTimeSet}"
+                                    IsEditable="True">
+                                <ComboBoxItem Content="30"/>
+                                <ComboBoxItem Content="45"/>
+                                <ComboBoxItem Content="60"/>
+                            </ComboBox>
+                            <ui:Button x:Name="TimmerStart"
+                                   Width="80"
+                                   Content="Start"
+                                   Icon="{ui:SymbolIcon Play24}"
+                                   Margin="10,0,0,0" Click="TimmerStart_Click"/>
+                            <ui:Button x:Name="TimmerClose"
+                                   Width="85"
+                                   Content="Close"
+                                   Icon="{ui:SymbolIcon RecordStop24}"
+                                   Margin="10,0,10,0" Click="TimmerClose_Click"/>
+                            <TextBlock Text="预览："
+                                       VerticalAlignment="Center"
+                                       Width="35"/>
+                            <TextBlock x:Name="CountdownView"
+                                       Text="{Binding TimmerViewModel.CountdownTime}"
+                                       Width="30"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </GroupBox>
+                </Grid>
+            </Border>
+            <ui:InfoBar x:Name="ErrBar"
+                        Title="错误"
+                        Grid.Row="1"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Right"
+                        Severity="Error"
+                        Panel.ZIndex="1"/>
+            <Grid Grid.Row="1"
+                  AutomationProperties.IsColumnHeader="True">
+                <ui:NavigationView x:Name="RootNavigation"
+                                   OpenPaneLength="60"
+                                   PaneDisplayMode="LeftFluent"
+                                   FrameworkElement.Loaded="RootNavigation_Loaded"
+                                   ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                   ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <ui:NavigationView.MenuItems>
+                        <ui:NavigationViewItem Content="Home"
+                                               Icon="{ui:SymbolIcon Home24}"
+                                               TargetPageType = "{x:Type pages:HomePage}"/>
+                        <ui:NavigationViewItem Content="队伍信息"
+                                               Icon="{ui:SymbolIcon PeopleTeam24}"
+                                               NavigationCacheMode="Enabled"
+                                               TargetPageType = "{x:Type pages:TeamInfoPage}"/>
+                        <ui:NavigationViewItem Content="地图BP"
+                                               Icon="{ui:SymbolIcon Map24}"
+                                               NavigationCacheMode="Enabled"
+                                               TargetPageType = "{x:Type pages:MapBpPage}"/>
+                        <ui:NavigationViewItem Content="Ban求生"
+                                               Icon="{ui:SymbolIcon PersonProhibited24}"
+                                               NavigationCacheMode="Enabled"
+                                               TargetPageType = "{x:Type pages:SurBanPage}"/>
+                        <ui:NavigationViewItem Content="Ban监管"
+                                               Icon="{ui:SymbolIcon PresenterOff24}"
+                                               NavigationCacheMode="Enabled"
+                                               TargetPageType = "{x:Type pages:HunBanPage}"/>
+                        <ui:NavigationViewItem Content="Pick"
+                                               Icon="{ui:SymbolIcon PersonAdd24}"
+                                               NavigationCacheMode="Enabled"
+                                               TargetPageType = "{x:Type pages:PickPage}"/>
+                        <ui:NavigationViewItem Content="天赋"
+                                               Icon="{ui:SymbolIcon PersonWalking24}"
+                                               NavigationCacheMode="Enabled"
+                                               TargetPageType = "{x:Type pages:TalentPage}"/>
+                        <ui:NavigationViewItem Content="比分控制"
+                                               Icon="{ui:SymbolIcon NumberRow24}"
+                                               NavigationCacheMode="Enabled"
+                                               TargetPageType = "{x:Type pages:ScoreControlPage}"/>
+                        <ui:NavigationViewItem Content="启动前台"
+                                               x:Name="StartFronts"
+                                               Icon="{ui:SymbolIcon ShareScreenStart24}"
+                                               Click="StartFronts_Click"/>
+                        <ui:NavigationViewItem Content="关于"
+                                               Icon="{ui:SymbolIcon Info24}"
+                                               TargetPageType = "{x:Type pages:InfoPage}"/>
+                    </ui:NavigationView.MenuItems>
+                </ui:NavigationView>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

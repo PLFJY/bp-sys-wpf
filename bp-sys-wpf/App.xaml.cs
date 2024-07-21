@@ -1,7 +1,4 @@
 ﻿using System.Windows;
-using System.Windows.Media;
-using IniParser;
-using IniParser.Model;
 namespace bp_sys_wpf
 {
     /// <summary>

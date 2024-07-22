@@ -83,7 +83,8 @@ namespace bp_sys_wpf.Views.Pages
             if(RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainTeamState == string.Empty)
             {
                 IsMainSur.IsChecked = false;
-                IsAwaySur.IsChecked = false;
+                IsMainHun.IsChecked = false;
+
                 IsAwayHun.IsChecked = false;
                 IsAwaySur.IsChecked = false;
             }

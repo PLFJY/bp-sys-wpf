@@ -219,5 +219,65 @@ namespace bp_sys_wpf.Views.Pages
         {
             rootViewModel.BpShowViewModel.SwapCharacrer(3, 2);
         }
+        private void Swap_sur_player1_with_player2_Click(object sender, RoutedEventArgs e)
+        {
+            rootViewModel.TeamInfoViewModel.SwapPlayers(0, 1);
+        }
+
+        private void Swap_sur_player1_with_player3_Click(object sender, RoutedEventArgs e)
+        {
+            rootViewModel.TeamInfoViewModel.SwapPlayers(0, 2);
+        }
+
+        private void Swap_sur_player1_with_player4_Click(object sender, RoutedEventArgs e)
+        {
+            rootViewModel.TeamInfoViewModel.SwapPlayers(0, 3);
+        }
+
+        private void Swap_sur_player2_with_player1_Click(object sender, RoutedEventArgs e)
+        {
+            rootViewModel.TeamInfoViewModel.SwapPlayers(1, 0);
+        }
+
+        private void Swap_sur_player2_with_player3_Click(object sender, RoutedEventArgs e)
+        {
+            rootViewModel.TeamInfoViewModel.SwapPlayers(1, 2);
+        }
+
+        private void Swap_sur_player2_with_player4_Click(object sender, RoutedEventArgs e)
+        {
+            rootViewModel.TeamInfoViewModel.SwapPlayers(1, 3);
+        }
+
+        private void Swap_sur_player3_with_player1_Click(object sender, RoutedEventArgs e)
+        {
+            rootViewModel.TeamInfoViewModel.SwapPlayers(2, 0);
+        }
+
+        private void Swap_sur_player3_with_player2_Click(object sender, RoutedEventArgs e)
+        {
+            rootViewModel.TeamInfoViewModel.SwapPlayers(2, 1);
+        }
+
+        private void Swap_sur_player3_with_player4_Click(object sender, RoutedEventArgs e)
+        {
+            rootViewModel.TeamInfoViewModel.SwapPlayers(2, 3);
+        }
+
+        private void Swap_sur_player4_with_player1_Click(object sender, RoutedEventArgs e)
+        {
+            rootViewModel.TeamInfoViewModel.SwapPlayers(3, 0);
+        }
+
+        private void Swap_sur_player4_with_player2_Click(object sender, RoutedEventArgs e)
+        {
+            rootViewModel.TeamInfoViewModel.SwapPlayers(3, 1);
+        }
+
+        private void Swap_sur_player4_with_player3_Click(object sender, RoutedEventArgs e)
+        {
+            rootViewModel.TeamInfoViewModel.SwapPlayers(3, 2);
+        }
+
     }
 }

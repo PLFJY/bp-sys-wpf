@@ -112,6 +112,122 @@
                     </StackPanel>
                 </StackPanel>
             </GroupBox>
+            <GroupBox x:Name="PlayerNow" Margin="10,0,0,0"
+                      Grid.Column="2"
+                      Header="当前上场选手"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center">
+                <Grid Margin="0,0,10,10">
+                    <StackPanel HorizontalAlignment="Left"
+                                Orientation="Horizontal"
+                                Margin="10,0,0,0">
+                        <StackPanel Margin="0,10,0,0">
+                            <ui:TextBox x:Name="NowSurPlayer1"
+                                        Height="35"
+                                        Width="150"
+                                        IsReadOnly="True"
+                                        Text="{Binding TeamInfoViewModel.NowModel.NowPlayer[0]}"
+                                        PlaceholderText="选手名称"/>
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="0,10,0,0">
+                                <ui:Button x:Name="Swap_sur_player1_with_player2"
+                                       Width="35"
+                                       Height="35"
+                                       Margin="10,0,0,0"
+                                       Content="2" Click="Swap_sur_player1_with_player2_Click"/>
+                                <ui:Button x:Name="Swap_sur_player1_with_player3"
+                                       Width="35"
+                                       Height="35"
+                                       Margin="10,0,0,0"
+                                       Content="3" Click="Swap_sur_player1_with_player3_Click"/>
+                                <ui:Button x:Name="Swap_sur_player1_with_player4"
+                                       Width="35"
+                                       Height="35"
+                                       Margin="10,0,0,0"
+                                       Content="4" Click="Swap_sur_player1_with_player4_Click"/>
+                            </StackPanel>
+
+                        </StackPanel>
+                        <StackPanel Margin="10,10,0,0">
+                            <ui:TextBox x:Name="NowSurPlayer2"
+                                        Height="35"
+                                        Width="150"
+                                        IsReadOnly="True"
+                                        Text="{Binding TeamInfoViewModel.NowModel.NowPlayer[1]}"
+                                        PlaceholderText="选手名称"/>
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="0,10,0,0">
+                                <ui:Button x:Name="Swap_sur_player2_with_player1"
+                                       Width="35"
+                                       Height="35"
+                                       Margin="10,0,0,0"
+                                       Content="1" Click="Swap_sur_player2_with_player1_Click"/>
+                                <ui:Button x:Name="Swap_sur_player2_with_player3"
+                                       Width="35"
+                                       Height="35"
+                                       Margin="10,0,0,0"
+                                       Content="3" Click="Swap_sur_player2_with_player3_Click"/>
+                                <ui:Button x:Name="Swap_sur_player2_with_player4"
+                                       Width="35"
+                                       Height="35"
+                                       Margin="10,0,0,0"
+                                       Content="4" Click="Swap_sur_player2_with_player4_Click"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Margin="10,10,0,0">
+                            <ui:TextBox x:Name="NowSurPlayer3"
+                                        Height="35"
+                                        Width="150"
+                                        IsReadOnly="True"
+                                        Text="{Binding TeamInfoViewModel.NowModel.NowPlayer[2]}"
+                                        PlaceholderText="选手名称"/>
+                            <StackPanel Orientation="Horizontal"
+                                        Margin="0,10,0,0">
+                                <ui:Button x:Name="Swap_sur_player3_with_player1"
+                                       Width="35"
+                                       Height="35"
+                                       Margin="10,0,0,0"
+                                       Content="1" Click="Swap_sur_player3_with_player1_Click"/>
+                                <ui:Button x:Name="Swap_sur_player3_with_player2"
+                                       Width="35"
+                                       Height="35"
+                                       Margin="10,0,0,0"
+                                       Content="2" Click="Swap_sur_player3_with_player2_Click"/>
+                                <ui:Button x:Name="Swap_sur_player3_with_player4"
+                                       Width="35"
+                                       Height="35"
+                                       Margin="10,0,0,0"
+                                       Content="4" Click="Swap_sur_player3_with_player4_Click"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Margin="10,10,0,0">
+                            <ui:TextBox x:Name="NowSurPlayer4"
+                                        Height="35"
+                                        Width="150"
+                                        IsReadOnly="True"
+                                        Text="{Binding TeamInfoViewModel.NowModel.NowPlayer[3]}"
+                                        PlaceholderText="选手名称"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                <ui:Button x:Name="Swap_sur_player4_with_player1"
+                                       Width="35"
+                                       Height="35"
+                                       Margin="10,0,0,0"
+                                       Content="1" Click="Swap_sur_player4_with_player1_Click"/>
+                                <ui:Button x:Name="Swap_sur_player4_with_player2"
+                                       Width="35"
+                                       Height="35"
+                                       Margin="10,0,0,0"
+                                       Content="2" Click="Swap_sur_player4_with_player2_Click"/>
+                                <ui:Button x:Name="Swap_sur_player4_with_player3"
+                                       Width="35"
+                                       Height="35"
+                                       Margin="10,0,0,0"
+                                       Content="3" Click="Swap_sur_player4_with_player3_Click"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
             <StackPanel Orientation="Horizontal">
                 <GroupBox Header="Pick监管者"
                       Margin="10,0,0,0"
@@ -152,6 +268,7 @@
                                          IsChecked="False" Click="HunBorder_Click"/>
                     </StackPanel>
                 </GroupBox>
+
             </StackPanel>
             <GroupBox Header="全局禁选记录"
                       HorizontalAlignment="Left"

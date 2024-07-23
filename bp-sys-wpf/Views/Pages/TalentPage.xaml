@@ -41,29 +41,29 @@
         <StackPanel>
             <StackPanel Orientation="Horizontal">
                 <GroupBox Header="{Binding BpShowViewModel.BpShow.SurPick[0].ChartcherName}"
-                      HorizontalAlignment="Left"
-                      VerticalAlignment="Top"
-                      Margin="10,10,0,0" Cursor="">
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Margin="10,10,0,0" Cursor="">
                     <Grid>
                         <StackPanel Margin="10,10,10,10">
                             <ToggleButton x:Name="FlywheelEffect1"
-                                      Content="飞轮&#13;效应"
-                                      IsChecked="{Binding BpReceiveModel.SurPick[0].Talent.FlywheelEffect}"
-                                      HorizontalAlignment="Center"/>
+                                          Content="飞轮&#13;效应"
+                                          IsChecked="{Binding BpReceiveModel.SurPick[0].Talent.FlywheelEffect}"
+                                          HorizontalAlignment="Center"/>
                             <StackPanel Orientation="Horizontal"
-                                    HorizontalAlignment="Center">
-                                <ToggleButton x:Name="BorrowedTime1"
-                                          Content="回光&#13;返照"
-                                          IsChecked="{Binding BpReceiveModel.SurPick[0].Talent.BorrowedTime}"/>
+                                        HorizontalAlignment="Center">
                                 <ToggleButton x:Name="KneeJerkReflex1"
-                                          Content="膝跳&#13;反射"
-                                          IsChecked="{Binding BpReceiveModel.SurPick[0].Talent.KneeJerkReflex}"
-                                          Margin="60,0,0,0"/>
+                                              Content="膝跳&#13;反射"
+                                              IsChecked="{Binding BpReceiveModel.SurPick[0].Talent.KneeJerkReflex}"/>
+                                <ToggleButton x:Name="BorrowedTime1"
+                                              Content="回光&#13;返照"
+                                              IsChecked="{Binding BpReceiveModel.SurPick[0].Talent.BorrowedTime}"
+                                              Margin="60,0,0,0"/>
                             </StackPanel>
                             <ToggleButton x:Name="TideTurner1"
-                                      Content="化险&#13;为夷"
-                                      IsChecked="{Binding BpReceiveModel.SurPick[0].Talent.TideTurner}"
-                                      HorizontalAlignment="Center"/>
+                                          Content="化险&#13;为夷"
+                                          IsChecked="{Binding BpReceiveModel.SurPick[0].Talent.TideTurner}"
+                                          HorizontalAlignment="Center"/>
                         </StackPanel>
                     </Grid>
                 </GroupBox>
@@ -79,13 +79,13 @@
                                       HorizontalAlignment="Center"/>
                             <StackPanel Orientation="Horizontal"
                                     HorizontalAlignment="Center">
-                                <ToggleButton x:Name="BorrowedTime2"
-                                          Content="回光&#13;返照"
-                                          IsChecked="{Binding BpReceiveModel.SurPick[1].Talent.BorrowedTime}"/>
                                 <ToggleButton x:Name="KneeJerkReflex2"
                                           Content="膝跳&#13;反射"
-                                          IsChecked="{Binding BpReceiveModel.SurPick[1].Talent.KneeJerkReflex}"
-                                          Margin="60,0,0,0"/>
+                                          IsChecked="{Binding BpReceiveModel.SurPick[1].Talent.KneeJerkReflex}"/>
+                                <ToggleButton x:Name="BorrowedTime2"
+                                          Content="回光&#13;返照"
+                                              Margin="60,0,0,0"
+                                          IsChecked="{Binding BpReceiveModel.SurPick[1].Talent.BorrowedTime}"/>
                             </StackPanel>
                             <ToggleButton x:Name="TideTurner2"
                                       Content="化险&#13;为夷"
@@ -97,51 +97,51 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <GroupBox Header="{Binding BpShowViewModel.BpShow.SurPick[2].ChartcherName}"
-                      HorizontalAlignment="Left"
-                      VerticalAlignment="Top"
-                      Margin="10,10,0,0" Cursor="">
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Margin="10,10,0,0">
                     <Grid>
                         <StackPanel Margin="10,10,10,10">
                             <ToggleButton x:Name="FlywheelEffect3"
-                                      Content="飞轮&#13;效应"
-                                      IsChecked="{Binding BpReceiveModel.SurPick[2].Talent.FlywheelEffect}"
-                                      HorizontalAlignment="Center"/>
+                                          Content="飞轮&#13;效应"
+                                          IsChecked="{Binding BpReceiveModel.SurPick[2].Talent.FlywheelEffect}"
+                                          HorizontalAlignment="Center"/>
                             <StackPanel Orientation="Horizontal"
-                                    HorizontalAlignment="Center">
-                                <ToggleButton x:Name="BorrowedTime3"
-                                          Content="回光&#13;返照"
-                                          IsChecked="{Binding BpReceiveModel.SurPick[2].Talent.BorrowedTime}"/>
+                                        HorizontalAlignment="Center">
                                 <ToggleButton x:Name="KneeJerkReflex3"
-                                          Content="膝跳&#13;反射"
-                                          IsChecked="{Binding BpReceiveModel.SurPick[2].Talent.KneeJerkReflex}"
-                                          Margin="60,0,0,0"/>
+                                              Content="膝跳&#13;反射"
+                                              IsChecked="{Binding BpReceiveModel.SurPick[2].Talent.KneeJerkReflex}"/>
+                                <ToggleButton x:Name="BorrowedTime3"
+                                              Content="回光&#13;返照"
+                                              Margin="60,0,0,0"
+                                              IsChecked="{Binding BpReceiveModel.SurPick[2].Talent.BorrowedTime}"/>
                             </StackPanel>
                             <ToggleButton x:Name="TideTurner3"
-                                      Content="化险&#13;为夷"
-                                      IsChecked="{Binding BpReceiveModel.SurPick[2].Talent.TideTurner}"
-                                      HorizontalAlignment="Center"/>
+                                          Content="化险&#13;为夷"
+                                          IsChecked="{Binding BpReceiveModel.SurPick[2].Talent.TideTurner}"
+                                          HorizontalAlignment="Center"/>
                         </StackPanel>
                     </Grid>
                 </GroupBox>
                 <GroupBox Header="{Binding BpShowViewModel.BpShow.SurPick[3].ChartcherName}"
-                      HorizontalAlignment="Left"
-                      VerticalAlignment="Top"
-                      Margin="10,10,0,0" Cursor="">
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Margin="10,10,0,0" Cursor="">
                     <Grid>
                         <StackPanel Margin="10,10,10,10">
                             <ToggleButton x:Name="FlywheelEffect4"
-                                      Content="飞轮&#13;效应"
-                                      IsChecked="{Binding BpReceiveModel.SurPick[3].Talent.FlywheelEffect}"
-                                      HorizontalAlignment="Center"/>
+                                          Content="飞轮&#13;效应"
+                                          IsChecked="{Binding BpReceiveModel.SurPick[3].Talent.FlywheelEffect}"
+                                          HorizontalAlignment="Center"/>
                             <StackPanel Orientation="Horizontal"
-                                    HorizontalAlignment="Center">
-                                <ToggleButton x:Name="BorrowedTime4"
-                                          Content="回光&#13;返照"
-                                          IsChecked="{Binding BpReceiveModel.SurPick[3].Talent.BorrowedTime}"/>
+                                        HorizontalAlignment="Center">
                                 <ToggleButton x:Name="KneeJerkReflex4"
-                                          Content="膝跳&#13;反射"
-                                          IsChecked="{Binding BpReceiveModel.SurPick[3].Talent.KneeJerkReflex}"
-                                          Margin="60,0,0,0"/>
+                                              Content="膝跳&#13;反射"
+                                              IsChecked="{Binding BpReceiveModel.SurPick[3].Talent.KneeJerkReflex}"/>
+                                <ToggleButton x:Name="BorrowedTime4"
+                                              Content="回光&#13;返照"
+                                              Margin="60,0,0,0"
+                                              IsChecked="{Binding BpReceiveModel.SurPick[3].Talent.BorrowedTime}"/>
                             </StackPanel>
                             <ToggleButton x:Name="TideTurner4"
                                       Content="化险&#13;为夷"

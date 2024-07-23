@@ -152,14 +152,12 @@ namespace bp_sys_wpf.Views.Windows
         {
             //BpReceiveModel
             rootViewModel.BpReceiveModel.SurBan = new List<string>(4) { null, null, null, null };
-            rootViewModel.BpReceiveModel.SurHoleBan = new List<string>(6) { null, null, null, null, null, null };
             rootViewModel.BpReceiveModel.HunBan = new List<string>(3) { null, null, null };
             rootViewModel.BpReceiveModel.SurPick = new List<SurPickInfo>(4) { new SurPickInfo(), new SurPickInfo(), new SurPickInfo(), new SurPickInfo() };
             rootViewModel.BpReceiveModel.HunPick = null;
 
             //BpShowModel
             rootViewModel.BpShowViewModel.BpShow.SurBan = new List<BitmapImage>(4) { null, null, null, null };
-            rootViewModel.BpShowViewModel.BpShow.SurHoleBan = new List<BitmapImage>(6) { null, null, null, null, null, null };
             rootViewModel.BpShowViewModel.BpShow.HunBan = new List<BitmapImage>(3) { null, null, null };
             rootViewModel.BpShowViewModel.BpShow.SurPick = new List<SurPickShowInfo>(4) { new SurPickShowInfo(), new SurPickShowInfo(), new SurPickShowInfo(), new SurPickShowInfo() };
             rootViewModel.BpShowViewModel.BpShow.HunPick = new HunPickShowInfo();

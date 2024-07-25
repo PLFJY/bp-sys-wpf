@@ -4,6 +4,7 @@ using bp_sys_wpf.Views.Pages;
 using Flurl.Http;
 using IniParser;
 using IniParser.Model;
+using System.IO;
 using System.Text.Json;
 using System.Windows;
 using System.Windows.Media;
@@ -37,6 +38,28 @@ namespace bp_sys_wpf.Views.Windows
             DataContext = rootViewModel;
             AppInitialize();
             UpdateCheck();
+            DeleteFiles();
+        }
+        private void DeleteFiles()
+        {
+            string currentDirectory = Directory.GetCurrentDirectory();
+
+            DeleteFilesIfExist(currentDirectory, "update.bat");
+            DeleteFilesIfExist(currentDirectory, "EndAndUpdate.bat");
+            DeleteFilesIfExist(currentDirectory, "new_bpsys.7z");
+        }
+        private void DeleteFilesIfExist(string directory, string fileName)
+        {
+            string filePath = Path.Combine(directory, fileName);
+
+            if (File.Exists(filePath))
+            {
+                try
+                {
+                    File.Delete(filePath);
+                }
+                catch { }
+            }
         }
         private void AppInitialize()
         {

@@ -158,6 +158,7 @@
                                                Click="StartFronts_Click"/>
                         <ui:NavigationViewItem Content="关于"
                                                Icon="{ui:SymbolIcon Info24}"
+                                               NavigationCacheMode="Enabled"
                                                TargetPageType = "{x:Type pages:InfoPage}"/>
                     </ui:NavigationView.MenuItems>
                 </ui:NavigationView>

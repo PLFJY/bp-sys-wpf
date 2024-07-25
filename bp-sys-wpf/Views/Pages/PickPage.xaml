@@ -275,7 +275,7 @@
                       VerticalAlignment="Top"
                       Margin="10,10,0,0">
                 <StackPanel>
-                    <GroupBox Header="主场"
+                    <GroupBox Header="{Binding TeamInfoViewModel.TeamInfoModel.MainTeamInfo.Name}"
                               HorizontalAlignment="Left"
                               VerticalAlignment="Top"
                               Margin="10,10,10,10">
@@ -340,7 +340,7 @@
                         </StackPanel>
 
                     </GroupBox>
-                    <GroupBox Header="客场"
+                    <GroupBox Header="{Binding TeamInfoViewModel.TeamInfoModel.AwayTeamInfo.Name}"
                               HorizontalAlignment="Left"
                               VerticalAlignment="Top"
                               Margin="10,10,10,10">

@@ -621,8 +621,8 @@ namespace bp_sys_wpf.ViewModel
         {
             TeamInfoModel.MainTeamInfo.Score.FrontView = $"W{TeamInfoModel.MainTeamInfo.Score.W} D{TeamInfoModel.MainTeamInfo.Score.D} L{TeamInfoModel.MainTeamInfo.Score.L}";
             TeamInfoModel.AwayTeamInfo.Score.FrontView = $"W{TeamInfoModel.AwayTeamInfo.Score.W} D{TeamInfoModel.AwayTeamInfo.Score.D} L{TeamInfoModel.AwayTeamInfo.Score.L}";
-            TeamInfoModel.MainTeamInfo.Score.BackView = $"W:{TeamInfoModel.MainTeamInfo.Score.W} D:{TeamInfoModel.MainTeamInfo.Score.D} L:{TeamInfoModel.MainTeamInfo.Score.L} 小比分:{TeamInfoModel.MainTeamInfo.Score.S}";
-            TeamInfoModel.AwayTeamInfo.Score.BackView = $"W:{TeamInfoModel.AwayTeamInfo.Score.W} D:{TeamInfoModel.AwayTeamInfo.Score.D} L:{TeamInfoModel.AwayTeamInfo.Score.L} 小比分:{TeamInfoModel.AwayTeamInfo.Score.S}";
+            TeamInfoModel.MainTeamInfo.Score.BackView = $"{TeamInfoModel.MainTeamInfo.Name} W:{TeamInfoModel.MainTeamInfo.Score.W} D:{TeamInfoModel.MainTeamInfo.Score.D} L:{TeamInfoModel.MainTeamInfo.Score.L} 小比分:{TeamInfoModel.MainTeamInfo.Score.S}";
+            TeamInfoModel.AwayTeamInfo.Score.BackView = $"{TeamInfoModel.AwayTeamInfo.Name} W:{TeamInfoModel.AwayTeamInfo.Score.W} D:{TeamInfoModel.AwayTeamInfo.Score.D} L:{TeamInfoModel.AwayTeamInfo.Score.L} 小比分:{TeamInfoModel.AwayTeamInfo.Score.S}";
             BackWindow.backWindow.rootViewModel.TeamInfoViewModel = BackWindow.backWindow.rootViewModel.TeamInfoViewModel;
         }
 

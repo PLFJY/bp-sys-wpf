@@ -14,7 +14,7 @@
 
  This software has been open-sourced on Github: [plfjy/bp-sys-wpf](https://github.com/PLFJY/bp-sys-wpf)
 
- **[download address](https://plfjy.lanzouq.com/icsEH255s13a)**
+ **[Download Address](https://plfjy.lanzouq.com/icsEH255s13a)**
 
  ### BP module:
 

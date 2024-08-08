@@ -30,7 +30,7 @@
  Map BP display: there's not much to say about this, it's not hard to understand in terms of general rationality.
 
  Talent display: also not difficult to understand, it is worth noting that the arrangement of the cross and the in-game talent position is corresponding, and according to the order of the left to right, top to bottom of the outer frame of the text is in accordance with the order of the Pick interface survivor to determine the order of the survivor, the display of the survivor's role in the name.
- *Currently (2024.8.2) you can only see the survivor's talents in the area selection stage, so only the survivor's talents are displayed, and more displays will be added according to the changes of the game.
+ *Currently (2024.8.2) you can only see the survivor's talents in the area selection stage, so only the survivor's talents are displayed, and more displays will be added according to the changes of the game.*
 
  Team information (including team name, team logo and player ID): the only thing worth noting is that the player's name can be filled in directly with a nickname, not a team name, which will be automatically synthesized when uploaded to the frontend. The Survivor portion of the "current player" has a shortcut entry in the Pick screen, which also allows you to do the swap described below. You can also change the position as described below.
 

@@ -21,7 +21,7 @@
  ### Role display:
  A drop-down combo box can be searched by inputting the pinyin initials of the character name, and press Tab key to fill in the details, meanwhile, Tab key is also the trigger key to update the character in that box to the foreground interface, **only the corresponding picture will appear in the foreground interface if the Tab key is pressed** *(Note: the pinyin initials of the 26th guard is bb i.e. "bang bang", is a special value, mainly for your own convenience)*, **the corresponding drop-down box will display the corresponding character's avatar below if operated correctly**
 
- **About the number buttons below the Pick Survivor preview: this is used after entering the game to match the player to the character being used, clicking on the corresponding number will swap the position of the character in that position with the position of the character in the position that corresponds to the number on the button**.
+ *About the number buttons below the Pick Survivor preview: this is used after entering the game to match the player to the character being used, clicking on the corresponding number will swap the position of the character in that position with the position of the character in the position that corresponds to the number on the button*.
 
  At the end of each round, you can press the "Reset" button to reset the current character selection, it will not affect the BP of the map and the score of the score system, the global banned picks will be automatically recorded to the right side of the "global banned picks record" position, and it will be automatically on the screen when you change sides.
 

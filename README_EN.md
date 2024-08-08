@@ -19,13 +19,13 @@
  ### BP module:
 
  ### Role display:
- A drop-down combo box can be searched by inputting the pinyin initials of the character name, and press Tab key to fill in the details, meanwhile, Tab key is also the trigger key to update the character in that box to the foreground interface, ** only the corresponding picture will appear in the foreground interface if the Tab key is pressed ** *(Note: the pinyin initials of the 26th guard is bb i.e. "bang bang ", is a special value, mainly for your own convenience) **, ** the corresponding drop-down box will display the corresponding character's avatar below if operated correctly **
+ A drop-down combo box can be searched by inputting the pinyin initials of the character name, and press Tab key to fill in the details, meanwhile, Tab key is also the trigger key to update the character in that box to the foreground interface, ** only the corresponding picture will appear in the foreground interface if the Tab key is pressed** *(Note: the pinyin initials of the 26th guard is bb i.e. "bang bang", is a special value, mainly for your own convenience)**, **the corresponding drop-down box will display the corresponding character's avatar below if operated correctly**
 
- ** About the number buttons below the Pick Survivor preview: this is used after entering the game to match the player to the character being used, clicking on the corresponding number will swap the position of the character in that position with the position of the character in the position that corresponds to the number on the button **.
+ **About the number buttons below the Pick Survivor preview: this is used after entering the game to match the player to the character being used, clicking on the corresponding number will swap the position of the character in that position with the position of the character in the position that corresponds to the number on the button**.
 
  At the end of each round, you can press the "Reset" button to reset the current character selection, it will not affect the BP of the map and the score of the score system, the global banned picks will be automatically recorded to the right side of the "global banned picks record" position, and it will be automatically on the screen when you change sides.
 
- * About the global banned picks record in the Pick interface: this is a convenient way to record the global banned picks, the top one is for the home game, the bottom one is for the away game, after filling in the name of the team, the outside border will show the name of the team. You can record the first two choices of the game on the right side when the player finishes choosing the first two roles, this will be linked with the left side of the "global banned", simply record will not affect the current game of the global banned choices of the current game, in the side of the change will be automatically filled with the survivor's team's global banned record to the global banned*.
+ *About the global banned picks record in the Pick interface: this is a convenient way to record the global banned picks, the top one is for the home game, the bottom one is for the away game, after filling in the name of the team, the outside border will show the name of the team. You can record the first two choices of the game on the right side when the player finishes choosing the first two roles, this will be linked with the left side of the "global banned", simply record will not affect the current game of the global banned choices of the current game, in the side of the change will be automatically filled with the survivor's team's global banned record to the global banned*.
 
  Map BP display: there's not much to say about this, it's not hard to understand in terms of general rationality.
 
@@ -34,12 +34,12 @@
 
  Team information (including team name, team logo and player ID): the only thing worth noting is that the player's name can be filled in directly with a nickname, not a team name, which will be automatically synthesized when uploaded to the frontend. The Survivor portion of the "current player" has a shortcut entry in the Pick screen, which also allows you to do the swap described below. You can also change the position as described below.
 
- * About the number buttons next to the player's name on the team info page: this is also used to match the player to the character being used, clicking on the corresponding number will swap the player's position with the one corresponding to the number on the button.
+ *About the number buttons next to the player's name on the team info page: this is also used to match the player to the character being used, clicking on the corresponding number will swap the player's position with the one corresponding to the number on the button.*
 
  #### About importing team information from a Json file:
  The example file for importing team information is TeamInfoExample.json in the root directory of the software, which can be opened directly with Notepad.
  Such a file can directly import team information, the team logo uri can either be a link or the exact location of the file in your computer, but if it is the latter then you need a double slash like for example E:\\Desktop\\YS.png, otherwise the directory won't be read correctly!
- * (Tips: you can use Gitee in the wiremap bed)*
+ *(Tips: you can use Gitee or Github in the wiremap bed)*
 
  Ban number setting: there's not much to say about this, on means there's this Ban, off means there's no such Ban, which means the Ban will be locked, and the corresponding drop-down box will be disabled at this time
 

@@ -46,7 +46,9 @@
  Playing screen: the character you selected in the background will be synchronized to the playing screen, the order of the player's name and the order of the character will be the same as in the front window.
 
 
- ---Score Control: Score control will be synchronized with the player's name and character order in this screen.
+ ---
+
+Score Control: Score control will be synchronized with the player's name and character order in this screen.
 
 
  Score Control:
@@ -59,7 +61,9 @@
 
  I will maintain this software for a long time, if there is a new version, you will be alerted when you start the software, then you can go to the bottom right corner of the About screen to update it.
 
- ---The program will be maintained for a long time.
+ ---
+
+The program will be maintained for a long time.
 
  Some special notes: the root directory of this program is structured in the following folders: 7z, pic, Resource.
 
@@ -83,7 +87,7 @@
 
  for the source using filters to add "color value", the key color is "green", similarity adjusted to just can not see the green can be (more will be to show that also deducted)
 
- Written in the end: It is recommended to install "Han Yi fifth personality body", "Huakang POP1 body W5", "Delight Black" font to achieve a better display effect, otherwise it will be very ugly, the first two The first two fonts can be found at the bottom of the [Fifth Person Wiki](dwrg.wiki) at the "Fonts", the latter can be searched on the B site directly by ooooooohmygosh production!
+ Written in the end: It is recommended to install "Han Yi fifth personality body", "Huakang POP1 body W5", "smiley-sans" font to achieve a better display effect, otherwise it will be very ugly, the first two The first two fonts can be found at the bottom of the [Identify V Wiki](https://wiki.biligame.com/dwrg/字体) at the "Fonts", the latter can be searched on the Bilibili directly by ooooooohmygosh production!
 
 
 通过DeepL翻译 (https://www.deepl.com/app/?utm_source=ios&utm_medium=app&utm_campaign=share-translation)

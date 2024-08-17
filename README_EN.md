@@ -87,7 +87,7 @@ The program will be maintained for a long time.
 
  for the source using filters to add "color value", the key color is "green", similarity adjusted to just can not see the green can be (more will be to show that also deducted)
 
- Written in the end: It is recommended to install "Han Yi fifth personality body", "Huakang POP1 body W5", "smiley-sans" font to achieve a better display effect, otherwise it will be very ugly, the first two The first two fonts can be found at the bottom of the [Identify V Wiki](https://wiki.biligame.com/dwrg/字体) at the "Fonts", the latter can be searched on the Bilibili directly by ooooooohmygosh production!
+ Written in the end: It is recommended to install "Han Yi fifth personality body", "Huakang POP1 body W5", "smiley-sans" font to achieve a better display effect, otherwise it will be very ugly, the first two The first two fonts can be found at the bottom of the [Identify V Wiki](https://wiki.biligame.com/dwrg/字体), the latter can be searched on the Bilibili directly by ooooooohmygosh production!
 
 
 Translate by DeepL (https://www.deepl.com/app/?utm_source=ios&utm_medium=app&utm_campaign=share-translation)

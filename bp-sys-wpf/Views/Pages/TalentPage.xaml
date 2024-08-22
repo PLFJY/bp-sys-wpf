@@ -243,7 +243,7 @@
                     </StackPanel>
                 </StackPanel>
             </GroupBox>
-            <GroupBox HorizontalAlignment="Left" Header="监管者天赋特质">
+            <GroupBox HorizontalAlignment="Left" Header="监管者天赋及辅助特质">
                 <StackPanel Margin="10,10,10,10">
                     <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Header="天赋">
                         <Grid>

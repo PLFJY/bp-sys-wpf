@@ -63,7 +63,27 @@ namespace bp_sys_wpf.Views.Windows
         private void AppInitialize()
         {
             var parser = new FileIniDataParser();
-            IniData data = parser.ReadFile($"{AppDomain.CurrentDomain.BaseDirectory}\\Resource\\Config.ini");
+            IniData data = new IniData();
+            try
+            {
+                data = parser.ReadFile($"{AppDomain.CurrentDomain.BaseDirectory}\\Resource\\Config.ini");
+            }
+            catch
+            {
+                MessageBox.Show("缺少Resource下的Config.ini文件\n已生成默认文件，请重启该软件", "配置文件加载错误");
+                string batchFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Resource\\Config.ini");
+                string batchFileContent = ";一些颜色参考\r\n;黑色#FF000000\r\n;红色#FFFF0000\r\n;白色#FFFFFFFF\r\n;蓝色#FF0000FF\r\n;绿色#FF00FF00\r\n;颜色代号类型：十六进制颜色代码Hex，ARGB或RGB都可（ARGB是带颜色透明度的，RGB则是经典的红绿蓝）\r\n;BP主窗口\r\n[Front_Color]\r\n;队伍名称\r\nteam_name=#FFD3BC88\r\n;小比分\r\nscoreS=#FFF9EFD6\r\n;大比分\r\nscore=#FFD3BC88\r\n;计时器\r\ntimmer=#FFDAB74F\r\n;求生者选手id的队伍名称\r\nSur_team=#FFFFFFFF\r\n;求生者选手id\r\nSur_player=#FFFFFFFF\r\n;监管者选手id\r\nHun_player=#FFFFFFFF\r\n;过场画面\r\n[Interlude_Color]\r\n;队伍名称\r\nteam_name=#FF000000\r\n;选手名称\r\nplayer_name=#FF000000\r\n;游戏内比分\r\n[Score_Color]\r\n;队伍名称\r\nTeamName=#FFFFFFFF\r\n;大比分\r\nScore=#FFFFFFFF\r\n;大比分下面的字\r\nWord=#FFFFFFFF\r\n;小比分\r\nS=#FFFF0000\r\n;分数统计\r\n[ScoreHole_Color]\r\n;队伍名称\r\nName=#FFFFFFFF\r\n;分数\r\nScore=#FFFFFFFF";
+                try
+                {
+                    System.IO.File.WriteAllText(batchFilePath, batchFileContent);
+                    Console.WriteLine("Batch file created successfully!");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("An error occurred: " + ex.Message);
+                }
+                Environment.Exit(0);
+            }
             Config.Front.Color.team_name = ConvertHexStringToBrush(data["Front_Color"]["team_name"].ToString());
             Config.Front.Color.scoreS = ConvertHexStringToBrush(data["Front_Color"]["scoreS"].ToString());
             Config.Front.Color.score = ConvertHexStringToBrush(data["Front_Color"]["score"].ToString());
@@ -82,6 +102,7 @@ namespace bp_sys_wpf.Views.Windows
 
             Config.ScoreHole.Color.Name = ConvertHexStringToBrush(data["ScoreHole_Color"]["Name"].ToString());
             Config.ScoreHole.Color.Score = ConvertHexStringToBrush(data["ScoreHole_Color"]["Score"].ToString());
+            
             rootViewModel.BpShowViewModel.ReceiveModel = rootViewModel.BpReceiveModel;
             rootViewModel.BpReceiveModel.BpShowViewModel = rootViewModel.BpShowViewModel;
             rootViewModel.TeamInfoViewModel = rootViewModel.TeamInfoViewModel;
@@ -165,8 +186,10 @@ namespace bp_sys_wpf.Views.Windows
             }
             else
             {
-                ErrBar.IsOpen = true;
-                ErrBar.Message = "请勿重复启动";
+                MessageBar.IsOpen = true;
+                MessageBar.Title = "错误";
+                MessageBar.Severity = Wpf.Ui.Controls.InfoBarSeverity.Error;
+                MessageBar.Message = "请勿重复启动";
             }
         }
 
@@ -191,7 +214,7 @@ namespace bp_sys_wpf.Views.Windows
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             // 弹窗提示是否确定要退出
-            MessageBoxResult result = MessageBox.Show("您确定要退出吗？", null, MessageBoxButton.OKCancel, MessageBoxImage.None, MessageBoxResult.Cancel);
+            MessageBoxResult result = MessageBox.Show("您确定要退出吗？", "关闭提示", MessageBoxButton.OKCancel, MessageBoxImage.None, MessageBoxResult.Cancel);
             System.Console.WriteLine(result);
             if (result == MessageBoxResult.Cancel)
             {
@@ -201,13 +224,22 @@ namespace bp_sys_wpf.Views.Windows
         public async void UpdateCheck()
         {
             var (version, url) = await FetchLatestReleaseInfoAsync();
-            if (version != Config.version)
+            if(version == "请求失败")
             {
-                ErrBar.Severity = Wpf.Ui.Controls.InfoBarSeverity.Success;
-                ErrBar.Title = "更新提示";
-                ErrBar.Message = $"检测到新版本，最新版本为{version} 请去关于界面获取更新！";
-                ErrBar.IsOpen = true;
-                //MessageBox.Show("检测到新版本，最新版本为" + version + "\n请去关于界面获取更新！", "更新提示");
+                MessageBar.Severity = Wpf.Ui.Controls.InfoBarSeverity.Warning;
+                MessageBar.Title = "更新提示";
+                MessageBar.Message = $"更新获取失败";
+                MessageBar.IsOpen = true;
+            }
+            else
+            {
+                if (version != Config.version)
+                {
+                    MessageBar.Severity = Wpf.Ui.Controls.InfoBarSeverity.Success;
+                    MessageBar.Title = "更新提示";
+                    MessageBar.Message = $"检测到新版本，最新版本为{version} 请去关于界面获取更新！";
+                    MessageBar.IsOpen = true;
+                }
             }
         }
         public async Task<(string latestVersion, string DownloadURL)> FetchLatestReleaseInfoAsync()
@@ -229,7 +261,7 @@ namespace bp_sys_wpf.Views.Windows
             catch (FlurlHttpException ex)
             {
                 Console.WriteLine($"请求失败: {ex.Message}");
-                return default;
+                return ($"请求失败", ex.Message);
             }
             catch (JsonException jex)
             {

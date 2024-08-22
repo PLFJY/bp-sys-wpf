@@ -5,6 +5,7 @@ using System.Net;
 using System.Text.Json;
 using System.Windows;
 using System.Windows.Controls;
+using static System.Net.WebRequestMethods;
 
 namespace bp_sys_wpf.Views.Pages
 {
@@ -48,6 +49,7 @@ namespace bp_sys_wpf.Views.Pages
             catch (FlurlHttpException ex)
             {
                 Console.WriteLine($"请求失败: {ex.Message}");
+                NewVersionContant.Text = $"最新版本更新内容：\n请求失败";
             }
             catch (JsonException jex)
             {
@@ -57,9 +59,26 @@ namespace bp_sys_wpf.Views.Pages
 
         public async Task<(string latestVersion, string DownloadURL)> FetchLatestReleaseInfoAsync()
         {
-            var baseUrl = "https://gitee.com/api/v5";
-            var repository = "plfjy/bp-sys-wpf-update-asg";
-            var releasesUrl = $"{baseUrl}/repos/{repository}/releases/latest";
+            string baseUrl = null, repository = null, releasesUrl = null, mirrorURL = null;
+            if (Ghproxy.IsChecked == true)
+            {
+                baseUrl = "https://api.github.com";
+                repository = "plfjy/bp-sys-wpf-update";
+                releasesUrl = $"{baseUrl}/repos/{repository}/releases/latest";
+                mirrorURL = "https://mirror.ghproxy.com/";
+            }
+            if (Gitee.IsChecked == true)
+            {
+                baseUrl = "https://gitee.com/api/v5";
+                repository = "plfjy/bp-sys-wpf-update";
+                releasesUrl = $"{baseUrl}/repos/{repository}/releases/latest";
+            }
+            if (Github.IsChecked == true)
+            {
+                baseUrl = "https://api.github.com";
+                repository = "plfjy/bp-sys-wpf-update";
+                releasesUrl = $"{baseUrl}/repos/{repository}/releases/latest";
+            }
             try
             {
                 // 发起GET请求并获取JSON响应内容
@@ -68,17 +87,18 @@ namespace bp_sys_wpf.Views.Pages
                 var releaseInfo = System.Text.Json.JsonSerializer.Deserialize<GiteeReleaseInfo>(responseJson);
                 // 提取tag_name和第一个browser_download_url
                 string latestVersion = releaseInfo.tag_name;
-                string downloadUrl = releaseInfo.assets?.Length > 0 ? releaseInfo.assets[0].browser_download_url : null;
+                string fileUrl = releaseInfo.assets?.Length > 0 ? releaseInfo.assets[0].browser_download_url : null;
+                var downloadUrl = mirrorURL + fileUrl;
                 return (latestVersion, downloadUrl);
             }
             catch (FlurlHttpException ex)
             {
-                Console.WriteLine($"请求失败: {ex.Message}");
-                return default;
+                Debug.WriteLine($"请求失败: {ex.Message}");
+                return ($"请求失败", $"请求失败: {ex.Message}");
             }
             catch (JsonException jex)
             {
-                Console.WriteLine($"JSON解析失败: {jex.Message}");
+                Debug.WriteLine($"JSON解析失败: {jex.Message}");
                 return default;
             }
         }
@@ -86,21 +106,38 @@ namespace bp_sys_wpf.Views.Pages
         private async void CheckUpdate_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             var (version, url) = await FetchLatestReleaseInfoAsync();
-            if (version != Config.version)
+            if (version == "请求失败")
             {
-                MessageBox.Show("检测到新版本，最新版本为" + version + "\n点击确定或关闭该提示执行更新！", "更新提示");
-                label1.Visibility = Visibility.Visible;
-                pbDown.Visibility = Visibility.Visible;
-                NewBat();
-                CreateBat();
-                if (HttpFileExist(url))
+                //MessageBox.Show(url, version);
+                MessageBoxResult result = MessageBox.Show("请求失败，请手动检查版本并下载更新包与软件目录合并\n如遇到文件冲突直接覆盖\n点击确定跳转到更新包下载页", "更新提示", MessageBoxButton.OKCancel, MessageBoxImage.None, MessageBoxResult.Cancel);
+                if (result == MessageBoxResult.Cancel)
                 {
-                    DownloadHttpFile(url, "new_bpsys.7z");
+                    return;
+                }
+                else
+                {
+                    var updateurl = "https://gitee.com/plfjy/bp-sys-wpf-update/releases/latest/";
+                    Process.Start("explorer.exe", updateurl);
                 }
             }
             else
             {
-                MessageBox.Show("当前版本为最新版本", "更新提示");
+                if (version != Config.version)
+                {
+                    MessageBox.Show("检测到新版本，最新版本为" + version + "\n点击确定或关闭该提示执行更新！", "更新提示");
+                    label1.Visibility = Visibility.Visible;
+                    pbDown.Visibility = Visibility.Visible;
+                    NewBat();
+                    CreateBat();
+                    if (HttpFileExist(url))
+                    {
+                        DownloadHttpFile(url, "new_bpsys.7z");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("当前版本为最新版本", "更新提示");
+                }
             }
         }
         public void DownloadHttpFile(String http_url, String save_url)
@@ -213,7 +250,7 @@ exit /b
             // 创建批处理文件并写入内容  
             try
             {
-                File.WriteAllText(batchFilePath, batchFileContent);
+                System.IO.File.WriteAllText(batchFilePath, batchFileContent);
                 Console.WriteLine("Batch file created successfully!");
             }
             catch (Exception ex)
@@ -248,7 +285,7 @@ exit /b
             // 创建批处理文件并写入内容  
             try
             {
-                File.WriteAllText(batchFilePath, batchFileContent);
+                System.IO.File.WriteAllText(batchFilePath, batchFileContent);
                 Console.WriteLine("Batch file created successfully!");
             }
             catch (Exception ex)
@@ -294,6 +331,25 @@ exit /b
                 Console.WriteLine("An error occurred: " + ex.Message);
             }
 
+        }
+
+        private void ResetConfig_Click(object sender, RoutedEventArgs e)
+        {
+            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "Resource\\Config.ini");
+            System.IO.File.Delete(filePath);
+
+            string batchFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Resource\\Config.ini");
+            string batchFileContent = ";一些颜色参考\r\n;黑色#FF000000\r\n;红色#FFFF0000\r\n;白色#FFFFFFFF\r\n;蓝色#FF0000FF\r\n;绿色#FF00FF00\r\n;颜色代号类型：十六进制颜色代码Hex，ARGB或RGB都可（ARGB是带颜色透明度的，RGB则是经典的红绿蓝）\r\n;BP主窗口\r\n[Front_Color]\r\n;队伍名称\r\nteam_name=#FFD3BC88\r\n;小比分\r\nscoreS=#FFF9EFD6\r\n;大比分\r\nscore=#FFD3BC88\r\n;计时器\r\ntimmer=#FFDAB74F\r\n;求生者选手id的队伍名称\r\nSur_team=#FFFFFFFF\r\n;求生者选手id\r\nSur_player=#FFFFFFFF\r\n;监管者选手id\r\nHun_player=#FFFFFFFF\r\n;过场画面\r\n[Interlude_Color]\r\n;队伍名称\r\nteam_name=#FF000000\r\n;选手名称\r\nplayer_name=#FF000000\r\n;游戏内比分\r\n[Score_Color]\r\n;队伍名称\r\nTeamName=#FFFFFFFF\r\n;大比分\r\nScore=#FFFFFFFF\r\n;大比分下面的字\r\nWord=#FFFFFFFF\r\n;小比分\r\nS=#FFFF0000\r\n;分数统计\r\n[ScoreHole_Color]\r\n;队伍名称\r\nName=#FFFFFFFF\r\n;分数\r\nScore=#FFFFFFFF";
+            try
+            {
+                System.IO.File.WriteAllText(batchFilePath, batchFileContent);
+                Console.WriteLine("Batch file created successfully!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: " + ex.Message);
+            }
+            MessageBox.Show("重置完成，请重启软件", "提示");
         }
     }
 }

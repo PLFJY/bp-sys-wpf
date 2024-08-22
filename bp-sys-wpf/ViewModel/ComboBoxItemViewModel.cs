@@ -84,6 +84,29 @@ namespace bp_sys_wpf.ViewModel
             set { _MapBan = value; }
         }
 
+        private List<string> _Trait;
+
+        public List<string> Trait
+        {
+            get
+            {
+                if (_Trait == null)
+                {
+                    _Trait = new List<string>();
+                    _Trait.Add("聆听");
+                    _Trait.Add("失常");
+                    _Trait.Add("兴奋");
+                    _Trait.Add("巡视者");
+                    _Trait.Add("传送");
+                    _Trait.Add("窥视者");
+                    _Trait.Add("闪现");
+                    _Trait.Add("移形");
+                }
+                return _Trait;
+            }
+            set { _Trait = value; }
+        }
+
 
         public List<string> LoadCharacters(string type)
         {

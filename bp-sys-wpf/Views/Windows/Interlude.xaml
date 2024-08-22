@@ -1,60 +1,266 @@
-﻿<Window x:Name="Interlude1" x:Class="bp_sys_wpf.Interlude"
+﻿<Window x:Class="bp_sys_wpf.Interlude"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bp_sys_wpf"
-        mc:Ignorable="d"
-        Title="过场" Height="810" Width="1440 " WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Name="Interlude1"
+        Title="过场"
+        Width="1440 "
+        Height="810"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        mc:Ignorable="d">
     <Viewbox>
-        <Grid Height="810" Width="1440">
+        <Grid Width="1440" Height="810">
             <Grid.Background>
-                <ImageBrush/>
+                <ImageBrush />
             </Grid.Background>
-            <Image x:Name="Bottom" Panel.ZIndex="3" Height="810" Width="1440"/>
-            <Image x:Name="Sur_1" Grid.Row="0" Height="650" Width="300" Stretch="UniformToFill" Panel.ZIndex="2" Margin="10,153,1130,24" Source="{Binding BpShowViewModel.BpShow.SurPick[0].ChartcherBigImage}"/>
-            <Image x:Name="Sur_2" Grid.Row="0" Height="650" Width="300" Stretch="UniformToFill" Panel.ZIndex="1" Margin="270,130,870,47" Source="{Binding BpShowViewModel.BpShow.SurPick[1].ChartcherBigImage}"/>
-            <Image x:Name="Sur_3" Grid.Row="0" Height="650" Width="300" Stretch="UniformToFill" Panel.ZIndex="2" Margin="887,130,253,47" Source="{Binding BpShowViewModel.BpShow.SurPick[2].ChartcherBigImage}"/>
-            <Image x:Name="Sur_4" Grid.Row="0" Height="650" Width="300" Stretch="UniformToFill" Panel.ZIndex="1" Margin="1130,114,10,63" Source="{Binding BpShowViewModel.BpShow.SurPick[3].ChartcherBigImage}"/>
-            <Image x:Name="Hun" Grid.Row="0" Height="700" Width="460" Panel.ZIndex="0" Margin="490,10,490,117" Stretch="UniformToFill" Source="{Binding BpShowViewModel.BpShow.HunPick.ChartcherBigImage}"/>
+            <!--  角色立绘  -->
+            <Image x:Name="Bottom"
+                   Width="1440"
+                   Height="810"
+                   Panel.ZIndex="3" />
+            <Image x:Name="Sur_1"
+                   Grid.Row="0"
+                   Width="300"
+                   Height="650"
+                   Margin="10,153,1130,24"
+                   Panel.ZIndex="2"
+                   Source="{Binding BpShowViewModel.BpShow.SurPick[0].ChartcherBigImage}"
+                   Stretch="UniformToFill" />
+            <Image x:Name="Sur_2"
+                   Grid.Row="0"
+                   Width="300"
+                   Height="650"
+                   Margin="270,130,870,47"
+                   Panel.ZIndex="1"
+                   Source="{Binding BpShowViewModel.BpShow.SurPick[1].ChartcherBigImage}"
+                   Stretch="UniformToFill" />
+            <Image x:Name="Sur_3"
+                   Grid.Row="0"
+                   Width="300"
+                   Height="650"
+                   Margin="887,130,253,47"
+                   Panel.ZIndex="2"
+                   Source="{Binding BpShowViewModel.BpShow.SurPick[2].ChartcherBigImage}"
+                   Stretch="UniformToFill" />
+            <Image x:Name="Sur_4"
+                   Grid.Row="0"
+                   Width="300"
+                   Height="650"
+                   Margin="1130,114,10,63"
+                   Panel.ZIndex="1"
+                   Source="{Binding BpShowViewModel.BpShow.SurPick[3].ChartcherBigImage}"
+                   Stretch="UniformToFill" />
+            <Image x:Name="Hun"
+                   Grid.Row="0"
+                   Width="460"
+                   Height="700"
+                   Margin="490,10,490,117"
+                   Panel.ZIndex="0"
+                   Source="{Binding BpShowViewModel.BpShow.HunPick.ChartcherBigImage}"
+                   Stretch="UniformToFill" />
+            <!--  队伍信息  -->
             <Grid Panel.ZIndex="4">
-                <Image x:Name="Sur_logo" Height="118" Width="118" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="81,0,0,16" Source="{Binding TeamInfoViewModel.NowModel.NowSurTeam.LOGO}"/>
-                <Label x:Name="Sur_team_name" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="48" Margin="369,0,0,53" FontWeight="Bold" HorizontalContentAlignment="Center" Content="{Binding TeamInfoViewModel.NowModel.NowSurTeam.Name}"/>
-                <Image x:Name="Hun_logo" Height="120" Width="120" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,80,16" Source="{Binding TeamInfoViewModel.NowModel.NowHunTeam.LOGO}"/>
-                <Label x:Name="Hun_team_name" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="48" Margin="0,0,366,53" FontWeight="Bold" HorizontalContentAlignment="Center" Content="{Binding TeamInfoViewModel.NowModel.NowHunTeam.Name}"/>
+                <Image x:Name="Sur_logo"
+                       Width="118"
+                       Height="118"
+                       Margin="81,0,0,16"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Bottom"
+                       Source="{Binding TeamInfoViewModel.NowModel.NowSurTeam.LOGO}" />
+                <Label x:Name="Sur_team_name"
+                       Margin="369,0,0,53"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Bottom"
+                       HorizontalContentAlignment="Center"
+                       Content="{Binding TeamInfoViewModel.NowModel.NowSurTeam.Name}"
+                       FontSize="48"
+                       FontWeight="Bold" />
+                <Image x:Name="Hun_logo"
+                       Width="120"
+                       Height="120"
+                       Margin="0,0,80,16"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Bottom"
+                       Source="{Binding TeamInfoViewModel.NowModel.NowHunTeam.LOGO}" />
+                <Label x:Name="Hun_team_name"
+                       Margin="0,0,366,53"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Bottom"
+                       HorizontalContentAlignment="Center"
+                       Content="{Binding TeamInfoViewModel.NowModel.NowHunTeam.Name}"
+                       FontSize="48"
+                       FontWeight="Bold" />
             </Grid>
+            <!--  选手ID  -->
             <Grid Panel.ZIndex="4">
-                <Image x:Name="NameImage" Margin="0,-10,0,10" Height="810" Width="1440"/>
-                <Label x:Name="Sur_1_player_name" FontSize="20" Panel.ZIndex="5" Width="160" Height="40" Margin="109,472,1171,298"  HorizontalContentAlignment="Center" FontWeight="Bold" Content="{Binding TeamInfoViewModel.NowModel.NowSurPlayerId[0]}"/>
-                <Label x:Name="Sur_2_player_name" FontSize="20" Panel.ZIndex="5" Width="160" Height="40" Margin="373,519,907,251"  HorizontalContentAlignment="Center" FontWeight="Bold" Content="{Binding TeamInfoViewModel.NowModel.NowSurPlayerId[1]}"/>
-                <Label x:Name="Sur_3_player_name" FontSize="20" Panel.ZIndex="5" Width="160" Height="40" Margin="944,519,336,251"  HorizontalContentAlignment="Center" FontWeight="Bold" Content="{Binding TeamInfoViewModel.NowModel.NowSurPlayerId[2]}"/>
-                <Label x:Name="Sur_4_player_name" FontSize="20" Panel.ZIndex="5" Width="160" Height="40" Margin="1170,472,110,298"  HorizontalContentAlignment="Center" FontWeight="Bold" Content="{Binding TeamInfoViewModel.NowModel.NowSurPlayerId[3]}"/>
-                <Label x:Name="Hun_player_name" FontSize="20" Panel.ZIndex="5" Width="160" Height="40" Margin="662,409,618,361"  HorizontalContentAlignment="Center" FontWeight="Bold" Content="{Binding TeamInfoViewModel.NowModel.NowHunPlayerId}"/>
+                <Image x:Name="NameImage"
+                       Width="1440"
+                       Height="810"
+                       Margin="0,-10,0,10" />
+                <Label x:Name="Sur_1_player_name"
+                       Width="160"
+                       Height="40"
+                       Margin="109,472,1171,298"
+                       HorizontalContentAlignment="Center"
+                       Panel.ZIndex="5"
+                       Content="{Binding TeamInfoViewModel.NowModel.NowSurPlayerId[0]}"
+                       FontSize="20"
+                       FontWeight="Bold" />
+                <Label x:Name="Sur_2_player_name"
+                       Width="160"
+                       Height="40"
+                       Margin="373,519,907,251"
+                       HorizontalContentAlignment="Center"
+                       Panel.ZIndex="5"
+                       Content="{Binding TeamInfoViewModel.NowModel.NowSurPlayerId[1]}"
+                       FontSize="20"
+                       FontWeight="Bold" />
+                <Label x:Name="Sur_3_player_name"
+                       Width="160"
+                       Height="40"
+                       Margin="944,519,336,251"
+                       HorizontalContentAlignment="Center"
+                       Panel.ZIndex="5"
+                       Content="{Binding TeamInfoViewModel.NowModel.NowSurPlayerId[2]}"
+                       FontSize="20"
+                       FontWeight="Bold" />
+                <Label x:Name="Sur_4_player_name"
+                       Width="160"
+                       Height="40"
+                       Margin="1170,472,110,298"
+                       HorizontalContentAlignment="Center"
+                       Panel.ZIndex="5"
+                       Content="{Binding TeamInfoViewModel.NowModel.NowSurPlayerId[3]}"
+                       FontSize="20"
+                       FontWeight="Bold" />
+                <Label x:Name="Hun_player_name"
+                       Width="160"
+                       Height="40"
+                       Margin="662,409,618,361"
+                       HorizontalContentAlignment="Center"
+                       Panel.ZIndex="5"
+                       Content="{Binding TeamInfoViewModel.NowModel.NowHunPlayerId}"
+                       FontSize="20"
+                       FontWeight="Bold" />
             </Grid>
+            <!--  天赋特质  -->
             <Grid Panel.ZIndex="5">
-                <StackPanel Orientation="Horizontal" Margin="-1060,265,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image x:Name="BorrowedTime1" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[0].Talent.BorrowedTime}"/>
-                    <Image x:Name="KneeJerkReflex1" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[0].Talent.KneeJerkReflex}"/>
-                    <Image x:Name="TideTurner1" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[0].Talent.TideTurner}"/>
-                    <Image x:Name="FlywheelEffect1" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[0].Talent.FlywheelEffect}"/>
+                <!--  求生者天赋  -->
+                <StackPanel Margin="-1060,265,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                    <Image x:Name="BorrowedTime1"
+                           Width="35"
+                           Height="35"
+                           Visibility="{Binding BpShowViewModel.BpShow.SurPick[0].Talent.BorrowedTime}" />
+                    <Image x:Name="KneeJerkReflex1"
+                           Width="35"
+                           Height="35"
+                           Visibility="{Binding BpShowViewModel.BpShow.SurPick[0].Talent.KneeJerkReflex}" />
+                    <Image x:Name="TideTurner1"
+                           Width="35"
+                           Height="35"
+                           Visibility="{Binding BpShowViewModel.BpShow.SurPick[0].Talent.TideTurner}" />
+                    <Image x:Name="FlywheelEffect1"
+                           Width="35"
+                           Height="35"
+                           Visibility="{Binding BpShowViewModel.BpShow.SurPick[0].Talent.FlywheelEffect}" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="-530,345,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image x:Name="BorrowedTime2" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[1].Talent.BorrowedTime}"/>
-                    <Image x:Name="KneeJerkReflex2" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[1].Talent.KneeJerkReflex}"/>
-                    <Image x:Name="TideTurner2" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[1].Talent.TideTurner}"/>
-                    <Image x:Name="FlywheelEffect2" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[1].Talent.FlywheelEffect}"/>
+                <StackPanel Margin="-530,345,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                    <Image x:Name="BorrowedTime2"
+                           Width="35"
+                           Height="35"
+                           Visibility="{Binding BpShowViewModel.BpShow.SurPick[1].Talent.BorrowedTime}" />
+                    <Image x:Name="KneeJerkReflex2"
+                           Width="35"
+                           Height="35"
+                           Visibility="{Binding BpShowViewModel.BpShow.SurPick[1].Talent.KneeJerkReflex}" />
+                    <Image x:Name="TideTurner2"
+                           Width="35"
+                           Height="35"
+                           Visibility="{Binding BpShowViewModel.BpShow.SurPick[1].Talent.TideTurner}" />
+                    <Image x:Name="FlywheelEffect2"
+                           Width="35"
+                           Height="35"
+                           Visibility="{Binding BpShowViewModel.BpShow.SurPick[1].Talent.FlywheelEffect}" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="610,350,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image x:Name="BorrowedTime3" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[2].Talent.BorrowedTime}"/>
-                    <Image x:Name="KneeJerkReflex3" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[2].Talent.KneeJerkReflex}"/>
-                    <Image x:Name="TideTurner3" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[2].Talent.TideTurner}"/>
-                    <Image x:Name="FlywheelEffect3" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[2].Talent.FlywheelEffect}"/>
+                <StackPanel Margin="610,350,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                    <Image x:Name="BorrowedTime3"
+                           Width="35"
+                           Height="35"
+                           Visibility="{Binding BpShowViewModel.BpShow.SurPick[2].Talent.BorrowedTime}" />
+                    <Image x:Name="KneeJerkReflex3"
+                           Width="35"
+                           Height="35"
+                           Visibility="{Binding BpShowViewModel.BpShow.SurPick[2].Talent.KneeJerkReflex}" />
+                    <Image x:Name="TideTurner3"
+                           Width="35"
+                           Height="35"
+                           Visibility="{Binding BpShowViewModel.BpShow.SurPick[2].Talent.TideTurner}" />
+                    <Image x:Name="FlywheelEffect3"
+                           Width="35"
+                           Height="35"
+                           Visibility="{Binding BpShowViewModel.BpShow.SurPick[2].Talent.FlywheelEffect}" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="1065,260,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image x:Name="BorrowedTime4" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[3].Talent.BorrowedTime}"/>
-                    <Image x:Name="KneeJerkReflex4" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[3].Talent.KneeJerkReflex}"/>
-                    <Image x:Name="TideTurner4" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[3].Talent.TideTurner}"/>
-                    <Image x:Name="FlywheelEffect4" Height="35" Width="35" Visibility="{Binding BpShowViewModel.BpShow.SurPick[3].Talent.FlywheelEffect}"/>
+                <StackPanel Margin="1065,260,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                    <Image x:Name="BorrowedTime4"
+                           Width="35"
+                           Height="35"
+                           Visibility="{Binding BpShowViewModel.BpShow.SurPick[3].Talent.BorrowedTime}" />
+                    <Image x:Name="KneeJerkReflex4"
+                           Width="35"
+                           Height="35"
+                           Visibility="{Binding BpShowViewModel.BpShow.SurPick[3].Talent.KneeJerkReflex}" />
+                    <Image x:Name="TideTurner4"
+                           Width="35"
+                           Height="35"
+                           Visibility="{Binding BpShowViewModel.BpShow.SurPick[3].Talent.TideTurner}" />
+                    <Image x:Name="FlywheelEffect4"
+                           Width="35"
+                           Height="35"
+                           Visibility="{Binding BpShowViewModel.BpShow.SurPick[3].Talent.FlywheelEffect}" />
+                </StackPanel>
+                <!--  监管者天赋特质  -->
+                <StackPanel Margin="50,120,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                    <Image x:Name="ConfinedSpace"
+                           Width="35"
+                           Height="35"
+                           Visibility="{Binding BpShowViewModel.BpShow.HunTalents.ConfinedSpace}" />
+                    <Image x:Name="Detention"
+                           Width="35"
+                           Height="35"
+                           Visibility="{Binding BpShowViewModel.BpShow.HunTalents.Detention}" />
+                    <Image x:Name="Insolence"
+                           Width="35"
+                           Height="35"
+                           Visibility="{Binding BpShowViewModel.BpShow.HunTalents.Insolence}" />
+                    <Image x:Name="TrumpCard"
+                           Width="35"
+                           Height="35"
+                           Visibility="{Binding BpShowViewModel.BpShow.HunTalents.TrumpCard}" />
+                    <Image x:Name="Trait"
+                           Width="50"
+                           Height="50"
+                           Source="{Binding BpShowViewModel.BpShow.Trait}"
+                           Visibility="{Binding BpShowViewModel.BpShow.TraitState}" />
                 </StackPanel>
             </Grid>
         </Grid>

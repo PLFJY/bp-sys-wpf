@@ -41,6 +41,14 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <None Remove="Header.PNG" />
+	  <None Remove="Icons\BorrowedTime.png" />
+	  <None Remove="Icons\ConfinedSpace.png" />
+	  <None Remove="Icons\Detention.png" />
+	  <None Remove="Icons\FlywheelEffect.png" />
+	  <None Remove="Icons\Insolence.png" />
+	  <None Remove="Icons\KneeJerkReflex.png" />
+	  <None Remove="Icons\TideTurner.png" />
+	  <None Remove="Icons\TrumpCard.png" />
 	  <None Remove="Views\HomeHeader.png" />
 	  <None Remove="Views\Pages\HomeHeader.png" />
 	</ItemGroup>
@@ -53,6 +61,14 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <Resource Include="Header.PNG" />
+	  <Resource Include="Icons\BorrowedTime.png" />
+	  <Resource Include="Icons\ConfinedSpace.png" />
+	  <Resource Include="Icons\Detention.png" />
+	  <Resource Include="Icons\FlywheelEffect.png" />
+	  <Resource Include="Icons\Insolence.png" />
+	  <Resource Include="Icons\KneeJerkReflex.png" />
+	  <Resource Include="Icons\TideTurner.png" />
+	  <Resource Include="Icons\TrumpCard.png" />
 	  <Resource Include="Views\HomeHeader.png" />
 	  <Resource Include="Views\Pages\HomeHeader.png" />
 	</ItemGroup>

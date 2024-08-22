@@ -210,6 +210,85 @@ namespace bp_sys_wpf.Model
             }
             set { _MapBan = value; }
         }
+
+        private string _Trait;
+
+        public string Trait
+        {
+            get
+            {
+                GetFilePath getFilePath = new GetFilePath();
+                BpShowViewModel.BpShow.Trait = getFilePath.GetImage("Talent\\Hun\\Trait", _Trait);
+                BpShowViewModel.BpShow = BpShowViewModel.BpShow;
+                return _Trait;
+            }
+            set { _Trait = value; }
+        }
+
+        private bool _TraitState;
+
+        public bool TraitState
+        {
+            get
+            {
+                if (_TraitState == true)
+                {
+                    BpShowViewModel.BpShow.TraitState = Visibility.Visible;
+                }
+                else
+                {
+                    BpShowViewModel.BpShow.TraitState = Visibility.Collapsed;
+                }
+                BpShowViewModel.BpShow = BpShowViewModel.BpShow;
+                return _TraitState;
+            }
+            set { _TraitState = value; }
+        }
+
+        private HunTalents _HunTalents = new HunTalents();
+
+        public HunTalents HunTalents
+        {
+            get
+            {
+                if (_HunTalents.ConfinedSpace == true)//封窗
+                {
+                    BpShowViewModel.BpShow.HunTalents.ConfinedSpace = Visibility.Visible;
+                }
+                else
+                {
+                    BpShowViewModel.BpShow.HunTalents.ConfinedSpace = Visibility.Collapsed;
+                }
+                if (_HunTalents.Detention == true)//一刀斩
+                {
+                    BpShowViewModel.BpShow.HunTalents.Detention = Visibility.Visible;
+                }
+                else
+                {
+                    BpShowViewModel.BpShow.HunTalents.Detention = Visibility.Collapsed;
+                }
+                if (_HunTalents.Insolence == true)//张狂
+                {
+                    BpShowViewModel.BpShow.HunTalents.Insolence = Visibility.Visible;
+                }
+                else
+                {
+                    BpShowViewModel.BpShow.HunTalents.Insolence = Visibility.Collapsed;
+                }
+                if (_HunTalents.TrumpCard == true)//底牌
+                {
+                    BpShowViewModel.BpShow.HunTalents.TrumpCard = Visibility.Visible;
+                }
+                else
+                {
+                    BpShowViewModel.BpShow.HunTalents.TrumpCard = Visibility.Collapsed;
+                }
+                BpShowViewModel.BpShow = BpShowViewModel.BpShow;
+                return _HunTalents;
+            }
+            set { _HunTalents = value; }
+        }
+
     }
     public class SurPickInfo//求生Pick集合
     {
@@ -222,5 +301,12 @@ namespace bp_sys_wpf.Model
         public bool KneeJerkReflex { get; set; }
         public bool TideTurner { get; set; }
         public bool FlywheelEffect { get; set; }
+    }
+    public class HunTalents//监管者天赋
+    {
+        public bool ConfinedSpace { get; set; }
+        public bool Detention { get; set; }
+        public bool Insolence { get; set; }
+        public bool TrumpCard { get; set; }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using bp_sys_wpf.ViewModel;
 using bp_sys_wpf.Views.Windows;
-using System;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
@@ -80,7 +79,7 @@ namespace bp_sys_wpf.Views.Pages
                 IsMainHun.IsChecked = true;
                 IsAwaySur.IsChecked = true;
             }
-            if(RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainTeamState == string.Empty)
+            if (RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainTeamState == string.Empty)
             {
                 IsMainSur.IsChecked = false;
                 IsMainHun.IsChecked = false;

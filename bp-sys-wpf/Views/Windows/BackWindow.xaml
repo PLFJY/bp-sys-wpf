@@ -106,13 +106,11 @@
                     </GroupBox>
                 </Grid>
             </Border>
-            <ui:InfoBar x:Name="ErrBar"
-                        Title="错误"
+            <ui:InfoBar x:Name="MessageBar"
                         Grid.Row="1"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Top"
-                        Panel.ZIndex="1"
-                        Severity="Error" />
+                        Panel.ZIndex="1" />
             <Grid Grid.Row="1" AutomationProperties.IsColumnHeader="True">
                 <ui:NavigationView x:Name="RootNavigation"
                                    Cursor=""

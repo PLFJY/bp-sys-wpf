@@ -63,12 +63,10 @@ namespace bp_sys_wpf.ViewModel
                     BpShow.SurHoleBan[num] = getFilePath.GetImage("surban", ReceiveModel.SurHoleBan[num]);
                     BpShow = BpShow;
                     break;
-
                 case "HunBan":
                     BpShow.HunBan[num] = getFilePath.GetImage("hunban", ReceiveModel.HunBan[num]);
                     BpShow = BpShow;
                     break;
-
                 case "SurPick":
                     BpShow.SurPick[num].ChartcherHalfImage = getFilePath.GetImage("surhalf", ReceiveModel.SurPick[num].CharacterName);
                     BpShow.SurPick[num].ChartcherBigImage = getFilePath.GetImage("surBig", ReceiveModel.SurPick[num].CharacterName);
@@ -76,7 +74,6 @@ namespace bp_sys_wpf.ViewModel
                     BpShow.SurPick[num].ChartcherName = ReceiveModel.SurPick[num].CharacterName;
                     BpShow = BpShow;
                     break;
-
                 case "HunPick":
                     BpShow.HunPick.ChartcherName = ReceiveModel.HunPick;
                     BpShow.HunPick.ChartcherHalfImage = getFilePath.GetImage("hunhalf", ReceiveModel.HunPick);

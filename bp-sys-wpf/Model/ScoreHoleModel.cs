@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
+﻿using System.Windows.Media.Imaging;
 
 namespace bp_sys_wpf.Model
 {
@@ -43,7 +37,7 @@ namespace bp_sys_wpf.Model
     }
     public class RadioButtonState
     {
-        public bool Escape4 { get; set; } 
+        public bool Escape4 { get; set; }
         public bool Escape3 { get; set; }
         public bool Tie { get; set; }
         public bool Out3 { get; set; }

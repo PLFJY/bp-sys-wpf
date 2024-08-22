@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Media.Imaging;
 
 namespace bp_sys_wpf.Model
@@ -80,6 +79,12 @@ namespace bp_sys_wpf.Model
         public BitmapImage MapPick { get; set; }
 
         public BitmapImage MapBan { get; set; }
+
+        public BitmapImage Trait { get; set; }
+
+        public Visibility TraitState { get; set; } = Visibility.Collapsed;
+
+        public HunTalentsShow HunTalents { get; set; } = new HunTalentsShow();
     }
     public class SurPickShowInfo
     {
@@ -104,5 +109,12 @@ namespace bp_sys_wpf.Model
         public BitmapImage ChartcherBigImage { get; set; }
         public BitmapImage ChartcherHeadImage { get; set; }
         public string ChartcherName { get; set; }
+    }
+    public class HunTalentsShow//监管者天赋
+    {
+        public Visibility ConfinedSpace { get; set; } = Visibility.Collapsed;
+        public Visibility Detention { get; set; } = Visibility.Collapsed;
+        public Visibility Insolence { get; set; } = Visibility.Collapsed;
+        public Visibility TrumpCard { get; set; } = Visibility.Collapsed;
     }
 }

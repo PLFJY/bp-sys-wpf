@@ -23,7 +23,7 @@ namespace bp_sys_wpf.Views.Pages
             if (updateCheck.Issuccessful)
             {
                 latestVersion = version == updateCheck.releaseInfo.tag_name ? string.Empty : updateCheck.releaseInfo.tag_name;
-                NewVersion.Visibility = version == updateCheck.releaseInfo.tag_name ?  Visibility.Visible : Visibility.Collapsed;
+                NewVersion.Visibility = version == updateCheck.releaseInfo.tag_name ? Visibility.Visible : Visibility.Collapsed;
                 newVersionInfo = $"最新版本更新内容：\n{updateCheck.releaseInfo.body}";
             }
             else
@@ -36,39 +36,13 @@ namespace bp_sys_wpf.Views.Pages
         public string latestVersion { get; set; }
         public static string version { get; set; } = $"当前版本：{Config.version}";
 
-        //public async void JustGetFetchLatestReleaseInfoAsync()
-        //{
-
-        //    var baseUrl = "https://api.github.com";
-        //    var repository = "plfjy/bp-sys-wpf-update";
-        //    var releasesUrl = $"{baseUrl}/repos/{repository}/releases/latest";
-        //    try
-        //    {
-        //        // 发起GET请求并获取JSON响应内容
-        //        var responseJson = await releasesUrl.GetStringAsync();
-        //        // 使用System.Text.Json进行反序列化
-        //        var releaseInfo = System.Text.Json.JsonSerializer.Deserialize<GiteeReleaseInfo>(responseJson);
-        //        string newVersionInfo = releaseInfo.body;
-        //        NewVersionContant.Text = $"最新版本更新内容：\n{newVersionInfo}";
-        //    }
-        //    catch (FlurlHttpException ex)
-        //    {
-        //        Console.WriteLine($"请求失败: {ex.Message}");
-        //        NewVersionContant.Text = $"最新版本更新内容：\n请求失败";
-        //    }
-        //    catch (JsonException jex)
-        //    {
-        //        Console.WriteLine($"JSON解析失败: {jex.Message}");
-        //    }
-        //}
-
         private async void CheckUpdate_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             string baseUrl = string.Empty, mirrorURL = string.Empty;
             if (Ghproxy.IsChecked == true)
             {
                 baseUrl = "https://api.github.com";
-                mirrorURL = "https://mirror.ghproxy.com";
+                mirrorURL = "https://mirror.ghproxy.com/";
             }
             if (Gitee.IsChecked == true)
             {
@@ -78,7 +52,7 @@ namespace bp_sys_wpf.Views.Pages
             {
                 baseUrl = "https://api.github.com";
             }
-            updateCheck.FetchLatestReleaseInfoAsync(baseUrl, mirrorURL);
+            await updateCheck.FetchLatestReleaseInfoAsync(baseUrl, mirrorURL);
             if (!updateCheck.Issuccessful)
             {
                 MessageBoxResult result = MessageBox.Show("请求失败，请手动检查版本并下载更新包与软件目录合并\n如遇到文件冲突直接覆盖\n点击确定跳转到更新包下载页", "更新提示", MessageBoxButton.OKCancel, MessageBoxImage.None, MessageBoxResult.Cancel);
@@ -101,7 +75,7 @@ namespace bp_sys_wpf.Views.Pages
                 {
                     if (item.name == "bp-sys-wpf.7z")
                     {
-                        url = $"{mirrorURL}/{item.browser_download_url}";
+                        url = mirrorURL + item.browser_download_url;
                         break;
                     }
                 }

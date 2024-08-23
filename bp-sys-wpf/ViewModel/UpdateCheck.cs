@@ -15,7 +15,7 @@ namespace bp_sys_wpf.ViewModel
         public bool Issuccessful = false;
         public async Task FetchLatestReleaseInfoAsync(string baseUrl, string mirrorURL)
         {
-            repository = "plfjy/bp-sys-wpf-update";
+            repository = "plfjy/bp-sys-wpf-update-asg";
             releasesUrl = $"{baseUrl}/repos/{repository}/releases/latest";
             string userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Firefox/116.0";
             using (HttpClient client = new())

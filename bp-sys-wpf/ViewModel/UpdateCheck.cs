@@ -30,10 +30,6 @@ namespace bp_sys_wpf.ViewModel
                     var responseJson = await response.Content.ReadAsStringAsync();
                     // 使用System.Text.Json进行反序列化
                     releaseInfo = System.Text.Json.JsonSerializer.Deserialize<GiteeReleaseInfo>(responseJson);
-                    // 提取tag_name和第一个browser_download_url
-                    string latestVersion = releaseInfo.tag_name;
-                    string fileUrl = releaseInfo.assets?.Length > 0 ? releaseInfo.assets[0].browser_download_url : null;
-                    DownloadUrl = mirrorURL + fileUrl;
                     Issuccessful = true;
                 }
                 catch (FlurlHttpException ex)

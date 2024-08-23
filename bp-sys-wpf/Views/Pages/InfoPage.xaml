@@ -103,7 +103,7 @@
                 <TextBlock x:Name="NewVersion"
                            Margin="25,10,0,10"
                            HorizontalAlignment="Left"
-                           Text="{Binding latestversion}"
+                           Text="{Binding latestVersion}"
                            Visibility="Collapsed" />
                 <TextBlock x:Name="NewVersionContant"
                            Margin="25,10,0,10"

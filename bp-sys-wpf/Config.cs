@@ -4,7 +4,7 @@ namespace bp_sys_wpf
 {
     public static class Config
     {
-        public static string version { get; set; } = "V3.1.0-ASG";
+        public static string version { get; set; } = "V3.1.2-ASG";
         public static bool Border { get; set; }
         public static class Front
         {

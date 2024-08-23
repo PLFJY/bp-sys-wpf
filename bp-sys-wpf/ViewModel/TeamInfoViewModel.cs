@@ -181,6 +181,7 @@ namespace bp_sys_wpf.ViewModel
                     TeamInfoModel.AwayTeamInfo.LOGO = new BitmapImage(new Uri(logo));
                 }
                 TeamInfoModel = TeamInfoModel;
+                NowModel = NowModel;
             }
         }
         public void PlayersTakeTheField(int number, string team, string type)//选手上场

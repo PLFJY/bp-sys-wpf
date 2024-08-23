@@ -73,8 +73,8 @@
                 </Grid>
                 <GroupBox Margin="30,0,0,0" HorizontalAlignment="Left" Header="切换更新源">
                     <StackPanel Margin="10,0,0,0" Orientation="Horizontal">
-                        <RadioButton x:Name="Gitee" Content="Gitee" IsChecked="True" />
-                        <RadioButton x:Name="Ghproxy" Content="Ghproxy" />
+                        <RadioButton x:Name="Ghproxy" Content="Ghproxy" IsChecked="True" />
+                        <RadioButton x:Name="Gitee" Content="Gitee" />
                         <RadioButton x:Name="Github" Content="GitHub" />
                     </StackPanel>
                 </GroupBox>
@@ -94,10 +94,6 @@
                                  Margin="10,0,0,0"
                                  VerticalAlignment="Center"
                                  Visibility="Hidden" />
-                    <Button x:Name="ResetConfig"
-                            Margin="10,0,0,0"
-                            Click="ResetConfig_Click"
-                            Content="重置 Config.ini" />
                 </StackPanel>
                 <TextBlock Margin="25,10,0,10" HorizontalAlignment="Left" Text="{Binding version}" />
                 <TextBlock x:Name="NewVersion"

@@ -1,4 +1,6 @@
-﻿using Flurl.Http;
+﻿using bp_sys_wpf.ViewModel;
+using bp_sys_wpf.Views.Windows;
+using Flurl.Http;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
@@ -14,101 +16,71 @@ namespace bp_sys_wpf.Views.Pages
     /// </summary>
     public partial class InfoPage : Page
     {
+        public UpdateCheck updateCheck = BackWindow.backWindow.updateCheck;
         public InfoPage()
         {
             InitializeComponent();
+            if (updateCheck.Issuccessful)
+            {
+                latestVersion = version == updateCheck.releaseInfo.tag_name ? string.Empty : updateCheck.releaseInfo.tag_name;
+                NewVersion.Visibility = version == updateCheck.releaseInfo.tag_name ?  Visibility.Visible : Visibility.Collapsed;
+                newVersionInfo = $"最新版本更新内容：\n{updateCheck.releaseInfo.body}";
+            }
+            else
+            {
+                newVersionInfo = "更新请求失败";
+            }
             this.DataContext = this;
-            JustGetFetchLatestReleaseInfoAsync();
         }
+        public string newVersionInfo { get; set; }
+        public string latestVersion { get; set; }
         public static string version { get; set; } = $"当前版本：{Config.version}";
 
-        public class GiteeReleaseInfo
-        {
-            public string tag_name { get; set; }
-            public string body { get; set; }
-            public Assets[] assets { get; set; }
-            public class Assets
-            {
-                public string browser_download_url { get; set; }
-            }
-        }
-        public async void JustGetFetchLatestReleaseInfoAsync()
-        {
-            var baseUrl = "https://api.github.com";
-            var repository = "plfjy/bp-sys-wpf-update";
-            var releasesUrl = $"{baseUrl}/repos/{repository}/releases/latest";
-            try
-            {
-                // 发起GET请求并获取JSON响应内容
-                var responseJson = await releasesUrl.GetStringAsync();
-                // 使用System.Text.Json进行反序列化
-                var releaseInfo = System.Text.Json.JsonSerializer.Deserialize<GiteeReleaseInfo>(responseJson);
-                string newVersionInfo = releaseInfo.body;
-                NewVersionContant.Text = $"最新版本更新内容：\n{newVersionInfo}";
-            }
-            catch (FlurlHttpException ex)
-            {
-                Console.WriteLine($"请求失败: {ex.Message}");
-                NewVersionContant.Text = $"最新版本更新内容：\n请求失败";
-            }
-            catch (JsonException jex)
-            {
-                Console.WriteLine($"JSON解析失败: {jex.Message}");
-            }
-        }
+        //public async void JustGetFetchLatestReleaseInfoAsync()
+        //{
 
-        public async Task<(string latestVersion, string DownloadURL)> FetchLatestReleaseInfoAsync()
+        //    var baseUrl = "https://api.github.com";
+        //    var repository = "plfjy/bp-sys-wpf-update";
+        //    var releasesUrl = $"{baseUrl}/repos/{repository}/releases/latest";
+        //    try
+        //    {
+        //        // 发起GET请求并获取JSON响应内容
+        //        var responseJson = await releasesUrl.GetStringAsync();
+        //        // 使用System.Text.Json进行反序列化
+        //        var releaseInfo = System.Text.Json.JsonSerializer.Deserialize<GiteeReleaseInfo>(responseJson);
+        //        string newVersionInfo = releaseInfo.body;
+        //        NewVersionContant.Text = $"最新版本更新内容：\n{newVersionInfo}";
+        //    }
+        //    catch (FlurlHttpException ex)
+        //    {
+        //        Console.WriteLine($"请求失败: {ex.Message}");
+        //        NewVersionContant.Text = $"最新版本更新内容：\n请求失败";
+        //    }
+        //    catch (JsonException jex)
+        //    {
+        //        Console.WriteLine($"JSON解析失败: {jex.Message}");
+        //    }
+        //}
+
+        private async void CheckUpdate_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            string baseUrl = null, repository = null, releasesUrl = null, mirrorURL = null;
+            string baseUrl = string.Empty, mirrorURL = string.Empty;
             if (Ghproxy.IsChecked == true)
             {
                 baseUrl = "https://api.github.com";
-                repository = "plfjy/bp-sys-wpf-update";
-                releasesUrl = $"{baseUrl}/repos/{repository}/releases/latest";
-                mirrorURL = "https://mirror.ghproxy.com/";
+                mirrorURL = "https://mirror.ghproxy.com";
             }
             if (Gitee.IsChecked == true)
             {
                 baseUrl = "https://gitee.com/api/v5";
-                repository = "plfjy/bp-sys-wpf-update";
-                releasesUrl = $"{baseUrl}/repos/{repository}/releases/latest";
             }
             if (Github.IsChecked == true)
             {
                 baseUrl = "https://api.github.com";
-                repository = "plfjy/bp-sys-wpf-update";
-                releasesUrl = $"{baseUrl}/repos/{repository}/releases/latest";
             }
-            try
+            updateCheck.FetchLatestReleaseInfoAsync(baseUrl, mirrorURL);
+            if (!updateCheck.Issuccessful)
             {
-                // 发起GET请求并获取JSON响应内容
-                var responseJson = await releasesUrl.GetStringAsync();
-                // 使用System.Text.Json进行反序列化
-                var releaseInfo = System.Text.Json.JsonSerializer.Deserialize<GiteeReleaseInfo>(responseJson);
-                // 提取tag_name和第一个browser_download_url
-                string latestVersion = releaseInfo.tag_name;
-                string fileUrl = releaseInfo.assets?.Length > 0 ? releaseInfo.assets[0].browser_download_url : null;
-                var downloadUrl = mirrorURL + fileUrl;
-                return (latestVersion, downloadUrl);
-            }
-            catch (FlurlHttpException ex)
-            {
-                Debug.WriteLine($"请求失败: {ex.Message}");
-                return ($"请求失败", $"请求失败: {ex.Message}");
-            }
-            catch (JsonException jex)
-            {
-                Debug.WriteLine($"JSON解析失败: {jex.Message}");
-                return default;
-            }
-        }
-
-        private async void CheckUpdate_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            var (version, url) = await FetchLatestReleaseInfoAsync();
-            if (version == "请求失败")
-            {
-                //MessageBox.Show(url, version);
                 MessageBoxResult result = MessageBox.Show("请求失败，请手动检查版本并下载更新包与软件目录合并\n如遇到文件冲突直接覆盖\n点击确定跳转到更新包下载页", "更新提示", MessageBoxButton.OKCancel, MessageBoxImage.None, MessageBoxResult.Cancel);
                 if (result == MessageBoxResult.Cancel)
                 {
@@ -122,6 +94,17 @@ namespace bp_sys_wpf.Views.Pages
             }
             else
             {
+                var version = updateCheck.releaseInfo.tag_name;
+                var assets = updateCheck.releaseInfo.assets;
+                string url = string.Empty;
+                foreach (var item in assets)
+                {
+                    if (item.name == "bp-sys-wpf.7z")
+                    {
+                        url = $"{mirrorURL}/{item.browser_download_url}";
+                        break;
+                    }
+                }
                 if (version != Config.version)
                 {
                     MessageBox.Show("检测到新版本，最新版本为" + version + "\n点击确定或关闭该提示执行更新！", "更新提示");
@@ -306,7 +289,7 @@ exit /b
             try
             {
                 // 启动一个新的进程  
-                ProcessStartInfo startInfo = new ProcessStartInfo
+                ProcessStartInfo startInfo = new()
                 {
                     FileName = "cmd.exe", // 命令提示符程序  
                     Arguments = "/C " + batchFilePath, // /C 参数告诉cmd执行后关闭，batchFilePath是要运行的批处理文件路径  

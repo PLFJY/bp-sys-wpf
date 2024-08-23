@@ -100,11 +100,16 @@
                             Content="重置 Config.ini" />
                 </StackPanel>
                 <TextBlock Margin="25,10,0,10" HorizontalAlignment="Left" Text="{Binding version}" />
+                <TextBlock x:Name="NewVersion"
+                           Margin="25,10,0,10"
+                           HorizontalAlignment="Left"
+                           Text="{Binding latestversion}"
+                           Visibility="Collapsed" />
                 <TextBlock x:Name="NewVersionContant"
                            Margin="25,10,0,10"
                            HorizontalAlignment="Left"
                            VerticalAlignment="Center"
-                           Text="最新版本更新内容：" />
+                           Text="{Binding newVersionInfo}" />
             </StackPanel>
         </ui:CardExpander>
     </Grid>

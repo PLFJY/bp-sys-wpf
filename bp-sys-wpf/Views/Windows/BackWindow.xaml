@@ -149,6 +149,11 @@
                                                Icon="{ui:SymbolIcon NumberRow24}"
                                                NavigationCacheMode="Enabled"
                                                TargetPageType="{x:Type pages:ScoreControlPage}" />
+                        <ui:NavigationViewItem Content="赛后数据"
+                                               Icon="{ui:SymbolIcon TextBulletListSquare24}"
+                                               NavigationCacheMode="Enabled"
+                                               TargetPageType="{x:Type pages:GameDataPage}"
+                                               Visibility="Collapsed" />
                         <ui:NavigationViewItem x:Name="StartFronts"
                                                Click="StartFronts_Click"
                                                Content="启动前台"

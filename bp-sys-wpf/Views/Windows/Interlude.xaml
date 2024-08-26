@@ -66,38 +66,56 @@
             <!--  队伍信息  -->
             <Grid Panel.ZIndex="4">
                 <Image x:Name="Sur_logo"
-                       Width="118"
-                       Height="118"
-                       Margin="40,0,0,16"
+                       Width="100"
+                       Height="100"
+                       Margin="45,0,0,26"
                        HorizontalAlignment="Left"
                        VerticalAlignment="Bottom"
                        Source="{Binding TeamInfoViewModel.NowModel.NowSurTeam.LOGO}" />
-                <Label x:Name="Sur_team_name"
-                       Margin="369,0,0,53"
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Bottom"
-                       HorizontalContentAlignment="Center"
-                       Content="{Binding TeamInfoViewModel.NowModel.NowSurTeam.Name}"
-                       FontSize="48"
-                       FontWeight="Bold" />
                 <Image x:Name="Hun_logo"
-                       Width="120"
-                       Height="120"
-                       Margin="0,0,30,16"
+                       Width="100"
+                       Height="100"
+                       Margin="0,0,45,26"
                        HorizontalAlignment="Right"
                        VerticalAlignment="Bottom"
                        Source="{Binding TeamInfoViewModel.NowModel.NowHunTeam.LOGO}" />
-                <Label x:Name="Hun_team_name"
-                       Margin="0,0,366,53"
-                       HorizontalAlignment="Right"
-                       VerticalAlignment="Bottom"
-                       HorizontalContentAlignment="Center"
-                       Content="{Binding TeamInfoViewModel.NowModel.NowHunTeam.Name}"
-                       FontSize="48"
-                       FontWeight="Bold" />
             </Grid>
             <!--  选手ID  -->
             <Grid Panel.ZIndex="4">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="227*" />
+                        <RowDefinition Height="28*" />
+                        <RowDefinition Height="15*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="1" Margin="0,0,0,4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="220" />
+                            <ColumnDefinition Width="361" />
+                            <ColumnDefinition Width="278" />
+                            <ColumnDefinition Width="361" />
+                            <ColumnDefinition Width="220" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="1"
+                               Width="300"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               HorizontalContentAlignment="Center"
+                               FontSize="25"
+                               FontWeight="Bold">
+                            <TextBlock x:Name="Sur_team_name" TextAlignment="Center" TextWrapping="Wrap" />
+                        </Label>
+                        <Label Grid.Column="3"
+                               Width="300"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               HorizontalContentAlignment="Center"
+                               FontSize="25"
+                               FontWeight="Bold">
+                            <TextBlock x:Name="Hun_team_name" TextAlignment="Center" TextWrapping="Wrap" />
+                        </Label>
+                    </Grid>
+                </Grid>
                 <Image x:Name="NameImage"
                        Width="1440"
                        Height="810"

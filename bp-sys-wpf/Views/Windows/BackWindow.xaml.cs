@@ -224,7 +224,7 @@ namespace bp_sys_wpf.Views.Windows
         }
         public async void UpdateCheck()
         {
-            await updateCheck.FetchLatestReleaseInfoAsync("https://api.github.com", string.Empty);
+            await updateCheck.FetchLatestReleaseInfoAsync("https://gitee.com/api/v5", string.Empty);
             if (!updateCheck.Issuccessful)
             {
                 MessageBar.Severity = Wpf.Ui.Controls.InfoBarSeverity.Warning;

@@ -73,9 +73,9 @@
                 </Grid>
                 <GroupBox Margin="30,0,0,0" HorizontalAlignment="Left" Header="切换更新源">
                     <StackPanel Margin="10,0,0,0" Orientation="Horizontal">
-                        <RadioButton x:Name="Ghproxy" Content="Ghproxy" IsChecked="True" />
-                        <RadioButton x:Name="Gitee" Content="Gitee" />
-                        <RadioButton x:Name="Github" Content="GitHub" />
+                        <RadioButton x:Name="Ghproxy" Content="Ghproxy" IsEnabled="False" />
+                        <RadioButton x:Name="Gitee" Content="Gitee" IsChecked="True" />
+                        <RadioButton x:Name="Github" Content="GitHub" IsEnabled="False" />
                     </StackPanel>
                 </GroupBox>
                 <StackPanel Margin="0,10,0,10" Orientation="Horizontal">

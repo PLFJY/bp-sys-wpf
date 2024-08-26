@@ -2,6 +2,7 @@
 using bp_sys_wpf.Views.Windows;
 using System.Windows;
 using System.Windows.Controls;
+using Wpf.Ui.Controls;
 
 namespace bp_sys_wpf.Views.Pages
 {
@@ -318,6 +319,52 @@ namespace bp_sys_wpf.Views.Pages
         private void ImportAwayInfo_Click(object sender, RoutedEventArgs e)
         {
             viewModel.ImportTeamInfoFromJson("away");
+        }
+
+        private void MainTeamFullNameCheck_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (viewModel.TeamInfoModel.MainTeamInfo.State == "求生者")
+                {
+                    Front.front.Sur_team_name.Text = MainTeamFullNameEdit.Text;
+                }
+                else
+                {
+                    Front.front.Hun_team_name.Text = MainTeamFullNameEdit.Text;
+                }
+            }
+            catch
+            {
+                BackWindow.backWindow.MessageBar.IsOpen = true;
+                BackWindow.backWindow.MessageBar.Title = "错误";
+                BackWindow.backWindow.MessageBar.Severity = Wpf.Ui.Controls.InfoBarSeverity.Error;
+                BackWindow.backWindow.MessageBar.Message = "请先启动前台";
+            }
+
+        }
+
+        private void AwayTeamFullNameCheck_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (viewModel.TeamInfoModel.AwayTeamInfo.State == "求生者")
+                {
+                    Front.front.Sur_team_name.Text = MainTeamFullNameEdit.Text;
+                }
+                else
+                {
+                    Front.front.Hun_team_name.Text = MainTeamFullNameEdit.Text;
+                }
+            }
+            catch
+            {
+                BackWindow.backWindow.MessageBar.IsOpen = true;
+                BackWindow.backWindow.MessageBar.Title = "错误";
+                BackWindow.backWindow.MessageBar.Severity = Wpf.Ui.Controls.InfoBarSeverity.Error;
+                BackWindow.backWindow.MessageBar.Message = "请先启动前台";
+            }
+
         }
     }
 }

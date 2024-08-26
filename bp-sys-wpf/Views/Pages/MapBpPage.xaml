@@ -23,7 +23,7 @@
             </Style>
         </ResourceDictionary>
     </Page.Resources>
-    <Grid>
+    <StackPanel>
         <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Header="地图BP">
             <StackPanel Margin="10,10,0,0">
                 <ui:TextBlock FontSize="25" Text="选择" />
@@ -43,5 +43,20 @@
                           SelectedItem="{Binding BpReceiveModel.MapBan}" />
             </StackPanel>
         </GroupBox>
-    </Grid>
+        <GroupBox HorizontalAlignment="Left" VerticalAlignment="Top" Header="对局进度文本编辑">
+            <StackPanel Margin="10,10,10,10" Orientation="Horizontal">
+                <ui:TextBox x:Name="GameProgressEdit"
+                            Width="250"
+                            PlaceholderText="对局进度"
+                            Text="GAME1 FIRST HALF" />
+                <ui:Button x:Name="GameProgressCheck"
+                           Width="75"
+                           Height="30"
+                           Margin="10,0,0,0"
+                           Click="GameProgressCheck_Click"
+                           Content="确定"
+                           Icon="{ui:SymbolIcon Checkmark24}" />
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
 </Page>

@@ -25,37 +25,47 @@
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="170" />
-                    <ColumnDefinition Width="356" />
+                    <ColumnDefinition Width="220" />
+                    <ColumnDefinition Width="370" />
                     <ColumnDefinition Width="0" />
-                    <ColumnDefinition Width="117" />
-                    <ColumnDefinition Width="154" />
-                    <ColumnDefinition Width="117" />
+                    <ColumnDefinition Width="70" />
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="70" />
                     <ColumnDefinition Width="0" />
-                    <ColumnDefinition Width="356" />
-                    <ColumnDefinition Width="170" />
+                    <ColumnDefinition Width="370" />
+                    <ColumnDefinition Width="220" />
                 </Grid.ColumnDefinitions>
                 <Image x:Name="Logo_sur"
                        Grid.Column="0"
-                       Margin="52,10,32,11"
+                       Width="100"
+                       Height="100"
+                       Margin="0,0,30,0"
                        Source="{Binding TeamInfoViewModel.NowModel.NowSurTeam.LOGO}" />
-                <StackPanel Grid.Column="1" Margin="60,15,0,0" HorizontalAlignment="Center">
-                    <Label x:Name="Sur_team_name"
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="1"
+                           Width="300"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
                            HorizontalContentAlignment="Center"
-                           Content="{Binding TeamInfoViewModel.NowModel.NowSurTeam.Name}"
-                           FontSize="45"
+                           FontSize="25"
                            FontWeight="Bold"
-                           Foreground="#FFD3BC88" />
+                           Foreground="#FFD3BC88">
+                        <TextBlock x:Name="Sur_team_name" TextAlignment="Center" TextWrapping="Wrap" />
+                    </Label>
                     <Label x:Name="Sur_score"
+                           Grid.Row="2"
                            HorizontalAlignment="Center"
-                           VerticalAlignment="Center"
+                           VerticalAlignment="Top"
                            Content="{Binding TeamInfoViewModel.NowModel.NowSurTeam.Score.FrontView}"
                            FontSize="30"
                            FontWeight="Bold"
                            Foreground="#FFD3BC88" />
-                </StackPanel>
+                </Grid>
                 <Label x:Name="Sur_scoreS"
                        Grid.Column="3"
                        Width="50"
@@ -71,7 +81,7 @@
                 <Label x:Name="timmer"
                        Grid.Column="4"
                        Width="88"
-                       Height="95"
+                       Height="94"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"
                        HorizontalContentAlignment="Center"
@@ -92,27 +102,36 @@
                        FontSize="80"
                        FontWeight="Bold"
                        Foreground="#FFF9EFD6" />
-                <StackPanel Grid.Column="7" Margin="0,15,60,0" HorizontalAlignment="Center">
-                    <Label x:Name="Hun_team_name"
+                <Grid Grid.Column="7">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="1"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
                            HorizontalContentAlignment="Center"
-                           Content="{Binding TeamInfoViewModel.NowModel.NowHunTeam.Name}"
-                           FontSize="45"
+                           FontSize="25"
                            FontWeight="Bold"
-                           Foreground="#FFD3BC88" />
+                           Foreground="#FFD3BC88">
+                        <TextBlock x:Name="Hun_team_name" TextAlignment="Center" TextWrapping="Wrap" />
+                    </Label>
                     <Label x:Name="Hun_score"
+                           Grid.Row="2"
                            HorizontalAlignment="Center"
-                           VerticalAlignment="Center"
+                           VerticalAlignment="Top"
                            Content="{Binding TeamInfoViewModel.NowModel.NowHunTeam.Score.FrontView}"
                            FontSize="30"
                            FontWeight="Bold"
                            Foreground="#FFD3BC88" />
-                </StackPanel>
+                </Grid>
 
                 <Image x:Name="Logo_hun"
                        Grid.Column="8"
-                       Margin="38,10,47,12"
+                       Width="100"
+                       Height="100"
+                       Margin="30,0,0,0"
                        Source="{Binding TeamInfoViewModel.NowModel.NowHunTeam.LOGO}" />
             </Grid>
             <!--  比分条  -->
@@ -342,11 +361,20 @@
                         <RowDefinition Height="140" />
                         <RowDefinition Height="60" />
                     </Grid.RowDefinitions>
+                    <TextBlock x:Name="GameProgress"
+                               Width="Auto"
+                               Margin="0,28,0,0"
+                               HorizontalAlignment="Center"
+                               FontFamily="汉仪第五人格体简"
+                               FontSize="20"
+                               Foreground="White"
+                               Text="GAME1 FIRST HALF"
+                               TextAlignment="Center" />
                     <Image x:Name="Map"
                            Width="auto"
-                           Height="107"
-                           Margin="32,10,31,0"
-                           HorizontalAlignment="Left"
+                           Height="90"
+                           Margin="0,10,10,0"
+                           HorizontalAlignment="Center"
                            VerticalAlignment="Bottom"
                            Source="{Binding BpShowViewModel.BpShow.MapPick}"
                            Stretch="Uniform" />

@@ -328,10 +328,12 @@ namespace bp_sys_wpf.Views.Pages
                 if (viewModel.TeamInfoModel.MainTeamInfo.State == "求生者")
                 {
                     Front.front.Sur_team_name.Text = MainTeamFullNameEdit.Text;
+                    Interlude.interlude.Sur_team_name.Text = MainTeamFullNameEdit.Text;
                 }
                 else
                 {
                     Front.front.Hun_team_name.Text = MainTeamFullNameEdit.Text;
+                    Interlude.interlude.Hun_team_name.Text = MainTeamFullNameEdit.Text;
                 }
             }
             catch
@@ -350,11 +352,13 @@ namespace bp_sys_wpf.Views.Pages
             {
                 if (viewModel.TeamInfoModel.AwayTeamInfo.State == "求生者")
                 {
-                    Front.front.Sur_team_name.Text = MainTeamFullNameEdit.Text;
+                    Front.front.Sur_team_name.Text = AwayTeamFullNameEdit.Text;
+                    Interlude.interlude.Sur_team_name.Text = AwayTeamFullNameEdit.Text;
                 }
                 else
                 {
-                    Front.front.Hun_team_name.Text = MainTeamFullNameEdit.Text;
+                    Front.front.Hun_team_name.Text = AwayTeamFullNameEdit.Text;
+                    Interlude.interlude.Hun_team_name.Text = AwayTeamFullNameEdit.Text;
                 }
             }
             catch

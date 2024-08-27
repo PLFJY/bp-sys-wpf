@@ -395,7 +395,7 @@ namespace bp_sys_wpf.ViewModel
         public void Swap()//换边
         {
             (TeamInfoModel.MainTeamInfo.State, TeamInfoModel.AwayTeamInfo.State) = (TeamInfoModel.AwayTeamInfo.State, TeamInfoModel.MainTeamInfo.State);
-            (Front.front.Sur_team_name.Text, Front.front.Hun_team_name) = (Front.front.Hun_team_name.Text, Front.front.Sur_team_name);
+            (Front.front.Sur_team_name.Text, Front.front.Hun_team_name.Text) = (Front.front.Hun_team_name.Text, Front.front.Sur_team_name.Text);
             (Interlude.interlude.Sur_team_name.Text, Interlude.interlude.Hun_team_name.Text) = (Interlude.interlude.Hun_team_name.Text, Interlude.interlude.Sur_team_name.Text);
             //外层0~3代表当前上场选手 内层循环0~5 判断队伍是主队还是客队 选手名称判断内容：是否为上场选手、阵营，然后赋值给NowPlayer
             for (int i = 0; i < 5; i++)

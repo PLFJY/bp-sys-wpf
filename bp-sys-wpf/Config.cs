@@ -4,7 +4,7 @@ namespace bp_sys_wpf
 {
     public static class Config
     {
-        public static string version { get; set; } = "V3.1.5-SHISL";
+        public static string version { get; set; } = "V3.1.6-SHISL";
         public static bool Border { get; set; }
         public static class Front
         {

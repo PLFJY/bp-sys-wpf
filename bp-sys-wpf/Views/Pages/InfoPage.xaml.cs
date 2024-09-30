@@ -51,7 +51,7 @@ namespace bp_sys_wpf.Views.Pages
             if (Ghproxy.IsChecked == true)
             {
                 baseUrl = "https://api.github.com";
-                mirrorURL = "https://mirror.ghproxy.com/";
+                mirrorURL = "https://ghp.ci/";
             }
             if (Gitee.IsChecked == true)
             {

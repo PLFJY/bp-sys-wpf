@@ -9,14 +9,19 @@ using System.Text.Json;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Wpf.Ui;
+using Wpf.Ui.Appearance;
 
 namespace bp_sys_wpf.Views.Windows
 {
     /// <summary>
     /// BackWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class BackWindow : Window
+    public partial class BackWindow : INavigationWindow
     {
+      
+       
+
         public class GiteeReleaseInfo
         {
             public string tag_name { get; set; }
@@ -243,6 +248,36 @@ namespace bp_sys_wpf.Views.Windows
                     MessageBar.IsOpen = true;
                 }
             }
+        }
+
+        public Wpf.Ui.Controls.INavigationView GetNavigation()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Navigate(Type pageType)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SetServiceProvider(IServiceProvider serviceProvider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SetPageService(IPageService pageService)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ShowWindow()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CloseWindow()
+        {
+            throw new NotImplementedException();
         }
 
         //public async Task<(string latestVersion, string DownloadURL)> FetchLatestReleaseInfoAsync()

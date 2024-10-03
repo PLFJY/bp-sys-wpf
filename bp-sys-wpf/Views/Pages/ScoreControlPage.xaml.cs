@@ -1,7 +1,12 @@
 ﻿using bp_sys_wpf.ViewModel;
 using bp_sys_wpf.Views.Windows;
+using System.Diagnostics;
+using System.IO;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
+using System.Windows;
+using System.Windows.Media;
+using Wpf.Ui.Controls;
 
 namespace bp_sys_wpf.Views.Pages
 {
@@ -17,8 +22,21 @@ namespace bp_sys_wpf.Views.Pages
             InitializeComponent();
             DataContext = BackWindow.backWindow.DataContext;
             Bo.SelectedIndex = 0;
+            Bo.ItemsSource = RootViewModel.ComboBoxItemViewModel.BoList5;
+            CheckFormatChangeIsAvailable();
         }
-
+        private void CheckFormatChangeIsAvailable()
+        {
+            string runDir = Environment.CurrentDirectory;
+            if (File.Exists($"{runDir}\\Resource\\gui\\score_hole_bo3.png"))
+            {
+                FormatChangeGroup.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                FormatChangeGroup.Visibility = Visibility.Collapsed;
+            }
+        }
         private void Escape4_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             RootViewModel.TeamInfoViewModel.ScoreSSet("sur", 4);
@@ -239,5 +257,43 @@ namespace bp_sys_wpf.Views.Pages
             }
             RootViewModel.ScoreHoleViewModel = RootViewModel.ScoreHoleViewModel;
         }
+
+        private void FormatChange_Click(object sender, RoutedEventArgs e)
+        {
+            string runDir = Environment.CurrentDirectory;
+            if (Format.Text == "赛制：BO5")
+            {
+                try
+                {
+                    ScoreHole.scoreHole.Background = new ImageBrush(new BitmapImage(new Uri($"{runDir}\\Resource\\gui\\score_hole_bo3.png")));
+                    Format.Text = "赛制：BO3";
+                    Bo.ItemsSource = RootViewModel.ComboBoxItemViewModel.BoList3;
+                }
+                catch
+                {
+                    BackWindow.backWindow.MessageBar.IsOpen = true;
+                    BackWindow.backWindow.MessageBar.Title = "错误";
+                    BackWindow.backWindow.MessageBar.Severity = Wpf.Ui.Controls.InfoBarSeverity.Error;
+                    BackWindow.backWindow.MessageBar.Message = "前台窗口未启动";
+                }
+            }
+            else
+            {
+                try
+                {
+                    ScoreHole.scoreHole.Background = new ImageBrush(new BitmapImage(new Uri($"{runDir}\\Resource\\gui\\score_hole.png")));
+                    Format.Text = "赛制：BO5";
+                    Bo.ItemsSource = RootViewModel.ComboBoxItemViewModel.BoList5;
+                }
+                catch
+                {
+                    BackWindow.backWindow.MessageBar.IsOpen = true;
+                    BackWindow.backWindow.MessageBar.Title = "错误";
+                    BackWindow.backWindow.MessageBar.Severity = Wpf.Ui.Controls.InfoBarSeverity.Error;
+                    BackWindow.backWindow.MessageBar.Message = "前台窗口未启动";
+                }
+            }
+        }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace bp_sys_wpf.ViewModel
 {
@@ -35,6 +36,52 @@ namespace bp_sys_wpf.ViewModel
                 return _sur;
             }
             set { _sur = value; }
+        }
+
+        private List<string> _BoList3;
+
+        public List<string> BoList3
+        {
+            get {
+                if (_BoList3 == null)
+                {
+                    _BoList3 = new List<string>();
+                    _BoList3.Add("BO1上半");
+                    _BoList3.Add("BO1下半");
+                    _BoList3.Add("BO2上半");
+                    _BoList3.Add("BO2下半");
+                    _BoList3.Add("BO3上半");
+                    _BoList3.Add("BO3下半");
+                    _BoList3.Add("加赛上半");
+                    _BoList3.Add("加赛下半");
+                }
+                return _BoList3; }
+            set { _BoList3 = value; }
+        }
+
+        private List<string> _BoList5;
+
+        public List<string> BoList5
+        {
+            get
+            {
+                if (_BoList5 == null)
+                {
+                    _BoList5 = new List<string>();
+                    _BoList5.Add("BO1上半");
+                    _BoList5.Add("BO1下半");
+                    _BoList5.Add("BO2上半");
+                    _BoList5.Add("BO2下半");
+                    _BoList5.Add("BO3上半");
+                    _BoList5.Add("BO3下半");
+                    _BoList5.Add("BO4上半");
+                    _BoList5.Add("BO4下半");
+                    _BoList5.Add("BO5上半");
+                    _BoList5.Add("BO5下半");
+                }
+                return _BoList5;
+            }
+            set { _BoList5 = value; }
         }
 
         private List<string> _MapPick;

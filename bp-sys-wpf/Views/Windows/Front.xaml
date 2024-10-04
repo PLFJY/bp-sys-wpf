@@ -17,7 +17,7 @@
         <!--  比分条  -->
         <Grid Width="1440" Height="810">
             <Grid.Background>
-                <ImageBrush/>
+                <ImageBrush />
             </Grid.Background>
             <Grid.RowDefinitions>
                 <RowDefinition Height="65" />
@@ -147,31 +147,34 @@
                            Source="{Binding BpShowViewModel.BpShow.HunBan[2]}" />
                 </StackPanel>
                 <StackPanel Grid.Column="0"
-                            Width="50"
-                            Margin="0,16,0,0"
+                            Width="52"
+                            Margin="0,16,-1,0"
                             HorizontalAlignment="Right">
                     <Image x:Name="Hun_no_ban_1"
                            Grid.Column="0"
-                           Height="50"
+                           Height="52"
                            HorizontalAlignment="Right"
                            VerticalAlignment="Top"
                            Panel.ZIndex="1"
+                           Stretch="Fill"
                            Visibility="{Binding BpShowViewModel.BpShow.HunBanLock[0]}" />
                     <Image x:Name="Hun_no_ban_2"
                            Grid.Column="1"
-                           Height="50"
-                           Margin="0,11,0,0"
+                           Height="52"
+                           Margin="0,7.5,0,0"
                            HorizontalAlignment="Right"
                            VerticalAlignment="Top"
                            Panel.ZIndex="1"
+                           Stretch="Fill"
                            Visibility="{Binding BpShowViewModel.BpShow.HunBanLock[1]}" />
                     <Image x:Name="Hun_no_ban_3"
                            Grid.Column="2"
-                           Height="50"
-                           Margin="0,10,0,0"
+                           Height="52"
+                           Margin="0,7.5,0,0"
                            HorizontalAlignment="Right"
                            VerticalAlignment="Top"
                            Panel.ZIndex="1"
+                           Stretch="Fill"
                            Visibility="{Binding BpShowViewModel.BpShow.HunBanLock[2]}" />
                 </StackPanel>
                 <!--  求生Ban  -->

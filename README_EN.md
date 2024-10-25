@@ -59,7 +59,7 @@ Score Control: Score control will be synchronized with the player's name and cha
 
  I also developed an interface to display the score of each game, this is completely independent of the previous BP and in-game score, so it needs to be operated separately, and I don't need to explain too much about how to use it.
 
- I will maintain this software for a long time, if there is a new version, you will be alerted when you start the software, then you can go to the bottom right corner of the About screen to update it.
+ I will maintain this software for a long time, if there is a new version, you will be alerted when you start the software, then you can go to the bottom left corner of the About screen to update it.
 
  ---
 

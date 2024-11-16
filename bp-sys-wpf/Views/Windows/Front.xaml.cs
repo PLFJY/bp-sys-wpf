@@ -31,6 +31,9 @@ namespace bp_sys_wpf
                 Hole_no_ban_4.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/no_hole_ban.png")));
                 Hole_no_ban_5.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/no_hole_ban.png")));
                 Hole_no_ban_6.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/no_hole_ban.png")));
+                Hole_no_ban_7.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/no_hole_ban.png")));
+                Hole_no_ban_8.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/no_hole_ban.png")));
+                Hole_no_ban_9.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/no_hole_ban.png")));
                 SurPicking1.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/SurPicking.png")));
                 SurPicking2.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/SurPicking.png")));
                 SurPicking3.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/SurPicking.png")));

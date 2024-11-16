@@ -366,6 +366,34 @@
                                           MaxDropDownHeight="200"
                                           SelectedItem="{Binding BpReceiveModel.SurHoleBanMainRecord[5]}" />
                             </StackPanel>
+                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                <ComboBox x:Name="Main_hole7"
+                                    Width="150"
+                                    Height="35"
+                                    IsEditable="True"
+                                    IsEnabled="True"
+                                    ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                    MaxDropDownHeight="200"
+                                    SelectedItem="{Binding BpReceiveModel.SurHoleBanMainRecord[6]}" />
+                                <ComboBox x:Name="Main_hole8"
+                                    Width="150"
+                                    Height="35"
+                                    Margin="10,0,0,0"
+                                    IsEditable="True"
+                                    IsEnabled="True"
+                                    ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                    MaxDropDownHeight="200"
+                                    SelectedItem="{Binding BpReceiveModel.SurHoleBanMainRecord[7]}" />
+                                <ComboBox x:Name="Main_hole9"
+                                    Width="150"
+                                    Height="35"
+                                    Margin="10,0,0,0"
+                                    IsEditable="True"
+                                    IsEnabled="True"
+                                    ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                    MaxDropDownHeight="200"
+                                    SelectedItem="{Binding BpReceiveModel.SurHoleBanMainRecord[8]}" />
+                            </StackPanel>
                         </StackPanel>
 
                     </GroupBox>
@@ -429,6 +457,34 @@
                                           ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                           MaxDropDownHeight="200"
                                           SelectedItem="{Binding BpReceiveModel.SurHoleBanAwayRecord[5]}" />
+                            </StackPanel>
+                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                <ComboBox x:Name="Away_hole7"
+                                    Width="150"
+                                    Height="35"
+                                    IsEditable="True"
+                                    IsEnabled="True"
+                                    ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                    MaxDropDownHeight="200"
+                                    SelectedItem="{Binding BpReceiveModel.SurHoleBanAwayRecord[6]}" />
+                                <ComboBox x:Name="Away_hole8"
+                                    Width="150"
+                                    Height="35"
+                                    Margin="10,0,0,0"
+                                    IsEditable="True"
+                                    IsEnabled="True"
+                                    ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                    MaxDropDownHeight="200"
+                                    SelectedItem="{Binding BpReceiveModel.SurHoleBanAwayRecord[7]}" />
+                                <ComboBox x:Name="Away_hole9"
+                                    Width="150"
+                                    Height="35"
+                                    Margin="10,0,0,0"
+                                    IsEditable="True"
+                                    IsEnabled="True"
+                                    ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                    MaxDropDownHeight="200"
+                                    SelectedItem="{Binding BpReceiveModel.SurHoleBanAwayRecord[8]}" />
                             </StackPanel>
                         </StackPanel>
                     </GroupBox>

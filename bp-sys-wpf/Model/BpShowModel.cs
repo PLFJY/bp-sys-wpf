@@ -12,7 +12,7 @@ namespace bp_sys_wpf.Model
             set { _SurBan = value; }
         }
 
-        private List<BitmapImage> _SurHoleBan = new List<BitmapImage>(6) { null, null, null, null, null, null };
+        private List<BitmapImage> _SurHoleBan = new List<BitmapImage>(9) { null, null, null, null, null, null, null, null, null };
 
         public List<BitmapImage> SurHoleBan
         {
@@ -66,7 +66,7 @@ namespace bp_sys_wpf.Model
                 if (_SurHoleBanLock == null)
                 {
                     _SurHoleBanLock = new List<Visibility>();
-                    for (int i = 0; i < 6; i++)
+                    for (int i = 0; i < 9; i++)
                     {
                         _SurHoleBanLock.Add(Visibility.Hidden);
                     }

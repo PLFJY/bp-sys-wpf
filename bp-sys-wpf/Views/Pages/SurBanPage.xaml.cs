@@ -129,6 +129,33 @@ namespace bp_sys_wpf.Views.Pages
             }
         }
 
+        private void Sur_hole_ban_7_KeyDown(object sender, KeyEventArgs e)
+        {
+            Sur_hole_ban_7.IsDropDownOpen = true;
+            if (e.Key == Key.Tab)
+            {
+                rootViewModel.BpShowViewModel.ShowBp("SurHoleBan", 6);
+            }
+        }
+
+        private void Sur_hole_ban_8_KeyDown(object sender, KeyEventArgs e)
+        {
+            Sur_hole_ban_8.IsDropDownOpen = true;
+            if (e.Key == Key.Tab)
+            {
+                rootViewModel.BpShowViewModel.ShowBp("SurHoleBan", 7);
+            }
+        }
+
+        private void Sur_hole_ban_9_KeyDown(object sender, KeyEventArgs e)
+        {
+            Sur_hole_ban_9.IsDropDownOpen = true;
+            if (e.Key == Key.Tab)
+            {
+                rootViewModel.BpShowViewModel.ShowBp("SurHoleBan", 8);
+            }
+        }
+
         private void SurHoleStateChange_Click(object sender, RoutedEventArgs e)
         {
             rootViewModel.BpReceiveModel = rootViewModel.BpReceiveModel;

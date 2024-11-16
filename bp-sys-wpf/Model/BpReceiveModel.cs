@@ -15,7 +15,7 @@ namespace bp_sys_wpf.Model
             set { _SurBan = value; }
         }
 
-        private List<string> _SurHoleBan = new List<string>(6) { null, null, null, null, null, null };//全局Ban
+        private List<string> _SurHoleBan = new List<string>(9) { null, null, null, null, null, null, null, null, null };//全局Ban
 
         public List<string> SurHoleBan
         {
@@ -121,12 +121,12 @@ namespace bp_sys_wpf.Model
                 if (_SurHoleBanLock == null)
                 {
                     _SurHoleBanLock = new List<bool>();
-                    for (int i = 0; i < 6; i++)
+                    for (int i = 0; i < 9; i++)
                     {
                         _SurHoleBanLock.Add(true);
                     }
                 }
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 9; i++)
                 {
                     if (_SurHoleBanLock[i] == false)
                     {
@@ -154,7 +154,7 @@ namespace bp_sys_wpf.Model
                 if (_SurHoleBanMainRecord == null)
                 {
                     _SurHoleBanMainRecord = new List<string>();
-                    for (int i = 0; i < 6; i++)
+                    for (int i = 0; i < 9; i++)
                     {
                         _SurHoleBanMainRecord.Add(null);
                     }
@@ -173,7 +173,7 @@ namespace bp_sys_wpf.Model
                 if (_SurHoleBanAwayRecord == null)
                 {
                     _SurHoleBanAwayRecord = new List<string>();
-                    for (int i = 0; i < 6; i++)
+                    for (int i = 0; i < 9; i++)
                     {
                         _SurHoleBanAwayRecord.Add(null);
                     }

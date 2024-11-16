@@ -173,43 +173,101 @@
                                 <Image x:Name="Sur_hole_ban_6_review" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[5]}"/>
                             </StackPanel>
                         </StackPanel>
+                        <StackPanel Grid.Row="0"
+                            Margin="10,10,10,10"
+                            Orientation="Horizontal">
+                            <StackPanel>
+                                <ComboBox x:Name="Sur_hole_ban_7"
+                                    Height="35"
+                                    Width="150"
+                                    IsEditable="True"
+                                    SelectedItem="{Binding BpReceiveModel.SurHoleBan[6]}"
+                                    IsEnabled="{Binding BpReceiveModel.SurHoleBanLock[6]}"
+                                    ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                    MaxDropDownHeight="200" KeyDown="Sur_hole_ban_7_KeyDown"/>
+                                <Image x:Name="Sur_hole_ban_7_review" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[6]}"/>
+                            </StackPanel>
+                            <StackPanel>
+                                <ComboBox x:Name="Sur_hole_ban_8"
+                                    Height="35"
+                                    Width="150"
+                                    IsEditable="True"
+                                    Margin="10,0,0,0"
+                                        SelectedItem="{Binding BpReceiveModel.SurHoleBan[7]}"
+                                        IsEnabled="{Binding BpReceiveModel.SurHoleBanLock[7]}"
+                                        ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                    MaxDropDownHeight="200" KeyDown="Sur_hole_ban_8_KeyDown"/>
+                                <Image x:Name="Sur_hole_ban_8_review" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[7]}"/>
+                            </StackPanel>
+                            <StackPanel>
+                                <ComboBox x:Name="Sur_hole_ban_9"
+                                    Height="35"
+                                    Width="150"
+                                    IsEditable="True"
+                                    Margin="10,0,0,0"
+                                    SelectedItem="{Binding BpReceiveModel.SurHoleBan[8]}"
+                                    IsEnabled="{Binding BpReceiveModel.SurHoleBanLock[8]}"
+                                    ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                    MaxDropDownHeight="200" KeyDown="Sur_hole_ban_9_KeyDown"/>
+                                <Image x:Name="Sur_hole_ban_9_review" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[8]}"/>
+                            </StackPanel>
+                        </StackPanel>
                     </StackPanel>
                 </Grid>
             </GroupBox>
             <GroupBox Header="全局禁用Ban位数量设定"
-                  Margin="10,10,0,0"
-                  HorizontalAlignment="Left">
-                <StackPanel Orientation="Horizontal"
+                Margin="10,10,0,0"
+                HorizontalAlignment="Left">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal"
                         Margin="10,10,10,10">
-                    <ui:ToggleSwitch x:Name="SurHoleStateChange1"
-                                 Content="1号位"
-                                 IsChecked="{Binding BpReceiveModel.SurHoleBanLock[0]}"
-                                     Click="SurHoleStateChange_Click"/>
-                    <ui:ToggleSwitch x:Name="SurHoleBanStateChange2"
-                                 Content="2号位"
-                                 IsChecked="{Binding BpReceiveModel.SurHoleBanLock[1]}"
-                                 Margin="20,0,0,0"
-                                     Click="SurHoleStateChange_Click"/>
-                    <ui:ToggleSwitch x:Name="SurHoleStateChange3"
-                                 Content="3号位"
-                                 IsChecked="{Binding BpReceiveModel.SurHoleBanLock[2]}"
-                                 Margin="20,0,0,0"
-                                     Click="SurHoleStateChange_Click"/>
-                    <ui:ToggleSwitch x:Name="SurHoleStateChange4"
-                                 Content="4号位"
-                                 IsChecked="{Binding BpReceiveModel.SurHoleBanLock[3]}"
-                                 Margin="20,0,0,0"
-                                     Click="SurHoleStateChange_Click"/>
-                    <ui:ToggleSwitch x:Name="SurHoleStateChange5"
-                                 Content="5号位"
-                                 IsChecked="{Binding BpReceiveModel.SurHoleBanLock[4]}"
-                                 Margin="20,0,0,0"
-                                     Click="SurHoleStateChange_Click"/>
-                    <ui:ToggleSwitch x:Name="SurHoleStateChange6"
-                                 Content="6号位"
-                                 IsChecked="{Binding BpReceiveModel.SurHoleBanLock[5]}"
-                                 Margin="20,0,0,0"
-                                     Click="SurHoleStateChange_Click"/>
+                        <ui:ToggleSwitch x:Name="SurHoleStateChange1"
+                            Content="1号位"
+                            IsChecked="{Binding BpReceiveModel.SurHoleBanLock[0]}"
+                            Click="SurHoleStateChange_Click"/>
+                        <ui:ToggleSwitch x:Name="SurHoleBanStateChange2"
+                            Content="2号位"
+                            IsChecked="{Binding BpReceiveModel.SurHoleBanLock[1]}"
+                            Margin="20,0,0,0"
+                            Click="SurHoleStateChange_Click"/>
+                        <ui:ToggleSwitch x:Name="SurHoleStateChange3"
+                            Content="3号位"
+                            IsChecked="{Binding BpReceiveModel.SurHoleBanLock[2]}"
+                            Margin="20,0,0,0"
+                            Click="SurHoleStateChange_Click"/>
+                        <ui:ToggleSwitch x:Name="SurHoleStateChange4"
+                            Content="4号位"
+                            IsChecked="{Binding BpReceiveModel.SurHoleBanLock[3]}"
+                            Margin="20,0,0,0"
+                            Click="SurHoleStateChange_Click"/>
+                        <ui:ToggleSwitch x:Name="SurHoleStateChange5"
+                            Content="5号位"
+                            IsChecked="{Binding BpReceiveModel.SurHoleBanLock[4]}"
+                            Margin="20,0,0,0"
+                            Click="SurHoleStateChange_Click"/>
+                        <ui:ToggleSwitch x:Name="SurHoleStateChange6"
+                            Content="6号位"
+                            IsChecked="{Binding BpReceiveModel.SurHoleBanLock[5]}"
+                            Margin="20,0,0,0"
+                            Click="SurHoleStateChange_Click"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                        Margin="10,10,10,10">
+                        <ui:ToggleSwitch x:Name="SurHoleStateChange7"
+                            Content="7号位"
+                            IsChecked="{Binding BpReceiveModel.SurHoleBanLock[6]}"
+                            Click="SurHoleStateChange_Click"/>
+                        <ui:ToggleSwitch x:Name="SurHoleStateChange8"
+                            Content="8号位"
+                            IsChecked="{Binding BpReceiveModel.SurHoleBanLock[7]}"
+                            Margin="20,0,0,0"
+                            Click="SurHoleStateChange_Click"/>
+                        <ui:ToggleSwitch x:Name="SurHoleStateChange9"
+                            Content="9号位"
+                            IsChecked="{Binding BpReceiveModel.SurHoleBanLock[8]}"
+                            Margin="20,0,0,0"
+                            Click="SurHoleStateChange_Click"/>
+                    </StackPanel>
                 </StackPanel>
             </GroupBox>
         </StackPanel>

@@ -442,7 +442,7 @@ namespace bp_sys_wpf.ViewModel
             }
             RootViewModel rootViewModel = BackWindow.backWindow.rootViewModel;
             //全局Ban自动填充
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 9; i++)
             {
                 if (TeamInfoModel.MainTeamInfo.State == "求生者")
                 {

@@ -2,7 +2,7 @@
   "profiles": {
     "Updater": {
       "commandName": "Project",
-      "commandLineArgs": "Update"
+      "commandLineArgs": "Update\r\nhttps://ghproxy.net/https://github.com/PLFJY/bp-sys-wpf-update/releases/download/V3.1.2/bp-sys-wpf.7z"
     }
   }
 }

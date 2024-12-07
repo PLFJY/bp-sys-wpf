@@ -9,9 +9,10 @@
     Width="520"
     Height="292"
     Background="#202020"
+    Loaded="Window_Loaded"
     ResizeMode="CanMinimize"
     WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d" Loaded="Window_Loaded">
+    mc:Ignorable="d">
     <Grid Margin="10,10,10,10">
         <TextBlock
             HorizontalAlignment="Center"
@@ -36,10 +37,12 @@
                 Margin="0,10,0,0" />
             <TextBlock
                 Name="Log"
+                Width="450"
                 Margin="0,10,0,0"
                 HorizontalAlignment="Left"
-                FontSize="18"
-                Foreground="White" />
+                FontSize="12"
+                Foreground="White"
+                TextWrapping="Wrap" />
         </StackPanel>
     </Grid>
 </Window>

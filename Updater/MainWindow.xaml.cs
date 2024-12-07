@@ -23,7 +23,16 @@ namespace Updater
         {
             InitializeComponent();
             if (App.Args.Length == 0 || App.Args[0] != "Update") Environment.Exit(0);
-            if (App.Args.Length >= 2) UpdateUrl = App.Args[1];
+            if (App.Args.Length >= 2)
+            {
+                UpdateUrl = App.Args[1];
+                Log.Text = "接收到下载链接，开始下载";
+            }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

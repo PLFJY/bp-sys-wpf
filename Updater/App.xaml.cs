@@ -1,6 +1,7 @@
 ﻿using System.Configuration;
 using System.Data;
 using System.Windows;
+using System;
 
 namespace Updater
 {
@@ -9,6 +10,14 @@ namespace Updater
     /// </summary>
     public partial class App : Application
     {
+        public static string[] Args;
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            // 接收参数数组
+            var args = e.Args;
+            Args = e.Args;
+        }
     }
 
 }

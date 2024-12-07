@@ -5,6 +5,7 @@ using Newtonsoft.Json.Linq;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
@@ -484,50 +485,63 @@ namespace bp_sys_wpf.ViewModel
                 if (team == "main")
                 {
                     TeamInfoModel.MainTeamInfo.Name = team_name;
-                    TeamInfoModel.MainTeamInfo.LOGO = new BitmapImage(new Uri(logo_uri));
+                    try
+                    {
+                        TeamInfoModel.MainTeamInfo.LOGO = new BitmapImage(new Uri(logo_uri));
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
                 }
                 else
                 {
                     TeamInfoModel.AwayTeamInfo.Name = team_name;
-                    TeamInfoModel.AwayTeamInfo.LOGO = new BitmapImage(new Uri(logo_uri));
-                }
+                    try
+                    {
+                        TeamInfoModel.AwayTeamInfo.LOGO = new BitmapImage(new Uri(logo_uri));
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
 
-                int SurProgress = 0, HunProgress = 6;
-                // 遍历players数组  
-                foreach (JObject player in json_obj["players"])
-                {
-                    string playerName = player["playerName"].ToString();
-                    string type = player["type"].ToString();
-                    // 根据type的值将选手名称添加到相应的列表中  
-                    if (type == "sur")
+                    int SurProgress = 0, HunProgress = 6;
+                    // 遍历players数组  
+                    foreach (JObject player in json_obj["players"])
                     {
-                        if (team == "main")
+                        string playerName = player["playerName"].ToString();
+                        string type = player["type"].ToString();
+                        // 根据type的值将选手名称添加到相应的列表中  
+                        if (type == "sur")
                         {
-                            TeamInfoModel.MainTeamPlayer[SurProgress].Name = playerName;
+                            if (team == "main")
+                            {
+                                TeamInfoModel.MainTeamPlayer[SurProgress].Name = playerName;
+                            }
+                            else
+                            {
+                                TeamInfoModel.AwayTeamPlayer[SurProgress].Name = playerName;
+                            }
+                            SurProgress++;
                         }
-                        else
+                        else if (type == "hun")
                         {
-                            TeamInfoModel.AwayTeamPlayer[SurProgress].Name = playerName;
+                            if (team == "main")
+                            {
+                                TeamInfoModel.MainTeamPlayer[HunProgress].Name = playerName;
+                            }
+                            else
+                            {
+                                TeamInfoModel.AwayTeamPlayer[HunProgress].Name = playerName;
+                            }
+                            HunProgress++;
                         }
-                        SurProgress++;
-                    }
-                    else if (type == "hun")
-                    {
-                        if (team == "main")
-                        {
-                            TeamInfoModel.MainTeamPlayer[HunProgress].Name = playerName;
-                        }
-                        else
-                        {
-                            TeamInfoModel.AwayTeamPlayer[HunProgress].Name = playerName;
-                        }
-                        HunProgress++;
                     }
                 }
+                TeamInfoModel = TeamInfoModel;
+                NowModel = NowModel;
             }
-            TeamInfoModel = TeamInfoModel;
-            NowModel = NowModel;
-        }
         public void ScoreSSet(string type, int Resault)//小比分（自动化）设置
         {
             if (Resault == 2)

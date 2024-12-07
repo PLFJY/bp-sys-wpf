@@ -312,12 +312,27 @@ namespace bp_sys_wpf.Views.Pages
 
         private void ImportMainInfo_Click(object sender, RoutedEventArgs e)
         {
-            viewModel.ImportTeamInfoFromJson("main");
+            try
+            {
+                viewModel.ImportTeamInfoFromJson("main");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("导入出错" + ex.Message);
+
+            }
         }
 
         private void ImportAwayInfo_Click(object sender, RoutedEventArgs e)
         {
-            viewModel.ImportTeamInfoFromJson("away");
+            try
+            {
+                viewModel.ImportTeamInfoFromJson("away");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("导入出错" + ex.Message);
+            }
         }
     }
 }

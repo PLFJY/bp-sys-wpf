@@ -37,7 +37,17 @@ namespace bp_sys_wpf.Views.Windows
             backWindow = this;
             DataContext = rootViewModel;
             AppInitialize();
-            UpdateCheck();
+            try
+            {
+                UpdateCheck();
+            }
+            catch (Exception ex) {
+                MessageBar.Severity = Wpf.Ui.Controls.InfoBarSeverity.Warning;
+                MessageBar.Title = "更新提示";
+                MessageBar.Message = $"更新获取失败";
+                MessageBar.IsOpen = true;
+                Console.WriteLine(ex.Message);
+            }
             DeleteFiles();
         }
         private void DeleteFiles()
@@ -244,33 +254,5 @@ namespace bp_sys_wpf.Views.Windows
                 }
             }
         }
-
-        //public async Task<(string latestVersion, string DownloadURL)> FetchLatestReleaseInfoAsync()
-        //{
-        //    var baseUrl = "https://gitee.com/api/v5";
-        //    var repository = "plfjy/bp-sys-wpf-update";
-        //    var releasesUrl = $"{baseUrl}/repos/{repository}/releases/latest";
-        //    try
-        //    {
-        //        // 发起GET请求并获取JSON响应内容
-        //        var responseJson = await releasesUrl.GetStringAsync();
-        //        // 使用System.Text.Json进行反序列化
-        //        var releaseInfo = System.Text.Json.JsonSerializer.Deserialize<GiteeReleaseInfo>(responseJson);
-        //        // 提取tag_name和第一个browser_download_url
-        //        string latestVersion = releaseInfo.tag_name;
-        //        string downloadUrl = releaseInfo.assets?.Length > 0 ? releaseInfo.assets[0].browser_download_url : null;
-        //        return (latestVersion, downloadUrl);
-        //    }
-        //    catch (FlurlHttpException ex)
-        //    {
-        //        Console.WriteLine($"请求失败: {ex.Message}");
-        //        return ($"请求失败", ex.Message);
-        //    }
-        //    catch (JsonException jex)
-        //    {
-        //        Console.WriteLine($"JSON解析失败: {jex.Message}");
-        //        return default;
-        //    }
-        //}
     }
 }

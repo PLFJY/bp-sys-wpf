@@ -7,7 +7,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <StartupObject></StartupObject>
+    <ApplicationIcon>update.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="update.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Downloader" Version="3.3.1" />

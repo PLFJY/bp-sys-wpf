@@ -1,6 +1,7 @@
 ﻿using bp_sys_wpf.ViewModel;
 using bp_sys_wpf.Views.Windows;
 using Flurl.Http;
+using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
@@ -51,7 +52,7 @@ namespace bp_sys_wpf.Views.Pages
             if (Ghproxy.IsChecked == true)
             {
                 baseUrl = "https://api.github.com";
-                mirrorURL = "https://ghp.ci/";
+                mirrorURL = "https://ghproxy.net/";
             }
             if (Gitee.IsChecked == true)
             {
@@ -91,13 +92,25 @@ namespace bp_sys_wpf.Views.Pages
                 if (version != Config.version)
                 {
                     MessageBox.Show("检测到新版本，最新版本为" + version + "\n点击确定或关闭该提示执行更新！", "更新提示");
-                    label1.Visibility = Visibility.Visible;
-                    pbDown.Visibility = Visibility.Visible;
-                    NewBat();
-                    CreateBat();
-                    if (HttpFileExist(url))
+                    var updaterPath = Path.Combine(Environment.CurrentDirectory, "Updater.exe");
+                    if (System.IO.File.Exists(updaterPath))
                     {
-                        DownloadHttpFile(url, "new_bpsys.7z");
+                        var updater = new Process
+                        {
+                            StartInfo = new ProcessStartInfo
+                            {
+                                FileName = updaterPath,
+                                Arguments = $"Update {url}"
+                            }
+                        };
+                        updater.Start();
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        MessageBox.Show("更新器缺失，请前往Github手动下载完整包体\n若无法正常访问，请在浏览器将github.com改为kkgithub.com", "更新提示");
+                        var updateurl = "https://github.com/PLFJY/bp-sys-wpf/releases/latest";
+                        Process.Start("explorer.exe", updateurl);
                     }
                 }
                 else

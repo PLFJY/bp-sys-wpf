@@ -14,7 +14,6 @@ namespace bp_sys_wpf
                 public static SolidColorBrush scoreS { get; set; }
                 public static SolidColorBrush score { get; set; }
                 public static SolidColorBrush timmer { get; set; }
-                public static SolidColorBrush Sur_team { get; set; }
                 public static SolidColorBrush Sur_player { get; set; }
                 public static SolidColorBrush Hun_player { get; set; }
             }

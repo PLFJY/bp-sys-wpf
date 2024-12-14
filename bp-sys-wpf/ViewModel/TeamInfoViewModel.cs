@@ -33,17 +33,17 @@ namespace bp_sys_wpf.ViewModel
                 {
                     for (int i = 0; i < 4; i++)
                     {
-                        NowModel.NowSurPlayerId[i] = $"{TeamInfoModel.AwayTeamInfo.Name}__{NowModel.NowPlayer[i]}";
+                        NowModel.NowSurPlayerId[i] = $"{TeamInfoModel.AwayTeamInfo.Name}_{NowModel.NowPlayer[i]}";
                     }
-                    NowModel.NowHunPlayerId = $"{TeamInfoModel.MainTeamInfo.Name}__{NowModel.NowPlayer[4]}";
+                    NowModel.NowHunPlayerId = $"{TeamInfoModel.MainTeamInfo.Name}_{NowModel.NowPlayer[4]}";
                 }
                 if (TeamInfoModel.AwayTeamInfo.State == "监管者")
                 {
                     for (int i = 0; i < 4; i++)
                     {
-                        NowModel.NowSurPlayerId[i] = $"{TeamInfoModel.MainTeamInfo.Name}__{NowModel.NowPlayer[i]}";
+                        NowModel.NowSurPlayerId[i] = $"{TeamInfoModel.MainTeamInfo.Name}_{NowModel.NowPlayer[i]}";
                     }
-                    NowModel.NowHunPlayerId = $"{TeamInfoModel.AwayTeamInfo.Name}__{NowModel.NowPlayer[4]}";
+                    NowModel.NowHunPlayerId = $"{TeamInfoModel.AwayTeamInfo.Name}_{NowModel.NowPlayer[4]}";
                 }
                 RaisePropertyChanged("NowModel");
             }

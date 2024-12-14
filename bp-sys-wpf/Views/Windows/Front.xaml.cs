@@ -48,10 +48,6 @@ namespace bp_sys_wpf
             Sur_2_player.Foreground = Config.Front.Color.Sur_player;
             Sur_3_player.Foreground = Config.Front.Color.Sur_player;
             Sur_4_player.Foreground = Config.Front.Color.Sur_player;
-            Sur_1_team.Foreground = Config.Front.Color.Sur_team;
-            Sur_2_team.Foreground = Config.Front.Color.Sur_team;
-            Sur_3_team.Foreground = Config.Front.Color.Sur_team;
-            Sur_4_team.Foreground = Config.Front.Color.Sur_team;
             Hun_player.Foreground = Config.Front.Color.Hun_player;
             Sur_score.Foreground = Config.Front.Color.score;
             Hun_score.Foreground = Config.Front.Color.score;

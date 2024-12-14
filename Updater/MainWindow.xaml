@@ -22,7 +22,7 @@
             Foreground="White">
             更新中
         </TextBlock>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom">
             <TextBlock
                 Name="Progress"
                 HorizontalAlignment="Center"
@@ -35,13 +35,14 @@
                 Width="450"
                 Height="30"
                 Margin="0,10,0,0" />
-            <TextBlock
+            <TextBox
                 Name="Log"
                 Width="450"
+                Height="100"
                 Margin="0,10,0,0"
-                HorizontalAlignment="Left"
                 FontSize="12"
                 Foreground="White"
+                IsReadOnly="True"
                 TextWrapping="Wrap" />
         </StackPanel>
     </Grid>

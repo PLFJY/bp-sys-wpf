@@ -37,7 +37,7 @@ namespace bp_sys_wpf
                 public static SolidColorBrush S { get; set; }
             }
         }
-        public static class ScoreHole
+        public static class ScoreGlobal
         {
             public static class Color
             {

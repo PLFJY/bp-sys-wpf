@@ -15,12 +15,12 @@ namespace bp_sys_wpf.Model
             set { _SurBan = value; }
         }
 
-        private List<string> _SurHoleBan = new List<string>(9) { null, null, null, null, null, null, null, null, null };//全局Ban
+        private List<string> _SurGlobalBan = new List<string>(9) { null, null, null, null, null, null, null, null, null };//全局Ban
 
-        public List<string> SurHoleBan
+        public List<string> SurGlobalBan
         {
-            get { return _SurHoleBan; }
-            set { _SurHoleBan = value; }
+            get { return _SurGlobalBan; }
+            set { _SurGlobalBan = value; }
         }
 
         private List<string> _HunBan = new List<string>(3) { null, null, null };//监管Ban
@@ -112,75 +112,75 @@ namespace bp_sys_wpf.Model
             set { _HunBanLock = value; }
         }
 
-        private List<bool> _SurHoleBanLock;//全局ban位数量设定
+        private List<bool> _SurGlobalBanLock;//全局ban位数量设定
 
-        public List<bool> SurHoleBanLock
+        public List<bool> SurGlobalBanLock
         {
             get
             {
-                if (_SurHoleBanLock == null)
+                if (_SurGlobalBanLock == null)
                 {
-                    _SurHoleBanLock = new List<bool>();
+                    _SurGlobalBanLock = new List<bool>();
                     for (int i = 0; i < 9; i++)
                     {
-                        _SurHoleBanLock.Add(true);
+                        _SurGlobalBanLock.Add(true);
                     }
                 }
                 for (int i = 0; i < 9; i++)
                 {
-                    if (_SurHoleBanLock[i] == false)
+                    if (_SurGlobalBanLock[i] == false)
                     {
-                        BpShowViewModel.BpShow.SurHoleBanLock[i] = Visibility.Visible;
+                        BpShowViewModel.BpShow.SurGlobalBanLock[i] = Visibility.Visible;
                     }
                     else
                     {
-                        BpShowViewModel.BpShow.SurHoleBanLock[i] = Visibility.Hidden;
+                        BpShowViewModel.BpShow.SurGlobalBanLock[i] = Visibility.Hidden;
                     }
                 }
                 BpShowViewModel.BpShow = BpShowViewModel.BpShow;
-                return _SurHoleBanLock;
+                return _SurGlobalBanLock;
             }
-            set { _SurHoleBanLock = value; }
+            set { _SurGlobalBanLock = value; }
         }
 
         public string HunPick { get; set; }//监管Pick
 
-        private List<string> _SurHoleBanMainRecord;
+        private List<string> _SurGlobalBanMainRecord;
 
-        public List<string> SurHoleBanMainRecord//主队全局Ban记录
+        public List<string> SurGlobalBanMainRecord//主队全局Ban记录
         {
             get
             {
-                if (_SurHoleBanMainRecord == null)
+                if (_SurGlobalBanMainRecord == null)
                 {
-                    _SurHoleBanMainRecord = new List<string>();
+                    _SurGlobalBanMainRecord = new List<string>();
                     for (int i = 0; i < 9; i++)
                     {
-                        _SurHoleBanMainRecord.Add(null);
+                        _SurGlobalBanMainRecord.Add(null);
                     }
                 }
-                return _SurHoleBanMainRecord;
+                return _SurGlobalBanMainRecord;
             }
-            set { _SurHoleBanMainRecord = value; }
+            set { _SurGlobalBanMainRecord = value; }
         }
 
-        private List<string> _SurHoleBanAwayRecord;//客队全局Ban记录
+        private List<string> _SurGlobalBanAwayRecord;//客队全局Ban记录
 
-        public List<string> SurHoleBanAwayRecord
+        public List<string> SurGlobalBanAwayRecord
         {
             get
             {
-                if (_SurHoleBanAwayRecord == null)
+                if (_SurGlobalBanAwayRecord == null)
                 {
-                    _SurHoleBanAwayRecord = new List<string>();
+                    _SurGlobalBanAwayRecord = new List<string>();
                     for (int i = 0; i < 9; i++)
                     {
-                        _SurHoleBanAwayRecord.Add(null);
+                        _SurGlobalBanAwayRecord.Add(null);
                     }
                 }
-                return _SurHoleBanAwayRecord;
+                return _SurGlobalBanAwayRecord;
             }
-            set { _SurHoleBanAwayRecord = value; }
+            set { _SurGlobalBanAwayRecord = value; }
         }
 
         private string _MapPick;//地图Pick

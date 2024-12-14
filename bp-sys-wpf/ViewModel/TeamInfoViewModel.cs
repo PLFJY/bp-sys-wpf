@@ -446,13 +446,13 @@ namespace bp_sys_wpf.ViewModel
             {
                 if (TeamInfoModel.MainTeamInfo.State == "求生者")
                 {
-                    rootViewModel.BpReceiveModel.SurHoleBan[i] = rootViewModel.BpReceiveModel.SurHoleBanMainRecord[i];
+                    rootViewModel.BpReceiveModel.SurGlobalBan[i] = rootViewModel.BpReceiveModel.SurGlobalBanMainRecord[i];
                 }
                 else
                 {
-                    rootViewModel.BpReceiveModel.SurHoleBan[i] = rootViewModel.BpReceiveModel.SurHoleBanAwayRecord[i];
+                    rootViewModel.BpReceiveModel.SurGlobalBan[i] = rootViewModel.BpReceiveModel.SurGlobalBanAwayRecord[i];
                 }
-                rootViewModel.BpShowViewModel.ShowBp("SurHoleBan", i);
+                rootViewModel.BpShowViewModel.ShowBp("SurGlobalBan", i);
             }
             TeamInfoModel = TeamInfoModel;
             NowModel = NowModel;

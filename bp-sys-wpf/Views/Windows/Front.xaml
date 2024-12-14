@@ -108,30 +108,30 @@
                     <Image x:Name="Map" Grid.Row="0" Height="115" Width="283" VerticalAlignment="Top" Margin="0,5,0,0" Source="{Binding BpShowViewModel.BpShow.MapPick}"/>
                     <!--地图-->
                     <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="77,3,0,0" Height="37" Width="318">
-                        <Image x:Name="Hole_ban_1" Height="37" Width="37" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[0]}"/>
-                        <Image x:Name="Hole_ban_2" Height="37" Width="37" Margin="6,0,0,0" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[1]}"/>
-                        <Image x:Name="Hole_ban_3" Height="37" Width="37" Margin="6,0,0,0" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[2]}"/>
-                        <Image x:Name="Hole_ban_4" Height="37" Width="37" Margin="6,0,0,0" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[3]}"/>
-                        <Image x:Name="Hole_ban_5" Height="37" Width="37" Margin="6,0,0,0" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[4]}"/>
-                        <Image x:Name="Hole_ban_6" Height="37" Width="37" Margin="5,0,0,0" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[5]}"/>
+                        <Image x:Name="Global_ban_1" Height="37" Width="37" Source="{Binding BpShowViewModel.BpShow.SurGlobalBan[0]}"/>
+                        <Image x:Name="Global_ban_2" Height="37" Width="37" Margin="6,0,0,0" Source="{Binding BpShowViewModel.BpShow.SurGlobalBan[1]}"/>
+                        <Image x:Name="Global_ban_3" Height="37" Width="37" Margin="6,0,0,0" Source="{Binding BpShowViewModel.BpShow.SurGlobalBan[2]}"/>
+                        <Image x:Name="Global_ban_4" Height="37" Width="37" Margin="6,0,0,0" Source="{Binding BpShowViewModel.BpShow.SurGlobalBan[3]}"/>
+                        <Image x:Name="Global_ban_5" Height="37" Width="37" Margin="6,0,0,0" Source="{Binding BpShowViewModel.BpShow.SurGlobalBan[4]}"/>
+                        <Image x:Name="Global_ban_6" Height="37" Width="37" Margin="5,0,0,0" Source="{Binding BpShowViewModel.BpShow.SurGlobalBan[5]}"/>
                     </StackPanel>
                     <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="77,3,0,0" Height="37" Width="318">
-                        <Image x:Name="Hole_ban_7" Height="37" Width="37" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[6]}"/>
-                        <Image x:Name="Hole_ban_8" Height="37" Width="37" Margin="6,0,0,0" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[7]}"/>
-                        <Image x:Name="Hole_ban_9" Height="37" Width="37" Margin="5,0,0,0" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[8]}"/>
+                        <Image x:Name="Global_ban_7" Height="37" Width="37" Source="{Binding BpShowViewModel.BpShow.SurGlobalBan[6]}"/>
+                        <Image x:Name="Global_ban_8" Height="37" Width="37" Margin="6,0,0,0" Source="{Binding BpShowViewModel.BpShow.SurGlobalBan[7]}"/>
+                        <Image x:Name="Global_ban_9" Height="37" Width="37" Margin="5,0,0,0" Source="{Binding BpShowViewModel.BpShow.SurGlobalBan[8]}"/>
                     </StackPanel>
                     <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="77,3,0,0" Panel.ZIndex="1" Height="37" Width="252">
-                        <Image x:Name="Hole_no_ban_1" Height="37" Width="37" Visibility="{Binding BpShowViewModel.BpShow.SurHoleBanLock[0]}"/>
-                        <Image x:Name="Hole_no_ban_2" Height="37" Width="37" Margin="6,0,0,0" Visibility="{Binding BpShowViewModel.BpShow.SurHoleBanLock[1]}"/>
-                        <Image x:Name="Hole_no_ban_3" Height="37" Width="37" Margin="6,0,0,0" Visibility="{Binding BpShowViewModel.BpShow.SurHoleBanLock[2]}"/>
-                        <Image x:Name="Hole_no_ban_4" Height="37" Width="37" Margin="6,0,0,0" Visibility="{Binding BpShowViewModel.BpShow.SurHoleBanLock[3]}"/>
-                        <Image x:Name="Hole_no_ban_5" Height="37" Width="37" Margin="6,0,0,0" Visibility="{Binding BpShowViewModel.BpShow.SurHoleBanLock[4]}"/>
-                        <Image x:Name="Hole_no_ban_6" Height="37" Width="37" Margin="5,0,0,0" Visibility="{Binding BpShowViewModel.BpShow.SurHoleBanLock[5]}"/>
+                        <Image x:Name="Global_no_ban_1" Height="37" Width="37" Visibility="{Binding BpShowViewModel.BpShow.SurGlobalBanLock[0]}"/>
+                        <Image x:Name="Global_no_ban_2" Height="37" Width="37" Margin="6,0,0,0" Visibility="{Binding BpShowViewModel.BpShow.SurGlobalBanLock[1]}"/>
+                        <Image x:Name="Global_no_ban_3" Height="37" Width="37" Margin="6,0,0,0" Visibility="{Binding BpShowViewModel.BpShow.SurGlobalBanLock[2]}"/>
+                        <Image x:Name="Global_no_ban_4" Height="37" Width="37" Margin="6,0,0,0" Visibility="{Binding BpShowViewModel.BpShow.SurGlobalBanLock[3]}"/>
+                        <Image x:Name="Global_no_ban_5" Height="37" Width="37" Margin="6,0,0,0" Visibility="{Binding BpShowViewModel.BpShow.SurGlobalBanLock[4]}"/>
+                        <Image x:Name="Global_no_ban_6" Height="37" Width="37" Margin="5,0,0,0" Visibility="{Binding BpShowViewModel.BpShow.SurGlobalBanLock[5]}"/>
                     </StackPanel>
                     <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="77,3,0,0" Panel.ZIndex="1" Height="37" Width="252">
-                        <Image x:Name="Hole_no_ban_7" Height="37" Width="37" Visibility="{Binding BpShowViewModel.BpShow.SurHoleBanLock[6]}"/>
-                        <Image x:Name="Hole_no_ban_8" Height="37" Width="37" Margin="5,0,0,0" Visibility="{Binding BpShowViewModel.BpShow.SurHoleBanLock[7]}"/>
-                        <Image x:Name="Hole_no_ban_9" Height="37" Width="37" Margin="5,0,0,0" Visibility="{Binding BpShowViewModel.BpShow.SurHoleBanLock[8]}"/>
+                        <Image x:Name="Global_no_ban_7" Height="37" Width="37" Visibility="{Binding BpShowViewModel.BpShow.SurGlobalBanLock[6]}"/>
+                        <Image x:Name="Global_no_ban_8" Height="37" Width="37" Margin="5,0,0,0" Visibility="{Binding BpShowViewModel.BpShow.SurGlobalBanLock[7]}"/>
+                        <Image x:Name="Global_no_ban_9" Height="37" Width="37" Margin="5,0,0,0" Visibility="{Binding BpShowViewModel.BpShow.SurGlobalBanLock[8]}"/>
                     </StackPanel>
                     <!--全局ban-->
                 </Grid>

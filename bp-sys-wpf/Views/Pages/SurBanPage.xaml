@@ -99,117 +99,117 @@
                                     Margin="10,10,10,10"
                                     Orientation="Horizontal">
                             <StackPanel>
-                                <ComboBox x:Name="Sur_hole_ban_1"
+                                <ComboBox x:Name="Sur_Global_ban_1"
                                       Height="35"
                                       Width="150"
                                       IsEditable="True"
-                                          SelectedItem="{Binding BpReceiveModel.SurHoleBan[0]}"
+                                          SelectedItem="{Binding BpReceiveModel.SurGlobalBan[0]}"
                                           ItemsSource="{Binding ComboBoxItemViewModel.sur}"
-                                      MaxDropDownHeight="200" KeyDown="Sur_hole_ban_1_KeyDown"
-                                          IsEnabled="{Binding BpReceiveModel.SurHoleBanLock[0]}"/>
-                                <Image x:Name="Sur_hole_ban_1_review" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[0]}"/>
+                                      MaxDropDownHeight="200" KeyDown="Sur_Global_ban_1_KeyDown"
+                                          IsEnabled="{Binding BpReceiveModel.SurGlobalBanLock[0]}"/>
+                                <Image x:Name="Sur_Global_ban_1_review" Source="{Binding BpShowViewModel.BpShow.SurGlobalBan[0]}"/>
                             </StackPanel>
                             <StackPanel>
-                                <ComboBox x:Name="Sur_hole_ban_2"
+                                <ComboBox x:Name="Sur_Global_ban_2"
                                       Height="35"
                                       Width="150"
                                       IsEditable="True"
                                       Margin="10,0,0,0"
-                                          SelectedItem="{Binding BpReceiveModel.SurHoleBan[1]}"
+                                          SelectedItem="{Binding BpReceiveModel.SurGlobalBan[1]}"
                                           ItemsSource="{Binding ComboBoxItemViewModel.sur}"
-                                          IsEnabled="{Binding BpReceiveModel.SurHoleBanLock[1]}"
-                                      MaxDropDownHeight="200" KeyDown="Sur_hole_ban_2_KeyDown"/>
-                                <Image x:Name="Sur_hole_ban_2_review" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[1]}"/>
+                                          IsEnabled="{Binding BpReceiveModel.SurGlobalBanLock[1]}"
+                                      MaxDropDownHeight="200" KeyDown="Sur_Global_ban_2_KeyDown"/>
+                                <Image x:Name="Sur_Global_ban_2_review" Source="{Binding BpShowViewModel.BpShow.SurGlobalBan[1]}"/>
                             </StackPanel>
                             <StackPanel>
-                                <ComboBox x:Name="Sur_hole_ban_3"
+                                <ComboBox x:Name="Sur_Global_ban_3"
                                           Height="35"
                                           Width="150"
                                           IsEditable="True"
                                           Margin="10,0,0,0"
-                                          SelectedItem="{Binding BpReceiveModel.SurHoleBan[2]}"
-                                          IsEnabled="{Binding BpReceiveModel.SurHoleBanLock[2]}"
+                                          SelectedItem="{Binding BpReceiveModel.SurGlobalBan[2]}"
+                                          IsEnabled="{Binding BpReceiveModel.SurGlobalBanLock[2]}"
                                           ItemsSource="{Binding ComboBoxItemViewModel.sur}"
-                                          MaxDropDownHeight="200" KeyDown="Sur_hole_ban_3_KeyDown"/>
-                                <Image x:Name="Sur_hole_ban_3_review" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[2]}"/>
+                                          MaxDropDownHeight="200" KeyDown="Sur_Global_ban_3_KeyDown"/>
+                                <Image x:Name="Sur_Global_ban_3_review" Source="{Binding BpShowViewModel.BpShow.SurGlobalBan[2]}"/>
                             </StackPanel>
                         </StackPanel>
                         <StackPanel Grid.Row="0"
                                     Margin="10,10,10,10"
                                     Orientation="Horizontal">
                             <StackPanel>
-                                <ComboBox x:Name="Sur_hole_ban_4"
+                                <ComboBox x:Name="Sur_Global_ban_4"
                                           Height="35"
                                           Width="150"
                                           IsEditable="True"
-                                          SelectedItem="{Binding BpReceiveModel.SurHoleBan[3]}"
-                                          IsEnabled="{Binding BpReceiveModel.SurHoleBanLock[3]}"
+                                          SelectedItem="{Binding BpReceiveModel.SurGlobalBan[3]}"
+                                          IsEnabled="{Binding BpReceiveModel.SurGlobalBanLock[3]}"
                                           ItemsSource="{Binding ComboBoxItemViewModel.sur}"
-                                          MaxDropDownHeight="200" KeyDown="Sur_hole_ban_4_KeyDown"/>
-                                <Image x:Name="Sur_hole_ban_4_review" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[3]}"/>
+                                          MaxDropDownHeight="200" KeyDown="Sur_Global_ban_4_KeyDown"/>
+                                <Image x:Name="Sur_Global_ban_4_review" Source="{Binding BpShowViewModel.BpShow.SurGlobalBan[3]}"/>
                             </StackPanel>
                             <StackPanel>
-                                <ComboBox x:Name="Sur_hole_ban_5"
+                                <ComboBox x:Name="Sur_Global_ban_5"
                                       Height="35"
                                       Width="150"
                                       IsEditable="True"
                                       Margin="10,0,0,0"
-                                          SelectedItem="{Binding BpReceiveModel.SurHoleBan[4]}"
-                                          IsEnabled="{Binding BpReceiveModel.SurHoleBanLock[4]}"
+                                          SelectedItem="{Binding BpReceiveModel.SurGlobalBan[4]}"
+                                          IsEnabled="{Binding BpReceiveModel.SurGlobalBanLock[4]}"
                                           ItemsSource="{Binding ComboBoxItemViewModel.sur}"
-                                      MaxDropDownHeight="200" KeyDown="Sur_hole_ban_5_KeyDown"/>
-                                <Image x:Name="Sur_hole_ban_5_review" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[4]}"/>
+                                      MaxDropDownHeight="200" KeyDown="Sur_Global_ban_5_KeyDown"/>
+                                <Image x:Name="Sur_Global_ban_5_review" Source="{Binding BpShowViewModel.BpShow.SurGlobalBan[4]}"/>
                             </StackPanel>
                             <StackPanel>
-                                <ComboBox x:Name="Sur_hole_ban_6"
+                                <ComboBox x:Name="Sur_Global_ban_6"
                                           Height="35"
                                           Width="150"
                                           IsEditable="True"
                                           Margin="10,0,0,0"
-                                          SelectedItem="{Binding BpReceiveModel.SurHoleBan[5]}"
-                                          IsEnabled="{Binding BpReceiveModel.SurHoleBanLock[5]}"
+                                          SelectedItem="{Binding BpReceiveModel.SurGlobalBan[5]}"
+                                          IsEnabled="{Binding BpReceiveModel.SurGlobalBanLock[5]}"
                                           ItemsSource="{Binding ComboBoxItemViewModel.sur}"
-                                          MaxDropDownHeight="200" KeyDown="Sur_hole_ban_6_KeyDown"/>
-                                <Image x:Name="Sur_hole_ban_6_review" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[5]}"/>
+                                          MaxDropDownHeight="200" KeyDown="Sur_Global_ban_6_KeyDown"/>
+                                <Image x:Name="Sur_Global_ban_6_review" Source="{Binding BpShowViewModel.BpShow.SurGlobalBan[5]}"/>
                             </StackPanel>
                         </StackPanel>
                         <StackPanel Grid.Row="0"
                             Margin="10,10,10,10"
                             Orientation="Horizontal">
                             <StackPanel>
-                                <ComboBox x:Name="Sur_hole_ban_7"
+                                <ComboBox x:Name="Sur_Global_ban_7"
                                     Height="35"
                                     Width="150"
                                     IsEditable="True"
-                                    SelectedItem="{Binding BpReceiveModel.SurHoleBan[6]}"
-                                    IsEnabled="{Binding BpReceiveModel.SurHoleBanLock[6]}"
+                                    SelectedItem="{Binding BpReceiveModel.SurGlobalBan[6]}"
+                                    IsEnabled="{Binding BpReceiveModel.SurGlobalBanLock[6]}"
                                     ItemsSource="{Binding ComboBoxItemViewModel.sur}"
-                                    MaxDropDownHeight="200" KeyDown="Sur_hole_ban_7_KeyDown"/>
-                                <Image x:Name="Sur_hole_ban_7_review" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[6]}"/>
+                                    MaxDropDownHeight="200" KeyDown="Sur_Global_ban_7_KeyDown"/>
+                                <Image x:Name="Sur_Global_ban_7_review" Source="{Binding BpShowViewModel.BpShow.SurGlobalBan[6]}"/>
                             </StackPanel>
                             <StackPanel>
-                                <ComboBox x:Name="Sur_hole_ban_8"
+                                <ComboBox x:Name="Sur_Global_ban_8"
                                     Height="35"
                                     Width="150"
                                     IsEditable="True"
                                     Margin="10,0,0,0"
-                                        SelectedItem="{Binding BpReceiveModel.SurHoleBan[7]}"
-                                        IsEnabled="{Binding BpReceiveModel.SurHoleBanLock[7]}"
+                                        SelectedItem="{Binding BpReceiveModel.SurGlobalBan[7]}"
+                                        IsEnabled="{Binding BpReceiveModel.SurGlobalBanLock[7]}"
                                         ItemsSource="{Binding ComboBoxItemViewModel.sur}"
-                                    MaxDropDownHeight="200" KeyDown="Sur_hole_ban_8_KeyDown"/>
-                                <Image x:Name="Sur_hole_ban_8_review" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[7]}"/>
+                                    MaxDropDownHeight="200" KeyDown="Sur_Global_ban_8_KeyDown"/>
+                                <Image x:Name="Sur_Global_ban_8_review" Source="{Binding BpShowViewModel.BpShow.SurGlobalBan[7]}"/>
                             </StackPanel>
                             <StackPanel>
-                                <ComboBox x:Name="Sur_hole_ban_9"
+                                <ComboBox x:Name="Sur_Global_ban_9"
                                     Height="35"
                                     Width="150"
                                     IsEditable="True"
                                     Margin="10,0,0,0"
-                                    SelectedItem="{Binding BpReceiveModel.SurHoleBan[8]}"
-                                    IsEnabled="{Binding BpReceiveModel.SurHoleBanLock[8]}"
+                                    SelectedItem="{Binding BpReceiveModel.SurGlobalBan[8]}"
+                                    IsEnabled="{Binding BpReceiveModel.SurGlobalBanLock[8]}"
                                     ItemsSource="{Binding ComboBoxItemViewModel.sur}"
-                                    MaxDropDownHeight="200" KeyDown="Sur_hole_ban_9_KeyDown"/>
-                                <Image x:Name="Sur_hole_ban_9_review" Source="{Binding BpShowViewModel.BpShow.SurHoleBan[8]}"/>
+                                    MaxDropDownHeight="200" KeyDown="Sur_Global_ban_9_KeyDown"/>
+                                <Image x:Name="Sur_Global_ban_9_review" Source="{Binding BpShowViewModel.BpShow.SurGlobalBan[8]}"/>
                             </StackPanel>
                         </StackPanel>
                     </StackPanel>
@@ -221,52 +221,52 @@
                 <StackPanel>
                     <StackPanel Orientation="Horizontal"
                         Margin="10,10,10,10">
-                        <ui:ToggleSwitch x:Name="SurHoleStateChange1"
+                        <ui:ToggleSwitch x:Name="SurGlobalStateChange1"
                             Content="1号位"
-                            IsChecked="{Binding BpReceiveModel.SurHoleBanLock[0]}"
-                            Click="SurHoleStateChange_Click"/>
-                        <ui:ToggleSwitch x:Name="SurHoleBanStateChange2"
+                            IsChecked="{Binding BpReceiveModel.SurGlobalBanLock[0]}"
+                            Click="SurGlobalStateChange_Click"/>
+                        <ui:ToggleSwitch x:Name="SurGlobalBanStateChange2"
                             Content="2号位"
-                            IsChecked="{Binding BpReceiveModel.SurHoleBanLock[1]}"
+                            IsChecked="{Binding BpReceiveModel.SurGlobalBanLock[1]}"
                             Margin="20,0,0,0"
-                            Click="SurHoleStateChange_Click"/>
-                        <ui:ToggleSwitch x:Name="SurHoleStateChange3"
+                            Click="SurGlobalStateChange_Click"/>
+                        <ui:ToggleSwitch x:Name="SurGlobalStateChange3"
                             Content="3号位"
-                            IsChecked="{Binding BpReceiveModel.SurHoleBanLock[2]}"
+                            IsChecked="{Binding BpReceiveModel.SurGlobalBanLock[2]}"
                             Margin="20,0,0,0"
-                            Click="SurHoleStateChange_Click"/>
-                        <ui:ToggleSwitch x:Name="SurHoleStateChange4"
+                            Click="SurGlobalStateChange_Click"/>
+                        <ui:ToggleSwitch x:Name="SurGlobalStateChange4"
                             Content="4号位"
-                            IsChecked="{Binding BpReceiveModel.SurHoleBanLock[3]}"
+                            IsChecked="{Binding BpReceiveModel.SurGlobalBanLock[3]}"
                             Margin="20,0,0,0"
-                            Click="SurHoleStateChange_Click"/>
-                        <ui:ToggleSwitch x:Name="SurHoleStateChange5"
+                            Click="SurGlobalStateChange_Click"/>
+                        <ui:ToggleSwitch x:Name="SurGlobalStateChange5"
                             Content="5号位"
-                            IsChecked="{Binding BpReceiveModel.SurHoleBanLock[4]}"
+                            IsChecked="{Binding BpReceiveModel.SurGlobalBanLock[4]}"
                             Margin="20,0,0,0"
-                            Click="SurHoleStateChange_Click"/>
-                        <ui:ToggleSwitch x:Name="SurHoleStateChange6"
+                            Click="SurGlobalStateChange_Click"/>
+                        <ui:ToggleSwitch x:Name="SurGlobalStateChange6"
                             Content="6号位"
-                            IsChecked="{Binding BpReceiveModel.SurHoleBanLock[5]}"
+                            IsChecked="{Binding BpReceiveModel.SurGlobalBanLock[5]}"
                             Margin="20,0,0,0"
-                            Click="SurHoleStateChange_Click"/>
+                            Click="SurGlobalStateChange_Click"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal"
                         Margin="10,10,10,10">
-                        <ui:ToggleSwitch x:Name="SurHoleStateChange7"
+                        <ui:ToggleSwitch x:Name="SurGlobalStateChange7"
                             Content="7号位"
-                            IsChecked="{Binding BpReceiveModel.SurHoleBanLock[6]}"
-                            Click="SurHoleStateChange_Click"/>
-                        <ui:ToggleSwitch x:Name="SurHoleStateChange8"
+                            IsChecked="{Binding BpReceiveModel.SurGlobalBanLock[6]}"
+                            Click="SurGlobalStateChange_Click"/>
+                        <ui:ToggleSwitch x:Name="SurGlobalStateChange8"
                             Content="8号位"
-                            IsChecked="{Binding BpReceiveModel.SurHoleBanLock[7]}"
+                            IsChecked="{Binding BpReceiveModel.SurGlobalBanLock[7]}"
                             Margin="20,0,0,0"
-                            Click="SurHoleStateChange_Click"/>
-                        <ui:ToggleSwitch x:Name="SurHoleStateChange9"
+                            Click="SurGlobalStateChange_Click"/>
+                        <ui:ToggleSwitch x:Name="SurGlobalStateChange9"
                             Content="9号位"
-                            IsChecked="{Binding BpReceiveModel.SurHoleBanLock[8]}"
+                            IsChecked="{Binding BpReceiveModel.SurGlobalBanLock[8]}"
                             Margin="20,0,0,0"
-                            Click="SurHoleStateChange_Click"/>
+                            Click="SurGlobalStateChange_Click"/>
                     </StackPanel>
                 </StackPanel>
             </GroupBox>

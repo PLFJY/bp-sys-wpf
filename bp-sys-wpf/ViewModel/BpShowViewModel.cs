@@ -59,8 +59,8 @@ namespace bp_sys_wpf.ViewModel
                     BpShow.SurBan[num] = getFilePath.GetImage("surban", ReceiveModel.SurBan[num]);
                     BpShow = BpShow;
                     break;
-                case "SurHoleBan":
-                    BpShow.SurHoleBan[num] = getFilePath.GetImage("surban", ReceiveModel.SurHoleBan[num]);
+                case "SurGlobalBan":
+                    BpShow.SurGlobalBan[num] = getFilePath.GetImage("surban", ReceiveModel.SurGlobalBan[num]);
                     BpShow = BpShow;
                     break;
                 case "HunBan":

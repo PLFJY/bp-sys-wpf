@@ -2,25 +2,25 @@
 
 namespace bp_sys_wpf.Model
 {
-    public class ScoreHoleModel
+    public class ScoreGlobalModel
     {
-        private List<GameResault> _ScoreHoleShow;
+        private List<GameResault> _ScoreGlobalShow;
 
-        public List<GameResault> ScoreHoleShow
+        public List<GameResault> ScoreGlobalShow
         {
             get
             {
-                if (_ScoreHoleShow == null)
+                if (_ScoreGlobalShow == null)
                 {
-                    _ScoreHoleShow = new List<GameResault>();
+                    _ScoreGlobalShow = new List<GameResault>();
                     for (int i = 0; i < 10; i++)
                     {
-                        _ScoreHoleShow.Add(new GameResault());
+                        _ScoreGlobalShow.Add(new GameResault());
                     }
                 }
-                return _ScoreHoleShow;
+                return _ScoreGlobalShow;
             }
-            set { _ScoreHoleShow = value; }
+            set { _ScoreGlobalShow = value; }
         }
     }
     public class GameResault

@@ -70,15 +70,15 @@ namespace bp_sys_wpf.ViewModel
             }
         }
 
-        private ScoreHoleModel _ScoreHoleViewModel = new ScoreHoleModel();
+        private ScoreGlobalModel _ScoreGlobalViewModel = new ScoreGlobalModel();
 
-        public ScoreHoleModel ScoreHoleViewModel
+        public ScoreGlobalModel ScoreGlobalViewModel
         {
-            get { return _ScoreHoleViewModel; }
+            get { return _ScoreGlobalViewModel; }
             set
             {
-                _ScoreHoleViewModel = value;
-                RaisePropertyChanged("ScoreHoleViewModel");
+                _ScoreGlobalViewModel = value;
+                RaisePropertyChanged("ScoreGlobalViewModel");
             }
         }
 

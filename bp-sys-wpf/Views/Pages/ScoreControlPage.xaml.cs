@@ -28,7 +28,7 @@ namespace bp_sys_wpf.Views.Pages
         private void CheckFormatChangeIsAvailable()
         {
             string runDir = Environment.CurrentDirectory;
-            if (File.Exists($"{runDir}\\Resource\\gui\\score_hole_bo3.png"))
+            if (File.Exists($"{runDir}\\Resource\\gui\\score_global_bo3.png"))
             {
                 FormatChangeGroup.Visibility = Visibility.Visible;
             }
@@ -78,26 +78,26 @@ namespace bp_sys_wpf.Views.Pages
         private void Bo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             num = Bo.SelectedIndex;
-            IsGameFinished.IsChecked = RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].IsGameFinished;
-            MainTeamState.IsEnabled = RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].IsGameFinished;
-            AwayTeamState.IsEnabled = RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].IsGameFinished;
-            GameResult.IsEnabled = RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].IsGameFinished;
-            Statistics_Escape4.IsChecked = RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].RadioButtonState.Escape4;
-            Statistics_Escape3.IsChecked = RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].RadioButtonState.Escape3;
-            Statistics_Tie.IsChecked = RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].RadioButtonState.Tie;
-            Statistics_Out4.IsChecked = RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].RadioButtonState.Out4;
-            Statistics_Out3.IsChecked = RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].RadioButtonState.Out3;
-            if (RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainTeamState == "sur")
+            IsGameFinished.IsChecked = RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].IsGameFinished;
+            MainTeamState.IsEnabled = RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].IsGameFinished;
+            AwayTeamState.IsEnabled = RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].IsGameFinished;
+            GameResult.IsEnabled = RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].IsGameFinished;
+            Statistics_Escape4.IsChecked = RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].RadioButtonState.Escape4;
+            Statistics_Escape3.IsChecked = RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].RadioButtonState.Escape3;
+            Statistics_Tie.IsChecked = RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].RadioButtonState.Tie;
+            Statistics_Out4.IsChecked = RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].RadioButtonState.Out4;
+            Statistics_Out3.IsChecked = RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].RadioButtonState.Out3;
+            if (RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].MainTeamState == "sur")
             {
                 IsMainSur.IsChecked = true;
                 IsAwayHun.IsChecked = true;
             }
-            if (RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].AwayTeamState == "sur")
+            if (RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].AwayTeamState == "sur")
             {
                 IsMainHun.IsChecked = true;
                 IsAwaySur.IsChecked = true;
             }
-            if (RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainTeamState == string.Empty)
+            if (RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].MainTeamState == string.Empty)
             {
                 IsMainSur.IsChecked = false;
                 IsMainHun.IsChecked = false;
@@ -105,7 +105,7 @@ namespace bp_sys_wpf.Views.Pages
                 IsAwayHun.IsChecked = false;
                 IsAwaySur.IsChecked = false;
             }
-            RootViewModel.ScoreHoleViewModel = RootViewModel.ScoreHoleViewModel;
+            RootViewModel.ScoreGlobalViewModel = RootViewModel.ScoreGlobalViewModel;
         }
         private void NextGame_Click(object sender, System.Windows.RoutedEventArgs e)
         {
@@ -114,148 +114,148 @@ namespace bp_sys_wpf.Views.Pages
         }
         private void IsGameFinished_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].IsGameFinished = (bool)IsGameFinished.IsChecked;
-            MainTeamState.IsEnabled = RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].IsGameFinished;
-            AwayTeamState.IsEnabled = RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].IsGameFinished;
-            GameResult.IsEnabled = RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].IsGameFinished;
-            if (RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].IsGameFinished == false)
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].IsGameFinished = (bool)IsGameFinished.IsChecked;
+            MainTeamState.IsEnabled = RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].IsGameFinished;
+            AwayTeamState.IsEnabled = RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].IsGameFinished;
+            GameResult.IsEnabled = RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].IsGameFinished;
+            if (RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].IsGameFinished == false)
             {
-                RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num] = new Model.GameResault();
+                RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num] = new Model.GameResault();
                 IsMainSur.IsChecked = false;
                 IsAwaySur.IsChecked = false;
                 IsMainHun.IsChecked = false;
                 IsAwayHun.IsChecked = false;
-                Statistics_Escape4.IsChecked = RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].RadioButtonState.Escape4;
-                Statistics_Escape3.IsChecked = RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].RadioButtonState.Escape3;
-                Statistics_Tie.IsChecked = RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].RadioButtonState.Tie;
-                Statistics_Out4.IsChecked = RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].RadioButtonState.Out4;
-                Statistics_Out3.IsChecked = RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].RadioButtonState.Out3;
+                Statistics_Escape4.IsChecked = RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].RadioButtonState.Escape4;
+                Statistics_Escape3.IsChecked = RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].RadioButtonState.Escape3;
+                Statistics_Tie.IsChecked = RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].RadioButtonState.Tie;
+                Statistics_Out4.IsChecked = RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].RadioButtonState.Out4;
+                Statistics_Out3.IsChecked = RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].RadioButtonState.Out3;
             }
-            RootViewModel.ScoreHoleViewModel = RootViewModel.ScoreHoleViewModel;
+            RootViewModel.ScoreGlobalViewModel = RootViewModel.ScoreGlobalViewModel;
         }
 
         private void IsMainSur_Checked(object sender, System.Windows.RoutedEventArgs e)
         {
             GetFilePath getFilePath = new GetFilePath();
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainTeamState = "sur";
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].AwayTeamState = "hun";
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].MainTeamState = "sur";
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].AwayTeamState = "hun";
             IsAwayHun.IsChecked = true;
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainIcon = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/sur.png")));
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].AwayIcon = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/hun.png")));
-            RootViewModel.ScoreHoleViewModel = RootViewModel.ScoreHoleViewModel;
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].MainIcon = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/sur.png")));
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].AwayIcon = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/hun.png")));
+            RootViewModel.ScoreGlobalViewModel = RootViewModel.ScoreGlobalViewModel;
         }
 
         private void IsMainHun_Checked(object sender, System.Windows.RoutedEventArgs e)
         {
             GetFilePath getFilePath = new GetFilePath();
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainTeamState = "hun";
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].AwayTeamState = "sur";
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].MainTeamState = "hun";
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].AwayTeamState = "sur";
             IsAwaySur.IsChecked = true;
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainIcon = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/hun.png")));
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].AwayIcon = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/sur.png")));
-            RootViewModel.ScoreHoleViewModel = RootViewModel.ScoreHoleViewModel;
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].MainIcon = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/hun.png")));
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].AwayIcon = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/sur.png")));
+            RootViewModel.ScoreGlobalViewModel = RootViewModel.ScoreGlobalViewModel;
         }
 
         private void IsAwaySur_Checked(object sender, System.Windows.RoutedEventArgs e)
         {
             GetFilePath getFilePath = new GetFilePath();
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainTeamState = "hun";
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].AwayTeamState = "sur";
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].MainTeamState = "hun";
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].AwayTeamState = "sur";
             IsMainHun.IsChecked = true;
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainIcon = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/hun.png")));
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].AwayIcon = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/sur.png")));
-            RootViewModel.ScoreHoleViewModel = RootViewModel.ScoreHoleViewModel;
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].MainIcon = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/hun.png")));
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].AwayIcon = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/sur.png")));
+            RootViewModel.ScoreGlobalViewModel = RootViewModel.ScoreGlobalViewModel;
         }
 
         private void IsAwayHun_Checked(object sender, System.Windows.RoutedEventArgs e)
         {
             GetFilePath getFilePath = new GetFilePath();
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainTeamState = "sur";
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].AwayTeamState = "hun";
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].MainTeamState = "sur";
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].AwayTeamState = "hun";
             IsMainSur.IsChecked = true;
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainIcon = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/sur.png")));
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].AwayIcon = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/hun.png")));
-            RootViewModel.ScoreHoleViewModel = RootViewModel.ScoreHoleViewModel;
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].MainIcon = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/sur.png")));
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].AwayIcon = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/hun.png")));
+            RootViewModel.ScoreGlobalViewModel = RootViewModel.ScoreGlobalViewModel;
         }
 
         private void RadioButtonStateChange()
         {
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].RadioButtonState.Escape4 = (bool)Statistics_Escape4.IsChecked;
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].RadioButtonState.Escape3 = (bool)Statistics_Escape3.IsChecked;
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].RadioButtonState.Tie = (bool)Statistics_Tie.IsChecked;
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].RadioButtonState.Out3 = (bool)Statistics_Out3.IsChecked;
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].RadioButtonState.Out4 = (bool)Statistics_Out4.IsChecked;
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].RadioButtonState.Escape4 = (bool)Statistics_Escape4.IsChecked;
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].RadioButtonState.Escape3 = (bool)Statistics_Escape3.IsChecked;
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].RadioButtonState.Tie = (bool)Statistics_Tie.IsChecked;
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].RadioButtonState.Out3 = (bool)Statistics_Out3.IsChecked;
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].RadioButtonState.Out4 = (bool)Statistics_Out4.IsChecked;
         }
         private void Statistics_Escape4_Checked(object sender, System.Windows.RoutedEventArgs e)
         {
             RadioButtonStateChange();
-            if (RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainTeamState == "sur")
+            if (RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].MainTeamState == "sur")
             {
-                RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainScore = "5";
-                RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].AwayScore = "0";
+                RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].MainScore = "5";
+                RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].AwayScore = "0";
             }
-            if (RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].AwayTeamState == "sur")
+            if (RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].AwayTeamState == "sur")
             {
-                RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainScore = "0";
-                RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].AwayScore = "5";
+                RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].MainScore = "0";
+                RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].AwayScore = "5";
             }
-            RootViewModel.ScoreHoleViewModel = RootViewModel.ScoreHoleViewModel;
+            RootViewModel.ScoreGlobalViewModel = RootViewModel.ScoreGlobalViewModel;
         }
 
         private void Statistics_Escape3_Checked(object sender, System.Windows.RoutedEventArgs e)
         {
             RadioButtonStateChange();
-            if (RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainTeamState == "sur")
+            if (RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].MainTeamState == "sur")
             {
-                RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainScore = "3";
-                RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].AwayScore = "1";
+                RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].MainScore = "3";
+                RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].AwayScore = "1";
             }
-            if (RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].AwayTeamState == "sur")
+            if (RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].AwayTeamState == "sur")
             {
-                RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainScore = "1";
-                RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].AwayScore = "3";
+                RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].MainScore = "1";
+                RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].AwayScore = "3";
             }
-            RootViewModel.ScoreHoleViewModel = RootViewModel.ScoreHoleViewModel;
+            RootViewModel.ScoreGlobalViewModel = RootViewModel.ScoreGlobalViewModel;
         }
 
         private void Statistics_Tie_Checked(object sender, System.Windows.RoutedEventArgs e)
         {
             RadioButtonStateChange();
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainScore = "2";
-            RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].AwayScore = "2";
-            RootViewModel.ScoreHoleViewModel = RootViewModel.ScoreHoleViewModel;
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].MainScore = "2";
+            RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].AwayScore = "2";
+            RootViewModel.ScoreGlobalViewModel = RootViewModel.ScoreGlobalViewModel;
         }
 
         private void Statistics_Out4_Checked(object sender, System.Windows.RoutedEventArgs e)
         {
             RadioButtonStateChange();
-            if (RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainTeamState == "hun")
+            if (RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].MainTeamState == "hun")
             {
-                RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainScore = "5";
-                RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].AwayScore = "0";
+                RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].MainScore = "5";
+                RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].AwayScore = "0";
             }
-            if (RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].AwayTeamState == "hun")
+            if (RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].AwayTeamState == "hun")
             {
-                RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainScore = "0";
-                RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].AwayScore = "5";
+                RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].MainScore = "0";
+                RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].AwayScore = "5";
             }
-            RootViewModel.ScoreHoleViewModel = RootViewModel.ScoreHoleViewModel;
+            RootViewModel.ScoreGlobalViewModel = RootViewModel.ScoreGlobalViewModel;
         }
 
         private void Statistics_Out3_Checked(object sender, System.Windows.RoutedEventArgs e)
         {
             RadioButtonStateChange();
-            if (RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainTeamState == "hun")
+            if (RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].MainTeamState == "hun")
             {
-                RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainScore = "3";
-                RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].AwayScore = "1";
+                RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].MainScore = "3";
+                RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].AwayScore = "1";
             }
-            if (RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].AwayTeamState == "hun")
+            if (RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].AwayTeamState == "hun")
             {
-                RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].MainScore = "1";
-                RootViewModel.ScoreHoleViewModel.ScoreHoleShow[num].AwayScore = "3";
+                RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].MainScore = "1";
+                RootViewModel.ScoreGlobalViewModel.ScoreGlobalShow[num].AwayScore = "3";
             }
-            RootViewModel.ScoreHoleViewModel = RootViewModel.ScoreHoleViewModel;
+            RootViewModel.ScoreGlobalViewModel = RootViewModel.ScoreGlobalViewModel;
         }
 
         private void FormatChange_Click(object sender, RoutedEventArgs e)
@@ -265,7 +265,7 @@ namespace bp_sys_wpf.Views.Pages
             {
                 try
                 {
-                    ScoreHole.scoreHole.Background = new ImageBrush(new BitmapImage(new Uri($"{runDir}\\Resource\\gui\\score_hole_bo3.png")));
+                    ScoreGlobal.scoreGlobal.Background = new ImageBrush(new BitmapImage(new Uri($"{runDir}\\Resource\\gui\\score_Global_bo3.png")));
                     Format.Text = "赛制：BO3";
                     Bo.ItemsSource = RootViewModel.ComboBoxItemViewModel.BoList3;
                 }
@@ -281,7 +281,7 @@ namespace bp_sys_wpf.Views.Pages
             {
                 try
                 {
-                    ScoreHole.scoreHole.Background = new ImageBrush(new BitmapImage(new Uri($"{runDir}\\Resource\\gui\\score_hole.png")));
+                    ScoreGlobal.scoreGlobal.Background = new ImageBrush(new BitmapImage(new Uri($"{runDir}\\Resource\\gui\\score_Global.png")));
                     Format.Text = "赛制：BO5";
                     Bo.ItemsSource = RootViewModel.ComboBoxItemViewModel.BoList5;
                 }

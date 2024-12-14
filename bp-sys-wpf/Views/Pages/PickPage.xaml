@@ -311,24 +311,15 @@
                               Header="{Binding TeamInfoViewModel.TeamInfoModel.MainTeamInfo.Name}">
                         <StackPanel Margin="10,10,10,10">
                             <StackPanel Orientation="Horizontal">
-                                <ComboBox x:Name="Main_hole1"
+                                <ComboBox x:Name="Main_Global1"
                                           Width="150"
                                           Height="35"
                                           IsEditable="True"
                                           IsEnabled="True"
                                           ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                           MaxDropDownHeight="200"
-                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanMainRecord[0]}" />
-                                <ComboBox x:Name="Main_hole2"
-                                          Width="150"
-                                          Height="35"
-                                          Margin="10,0,0,0"
-                                          IsEditable="True"
-                                          IsEnabled="True"
-                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
-                                          MaxDropDownHeight="200"
-                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanMainRecord[1]}" />
-                                <ComboBox x:Name="Main_hole3"
+                                          SelectedItem="{Binding BpReceiveModel.SurGlobalBanMainRecord[0]}" />
+                                <ComboBox x:Name="Main_Global2"
                                           Width="150"
                                           Height="35"
                                           Margin="10,0,0,0"
@@ -336,27 +327,27 @@
                                           IsEnabled="True"
                                           ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                           MaxDropDownHeight="200"
-                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanMainRecord[2]}" />
+                                          SelectedItem="{Binding BpReceiveModel.SurGlobalBanMainRecord[1]}" />
+                                <ComboBox x:Name="Main_Global3"
+                                          Width="150"
+                                          Height="35"
+                                          Margin="10,0,0,0"
+                                          IsEditable="True"
+                                          IsEnabled="True"
+                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                          MaxDropDownHeight="200"
+                                          SelectedItem="{Binding BpReceiveModel.SurGlobalBanMainRecord[2]}" />
                             </StackPanel>
                             <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
-                                <ComboBox x:Name="Main_hole4"
+                                <ComboBox x:Name="Main_Global4"
                                           Width="150"
                                           Height="35"
                                           IsEditable="True"
                                           IsEnabled="True"
                                           ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                           MaxDropDownHeight="200"
-                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanMainRecord[3]}" />
-                                <ComboBox x:Name="Main_hole5"
-                                          Width="150"
-                                          Height="35"
-                                          Margin="10,0,0,0"
-                                          IsEditable="True"
-                                          IsEnabled="True"
-                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
-                                          MaxDropDownHeight="200"
-                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanMainRecord[4]}" />
-                                <ComboBox x:Name="Main_hole6"
+                                          SelectedItem="{Binding BpReceiveModel.SurGlobalBanMainRecord[3]}" />
+                                <ComboBox x:Name="Main_Global5"
                                           Width="150"
                                           Height="35"
                                           Margin="10,0,0,0"
@@ -364,18 +355,27 @@
                                           IsEnabled="True"
                                           ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                           MaxDropDownHeight="200"
-                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanMainRecord[5]}" />
+                                          SelectedItem="{Binding BpReceiveModel.SurGlobalBanMainRecord[4]}" />
+                                <ComboBox x:Name="Main_Global6"
+                                          Width="150"
+                                          Height="35"
+                                          Margin="10,0,0,0"
+                                          IsEditable="True"
+                                          IsEnabled="True"
+                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                          MaxDropDownHeight="200"
+                                          SelectedItem="{Binding BpReceiveModel.SurGlobalBanMainRecord[5]}" />
                             </StackPanel>
                             <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
-                                <ComboBox x:Name="Main_hole7"
+                                <ComboBox x:Name="Main_Global7"
                                     Width="150"
                                     Height="35"
                                     IsEditable="True"
                                     IsEnabled="True"
                                     ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                     MaxDropDownHeight="200"
-                                    SelectedItem="{Binding BpReceiveModel.SurHoleBanMainRecord[6]}" />
-                                <ComboBox x:Name="Main_hole8"
+                                    SelectedItem="{Binding BpReceiveModel.SurGlobalBanMainRecord[6]}" />
+                                <ComboBox x:Name="Main_Global8"
                                     Width="150"
                                     Height="35"
                                     Margin="10,0,0,0"
@@ -383,8 +383,8 @@
                                     IsEnabled="True"
                                     ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                     MaxDropDownHeight="200"
-                                    SelectedItem="{Binding BpReceiveModel.SurHoleBanMainRecord[7]}" />
-                                <ComboBox x:Name="Main_hole9"
+                                    SelectedItem="{Binding BpReceiveModel.SurGlobalBanMainRecord[7]}" />
+                                <ComboBox x:Name="Main_Global9"
                                     Width="150"
                                     Height="35"
                                     Margin="10,0,0,0"
@@ -392,7 +392,7 @@
                                     IsEnabled="True"
                                     ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                     MaxDropDownHeight="200"
-                                    SelectedItem="{Binding BpReceiveModel.SurHoleBanMainRecord[8]}" />
+                                    SelectedItem="{Binding BpReceiveModel.SurGlobalBanMainRecord[8]}" />
                             </StackPanel>
                         </StackPanel>
 
@@ -403,24 +403,15 @@
                               Header="{Binding TeamInfoViewModel.TeamInfoModel.AwayTeamInfo.Name}">
                         <StackPanel Margin="10,10,10,10">
                             <StackPanel Orientation="Horizontal">
-                                <ComboBox x:Name="Away_hole1"
+                                <ComboBox x:Name="Away_Global1"
                                           Width="150"
                                           Height="35"
                                           IsEditable="True"
                                           IsEnabled="True"
                                           ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                           MaxDropDownHeight="200"
-                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanAwayRecord[0]}" />
-                                <ComboBox x:Name="Away_hole2"
-                                          Width="150"
-                                          Height="35"
-                                          Margin="10,0,0,0"
-                                          IsEditable="True"
-                                          IsEnabled="True"
-                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
-                                          MaxDropDownHeight="200"
-                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanAwayRecord[1]}" />
-                                <ComboBox x:Name="Away_hole3"
+                                          SelectedItem="{Binding BpReceiveModel.SurGlobalBanAwayRecord[0]}" />
+                                <ComboBox x:Name="Away_Global2"
                                           Width="150"
                                           Height="35"
                                           Margin="10,0,0,0"
@@ -428,27 +419,27 @@
                                           IsEnabled="True"
                                           ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                           MaxDropDownHeight="200"
-                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanAwayRecord[2]}" />
+                                          SelectedItem="{Binding BpReceiveModel.SurGlobalBanAwayRecord[1]}" />
+                                <ComboBox x:Name="Away_Global3"
+                                          Width="150"
+                                          Height="35"
+                                          Margin="10,0,0,0"
+                                          IsEditable="True"
+                                          IsEnabled="True"
+                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                          MaxDropDownHeight="200"
+                                          SelectedItem="{Binding BpReceiveModel.SurGlobalBanAwayRecord[2]}" />
                             </StackPanel>
                             <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
-                                <ComboBox x:Name="Away_hole4"
+                                <ComboBox x:Name="Away_Global4"
                                           Width="150"
                                           Height="35"
                                           IsEditable="True"
                                           IsEnabled="True"
                                           ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                           MaxDropDownHeight="200"
-                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanAwayRecord[3]}" />
-                                <ComboBox x:Name="Away_hole5"
-                                          Width="150"
-                                          Height="35"
-                                          Margin="10,0,0,0"
-                                          IsEditable="True"
-                                          IsEnabled="True"
-                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
-                                          MaxDropDownHeight="200"
-                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanAwayRecord[4]}" />
-                                <ComboBox x:Name="Away_hole6"
+                                          SelectedItem="{Binding BpReceiveModel.SurGlobalBanAwayRecord[3]}" />
+                                <ComboBox x:Name="Away_Global5"
                                           Width="150"
                                           Height="35"
                                           Margin="10,0,0,0"
@@ -456,18 +447,27 @@
                                           IsEnabled="True"
                                           ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                           MaxDropDownHeight="200"
-                                          SelectedItem="{Binding BpReceiveModel.SurHoleBanAwayRecord[5]}" />
+                                          SelectedItem="{Binding BpReceiveModel.SurGlobalBanAwayRecord[4]}" />
+                                <ComboBox x:Name="Away_Global6"
+                                          Width="150"
+                                          Height="35"
+                                          Margin="10,0,0,0"
+                                          IsEditable="True"
+                                          IsEnabled="True"
+                                          ItemsSource="{Binding ComboBoxItemViewModel.sur}"
+                                          MaxDropDownHeight="200"
+                                          SelectedItem="{Binding BpReceiveModel.SurGlobalBanAwayRecord[5]}" />
                             </StackPanel>
                             <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
-                                <ComboBox x:Name="Away_hole7"
+                                <ComboBox x:Name="Away_Global7"
                                     Width="150"
                                     Height="35"
                                     IsEditable="True"
                                     IsEnabled="True"
                                     ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                     MaxDropDownHeight="200"
-                                    SelectedItem="{Binding BpReceiveModel.SurHoleBanAwayRecord[6]}" />
-                                <ComboBox x:Name="Away_hole8"
+                                    SelectedItem="{Binding BpReceiveModel.SurGlobalBanAwayRecord[6]}" />
+                                <ComboBox x:Name="Away_Global8"
                                     Width="150"
                                     Height="35"
                                     Margin="10,0,0,0"
@@ -475,8 +475,8 @@
                                     IsEnabled="True"
                                     ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                     MaxDropDownHeight="200"
-                                    SelectedItem="{Binding BpReceiveModel.SurHoleBanAwayRecord[7]}" />
-                                <ComboBox x:Name="Away_hole9"
+                                    SelectedItem="{Binding BpReceiveModel.SurGlobalBanAwayRecord[7]}" />
+                                <ComboBox x:Name="Away_Global9"
                                     Width="150"
                                     Height="35"
                                     Margin="10,0,0,0"
@@ -484,7 +484,7 @@
                                     IsEnabled="True"
                                     ItemsSource="{Binding ComboBoxItemViewModel.sur}"
                                     MaxDropDownHeight="200"
-                                    SelectedItem="{Binding BpReceiveModel.SurHoleBanAwayRecord[8]}" />
+                                    SelectedItem="{Binding BpReceiveModel.SurGlobalBanAwayRecord[8]}" />
                             </StackPanel>
                         </StackPanel>
                     </GroupBox>

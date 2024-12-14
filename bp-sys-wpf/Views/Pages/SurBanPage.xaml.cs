@@ -75,88 +75,88 @@ namespace bp_sys_wpf.Views.Pages
             }
         }
 
-        private void Sur_hole_ban_1_KeyDown(object sender, KeyEventArgs e)
+        private void Sur_Global_ban_1_KeyDown(object sender, KeyEventArgs e)
         {
-            Sur_hole_ban_1.IsDropDownOpen = true;
+            Sur_Global_ban_1.IsDropDownOpen = true;
             if (e.Key == Key.Tab)
             {
-                rootViewModel.BpShowViewModel.ShowBp("SurHoleBan", 0);
+                rootViewModel.BpShowViewModel.ShowBp("SurGlobalBan", 0);
             }
         }
 
-        private void Sur_hole_ban_2_KeyDown(object sender, KeyEventArgs e)
+        private void Sur_Global_ban_2_KeyDown(object sender, KeyEventArgs e)
         {
-            Sur_hole_ban_2.IsDropDownOpen = true;
+            Sur_Global_ban_2.IsDropDownOpen = true;
             if (e.Key == Key.Tab)
             {
-                rootViewModel.BpShowViewModel.ShowBp("SurHoleBan", 1);
+                rootViewModel.BpShowViewModel.ShowBp("SurGlobalBan", 1);
             }
         }
 
-        private void Sur_hole_ban_3_KeyDown(object sender, KeyEventArgs e)
+        private void Sur_Global_ban_3_KeyDown(object sender, KeyEventArgs e)
         {
-            Sur_hole_ban_3.IsDropDownOpen = true;
+            Sur_Global_ban_3.IsDropDownOpen = true;
             if (e.Key == Key.Tab)
             {
-                rootViewModel.BpShowViewModel.ShowBp("SurHoleBan", 2);
+                rootViewModel.BpShowViewModel.ShowBp("SurGlobalBan", 2);
             }
         }
 
-        private void Sur_hole_ban_4_KeyDown(object sender, KeyEventArgs e)
+        private void Sur_Global_ban_4_KeyDown(object sender, KeyEventArgs e)
         {
-            Sur_hole_ban_4.IsDropDownOpen = true;
+            Sur_Global_ban_4.IsDropDownOpen = true;
             if (e.Key == Key.Tab)
             {
-                rootViewModel.BpShowViewModel.ShowBp("SurHoleBan", 3);
+                rootViewModel.BpShowViewModel.ShowBp("SurGlobalBan", 3);
             }
         }
 
-        private void Sur_hole_ban_5_KeyDown(object sender, KeyEventArgs e)
+        private void Sur_Global_ban_5_KeyDown(object sender, KeyEventArgs e)
         {
-            Sur_hole_ban_5.IsDropDownOpen = true;
+            Sur_Global_ban_5.IsDropDownOpen = true;
             if (e.Key == Key.Tab)
             {
-                rootViewModel.BpShowViewModel.ShowBp("SurHoleBan", 4);
+                rootViewModel.BpShowViewModel.ShowBp("SurGlobalBan", 4);
             }
         }
 
-        private void Sur_hole_ban_6_KeyDown(object sender, KeyEventArgs e)
+        private void Sur_Global_ban_6_KeyDown(object sender, KeyEventArgs e)
         {
-            Sur_hole_ban_6.IsDropDownOpen = true;
+            Sur_Global_ban_6.IsDropDownOpen = true;
             if (e.Key == Key.Tab)
             {
-                rootViewModel.BpShowViewModel.ShowBp("SurHoleBan", 5);
+                rootViewModel.BpShowViewModel.ShowBp("SurGlobalBan", 5);
             }
         }
 
-        private void Sur_hole_ban_7_KeyDown(object sender, KeyEventArgs e)
+        private void Sur_Global_ban_7_KeyDown(object sender, KeyEventArgs e)
         {
-            Sur_hole_ban_7.IsDropDownOpen = true;
+            Sur_Global_ban_7.IsDropDownOpen = true;
             if (e.Key == Key.Tab)
             {
-                rootViewModel.BpShowViewModel.ShowBp("SurHoleBan", 6);
+                rootViewModel.BpShowViewModel.ShowBp("SurGlobalBan", 6);
             }
         }
 
-        private void Sur_hole_ban_8_KeyDown(object sender, KeyEventArgs e)
+        private void Sur_Global_ban_8_KeyDown(object sender, KeyEventArgs e)
         {
-            Sur_hole_ban_8.IsDropDownOpen = true;
+            Sur_Global_ban_8.IsDropDownOpen = true;
             if (e.Key == Key.Tab)
             {
-                rootViewModel.BpShowViewModel.ShowBp("SurHoleBan", 7);
+                rootViewModel.BpShowViewModel.ShowBp("SurGlobalBan", 7);
             }
         }
 
-        private void Sur_hole_ban_9_KeyDown(object sender, KeyEventArgs e)
+        private void Sur_Global_ban_9_KeyDown(object sender, KeyEventArgs e)
         {
-            Sur_hole_ban_9.IsDropDownOpen = true;
+            Sur_Global_ban_9.IsDropDownOpen = true;
             if (e.Key == Key.Tab)
             {
-                rootViewModel.BpShowViewModel.ShowBp("SurHoleBan", 8);
+                rootViewModel.BpShowViewModel.ShowBp("SurGlobalBan", 8);
             }
         }
 
-        private void SurHoleStateChange_Click(object sender, RoutedEventArgs e)
+        private void SurGlobalStateChange_Click(object sender, RoutedEventArgs e)
         {
             rootViewModel.BpReceiveModel = rootViewModel.BpReceiveModel;
         }

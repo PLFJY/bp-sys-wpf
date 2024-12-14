@@ -53,7 +53,6 @@ namespace bp_sys_wpf.Views.Windows
         private void DeleteFiles()
         {
             string currentDirectory = Directory.GetCurrentDirectory();
-
             DeleteFilesIfExist(currentDirectory, "update.bat");
             DeleteFilesIfExist(currentDirectory, "EndAndUpdate.bat");
             DeleteFilesIfExist(currentDirectory, "new_bpsys.7z");
@@ -86,6 +85,7 @@ namespace bp_sys_wpf.Views.Windows
                 string batchFileContent = ";一些颜色参考\r\n;黑色#FF000000\r\n;红色#FFFF0000\r\n;白色#FFFFFFFF\r\n;蓝色#FF0000FF\r\n;绿色#FF00FF00\r\n;颜色代号类型：十六进制颜色代码Hex，ARGB或RGB都可（ARGB是带颜色透明度的，RGB则是经典的红绿蓝）\r\n;BP主窗口\r\n[Front_Color]\r\n;队伍名称\r\nteam_name=#FFD3BC88\r\n;小比分\r\nscoreS=#FFF9EFD6\r\n;大比分\r\nscore=#FFD3BC88\r\n;计时器\r\ntimmer=#FFDAB74F\r\n;求生者选手id的队伍名称\r\nSur_team=#FFFFFFFF\r\n;求生者选手id\r\nSur_player=#FFFFFFFF\r\n;监管者选手id\r\nHun_player=#FFFFFFFF\r\n;过场画面\r\n[Interlude_Color]\r\n;队伍名称\r\nteam_name=#FF000000\r\n;选手名称\r\nplayer_name=#FF000000\r\n;游戏内比分\r\n[Score_Color]\r\n;队伍名称\r\nTeamName=#FFFFFFFF\r\n;大比分\r\nScore=#FFFFFFFF\r\n;大比分下面的字\r\nWord=#FFFFFFFF\r\n;小比分\r\nS=#FFFF0000\r\n;分数统计\r\n[ScoreHole_Color]\r\n;队伍名称\r\nName=#FFFFFFFF\r\n;分数\r\nScore=#FFFFFFFF";
                 try
                 {
+                    Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), "Resource"));
                     File.WriteAllText(batchFilePath, batchFileContent);
                     Console.WriteLine("Batch file created successfully!");
                 }

@@ -7,106 +7,103 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="ScoreGlobal1"
     Title="分数统计"
-    Width="1416"
-    Height="234"
+    Width="1093"
+    Height="161"
     MouseLeftButtonDown="ScoreGlobal1_MouseLeftButtonDown"
     ResizeMode="CanMinimize"
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
     mc:Ignorable="d">
     <Window.Background>
-        <ImageBrush />
+        <ImageBrush ImageSource="/Views/Windows/score_global.png" />
     </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="35*" />
-            <ColumnDefinition Width="232*" />
-            <ColumnDefinition Width="92*" />
-            <ColumnDefinition Width="134*" />
-            <ColumnDefinition Width="92*" />
-            <ColumnDefinition Width="134*" />
-            <ColumnDefinition Width="92*" />
-            <ColumnDefinition Width="128*" />
+            <ColumnDefinition Width="27*" />
+            <ColumnDefinition Width="179*" />
             <ColumnDefinition Width="85*" />
-            <ColumnDefinition Width="131*" />
-            <ColumnDefinition Width="94*" />
-            <ColumnDefinition Width="131*" />
-            <ColumnDefinition Width="36*" />
+            <ColumnDefinition Width="89*" />
+            <ColumnDefinition Width="78*" />
+            <ColumnDefinition Width="87*" />
+            <ColumnDefinition Width="78*" />
+            <ColumnDefinition Width="88*" />
+            <ColumnDefinition Width="77*" />
+            <ColumnDefinition Width="87*" />
+            <ColumnDefinition Width="79*" />
+            <ColumnDefinition Width="90*" />
+            <ColumnDefinition Width="49*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="90*" />
-            <RowDefinition Height="3*" />
-            <RowDefinition Height="58*" />
             <RowDefinition Height="60*" />
-            <RowDefinition Height="23*" />
+            <RowDefinition Height="45*" />
+            <RowDefinition Height="39*" />
+            <RowDefinition Height="17*" />
         </Grid.RowDefinitions>
         <!--  主场信息  -->
         <Image
             x:Name="MainLogo"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="1"
-            Width="52"
-            Height="53"
-            Margin="10,0,0,0"
+            Width="40"
+            Height="40"
+            Margin="0,2,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="{Binding TeamInfoViewModel.TeamInfoModel.MainTeamInfo.LOGO}" />
-        <Label
+        <TextBlock
             x:Name="MainName"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="1"
             Width="133"
-            Height="41"
-            Margin="69,6,0,0"
+            Height="25"
+            Margin="44,0,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            VerticalContentAlignment="Center"
-            Content="{Binding TeamInfoViewModel.TeamInfoModel.MainTeamInfo.Name}"
+            VerticalAlignment="Center"
             FontFamily="DFPOP1W5-B5"
             FontSize="25"
-            Foreground="White" />
+            Foreground="White"
+            Text="{Binding TeamInfoViewModel.TeamInfoModel.MainTeamInfo.Name}" />
         <!--  客场信息  -->
         <Image
             x:Name="AwayLogo"
-            Grid.Row="3"
+            Grid.Row="2"
+            Grid.RowSpan="2"
             Grid.Column="1"
-            Width="52"
-            Height="54"
-            Margin="10,0,0,0"
+            Width="40"
+            Height="40"
+            Margin="0,3,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Center"
+            VerticalAlignment="Top"
             Source="{Binding TeamInfoViewModel.TeamInfoModel.AwayTeamInfo.LOGO}" />
-        <Label
+        <TextBlock
             x:Name="AwayName"
-            Grid.Row="3"
+            Grid.Row="2"
             Grid.Column="1"
             Width="133"
-            Height="42"
-            Margin="69,0,0,0"
+            Height="25"
+            Margin="44,10,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Center"
-            VerticalContentAlignment="Center"
-            Content="{Binding TeamInfoViewModel.TeamInfoModel.AwayTeamInfo.Name}"
+            VerticalAlignment="Top"
             FontFamily="DFPOP1W5-B5"
             FontSize="25"
-            Foreground="White" />
+            Foreground="White"
+            Text="{Binding TeamInfoViewModel.TeamInfoModel.AwayTeamInfo.Name}" />
         <!--  bo1上半  -->
         <Image
             x:Name="IconMain0"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="2"
             Width="42"
             Height="42"
-            Margin="0,6,0,0"
+            Margin="0,1,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="{Binding ScoreGlobalViewModel.ScoreGlobalShow[0].MainIcon}" />
         <Label
             x:Name="ScoreMain0"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="2"
             Width="33"
-            Height="58"
             Margin="44,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -117,20 +114,21 @@
             Foreground="White" />
         <Image
             x:Name="IconAway0"
-            Grid.Row="3"
+            Grid.Row="2"
+            Grid.RowSpan="2"
             Grid.Column="2"
             Width="42"
             Height="42"
-            Margin="0,10,0,0"
+            Margin="0,5,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="{Binding ScoreGlobalViewModel.ScoreGlobalShow[0].AwayIcon}" />
         <Label
             x:Name="ScoreAway0"
-            Grid.Row="3"
+            Grid.Row="2"
+            Grid.RowSpan="2"
             Grid.Column="2"
             Width="33"
-            Height="58"
             Margin="44,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -142,20 +140,19 @@
         <!--  bo1下半  -->
         <Image
             x:Name="IconMain1"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="3"
             Width="42"
             Height="42"
-            Margin="0,6,0,0"
+            Margin="0,1,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="{Binding ScoreGlobalViewModel.ScoreGlobalShow[1].MainIcon}" />
         <Label
             x:Name="ScoreMain1"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="3"
             Width="33"
-            Height="58"
             Margin="44,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -166,20 +163,21 @@
             Foreground="White" />
         <Image
             x:Name="IconAway1"
-            Grid.Row="3"
+            Grid.Row="2"
+            Grid.RowSpan="2"
             Grid.Column="3"
             Width="42"
             Height="42"
-            Margin="0,10,0,0"
+            Margin="0,5,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="{Binding ScoreGlobalViewModel.ScoreGlobalShow[1].AwayIcon}" />
         <Label
             x:Name="ScoreAway1"
-            Grid.Row="3"
+            Grid.Row="2"
+            Grid.RowSpan="2"
             Grid.Column="3"
             Width="33"
-            Height="58"
             Margin="44,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -191,20 +189,19 @@
         <!--  bo2上半  -->
         <Image
             x:Name="IconMain2"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="4"
             Width="42"
             Height="42"
-            Margin="0,6,0,0"
+            Margin="0,1,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="{Binding ScoreGlobalViewModel.ScoreGlobalShow[2].MainIcon}" />
         <Label
             x:Name="ScoreMain2"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="4"
             Width="33"
-            Height="58"
             Margin="44,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -215,19 +212,21 @@
             Foreground="White" />
         <Image
             x:Name="IconAway2"
-            Grid.Row="3"
+            Grid.Row="2"
+            Grid.RowSpan="2"
             Grid.Column="4"
             Width="42"
             Height="42"
+            Margin="0,5,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Center"
+            VerticalAlignment="Top"
             Source="{Binding ScoreGlobalViewModel.ScoreGlobalShow[2].AwayIcon}" />
         <Label
             x:Name="ScoreAway2"
-            Grid.Row="3"
+            Grid.Row="2"
+            Grid.RowSpan="2"
             Grid.Column="4"
             Width="33"
-            Height="58"
             Margin="44,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -239,20 +238,19 @@
         <!--  bo2下半  -->
         <Image
             x:Name="IconMain3"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="5"
             Width="42"
             Height="42"
-            Margin="0,6,0,0"
+            Margin="0,1,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="{Binding ScoreGlobalViewModel.ScoreGlobalShow[3].MainIcon}" />
         <Label
             x:Name="ScoreMain3"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="5"
             Width="33"
-            Height="58"
             Margin="44,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -263,20 +261,21 @@
             Foreground="White" />
         <Image
             x:Name="IconAway3"
-            Grid.Row="3"
+            Grid.Row="2"
+            Grid.RowSpan="2"
             Grid.Column="5"
             Width="42"
             Height="42"
-            Margin="0,10,0,0"
+            Margin="0,5,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="{Binding ScoreGlobalViewModel.ScoreGlobalShow[3].AwayIcon}" />
         <Label
             x:Name="ScoreAway3"
-            Grid.Row="3"
+            Grid.Row="2"
+            Grid.RowSpan="2"
             Grid.Column="5"
             Width="33"
-            Height="58"
             Margin="44,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -288,20 +287,19 @@
         <!--  bo3上半  -->
         <Image
             x:Name="IconMain4"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="6"
             Width="42"
             Height="42"
-            Margin="0,6,0,0"
+            Margin="0,1,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="{Binding ScoreGlobalViewModel.ScoreGlobalShow[4].MainIcon}" />
         <Label
             x:Name="ScoreMain4"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="6"
             Width="33"
-            Height="58"
             Margin="44,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -312,20 +310,21 @@
             Foreground="White" />
         <Image
             x:Name="IconAway4"
-            Grid.Row="3"
+            Grid.Row="2"
+            Grid.RowSpan="2"
             Grid.Column="6"
             Width="42"
             Height="42"
-            Margin="0,10,0,0"
+            Margin="0,5,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="{Binding ScoreGlobalViewModel.ScoreGlobalShow[4].AwayIcon}" />
         <Label
             x:Name="ScoreAway4"
-            Grid.Row="3"
+            Grid.Row="2"
+            Grid.RowSpan="2"
             Grid.Column="6"
             Width="33"
-            Height="58"
             Margin="44,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -337,20 +336,19 @@
         <!--  bo3下半  -->
         <Image
             x:Name="IconMain5"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="7"
             Width="42"
             Height="42"
-            Margin="0,6,0,0"
+            Margin="0,1,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="{Binding ScoreGlobalViewModel.ScoreGlobalShow[5].MainIcon}" />
         <Label
             x:Name="ScoreMain5"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="7"
             Width="33"
-            Height="58"
             Margin="44,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -361,20 +359,21 @@
             Foreground="White" />
         <Image
             x:Name="IconAway5"
-            Grid.Row="3"
+            Grid.Row="2"
+            Grid.RowSpan="2"
             Grid.Column="7"
             Width="42"
             Height="42"
-            Margin="0,10,0,0"
+            Margin="0,5,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="{Binding ScoreGlobalViewModel.ScoreGlobalShow[5].AwayIcon}" />
         <Label
             x:Name="ScoreAway5"
-            Grid.Row="3"
+            Grid.Row="2"
+            Grid.RowSpan="2"
             Grid.Column="7"
             Width="33"
-            Height="58"
             Margin="44,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -386,20 +385,19 @@
         <!--  bo4上半  -->
         <Image
             x:Name="IconMain6"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="8"
             Width="42"
             Height="42"
-            Margin="0,6,0,0"
+            Margin="0,1,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="{Binding ScoreGlobalViewModel.ScoreGlobalShow[6].MainIcon}" />
         <Label
             x:Name="ScoreMain6"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="8"
             Width="33"
-            Height="58"
             Margin="44,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -410,20 +408,21 @@
             Foreground="White" />
         <Image
             x:Name="IconAway6"
-            Grid.Row="3"
+            Grid.Row="2"
+            Grid.RowSpan="2"
             Grid.Column="8"
             Width="42"
             Height="42"
-            Margin="0,10,0,0"
+            Margin="0,5,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="{Binding ScoreGlobalViewModel.ScoreGlobalShow[6].AwayIcon}" />
         <Label
             x:Name="ScoreAway6"
-            Grid.Row="3"
+            Grid.Row="2"
+            Grid.RowSpan="2"
             Grid.Column="8"
             Width="33"
-            Height="58"
             Margin="44,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -435,20 +434,19 @@
         <!--  bo4下半  -->
         <Image
             x:Name="IconMain7"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="9"
             Width="42"
             Height="42"
-            Margin="0,6,0,0"
+            Margin="0,1,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="{Binding ScoreGlobalViewModel.ScoreGlobalShow[7].MainIcon}" />
         <Label
             x:Name="ScoreMain7"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="9"
             Width="33"
-            Height="58"
             Margin="44,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -459,20 +457,21 @@
             Foreground="White" />
         <Image
             x:Name="IconAway7"
-            Grid.Row="3"
+            Grid.Row="2"
+            Grid.RowSpan="2"
             Grid.Column="9"
             Width="42"
             Height="42"
-            Margin="0,10,0,0"
+            Margin="0,5,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="{Binding ScoreGlobalViewModel.ScoreGlobalShow[7].AwayIcon}" />
         <Label
             x:Name="ScoreAway7"
-            Grid.Row="3"
+            Grid.Row="2"
+            Grid.RowSpan="2"
             Grid.Column="9"
             Width="33"
-            Height="58"
             Margin="44,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -484,20 +483,19 @@
         <!--  bo5上半  -->
         <Image
             x:Name="IconMain8"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="10"
             Width="42"
             Height="42"
-            Margin="0,6,0,0"
+            Margin="0,1,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="{Binding ScoreGlobalViewModel.ScoreGlobalShow[8].MainIcon}" />
         <Label
             x:Name="ScoreMain8"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="10"
             Width="33"
-            Height="58"
             Margin="44,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -508,20 +506,21 @@
             Foreground="White" />
         <Image
             x:Name="IconAway8"
-            Grid.Row="3"
+            Grid.Row="2"
+            Grid.RowSpan="2"
             Grid.Column="10"
             Width="42"
             Height="42"
-            Margin="0,10,0,0"
+            Margin="0,5,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="{Binding ScoreGlobalViewModel.ScoreGlobalShow[8].AwayIcon}" />
         <Label
             x:Name="ScoreAway8"
-            Grid.Row="3"
+            Grid.Row="2"
+            Grid.RowSpan="2"
             Grid.Column="10"
             Width="33"
-            Height="58"
             Margin="44,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -533,20 +532,19 @@
         <!--  bo5下半  -->
         <Image
             x:Name="IconMain9"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="11"
             Width="42"
             Height="42"
-            Margin="0,6,0,0"
+            Margin="0,1,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="{Binding ScoreGlobalViewModel.ScoreGlobalShow[9].MainIcon}" />
         <Label
             x:Name="ScoreMain9"
-            Grid.Row="2"
+            Grid.Row="1"
             Grid.Column="11"
             Width="33"
-            Height="58"
             Margin="44,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -557,20 +555,21 @@
             Foreground="White" />
         <Image
             x:Name="IconAway9"
-            Grid.Row="3"
+            Grid.Row="2"
+            Grid.RowSpan="2"
             Grid.Column="11"
             Width="42"
             Height="42"
-            Margin="0,10,0,0"
+            Margin="0,5,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="{Binding ScoreGlobalViewModel.ScoreGlobalShow[9].AwayIcon}" />
         <Label
             x:Name="ScoreAway9"
-            Grid.Row="3"
+            Grid.Row="2"
+            Grid.RowSpan="2"
             Grid.Column="11"
             Width="33"
-            Height="58"
             Margin="44,0,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"

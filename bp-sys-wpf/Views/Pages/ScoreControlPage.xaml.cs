@@ -268,6 +268,14 @@ namespace bp_sys_wpf.Views.Pages
                     ScoreGlobal.scoreGlobal.Background = new ImageBrush(new BitmapImage(new Uri($"{runDir}\\Resource\\gui\\score_Global_bo3.png")));
                     Format.Text = "赛制：BO3";
                     Bo.ItemsSource = RootViewModel.ComboBoxItemViewModel.BoList3;
+                    ScoreGlobal.scoreGlobal.IconMain8.Visibility = Visibility.Hidden;
+                    ScoreGlobal.scoreGlobal.ScoreMain8.Visibility = Visibility.Hidden;
+                    ScoreGlobal.scoreGlobal.IconMain9.Visibility = Visibility.Hidden;
+                    ScoreGlobal.scoreGlobal.ScoreMain9.Visibility = Visibility.Hidden;
+                    ScoreGlobal.scoreGlobal.IconAway8.Visibility = Visibility.Hidden;
+                    ScoreGlobal.scoreGlobal.ScoreAway8.Visibility = Visibility.Hidden;
+                    ScoreGlobal.scoreGlobal.IconAway9.Visibility = Visibility.Hidden;
+                    ScoreGlobal.scoreGlobal.ScoreAway9.Visibility = Visibility.Hidden;
                 }
                 catch
                 {
@@ -284,6 +292,14 @@ namespace bp_sys_wpf.Views.Pages
                     ScoreGlobal.scoreGlobal.Background = new ImageBrush(new BitmapImage(new Uri($"{runDir}\\Resource\\gui\\score_Global.png")));
                     Format.Text = "赛制：BO5";
                     Bo.ItemsSource = RootViewModel.ComboBoxItemViewModel.BoList5;
+                    ScoreGlobal.scoreGlobal.IconMain8.Visibility = Visibility.Visible;
+                    ScoreGlobal.scoreGlobal.ScoreMain8.Visibility = Visibility.Visible;
+                    ScoreGlobal.scoreGlobal.IconMain9.Visibility = Visibility.Visible;
+                    ScoreGlobal.scoreGlobal.ScoreMain9.Visibility = Visibility.Visible;
+                    ScoreGlobal.scoreGlobal.IconAway8.Visibility = Visibility.Visible;
+                    ScoreGlobal.scoreGlobal.ScoreAway8.Visibility = Visibility.Visible;
+                    ScoreGlobal.scoreGlobal.IconAway9.Visibility = Visibility.Visible;
+                    ScoreGlobal.scoreGlobal.ScoreAway9.Visibility = Visibility.Visible;
                 }
                 catch
                 {

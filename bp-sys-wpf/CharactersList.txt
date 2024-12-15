@@ -1,2 +1,2 @@
 sur:{bh病患,csj慈善家,df大副,fxj飞行家,gds古董商,hj画家,hzdcy火灾调查员,jqs击球手,js祭司,js教授,jxs机械师,jz记者,kcxz昆虫学者,kj空军,kqxc哭泣小丑,kty勘探员,lldy拉拉队员,ls律师,mn盲女,mos木偶师,mss魔术师,mxj冒险家,nz牛仔,qf前锋,qt囚徒,rls入殓师,smr守墓人,tjs调酒师,txs调香师,wjs玩具商,wn舞女,xlxj心理学家,xnh小女孩,xsj小说家,xye幸运儿,xz先知,yb佣兵,yc邮差,yd园丁,yr野人,ys医生,zjyy杂技演员,zqj作曲家,zss咒术师,flns法罗女士,qs骑士}
-hun:{akg爱哭鬼,bb26号守卫,bs博士,cz厂长,dkj雕刻家,em噩梦,fy疯眼,gjyy歌剧演员,hd红蝶,hfr红夫人,hyzz黄衣之主,jk杰克,jly记录员,lt鹿头,lxs蜡像师,mznw梦之女巫,nx孽蜥,pl破轮,skzy时空之影,sszh宿伞之魂,st使徒,syr守夜人,sys摄影师,xc小丑,xtqj小提琴家,yn渔女,yrj愚人金,ys隐士,zz蜘蛛,bjy跛脚羊}
+hun:{akg爱哭鬼,bb26号守卫,bs博士,cz厂长,dkj雕刻家,em噩梦,fy疯眼,gjyy歌剧演员,hd红蝶,hfr红夫人,hyzz黄衣之主,jk杰克,jly记录员,lt鹿头,lxs蜡像师,mznw梦之女巫,nx孽蜥,pl破轮,skzy时空之影,sszh宿伞之魂,st使徒,syr守夜人,sys摄影师,xc小丑,xtqj小提琴家,yn渔女,yrj愚人金,ys隐士,zz蜘蛛,bjy跛脚羊,xx喧嚣}

@@ -101,6 +101,7 @@ namespace bp_sys_wpf.ViewModel
                     _MapPick.Add("唐人街");
                     _MapPick.Add("永眠镇");
                     _MapPick.Add("月亮河公园");
+                    _MapPick.Add("不归林");
                 }
                 return _MapPick;
             }
@@ -125,6 +126,7 @@ namespace bp_sys_wpf.ViewModel
                     _MapBan.Add("唐人街");
                     _MapBan.Add("永眠镇");
                     _MapBan.Add("月亮河公园");
+                    _MapBan.Add("不归林");
                 }
                 return _MapBan;
             }

@@ -91,7 +91,10 @@ namespace bp_sys_wpf.Views.Pages
                 }
                 if (version != Config.version)
                 {
-                    MessageBox.Show("检测到新版本，最新版本为" + version + "\n点击确定或关闭该提示执行更新！", "更新提示");
+                    string updaterVer;
+                    MessageBoxResult result = MessageBoxResult.None;
+                    MessageBox.Show("检测到新版本，最新版本为" + version + "\n点击确定或关闭该提示执行更新！", "更新提示", MessageBoxButton.YesNo, MessageBoxImage.Information, result);
+                    if (result == MessageBoxResult.No) return;
                     var updaterPath = Path.Combine(Environment.CurrentDirectory, "Updater.exe");
                     if (System.IO.File.Exists(updaterPath))
                     {

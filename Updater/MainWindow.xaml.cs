@@ -17,18 +17,23 @@ namespace Updater
         public MainWindow()
         {
             InitializeComponent();
-            if (App.Args.Length == 0 || App.Args[0] != "Update") Environment.Exit(0);//判断是否获得启动参数并且是否由程序发起
+            if (App.Args.Length == 0 || (App.Args[0] != "Update" && App.Args[0] != "GetVer")) Environment.Exit(0);//判断是否获得启动参数并且是否由程序发起
+            if (App.Args[0] == "GetVer")
+            {
+                Console.Write(Config.Version);
+                Environment.Exit(0);
+            }
             if (App.Args.Length >= 2)
             {
                 UpdateUrl = App.Args[1];//将下载链接添加到变量
             }
         }
 
-        private async void Window_Loaded(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Log.Text = $"接收到下载链接：\"{UpdateUrl}\"，开始下载\n";
 
-            temp_directory = CurrentDirectory + "\\Temp";
+            temp_directory = Path.Combine(CurrentDirectory, "Temp");
             if (!Directory.Exists(temp_directory))
             {
                 Directory.CreateDirectory(temp_directory);//创建Temp目录
@@ -38,10 +43,13 @@ namespace Updater
                 Directory.Delete(temp_directory, true);
                 Directory.CreateDirectory(temp_directory);
             }
-
-            save_directory = CurrentDirectory + "\\Temp\\new_bpsys.7z";
+            save_directory = Path.Combine(CurrentDirectory, "Temp", "new_bpsys.7z");
 
             //下载
+            Donwload(UpdateUrl, save_directory);
+        }
+        public async void Donwload(string DownloadUrl, string save_url)
+        {
             var downloadOpt = new DownloadConfiguration()
             {
                 ChunkCount = 8, // Number of file parts, default is 1
@@ -52,15 +60,15 @@ namespace Updater
             downloader.DownloadFileCompleted += OnDownloadFileCompleted;
             try
             {
-                await downloader.DownloadFileTaskAsync(UpdateUrl, save_directory);
+                await downloader.DownloadFileTaskAsync(DownloadUrl, save_url);
             }
             catch (Exception ex)
             {
                 Progress.Text = "下载失败，请关闭后重新尝试";
-                Log.Text += $"错误 {ex.ToString()}\n";
+                Log.Text += $"错误 {ex.Message}\n";
             }
-
         }
+
         private void OnDownloadProgressChanged(object sender, Downloader.DownloadProgressChangedEventArgs e)
         {
             //显示进度条
@@ -85,12 +93,13 @@ namespace Updater
                     Log.Text += "下载完成，开始解压\n";
                     try
                     {
-                        var unzipResult = UnzipFile();
+                        string sevenZipPath = Path.Combine(CurrentDirectory, "7z", "7z.exe");
+                        var unzipResult = UnzipFile(sevenZipPath, save_directory, temp_directory);
                         if (unzipResult == 0)
                         {
                             Progress.Text = "解压完成";
                             Log.Text += $"解压完成，开始尝试移动和覆盖文件\n";
-                            MoveContentsToCurrentDirectory();
+                            MoveContentsToCurrentDirectory(true, "Resource");
                             Progress.Text = "更新完成，即将启动新版应用程序";
                             string newAppFile = Path.Combine(CurrentDirectory, "bp-sys-wpf.exe");
                             // 构建7-Zip解压命令
@@ -129,7 +138,7 @@ namespace Updater
             }
         }
 
-        private void MoveContentsToCurrentDirectory()
+        private void MoveContentsToCurrentDirectory(bool isCoverResouce, string? ignoreDir)
         {
             // 确保目标文件夹（CurrentDirectory）已存在，若不存在则创建它
             Directory.CreateDirectory(CurrentDirectory);
@@ -143,18 +152,24 @@ namespace Updater
                 {
                     try
                     {
-                        File.Copy(entry, targetEntry, true);
+                        File.Copy(entry, targetEntry, true);// 复制文件到目标文件夹并覆盖已有文件
                     }
                     catch { }
-                    // 复制文件到目标文件夹并覆盖已有文件
                     File.Delete(entry); // 删除源文件
                 }
                 else if (Directory.Exists(entry))
                 {
-                    MoveDirectory(entry, targetEntry); // 递归处理子文件夹
+                    if(entry.Substring(entry.Length - ignoreDir.Length-1, ignoreDir.Length) == ignoreDir)
+                    {
+                        var isResouceCover = MessageBoxResult.Yes;
+                        MessageBox.Show("是否覆盖Resource的数据？（会覆盖你所更改的UI和为前台界面更改的颜色）", "覆盖确认", MessageBoxButton.YesNo, MessageBoxImage.Question, isResouceCover);
+                        if(isResouceCover == MessageBoxResult.Yes)
+                        {
+                            MoveDirectory(entry, targetEntry);
+                        }
+                    }
                 }
             }
-
             // 最后删除源文件夹（temp_directory），前提是里面内容都已成功移动
             Directory.Delete(temp_directory);
         }
@@ -178,9 +193,8 @@ namespace Updater
             Directory.Delete(sourceDir);
         }
 
-        private int UnzipFile()
+        private int UnzipFile(string sevenZipPath, string file_dir, string save_dir)
         {
-            string sevenZipPath = Path.Combine(CurrentDirectory, "7z", "7z.exe");
             if (!File.Exists(sevenZipPath))
             {
                 Progress.Text = "解压失败";
@@ -188,7 +202,7 @@ namespace Updater
                 return 2;
             }
             // 构建7-Zip解压命令
-            string arguments = $"x \"{save_directory}\" -o\"{temp_directory}\"";
+            string arguments = $"x \"{file_dir}\" -o\"{save_dir}\"";
             var process = new Process
             {
                 StartInfo = new ProcessStartInfo
@@ -210,10 +224,6 @@ namespace Updater
                 string error = process.StandardError.ReadToEnd();
                 process.WaitForExit();
                 int exitCode = process.ExitCode;
-                if (exitCode == 0)
-                {
-                    return exitCode;
-                }
                 return exitCode;
             }
             catch (Exception ex)

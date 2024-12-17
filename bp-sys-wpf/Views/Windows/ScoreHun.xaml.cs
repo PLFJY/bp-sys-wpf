@@ -27,7 +27,7 @@ namespace bp_sys_wpf
             Tie.Foreground = Config.Score.Color.Score;
             WinWord.Foreground = Config.Score.Color.Word;
             LoseWord.Foreground = Config.Score.Color.Word;
-            AllWord.Foreground = Config.Score.Color.Word;
+            TieWord.Foreground = Config.Score.Color.Word;
         }
         private void ScoreHun1_MouseDown(object sender, MouseButtonEventArgs e)
         {

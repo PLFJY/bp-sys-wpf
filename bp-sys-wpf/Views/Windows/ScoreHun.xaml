@@ -22,7 +22,7 @@
             <ColumnDefinition Width="204*" />
         </Grid.ColumnDefinitions>
         <Grid.Background>
-            <ImageBrush ImageSource="/Views/Windows/score_bg_h.png" />
+            <ImageBrush />
         </Grid.Background>
         <Image
             x:Name="Logo"
@@ -65,7 +65,7 @@
                         FontSize="45"
                         Foreground="White" />
                 </StackPanel>
-                <StackPanel Margin="30,0,0,0">
+                <StackPanel Margin="40,0,0,0">
                     <Label
                         x:Name="Tie"
                         Content="{Binding TeamInfoViewModel.NowModel.NowHunTeam.Score.D}"
@@ -73,13 +73,13 @@
                         FontSize="48"
                         Foreground="White" />
                     <Label
-                        Name="AllWord"
+                        Name="TieWord"
                         Content="D"
                         FontFamily="汉仪第五人格体简"
                         FontSize="45"
                         Foreground="White" />
                 </StackPanel>
-                <StackPanel Margin="30,0,0,0">
+                <StackPanel Margin="40,0,0,0">
                     <Label
                         x:Name="Win"
                         Content="{Binding TeamInfoViewModel.NowModel.NowHunTeam.Score.W}"

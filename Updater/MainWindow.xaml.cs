@@ -21,7 +21,11 @@ namespace Updater
             if (App.Args[0] == "GetVer")
             {
                 Console.Write(Config.Version);
-                Environment.Exit(0);
+                //Environment.Exit(0);
+                while (true)
+                {
+                    Console.Write("");
+                }
             }
             if (App.Args.Length >= 2)
             {
@@ -52,7 +56,7 @@ namespace Updater
         {
             var downloadOpt = new DownloadConfiguration()
             {
-                ChunkCount = 8, // Number of file parts, default is 1
+                ChunkCount = 12, // Number of file parts, default is 1
                 ParallelDownload = true // Download parts in parallel (default is false)
             };
             var downloader = new DownloadService(downloadOpt);
@@ -91,40 +95,43 @@ namespace Updater
                 {
                     Progress.Text = "下载完成";
                     Log.Text += "下载完成，开始解压\n";
+                    int unzipResult = 1;
+                    var unzip_dir = Path.Combine(temp_directory, "new_bpsys");
+                    if(Directory.Exists(unzip_dir)) Directory.Delete(unzip_dir, true);
+                    else Directory.CreateDirectory(unzip_dir);
                     try
                     {
                         string sevenZipPath = Path.Combine(CurrentDirectory, "7z", "7z.exe");
-                        var unzipResult = UnzipFile(sevenZipPath, save_directory, temp_directory);
-                        if (unzipResult == 0)
-                        {
-                            Progress.Text = "解压完成";
-                            Log.Text += $"解压完成，开始尝试移动和覆盖文件\n";
-                            MoveContentsToCurrentDirectory(true, "Resource");
-                            Progress.Text = "更新完成，即将启动新版应用程序";
-                            string newAppFile = Path.Combine(CurrentDirectory, "bp-sys-wpf.exe");
-                            // 构建7-Zip解压命令
-                            string arguments = $"x \"{save_directory}\" -o\"{temp_directory}\"";
-                            var process = new Process
-                            {
-                                StartInfo = new ProcessStartInfo
-                                {
-                                    FileName = newAppFile,
-                                }
-                            };
-                            Thread.Sleep(2000);
-                            process.Start();
-                            Environment.Exit(0);
-                        }
-                        else
-                        {
-                            Progress.Text = "解压出错";
-                            Log.Text += $"7z解压出现问题，返回码: {unzipResult}\n";
-                        }
+                        unzipResult = UnzipFile(sevenZipPath, save_directory, unzip_dir);
                     }
                     catch (Exception ex)
                     {
                         Progress.Text = "解压出错";
                         Log.Text += $"{ex.Message}";
+                        return;
+                    }
+                    if (unzipResult == 0)
+                    {
+                        Progress.Text = "解压完成";
+                        Log.Text += $"解压完成，开始尝试移动和覆盖文件\n";
+                        MoveContentsToCurrentDirectory(unzip_dir, CurrentDirectory, "Resource");
+                        Progress.Text = "更新完成，即将启动新版应用程序";
+                        MessageBox.Show("启动新版应用程序", "启动");
+                        string newAppFile = Path.Combine(CurrentDirectory, "bp-sys-wpf.exe");
+                        var process = new Process
+                        {
+                            StartInfo = new ProcessStartInfo
+                            {
+                                FileName = newAppFile,
+                            }
+                        };
+                        process.Start();
+                        Environment.Exit(0);
+                    }
+                    else
+                    {
+                        Progress.Text = "解压出错";
+                        Log.Text += $"7z解压出现问题，返回码: {unzipResult}\n";
                     }
                 });
             }
@@ -138,16 +145,16 @@ namespace Updater
             }
         }
 
-        private void MoveContentsToCurrentDirectory(bool isCoverResouce, string? ignoreDir)
+        private void MoveContentsToCurrentDirectory(string move_dir, string target_dir, string? ignoreDir)
         {
             // 确保目标文件夹（CurrentDirectory）已存在，若不存在则创建它
-            Directory.CreateDirectory(CurrentDirectory);
+            Directory.CreateDirectory(target_dir); 
 
             // 遍历temp_directory下的所有文件和文件夹（使用EnumerateFileSystemEntries提高效率）
-            foreach (var entry in Directory.EnumerateFileSystemEntries(temp_directory))
+            foreach (var entry in Directory.EnumerateFileSystemEntries(move_dir))
             {
                 string entryName = Path.GetFileName(entry);
-                string targetEntry = Path.Combine(CurrentDirectory, entryName);
+                string targetEntry = Path.Combine(target_dir, entryName);
                 if (File.Exists(entry))
                 {
                     try
@@ -159,19 +166,21 @@ namespace Updater
                 }
                 else if (Directory.Exists(entry))
                 {
-                    if(entry.Substring(entry.Length - ignoreDir.Length-1, ignoreDir.Length) == ignoreDir)
+                    if(entry.Substring(entry.Length - ignoreDir.Length, ignoreDir.Length) == ignoreDir)
                     {
                         var isResouceCover = MessageBoxResult.Yes;
                         MessageBox.Show("是否覆盖Resource的数据？（会覆盖你所更改的UI和为前台界面更改的颜色）", "覆盖确认", MessageBoxButton.YesNo, MessageBoxImage.Question, isResouceCover);
                         if(isResouceCover == MessageBoxResult.Yes)
                         {
                             MoveDirectory(entry, targetEntry);
+                            continue;
                         }
                     }
+                    MoveDirectory(entry, targetEntry);
                 }
             }
             // 最后删除源文件夹（temp_directory），前提是里面内容都已成功移动
-            Directory.Delete(temp_directory);
+            Directory.Delete(temp_directory, true);
         }
 
         private void MoveDirectory(string sourceDir, string targetDir)

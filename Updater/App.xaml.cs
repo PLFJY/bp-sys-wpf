@@ -14,7 +14,7 @@ namespace Updater
             // 接收参数数组
             var args = e.Args;
             Args = e.Args;
+            ConsoleHelper.hideConsole();
         }
-    }
-
+    }   
 }

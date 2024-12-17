@@ -24,7 +24,7 @@ namespace bp_sys_wpf
             S.Foreground = Config.Score.Color.S;
             Win.Foreground = Config.Score.Color.Score;
             Lose.Foreground = Config.Score.Color.Score;
-            All.Foreground = Config.Score.Color.Score;
+            Tie.Foreground = Config.Score.Color.Score;
             WinWord.Foreground = Config.Score.Color.Word;
             LoseWord.Foreground = Config.Score.Color.Word;
             AllWord.Foreground = Config.Score.Color.Word;

@@ -15,7 +15,7 @@
     WindowStyle="None"
     mc:Ignorable="d">
     <Window.Background>
-        <ImageBrush ImageSource="/Views/Windows/score_global.png" />
+        <ImageBrush />
     </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>

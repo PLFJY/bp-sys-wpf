@@ -542,6 +542,7 @@ namespace bp_sys_wpf.ViewModel
                 TeamInfoModel = TeamInfoModel;
                 NowModel = NowModel;
             }
+        }
         public void ScoreSSet(string type, int Resault)//小比分（自动化）设置
         {
             if (Resault == 2)

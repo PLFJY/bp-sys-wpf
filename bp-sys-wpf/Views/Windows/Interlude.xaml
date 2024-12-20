@@ -206,7 +206,7 @@
                         Visibility="{Binding BpShowViewModel.BpShow.SurPick[0].Talent.FlywheelEffect}" />
                 </StackPanel>
                 <StackPanel
-                    Margin="-530,345,0,0"
+                    Margin="-530,355,0,0"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Orientation="Horizontal">
@@ -232,7 +232,7 @@
                         Visibility="{Binding BpShowViewModel.BpShow.SurPick[1].Talent.FlywheelEffect}" />
                 </StackPanel>
                 <StackPanel
-                    Margin="610,350,0,0"
+                    Margin="610,355,0,0"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Orientation="Horizontal">
@@ -285,7 +285,7 @@
                 </StackPanel>
                 <!--  监管者天赋特质  -->
                 <StackPanel
-                    Margin="50,120,0,0"
+                    Margin="50,135,0,0"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Orientation="Horizontal">

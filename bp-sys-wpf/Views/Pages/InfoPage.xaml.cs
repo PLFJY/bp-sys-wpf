@@ -232,7 +232,7 @@ namespace bp_sys_wpf.Views.Pages
             await FetchNewUIFileInfoAsync("https://api.github.com");
             foreach (var i in uIFileInfo)
             {
-                DownLoadFile(i.download_url, Path.Combine(Environment.CurrentDirectory, "Resource", "gui", i.name));
+                DownLoadFile($"https://ghproxy.net/{i.download_url}", Path.Combine(Environment.CurrentDirectory, "Resource", "gui", i.name));
             }
             MessageBox.Show("UI替换已完成，请重新启动应用程序", "下载提示");
         }

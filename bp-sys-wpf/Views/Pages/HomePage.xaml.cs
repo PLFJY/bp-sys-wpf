@@ -17,7 +17,8 @@ namespace bp_sys_wpf.Views.Pages
         private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             QA qA = new QA();
-            qA.ShowDialog();
+            qA.Show();
+            qA.Texts.Text = "Q：选择了角色没反应怎么办？\nA：你试试按一下Tab";
         }
     }
 }

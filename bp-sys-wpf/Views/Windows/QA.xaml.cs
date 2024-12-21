@@ -19,9 +19,11 @@ namespace bp_sys_wpf.Views.Windows
     /// </summary>
     public partial class QA : Window
     {
+        public static QA qA;
         public QA()
         {
             InitializeComponent();
+            qA = this;
         }
     }
 }

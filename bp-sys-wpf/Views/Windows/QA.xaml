@@ -11,6 +11,7 @@
     Height="200"
     Background="#202020"
     ResizeMode="CanMinimize"
+    Topmost="True"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.Resources>
@@ -21,12 +22,14 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <Grid>
+    <Grid Margin="10,10,10,10">
         <ui:TextBlock
+            Name="Texts"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            FontSize="24"
+            FontSize="18"
             Foreground="White"
-            Text="Q：选择了角色没反应怎么办？&#x0a;A：你试试按一下Tab" />
+            Text=""
+            TextWrapping="Wrap" />
     </Grid>
 </Window>

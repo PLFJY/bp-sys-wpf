@@ -23,7 +23,15 @@ namespace Updater
                 UpdateUrl = App.Args[1];//将下载链接添加到变量
             }
         }
-
+        static string GetFileNameFromUrl(string url)
+        {
+            int lastSlashIndex = url.LastIndexOf('/');
+            if (lastSlashIndex >= 0 && lastSlashIndex < url.Length - 1)
+            {
+                return url.Substring(lastSlashIndex + 1);
+            }
+            return null;
+        }
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Log.Text = $"接收到下载链接：\"{UpdateUrl}\"，开始下载\n";
@@ -39,7 +47,7 @@ namespace Updater
                 Directory.CreateDirectory(temp_directory);
             }
 
-            save_directory = CurrentDirectory + "\\Temp\\new_bpsys.7z";
+            save_directory = Path.Combine(CurrentDirectory, "Temp", GetFileNameFromUrl(UpdateUrl));
 
             //下载
             var downloadOpt = new DownloadConfiguration()
@@ -139,7 +147,7 @@ namespace Updater
             {
                 string entryName = Path.GetFileName(entry);
                 string targetEntry = Path.Combine(CurrentDirectory, entryName);
-                if (File.Exists(entry))
+                if (File.Exists(entry) && entryName != GetFileNameFromUrl(UpdateUrl))
                 {
                     try
                     {
@@ -156,7 +164,7 @@ namespace Updater
             }
 
             // 最后删除源文件夹（temp_directory），前提是里面内容都已成功移动
-            Directory.Delete(temp_directory);
+            Directory.Delete(temp_directory, true);
         }
 
         private void MoveDirectory(string sourceDir, string targetDir)

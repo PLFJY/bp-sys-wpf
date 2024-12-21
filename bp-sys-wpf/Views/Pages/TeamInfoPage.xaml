@@ -95,6 +95,11 @@
                                     Click="ImportMainInfo_Click"
                                     Content="从json文件导入"
                                     Icon="{ui:SymbolIcon ArrowImport24}" />
+                                <ui:Button
+                                    Margin="5,0,0,0"
+                                    Click="Button_Click"
+                                    Content="这是什么"
+                                    Icon="{ui:SymbolIcon QuestionCircle24}" />
                             </StackPanel>
                             <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
                                 <ui:TextBox
@@ -323,6 +328,11 @@
                                     Click="ImportAwayInfo_Click"
                                     Content="从json文件导入"
                                     Icon="{ui:SymbolIcon ArrowImport24}" />
+                                <ui:Button
+                                    Margin="5,0,0,0"
+                                    Click="Button_Click"
+                                    Content="这是什么"
+                                    Icon="{ui:SymbolIcon QuestionCircle24}" />
                             </StackPanel>
                             <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
                                 <ui:TextBox

@@ -275,7 +275,7 @@ Score=#FF000000";
         }
         public async void UpdateCheck()
         {
-            await updateCheck.FetchLatestReleaseInfoAsync("https://api.github.com", string.Empty);
+            await updateCheck.FetchLatestReleaseInfoAsync("https://api.github.com");
             if (!updateCheck.Issuccessful)
             {
                 MessageBar.Severity = Wpf.Ui.Controls.InfoBarSeverity.Warning;

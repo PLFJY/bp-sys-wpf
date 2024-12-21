@@ -334,5 +334,12 @@ namespace bp_sys_wpf.Views.Pages
                 MessageBox.Show("导入出错" + ex.Message);
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            QA qA = new QA();
+            qA.Show();
+            qA.Texts.Text = "这是用于快速导入队伍信息使用的，示例文件在软件目录下的TeamInfoExample.json，里面都写好注释了，照着写就完事了";
+        }
     }
 }

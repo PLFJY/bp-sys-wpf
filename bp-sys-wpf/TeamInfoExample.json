@@ -1,10 +1,15 @@
 {
-  "teamName": "YS",//队伍名称
-  "LogoUri": "https://patchwiki.biligame.com/images/dwrg/a/af/bu2xa9ev7ooigggk9bjoszz1gbp1d7p.png",//可以是链接或者本地路径
-  "players": [//队员列表
+  //队伍名称
+  "teamName": "YS",
+  //队伍LOGO可以是链接或者本地路径，本都路径一定要使用双斜线如C:\\LOGO\\YS.png
+  "LogoUri": "https://patchwiki.biligame.com/images/dwrg/a/af/bu2xa9ev7ooigggk9bjoszz1gbp1d7p.png",
+  //队员列表，如果数量超过则会被忽略
+  "players": [
     {
-      "playerName": "XingChen",//队员名称
-      "type": "sur"//队员阵营，求生者是sur，监管者是hun
+      //队员名称
+      "playerName": "XingChen",
+      //队员阵营，求生者是sur，监管者是hun
+      "type": "sur"
     },
     {
       "playerName": "Tea",

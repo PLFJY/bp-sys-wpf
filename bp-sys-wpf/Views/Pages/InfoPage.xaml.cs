@@ -99,10 +99,10 @@ namespace bp_sys_wpf.Views.Pages
                 {
                     _GhMirrorUrl = new List<string>();
                     _GhMirrorUrl.Add("无（不推荐）");
-                    _GhMirrorUrl.Add("https://kkgithub.com/");
-                    _GhMirrorUrl.Add("https://github.site/");
-                    _GhMirrorUrl.Add("https://github.store/");
-                    _GhMirrorUrl.Add("https://bgithub.xyz/");
+                    _GhMirrorUrl.Add("https://kkgithub.com");
+                    _GhMirrorUrl.Add("https://github.site");
+                    _GhMirrorUrl.Add("https://github.store");
+                    _GhMirrorUrl.Add("https://bgithub.xyz");
                 }
                 return _GhMirrorUrl;
             }
@@ -111,11 +111,11 @@ namespace bp_sys_wpf.Views.Pages
 
         private async void CheckUpdate_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            string baseUrl = string.Empty, mirrorURL = string.Empty;
+            string baseUrl = string.Empty, proxyURL = string.Empty, mirrorURL = string.Empty;
             if (Ghproxy.IsChecked == true)
             {
                 baseUrl = "https://api.github.com";
-                mirrorURL = GhproxySelect.SelectedValue.ToString();
+                proxyURL = GhproxySelect.SelectedValue.ToString();
             }
             if (Gitee.IsChecked == true)
             {
@@ -123,12 +123,15 @@ namespace bp_sys_wpf.Views.Pages
             }
             if (Github.IsChecked == true)
             {
-                if (GhmirrorSelect.SelectedIndex == 0) baseUrl = "https://api.github.com";
-
-                else baseUrl = GhmirrorSelect.SelectedValue.ToString();
-
+                baseUrl = "https://api.github.com";
+                if (GhmirrorSelect.SelectedIndex != 0)
+                {
+                    mirrorURL = GhmirrorSelect.SelectedValue.ToString();
+                    if (GhmirrorSelect.SelectedIndex == 1)
+                        baseUrl = mirrorURL.Insert(8, "api.");
+                }
             }
-            await updateCheck.FetchLatestReleaseInfoAsync(baseUrl, mirrorURL);
+            await updateCheck.FetchLatestReleaseInfoAsync(baseUrl);
             if (!updateCheck.Issuccessful)
             {
                 MessageBoxResult result = MessageBox.Show("请求失败，请手动检查版本并下载更新包与软件目录合并\n如遇到文件冲突直接覆盖\n点击确定跳转到更新包下载页", "更新提示", MessageBoxButton.OKCancel, MessageBoxImage.None, MessageBoxResult.Cancel);
@@ -149,9 +152,12 @@ namespace bp_sys_wpf.Views.Pages
                 string url = string.Empty;
                 foreach (var item in assets)
                 {
-                    if (item.name == "bp-sys-wpf.7z")
+                    if (item.name == "bp-sys-wpf.7z" || item.name == "bp-sys-wpf.zip")
                     {
-                        url = mirrorURL + item.browser_download_url;
+                        if (mirrorURL != string.Empty) 
+                            url = item.browser_download_url.Replace("https://github.com", mirrorURL);
+                        else
+                            url = proxyURL + item.browser_download_url;
                         break;
                     }
                 }

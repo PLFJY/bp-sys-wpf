@@ -13,9 +13,10 @@ namespace bp_sys_wpf.ViewModel
         public GiteeReleaseInfo releaseInfo = new();
         public string DownloadUrl = string.Empty;
         public bool Issuccessful = false;
-        public async Task FetchLatestReleaseInfoAsync(string baseUrl, string mirrorURL)
+        public async Task FetchLatestReleaseInfoAsync(string baseUrl)
         {
-            repository = "plfjy/bp-sys-wpf";
+            if(baseUrl.Contains("gitee")) repository = "plfjy/bp-sys-wpf-update";
+            else repository = "plfjy/bp-sys-wpf";
             releasesUrl = $"{baseUrl}/repos/{repository}/releases/latest";
             string userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Firefox/116.0";
             string responseJson;

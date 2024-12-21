@@ -505,38 +505,37 @@ namespace bp_sys_wpf.ViewModel
                     {
                         Console.WriteLine(ex.Message);
                     }
-
-                    int SurProgress = 0, HunProgress = 6;
-                    // 遍历players数组  
-                    foreach (JObject player in json_obj["players"])
+                }
+                int SurProgress = 0, HunProgress = 6;
+                // 遍历players数组  
+                foreach (JObject player in json_obj["players"])
+                {
+                    string playerName = player["playerName"].ToString();
+                    string type = player["type"].ToString();
+                    // 根据type的值将选手名称添加到相应的列表中  
+                    if (type == "sur")
                     {
-                        string playerName = player["playerName"].ToString();
-                        string type = player["type"].ToString();
-                        // 根据type的值将选手名称添加到相应的列表中  
-                        if (type == "sur")
+                        if (team == "main")
                         {
-                            if (team == "main")
-                            {
-                                TeamInfoModel.MainTeamPlayer[SurProgress].Name = playerName;
-                            }
-                            else
-                            {
-                                TeamInfoModel.AwayTeamPlayer[SurProgress].Name = playerName;
-                            }
-                            SurProgress++;
+                            TeamInfoModel.MainTeamPlayer[SurProgress].Name = playerName;
                         }
-                        else if (type == "hun")
+                        else
                         {
-                            if (team == "main")
-                            {
-                                TeamInfoModel.MainTeamPlayer[HunProgress].Name = playerName;
-                            }
-                            else
-                            {
-                                TeamInfoModel.AwayTeamPlayer[HunProgress].Name = playerName;
-                            }
-                            HunProgress++;
+                            TeamInfoModel.AwayTeamPlayer[SurProgress].Name = playerName;
                         }
+                        SurProgress++;
+                    }
+                    else if (type == "hun")
+                    {
+                        if (team == "main")
+                        {
+                            TeamInfoModel.MainTeamPlayer[HunProgress].Name = playerName;
+                        }
+                        else
+                        {
+                            TeamInfoModel.AwayTeamPlayer[HunProgress].Name = playerName;
+                        }
+                        HunProgress++;
                     }
                 }
                 TeamInfoModel = TeamInfoModel;

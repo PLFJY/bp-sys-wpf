@@ -30,7 +30,7 @@ namespace bp_sys_wpf.Views.Windows
         public RootViewModel rootViewModel = new RootViewModel();
         public UpdateCheck updateCheck = new UpdateCheck();
         public GetFilePath GetFilePath = new GetFilePath();
-        private bool IsFrontsChreated;
+        public bool IsFrontsChreated;
         public BackWindow()
         {
             InitializeComponent();

@@ -156,7 +156,6 @@ namespace bp_sys_wpf.ViewModel
             set { _Trait = value; }
         }
 
-
         public List<string> LoadCharacters(string type)
         {
             GetFilePath getFilePath = new GetFilePath();

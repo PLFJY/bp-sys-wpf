@@ -1,561 +1,635 @@
-﻿<Page x:Class="bp_sys_wpf.Views.Pages.TeamInfoPage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:bp_sys_wpf.Views.Pages"
-      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
-      mc:Ignorable="d" 
-      d:DesignHeight="2000"
-      d:DesignWidth="760"
-      Title="TeamInfoPage">
+﻿<Page
+    x:Class="bp_sys_wpf.Views.Pages.TeamInfoPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:bp_sys_wpf.Views.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    Title="TeamInfoPage"
+    d:DesignHeight="2000"
+    d:DesignWidth="760"
+    mc:Ignorable="d">
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ui:ThemesDictionary Theme="Dark"/>
+                <ui:ThemesDictionary Theme="Dark" />
                 <ui:ControlsDictionary />
             </ResourceDictionary.MergedDictionaries>
             <Style TargetType="TextBlock">
-                <Setter Property="Foreground"
-                        Value="White"/>
-                <Setter Property="HorizontalAlignment"
-                        Value="Center"/>
-                <Setter Property="VerticalAlignment"
-                        Value="Center"/>
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="VerticalAlignment" Value="Center" />
             </Style>
             <Style TargetType="GroupBox">
-                <Setter Property="Foreground"
-                        Value="White"/>
+                <Setter Property="Foreground" Value="White" />
             </Style>
         </ResourceDictionary>
     </Page.Resources>
     <Border CornerRadius="20">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="5"/>
-                <ColumnDefinition/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
-                <GroupBox x:Name="TeamMain"
-                          Header="主场队伍信息"
-                          VerticalAlignment="Top" Cursor="">
+                <GroupBox
+                    x:Name="TeamMain"
+                    VerticalAlignment="Top"
+                    Cursor=""
+                    Header="主场队伍信息">
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="60"/>
-                            <RowDefinition Height="80"/>
-                            <RowDefinition/>
+                            <RowDefinition Height="60" />
+                            <RowDefinition Height="80" />
+                            <RowDefinition />
                         </Grid.RowDefinitions>
-                        <StackPanel Grid.Row="0"
-                                    Orientation="Horizontal"
-                                    Margin="10,0,0,0">
-                            <ui:TextBox x:Name="Main_team_name"
-                                        PlaceholderText="队伍名称"
-                                        Height="35"
-                                        Text="{Binding TeamInfoModel.MainTeamInfo.Name}"
-                                        Width="180"/>
-                            <ui:Button x:Name="MainTeamNameCheck"
-                                       Width="75"
-                                       Height="30"
-                                       Icon="{ui:SymbolIcon Checkmark24}"
-                                       Content="确定"
-                                       Margin="20,0,0,0" Click="TeamNameCheck_Click"/>
+                        <StackPanel
+                            Grid.Row="0"
+                            Margin="10,0,0,0"
+                            Orientation="Horizontal">
+                            <ui:TextBox
+                                x:Name="Main_team_name"
+                                Width="180"
+                                Height="35"
+                                PlaceholderText="队伍名称"
+                                Text="{Binding TeamInfoModel.MainTeamInfo.Name}" />
+                            <ui:Button
+                                x:Name="MainTeamNameCheck"
+                                Width="75"
+                                Height="30"
+                                Margin="20,0,0,0"
+                                Click="TeamNameCheck_Click"
+                                Content="确定"
+                                Icon="{ui:SymbolIcon Checkmark24}" />
                         </StackPanel>
-                        <StackPanel Grid.Row="1"
-                                    Orientation="Horizontal"
-                                    Margin="10,0,0,0">
-                            <Button x:Name="Change_main_team_logo"
-                                    Content="设置队伍LOGO"
-                                    Height="30" Click="Change_main_team_logo_Click"/>
-                            <Image x:Name="main_team_logo"
-                                   Height="80"
-                                   Width="80"
-                                   Margin="40,0,0,0"
-                                   Source="{Binding TeamInfoModel.MainTeamInfo.LOGO}"
-                                   Stretch="Fill"/>
-                            <TextBlock Text="当前上场："
-                                       Margin="10,0,0,0"/>
-                            <TextBlock x:Name="main_state" Text="{Binding TeamInfoModel.MainTeamInfo.State}"/>
+                        <StackPanel
+                            Grid.Row="1"
+                            Margin="10,0,0,0"
+                            Orientation="Horizontal">
+                            <Button
+                                x:Name="Change_main_team_logo"
+                                Height="30"
+                                Click="Change_main_team_logo_Click"
+                                Content="设置队伍LOGO" />
+                            <Image
+                                x:Name="main_team_logo"
+                                Width="80"
+                                Height="80"
+                                Margin="40,0,0,0"
+                                Source="{Binding TeamInfoModel.MainTeamInfo.LOGO}"
+                                Stretch="Fill" />
+                            <TextBlock Margin="10,0,0,0" Text="当前上场：" />
+                            <TextBlock x:Name="main_state" Text="{Binding TeamInfoModel.MainTeamInfo.State}" />
                         </StackPanel>
-                        <StackPanel Grid.Row="2"
-                                    Margin="10,0,0,10"
-                                    HorizontalAlignment="Left">
+                        <StackPanel
+                            Grid.Row="2"
+                            Margin="10,0,0,10"
+                            HorizontalAlignment="Left">
                             <StackPanel Orientation="Horizontal">
-                                <ui:TextBlock Text="求生者选手列表"
-                                              VerticalAlignment="Center"/>
-                                <ui:Button x:Name="ImportMainInfo"
-                                           Margin="20,0,0,0"
-                                           Icon="{ui:SymbolIcon ArrowImport24}"
-                                           Content="从json文件导入" Click="ImportMainInfo_Click"/>
+                                <ui:TextBlock VerticalAlignment="Center" Text="求生者选手列表" />
+                                <ui:Button
+                                    x:Name="ImportMainInfo"
+                                    Margin="20,0,0,0"
+                                    Click="ImportMainInfo_Click"
+                                    Content="从json文件导入"
+                                    Icon="{ui:SymbolIcon ArrowImport24}" />
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
-                                <ui:TextBox x:Name="MainSurPlayer1"
-                                            Height="35"
-                                            Width="150"
-                                            Text="{Binding TeamInfoModel.MainTeamPlayer[0].Name}"
-                                            PlaceholderText="选手名称"/>
-                                <ui:Button x:Name="StateChangeMainSur1"
-                                           Width="75"
-                                           Height="30"
-                                           Icon="{Binding ButtonState.MainButtonState[0].Icon}"
-                                           Content="{Binding ButtonState.MainButtonState[0].Content}"
-                                           Margin="10,0,0,0"
-                                           IsEnabled="{Binding ButtonState.MainButtonState[0].IsEnabled}"
-                                           Click="StateChangeMainSur1_Click" 
-                                           Background="{Binding ButtonState.MainButtonState[0].Background}"/>
+                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                <ui:TextBox
+                                    x:Name="MainSurPlayer1"
+                                    Width="150"
+                                    Height="35"
+                                    PlaceholderText="选手名称"
+                                    Text="{Binding TeamInfoModel.MainTeamPlayer[0].Name}" />
+                                <ui:Button
+                                    x:Name="StateChangeMainSur1"
+                                    Width="75"
+                                    Height="30"
+                                    Margin="10,0,0,0"
+                                    Background="{Binding ButtonState.MainButtonState[0].Background}"
+                                    Click="StateChangeMainSur1_Click"
+                                    Content="{Binding ButtonState.MainButtonState[0].Content}"
+                                    Icon="{Binding ButtonState.MainButtonState[0].Icon}"
+                                    IsEnabled="{Binding ButtonState.MainButtonState[0].IsEnabled}" />
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
-                                <ui:TextBox x:Name="MainSurPlayer2"
-                                            Height="35"
-                                            Width="150"
-                                            Text="{Binding TeamInfoModel.MainTeamPlayer[1].Name}"
-                                            PlaceholderText="选手名称"/>
-                                <ui:Button x:Name="StateChangeMainSur2"
-                                            Width="75"
-                                            Height="30"
-                                            Icon="{Binding ButtonState.MainButtonState[1].Icon}"
-                                            Content="{Binding ButtonState.MainButtonState[1].Content}"
-                                           IsEnabled="{Binding ButtonState.MainButtonState[1].IsEnabled}"
-                                            Margin="10,0,0,0" Click="StateChangeMainSur2_Click"
-                                           Background="{Binding ButtonState.MainButtonState[1].Background}"/>
+                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                <ui:TextBox
+                                    x:Name="MainSurPlayer2"
+                                    Width="150"
+                                    Height="35"
+                                    PlaceholderText="选手名称"
+                                    Text="{Binding TeamInfoModel.MainTeamPlayer[1].Name}" />
+                                <ui:Button
+                                    x:Name="StateChangeMainSur2"
+                                    Width="75"
+                                    Height="30"
+                                    Margin="10,0,0,0"
+                                    Background="{Binding ButtonState.MainButtonState[1].Background}"
+                                    Click="StateChangeMainSur2_Click"
+                                    Content="{Binding ButtonState.MainButtonState[1].Content}"
+                                    Icon="{Binding ButtonState.MainButtonState[1].Icon}"
+                                    IsEnabled="{Binding ButtonState.MainButtonState[1].IsEnabled}" />
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
-                                <ui:TextBox x:Name="MainSurPlayer3"
-                                            Height="35"
-                                            Width="150"
-                                            Text="{Binding TeamInfoModel.MainTeamPlayer[2].Name}"
-                                            PlaceholderText="选手名称"/>
-                                <ui:Button x:Name="StateChangeMainSur3"
-                                            Width="75"
-                                            Height="30"
-                                            Icon="{Binding ButtonState.MainButtonState[2].Icon}"
-                                            Content="{Binding ButtonState.MainButtonState[2].Content}"
-                                           IsEnabled="{Binding ButtonState.MainButtonState[2].IsEnabled}"
-                                            Margin="10,0,0,0" Click="StateChangeMainSur3_Click"
-                                           Background="{Binding ButtonState.MainButtonState[2].Background}"/>
+                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                <ui:TextBox
+                                    x:Name="MainSurPlayer3"
+                                    Width="150"
+                                    Height="35"
+                                    PlaceholderText="选手名称"
+                                    Text="{Binding TeamInfoModel.MainTeamPlayer[2].Name}" />
+                                <ui:Button
+                                    x:Name="StateChangeMainSur3"
+                                    Width="75"
+                                    Height="30"
+                                    Margin="10,0,0,0"
+                                    Background="{Binding ButtonState.MainButtonState[2].Background}"
+                                    Click="StateChangeMainSur3_Click"
+                                    Content="{Binding ButtonState.MainButtonState[2].Content}"
+                                    Icon="{Binding ButtonState.MainButtonState[2].Icon}"
+                                    IsEnabled="{Binding ButtonState.MainButtonState[2].IsEnabled}" />
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
-                                <ui:TextBox x:Name="MainSurPlayer4"
-                                            Height="35"
-                                            Width="150"
-                                            Text="{Binding TeamInfoModel.MainTeamPlayer[3].Name}"
-                                            PlaceholderText="选手名称"/>
-                                <ui:Button x:Name="StateChangeMainSur4"
-                                            Width="75"
-                                            Height="30"
-                                            Icon="{Binding ButtonState.MainButtonState[3].Icon}"
-                                            Content="{Binding ButtonState.MainButtonState[3].Content}"
-                                           IsEnabled="{Binding ButtonState.MainButtonState[3].IsEnabled}"
-                                            Margin="10,0,0,0" Click="StateChangeMainSur4_Click"
-                                           Background="{Binding ButtonState.MainButtonState[3].Background}"/>
+                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                <ui:TextBox
+                                    x:Name="MainSurPlayer4"
+                                    Width="150"
+                                    Height="35"
+                                    PlaceholderText="选手名称"
+                                    Text="{Binding TeamInfoModel.MainTeamPlayer[3].Name}" />
+                                <ui:Button
+                                    x:Name="StateChangeMainSur4"
+                                    Width="75"
+                                    Height="30"
+                                    Margin="10,0,0,0"
+                                    Background="{Binding ButtonState.MainButtonState[3].Background}"
+                                    Click="StateChangeMainSur4_Click"
+                                    Content="{Binding ButtonState.MainButtonState[3].Content}"
+                                    Icon="{Binding ButtonState.MainButtonState[3].Icon}"
+                                    IsEnabled="{Binding ButtonState.MainButtonState[3].IsEnabled}" />
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
-                                <ui:TextBox x:Name="MainSurPlayer5"
-                                            Height="35"
-                                            Width="150"
-                                            Text="{Binding TeamInfoModel.MainTeamPlayer[4].Name}"
-                                            PlaceholderText="选手名称"/>
-                                <ui:Button x:Name="StateChangeMainSur5"
-                                            Width="75"
-                                            Height="30"
-                                            Icon="{Binding ButtonState.MainButtonState[4].Icon}"
-                                            Content="{Binding ButtonState.MainButtonState[4].Content}"
-                                           IsEnabled="{Binding ButtonState.MainButtonState[4].IsEnabled}"
-                                            Margin="10,0,0,0" Click="StateChangeMainSur5_Click"
-                                           Background="{Binding ButtonState.MainButtonState[4].Background}"/>
+                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                <ui:TextBox
+                                    x:Name="MainSurPlayer5"
+                                    Width="150"
+                                    Height="35"
+                                    PlaceholderText="选手名称"
+                                    Text="{Binding TeamInfoModel.MainTeamPlayer[4].Name}" />
+                                <ui:Button
+                                    x:Name="StateChangeMainSur5"
+                                    Width="75"
+                                    Height="30"
+                                    Margin="10,0,0,0"
+                                    Background="{Binding ButtonState.MainButtonState[4].Background}"
+                                    Click="StateChangeMainSur5_Click"
+                                    Content="{Binding ButtonState.MainButtonState[4].Content}"
+                                    Icon="{Binding ButtonState.MainButtonState[4].Icon}"
+                                    IsEnabled="{Binding ButtonState.MainButtonState[4].IsEnabled}" />
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
-                                <ui:TextBox x:Name="MainSurPlayer6"
-                                            Height="35"
-                                            Width="150"
-                                            Text="{Binding TeamInfoModel.MainTeamPlayer[5].Name}"
-                                            PlaceholderText="选手名称"/>
-                                <ui:Button x:Name="StateChangeMainSur6"
-                                            Width="75"
-                                            Height="30"
-                                            Icon="{Binding ButtonState.MainButtonState[5].Icon}"
-                                            Content="{Binding ButtonState.MainButtonState[5].Content}"
-                                           IsEnabled="{Binding ButtonState.MainButtonState[5].IsEnabled}"
-                                            Margin="10,0,0,0" Click="StateChangeMainSur6_Click"
-                                           Background="{Binding ButtonState.MainButtonState[5].Background}"/>
+                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                <ui:TextBox
+                                    x:Name="MainSurPlayer6"
+                                    Width="150"
+                                    Height="35"
+                                    PlaceholderText="选手名称"
+                                    Text="{Binding TeamInfoModel.MainTeamPlayer[5].Name}" />
+                                <ui:Button
+                                    x:Name="StateChangeMainSur6"
+                                    Width="75"
+                                    Height="30"
+                                    Margin="10,0,0,0"
+                                    Background="{Binding ButtonState.MainButtonState[5].Background}"
+                                    Click="StateChangeMainSur6_Click"
+                                    Content="{Binding ButtonState.MainButtonState[5].Content}"
+                                    Icon="{Binding ButtonState.MainButtonState[5].Icon}"
+                                    IsEnabled="{Binding ButtonState.MainButtonState[5].IsEnabled}" />
                             </StackPanel>
-                            <ui:TextBlock Text="监管者选手列表"
-                                          Margin="0,10,0,0"/>
-                            <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
-                                <ui:TextBox x:Name="MainHunPlayer1"
-                                            Height="35"
-                                            Width="150"
-                                            Text="{Binding TeamInfoModel.MainTeamPlayer[6].Name}"
-                                            PlaceholderText="选手名称"/>
-                                <ui:Button x:Name="StateChangeMainHun1"
-                                            Width="75"
-                                            Height="30"
-                                            Icon="{Binding ButtonState.MainButtonState[6].Icon}"
-                                            Content="{Binding ButtonState.MainButtonState[6].Content}"
-                                           IsEnabled="{Binding ButtonState.MainButtonState[6].IsEnabled}"
-                                            Margin="10,0,0,0" Click="StateChangeMainHun1_Click"
-                                           Background="{Binding ButtonState.MainButtonState[6].Background}"/>
+                            <ui:TextBlock Margin="0,10,0,0" Text="监管者选手列表" />
+                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                <ui:TextBox
+                                    x:Name="MainHunPlayer1"
+                                    Width="150"
+                                    Height="35"
+                                    PlaceholderText="选手名称"
+                                    Text="{Binding TeamInfoModel.MainTeamPlayer[6].Name}" />
+                                <ui:Button
+                                    x:Name="StateChangeMainHun1"
+                                    Width="75"
+                                    Height="30"
+                                    Margin="10,0,0,0"
+                                    Background="{Binding ButtonState.MainButtonState[6].Background}"
+                                    Click="StateChangeMainHun1_Click"
+                                    Content="{Binding ButtonState.MainButtonState[6].Content}"
+                                    Icon="{Binding ButtonState.MainButtonState[6].Icon}"
+                                    IsEnabled="{Binding ButtonState.MainButtonState[6].IsEnabled}" />
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
-                                <ui:TextBox x:Name="MainHunPlayer2"
-                                            Height="35"
-                                            Width="150"
-                                            Text="{Binding TeamInfoModel.MainTeamPlayer[7].Name}"
-                                            PlaceholderText="选手名称"/>
-                                <ui:Button x:Name="StateChangeMainHun2"
-                                            Width="75"
-                                            Height="30"
-                                            Icon="{Binding ButtonState.MainButtonState[7].Icon}"
-                                            Content="{Binding ButtonState.MainButtonState[7].Content}"
-                                           IsEnabled="{Binding ButtonState.MainButtonState[7].IsEnabled}"
-                                            Margin="10,0,0,0" Click="StateChangeMainHun2_Click"
-                                           Background="{Binding ButtonState.MainButtonState[7].Background}"/>
+                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                <ui:TextBox
+                                    x:Name="MainHunPlayer2"
+                                    Width="150"
+                                    Height="35"
+                                    PlaceholderText="选手名称"
+                                    Text="{Binding TeamInfoModel.MainTeamPlayer[7].Name}" />
+                                <ui:Button
+                                    x:Name="StateChangeMainHun2"
+                                    Width="75"
+                                    Height="30"
+                                    Margin="10,0,0,0"
+                                    Background="{Binding ButtonState.MainButtonState[7].Background}"
+                                    Click="StateChangeMainHun2_Click"
+                                    Content="{Binding ButtonState.MainButtonState[7].Content}"
+                                    Icon="{Binding ButtonState.MainButtonState[7].Icon}"
+                                    IsEnabled="{Binding ButtonState.MainButtonState[7].IsEnabled}" />
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
-                                <ui:TextBox x:Name="MainHunPlayer3"
-                                            Height="35"
-                                            Width="150"
-                                            Text="{Binding TeamInfoModel.MainTeamPlayer[8].Name}"
-                                            PlaceholderText="选手名称" Cursor="IBeam"/>
-                                <ui:Button x:Name="StateChangeMainHun3"
-                                            Width="75"
-                                            Height="30"
-                                            Icon="{Binding ButtonState.MainButtonState[8].Icon}"
-                                            Content="{Binding ButtonState.MainButtonState[8].Content}"
-                                           IsEnabled="{Binding ButtonState.MainButtonState[8].IsEnabled}"
-                                            Margin="10,0,0,0" Click="StateChangeMainHun3_Click"
-                                           Background="{Binding ButtonState.MainButtonState[8].Background}"/>
+                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                <ui:TextBox
+                                    x:Name="MainHunPlayer3"
+                                    Width="150"
+                                    Height="35"
+                                    Cursor="IBeam"
+                                    PlaceholderText="选手名称"
+                                    Text="{Binding TeamInfoModel.MainTeamPlayer[8].Name}" />
+                                <ui:Button
+                                    x:Name="StateChangeMainHun3"
+                                    Width="75"
+                                    Height="30"
+                                    Margin="10,0,0,0"
+                                    Background="{Binding ButtonState.MainButtonState[8].Background}"
+                                    Click="StateChangeMainHun3_Click"
+                                    Content="{Binding ButtonState.MainButtonState[8].Content}"
+                                    Icon="{Binding ButtonState.MainButtonState[8].Icon}"
+                                    IsEnabled="{Binding ButtonState.MainButtonState[8].IsEnabled}" />
                             </StackPanel>
                         </StackPanel>
                     </Grid>
                 </GroupBox>
-                <GroupBox x:Name="TeamAway"
-                          Header="客场队伍信息"
-                          Grid.Column="2">
+                <GroupBox
+                    x:Name="TeamAway"
+                    Grid.Column="2"
+                    Header="客场队伍信息">
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="60"/>
-                            <RowDefinition Height="80"/>
-                            <RowDefinition/>
+                            <RowDefinition Height="60" />
+                            <RowDefinition Height="80" />
+                            <RowDefinition />
                         </Grid.RowDefinitions>
-                        <StackPanel Grid.Row="0"
-                                    Orientation="Horizontal"
-                                    Margin="10,0,0,0">
-                            <ui:TextBox x:Name="Away_team_name"
-                                        PlaceholderText="队伍名称"
-                                        Height="35"
-                                        Text="{Binding TeamInfoModel.AwayTeamInfo.Name}"
-                                        Width="180"/>
-                            <ui:Button x:Name="AwayTeamNameCheck"
-                                       Width="75"
-                                       Height="30"
-                                       Icon="{ui:SymbolIcon Checkmark24}"
-                                       Content="确定"
-                                       Margin="20,0,0,0" Click="TeamNameCheck_Click"/>
+                        <StackPanel
+                            Grid.Row="0"
+                            Margin="10,0,0,0"
+                            Orientation="Horizontal">
+                            <ui:TextBox
+                                x:Name="Away_team_name"
+                                Width="180"
+                                Height="35"
+                                PlaceholderText="队伍名称"
+                                Text="{Binding TeamInfoModel.AwayTeamInfo.Name}" />
+                            <ui:Button
+                                x:Name="AwayTeamNameCheck"
+                                Width="75"
+                                Height="30"
+                                Margin="20,0,0,0"
+                                Click="TeamNameCheck_Click"
+                                Content="确定"
+                                Icon="{ui:SymbolIcon Checkmark24}" />
                         </StackPanel>
-                        <StackPanel Grid.Row="1"
-                                    Orientation="Horizontal"
-                                    Margin="10,0,0,0">
-                            <Button x:Name="Change_away_team_logo"
-                                    Content="设置队伍LOGO"
-                                    Height="30" Click="Change_away_team_logo_Click"/>
-                            <Image x:Name="away_team_logo"
-                                   Height="80"
-                                   Width="80"
-                                   Margin="40,0,0,0"
-                                   Source="{Binding TeamInfoModel.AwayTeamInfo.LOGO}"
-                                   Stretch="Fill"/>
-                            <TextBlock Text="当前上场："
-                                       Margin="10,0,0,0"/>
-                            <TextBlock x:Name="away_state" Text="{Binding TeamInfoModel.AwayTeamInfo.State}"/>
+                        <StackPanel
+                            Grid.Row="1"
+                            Margin="10,0,0,0"
+                            Orientation="Horizontal">
+                            <Button
+                                x:Name="Change_away_team_logo"
+                                Height="30"
+                                Click="Change_away_team_logo_Click"
+                                Content="设置队伍LOGO" />
+                            <Image
+                                x:Name="away_team_logo"
+                                Width="80"
+                                Height="80"
+                                Margin="40,0,0,0"
+                                Source="{Binding TeamInfoModel.AwayTeamInfo.LOGO}"
+                                Stretch="Fill" />
+                            <TextBlock Margin="10,0,0,0" Text="当前上场：" />
+                            <TextBlock x:Name="away_state" Text="{Binding TeamInfoModel.AwayTeamInfo.State}" />
                         </StackPanel>
-                        <StackPanel Grid.Row="2"
-                                    Margin="10,0,0,10"
-                                    HorizontalAlignment="Left">
+                        <StackPanel
+                            Grid.Row="2"
+                            Margin="10,0,0,10"
+                            HorizontalAlignment="Left">
                             <StackPanel Orientation="Horizontal">
-                                <ui:TextBlock Text="求生者选手列表"
-                                              VerticalAlignment="Center"/>
-                                <ui:Button x:Name="ImportAwayInfo"
-                                           Margin="20,0,0,0"
-                                           Icon="{ui:SymbolIcon ArrowImport24}"
-                                           Content="从json文件导入" Click="ImportAwayInfo_Click"/>
+                                <ui:TextBlock VerticalAlignment="Center" Text="求生者选手列表" />
+                                <ui:Button
+                                    x:Name="ImportAwayInfo"
+                                    Margin="20,0,0,0"
+                                    Click="ImportAwayInfo_Click"
+                                    Content="从json文件导入"
+                                    Icon="{ui:SymbolIcon ArrowImport24}" />
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
-                                <ui:TextBox x:Name="AwaySurPlayer1"
-                                        Height="35"
-                                        Width="150"
-                                            Text="{Binding TeamInfoModel.AwayTeamPlayer[0].Name}"
-                                        PlaceholderText="选手名称"/>
-                                <ui:Button x:Name="StateChangeAwaySur1"
-                                           Width="75"
-                                           Height="30"
-                                           Icon="{Binding ButtonState.AwayButtonState[0].Icon}"
-                                           Content="{Binding ButtonState.AwayButtonState[0].Content}"
-                                           IsEnabled="{Binding ButtonState.AwayButtonState[0].IsEnabled}"
-                                           Margin="10,0,0,0" Click="StateChangeAwaySur1_Click"
-                                           Background="{Binding ButtonState.AwayButtonState[0].Background}"/>
+                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                <ui:TextBox
+                                    x:Name="AwaySurPlayer1"
+                                    Width="150"
+                                    Height="35"
+                                    PlaceholderText="选手名称"
+                                    Text="{Binding TeamInfoModel.AwayTeamPlayer[0].Name}" />
+                                <ui:Button
+                                    x:Name="StateChangeAwaySur1"
+                                    Width="75"
+                                    Height="30"
+                                    Margin="10,0,0,0"
+                                    Background="{Binding ButtonState.AwayButtonState[0].Background}"
+                                    Click="StateChangeAwaySur1_Click"
+                                    Content="{Binding ButtonState.AwayButtonState[0].Content}"
+                                    Icon="{Binding ButtonState.AwayButtonState[0].Icon}"
+                                    IsEnabled="{Binding ButtonState.AwayButtonState[0].IsEnabled}" />
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
-                                <ui:TextBox x:Name="AwaySurPlayer2"
-                                            Height="35"
-                                            Width="150"
-                                            Text="{Binding TeamInfoModel.AwayTeamPlayer[1].Name}"
-                                            PlaceholderText="选手名称"/>
-                                <ui:Button x:Name="StateChangeAwaySur2"
-                                           Width="75"
-                                           Height="30"
-                                           Icon="{Binding ButtonState.AwayButtonState[1].Icon}"
-                                           Content="{Binding ButtonState.AwayButtonState[1].Content}"
-                                           IsEnabled="{Binding ButtonState.AwayButtonState[1].IsEnabled}"
-                                           Margin="10,0,0,0" Click="StateChangeAwaySur2_Click"
-                                           Background="{Binding ButtonState.AwayButtonState[1].Background}"/>
+                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                <ui:TextBox
+                                    x:Name="AwaySurPlayer2"
+                                    Width="150"
+                                    Height="35"
+                                    PlaceholderText="选手名称"
+                                    Text="{Binding TeamInfoModel.AwayTeamPlayer[1].Name}" />
+                                <ui:Button
+                                    x:Name="StateChangeAwaySur2"
+                                    Width="75"
+                                    Height="30"
+                                    Margin="10,0,0,0"
+                                    Background="{Binding ButtonState.AwayButtonState[1].Background}"
+                                    Click="StateChangeAwaySur2_Click"
+                                    Content="{Binding ButtonState.AwayButtonState[1].Content}"
+                                    Icon="{Binding ButtonState.AwayButtonState[1].Icon}"
+                                    IsEnabled="{Binding ButtonState.AwayButtonState[1].IsEnabled}" />
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
-                                <ui:TextBox x:Name="AwaySurPlayer3"
-                                            Height="35"
-                                            Width="150"
-                                            Text="{Binding TeamInfoModel.AwayTeamPlayer[2].Name}"
-                                            PlaceholderText="选手名称"/>
-                                <ui:Button x:Name="StateChangeAwaySur3"
-                                           Width="75"
-                                           Height="30"
-                                           Icon="{Binding ButtonState.AwayButtonState[2].Icon}"
-                                           Content="{Binding ButtonState.AwayButtonState[2].Content}"
-                                           IsEnabled="{Binding ButtonState.AwayButtonState[2].IsEnabled}"
-                                           Margin="10,0,0,0" Click="StateChangeAwaySur3_Click"
-                                           Background="{Binding ButtonState.AwayButtonState[2].Background}"/>
+                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                <ui:TextBox
+                                    x:Name="AwaySurPlayer3"
+                                    Width="150"
+                                    Height="35"
+                                    PlaceholderText="选手名称"
+                                    Text="{Binding TeamInfoModel.AwayTeamPlayer[2].Name}" />
+                                <ui:Button
+                                    x:Name="StateChangeAwaySur3"
+                                    Width="75"
+                                    Height="30"
+                                    Margin="10,0,0,0"
+                                    Background="{Binding ButtonState.AwayButtonState[2].Background}"
+                                    Click="StateChangeAwaySur3_Click"
+                                    Content="{Binding ButtonState.AwayButtonState[2].Content}"
+                                    Icon="{Binding ButtonState.AwayButtonState[2].Icon}"
+                                    IsEnabled="{Binding ButtonState.AwayButtonState[2].IsEnabled}" />
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
-                                <ui:TextBox x:Name="AwaySurPlayer4"
-                                            Height="35"
-                                            Width="150"
-                                            Text="{Binding TeamInfoModel.AwayTeamPlayer[3].Name}"
-                                            PlaceholderText="选手名称"/>
-                                <ui:Button x:Name="StateChangeAwaySur4"
-                                           Width="75"
-                                           Height="30"
-                                           Icon="{Binding ButtonState.AwayButtonState[3].Icon}"
-                                           Content="{Binding ButtonState.AwayButtonState[3].Content}"
-                                           IsEnabled="{Binding ButtonState.AwayButtonState[3].IsEnabled}"
-                                           Margin="10,0,0,0" Click="StateChangeAwaySur4_Click"
-                                           Background="{Binding ButtonState.AwayButtonState[3].Background}"/>
+                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                <ui:TextBox
+                                    x:Name="AwaySurPlayer4"
+                                    Width="150"
+                                    Height="35"
+                                    PlaceholderText="选手名称"
+                                    Text="{Binding TeamInfoModel.AwayTeamPlayer[3].Name}" />
+                                <ui:Button
+                                    x:Name="StateChangeAwaySur4"
+                                    Width="75"
+                                    Height="30"
+                                    Margin="10,0,0,0"
+                                    Background="{Binding ButtonState.AwayButtonState[3].Background}"
+                                    Click="StateChangeAwaySur4_Click"
+                                    Content="{Binding ButtonState.AwayButtonState[3].Content}"
+                                    Icon="{Binding ButtonState.AwayButtonState[3].Icon}"
+                                    IsEnabled="{Binding ButtonState.AwayButtonState[3].IsEnabled}" />
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
-                                <ui:TextBox x:Name="AwaySurPlayer5"
-                                            Height="35"
-                                            Width="150"
-                                            Text="{Binding TeamInfoModel.AwayTeamPlayer[4].Name}"
-                                            PlaceholderText="选手名称"/>
-                                <ui:Button x:Name="StateChangeAwaySur5"
-                                           Width="75"
-                                           Height="30"
-                                           Icon="{Binding ButtonState.AwayButtonState[4].Icon}"
-                                           Content="{Binding ButtonState.AwayButtonState[4].Content}"
-                                           IsEnabled="{Binding ButtonState.AwayButtonState[4].IsEnabled}"
-                                           Margin="10,0,0,0" Click="StateChangeAwaySur5_Click"
-                                           Background="{Binding ButtonState.AwayButtonState[4].Background}"/>
+                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                <ui:TextBox
+                                    x:Name="AwaySurPlayer5"
+                                    Width="150"
+                                    Height="35"
+                                    PlaceholderText="选手名称"
+                                    Text="{Binding TeamInfoModel.AwayTeamPlayer[4].Name}" />
+                                <ui:Button
+                                    x:Name="StateChangeAwaySur5"
+                                    Width="75"
+                                    Height="30"
+                                    Margin="10,0,0,0"
+                                    Background="{Binding ButtonState.AwayButtonState[4].Background}"
+                                    Click="StateChangeAwaySur5_Click"
+                                    Content="{Binding ButtonState.AwayButtonState[4].Content}"
+                                    Icon="{Binding ButtonState.AwayButtonState[4].Icon}"
+                                    IsEnabled="{Binding ButtonState.AwayButtonState[4].IsEnabled}" />
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
-                                <ui:TextBox x:Name="AwaySurPlayer6"
-                                            Height="35"
-                                            Width="150"
-                                            Text="{Binding TeamInfoModel.AwayTeamPlayer[5].Name}"
-                                            PlaceholderText="选手名称"/>
-                                <ui:Button x:Name="StateChangeAwaySur6"
-                                           Width="75"
-                                           Height="30"
-                                           Icon="{Binding ButtonState.AwayButtonState[5].Icon}"
-                                           Content="{Binding ButtonState.AwayButtonState[5].Content}"
-                                           IsEnabled="{Binding ButtonState.AwayButtonState[5].IsEnabled}"
-                                           Margin="10,0,0,0" Click="StateChangeAwaySur6_Click"
-                                           Background="{Binding ButtonState.AwayButtonState[5].Background}"/>
+                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                <ui:TextBox
+                                    x:Name="AwaySurPlayer6"
+                                    Width="150"
+                                    Height="35"
+                                    PlaceholderText="选手名称"
+                                    Text="{Binding TeamInfoModel.AwayTeamPlayer[5].Name}" />
+                                <ui:Button
+                                    x:Name="StateChangeAwaySur6"
+                                    Width="75"
+                                    Height="30"
+                                    Margin="10,0,0,0"
+                                    Background="{Binding ButtonState.AwayButtonState[5].Background}"
+                                    Click="StateChangeAwaySur6_Click"
+                                    Content="{Binding ButtonState.AwayButtonState[5].Content}"
+                                    Icon="{Binding ButtonState.AwayButtonState[5].Icon}"
+                                    IsEnabled="{Binding ButtonState.AwayButtonState[5].IsEnabled}" />
                             </StackPanel>
-                            <ui:TextBlock Text="监管者选手列表"
-                                          Margin="0,10,0,0"/>
-                            <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
-                                <ui:TextBox x:Name="AwayHunPlayer1"
-                                            Height="35"
-                                            Width="150"
-                                            Text="{Binding TeamInfoModel.AwayTeamPlayer[6].Name}"
-                                            PlaceholderText="选手名称"/>
-                                <ui:Button x:Name="StateChangeAwayHun1"
-                                           Width="75"
-                                           Height="30"
-                                           Icon="{Binding ButtonState.AwayButtonState[6].Icon}"
-                                           Content="{Binding ButtonState.AwayButtonState[6].Content}"
-                                           IsEnabled="{Binding ButtonState.AwayButtonState[6].IsEnabled}"
-                                           Margin="10,0,0,0" Click="StateChangeAwayHun1_Click"
-                                           Background="{Binding ButtonState.AwayButtonState[6].Background}"/>
+                            <ui:TextBlock Margin="0,10,0,0" Text="监管者选手列表" />
+                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                <ui:TextBox
+                                    x:Name="AwayHunPlayer1"
+                                    Width="150"
+                                    Height="35"
+                                    PlaceholderText="选手名称"
+                                    Text="{Binding TeamInfoModel.AwayTeamPlayer[6].Name}" />
+                                <ui:Button
+                                    x:Name="StateChangeAwayHun1"
+                                    Width="75"
+                                    Height="30"
+                                    Margin="10,0,0,0"
+                                    Background="{Binding ButtonState.AwayButtonState[6].Background}"
+                                    Click="StateChangeAwayHun1_Click"
+                                    Content="{Binding ButtonState.AwayButtonState[6].Content}"
+                                    Icon="{Binding ButtonState.AwayButtonState[6].Icon}"
+                                    IsEnabled="{Binding ButtonState.AwayButtonState[6].IsEnabled}" />
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
-                                <ui:TextBox x:Name="AwayHunPlayer2"
-                                            Height="35"
-                                            Width="150"
-                                            Text="{Binding TeamInfoModel.AwayTeamPlayer[7].Name}"
-                                            PlaceholderText="选手名称"/>
-                                <ui:Button x:Name="StateChangeAwayHun2"
-                                           Width="75"
-                                           Height="30"
-                                           Icon="{Binding ButtonState.AwayButtonState[7].Icon}"
-                                           Content="{Binding ButtonState.AwayButtonState[7].Content}"
-                                           IsEnabled="{Binding ButtonState.AwayButtonState[7].IsEnabled}"
-                                           Margin="10,0,0,0" Click="StateChangeAwayHun2_Click"
-                                           Background="{Binding ButtonState.AwayButtonState[7].Background}"/>
+                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                <ui:TextBox
+                                    x:Name="AwayHunPlayer2"
+                                    Width="150"
+                                    Height="35"
+                                    PlaceholderText="选手名称"
+                                    Text="{Binding TeamInfoModel.AwayTeamPlayer[7].Name}" />
+                                <ui:Button
+                                    x:Name="StateChangeAwayHun2"
+                                    Width="75"
+                                    Height="30"
+                                    Margin="10,0,0,0"
+                                    Background="{Binding ButtonState.AwayButtonState[7].Background}"
+                                    Click="StateChangeAwayHun2_Click"
+                                    Content="{Binding ButtonState.AwayButtonState[7].Content}"
+                                    Icon="{Binding ButtonState.AwayButtonState[7].Icon}"
+                                    IsEnabled="{Binding ButtonState.AwayButtonState[7].IsEnabled}" />
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
-                                <ui:TextBox x:Name="AwayHunPlayer3"
-                                            Height="35"
-                                            Width="150"
-                                            Text="{Binding TeamInfoModel.AwayTeamPlayer[8].Name}"
-                                            PlaceholderText="选手名称"/>
-                                <ui:Button x:Name="StateChangeAwayHun3"
-                                           Width="75"
-                                           Height="30"
-                                           Icon="{Binding ButtonState.AwayButtonState[8].Icon}"
-                                           Content="{Binding ButtonState.AwayButtonState[8].Content}"
-                                           IsEnabled="{Binding ButtonState.AwayButtonState[8].IsEnabled}"
-                                           Margin="10,0,0,0" Click="StateChangeAwayHun3_Click"
-                                           Background="{Binding ButtonState.AwayButtonState[8].Background}"/>
+                            <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                <ui:TextBox
+                                    x:Name="AwayHunPlayer3"
+                                    Width="150"
+                                    Height="35"
+                                    PlaceholderText="选手名称"
+                                    Text="{Binding TeamInfoModel.AwayTeamPlayer[8].Name}" />
+                                <ui:Button
+                                    x:Name="StateChangeAwayHun3"
+                                    Width="75"
+                                    Height="30"
+                                    Margin="10,0,0,0"
+                                    Background="{Binding ButtonState.AwayButtonState[8].Background}"
+                                    Click="StateChangeAwayHun3_Click"
+                                    Content="{Binding ButtonState.AwayButtonState[8].Content}"
+                                    Icon="{Binding ButtonState.AwayButtonState[8].Icon}"
+                                    IsEnabled="{Binding ButtonState.AwayButtonState[8].IsEnabled}" />
                             </StackPanel>
                         </StackPanel>
                     </Grid>
                 </GroupBox>
             </StackPanel>
-            <GroupBox x:Name="PlayerNow"
-                      Grid.Column="2"
-                      Header="当前上场选手"
-                      HorizontalAlignment="Center"
-                      VerticalAlignment="Center">
-                <StackPanel Orientation="Horizontal"
-                            Margin="0,0,10,0">
-                    <StackPanel HorizontalAlignment="Left"
-                                Margin="10,0,0,0">
-                        <ui:TextBlock Text="求生者"
-                                      Margin="0,10,0,0"/>
-                        <StackPanel Orientation="Horizontal"
-                                    Margin="0,10,0,0">
-                            <ui:TextBox x:Name="NowSurPlayer1"
-                                        Height="35"
-                                        Width="150"
-                                        IsReadOnly="True"
-                                        Text="{Binding NowModel.NowPlayer[0]}"
-                                        PlaceholderText="选手名称"/>
-                            <ui:Button x:Name="Swap_sur_player1_with_player2"
-                                       Width="35"
-                                       Height="35"
-                                       Margin="10,0,0,0"
-                                       Content="2" Click="Swap_sur_player1_with_player2_Click"/>
-                            <ui:Button x:Name="Swap_sur_player1_with_player3"
-                                       Width="35"
-                                       Height="35"
-                                       Margin="10,0,0,0"
-                                       Content="3" Click="Swap_sur_player1_with_player3_Click"/>
-                            <ui:Button x:Name="Swap_sur_player1_with_player4"
-                                       Width="35"
-                                       Height="35"
-                                       Margin="10,0,0,0"
-                                       Content="4" Click="Swap_sur_player1_with_player4_Click"/>
+            <GroupBox
+                x:Name="PlayerNow"
+                Grid.Column="2"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Header="当前上场选手">
+                <StackPanel Margin="0,0,10,0" Orientation="Horizontal">
+                    <StackPanel Margin="10,0,0,0" HorizontalAlignment="Left">
+                        <ui:TextBlock Margin="0,10,0,0" Text="求生者" />
+                        <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                            <ui:TextBox
+                                x:Name="NowSurPlayer1"
+                                Width="150"
+                                Height="35"
+                                IsReadOnly="True"
+                                PlaceholderText="选手名称"
+                                Text="{Binding NowModel.NowPlayer[0]}" />
+                            <ui:Button
+                                x:Name="Swap_sur_player1_with_player2"
+                                Width="35"
+                                Height="35"
+                                Margin="10,0,0,0"
+                                Click="Swap_sur_player1_with_player2_Click"
+                                Content="2" />
+                            <ui:Button
+                                x:Name="Swap_sur_player1_with_player3"
+                                Width="35"
+                                Height="35"
+                                Margin="10,0,0,0"
+                                Click="Swap_sur_player1_with_player3_Click"
+                                Content="3" />
+                            <ui:Button
+                                x:Name="Swap_sur_player1_with_player4"
+                                Width="35"
+                                Height="35"
+                                Margin="10,0,0,0"
+                                Click="Swap_sur_player1_with_player4_Click"
+                                Content="4" />
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal"
-                                        Margin="0,10,0,0">
-                            <ui:TextBox x:Name="NowSurPlayer2"
-                                        Height="35"
-                                        Width="150"
-                                        IsReadOnly="True"
-                                        Text="{Binding NowModel.NowPlayer[1]}"
-                                        PlaceholderText="选手名称"/>
-                            <ui:Button x:Name="Swap_sur_player2_with_player1"
-                                       Width="35"
-                                       Height="35"
-                                       Margin="10,0,0,0"
-                                       Content="1" Click="Swap_sur_player2_with_player1_Click"/>
-                            <ui:Button x:Name="Swap_sur_player2_with_player3"
-                                       Width="35"
-                                       Height="35"
-                                       Margin="10,0,0,0"
-                                       Content="3" Click="Swap_sur_player2_with_player3_Click"/>
-                            <ui:Button x:Name="Swap_sur_player2_with_player4"
-                                       Width="35"
-                                       Height="35"
-                                       Margin="10,0,0,0"
-                                       Content="4" Click="Swap_sur_player2_with_player4_Click"/>
+                        <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                            <ui:TextBox
+                                x:Name="NowSurPlayer2"
+                                Width="150"
+                                Height="35"
+                                IsReadOnly="True"
+                                PlaceholderText="选手名称"
+                                Text="{Binding NowModel.NowPlayer[1]}" />
+                            <ui:Button
+                                x:Name="Swap_sur_player2_with_player1"
+                                Width="35"
+                                Height="35"
+                                Margin="10,0,0,0"
+                                Click="Swap_sur_player2_with_player1_Click"
+                                Content="1" />
+                            <ui:Button
+                                x:Name="Swap_sur_player2_with_player3"
+                                Width="35"
+                                Height="35"
+                                Margin="10,0,0,0"
+                                Click="Swap_sur_player2_with_player3_Click"
+                                Content="3" />
+                            <ui:Button
+                                x:Name="Swap_sur_player2_with_player4"
+                                Width="35"
+                                Height="35"
+                                Margin="10,0,0,0"
+                                Click="Swap_sur_player2_with_player4_Click"
+                                Content="4" />
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal"
-                                    Margin="0,10,0,0">
-                            <ui:TextBox x:Name="NowSurPlayer3"
-                                        Height="35"
-                                        Width="150"
-                                        IsReadOnly="True"
-                                        Text="{Binding NowModel.NowPlayer[2]}"
-                                        PlaceholderText="选手名称"/>
-                            <ui:Button x:Name="Swap_sur_player3_with_player1"
-                                       Width="35"
-                                       Height="35"
-                                       Margin="10,0,0,0"
-                                       Content="1" Click="Swap_sur_player3_with_player1_Click"/>
-                            <ui:Button x:Name="Swap_sur_player3_with_player2"
-                                       Width="35"
-                                       Height="35"
-                                       Margin="10,0,0,0"
-                                       Content="2" Click="Swap_sur_player3_with_player2_Click"/>
-                            <ui:Button x:Name="Swap_sur_player3_with_player4"
-                                       Width="35"
-                                       Height="35"
-                                       Margin="10,0,0,0"
-                                       Content="4" Click="Swap_sur_player3_with_player4_Click"/>
+                        <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                            <ui:TextBox
+                                x:Name="NowSurPlayer3"
+                                Width="150"
+                                Height="35"
+                                IsReadOnly="True"
+                                PlaceholderText="选手名称"
+                                Text="{Binding NowModel.NowPlayer[2]}" />
+                            <ui:Button
+                                x:Name="Swap_sur_player3_with_player1"
+                                Width="35"
+                                Height="35"
+                                Margin="10,0,0,0"
+                                Click="Swap_sur_player3_with_player1_Click"
+                                Content="1" />
+                            <ui:Button
+                                x:Name="Swap_sur_player3_with_player2"
+                                Width="35"
+                                Height="35"
+                                Margin="10,0,0,0"
+                                Click="Swap_sur_player3_with_player2_Click"
+                                Content="2" />
+                            <ui:Button
+                                x:Name="Swap_sur_player3_with_player4"
+                                Width="35"
+                                Height="35"
+                                Margin="10,0,0,0"
+                                Click="Swap_sur_player3_with_player4_Click"
+                                Content="4" />
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal"
-                                    Margin="0,10,0,0">
-                            <ui:TextBox x:Name="NowSurPlayer4"
-                                        Height="35"
-                                        Width="150"
-                                        IsReadOnly="True"
-                                        Text="{Binding NowModel.NowPlayer[3]}"
-                                        PlaceholderText="选手名称"/>
-                            <ui:Button x:Name="Swap_sur_player4_with_player1"
-                                       Width="35"
-                                       Height="35"
-                                       Margin="10,0,0,0"
-                                       Content="1" Click="Swap_sur_player4_with_player1_Click"/>
-                            <ui:Button x:Name="Swap_sur_player4_with_player2"
-                                       Width="35"
-                                       Height="35"
-                                       Margin="10,0,0,0"
-                                       Content="2" Click="Swap_sur_player4_with_player2_Click"/>
-                            <ui:Button x:Name="Swap_sur_player4_with_player3"
-                                       Width="35"
-                                       Height="35"
-                                       Margin="10,0,0,0"
-                                       Content="3" Click="Swap_sur_player4_with_player3_Click"/>
+                        <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                            <ui:TextBox
+                                x:Name="NowSurPlayer4"
+                                Width="150"
+                                Height="35"
+                                IsReadOnly="True"
+                                PlaceholderText="选手名称"
+                                Text="{Binding NowModel.NowPlayer[3]}" />
+                            <ui:Button
+                                x:Name="Swap_sur_player4_with_player1"
+                                Width="35"
+                                Height="35"
+                                Margin="10,0,0,0"
+                                Click="Swap_sur_player4_with_player1_Click"
+                                Content="1" />
+                            <ui:Button
+                                x:Name="Swap_sur_player4_with_player2"
+                                Width="35"
+                                Height="35"
+                                Margin="10,0,0,0"
+                                Click="Swap_sur_player4_with_player2_Click"
+                                Content="2" />
+                            <ui:Button
+                                x:Name="Swap_sur_player4_with_player3"
+                                Width="35"
+                                Height="35"
+                                Margin="10,0,0,0"
+                                Click="Swap_sur_player4_with_player3_Click"
+                                Content="3" />
                         </StackPanel>
                         <StackPanel HorizontalAlignment="Left">
-                            <ui:TextBlock Text="监管者"
-                                          Margin="0,10,0,0"/>
-                            <ui:TextBox x:Name="NowHunPlayer"
-                                        Height="35"
-                                        Width="150"
-                                        IsReadOnly="True"
-                                        Text="{Binding NowModel.NowPlayer[4]}"
-                                        PlaceholderText="选手名称"
-                                        Margin="0,10,0,10"/>
+                            <ui:TextBlock Margin="0,10,0,0" Text="监管者" />
+                            <ui:TextBox
+                                x:Name="NowHunPlayer"
+                                Width="150"
+                                Height="35"
+                                Margin="0,10,0,10"
+                                IsReadOnly="True"
+                                PlaceholderText="选手名称"
+                                Text="{Binding NowModel.NowPlayer[4]}" />
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>

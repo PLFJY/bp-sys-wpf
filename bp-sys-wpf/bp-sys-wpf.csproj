@@ -52,6 +52,7 @@
 	  <None Remove="Views\HomeHeader.png" />
 	  <None Remove="Views\Pages\HomeHeader.png" />
 	  <None Remove="Views\Windows\score_global.png" />
+	  <None Remove="wpfui.png" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Flurl" Version="4.0.0" />
@@ -72,6 +73,7 @@
 	  <Resource Include="Icons\TrumpCard.png" />
 	  <Resource Include="Views\HomeHeader.png" />
 	  <Resource Include="Views\Pages\HomeHeader.png" />
+	  <Resource Include="wpfui.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Update="CharactersList.txt">

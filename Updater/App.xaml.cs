@@ -16,5 +16,4 @@ namespace Updater
             Args = e.Args;
         }
     }
-
 }

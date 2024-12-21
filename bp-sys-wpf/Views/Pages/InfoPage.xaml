@@ -193,7 +193,8 @@
                         Margin="25,10,0,10"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
-                        Text="{Binding newVersionInfo}" />
+                        Text="{Binding newVersionInfo}"
+                        TextWrapping="Wrap" />
                 </StackPanel>
             </ui:CardExpander>
             <ui:CardExpander

@@ -101,10 +101,24 @@
                     </Grid>
                     <ui:Button
                         Name="DownLoadNewFrontUI"
+                        Width="500"
                         Margin="30,0,0,10"
+                        VerticalAlignment="Center"
                         Click="DownLoadNewFrontUI_Click"
                         Content="下载最新前台UI"
                         Icon="{ui:SymbolIcon ArrowDownload24}" />
+                    <StackPanel Orientation="Horizontal">
+                        <ui:TextBlock
+                            Margin="35,0,0,0"
+                            VerticalAlignment="Center"
+                            Text="前台和过场画面分辨率切换" />
+                        <ComboBox
+                            Name="FrontSizeChange"
+                            Margin="10,0,0,0"
+                            ItemsSource="{Binding FrontSize}"
+                            SelectedIndex="0"
+                            SelectionChanged="FrontSizeChange_SelectionChanged" />
+                    </StackPanel>
                     <GroupBox
                         Margin="30,0,0,0"
                         HorizontalAlignment="Left"

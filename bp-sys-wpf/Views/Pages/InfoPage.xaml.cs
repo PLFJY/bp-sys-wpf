@@ -50,6 +50,26 @@ namespace bp_sys_wpf.Views.Pages
                 newVersionInfo = "更新请求失败";
             }
         }
+
+        private List<string> _FrontSize;
+
+        public List<string> FrontSize
+        {
+            get
+            {
+                if (_FrontSize == null)
+                {
+                    _FrontSize = new List<string>();
+                    _FrontSize.Add("1440x810（默认）");
+                    _FrontSize.Add("1920x1080");
+                    _FrontSize.Add("1280x720");
+                    _FrontSize.Add("960x540");
+                }
+                return _FrontSize;
+            }
+            set { _FrontSize = value; }
+        }
+
         private List<string> _GhUrl;
 
         public List<string> GhUrl
@@ -257,6 +277,80 @@ namespace bp_sys_wpf.Views.Pages
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             QGroupUrl.NavigateUri = "https://qm.qq.com/cgi-bin/qm/qr?k=Ji5tmYRE_FYa9iTCft83NZ5dMsP-zWU9&jump_from=webapi&authKey=pb9fAm3bl0TEu9AX/Lf2/dqVCfnE22e/BdP5zenId9uxq7DoCpcHANBIDvJMncMd";
+        }
+
+        private void FrontSizeChange_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (BackWindow.backWindow.IsFrontsChreated)
+            {
+                switch (FrontSizeChange.SelectedIndex)
+                {
+                    case 0:
+                        try
+                        {
+                            Front.front.Width = 1440;
+                            Front.front.Height = 810;
+                            Interlude.interlude.Width = 1440;
+                            Interlude.interlude.Height = 810;
+                        }
+                        catch
+                        {
+                            BackWindow.backWindow.MessageBar.IsOpen = true;
+                            BackWindow.backWindow.Title = "错误";
+                            BackWindow.backWindow.MessageBar.Severity = Wpf.Ui.Controls.InfoBarSeverity.Error;
+                            BackWindow.backWindow.MessageBar.Message = "前台未启动";
+                        }
+                        break;
+                    case 1:
+                        try
+                        {
+                            Front.front.Width = 1920;
+                            Front.front.Height = 1080;
+                            Interlude.interlude.Width = 1920;
+                            Interlude.interlude.Height = 1080;
+                        }
+                        catch
+                        {
+                            BackWindow.backWindow.MessageBar.IsOpen = true;
+                            BackWindow.backWindow.Title = "错误";
+                            BackWindow.backWindow.MessageBar.Severity = Wpf.Ui.Controls.InfoBarSeverity.Error;
+                            BackWindow.backWindow.MessageBar.Message = "前台未启动";
+                        }
+                        break;
+                    case 2:
+                        try
+                        {
+                            Front.front.Width = 1280;
+                            Front.front.Height = 720;
+                            Interlude.interlude.Width = 1280;
+                            Interlude.interlude.Height = 720;
+                        }
+                        catch
+                        {
+                            BackWindow.backWindow.MessageBar.IsOpen = true;
+                            BackWindow.backWindow.Title = "错误";
+                            BackWindow.backWindow.MessageBar.Severity = Wpf.Ui.Controls.InfoBarSeverity.Error;
+                            BackWindow.backWindow.MessageBar.Message = "前台未启动";
+                        }
+                        break;
+                    case 3:
+                        try
+                        {
+                            Front.front.Width = 960;
+                            Front.front.Height = 540;
+                            Interlude.interlude.Width = 960;
+                            Interlude.interlude.Height = 540;
+                        }
+                        catch
+                        {
+                            BackWindow.backWindow.MessageBar.IsOpen = true;
+                            BackWindow.backWindow.Title = "错误";
+                            BackWindow.backWindow.MessageBar.Severity = Wpf.Ui.Controls.InfoBarSeverity.Error;
+                            BackWindow.backWindow.MessageBar.Message = "前台未启动";
+                        }
+                        break;
+                }
+            }
         }
     }
 }

@@ -159,10 +159,16 @@ namespace Updater
                 }
                 else if (Directory.Exists(entry))
                 {
+                    if (Path.GetFullPath(entry).Contains("Resource"))
+                    {
+                        var result = MessageBoxResult.No;
+                        MessageBox.Show("是否启用Resource覆盖（你所修改的UI会被覆盖）", "警告", MessageBoxButton.YesNo, MessageBoxImage.Question, result);
+                        if (result != MessageBoxResult.Yes)
+                            return;
+                    }
                     MoveDirectory(entry, targetEntry); // 递归处理子文件夹
                 }
             }
-
             // 最后删除源文件夹（temp_directory），前提是里面内容都已成功移动
             Directory.Delete(temp_directory, true);
         }

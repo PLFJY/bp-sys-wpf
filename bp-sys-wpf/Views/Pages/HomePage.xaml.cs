@@ -1,4 +1,6 @@
-﻿using System.Windows.Controls;
+﻿using bp_sys_wpf.Views.Windows;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace bp_sys_wpf.Views.Pages
 {
@@ -10,6 +12,12 @@ namespace bp_sys_wpf.Views.Pages
         public HomePage()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            QA qA = new QA();
+            qA.ShowDialog();
         }
     }
 }

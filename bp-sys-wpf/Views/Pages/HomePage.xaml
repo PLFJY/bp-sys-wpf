@@ -52,7 +52,12 @@
                         Text="功能齐全，使用便捷" />
                 </StackPanel>
             </Border>
-
+            <ui:Button
+                Grid.Row="1"
+                Margin="10,20,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="我猜你可能会遇到的问题" Click="Button_Click" />
         </Grid>
     </Border>
 </Page>

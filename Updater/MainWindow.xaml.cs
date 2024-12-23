@@ -164,7 +164,7 @@ namespace Updater
                         var result = MessageBoxResult.No;
                         MessageBox.Show("是否启用Resource覆盖（你所修改的UI会被覆盖）", "警告", MessageBoxButton.YesNo, MessageBoxImage.Question, result);
                         if (result != MessageBoxResult.Yes)
-                            return;
+                            continue;
                     }
                     MoveDirectory(entry, targetEntry); // 递归处理子文件夹
                 }

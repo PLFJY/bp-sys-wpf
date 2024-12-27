@@ -147,8 +147,13 @@ namespace Updater
             {
                 string entryName = Path.GetFileName(entry);
                 string targetEntry = Path.Combine(CurrentDirectory, entryName);
-                if (File.Exists(entry) && entryName != GetFileNameFromUrl(UpdateUrl))
+                if (File.Exists(entry))
                 {
+                    if (entryName == GetFileNameFromUrl(UpdateUrl))
+                    {
+                        File.Delete(entry);
+                        continue;
+                    }
                     try
                     {
                         File.Copy(entry, targetEntry, true);
@@ -164,13 +169,14 @@ namespace Updater
                         var result = MessageBoxResult.No;
                         MessageBox.Show("是否启用Resource覆盖（你所修改的UI会被覆盖）", "警告", MessageBoxButton.YesNo, MessageBoxImage.Question, result);
                         if (result != MessageBoxResult.Yes)
+                        {
+                            Directory.Delete(entry);
                             continue;
+                        }
                     }
                     MoveDirectory(entry, targetEntry); // 递归处理子文件夹
                 }
             }
-            // 最后删除源文件夹（temp_directory），前提是里面内容都已成功移动
-            Directory.Delete(temp_directory, true);
         }
 
         private void MoveDirectory(string sourceDir, string targetDir)

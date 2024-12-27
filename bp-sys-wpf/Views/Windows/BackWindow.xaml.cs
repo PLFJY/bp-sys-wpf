@@ -41,7 +41,8 @@ namespace bp_sys_wpf.Views.Windows
             {
                 UpdateCheck();
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBar.Severity = Wpf.Ui.Controls.InfoBarSeverity.Warning;
                 MessageBar.Title = "更新提示";
                 MessageBar.Message = $"更新获取失败";
@@ -137,6 +138,10 @@ Score=#FF000000";
                 }
                 Environment.Exit(0);
             }
+            if (Directory.Exists(Path.Combine(Directory.GetCurrentDirectory(), "Temp")))
+            {
+                MoveContentsToCurrentDirectory(Path.Combine(Directory.GetCurrentDirectory(), "Temp"), Directory.GetCurrentDirectory());
+            }
             Config.Front.Color.team_name = ConvertHexStringToBrush(data["Front_Color"]["team_name"].ToString());
             Config.Front.Color.scoreS = ConvertHexStringToBrush(data["Front_Color"]["scoreS"].ToString());
             Config.Front.Color.score = ConvertHexStringToBrush(data["Front_Color"]["score"].ToString());
@@ -162,6 +167,49 @@ Score=#FF000000";
             rootViewModel.TeamInfoViewModel.TeamInfoModel = rootViewModel.TeamInfoViewModel.TeamInfoModel;
             rootViewModel.TimmerViewModel = rootViewModel.TimmerViewModel;
             rootViewModel.ScoreGlobalViewModel = rootViewModel.ScoreGlobalViewModel;
+        }
+        private void MoveContentsToCurrentDirectory(string directory, string targetEntry)
+        {
+            // 遍历temp_directory下的所有文件和文件夹（使用EnumerateFileSystemEntries提高效率）
+            foreach (var entry in Directory.EnumerateFileSystemEntries(directory))
+            {
+                string entryName = Path.GetFileName(entry);
+                if (File.Exists(entry))
+                {
+                    try
+                    {
+                        File.Copy(entry, targetEntry, true);
+                    }
+                    catch { }
+                    // 复制文件到目标文件夹并覆盖已有文件
+                    File.Delete(entry); // 删除源文件
+                }
+                else if (Directory.Exists(entry))
+                {
+                    MoveDirectory(entry, targetEntry); // 递归处理子文件夹
+                }
+            }
+            // 最后删除源文件夹（temp_directory），前提是里面内容都已成功移动
+            Directory.Delete(directory, true);
+        }
+
+        private void MoveDirectory(string sourceDir, string targetDir)
+        {
+            Directory.CreateDirectory(targetDir);
+            foreach (var file in Directory.GetFiles(sourceDir))
+            {
+                string fileName = Path.GetFileName(file);
+                string targetFilePath = Path.Combine(targetDir, fileName);
+                File.Copy(file, targetFilePath, true);
+                File.Delete(file);
+            }
+            foreach (var subDir in Directory.GetDirectories(sourceDir))
+            {
+                string subDirName = Path.GetFileName(subDir);
+                string targetSubDir = Path.Combine(targetDir, subDirName);
+                MoveDirectory(subDir, targetSubDir);
+            }
+            Directory.Delete(sourceDir);
         }
 
         public static SolidColorBrush ConvertHexStringToBrush(string hexColor)

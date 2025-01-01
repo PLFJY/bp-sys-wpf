@@ -219,22 +219,12 @@ namespace bp_sys_wpf.Views.Pages
                 DownLoadNewFrontUI.Content = "下载最新前台UI（不可用，请重启软件后在不启动前台的情况下下载）";
                 return;
             }
-            try
-            {
-                Front.front.Close();
-                Interlude.interlude.Close();
-                Map_bp.map_bp.Close();
-                ScoreGlobal.scoreGlobal.Close();
-                ScoreHun.scoreHun.Close();
-                ScoreSur.scoreSur.Close();
-            }
-            catch { }
             await FetchNewUIFileInfoAsync("https://api.github.com");
             foreach (var i in uIFileInfo)
             {
                 DownLoadFile($"https://ghproxy.net/{i.download_url}", Path.Combine(Environment.CurrentDirectory, "Resource", "gui", i.name));
             }
-            MessageBox.Show("UI替换已完成，请重新启动应用程序", "下载提示");
+            MessageBox.Show("请等待UI替换完成，大概率60s后重启应用程序即可完成", "下载提示");
         }
         public class UIFileInfo
         {

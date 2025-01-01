@@ -53,6 +53,8 @@
 	  <None Remove="Views\Pages\HomeHeader.png" />
 	  <None Remove="Views\Windows\score_global.png" />
 	  <None Remove="wpfui.png" />
+	  <None Remove="华康POP1体W5.ttf" />
+	  <None Remove="汉仪第五人格体.ttf" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Flurl" Version="4.0.0" />
@@ -74,6 +76,8 @@
 	  <Resource Include="Views\HomeHeader.png" />
 	  <Resource Include="Views\Pages\HomeHeader.png" />
 	  <Resource Include="wpfui.png" />
+	  <Resource Include="Fonts\华康POP1体W5.ttf" />
+	  <Resource Include="Fonts\汉仪第五人格体.ttf" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Update="CharactersList.txt">

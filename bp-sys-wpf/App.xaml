@@ -1,12 +1,11 @@
-﻿<Application x:Class="bp_sys_wpf.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:bp_sys_wpf"
-             StartupUri="Views/Windows/BackWindow.xaml">
+﻿<Application
+    x:Class="bp_sys_wpf.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:bp_sys_wpf"
+    StartupUri="Views/Windows/BackWindow.xaml">
     <Application.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
+        <FontFamily x:Key="汉仪第五人格体">/bp-sys-wpf;Component/Fonts/#汉仪第五人格体简</FontFamily>
+        <FontFamily x:Key="华康POP体">/bp-sys-wpf;Component/Fonts/#DFPOP1W5-B5</FontFamily>
     </Application.Resources>
 </Application>

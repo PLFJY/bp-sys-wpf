@@ -54,13 +54,13 @@
                     <Label
                         x:Name="Win"
                         Content="{Binding TeamInfoViewModel.NowModel.NowSurTeam.Score.W}"
-                        FontFamily="DFPOP1W5-B5"
+                        FontFamily="{StaticResource 华康POP体}"
                         FontSize="48"
                         Foreground="White" />
                     <Label
                         Name="WinWord"
                         Content="W"
-                        FontFamily="汉仪第五人格体简"
+                        FontFamily="{StaticResource 汉仪第五人格体}"
                         FontSize="45"
                         Foreground="White" />
                 </StackPanel>
@@ -68,13 +68,13 @@
                     <Label
                         x:Name="Tie"
                         Content="{Binding TeamInfoViewModel.NowModel.NowSurTeam.Score.D}"
-                        FontFamily="DFPOP1W5-B5"
+                        FontFamily="{StaticResource 华康POP体}"
                         FontSize="48"
                         Foreground="White" />
                     <Label
                         Name="TieWord"
                         Content="D"
-                        FontFamily="汉仪第五人格体简"
+                        FontFamily="{StaticResource 汉仪第五人格体}"
                         FontSize="45"
                         Foreground="White" />
                 </StackPanel>
@@ -82,13 +82,13 @@
                     <Label
                         x:Name="Lose"
                         Content="{Binding TeamInfoViewModel.NowModel.NowSurTeam.Score.L}"
-                        FontFamily="DFPOP1W5-B5"
+                        FontFamily="{StaticResource 华康POP体}"
                         FontSize="48"
                         Foreground="White" />
                     <Label
                         Name="LoseWord"
                         Content="L"
-                        FontFamily="汉仪第五人格体简"
+                        FontFamily="{StaticResource 汉仪第五人格体}"
                         FontSize="45"
                         Foreground="White" />
                 </StackPanel>
@@ -102,7 +102,7 @@
             Margin="10,0,0,0"
             HorizontalAlignment="Left"
             Content="{Binding TeamInfoViewModel.NowModel.NowSurTeam.Score.S}"
-            FontFamily="DFPOP1W5-B5"
+            FontFamily="{StaticResource 华康POP体}"
             FontSize="150"
             Foreground="Red" />
     </Grid>

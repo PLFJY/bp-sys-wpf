@@ -68,7 +68,7 @@
                     Margin="10,0,0,0"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    FontFamily="DFPOP1W5-B5"
+                    FontFamily="{StaticResource 华康POP体}"
                     FontSize="80"
                     FontWeight="Bold"
                     Text="{Binding TeamInfoViewModel.NowModel.NowSurTeam.Score.S}" />
@@ -77,7 +77,7 @@
                     Grid.Column="4"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    FontFamily="汉仪第五人格体简"
+                    FontFamily="{StaticResource 汉仪第五人格体}"
                     FontSize="70"
                     FontWeight="Bold"
                     Text="{Binding TimmerViewModel.CountdownTime}" />
@@ -87,7 +87,7 @@
                     Margin="0,0,20,0"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    FontFamily="DFPOP1W5-B5"
+                    FontFamily="{StaticResource 华康POP体}"
                     FontSize="80"
                     FontWeight="Bold"
                     Text="{Binding TeamInfoViewModel.NowModel.NowHunTeam.Score.S}" />

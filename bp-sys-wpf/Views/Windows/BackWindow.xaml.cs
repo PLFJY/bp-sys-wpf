@@ -50,7 +50,6 @@ namespace bp_sys_wpf.Views.Windows
                 Console.WriteLine(ex.Message);
             }
             DeleteFiles();
-            if (Directory.Exists(Path.Combine(Environment.CurrentDirectory, "gui"))) Directory.Delete(Path.Combine(Environment.CurrentDirectory, "gui"));
         }
         private void DeleteFiles()
         {

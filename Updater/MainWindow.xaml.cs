@@ -142,7 +142,6 @@ namespace Updater
             // 确保目标文件夹（CurrentDirectory）已存在，若不存在则创建它
             Directory.CreateDirectory(CurrentDirectory);
             var file_downloaded = GetFileNameFromUrl(UpdateUrl);
-
             // 遍历temp_directory下的所有文件和文件夹（使用EnumerateFileSystemEntries提高效率）
             foreach (var entry in Directory.EnumerateFileSystemEntries(temp_directory))
             {

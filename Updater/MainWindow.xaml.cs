@@ -141,6 +141,7 @@ namespace Updater
         {
             // 确保目标文件夹（CurrentDirectory）已存在，若不存在则创建它
             Directory.CreateDirectory(CurrentDirectory);
+            var file_downloaded = GetFileNameFromUrl(UpdateUrl);
 
             // 遍历temp_directory下的所有文件和文件夹（使用EnumerateFileSystemEntries提高效率）
             foreach (var entry in Directory.EnumerateFileSystemEntries(temp_directory))
@@ -149,7 +150,7 @@ namespace Updater
                 string targetEntry = Path.Combine(CurrentDirectory, entryName);
                 if (File.Exists(entry))
                 {
-                    if (entryName == GetFileNameFromUrl(UpdateUrl))
+                    if (entryName == file_downloaded)
                     {
                         File.Delete(entry);
                         continue;
@@ -170,7 +171,7 @@ namespace Updater
                         MessageBox.Show("是否启用Resource覆盖（你所修改的UI会被覆盖）", "警告", MessageBoxButton.YesNo, MessageBoxImage.Question, result);
                         if (result != MessageBoxResult.Yes)
                         {
-                            Directory.Delete(entry);
+                            Directory.Delete(entry, true);
                             continue;
                         }
                     }
@@ -186,8 +187,12 @@ namespace Updater
             {
                 string fileName = Path.GetFileName(file);
                 string targetFilePath = Path.Combine(targetDir, fileName);
-                File.Copy(file, targetFilePath, true);
-                File.Delete(file);
+                try
+                {
+                    File.Copy(file, targetFilePath, true);
+                    File.Delete(file);
+                }
+                catch { }
             }
             foreach (var subDir in Directory.GetDirectories(sourceDir))
             {

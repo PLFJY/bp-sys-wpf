@@ -83,7 +83,7 @@
                     Stretch="UniformToFill" />
                 <Label
                     x:Name="Sur_team_name"
-                    Margin="310,0,0,40"
+                    Margin="310,0,0,10"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
                     HorizontalContentAlignment="Center"
@@ -100,7 +100,7 @@
                     Source="{Binding TeamInfoViewModel.NowModel.NowHunTeam.LOGO}" />
                 <Label
                     x:Name="Hun_team_name"
-                    Margin="0,0,310,40"
+                    Margin="0,0,310,10"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Bottom"
                     HorizontalContentAlignment="Center"

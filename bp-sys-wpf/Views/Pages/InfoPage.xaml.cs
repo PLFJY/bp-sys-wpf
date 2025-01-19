@@ -79,8 +79,8 @@ namespace bp_sys_wpf.Views.Pages
                 if (_GhUrl == null)
                 {
                     _GhUrl = new List<string>();
-                    _GhUrl.Add("https://ghproxy.net/");
                     _GhUrl.Add("https://www.ghproxy.cn/");
+                    _GhUrl.Add("https://ghproxy.net/");
                     _GhUrl.Add("https://mirror.ghproxy.com/");
                     _GhUrl.Add("https://gh-proxy.com/");
                 }
@@ -222,7 +222,7 @@ namespace bp_sys_wpf.Views.Pages
             await FetchNewUIFileInfoAsync("https://api.github.com");
             foreach (var i in uIFileInfo)
             {
-                DownLoadFile($"https://ghproxy.net/{i.download_url}", Path.Combine(Environment.CurrentDirectory, "Resource", "gui", i.name));
+                DownLoadFile($"https://www.ghproxy.cn/{i.download_url}", Path.Combine(Environment.CurrentDirectory, "Resource", "gui", i.name));
             }
             MessageBox.Show("请等待UI替换完成，大概率60s后重启应用程序即可完成", "下载提示");
         }

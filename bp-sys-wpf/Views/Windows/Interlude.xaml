@@ -83,12 +83,12 @@
                     Stretch="UniformToFill" />
                 <Label
                     x:Name="Sur_team_name"
-                    Margin="310,0,0,10"
+                    Margin="250,0,0,20"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
                     HorizontalContentAlignment="Center"
                     Content="{Binding TeamInfoViewModel.NowModel.NowSurTeam.Name}"
-                    FontSize="48"
+                    FontSize="36"
                     FontWeight="Bold" />
                 <Image
                     x:Name="Hun_logo"
@@ -100,12 +100,12 @@
                     Source="{Binding TeamInfoViewModel.NowModel.NowHunTeam.LOGO}" />
                 <Label
                     x:Name="Hun_team_name"
-                    Margin="0,0,310,10"
+                    Margin="0,0,220,20"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Bottom"
                     HorizontalContentAlignment="Center"
                     Content="{Binding TeamInfoViewModel.NowModel.NowHunTeam.Name}"
-                    FontSize="48"
+                    FontSize="36"
                     FontWeight="Bold" />
             </Grid>
             <!--  选手ID  -->
@@ -119,60 +119,60 @@
                     x:Name="Sur_1_player_name"
                     Width="160"
                     Height="40"
-                    Margin="0,180,1068,0"
+                    Margin="0,185,1068,0"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Panel.ZIndex="5"
                     Block.TextAlignment="Center"
-                    FontSize="20"
+                    FontSize="18"
                     FontWeight="Bold"
                     Text="{Binding TeamInfoViewModel.NowModel.NowSurPlayerId[0]}" />
                 <TextBlock
                     x:Name="Sur_2_player_name"
                     Width="160"
                     Height="40"
-                    Margin="379,523,0,0"
+                    Margin="379,525,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Panel.ZIndex="5"
                     Block.TextAlignment="Center"
-                    FontSize="20"
+                    FontSize="18"
                     FontWeight="Bold"
                     Text="{Binding TeamInfoViewModel.NowModel.NowSurPlayerId[1]}" />
                 <TextBlock
                     x:Name="Sur_3_player_name"
                     Width="160"
                     Height="40"
-                    Margin="949,523,0,0"
+                    Margin="949,525,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Panel.ZIndex="5"
                     Block.TextAlignment="Center"
-                    FontSize="20"
+                    FontSize="18"
                     FontWeight="Bold"
                     Text="{Binding TeamInfoViewModel.NowModel.NowSurPlayerId[2]}" />
                 <TextBlock
                     x:Name="Sur_4_player_name"
                     Width="160"
                     Height="40"
-                    Margin="1170,475,0,0"
+                    Margin="1170,476,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Panel.ZIndex="5"
                     Block.TextAlignment="Center"
-                    FontSize="20"
+                    FontSize="18"
                     FontWeight="Bold"
                     Text="{Binding TeamInfoViewModel.NowModel.NowSurPlayerId[3]}" />
                 <TextBlock
                     x:Name="Hun_player_name"
                     Width="160"
                     Height="40"
-                    Margin="663,415,0,0"
+                    Margin="663,417,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Panel.ZIndex="5"
                     Block.TextAlignment="Center"
-                    FontSize="20"
+                    FontSize="18"
                     FontWeight="Bold"
                     Text="{Binding TeamInfoViewModel.NowModel.NowHunPlayerId}" />
             </Grid>

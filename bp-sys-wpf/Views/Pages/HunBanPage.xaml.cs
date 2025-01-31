@@ -61,7 +61,39 @@ namespace bp_sys_wpf.Views.Pages
             }
         }
 
+        private void Hun_hole_ban_1_KeyDown(object sender, KeyEventArgs e)
+        {
+            Hun_hole_ban_1.IsDropDownOpen = true;
+            if (e.Key == Key.Tab)
+            {
+                rootViewModel.BpShowViewModel.ShowBp("HunHoleBan", 0);
+            }
+        }
+
+        private void Hun_hole_ban_2_KeyDown(object sender, KeyEventArgs e)
+        {
+            Hun_hole_ban_2.IsDropDownOpen = true;
+            if (e.Key == Key.Tab)
+            {
+                rootViewModel.BpShowViewModel.ShowBp("HunHoleBan", 1);
+            }
+        }
+
+        private void Hun_hole_ban_3_KeyDown(object sender, KeyEventArgs e)
+        {
+            Hun_hole_ban_3.IsDropDownOpen = true;
+            if (e.Key == Key.Tab)
+            {
+                rootViewModel.BpShowViewModel.ShowBp("HunHoleBan", 2);
+            }
+        }
+
         private void HunBanStateChange_Click(object sender, RoutedEventArgs e)
+        {
+            rootViewModel.BpReceiveModel = rootViewModel.BpReceiveModel;
+        }
+
+        private void HunHoleStateChange_Click(object sender, RoutedEventArgs e)
         {
             rootViewModel.BpReceiveModel = rootViewModel.BpReceiveModel;
         }

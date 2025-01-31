@@ -81,8 +81,11 @@ namespace bp_sys_wpf.ViewModel
                     BpShow.HunPick.ChartcherHeadImage = getFilePath.GetImage("hun", ReceiveModel.HunPick);
                     BpShow = BpShow;
                     break;
+                case "HunHoleBan":
+                    BpShow.HunHoleBan[num] = getFilePath.GetImage("hunban", ReceiveModel.HunHoleBan[num]);
+                    BpShow = BpShow;
+                    break;
             }
-
         }
     }
 }

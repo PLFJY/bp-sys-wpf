@@ -20,6 +20,13 @@ namespace bp_sys_wpf.Model
             set { _SurHoleBan = value; }
         }
 
+        private List<BitmapImage> _HunHoleBan = new List<BitmapImage>(3) { null, null, null};
+
+        public List<BitmapImage> HunHoleBan
+        {
+            get { return _HunHoleBan; }
+            set { _HunHoleBan = value; }
+        }
         private List<BitmapImage> _HunBan = new List<BitmapImage>(3) { null, null, null };
 
         public List<BitmapImage> HunBan
@@ -73,9 +80,27 @@ namespace bp_sys_wpf.Model
                 }
                 return _SurHoleBanLock;
             }
-            set { _HunBanLock = value; }
+            set { _SurHoleBanLock = value; }
         }
 
+        private List<Visibility> _HunHoleBanLock;
+
+        public List<Visibility> HunHoleBanLock
+        {
+            get
+            {
+                if (_HunHoleBanLock == null)
+                {
+                    _HunHoleBanLock = new List<Visibility>();
+                    for (int i = 0; i < 3; i++)
+                    {
+                        _HunHoleBanLock.Add(Visibility.Hidden);
+                    }
+                }
+                return _HunHoleBanLock;
+            }
+            set { _HunHoleBanLock = value; }
+        }
         public BitmapImage MapPick { get; set; }
 
         public BitmapImage MapBan { get; set; }

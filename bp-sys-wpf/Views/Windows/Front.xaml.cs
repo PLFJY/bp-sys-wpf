@@ -25,6 +25,7 @@ namespace bp_sys_wpf
                 Hun_no_ban_1.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/no_hun_ban.png")));
                 Hun_no_ban_2.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/no_hun_ban.png")));
                 Hun_no_ban_3.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/no_hun_ban.png")));
+
                 Hole_no_ban_1.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/no_hole_ban.png")));
                 Hole_no_ban_2.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/no_hole_ban.png")));
                 Hole_no_ban_3.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/no_hole_ban.png")));
@@ -34,6 +35,11 @@ namespace bp_sys_wpf
                 Hole_no_ban_7.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/no_hole_ban.png")));
                 Hole_no_ban_8.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/no_hole_ban.png")));
                 Hole_no_ban_9.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/no_hole_ban.png")));
+
+                Hun_Hole_no_ban_1.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/no_hole_ban.png")));
+                Hun_Hole_no_ban_2.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/no_hole_ban.png")));
+                Hun_Hole_no_ban_3.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/no_hole_ban.png")));
+
                 SurPicking1.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/SurPicking.png")));
                 SurPicking2.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/SurPicking.png")));
                 SurPicking3.Source = new BitmapImage(new Uri(getFilePath.GetAbsoluteFilePath("Resource/gui/SurPicking.png")));

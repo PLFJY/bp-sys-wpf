@@ -133,6 +133,35 @@ namespace bp_sys_wpf.ViewModel
             set { _MapBan = value; }
         }
 
+        private List<string> _GameProgress;
+
+        public List<string> GameProgress
+        {
+            get
+            {
+                if (_GameProgress == null)
+                {
+                    _GameProgress = new List<string>();
+                    _GameProgress.Add("GAME1 FIRST HALF");
+                    _GameProgress.Add("GAME1 SECOND HALF");
+                    _GameProgress.Add("GAME2 FIRST HALF");
+                    _GameProgress.Add("GAME2 SECOND HALF");
+                    _GameProgress.Add("GAME3 FIRST HALF");
+                    _GameProgress.Add("GAME3 SECOND HALF");
+                    _GameProgress.Add("GAME3-Ex FIRST HALF");
+                    _GameProgress.Add("GAME3-Ex SECOND HALF");
+                    _GameProgress.Add("GAME4 FIRST HALF");
+                    _GameProgress.Add("GAME4 SECOND HALF");
+                    _GameProgress.Add("GAME5 FIRST HALF");
+                    _GameProgress.Add("GAME5 SECOND HALF");
+                    _GameProgress.Add("GAME5-Ex FIRST HALF");
+                    _GameProgress.Add("GAME5-Ex SECOND HALF");
+                }
+                return _GameProgress;
+            }
+            set { _GameProgress = value; }
+        }
+
         private List<string> _Trait;
 
         public List<string> Trait

@@ -455,10 +455,24 @@ namespace bp_sys_wpf.ViewModel
                 }
                 rootViewModel.BpShowViewModel.ShowBp("SurHoleBan", i);
             }
+            //全局Ban自动填充
+            for (int i = 0; i < 3; i++)
+            {
+                if (TeamInfoModel.MainTeamInfo.State == "监管者")
+                {
+                    rootViewModel.BpReceiveModel.HunHoleBan[i] = rootViewModel.BpReceiveModel.HunHoleBanMainRecord[i];
+                }
+                else
+                {
+                    rootViewModel.BpReceiveModel.HunHoleBan[i] = rootViewModel.BpReceiveModel.HunHoleBanAwayRecord[i];
+                }
+                rootViewModel.BpShowViewModel.ShowBp("HunHoleBan", i);
+            }
             TeamInfoModel = TeamInfoModel;
             NowModel = NowModel;
             rootViewModel.BpReceiveModel = rootViewModel.BpReceiveModel;
             rootViewModel.BpShowViewModel = rootViewModel.BpShowViewModel;
+
         }
         public void SwapPlayers(int num1, int num2)//求生pick界面的位置互换
         {

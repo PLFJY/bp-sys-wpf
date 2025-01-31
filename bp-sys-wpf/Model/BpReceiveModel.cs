@@ -23,6 +23,14 @@ namespace bp_sys_wpf.Model
             set { _SurHoleBan = value; }
         }
 
+        private List<string> _HunHoleBan = new List<string>(9) { null, null, null, null, null, null, null, null, null };//全局Ban
+
+        public List<string> HunHoleBan
+        {
+            get { return _HunHoleBan; }
+            set { _HunHoleBan = value; }
+        }
+
         private List<string> _HunBan = new List<string>(3) { null, null, null };//监管Ban
 
         public List<string> HunBan
@@ -143,6 +151,37 @@ namespace bp_sys_wpf.Model
             set { _SurHoleBanLock = value; }
         }
 
+        private List<bool> _HunHoleBanLock;//全局ban位数量设定
+
+        public List<bool> HunHoleBanLock
+        {
+            get
+            {
+                if (_HunHoleBanLock == null)
+                {
+                    _HunHoleBanLock = new List<bool>();
+                    for (int i = 0; i < 3; i++)
+                    {
+                        _HunHoleBanLock.Add(true);
+                    }
+                }
+                for (int i = 0; i < 3; i++)
+                {
+                    if (_HunHoleBanLock[i] == false)
+                    {
+                        BpShowViewModel.BpShow.HunHoleBanLock[i] = Visibility.Visible;
+                    }
+                    else
+                    {
+                        BpShowViewModel.BpShow.HunHoleBanLock[i] = Visibility.Hidden;
+                    }
+                }
+                BpShowViewModel.BpShow = BpShowViewModel.BpShow;
+                return _HunHoleBanLock;
+            }
+            set { _HunHoleBanLock = value; }
+        }
+
         public string HunPick { get; set; }//监管Pick
 
         private List<string> _SurHoleBanMainRecord;
@@ -181,6 +220,44 @@ namespace bp_sys_wpf.Model
                 return _SurHoleBanAwayRecord;
             }
             set { _SurHoleBanAwayRecord = value; }
+        }
+
+        private List<string> _HunHoleBanMainRecord;
+
+        public List<string> HunHoleBanMainRecord//主队全局Ban记录
+        {
+            get
+            {
+                if (_HunHoleBanMainRecord == null)
+                {
+                    _HunHoleBanMainRecord = new List<string>();
+                    for (int i = 0; i < 3; i++)
+                    {
+                        _HunHoleBanMainRecord.Add(null);
+                    }
+                }
+                return _HunHoleBanMainRecord;
+            }
+            set { _HunHoleBanMainRecord = value; }
+        }
+
+        private List<string> _HunHoleBanAwayRecord;//客队全局Ban记录
+
+        public List<string> HunHoleBanAwayRecord
+        {
+            get
+            {
+                if (_HunHoleBanAwayRecord == null)
+                {
+                    _HunHoleBanAwayRecord = new List<string>();
+                    for (int i = 0; i < 3; i++)
+                    {
+                        _HunHoleBanAwayRecord.Add(null);
+                    }
+                }
+                return _HunHoleBanAwayRecord;
+            }
+            set { _HunHoleBanAwayRecord = value; }
         }
 
         private string _MapPick;//地图Pick

@@ -1,111 +1,195 @@
-﻿<Page x:Class="bp_sys_wpf.Views.Pages.HunBanPage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:bp_sys_wpf.Views.Pages"
-      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
-      mc:Ignorable="d" 
-      d:DesignHeight="920"
-      d:DesignWidth="760"
-      Title="HunBanPage">
+﻿<Page
+    x:Class="bp_sys_wpf.Views.Pages.HunBanPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:bp_sys_wpf.Views.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    Title="HunBanPage"
+    d:DesignHeight="920"
+    d:DesignWidth="760"
+    mc:Ignorable="d">
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ui:ThemesDictionary Theme="Dark"/>
+                <ui:ThemesDictionary Theme="Dark" />
                 <ui:ControlsDictionary />
             </ResourceDictionary.MergedDictionaries>
             <Style TargetType="TextBlock">
-                <Setter Property="Foreground"
-                        Value="White"/>
-                <Setter Property="HorizontalAlignment"
-                        Value="Center"/>
-                <Setter Property="VerticalAlignment"
-                        Value="Center"/>
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="VerticalAlignment" Value="Center" />
             </Style>
             <Style TargetType="GroupBox">
-                <Setter Property="Foreground"
-                        Value="White"/>
+                <Setter Property="Foreground" Value="White" />
             </Style>
             <Style TargetType="Image">
-                <Setter Property="Margin"
-                        Value="0,10,0,0"/>
-                <Setter Property="Height"
-                        Value="70"/>
-                <Setter Property="Width"
-                        Value="70"/>
+                <Setter Property="Margin" Value="0,10,0,0" />
+                <Setter Property="Height" Value="70" />
+                <Setter Property="Width" Value="70" />
             </Style>
         </ResourceDictionary>
     </Page.Resources>
     <StackPanel>
-        <GroupBox Header="Ban监管者"
-                  Margin="10,0,0,0"
-                  HorizontalAlignment="Left"
-                  VerticalAlignment="Top">
+        <GroupBox
+            Margin="10,0,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Header="Ban监管者">
             <Grid>
-                <StackPanel Margin="10,10,10,10"
-                            Orientation="Horizontal"
-                            VerticalAlignment="Top"
-                            HorizontalAlignment="Left">
+                <StackPanel
+                    Margin="10,10,10,10"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Orientation="Horizontal">
                     <StackPanel>
-                        <ComboBox x:Name="Hun_ban_1"
-                                  Height="35"
-                                  Width="150"
-                                  IsEditable="True"
-                                  SelectedItem="{Binding BpReceiveModel.HunBan[0]}"
-                                  ItemsSource="{Binding ComboBoxItemViewModel.hun}"
-                                  IsEnabled="{Binding BpReceiveModel.HunBanLock[0]}"
-                                  MaxDropDownHeight="200" KeyDown="Hun_ban_1_KeyDown"/>
-                        <Image x:Name="Hun_ban_review_1" Source="{Binding BpShowViewModel.BpShow.HunBan[0]}"/>
+                        <ComboBox
+                            x:Name="Hun_ban_1"
+                            Width="150"
+                            Height="35"
+                            IsEditable="True"
+                            IsEnabled="{Binding BpReceiveModel.HunBanLock[0]}"
+                            ItemsSource="{Binding ComboBoxItemViewModel.hun}"
+                            KeyDown="Hun_ban_1_KeyDown"
+                            MaxDropDownHeight="200"
+                            SelectedItem="{Binding BpReceiveModel.HunBan[0]}" />
+                        <Image x:Name="Hun_ban_review_1" Source="{Binding BpShowViewModel.BpShow.HunBan[0]}" />
                     </StackPanel>
                     <StackPanel>
-                        <ComboBox x:Name="Hun_ban_2"
-                                  Height="35"
-                                  Width="150"
-                                  IsEditable="True"
-                                  Margin="10,0,0,0"
-                                  IsEnabled="{Binding BpReceiveModel.HunBanLock[1]}"
-                                  SelectedItem="{Binding BpReceiveModel.HunBan[1]}"
-                                  ItemsSource="{Binding ComboBoxItemViewModel.hun}"
-                                  MaxDropDownHeight="200" KeyDown="Hun_ban_2_KeyDown"/>
-                        <Image x:Name="Hun_ban_review_2"
-                                Source="{Binding BpShowViewModel.BpShow.HunBan[1]}"/>
+                        <ComboBox
+                            x:Name="Hun_ban_2"
+                            Width="150"
+                            Height="35"
+                            Margin="10,0,0,0"
+                            IsEditable="True"
+                            IsEnabled="{Binding BpReceiveModel.HunBanLock[1]}"
+                            ItemsSource="{Binding ComboBoxItemViewModel.hun}"
+                            KeyDown="Hun_ban_2_KeyDown"
+                            MaxDropDownHeight="200"
+                            SelectedItem="{Binding BpReceiveModel.HunBan[1]}" />
+                        <Image x:Name="Hun_ban_review_2" Source="{Binding BpShowViewModel.BpShow.HunBan[1]}" />
                     </StackPanel>
                     <StackPanel>
-                        <ComboBox x:Name="Hun_ban_3"
-                                  Height="35"
-                                  Width="150"
-                                  IsEditable="True"
-                                  Margin="10,0,0,0"
-                                  IsEnabled="{Binding BpReceiveModel.HunBanLock[2]}"
-                                  SelectedItem="{Binding BpReceiveModel.HunBan[2]}"
-                                  ItemsSource="{Binding ComboBoxItemViewModel.hun}"
-                                  MaxDropDownHeight="200" KeyDown="Hun_ban_3_KeyDown"/>
-                        <Image x:Name="Hun_ban_review_3"
-                                Source="{Binding BpShowViewModel.BpShow.HunBan[2]}"/>
+                        <ComboBox
+                            x:Name="Hun_ban_3"
+                            Width="150"
+                            Height="35"
+                            Margin="10,0,0,0"
+                            IsEditable="True"
+                            IsEnabled="{Binding BpReceiveModel.HunBanLock[2]}"
+                            ItemsSource="{Binding ComboBoxItemViewModel.hun}"
+                            KeyDown="Hun_ban_3_KeyDown"
+                            MaxDropDownHeight="200"
+                            SelectedItem="{Binding BpReceiveModel.HunBan[2]}" />
+                        <Image x:Name="Hun_ban_review_3" Source="{Binding BpShowViewModel.BpShow.HunBan[2]}" />
                     </StackPanel>
                 </StackPanel>
             </Grid>
         </GroupBox>
-        <GroupBox Header="Ban位数量设定"
-                  Margin="10,10,0,0"
-                  HorizontalAlignment="Left">
-            <StackPanel Orientation="Horizontal"
-                        Margin="10,10,10,10">
-                <ui:ToggleSwitch x:Name="HunBanStateChange1"
-                                 Content="1号位"
-                                 IsChecked="{Binding BpReceiveModel.HunBanLock[0]}"
-                                 Click="HunBanStateChange_Click"/>
-                <ui:ToggleSwitch x:Name="HunBanStateChange2"
-                                 Content="2号位"
-                                 IsChecked="{Binding BpReceiveModel.HunBanLock[1]}"
-                                 Margin="20,0,0,0"
-                                 Click="HunBanStateChange_Click"/>
-                <ui:ToggleSwitch x:Name="HunBanStateChange3"
-                                 Content="3号位"
-                                 IsChecked="{Binding BpReceiveModel.HunBanLock[2]}"
-                                 Margin="20,0,0,0"
-                                 Click="HunBanStateChange_Click"/>
+        <GroupBox
+            Margin="10,10,0,0"
+            HorizontalAlignment="Left"
+            Header="Ban位数量设定">
+            <StackPanel Margin="10,10,10,10" Orientation="Horizontal">
+                <ui:ToggleSwitch
+                    x:Name="HunBanStateChange1"
+                    Click="HunBanStateChange_Click"
+                    Content="1号位"
+                    IsChecked="{Binding BpReceiveModel.HunBanLock[0]}" />
+                <ui:ToggleSwitch
+                    x:Name="HunBanStateChange2"
+                    Margin="20,0,0,0"
+                    Click="HunBanStateChange_Click"
+                    Content="2号位"
+                    IsChecked="{Binding BpReceiveModel.HunBanLock[1]}" />
+                <ui:ToggleSwitch
+                    x:Name="HunBanStateChange3"
+                    Margin="20,0,0,0"
+                    Click="HunBanStateChange_Click"
+                    Content="3号位"
+                    IsChecked="{Binding BpReceiveModel.HunBanLock[2]}" />
+            </StackPanel>
+        </GroupBox>
+        <GroupBox
+            Margin="10,0,0,0"
+            HorizontalAlignment="Left"
+            Header="全局Ban">
+            <Grid>
+                <StackPanel>
+                    <StackPanel
+                        Grid.Row="0"
+                        Margin="10,10,10,10"
+                        Orientation="Horizontal">
+                        <StackPanel>
+                            <ComboBox
+                                x:Name="Hun_hole_ban_1"
+                                Width="150"
+                                Height="35"
+                                IsEditable="True"
+                                IsEnabled="{Binding BpReceiveModel.HunHoleBanLock[0]}"
+                                ItemsSource="{Binding ComboBoxItemViewModel.hun}"
+                                KeyDown="Hun_hole_ban_1_KeyDown"
+                                MaxDropDownHeight="200"
+                                SelectedItem="{Binding BpReceiveModel.HunHoleBan[0]}" />
+                            <Image x:Name="Hun_hole_ban_1_review" Source="{Binding BpShowViewModel.BpShow.HunHoleBan[0]}" />
+                        </StackPanel>
+                        <StackPanel>
+                            <ComboBox
+                                x:Name="Hun_hole_ban_2"
+                                Width="150"
+                                Height="35"
+                                Margin="10,0,0,0"
+                                IsEditable="True"
+                                IsEnabled="{Binding BpReceiveModel.HunHoleBanLock[1]}"
+                                ItemsSource="{Binding ComboBoxItemViewModel.hun}"
+                                KeyDown="Hun_hole_ban_2_KeyDown"
+                                MaxDropDownHeight="200"
+                                SelectedItem="{Binding BpReceiveModel.HunHoleBan[1]}" />
+                            <Image x:Name="Hun_hole_ban_2_review" Source="{Binding BpShowViewModel.BpShow.HunHoleBan[1]}" />
+                        </StackPanel>
+                        <StackPanel>
+                            <ComboBox
+                                x:Name="Hun_hole_ban_3"
+                                Width="150"
+                                Height="35"
+                                Margin="10,0,0,0"
+                                IsEditable="True"
+                                IsEnabled="{Binding BpReceiveModel.HunHoleBanLock[2]}"
+                                ItemsSource="{Binding ComboBoxItemViewModel.hun}"
+                                KeyDown="Hun_hole_ban_3_KeyDown"
+                                MaxDropDownHeight="200"
+                                SelectedItem="{Binding BpReceiveModel.HunHoleBan[2]}" />
+                            <Image x:Name="Hun_hole_ban_3_review" Source="{Binding BpShowViewModel.BpShow.HunHoleBan[2]}" />
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+        <GroupBox
+            Margin="10,10,0,0"
+            HorizontalAlignment="Left"
+            Header="全局禁用Ban位数量设定">
+            <StackPanel>
+                <StackPanel Margin="10,10,10,10" Orientation="Horizontal">
+                    <ui:ToggleSwitch
+                        x:Name="HunHoleStateChange1"
+                        Click="HunHoleStateChange_Click"
+                        Content="1号位"
+                        IsChecked="{Binding BpReceiveModel.HunHoleBanLock[0]}" />
+                    <ui:ToggleSwitch
+                        x:Name="HunHoleBanStateChange2"
+                        Margin="20,0,0,0"
+                        Click="HunHoleStateChange_Click"
+                        Content="2号位"
+                        IsChecked="{Binding BpReceiveModel.HunHoleBanLock[1]}" />
+                    <ui:ToggleSwitch
+                        x:Name="HunHoleStateChange3"
+                        Margin="20,0,0,0"
+                        Click="HunHoleStateChange_Click"
+                        Content="3号位"
+                        IsChecked="{Binding BpReceiveModel.HunHoleBanLock[2]}" />
+                </StackPanel>
             </StackPanel>
         </GroupBox>
     </StackPanel>

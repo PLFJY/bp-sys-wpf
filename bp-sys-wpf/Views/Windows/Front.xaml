@@ -17,7 +17,7 @@
     <Viewbox>
         <Grid Width="1440" Height="810">
             <Grid.Background>
-                <ImageBrush ImageSource="/Views/Windows/bp.png" />
+                <ImageBrush />
             </Grid.Background>
             <Grid.RowDefinitions>
                 <RowDefinition Height="150" />

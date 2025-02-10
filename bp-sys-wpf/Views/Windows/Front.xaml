@@ -576,10 +576,6 @@
                 </Grid>
                 <!--  求生Pick4  -->
                 <Grid Grid.Column="5">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="140" />
-                        <RowDefinition Height="60" />
-                    </Grid.RowDefinitions>
                     <TextBlock
                         x:Name="GameProgress"
                         Width="Auto"
@@ -593,8 +589,8 @@
                     <Image
                         x:Name="Map"
                         Width="auto"
-                        Height="90"
-                        Margin="0,10,10,0"
+                        Height="110"
+                        Margin="0,0,10,24"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Bottom"
                         Source="{Binding BpShowViewModel.BpShow.MapPick}"

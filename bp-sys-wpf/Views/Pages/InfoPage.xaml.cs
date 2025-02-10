@@ -83,6 +83,7 @@ namespace bp_sys_wpf.Views.Pages
                     _GhUrl.Add("https://ghproxy.net/");
                     _GhUrl.Add("https://mirror.ghproxy.com/");
                     _GhUrl.Add("https://gh-proxy.com/");
+                    _GhUrl.Add("https://gh.plfjy.us.kg/");
                 }
                 return _GhUrl;
             }

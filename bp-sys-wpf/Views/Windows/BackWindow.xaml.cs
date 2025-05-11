@@ -37,7 +37,14 @@ namespace bp_sys_wpf.Views.Windows
             backWindow = this;
             DataContext = rootViewModel;
             AppInitialize();
-            UpdateCheck();
+            try
+            {
+                UpdateCheck();
+            }
+            catch
+            {
+                MessageBox.Show("检查更新失败，请检查网络连接", "更新失败");
+            }
             DeleteFiles();
         }
         private void DeleteFiles()
@@ -103,7 +110,7 @@ namespace bp_sys_wpf.Views.Windows
 
             Config.ScoreHole.Color.Name = ConvertHexStringToBrush(data["ScoreHole_Color"]["Name"].ToString());
             Config.ScoreHole.Color.Score = ConvertHexStringToBrush(data["ScoreHole_Color"]["Score"].ToString());
-            
+
             rootViewModel.BpShowViewModel.ReceiveModel = rootViewModel.BpReceiveModel;
             rootViewModel.BpReceiveModel.BpShowViewModel = rootViewModel.BpShowViewModel;
             rootViewModel.TeamInfoViewModel = rootViewModel.TeamInfoViewModel;

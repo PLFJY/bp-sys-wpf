@@ -1,6 +1,6 @@
 # bp-sys-wpf
 
-This project is no longer under maintenance. Look at the new ones -> [neo-bosys-wpf](https://github.com/PLFJY/neo-bpsys-wpf)
+This project is no longer under maintenance. Look at the new one -> [neo-bosys-wpf](https://github.com/PLFJY/neo-bpsys-wpf)
 
  **Note: Please make sure to put the contents of the unzipped software in a separate folder, if it causes data loss, the consequences are your own** (the principle of the updater is to download the update package "new_bpsys.7z" and then delete all files in the directory except for 7z, Resource, new_bpsys.7z and then unzip the update package). (then unzip the package).
 

@@ -1,4 +1,5 @@
-# bp-sys-wpf
+：# bp-sys-wpf
+本软件现在已停止维护，新作请前往-> [neo-bpsys-wpf](https://github.com/PLFJY/neo-bpsys-wpf)
 **注意事项：请务必把软件解压后的内容放在单独的文件夹内，如果造成数据丢失，后果自负**（更新器的原理是下载更新包“new_bpsys.7z”后删除目录下除了7z、Resource、new_bpsys.7z以外的全部文件然后解压更新包）
 
 本软件禁止商用
